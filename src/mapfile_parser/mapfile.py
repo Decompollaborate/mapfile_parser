@@ -20,13 +20,13 @@ regex_segmentType = re.compile(r"^ (?P<type>\.[^ ]+) ")
 class Function:
     name: str
     vram: int
-    size: int # in words
+    size: int # in bytes
 
 @dataclasses.dataclass
 class File:
     name: str
     vram: int
-    size: int # in words
+    size: int # in bytes
     segmentType: str
     functions: list[Function] = dataclasses.field(default_factory=list)
 
@@ -78,7 +78,7 @@ class MapFile:
                     if entryMatch is not None:
                         name = "/".join(entryMatch["name"].split("/")[2:])
                         name = ".".join(name.split(".")[:-1])
-                        size = int(entryMatch["size"], 16) // 4
+                        size = int(entryMatch["size"], 16)
                         vram = int(entryMatch["vram"], 16)
                         segmentType = typeMatch["type"]
 
@@ -99,7 +99,7 @@ class MapFile:
                 func = file.functions[index]
                 nextFunc = file.functions[index+1]
 
-                size = (nextFunc.vram - func.vram) // 4
+                size = (nextFunc.vram - func.vram)
                 acummulatedSize += size
 
                 file.functions[index] = Function(func.name, func.vram, size)
