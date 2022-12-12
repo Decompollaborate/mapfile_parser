@@ -1,0 +1,19 @@
+# SPDX-FileCopyrightText: © 2022 Decompollaborate
+# SPDX-License-Identifier: MIT
+
+[project]
+name = "mapfile_parser"
+version = "0.0.1"
+description = "Map file parser library focusing decompilation projects"
+readme = "README.md"
+requires-python = ">=3.7"
+
+[project.urls]
+"Homepage" = "https://github.com/Decompollaborate/mapfile_parser"
+"Bug Tracker" = "https://github.com/Decompollaborate/mapfile_parser/issues"
+
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[tool.cibuildwheel]
+skip = ["cp36-*"]
