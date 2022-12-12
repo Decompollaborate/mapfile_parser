@@ -14,22 +14,25 @@ from pathlib import Path
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_label = re.compile(r"^(?P<name>\.?L[0-9A-F]{8})$")
+regex_segmentType = re.compile(r"^ (?P<type>\.[^ ]+) ")
 
 @dataclasses.dataclass
 class Function:
     name: str
     vram: int
-    size: int
+    size: int # in words
 
 @dataclasses.dataclass
 class File:
     name: str
     vram: int
-    size: int
-    functions: list[Function]
+    size: int # in words
+    segmentType: str
+    functions: list[Function] = dataclasses.field(default_factory=list)
 
 class MapFile:
     def __init__(self, mapPath: Path):
+        tempFilesList: list[File] = list()
         self.filesList: list[File] = list()
 
         with mapPath.open() as f:
@@ -60,13 +63,14 @@ class MapFile:
                         # Filter out jump table's labels
                         labelMatch = regex_label.search(funcName)
                         if labelMatch is None:
-                            self.filesList[-1].functions.append(Function(funcName, funcVram, -1))
+                            tempFilesList[-1].functions.append(Function(funcName, funcVram, -1))
                         # print(hex(funcVram), funcName)
 
                 else:
                     inFile = False
             else:
-                if line.startswith(" .text "):
+                typeMatch = regex_segmentType.search(line)
+                if typeMatch is not None:
                     inFile = False
                     entryMatch = regex_fileDataEntry.search(line)
 
@@ -76,14 +80,13 @@ class MapFile:
                         name = ".".join(name.split(".")[:-1])
                         size = int(entryMatch["size"], 16) // 4
                         vram = int(entryMatch["vram"], 16)
+                        segmentType = typeMatch["type"]
 
                         if size > 0:
                             inFile = True
-                            self.filesList.append(File(name, vram, size, list()))
+                            tempFilesList.append(File(name, vram, size, segmentType))
 
-        resultFileList: list[File] = list()
-
-        for file in self.filesList:
+        for file in tempFilesList:
             acummulatedSize = 0
             funcCount = len(file.functions)
 
@@ -106,7 +109,7 @@ class MapFile:
             size = file.size - acummulatedSize
             file.functions[funcCount-1] = Function(func.name, func.vram, size)
 
-            resultFileList.append(file)
+            self.filesList.append(file)
 
 
 
@@ -114,7 +117,7 @@ class MapFile:
         resultFileList: list[File] = list()
 
         for file in self.filesList:
-            newFile = File(file.name, file.vram, file.size, list())
+            newFile = File(file.name, file.vram, file.size, file.segmentType)
 
             lastFunc: Function|None = None
 
@@ -160,7 +163,7 @@ def mixFolders(filesList: list[File]) -> list[File]:
             for func in file.functions:
                 functions.append(func)
 
-        newFileList.append(File(folderPath, vram, size, functions))
+        newFileList.append(File(folderPath, vram, size, "TODO", functions))
 
     return newFileList
 
