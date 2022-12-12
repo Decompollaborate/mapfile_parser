@@ -13,7 +13,7 @@ from pathlib import Path
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
-regex_label = re.compile(r"^(?P<name>L[0-9A-F]{8})$")
+regex_label = re.compile(r"^(?P<name>\.?L[0-9A-F]{8})$")
 
 @dataclasses.dataclass
 class Function:
@@ -29,12 +29,18 @@ class File:
     functions: list[Function]
 
 class MapFile:
-    def __init__(self, mapPath: Path, startingPoint: str="\n build/"):
+    def __init__(self, mapPath: Path):
         self.filesList: list[File] = list()
 
         with mapPath.open() as f:
             mapData = f.read()
-            startIndex = mapData.find(startingPoint)
+
+            # Skip the stuff we don't care about
+            startIndex = 0
+            auxVar = 0
+            while auxVar != -1:
+                startIndex = auxVar
+                auxVar = mapData.find("\nLOAD ", startIndex+1)
             mapData = mapData[startIndex:]
         # print(len(mapData))
 

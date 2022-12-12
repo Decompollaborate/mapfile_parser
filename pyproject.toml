@@ -13,7 +13,8 @@ requires-python = ">=3.7"
 "Bug Tracker" = "https://github.com/Decompollaborate/mapfile_parser/issues"
 
 [build-system]
-requires = ["setuptools", "wheel"]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
 
 [tool.cibuildwheel]
 skip = ["cp36-*"]
