@@ -7,7 +7,6 @@ from __future__ import annotations
 
 import dataclasses
 import re
-import collections
 from pathlib import Path
 
 

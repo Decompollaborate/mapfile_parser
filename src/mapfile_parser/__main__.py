@@ -6,7 +6,6 @@
 from __future__ import annotations
 
 import argparse
-from pathlib import Path
 
 import mapfile_parser
 
@@ -14,17 +13,12 @@ import mapfile_parser
 def mapfileParserMain():
     parser = argparse.ArgumentParser()
 
-    parser.add_argument("map_file", help="Path to map file")
+    subparsers = parser.add_subparsers(description="action", help="the action to perform", required=True)
+
+    mapfile_parser.frontends.function_sizes_csv.addSubparser(subparsers)
 
     args = parser.parse_args()
-
-    mapPath = Path(args.map_file)
-
-    mapFile = mapfile_parser.MapFile()
-    mapFile.readMapFile(mapPath)
-
-    mapFile.filterBySegmentType(".text").printAsCsv()
-    # mapFile.printFunctionsCsv()
+    args.func(args)
 
 
 if __name__ == "__main__":
