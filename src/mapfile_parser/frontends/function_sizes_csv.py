@@ -14,6 +14,7 @@ from .. import mapfile
 def processArguments(args: argparse.Namespace):
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(args.mapfile)
+    mapFile = mapFile.filterBySegmentType(".text")
 
     if args.same_folder:
         mapFile = mapFile.mixFolders()
