@@ -20,6 +20,16 @@ class Symbol:
     name: str
     vram: int
     size: int = -1 # in bytes
+    vrom: int|None = None
+
+    def getVramStr(self) -> str:
+        return f"0x{self.vram:08X}"
+
+    def getVromStr(self) -> str:
+        if self.vrom is None:
+            return "None"
+        return f"0x{self.vrom:06X}"
+
 
     @staticmethod
     def printCsvHeader():
@@ -35,6 +45,7 @@ class File:
     size: int # in bytes
     segmentType: str
     symbols: list[Symbol] = dataclasses.field(default_factory=list)
+    vrom: int|None = None
 
     def getName(self) -> Path:
         return Path(*self.filepath.with_suffix("").parts[2:])
@@ -126,13 +137,18 @@ class MapFile:
                             inFile = True
                             tempFilesList.append(File(filepath, vram, size, segmentType))
 
+        vromOffset = 0
         for file in tempFilesList:
             acummulatedSize = 0
-            funcCount = len(file.symbols)
+            symbolsCount = len(file.symbols)
 
-            if funcCount > 0:
+            isNoloadSegment = file.segmentType == ".bss"
+            if not isNoloadSegment:
+                file.vrom = vromOffset
+
+            if symbolsCount > 0:
                 # Calculate size of each symbol
-                for index in range(funcCount-1):
+                for index in range(symbolsCount-1):
                     func = file.symbols[index]
                     nextFunc = file.symbols[index+1]
 
@@ -141,11 +157,22 @@ class MapFile:
 
                     file.symbols[index] = Symbol(func.name, func.vram, size)
 
-                # Calculate size of last symbol of the file
-                func = file.symbols[funcCount-1]
-                size = file.size - acummulatedSize
-                file.symbols[funcCount-1] = Symbol(func.name, func.vram, size)
+                    if not isNoloadSegment:
+                        # Only set vrom of non bss variables
+                        file.symbols[index].vrom = vromOffset
+                        vromOffset += size
 
+                # Calculate size of last symbol of the file
+                func = file.symbols[symbolsCount-1]
+                size = file.size - acummulatedSize
+                file.symbols[symbolsCount-1] = Symbol(func.name, func.vram, size)
+                if not isNoloadSegment:
+                    file.symbols[symbolsCount-1].vrom = vromOffset
+                    vromOffset += size
+            else:
+                if not isNoloadSegment:
+                    # Only increment vrom offset for non bss segments
+                    vromOffset += file.size
             self.filesList.append(file)
         return
 

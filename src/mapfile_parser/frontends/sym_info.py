@@ -24,7 +24,7 @@ def processArguments(args: argparse.Namespace):
         return
 
     symFile, symbol = info
-    print(f"Symbol '{symbol.name}' (VRAM: 0x{symbol.vram:08X}, VROM: TODO, {symFile.filepath})")
+    print(f"Symbol '{symbol.name}' (VRAM: {symbol.getVramStr()}, VROM: {symbol.getVromStr()}, {symFile.filepath})")
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser]):
     parser = subparser.add_parser("sym_info", help="Display various information about a symbol or address.")
