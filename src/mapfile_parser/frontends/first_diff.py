@@ -44,7 +44,7 @@ def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRom
     expectedMapFile = mapfile.MapFile()
     expectedMapFile.readMapFile(expectedMapPath)
 
-    map_search_diff = set()
+    map_search_diff: set[str] = set()
     diffs = 0
     shift_cap = 1000
     for i in range(24, min(len(builtRom), len(expectedRom)), 4):
