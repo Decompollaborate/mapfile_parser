@@ -6,4 +6,4 @@
 from __future__ import annotations
 
 
-from . import function_sizes_csv
+from . import symbol_sizes_csv

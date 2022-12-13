@@ -49,7 +49,7 @@ class File:
         # Calculate stats
         symCount = len(self.symbols)
         maxSize = 0
-        averageSize = self.size / symCount
+        averageSize = self.size / (symCount or 1)
         for sym in self.symbols:
             symSize = sym.size
             if symSize > maxSize:
@@ -76,6 +76,9 @@ class MapFile:
             while auxVar != -1:
                 startIndex = auxVar
                 auxVar = mapData.find("\nLOAD ", startIndex+1)
+            auxVar = mapData.find("\n", startIndex+1)
+            if auxVar != -1:
+                startIndex = auxVar
             mapData = mapData[startIndex:]
         # print(len(mapData))
 
@@ -121,24 +124,21 @@ class MapFile:
             acummulatedSize = 0
             funcCount = len(file.symbols)
 
-            # Filter out files with no functions
-            if funcCount == 0:
-                continue
+            if funcCount > 0:
+                # Calculate size of each symbol
+                for index in range(funcCount-1):
+                    func = file.symbols[index]
+                    nextFunc = file.symbols[index+1]
 
-            # Calculate size of each function
-            for index in range(funcCount-1):
-                func = file.symbols[index]
-                nextFunc = file.symbols[index+1]
+                    size = (nextFunc.vram - func.vram)
+                    acummulatedSize += size
 
-                size = (nextFunc.vram - func.vram)
-                acummulatedSize += size
+                    file.symbols[index] = Symbol(func.name, func.vram, size)
 
-                file.symbols[index] = Symbol(func.name, func.vram, size)
-
-            # Calculate size of last function of the file
-            func = file.symbols[funcCount-1]
-            size = file.size - acummulatedSize
-            file.symbols[funcCount-1] = Symbol(func.name, func.vram, size)
+                # Calculate size of last symbol of the file
+                func = file.symbols[funcCount-1]
+                size = file.size - acummulatedSize
+                file.symbols[funcCount-1] = Symbol(func.name, func.vram, size)
 
             self.filesList.append(file)
         return
@@ -191,10 +191,10 @@ class MapFile:
         return newMapFile
 
 
-    def printAsCsv(self, printVram: bool=True):
+    def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
         File.printCsvHeader(printVram)
         for file in self.filesList:
-            if len(file.symbols) == 0:
+            if skipWithoutSymbols and len(file.symbols) == 0:
                 continue
 
             file.printAsCsv(printVram)
