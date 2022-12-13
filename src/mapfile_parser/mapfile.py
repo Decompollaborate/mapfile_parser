@@ -22,16 +22,29 @@ class Symbol:
     vram: int
     size: int = -1 # in bytes
 
+    @staticmethod
+    def printCsvHeader():
+        print("Symbol name,VRAM,Size in bytes")
+
     def printAsCsv(self):
         print(f"{self.name},{self.vram:08X},{self.size}")
 
 @dataclasses.dataclass
 class File:
-    name: str
+    filepath: Path
     vram: int
     size: int # in bytes
     segmentType: str
     symbols: list[Symbol] = dataclasses.field(default_factory=list)
+
+    def getName(self) -> Path:
+        return Path(*self.filepath.with_suffix("").parts[2:])
+
+    @staticmethod
+    def printCsvHeader(printVram: bool=True):
+        if printVram:
+            print("VRAM,", end="")
+        print("File,Segment type,Num symbols,Max size,Total size,Average size")
 
     def printAsCsv(self, printVram: bool=True):
         # Calculate stats
@@ -45,7 +58,7 @@ class File:
 
         if printVram:
             print(f"{self.vram:08X},", end="")
-        print(f"{self.name},{symCount},{maxSize},{self.size},{averageSize:0.2f}")
+        print(f"{self.filepath},{self.segmentType},{symCount},{maxSize},{self.size},{averageSize:0.2f}")
 
 
 class MapFile:
@@ -96,15 +109,14 @@ class MapFile:
 
                     # Find file
                     if entryMatch is not None:
-                        name = "/".join(entryMatch["name"].split("/")[2:])
-                        name = ".".join(name.split(".")[:-1])
+                        filepath = Path(entryMatch["name"])
                         size = int(entryMatch["size"], 16)
                         vram = int(entryMatch["vram"], 16)
                         segmentType = typeMatch["type"]
 
                         if size > 0:
                             inFile = True
-                            tempFilesList.append(File(name, vram, size, segmentType))
+                            tempFilesList.append(File(filepath, vram, size, segmentType))
 
         for file in tempFilesList:
             acummulatedSize = 0
@@ -130,27 +142,27 @@ class MapFile:
             file.symbols[funcCount-1] = Symbol(func.name, func.vram, size)
 
             self.filesList.append(file)
-
+        return
 
     def mixFolders(self) -> MapFile:
         newMapFile = MapFile()
 
-        auxDict = collections.OrderedDict()
+        auxDict: dict[Path, list[File]] = dict()
 
         # Put files in the same folder together
         for file in self.filesList:
-            path = "/".join(file.name.split("/")[:-1])
+            path = Path(*file.getName().parts[:-1])
             if path not in auxDict:
                 auxDict[path] = list()
             auxDict[path].append(file)
 
         # Pretend files in the same folder are one huge file
-        for folderPath in auxDict:
-            filesInFolder = auxDict[folderPath]
+        for folderPath, filesInFolder in auxDict.items():
             firstFile = filesInFolder[0]
 
             vram = firstFile.vram
             size = 0
+            segmentType = firstFile.segmentType
 
             symbols = list()
             for file in filesInFolder:
@@ -158,16 +170,13 @@ class MapFile:
                 for sym in file.symbols:
                     symbols.append(sym)
 
-            newMapFile.filesList.append(File(folderPath, vram, size, "TODO", symbols))
+            newMapFile.filesList.append(File(folderPath, vram, size, segmentType, symbols))
 
         return newMapFile
 
 
-    def printAsCsv(self, printVram: bool = True):
-        if printVram:
-            print("VRAM,", end="")
-        print("File,Num symbols,Max size,Total size,Average size")
-
+    def printAsCsv(self, printVram: bool=True):
+        File.printCsvHeader(printVram)
         for file in self.filesList:
             if len(file.symbols) == 0:
                 continue
@@ -176,16 +185,14 @@ class MapFile:
         return
 
     def printSymbolsCsv(self):
-        print("File,Symbol name,VRAM,Size in bytes")
+        print(f"File,", end="")
+        Symbol.printCsvHeader()
 
         for file in self.filesList:
-            name = file.name
-            symCount = len(file.symbols)
-
-            if symCount == 0:
+            if len(file.symbols) == 0:
                 continue
 
             for sym in file.symbols:
-                print(f"{name},", end="")
+                print(f"{file.filepath},", end="")
                 sym.printAsCsv()
         return

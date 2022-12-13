@@ -7,3 +7,4 @@ from __future__ import annotations
 
 
 from .mapfile import MapFile
+from .mapfile import Symbol, File
