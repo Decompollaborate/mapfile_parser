@@ -7,5 +7,6 @@ from __future__ import annotations
 
 
 from . import first_diff
+from . import pj64_syms
 from . import sym_info
 from . import symbol_sizes_csv

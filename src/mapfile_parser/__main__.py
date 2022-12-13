@@ -16,6 +16,7 @@ def mapfileParserMain():
     subparsers = parser.add_subparsers(description="action", help="the action to perform", required=True)
 
     mapfile_parser.frontends.first_diff.addSubparser(subparsers)
+    mapfile_parser.frontends.pj64_syms.addSubparser(subparsers)
     mapfile_parser.frontends.sym_info.addSubparser(subparsers)
     mapfile_parser.frontends.symbol_sizes_csv.addSubparser(subparsers)
 
