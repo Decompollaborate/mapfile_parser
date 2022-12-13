@@ -23,7 +23,7 @@ def mapfileParserMain():
     mapFile = mapfile_parser.MapFile()
     mapFile.readMapFile(mapPath)
 
-    mapFile.printAsCsv()
+    mapFile.filterBySegmentType(".text").printAsCsv()
     # mapFile.printFunctionsCsv()
 
 

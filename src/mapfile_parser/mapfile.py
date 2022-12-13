@@ -144,6 +144,23 @@ class MapFile:
             self.filesList.append(file)
         return
 
+    def filterBySegmentType(self, segmentType: str) -> MapFile:
+        newMapFile = MapFile()
+
+        for file in self.filesList:
+            if file.segmentType == segmentType:
+                newMapFile.filesList.append(file)
+        return newMapFile
+
+    def getEveryFileExceptSegmentType(self, segmentType: str) -> MapFile:
+        newMapFile = MapFile()
+
+        for file in self.filesList:
+            if file.segmentType != segmentType:
+                newMapFile.filesList.append(file)
+        return newMapFile
+
+
     def mixFolders(self) -> MapFile:
         newMapFile = MapFile()
 
