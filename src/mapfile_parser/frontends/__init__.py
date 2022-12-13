@@ -6,5 +6,6 @@
 from __future__ import annotations
 
 
+from . import first_diff
 from . import sym_info
 from . import symbol_sizes_csv

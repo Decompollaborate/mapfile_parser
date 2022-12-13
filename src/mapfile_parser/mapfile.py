@@ -7,6 +7,7 @@ from __future__ import annotations
 
 import dataclasses
 import re
+from typing import Generator
 from pathlib import Path
 
 
@@ -122,6 +123,29 @@ class File:
             print(f"{self.vram:08X},", end="")
         print(f"{self.filepath},{self.segmentType},{symCount},{maxSize},{self.size},{averageSize:0.2f}")
 
+
+    def __iter__(self) -> Generator[Symbol, None, None]:
+        for sym in self.symbols:
+            yield sym
+
+    def __getitem__(self, index) -> Symbol:
+        return self.symbols[index]
+
+@dataclasses.dataclass
+class FoundSymbolInfo:
+    file: File
+    symbol: Symbol
+    offset: int = 0
+
+    def getAsStr(self) -> str:
+        return f"'{self.symbol.name}' (VRAM: {self.symbol.getVramStr()}, VROM: {self.symbol.getVromStr()}, {self.file.filepath})"
+
+    def getAsStrPlusOffset(self, symName: str|None=None) -> str:
+        if self.offset != 0:
+            message = f"{symName or self.symbol.name} is at 0x{self.offset:X} bytes inside"
+        else:
+            message = "Symbol"
+        return f"{message} {self.getAsStr()}"
 
 class MapFile:
     def __init__(self):
@@ -243,21 +267,39 @@ class MapFile:
         return newMapFile
 
 
-    def findSymbolByName(self, symName: str) -> tuple[File, Symbol, int]|None:
+    def findSymbolByName(self, symName: str) -> FoundSymbolInfo|None:
         for file in self.filesList:
             sym = file.findSymbolByName(symName)
             if sym is not None:
-                return file, sym, 0
+                return FoundSymbolInfo(file, sym)
         return None
 
-    def findSymbolByVramOrVrom(self, address: int) -> tuple[File, Symbol, int]|None:
+    def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo|None:
         for file in self.filesList:
             pair = file.findSymbolByVramOrVrom(address)
             if pair is not None:
                 sym, offset = pair
-                return file, sym, offset
-
+                return FoundSymbolInfo(file, sym, offset)
         return None
+
+    def findLowestDifferingSymbol(self, otherMapFile: MapFile) -> tuple[Symbol, File, Symbol|None]|None:
+        minVram = None
+        found = None
+        for builtFile in self.filesList:
+            for i, builtSym in enumerate(builtFile):
+                expectedSymInfo = otherMapFile.findSymbolByName(builtSym.name)
+                if expectedSymInfo is None:
+                    continue
+
+                expectedSym = expectedSymInfo.symbol
+                if builtSym.vram != expectedSym.vram:
+                    if minVram is None or builtSym.vram < minVram:
+                        minVram = builtSym.vram
+                        prevSym = None
+                        if i > 0:
+                            prevSym = builtFile[i-1]
+                        found = (builtSym, builtFile, prevSym)
+        return found
 
 
     def mixFolders(self) -> MapFile:
@@ -312,3 +354,11 @@ class MapFile:
                 print(f"{file.filepath},", end="")
                 sym.printAsCsv()
         return
+
+
+    def __iter__(self) -> Generator[File, None, None]:
+        for file in self.filesList:
+            yield file
+
+    def __getitem__(self, index) -> File:
+        return self.filesList[index]

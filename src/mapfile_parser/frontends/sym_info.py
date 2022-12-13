@@ -12,10 +12,7 @@ from .. import mapfile
 from .. import utils
 
 
-def processArguments(args: argparse.Namespace):
-    mapPath: Path = args.mapfile
-    symName: str = args.symname
-
+def doSymInfo(mapPath: Path, symName: str) -> int:
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(mapPath)
 
@@ -26,14 +23,16 @@ def processArguments(args: argparse.Namespace):
 
     if info is None:
         print(f"'{symName}' not found in map file '{mapPath}'")
-        return
+        return 1
+    print(info.getAsStrPlusOffset(symName))
+    return 0
 
-    symFile, symbol, offset = info
-    if offset != 0:
-        message = f"{symName} is at 0x{offset:X} bytes inside"
-    else:
-        message = "Symbol"
-    print(f"{message} '{symbol.name}' (VRAM: {symbol.getVramStr()}, VROM: {symbol.getVromStr()}, {symFile.filepath})")
+
+def processArguments(args: argparse.Namespace):
+    mapPath: Path = args.mapfile
+    symName: str = args.symname
+
+    exit(doSymInfo(mapPath, symName))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser]):
     parser = subparser.add_parser("sym_info", help="Display various information about a symbol or address.")
