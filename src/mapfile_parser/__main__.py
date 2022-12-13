@@ -20,9 +20,11 @@ def mapfileParserMain():
 
     mapPath = Path(args.map_file)
 
-    mapFile = mapfile_parser.MapFile(mapPath)
+    mapFile = mapfile_parser.MapFile()
+    mapFile.readMapFile(mapPath)
 
-    mapfile_parser.mapfile.printCsv(mapFile.filesList)
+    mapFile.printAsCsv()
+    # mapFile.printFunctionsCsv()
 
 
 if __name__ == "__main__":
