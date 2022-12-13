@@ -39,6 +39,12 @@ class File:
     def getName(self) -> Path:
         return Path(*self.filepath.with_suffix("").parts[2:])
 
+    def findSymbolByName(self, symName: str) -> Symbol|None:
+        for sym in self.symbols:
+            if sym.name == symName:
+                return sym
+        return None
+
     @staticmethod
     def printCsvHeader(printVram: bool=True):
         if printVram:
@@ -158,6 +164,14 @@ class MapFile:
             if file.segmentType != segmentType:
                 newMapFile.filesList.append(file)
         return newMapFile
+
+
+    def findSymbolByName(self, symName: str) -> tuple[File, Symbol]|None:
+        for file in self.filesList:
+            sym = file.findSymbolByName(symName)
+            if sym is not None:
+                return file, sym
+        return None
 
 
     def mixFolders(self) -> MapFile:
