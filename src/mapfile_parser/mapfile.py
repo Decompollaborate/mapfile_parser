@@ -47,6 +47,11 @@ class File:
     symbols: list[Symbol] = dataclasses.field(default_factory=list)
     vrom: int|None = None
 
+    @property
+    def isNoloadSegment(self) -> bool:
+        return self.segmentType == ".bss"
+
+
     def getName(self) -> Path:
         return Path(*self.filepath.with_suffix("").parts[2:])
 
@@ -54,6 +59,47 @@ class File:
         for sym in self.symbols:
             if sym.name == symName:
                 return sym
+        return None
+
+    def findSymbolByVramOrVrom(self, address: int) -> tuple[Symbol, int]|None:
+        prevVram = self.vram
+        prevVrom = self.vrom
+        prevSym: Symbol|None = None
+
+        isVram = address >= 0x1000000
+
+        for sym in self.symbols:
+            if sym.vram == address:
+                return sym, 0
+            if sym.vrom == address:
+                return sym, 0
+
+            if prevSym is not None:
+                if (sym.vrom is not None and sym.vrom > address) or (isVram and sym.vram > address):
+                    if isVram:
+                        offset = address - prevVram
+                    else:
+                        assert isinstance(prevVrom, int)
+                        offset = address - prevVrom
+                    if offset < 0:
+                        return None
+                    return prevSym, offset
+
+            prevVram = sym.vram
+            prevVrom = sym.vrom
+            prevSym = sym
+
+        if prevSym is not None:
+            if (prevSym.vrom is not None and prevSym.vrom + prevSym.size > address) or (isVram and prevSym.vram + prevSym.size > address):
+                if isVram:
+                    offset = address - prevVram
+                else:
+                    assert isinstance(prevVrom, int)
+                    offset = address - prevVrom
+                if offset < 0:
+                    return None
+                return prevSym, offset
+
         return None
 
     @staticmethod
@@ -142,7 +188,7 @@ class MapFile:
             acummulatedSize = 0
             symbolsCount = len(file.symbols)
 
-            isNoloadSegment = file.segmentType == ".bss"
+            isNoloadSegment = file.isNoloadSegment
             if not isNoloadSegment:
                 file.vrom = vromOffset
 
@@ -193,11 +239,20 @@ class MapFile:
         return newMapFile
 
 
-    def findSymbolByName(self, symName: str) -> tuple[File, Symbol]|None:
+    def findSymbolByName(self, symName: str) -> tuple[File, Symbol, int]|None:
         for file in self.filesList:
             sym = file.findSymbolByName(symName)
             if sym is not None:
-                return file, sym
+                return file, sym, 0
+        return None
+
+    def findSymbolByVramOrVrom(self, address: int) -> tuple[File, Symbol, int]|None:
+        for file in self.filesList:
+            pair = file.findSymbolByVramOrVrom(address)
+            if pair is not None:
+                sym, offset = pair
+                return file, sym, offset
+
         return None
 
 
