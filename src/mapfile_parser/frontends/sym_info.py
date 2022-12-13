@@ -19,8 +19,8 @@ def processArguments(args: argparse.Namespace):
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(mapPath)
 
-    if utils.convertibleToInt(symName, 16):
-        info = mapFile.findSymbolByVramOrVrom(int(symName, 16))
+    if utils.convertibleToInt(symName, 0):
+        info = mapFile.findSymbolByVramOrVrom(int(symName, 0))
     else:
         info = mapFile.findSymbolByName(symName)
 

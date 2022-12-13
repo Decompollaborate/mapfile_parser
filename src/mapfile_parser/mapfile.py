@@ -10,10 +10,10 @@ import re
 from pathlib import Path
 
 
-regex_fileDataEntry = re.compile(r"^\s+(?P<section>[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
+regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_label = re.compile(r"^(?P<name>\.?L[0-9A-F]{8})$")
-regex_segmentType = re.compile(r"^ (?P<type>\.[^ ]+) ")
+regex_fill = re.compile(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$")
 
 @dataclasses.dataclass
 class Symbol:
@@ -149,6 +149,8 @@ class MapFile:
 
         mapLines = mapData.split("\n")
         for line in mapLines:
+            if " *fill*" in line:
+                dog = 6
             if inFile:
                 if line.startswith("                "):
                     entryMatch = regex_functionEntry.search(line)
@@ -167,21 +169,23 @@ class MapFile:
                 else:
                     inFile = False
             else:
-                typeMatch = regex_segmentType.search(line)
-                if typeMatch is not None:
-                    inFile = False
-                    entryMatch = regex_fileDataEntry.search(line)
+                fillMatch = regex_fill.search(line)
+                entryMatch = regex_fileDataEntry.search(line)
 
+                if fillMatch is not None:
+                    # Add *fill* size to last file
+                    size = int(fillMatch["size"], 16)
+                    tempFilesList[-1].size += size
+                elif entryMatch is not None:
                     # Find file
-                    if entryMatch is not None:
-                        filepath = Path(entryMatch["name"])
-                        size = int(entryMatch["size"], 16)
-                        vram = int(entryMatch["vram"], 16)
-                        segmentType = typeMatch["type"]
+                    filepath = Path(entryMatch["name"])
+                    size = int(entryMatch["size"], 16)
+                    vram = int(entryMatch["vram"], 16)
+                    segmentType = entryMatch["section"]
 
-                        if size > 0:
-                            inFile = True
-                            tempFilesList.append(File(filepath, vram, size, segmentType))
+                    if size > 0:
+                        inFile = True
+                        tempFilesList.append(File(filepath, vram, size, segmentType))
 
         vromOffset = 0
         for file in tempFilesList:
