@@ -11,3 +11,4 @@ from . import pj64_syms
 from . import progress
 from . import sym_info
 from . import symbol_sizes_csv
+from . import upload_frogress

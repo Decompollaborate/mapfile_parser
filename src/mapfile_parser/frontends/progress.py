@@ -33,7 +33,7 @@ def processArguments(args: argparse.Namespace):
     exit(doProgress(mapPath, asmPath, nonmatchingsPath))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser]):
-    parser = subparser.add_parser("progress", help="Computes current progress of the matched functions.")
+    parser = subparser.add_parser("progress", help="Computes current progress of the matched functions. Relies on a splat (https://github.com/ethteck/splat) folder structure and matched functions not longer having a file.")
 
     parser.add_argument("mapfile", help="Path to a map file", type=Path)
     parser.add_argument("asmpath", help="Path to asm folder", type=Path)

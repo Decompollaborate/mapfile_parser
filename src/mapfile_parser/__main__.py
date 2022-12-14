@@ -20,6 +20,7 @@ def mapfileParserMain():
     mapfile_parser.frontends.progress.addSubparser(subparsers)
     mapfile_parser.frontends.sym_info.addSubparser(subparsers)
     mapfile_parser.frontends.symbol_sizes_csv.addSubparser(subparsers)
+    mapfile_parser.frontends.upload_frogress.addSubparser(subparsers)
 
     args = parser.parse_args()
     args.func(args)
