@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
-import requests
+import requests # type: ignore
 
 from .. import utils
 from .. import progress_stats
