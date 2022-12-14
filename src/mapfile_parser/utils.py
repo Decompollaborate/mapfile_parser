@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 from pathlib import Path
+import subprocess
 
 
 def convertibleToInt(value, base: int=10) -> bool:
@@ -23,3 +24,25 @@ def readFileAsBytearray(filepath: Path) -> bytearray:
 
 def hexbytes(bs):
     return ":".join("{:02X}".format(c) for c in bs)
+
+def getGitCommitTimestamp() -> int:
+    return int(subprocess.check_output(['git', 'show', '-s', '--format=%ct']).decode('ascii').rstrip())
+
+def getGitCommitHash() -> str:
+    return subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
+
+def generateFrogressEndpointUrl(baseurl: str, project: str, version: str) -> str:
+    return "/".join([baseurl, "data", project, version]) + "/"
+
+def getFrogressCategoriesDict(categories: dict) -> dict:
+    return {
+        "timestamp": getGitCommitTimestamp(),
+        "git_hash": getGitCommitHash(),
+        "categories": categories,
+    }
+
+def getFrogressDataDict(apikey: str, entries: dict) -> dict:
+    return {
+        "api_key": apikey,
+        "entries": [entries],
+    }

@@ -12,11 +12,14 @@ from .. import mapfile
 from .. import progress_stats
 
 
-def doProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path) -> int:
+def getProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path) -> tuple[progress_stats.ProgressStats, dict[str, progress_stats.ProgressStats]]:
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(mapPath)
 
-    totalStats, progressPerFolder = mapFile.filterBySegmentType(".text").getProgress(asmPath, nonmatchingsPath)
+    return mapFile.filterBySegmentType(".text").getProgress(asmPath, nonmatchingsPath)
+
+def doProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path) -> int:
+    totalStats, progressPerFolder = getProgress(mapPath, asmPath, nonmatchingsPath)
 
     progress_stats.printStats(totalStats, progressPerFolder)
     return 0

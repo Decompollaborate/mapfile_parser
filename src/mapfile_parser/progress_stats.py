@@ -17,6 +17,11 @@ class ProgressStats:
     def total(self) -> int:
         return self.undecompedSize + self.decompedSize
 
+    def getAsFrogressEntry(self, name: str) -> dict[str, int]:
+        categories: dict[str, int] = {}
+        categories[name] = self.decompedSize
+        categories[f"{name}/total"] = self.total
+        return categories
 
     @staticmethod
     def printHeader():
