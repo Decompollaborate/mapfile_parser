@@ -14,9 +14,7 @@ from .. import progress_stats
 from . import progress
 
 
-def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, project: str, version: str, category: str, baseurl: str, apikey: str|None=None, verbose: bool=False) -> int:
-    totalStats, progressPerFolder = progress.getProgress(mapPath, asmPath, nonmatchingsPath)
-
+def getFrogressEntriesFromStats(totalStats: progress_stats.ProgressStats, progressPerFolder: dict[str, progress_stats.ProgressStats], verbose: bool=False) -> dict[str, int]:
     entries: dict[str, int] = {}
     if verbose:
         progress_stats.ProgressStats.printHeader()
@@ -32,9 +30,9 @@ def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, proje
 
     if verbose:
         print()
+    return entries
 
-    url = utils.generateFrogressEndpointUrl(baseurl, project, version)
-
+def uploadEntriesToFrogress(entries: dict[str, int], category: str, url: str, apikey: str|None=None, verbose: bool=False):
     if verbose:
         print(f"Publishing entries to {url}")
         for key, value in entries.items():
@@ -51,8 +49,16 @@ def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, proje
     r.raise_for_status()
     if verbose:
         print("Done!")
-
     return 0
+
+
+def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, project: str, version: str, category: str, baseurl: str, apikey: str|None=None, verbose: bool=False) -> int:
+    totalStats, progressPerFolder = progress.getProgress(mapPath, asmPath, nonmatchingsPath)
+
+    entries: dict[str, int] = getFrogressEntriesFromStats(totalStats, progressPerFolder, verbose)
+
+    url = utils.generateFrogressEndpointUrl(baseurl, project, version)
+    return uploadEntriesToFrogress(entries, category, url, apikey=apikey, verbose=verbose)
 
 
 def processArguments(args: argparse.Namespace):
