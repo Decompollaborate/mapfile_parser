@@ -10,6 +10,8 @@ import re
 from typing import Generator
 from pathlib import Path
 
+from .progress_stats import ProgressStats
+
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -173,8 +175,6 @@ class MapFile:
 
         mapLines = mapData.split("\n")
         for line in mapLines:
-            if " *fill*" in line:
-                dog = 6
             if inFile:
                 if line.startswith("                "):
                     entryMatch = regex_functionEntry.search(line)
@@ -332,6 +332,39 @@ class MapFile:
 
         return newMapFile
 
+    def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2) -> tuple[ProgressStats, dict[str, ProgressStats]]:
+        totalStats = ProgressStats()
+        progressPerFolder: dict[str, ProgressStats] = dict()
+
+        for file in self.filesList:
+            if len(file.symbols) == 0:
+                continue
+
+            folder = file.filepath.parts[pathIndex]
+            if folder in aliases:
+                folder = aliases[folder]
+
+            if folder not in progressPerFolder:
+                progressPerFolder[folder] = ProgressStats()
+
+            originalFilePath = Path(*file.filepath.parts[pathIndex:])
+            fullAsmFile = asmPath / originalFilePath.with_suffix(".s")
+            wholeFileIsUndecomped = fullAsmFile.exists()
+
+            for func in file.symbols:
+                funcAsmPath = nonmatchings / originalFilePath.with_suffix("") / f"{func.name}.s"
+
+                if wholeFileIsUndecomped:
+                    totalStats.undecompedSize += func.size
+                    progressPerFolder[folder].undecompedSize += func.size
+                elif funcAsmPath.exists():
+                    totalStats.undecompedSize += func.size
+                    progressPerFolder[folder].undecompedSize += func.size
+                else:
+                    totalStats.decompedSize += func.size
+                    progressPerFolder[folder].decompedSize += func.size
+
+        return totalStats, progressPerFolder
 
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
         File.printCsvHeader(printVram)

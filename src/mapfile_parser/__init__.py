@@ -12,6 +12,8 @@ __author__ = "Decompollaborate"
 from . import utils
 
 from .mapfile import MapFile
-from .mapfile import Symbol, File
+from .mapfile import Symbol, File, FoundSymbolInfo
+
+from .progress_stats import ProgressStats
 
 from . import frontends
