@@ -11,6 +11,7 @@ from typing import Generator
 from pathlib import Path
 
 from .progress_stats import ProgressStats
+from . import utils
 
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -152,6 +153,7 @@ class FoundSymbolInfo:
 class MapFile:
     def __init__(self):
         self.filesList: list[File] = list()
+        self.debugging: bool = False
 
     def readMapFile(self, mapPath: Path):
         tempFilesList: list[File] = list()
@@ -253,6 +255,8 @@ class MapFile:
     def filterBySegmentType(self, segmentType: str) -> MapFile:
         newMapFile = MapFile()
 
+        newMapFile.debugging = self.debugging
+
         for file in self.filesList:
             if file.segmentType == segmentType:
                 newMapFile.filesList.append(file)
@@ -260,6 +264,8 @@ class MapFile:
 
     def getEveryFileExceptSegmentType(self, segmentType: str) -> MapFile:
         newMapFile = MapFile()
+
+        newMapFile.debugging = self.debugging
 
         for file in self.filesList:
             if file.segmentType != segmentType:
@@ -305,6 +311,8 @@ class MapFile:
     def mixFolders(self) -> MapFile:
         newMapFile = MapFile()
 
+        newMapFile.debugging = self.debugging
+
         auxDict: dict[Path, list[File]] = dict()
 
         # Put files in the same folder together
@@ -336,6 +344,9 @@ class MapFile:
         totalStats = ProgressStats()
         progressPerFolder: dict[str, ProgressStats] = dict()
 
+        if self.debugging:
+            utils.eprint(f"getProgress():")
+
         for file in self.filesList:
             if len(file.symbols) == 0:
                 continue
@@ -347,22 +358,39 @@ class MapFile:
             if folder not in progressPerFolder:
                 progressPerFolder[folder] = ProgressStats()
 
+            if self.debugging:
+                utils.eprint(f"  folder path: {folder}")
+
             originalFilePath = Path(*file.filepath.parts[pathIndex:])
             fullAsmFile = asmPath / originalFilePath.with_suffix(".s")
             wholeFileIsUndecomped = fullAsmFile.exists()
 
+            if self.debugging:
+                utils.eprint(f"  original file path: {originalFilePath}")
+                utils.eprint(f"  full asm file: {fullAsmFile}")
+                utils.eprint(f"  whole file is undecomped: {wholeFileIsUndecomped}")
+
             for func in file.symbols:
                 funcAsmPath = nonmatchings / originalFilePath.with_suffix("") / f"{func.name}.s"
+
+                if self.debugging:
+                    utils.eprint(f"    Checking function '{funcAsmPath}' (size 0x{func.size:X}) ... ", end="")
 
                 if wholeFileIsUndecomped:
                     totalStats.undecompedSize += func.size
                     progressPerFolder[folder].undecompedSize += func.size
+                    if self.debugging:
+                        utils.eprint(f" the whole file is undecomped (no individual function files exist yet)")
                 elif funcAsmPath.exists():
                     totalStats.undecompedSize += func.size
                     progressPerFolder[folder].undecompedSize += func.size
+                    if self.debugging:
+                        utils.eprint(f" the function hasn't been matched yet (the function file still exists)")
                 else:
                     totalStats.decompedSize += func.size
                     progressPerFolder[folder].decompedSize += func.size
+                    if self.debugging:
+                        utils.eprint(f" the function is matched! (the function file was not found)")
 
         return totalStats, progressPerFolder
 

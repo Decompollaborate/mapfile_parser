@@ -7,7 +7,11 @@ from __future__ import annotations
 
 from pathlib import Path
 import subprocess
+import sys
 
+
+def eprint(*args, **kwargs):
+    print(*args, file=sys.stderr, **kwargs)
 
 def convertibleToInt(value, base: int=10) -> bool:
     try:
