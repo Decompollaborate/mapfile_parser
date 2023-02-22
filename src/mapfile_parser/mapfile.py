@@ -362,16 +362,22 @@ class MapFile:
                 utils.eprint(f"  folder path: {folder}")
 
             originalFilePath = Path(*file.filepath.parts[pathIndex:])
-            fullAsmFile = asmPath / originalFilePath.with_suffix(".s")
+
+            extensionlessFilePath = originalFilePath
+            while extensionlessFilePath.suffix:
+                extensionlessFilePath = extensionlessFilePath.with_suffix("")
+
+            fullAsmFile = asmPath / extensionlessFilePath.with_suffix(".s")
             wholeFileIsUndecomped = fullAsmFile.exists()
 
             if self.debugging:
                 utils.eprint(f"  original file path: {originalFilePath}")
+                utils.eprint(f"  extensionless file path: {extensionlessFilePath}")
                 utils.eprint(f"  full asm file: {fullAsmFile}")
                 utils.eprint(f"  whole file is undecomped: {wholeFileIsUndecomped}")
 
             for func in file.symbols:
-                funcAsmPath = nonmatchings / originalFilePath.with_suffix("") / f"{func.name}.s"
+                funcAsmPath = nonmatchings / extensionlessFilePath / f"{func.name}.s"
 
                 if self.debugging:
                     utils.eprint(f"    Checking function '{funcAsmPath}' (size 0x{func.size:X}) ... ", end="")
