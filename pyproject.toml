@@ -3,18 +3,22 @@
 
 [project]
 name = "mapfile_parser"
-version = "1.1.3"
+version = "1.1.4"
 description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
 requires-python = ">=3.7"
+dynamic = ["dependencies"]
 
 [project.urls]
 "Homepage" = "https://github.com/Decompollaborate/mapfile_parser"
 "Bug Tracker" = "https://github.com/Decompollaborate/mapfile_parser/issues"
 
 [build-system]
-requires = ["hatchling"]
+requires = ["hatchling", "hatch-requirements-txt"]
 build-backend = "hatchling.build"
+
+[tool.hatch.metadata.hooks.requirements_txt]
+files = ["requirements.txt"]
 
 [tool.cibuildwheel]
 skip = ["cp36-*"]
