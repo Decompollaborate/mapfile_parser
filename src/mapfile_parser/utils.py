@@ -29,7 +29,7 @@ def readFileAsBytearray(filepath: Path) -> bytearray:
 def hexbytes(bs: bytes, addColons: bool=True) -> str:
     glue = ""
     if addColons:
-        glue = ""
+        glue = ":"
     return glue.join("{:02X}".format(c) for c in bs)
 
 def getGitCommitTimestamp() -> int:
