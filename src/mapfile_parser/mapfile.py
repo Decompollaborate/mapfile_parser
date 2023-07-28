@@ -41,6 +41,11 @@ class Symbol:
             return "None"
         return f"0x{self.vrom:06X}"
 
+    def getSizeStr(self) -> str:
+        if self.size < 0:
+            return "None"
+        return f"0x{self.size:X}"
+
 
     @staticmethod
     def printCsvHeader():
@@ -148,11 +153,15 @@ class FoundSymbolInfo:
     offset: int = 0
 
     def getAsStr(self) -> str:
-        return f"'{self.symbol.name}' (VRAM: {self.symbol.getVramStr()}, VROM: {self.symbol.getVromStr()}, {self.file.filepath})"
+        return f"'{self.symbol.name}' (VRAM: {self.symbol.getVramStr()}, VROM: {self.symbol.getVromStr()}, SIZE: {self.symbol.getSizeStr()}, {self.file.filepath})"
 
     def getAsStrPlusOffset(self, symName: str|None=None) -> str:
         if self.offset != 0:
-            message = f"{symName or self.symbol.name} is at 0x{self.offset:X} bytes inside"
+            if symName is not None:
+                message = symName
+            else:
+                message = f"0x{self.symbol.vram + self.offset:X}"
+            message += f" is at 0x{self.offset:X} bytes inside"
         else:
             message = "Symbol"
         return f"{message} {self.getAsStr()}"
