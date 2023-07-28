@@ -7,12 +7,13 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
+from typing import Callable
 
 from .. import mapfile
 from .. import utils
 
 
-def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRomPath: Path, diffCount: int=5, mismatchSize: bool=False) -> int:
+def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRomPath: Path, diffCount: int=5, mismatchSize: bool=False, addColons: bool=True, bytesConverterCallback:Callable[[bytes, mapfile.MapFile],str|None]|None=None) -> int:
     if not mapPath.exists():
         print(f"{mapPath} must exist")
         return 1
@@ -61,7 +62,14 @@ def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRom
                 if vromInfo is not None:
                     extraMessage = f", {vromInfo.getAsStrPlusOffset()}"
                 print(f"First difference at ROM addr 0x{i:X}{extraMessage}")
-                print(f"Bytes: {utils.hexbytes(builtRom[i : i + 4])} vs {utils.hexbytes(expectedRom[i : i + 4])}")
+                builtBytes = builtRom[i : i + 4]
+                expectedBytes = expectedRom[i : i + 4]
+                print(f"Bytes: {utils.hexbytes(builtBytes, addColons=addColons)} vs {utils.hexbytes(expectedBytes, addColons=addColons)}")
+                if bytesConverterCallback is not None:
+                    builtConverted = bytesConverterCallback(builtBytes, builtMapFile)
+                    expectedConverted = bytesConverterCallback(expectedBytes, expectedMapFile)
+                    if builtConverted is not None and expectedConverted is not None:
+                        print(f"{builtConverted} vs {expectedConverted}")
             diffs += 1
 
         if (
@@ -78,7 +86,14 @@ def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRom
                     if vromInfo is not None:
                         extraMessage = f", {vromInfo.getAsStrPlusOffset()}"
                     print(f"Instruction difference at ROM addr 0x{i:X}{extraMessage}")
-                    print(f"Bytes: {utils.hexbytes(builtRom[i : i + 4])} vs {utils.hexbytes(expectedRom[i : i + 4])}")
+                    builtBytes = builtRom[i : i + 4]
+                    expectedBytes = expectedRom[i : i + 4]
+                    print(f"Bytes: {utils.hexbytes(builtBytes, addColons=addColons)} vs {utils.hexbytes(expectedBytes, addColons=addColons)}")
+                    if bytesConverterCallback is not None:
+                        builtConverted = bytesConverterCallback(builtBytes, builtMapFile)
+                        expectedConverted = bytesConverterCallback(expectedBytes, expectedMapFile)
+                        if builtConverted is not None and expectedConverted is not None:
+                            print(f"{builtConverted} vs {expectedConverted}")
 
         if len(map_search_diff) >= diffCount and diffs > shift_cap:
             break

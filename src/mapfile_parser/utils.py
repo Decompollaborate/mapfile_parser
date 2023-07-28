@@ -26,8 +26,11 @@ def readFileAsBytearray(filepath: Path) -> bytearray:
     with filepath.open(mode="rb") as f:
         return bytearray(f.read())
 
-def hexbytes(bs):
-    return ":".join("{:02X}".format(c) for c in bs)
+def hexbytes(bs: bytes, addColons: bool=True) -> str:
+    glue = ""
+    if addColons:
+        glue = ""
+    return glue.join("{:02X}".format(c) for c in bs)
 
 def getGitCommitTimestamp() -> int:
     return int(subprocess.check_output(['git', 'show', '-s', '--format=%ct']).decode('ascii').rstrip())
