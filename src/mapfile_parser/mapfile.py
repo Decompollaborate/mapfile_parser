@@ -18,6 +18,13 @@ regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_label = re.compile(r"^(?P<name>\.?L[0-9A-F]{8})$")
 regex_fill = re.compile(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$")
+regex_loadAddress = re.compile(r"\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>load address)\s+(?P<vrom>0x[^\s]+)$")
+
+@dataclasses.dataclass
+class LoadAddressData:
+    vram: int
+    size: int
+    vrom: int
 
 @dataclasses.dataclass
 class Symbol:
@@ -33,6 +40,11 @@ class Symbol:
         if self.vrom is None:
             return "None"
         return f"0x{self.vrom:06X}"
+
+    def getSizeStr(self) -> str:
+        if self.size < 0:
+            return "None"
+        return f"0x{self.size:X}"
 
 
     @staticmethod
@@ -141,11 +153,15 @@ class FoundSymbolInfo:
     offset: int = 0
 
     def getAsStr(self) -> str:
-        return f"'{self.symbol.name}' (VRAM: {self.symbol.getVramStr()}, VROM: {self.symbol.getVromStr()}, {self.file.filepath})"
+        return f"'{self.symbol.name}' (VRAM: {self.symbol.getVramStr()}, VROM: {self.symbol.getVromStr()}, SIZE: {self.symbol.getSizeStr()}, {self.file.filepath})"
 
     def getAsStrPlusOffset(self, symName: str|None=None) -> str:
         if self.offset != 0:
-            message = f"{symName or self.symbol.name} is at 0x{self.offset:X} bytes inside"
+            if symName is not None:
+                message = symName
+            else:
+                message = f"0x{self.symbol.vram + self.offset:X}"
+            message += f" is at 0x{self.offset:X} bytes inside"
         else:
             message = "Symbol"
         return f"{message} {self.getAsStr()}"
@@ -157,6 +173,7 @@ class MapFile:
 
     def readMapFile(self, mapPath: Path):
         tempFilesList: list[File] = list()
+        loadAddressData: LoadAddressData|None = None
 
         with mapPath.open("r") as f:
             mapData = f.read()
@@ -194,9 +211,11 @@ class MapFile:
 
                 else:
                     inFile = False
-            else:
+
+            if not inFile:
                 fillMatch = regex_fill.search(line)
                 entryMatch = regex_fileDataEntry.search(line)
+                loadAddressMatch = regex_loadAddress.search(line)
 
                 if fillMatch is not None:
                     # Add *fill* size to last file
@@ -211,18 +230,33 @@ class MapFile:
 
                     if size > 0:
                         inFile = True
-                        tempFilesList.append(File(filepath, vram, size, segmentType))
+                        tempFile = File(filepath, vram, size, segmentType)
+                        if loadAddressData is not None and loadAddressData.vram == vram:
+                            tempFile.vrom = loadAddressData.vrom
+                        tempFilesList.append(tempFile)
+
+                elif loadAddressMatch is not None:
+                    vram = int(loadAddressMatch["vram"], 0)
+                    size = int(loadAddressMatch["size"], 0)
+                    vrom = int(loadAddressMatch["vrom"], 0)
+
+                    loadAddressData = LoadAddressData(vram, size, vrom)
 
         vromOffset = 0
         for file in tempFilesList:
             acummulatedSize = 0
             symbolsCount = len(file.symbols)
 
+            if file.vrom is not None:
+                vromOffset = file.vrom
+
             isNoloadSegment = file.isNoloadSegment
             if not isNoloadSegment:
                 file.vrom = vromOffset
 
             if symbolsCount > 0:
+                symVrom = vromOffset
+
                 # Calculate size of each symbol
                 for index in range(symbolsCount-1):
                     func = file.symbols[index]
@@ -235,20 +269,21 @@ class MapFile:
 
                     if not isNoloadSegment:
                         # Only set vrom of non bss variables
-                        file.symbols[index].vrom = vromOffset
-                        vromOffset += size
+                        file.symbols[index].vrom = symVrom
+                        symVrom += size
 
                 # Calculate size of last symbol of the file
                 func = file.symbols[symbolsCount-1]
                 size = file.size - acummulatedSize
                 file.symbols[symbolsCount-1] = Symbol(func.name, func.vram, size)
                 if not isNoloadSegment:
-                    file.symbols[symbolsCount-1].vrom = vromOffset
-                    vromOffset += size
-            else:
-                if not isNoloadSegment:
-                    # Only increment vrom offset for non bss segments
-                    vromOffset += file.size
+                    file.symbols[symbolsCount-1].vrom = symVrom
+                    symVrom += size
+
+            if not isNoloadSegment:
+                # Only increment vrom offset for non bss segments
+                vromOffset += file.size
+
             self.filesList.append(file)
         return
 
