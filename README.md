@@ -20,7 +20,7 @@ In case you want to mess with the latest development version without wanting to 
 
 ```bash
 pip uninstall mapfile-parser
-pip install git+https://github.com/Decompollaborate/mapfile_parser.git@develop
+pip install git+https://github.com/Decompollaborate/mapfile_parser.git@1.x
 ```
 
 NOTE: Installing the development version is not recommended. Proceed at your own risk.
@@ -34,6 +34,7 @@ The list can be checked in runtime with `python3 -m mapfile_parser --help`.
 Each one of them can be executed with `python3 -m mapfile_parser utilityname`, for example `python3 -m mapfile_parser pj64_syms`.
 
 - `first_diff`: Find the first difference(s) between the built ROM and the base ROM.
+- `jsonify`: Converts a mapfile into a json format.
 - `pj64_syms`: Produce a PJ64 compatible symbol map.
 - `progress`: Computes current progress of the matched functions. Relies on a [splat](https://github.com/ethteck/splat) folder structure and matched functions not longer having a file.
 - `sym_info`: Display various information about a symbol or address.
