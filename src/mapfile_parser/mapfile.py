@@ -18,7 +18,28 @@ regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_label = re.compile(r"^(?P<name>\.?L[0-9A-F]{8})$")
 regex_fill = re.compile(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$")
-regex_loadAddress = re.compile(r"\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>load address)\s+(?P<vrom>0x[^\s]+)$")
+regex_loadAddress = re.compile(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$")
+
+
+@dataclasses.dataclass
+class FoundSymbolInfo:
+    file: File
+    symbol: Symbol
+    offset: int = 0
+
+    def getAsStr(self) -> str:
+        return f"'{self.symbol.name}' (VRAM: {self.symbol.getVramStr()}, VROM: {self.symbol.getVromStr()}, SIZE: {self.symbol.getSizeStr()}, {self.file.filepath})"
+
+    def getAsStrPlusOffset(self, symName: str|None=None) -> str:
+        if self.offset != 0:
+            if symName is not None:
+                message = symName
+            else:
+                message = f"0x{self.symbol.vram + self.offset:X}"
+            message += f" is at 0x{self.offset:X} bytes inside"
+        else:
+            message = "Symbol"
+        return f"{message} {self.getAsStr()}"
 
 @dataclasses.dataclass
 class LoadAddressData:
@@ -169,7 +190,7 @@ class File:
 
 
     def toJson(self) -> dict:
-        fileDict = {
+        fileDict: dict = {
             "filepath": str(self.filepath),
             "segmentType": self.segmentType,
             "vram": self.serializeVram(),
@@ -192,212 +213,65 @@ class File:
     def __getitem__(self, index) -> Symbol:
         return self.symbols[index]
 
+
 @dataclasses.dataclass
-class FoundSymbolInfo:
-    file: File
-    symbol: Symbol
-    offset: int = 0
+class Segment:
+    name: str
+    vram: int
+    size: int
+    vrom: int
+    _filesList: list[File] = dataclasses.field(default_factory=list)
 
-    def getAsStr(self) -> str:
-        return f"'{self.symbol.name}' (VRAM: {self.symbol.getVramStr()}, VROM: {self.symbol.getVromStr()}, SIZE: {self.symbol.getSizeStr()}, {self.file.filepath})"
+    def serializeVram(self) -> str|None:
+        return f"0x{self.vram:08X}"
 
-    def getAsStrPlusOffset(self, symName: str|None=None) -> str:
-        if self.offset != 0:
-            if symName is not None:
-                message = symName
-            else:
-                message = f"0x{self.symbol.vram + self.offset:X}"
-            message += f" is at 0x{self.offset:X} bytes inside"
-        else:
-            message = "Symbol"
-        return f"{message} {self.getAsStr()}"
+    def serializeSize(self) -> str|None:
+        return f"0x{self.size:X}"
 
-class MapFile:
-    def __init__(self):
-        self.filesList: list[File] = list()
-        self.debugging: bool = False
+    def serializeVrom(self) -> str|None:
+        return f"0x{self.vrom:06X}"
 
-    def readMapFile(self, mapPath: Path):
-        tempFilesList: list[File] = list()
-        loadAddressData: LoadAddressData|None = None
 
-        with mapPath.open("r") as f:
-            mapData = f.read()
+    def filterBySegmentType(self, segmentType: str) -> Segment:
+        newSegment = Segment(self.name, self.vram, self.size, self.vrom)
 
-            # Skip the stuff we don't care about
-            startIndex = 0
-            auxVar = 0
-            while auxVar != -1:
-                startIndex = auxVar
-                auxVar = mapData.find("\nLOAD ", startIndex+1)
-            auxVar = mapData.find("\n", startIndex+1)
-            if auxVar != -1:
-                startIndex = auxVar
-            mapData = mapData[startIndex:]
-        # print(len(mapData))
-
-        inFile = False
-
-        mapLines = mapData.split("\n")
-        for line in mapLines:
-            if inFile:
-                if line.startswith("                "):
-                    entryMatch = regex_functionEntry.search(line)
-
-                    # Find function
-                    if entryMatch is not None:
-                        funcName = entryMatch["name"]
-                        funcVram = int(entryMatch["vram"], 16)
-
-                        # Filter out jump table's labels
-                        labelMatch = regex_label.search(funcName)
-                        if labelMatch is None:
-                            tempFilesList[-1].symbols.append(Symbol(funcName, funcVram))
-                        # print(hex(funcVram), funcName)
-
-                else:
-                    inFile = False
-
-            if not inFile:
-                fillMatch = regex_fill.search(line)
-                entryMatch = regex_fileDataEntry.search(line)
-                loadAddressMatch = regex_loadAddress.search(line)
-
-                if fillMatch is not None:
-                    # Add *fill* size to last file
-                    size = int(fillMatch["size"], 16)
-                    tempFilesList[-1].size += size
-                elif entryMatch is not None:
-                    # Find file
-                    filepath = Path(entryMatch["name"])
-                    size = int(entryMatch["size"], 16)
-                    vram = int(entryMatch["vram"], 16)
-                    segmentType = entryMatch["section"]
-
-                    if size > 0:
-                        inFile = True
-                        tempFile = File(filepath, vram, size, segmentType)
-                        if loadAddressData is not None and loadAddressData.vram == vram and not tempFile.isNoloadSegment:
-                            tempFile.vrom = loadAddressData.vrom
-                        tempFilesList.append(tempFile)
-
-                elif loadAddressMatch is not None:
-                    vram = int(loadAddressMatch["vram"], 0)
-                    size = int(loadAddressMatch["size"], 0)
-                    vrom = int(loadAddressMatch["vrom"], 0)
-
-                    loadAddressData = LoadAddressData(vram, size, vrom)
-
-        vromOffset = 0
-        for file in tempFilesList:
-            acummulatedSize = 0
-            symbolsCount = len(file.symbols)
-
-            if file.vrom is not None:
-                vromOffset = file.vrom
-
-            isNoloadSegment = file.isNoloadSegment
-            if not isNoloadSegment:
-                file.vrom = vromOffset
-
-            if symbolsCount > 0:
-                symVrom = vromOffset
-
-                # Calculate size of each symbol
-                for index in range(symbolsCount-1):
-                    func = file.symbols[index]
-                    nextFunc = file.symbols[index+1]
-
-                    size = (nextFunc.vram - func.vram)
-                    acummulatedSize += size
-
-                    file.symbols[index] = Symbol(func.name, func.vram, size)
-
-                    if not isNoloadSegment:
-                        # Only set vrom of non bss variables
-                        file.symbols[index].vrom = symVrom
-                        symVrom += size
-
-                # Calculate size of last symbol of the file
-                func = file.symbols[symbolsCount-1]
-                size = file.size - acummulatedSize
-                file.symbols[symbolsCount-1] = Symbol(func.name, func.vram, size)
-                if not isNoloadSegment:
-                    file.symbols[symbolsCount-1].vrom = symVrom
-                    symVrom += size
-
-            if not isNoloadSegment:
-                # Only increment vrom offset for non bss segments
-                vromOffset += file.size
-
-            self.filesList.append(file)
-        return
-
-    def filterBySegmentType(self, segmentType: str) -> MapFile:
-        newMapFile = MapFile()
-
-        newMapFile.debugging = self.debugging
-
-        for file in self.filesList:
+        for file in self._filesList:
             if file.segmentType == segmentType:
-                newMapFile.filesList.append(file)
-        return newMapFile
+                newSegment._filesList.append(file)
+        return newSegment
 
-    def getEveryFileExceptSegmentType(self, segmentType: str) -> MapFile:
-        newMapFile = MapFile()
+    def getEveryFileExceptSegmentType(self, segmentType: str) -> Segment:
+        newSegment = Segment(self.name, self.vram, self.size, self.vrom)
 
-        newMapFile.debugging = self.debugging
-
-        for file in self.filesList:
+        for file in self._filesList:
             if file.segmentType != segmentType:
-                newMapFile.filesList.append(file)
-        return newMapFile
+                newSegment._filesList.append(file)
+        return newSegment
 
 
     def findSymbolByName(self, symName: str) -> FoundSymbolInfo|None:
-        for file in self.filesList:
+        for file in self._filesList:
             sym = file.findSymbolByName(symName)
             if sym is not None:
                 return FoundSymbolInfo(file, sym)
         return None
 
     def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo|None:
-        for file in self.filesList:
+        for file in self._filesList:
             pair = file.findSymbolByVramOrVrom(address)
             if pair is not None:
                 sym, offset = pair
                 return FoundSymbolInfo(file, sym, offset)
         return None
 
-    def findLowestDifferingSymbol(self, otherMapFile: MapFile) -> tuple[Symbol, File, Symbol|None]|None:
-        minVram = None
-        found = None
-        for builtFile in self.filesList:
-            for i, builtSym in enumerate(builtFile):
-                expectedSymInfo = otherMapFile.findSymbolByName(builtSym.name)
-                if expectedSymInfo is None:
-                    continue
 
-                expectedSym = expectedSymInfo.symbol
-                if builtSym.vram != expectedSym.vram:
-                    if minVram is None or builtSym.vram < minVram:
-                        minVram = builtSym.vram
-                        prevSym = None
-                        if i > 0:
-                            prevSym = builtFile[i-1]
-                        found = (builtSym, builtFile, prevSym)
-        return found
-
-
-    def mixFolders(self) -> MapFile:
-        newMapFile = MapFile()
-
-        newMapFile.debugging = self.debugging
+    def mixFolders(self) -> Segment:
+        newSegment = Segment(self.name, self.vram, self.size, self.vrom)
 
         auxDict: dict[Path, list[File]] = dict()
 
         # Put files in the same folder together
-        for file in self.filesList:
+        for file in self._filesList:
             path = Path(*file.getName().parts[:-1])
             if path not in auxDict:
                 auxDict[path] = list()
@@ -417,73 +291,12 @@ class MapFile:
                 for sym in file.symbols:
                     symbols.append(sym)
 
-            newMapFile.filesList.append(File(folderPath, vram, size, segmentType, symbols))
+            newSegment._filesList.append(File(folderPath, vram, size, segmentType, symbols))
 
-        return newMapFile
-
-    def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2) -> tuple[ProgressStats, dict[str, ProgressStats]]:
-        totalStats = ProgressStats()
-        progressPerFolder: dict[str, ProgressStats] = dict()
-
-        if self.debugging:
-            utils.eprint(f"getProgress():")
-
-        for file in self.filesList:
-            if len(file.symbols) == 0:
-                continue
-
-            folder = file.filepath.parts[pathIndex]
-            if folder in aliases:
-                folder = aliases[folder]
-
-            if folder not in progressPerFolder:
-                progressPerFolder[folder] = ProgressStats()
-
-            if self.debugging:
-                utils.eprint(f"  folder path: {folder}")
-
-            originalFilePath = Path(*file.filepath.parts[pathIndex:])
-
-            extensionlessFilePath = originalFilePath
-            while extensionlessFilePath.suffix:
-                extensionlessFilePath = extensionlessFilePath.with_suffix("")
-
-            fullAsmFile = asmPath / extensionlessFilePath.with_suffix(".s")
-            wholeFileIsUndecomped = fullAsmFile.exists()
-
-            if self.debugging:
-                utils.eprint(f"  original file path: {originalFilePath}")
-                utils.eprint(f"  extensionless file path: {extensionlessFilePath}")
-                utils.eprint(f"  full asm file: {fullAsmFile}")
-                utils.eprint(f"  whole file is undecomped: {wholeFileIsUndecomped}")
-
-            for func in file.symbols:
-                funcAsmPath = nonmatchings / extensionlessFilePath / f"{func.name}.s"
-
-                if self.debugging:
-                    utils.eprint(f"    Checking function '{funcAsmPath}' (size 0x{func.size:X}) ... ", end="")
-
-                if wholeFileIsUndecomped:
-                    totalStats.undecompedSize += func.size
-                    progressPerFolder[folder].undecompedSize += func.size
-                    if self.debugging:
-                        utils.eprint(f" the whole file is undecomped (no individual function files exist yet)")
-                elif funcAsmPath.exists():
-                    totalStats.undecompedSize += func.size
-                    progressPerFolder[folder].undecompedSize += func.size
-                    if self.debugging:
-                        utils.eprint(f" the function hasn't been matched yet (the function file still exists)")
-                else:
-                    totalStats.decompedSize += func.size
-                    progressPerFolder[folder].decompedSize += func.size
-                    if self.debugging:
-                        utils.eprint(f" the function is matched! (the function file was not found)")
-
-        return totalStats, progressPerFolder
+        return newSegment
 
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
-        File.printCsvHeader(printVram)
-        for file in self.filesList:
+        for file in self._filesList:
             if skipWithoutSymbols and len(file.symbols) == 0:
                 continue
 
@@ -491,10 +304,7 @@ class MapFile:
         return
 
     def printSymbolsCsv(self):
-        print(f"File,", end="")
-        Symbol.printCsvHeader()
-
-        for file in self.filesList:
+        for file in self._filesList:
             if len(file.symbols) == 0:
                 continue
 
@@ -505,20 +315,332 @@ class MapFile:
 
 
     def toJson(self) -> dict:
-        filesList = []
+        segmentDict: dict = {
+            "name": self.name,
+            "vram": self.serializeVram(),
+            "size": self.serializeSize(),
+            "vrom": self.serializeVrom(),
+        }
 
-        for file in self.filesList:
+        filesList = []
+        for file in self._filesList:
             filesList.append(file.toJson())
 
+        segmentDict["files"] = filesList
+
+        return segmentDict
+
+
+    def __iter__(self) -> Generator[File, None, None]:
+        for file in self._filesList:
+            yield file
+
+    def __getitem__(self, index) -> File:
+        return self._filesList[index]
+
+    def __len__(self) -> int:
+        return len(self._filesList)
+
+
+class MapFile:
+    def __init__(self):
+        self._segmentsList: list[Segment] = list()
+        self.debugging: bool = False
+
+    def readMapFile(self, mapPath: Path):
+        tempSegmentsList: list[Segment] = list()
+        tempFilesListList: list[list[File]] = list()
+        loadAddressData: LoadAddressData|None = None
+
+        with mapPath.open("r") as f:
+            mapData = f.read()
+
+            # Skip the stuff we don't care about
+            startIndex = 0
+            auxVar = 0
+            while auxVar != -1:
+                startIndex = auxVar
+                auxVar = mapData.find("\nLOAD ", startIndex+1)
+            auxVar = mapData.find("\n", startIndex+1)
+            if auxVar != -1:
+                startIndex = auxVar
+            mapData = mapData[startIndex:]
+        # print(len(mapData))
+
+        inFile = False
+
+        prevLine = ""
+        mapLines = mapData.split("\n")
+        for line in mapLines:
+            if inFile:
+                if line.startswith("                "):
+                    entryMatch = regex_functionEntry.search(line)
+
+                    # Find function
+                    if entryMatch is not None:
+                        funcName = entryMatch["name"]
+                        funcVram = int(entryMatch["vram"], 16)
+
+                        # Filter out jump table's labels
+                        labelMatch = regex_label.search(funcName)
+                        if labelMatch is None:
+                            tempFilesListList[-1][-1].symbols.append(Symbol(funcName, funcVram))
+                        # print(hex(funcVram), funcName)
+
+                else:
+                    inFile = False
+
+            if not inFile:
+                fillMatch = regex_fill.search(line)
+                entryMatch = regex_fileDataEntry.search(line)
+                loadAddressMatch = regex_loadAddress.search(line)
+
+                if fillMatch is not None:
+                    # Add *fill* size to last file
+                    size = int(fillMatch["size"], 16)
+                    tempFilesListList[-1][-1].size += size
+                elif entryMatch is not None:
+                    # Find file
+                    filepath = Path(entryMatch["name"])
+                    size = int(entryMatch["size"], 16)
+                    vram = int(entryMatch["vram"], 16)
+                    segmentType = entryMatch["section"]
+
+                    if size > 0:
+                        inFile = True
+                        tempFile = File(filepath, vram, size, segmentType)
+                        if loadAddressData is not None and loadAddressData.vram == vram and not tempFile.isNoloadSegment:
+                            tempFile.vrom = loadAddressData.vrom
+                        tempFilesListList[-1].append(tempFile)
+
+                elif loadAddressMatch is not None:
+                    name = loadAddressMatch["name"]
+                    vram = int(loadAddressMatch["vram"], 0)
+                    size = int(loadAddressMatch["size"], 0)
+                    vrom = int(loadAddressMatch["vrom"], 0)
+
+                    if name == "":
+                        # If the segment name is too long then this line gets break in two lines
+                        name = prevLine
+
+                    loadAddressData = LoadAddressData(vram, size, vrom)
+                    tempSegment = Segment(name, vram, size, vrom)
+                    tempSegmentsList.append(tempSegment)
+                    tempFilesListList.append([])
+                    # print(f"'{name}'", type(name), loadAddressData)
+
+            prevLine = line
+
+        vromOffset = 0
+
+        for i, segment in enumerate(tempSegmentsList):
+            filesList = tempFilesListList[i]
+            for file in filesList:
+                acummulatedSize = 0
+                symbolsCount = len(file.symbols)
+
+                if file.vrom is not None:
+                    vromOffset = file.vrom
+
+                isNoloadSegment = file.isNoloadSegment
+                if not isNoloadSegment:
+                    file.vrom = vromOffset
+
+                if symbolsCount > 0:
+                    symVrom = vromOffset
+
+                    # Calculate size of each symbol
+                    for index in range(symbolsCount-1):
+                        func = file.symbols[index]
+                        nextFunc = file.symbols[index+1]
+
+                        size = (nextFunc.vram - func.vram)
+                        acummulatedSize += size
+
+                        file.symbols[index] = Symbol(func.name, func.vram, size)
+
+                        if not isNoloadSegment:
+                            # Only set vrom of non bss variables
+                            file.symbols[index].vrom = symVrom
+                            symVrom += size
+
+                    # Calculate size of last symbol of the file
+                    func = file.symbols[symbolsCount-1]
+                    size = file.size - acummulatedSize
+                    file.symbols[symbolsCount-1] = Symbol(func.name, func.vram, size)
+                    if not isNoloadSegment:
+                        file.symbols[symbolsCount-1].vrom = symVrom
+                        symVrom += size
+
+                if not isNoloadSegment:
+                    # Only increment vrom offset for non bss segments
+                    vromOffset += file.size
+
+                segment._filesList.append(file)
+            self._segmentsList.append(segment)
+        return
+
+    def filterBySegmentType(self, segmentType: str) -> MapFile:
+        newMapFile = MapFile()
+
+        newMapFile.debugging = self.debugging
+
+        for segment in self._segmentsList:
+            newSegment = segment.filterBySegmentType(segmentType)
+            if len(newSegment) != 0:
+                newMapFile._segmentsList.append(newSegment)
+        return newMapFile
+
+    def getEveryFileExceptSegmentType(self, segmentType: str) -> MapFile:
+        newMapFile = MapFile()
+
+        newMapFile.debugging = self.debugging
+
+        for segment in self._segmentsList:
+            newSegment = segment.getEveryFileExceptSegmentType(segmentType)
+            if len(newSegment) != 0:
+                newMapFile._segmentsList.append(newSegment)
+        return newMapFile
+
+
+    def findSymbolByName(self, symName: str) -> FoundSymbolInfo|None:
+        for segment in self._segmentsList:
+            info = segment.findSymbolByName(symName)
+            if info is not None:
+                return info
+        return None
+
+    def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo|None:
+        for segment in self._segmentsList:
+            info = segment.findSymbolByVramOrVrom(address)
+            if info is not None:
+                return info
+        return None
+
+    def findLowestDifferingSymbol(self, otherMapFile: MapFile) -> tuple[Symbol, File, Symbol|None]|None:
+        minVram = None
+        found = None
+        for builtSegement in self._segmentsList:
+            for builtFile in builtSegement:
+                for i, builtSym in enumerate(builtFile):
+                    expectedSymInfo = otherMapFile.findSymbolByName(builtSym.name)
+                    if expectedSymInfo is None:
+                        continue
+
+                    expectedSym = expectedSymInfo.symbol
+                    if builtSym.vram != expectedSym.vram:
+                        if minVram is None or builtSym.vram < minVram:
+                            minVram = builtSym.vram
+                            prevSym = None
+                            if i > 0:
+                                prevSym = builtFile[i-1]
+                            found = (builtSym, builtFile, prevSym)
+        return found
+
+
+    def mixFolders(self) -> MapFile:
+        newMapFile = MapFile()
+
+        newMapFile.debugging = self.debugging
+
+        for segment in self._segmentsList:
+            newMapFile._segmentsList.append(segment.mixFolders())
+
+        return newMapFile
+
+    def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2) -> tuple[ProgressStats, dict[str, ProgressStats]]:
+        totalStats = ProgressStats()
+        progressPerFolder: dict[str, ProgressStats] = dict()
+
+        if self.debugging:
+            utils.eprint(f"getProgress():")
+
+        for segment in self._segmentsList:
+            for file in segment:
+                if len(file.symbols) == 0:
+                    continue
+
+                folder = file.filepath.parts[pathIndex]
+                if folder in aliases:
+                    folder = aliases[folder]
+
+                if folder not in progressPerFolder:
+                    progressPerFolder[folder] = ProgressStats()
+
+                if self.debugging:
+                    utils.eprint(f"  folder path: {folder}")
+
+                originalFilePath = Path(*file.filepath.parts[pathIndex:])
+
+                extensionlessFilePath = originalFilePath
+                while extensionlessFilePath.suffix:
+                    extensionlessFilePath = extensionlessFilePath.with_suffix("")
+
+                fullAsmFile = asmPath / extensionlessFilePath.with_suffix(".s")
+                wholeFileIsUndecomped = fullAsmFile.exists()
+
+                if self.debugging:
+                    utils.eprint(f"  original file path: {originalFilePath}")
+                    utils.eprint(f"  extensionless file path: {extensionlessFilePath}")
+                    utils.eprint(f"  full asm file: {fullAsmFile}")
+                    utils.eprint(f"  whole file is undecomped: {wholeFileIsUndecomped}")
+
+                for func in file.symbols:
+                    funcAsmPath = nonmatchings / extensionlessFilePath / f"{func.name}.s"
+
+                    if self.debugging:
+                        utils.eprint(f"    Checking function '{funcAsmPath}' (size 0x{func.size:X}) ... ", end="")
+
+                    if wholeFileIsUndecomped:
+                        totalStats.undecompedSize += func.size
+                        progressPerFolder[folder].undecompedSize += func.size
+                        if self.debugging:
+                            utils.eprint(f" the whole file is undecomped (no individual function files exist yet)")
+                    elif funcAsmPath.exists():
+                        totalStats.undecompedSize += func.size
+                        progressPerFolder[folder].undecompedSize += func.size
+                        if self.debugging:
+                            utils.eprint(f" the function hasn't been matched yet (the function file still exists)")
+                    else:
+                        totalStats.decompedSize += func.size
+                        progressPerFolder[folder].decompedSize += func.size
+                        if self.debugging:
+                            utils.eprint(f" the function is matched! (the function file was not found)")
+
+        return totalStats, progressPerFolder
+
+    def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
+        File.printCsvHeader(printVram)
+        for segment in self._segmentsList:
+            segment.printAsCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols)
+        return
+
+    def printSymbolsCsv(self):
+        print(f"File,", end="")
+        Symbol.printCsvHeader()
+
+        for segment in self._segmentsList:
+            segment.printSymbolsCsv()
+        return
+
+
+    def toJson(self) -> dict:
+        segmentsList = []
+        for segment in self._segmentsList:
+            segmentsList.append(segment.toJson())
+
         result = {
-            "files": filesList
+            "segments": segmentsList
         }
         return result
 
 
-    def __iter__(self) -> Generator[File, None, None]:
-        for file in self.filesList:
+    def __iter__(self) -> Generator[Segment, None, None]:
+        for file in self._segmentsList:
             yield file
 
-    def __getitem__(self, index) -> File:
-        return self.filesList[index]
+    def __getitem__(self, index) -> Segment:
+        return self._segmentsList[index]
+
+    def __len__(self) -> int:
+        return len(self._segmentsList)
