@@ -18,7 +18,7 @@ regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_label = re.compile(r"^(?P<name>\.?L[0-9A-F]{8})$")
 regex_fill = re.compile(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$")
-regex_loadAddress = re.compile(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$")
+regex_segmentEntry = re.compile(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$")
 
 
 @dataclasses.dataclass
@@ -42,23 +42,17 @@ class FoundSymbolInfo:
         return f"{message} {self.getAsStr()}"
 
 @dataclasses.dataclass
-class LoadAddressData:
-    vram: int
-    size: int
-    vrom: int
-
-@dataclasses.dataclass
 class Symbol:
     name: str
     vram: int
-    size: int = -1 # in bytes
+    size: int|None = None # in bytes
     vrom: int|None = None
 
     def getVramStr(self) -> str:
         return f"0x{self.vram:08X}"
 
     def getSizeStr(self) -> str:
-        if self.size < 0:
+        if self.size is None:
             return "None"
         return f"0x{self.size:X}"
 
@@ -68,7 +62,7 @@ class Symbol:
         return f"0x{self.vrom:06X}"
 
     def serializeSize(self) -> str|None:
-        if self.size < 0:
+        if self.size is None:
             return None
         return f"0x{self.size:X}"
 
@@ -98,8 +92,8 @@ class File:
     vram: int
     size: int # in bytes
     sectionType: str
-    symbols: list[Symbol] = dataclasses.field(default_factory=list)
     vrom: int|None = None
+    _symbols: list[Symbol] = dataclasses.field(default_factory=list)
 
     @property
     def isNoloadSection(self) -> bool:
@@ -122,7 +116,7 @@ class File:
         return Path(*self.filepath.with_suffix("").parts[2:])
 
     def findSymbolByName(self, symName: str) -> Symbol|None:
-        for sym in self.symbols:
+        for sym in self._symbols:
             if sym.name == symName:
                 return sym
         return None
@@ -134,7 +128,7 @@ class File:
 
         isVram = address >= 0x1000000
 
-        for sym in self.symbols:
+        for sym in self._symbols:
             if sym.vram == address:
                 return sym, 0
             if sym.vrom == address:
@@ -156,7 +150,7 @@ class File:
             prevSym = sym
 
         if prevSym is not None:
-            if (prevSym.vrom is not None and prevSym.vrom + prevSym.size > address) or (isVram and prevSym.vram + prevSym.size > address):
+            if (prevSym.vrom is not None and prevSym.size is not None and prevSym.vrom + prevSym.size > address) or (isVram and prevSym.size is not None and prevSym.vram + prevSym.size > address):
                 if isVram:
                     offset = address - prevVram
                 else:
@@ -176,13 +170,12 @@ class File:
 
     def printAsCsv(self, printVram: bool=True):
         # Calculate stats
-        symCount = len(self.symbols)
+        symCount = len(self._symbols)
         maxSize = 0
         averageSize = self.size / (symCount or 1)
-        for sym in self.symbols:
-            symSize = sym.size
-            if symSize > maxSize:
-                maxSize = symSize
+        for sym in self._symbols:
+            if sym.size is not None and sym.size > maxSize:
+                maxSize = sym.size
 
         if printVram:
             print(f"{self.vram:08X},", end="")
@@ -199,7 +192,7 @@ class File:
         }
 
         symbolsList = []
-        for symbol in self.symbols:
+        for symbol in self._symbols:
             symbolsList.append(symbol.toJson())
 
         fileDict["symbols"] = symbolsList
@@ -207,11 +200,17 @@ class File:
 
 
     def __iter__(self) -> Generator[Symbol, None, None]:
-        for sym in self.symbols:
+        for sym in self._symbols:
             yield sym
 
     def __getitem__(self, index) -> Symbol:
-        return self.symbols[index]
+        return self._symbols[index]
+
+    def __setitem__(self, index, sym: Symbol):
+        self._symbols[index] = sym
+
+    def __len__(self) -> int:
+        return len(self._symbols)
 
 
 @dataclasses.dataclass
@@ -283,21 +282,22 @@ class Segment:
 
             vram = firstFile.vram
             size = 0
+            vrom = firstFile.vrom
             sectionType = firstFile.sectionType
 
             symbols = list()
             for file in filesInFolder:
                 size += file.size
-                for sym in file.symbols:
+                for sym in file:
                     symbols.append(sym)
 
-            newSegment._filesList.append(File(folderPath, vram, size, sectionType, symbols))
+            newSegment._filesList.append(File(folderPath, vram, size, sectionType, vrom, symbols))
 
         return newSegment
 
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
         for file in self._filesList:
-            if skipWithoutSymbols and len(file.symbols) == 0:
+            if skipWithoutSymbols and len(file) == 0:
                 continue
 
             file.printAsCsv(printVram)
@@ -305,10 +305,10 @@ class Segment:
 
     def printSymbolsCsv(self):
         for file in self._filesList:
-            if len(file.symbols) == 0:
+            if len(file) == 0:
                 continue
 
-            for sym in file.symbols:
+            for sym in file:
                 print(f"{file.filepath},", end="")
                 sym.printAsCsv()
         return
@@ -350,7 +350,6 @@ class MapFile:
     def readMapFile(self, mapPath: Path):
         tempSegmentsList: list[Segment] = list()
         tempFilesListList: list[list[File]] = list()
-        loadAddressData: LoadAddressData|None = None
 
         with mapPath.open("r") as f:
             mapData = f.read()
@@ -384,7 +383,7 @@ class MapFile:
                         # Filter out jump table's labels
                         labelMatch = regex_label.search(funcName)
                         if labelMatch is None:
-                            tempFilesListList[-1][-1].symbols.append(Symbol(funcName, funcVram))
+                            tempFilesListList[-1][-1]._symbols.append(Symbol(funcName, funcVram))
                         # print(hex(funcVram), funcName)
 
                 else:
@@ -393,7 +392,7 @@ class MapFile:
             if not inFile:
                 fillMatch = regex_fill.search(line)
                 entryMatch = regex_fileDataEntry.search(line)
-                loadAddressMatch = regex_loadAddress.search(line)
+                loadAddressMatch = regex_segmentEntry.search(line)
 
                 if fillMatch is not None:
                     # Add *fill* size to last file
@@ -409,8 +408,6 @@ class MapFile:
                     if size > 0:
                         inFile = True
                         tempFile = File(filepath, vram, size, sectionType)
-                        if loadAddressData is not None and loadAddressData.vram == vram and not tempFile.isNoloadSection:
-                            tempFile.vrom = loadAddressData.vrom
                         tempFilesListList[-1].append(tempFile)
 
                 elif loadAddressMatch is not None:
@@ -423,21 +420,19 @@ class MapFile:
                         # If the segment name is too long then this line gets break in two lines
                         name = prevLine
 
-                    loadAddressData = LoadAddressData(vram, size, vrom)
                     tempSegment = Segment(name, vram, size, vrom)
                     tempSegmentsList.append(tempSegment)
                     tempFilesListList.append([])
-                    # print(f"'{name}'", type(name), loadAddressData)
 
             prevLine = line
 
-        vromOffset = 0
-
         for i, segment in enumerate(tempSegmentsList):
             filesList = tempFilesListList[i]
+
+            vromOffset = segment.vrom
             for file in filesList:
                 acummulatedSize = 0
-                symbolsCount = len(file.symbols)
+                symbolsCount = len(file)
 
                 if file.vrom is not None:
                     vromOffset = file.vrom
@@ -451,25 +446,25 @@ class MapFile:
 
                     # Calculate size of each symbol
                     for index in range(symbolsCount-1):
-                        func = file.symbols[index]
-                        nextFunc = file.symbols[index+1]
+                        func = file[index]
+                        nextFunc = file[index+1]
 
                         size = (nextFunc.vram - func.vram)
                         acummulatedSize += size
 
-                        file.symbols[index] = Symbol(func.name, func.vram, size)
+                        file[index] = Symbol(func.name, func.vram, size)
 
                         if not isNoloadSection:
                             # Only set vrom of non bss variables
-                            file.symbols[index].vrom = symVrom
+                            file[index].vrom = symVrom
                             symVrom += size
 
                     # Calculate size of last symbol of the file
-                    func = file.symbols[symbolsCount-1]
+                    func = file[symbolsCount-1]
                     size = file.size - acummulatedSize
-                    file.symbols[symbolsCount-1] = Symbol(func.name, func.vram, size)
+                    file[symbolsCount-1] = Symbol(func.name, func.vram, size)
                     if not isNoloadSection:
-                        file.symbols[symbolsCount-1].vrom = symVrom
+                        file[symbolsCount-1].vrom = symVrom
                         symVrom += size
 
                 if not isNoloadSection:
@@ -557,7 +552,7 @@ class MapFile:
 
         for segment in self._segmentsList:
             for file in segment:
-                if len(file.symbols) == 0:
+                if len(file) == 0:
                     continue
 
                 folder = file.filepath.parts[pathIndex]
@@ -585,25 +580,29 @@ class MapFile:
                     utils.eprint(f"  full asm file: {fullAsmFile}")
                     utils.eprint(f"  whole file is undecomped: {wholeFileIsUndecomped}")
 
-                for func in file.symbols:
+                for func in file:
                     funcAsmPath = nonmatchings / extensionlessFilePath / f"{func.name}.s"
 
+                    symSize = 0
+                    if func.size is not None:
+                        symSize = func.size
+
                     if self.debugging:
-                        utils.eprint(f"    Checking function '{funcAsmPath}' (size 0x{func.size:X}) ... ", end="")
+                        utils.eprint(f"    Checking function '{funcAsmPath}' (size 0x{symSize:X}) ... ", end="")
 
                     if wholeFileIsUndecomped:
-                        totalStats.undecompedSize += func.size
-                        progressPerFolder[folder].undecompedSize += func.size
+                        totalStats.undecompedSize += symSize
+                        progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
                             utils.eprint(f" the whole file is undecomped (no individual function files exist yet)")
                     elif funcAsmPath.exists():
-                        totalStats.undecompedSize += func.size
-                        progressPerFolder[folder].undecompedSize += func.size
+                        totalStats.undecompedSize += symSize
+                        progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
                             utils.eprint(f" the function hasn't been matched yet (the function file still exists)")
                     else:
-                        totalStats.decompedSize += func.size
-                        progressPerFolder[folder].decompedSize += func.size
+                        totalStats.decompedSize += symSize
+                        progressPerFolder[folder].decompedSize += symSize
                         if self.debugging:
                             utils.eprint(f" the function is matched! (the function file was not found)")
 

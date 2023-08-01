@@ -14,6 +14,7 @@ from . import utils as utils
 from .mapfile import MapFile as MapFile
 from .mapfile import Symbol as Symbol
 from .mapfile import File as File
+from .mapfile import Segment as Segment
 from .mapfile import FoundSymbolInfo as FoundSymbolInfo
 
 from .progress_stats import ProgressStats as ProgressStats
