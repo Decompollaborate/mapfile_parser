@@ -97,13 +97,13 @@ class File:
     filepath: Path
     vram: int
     size: int # in bytes
-    segmentType: str
+    sectionType: str
     symbols: list[Symbol] = dataclasses.field(default_factory=list)
     vrom: int|None = None
 
     @property
-    def isNoloadSegment(self) -> bool:
-        return self.segmentType == ".bss"
+    def isNoloadSection(self) -> bool:
+        return self.sectionType == ".bss"
 
 
     def serializeVram(self) -> str|None:
@@ -172,7 +172,7 @@ class File:
     def printCsvHeader(printVram: bool=True):
         if printVram:
             print("VRAM,", end="")
-        print("File,Segment type,Num symbols,Max size,Total size,Average size")
+        print("File,Section type,Num symbols,Max size,Total size,Average size")
 
     def printAsCsv(self, printVram: bool=True):
         # Calculate stats
@@ -186,13 +186,13 @@ class File:
 
         if printVram:
             print(f"{self.vram:08X},", end="")
-        print(f"{self.filepath},{self.segmentType},{symCount},{maxSize},{self.size},{averageSize:0.2f}")
+        print(f"{self.filepath},{self.sectionType},{symCount},{maxSize},{self.size},{averageSize:0.2f}")
 
 
     def toJson(self) -> dict:
         fileDict: dict = {
             "filepath": str(self.filepath),
-            "segmentType": self.segmentType,
+            "sectionType": self.sectionType,
             "vram": self.serializeVram(),
             "size": self.serializeSize(),
             "vrom": self.serializeVrom(),
@@ -232,19 +232,19 @@ class Segment:
         return f"0x{self.vrom:06X}"
 
 
-    def filterBySegmentType(self, segmentType: str) -> Segment:
+    def filterBySectionType(self, sectionType: str) -> Segment:
         newSegment = Segment(self.name, self.vram, self.size, self.vrom)
 
         for file in self._filesList:
-            if file.segmentType == segmentType:
+            if file.sectionType == sectionType:
                 newSegment._filesList.append(file)
         return newSegment
 
-    def getEveryFileExceptSegmentType(self, segmentType: str) -> Segment:
+    def getEveryFileExceptSectionType(self, sectionType: str) -> Segment:
         newSegment = Segment(self.name, self.vram, self.size, self.vrom)
 
         for file in self._filesList:
-            if file.segmentType != segmentType:
+            if file.sectionType != sectionType:
                 newSegment._filesList.append(file)
         return newSegment
 
@@ -283,7 +283,7 @@ class Segment:
 
             vram = firstFile.vram
             size = 0
-            segmentType = firstFile.segmentType
+            sectionType = firstFile.sectionType
 
             symbols = list()
             for file in filesInFolder:
@@ -291,7 +291,7 @@ class Segment:
                 for sym in file.symbols:
                     symbols.append(sym)
 
-            newSegment._filesList.append(File(folderPath, vram, size, segmentType, symbols))
+            newSegment._filesList.append(File(folderPath, vram, size, sectionType, symbols))
 
         return newSegment
 
@@ -404,12 +404,12 @@ class MapFile:
                     filepath = Path(entryMatch["name"])
                     size = int(entryMatch["size"], 16)
                     vram = int(entryMatch["vram"], 16)
-                    segmentType = entryMatch["section"]
+                    sectionType = entryMatch["section"]
 
                     if size > 0:
                         inFile = True
-                        tempFile = File(filepath, vram, size, segmentType)
-                        if loadAddressData is not None and loadAddressData.vram == vram and not tempFile.isNoloadSegment:
+                        tempFile = File(filepath, vram, size, sectionType)
+                        if loadAddressData is not None and loadAddressData.vram == vram and not tempFile.isNoloadSection:
                             tempFile.vrom = loadAddressData.vrom
                         tempFilesListList[-1].append(tempFile)
 
@@ -442,8 +442,8 @@ class MapFile:
                 if file.vrom is not None:
                     vromOffset = file.vrom
 
-                isNoloadSegment = file.isNoloadSegment
-                if not isNoloadSegment:
+                isNoloadSection = file.isNoloadSection
+                if not isNoloadSection:
                     file.vrom = vromOffset
 
                 if symbolsCount > 0:
@@ -459,7 +459,7 @@ class MapFile:
 
                         file.symbols[index] = Symbol(func.name, func.vram, size)
 
-                        if not isNoloadSegment:
+                        if not isNoloadSection:
                             # Only set vrom of non bss variables
                             file.symbols[index].vrom = symVrom
                             symVrom += size
@@ -468,36 +468,36 @@ class MapFile:
                     func = file.symbols[symbolsCount-1]
                     size = file.size - acummulatedSize
                     file.symbols[symbolsCount-1] = Symbol(func.name, func.vram, size)
-                    if not isNoloadSegment:
+                    if not isNoloadSection:
                         file.symbols[symbolsCount-1].vrom = symVrom
                         symVrom += size
 
-                if not isNoloadSegment:
-                    # Only increment vrom offset for non bss segments
+                if not isNoloadSection:
+                    # Only increment vrom offset for non bss sections
                     vromOffset += file.size
 
                 segment._filesList.append(file)
             self._segmentsList.append(segment)
         return
 
-    def filterBySegmentType(self, segmentType: str) -> MapFile:
+    def filterBySectionType(self, sectionType: str) -> MapFile:
         newMapFile = MapFile()
 
         newMapFile.debugging = self.debugging
 
         for segment in self._segmentsList:
-            newSegment = segment.filterBySegmentType(segmentType)
+            newSegment = segment.filterBySectionType(sectionType)
             if len(newSegment) != 0:
                 newMapFile._segmentsList.append(newSegment)
         return newMapFile
 
-    def getEveryFileExceptSegmentType(self, segmentType: str) -> MapFile:
+    def getEveryFileExceptSectionType(self, sectionType: str) -> MapFile:
         newMapFile = MapFile()
 
         newMapFile.debugging = self.debugging
 
         for segment in self._segmentsList:
-            newSegment = segment.getEveryFileExceptSegmentType(segmentType)
+            newSegment = segment.getEveryFileExceptSectionType(sectionType)
             if len(newSegment) != 0:
                 newMapFile._segmentsList.append(newSegment)
         return newMapFile
