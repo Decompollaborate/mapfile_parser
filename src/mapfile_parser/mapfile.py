@@ -36,14 +36,19 @@ class Symbol:
     def getVramStr(self) -> str:
         return f"0x{self.vram:08X}"
 
+    def getSizeStr(self) -> str:
+        if self.size < 0:
+            return "None"
+        return f"0x{self.size:X}"
+
     def getVromStr(self) -> str:
         if self.vrom is None:
             return "None"
         return f"0x{self.vrom:06X}"
 
-    def getSizeStr(self) -> str:
+    def serializeSize(self) -> str|None:
         if self.size < 0:
-            return "None"
+            return None
         return f"0x{self.size:X}"
 
 
@@ -53,6 +58,18 @@ class Symbol:
 
     def printAsCsv(self):
         print(f"{self.name},{self.vram:08X},{self.size}")
+
+
+    def toJson(self) -> dict:
+        result = {
+            "name": self.name,
+            "vram": self.getVramStr(),
+            "size": self.serializeSize(),
+            "vrom": self.getVromStr(),
+        }
+
+        return result
+
 
 @dataclasses.dataclass
 class File:
@@ -66,6 +83,18 @@ class File:
     @property
     def isNoloadSegment(self) -> bool:
         return self.segmentType == ".bss"
+
+
+    def serializeVram(self) -> str|None:
+        return f"0x{self.vram:08X}"
+
+    def serializeSize(self) -> str|None:
+        return f"0x{self.size:X}"
+
+    def serializeVrom(self) -> str|None:
+        if self.vrom is None:
+            return None
+        return f"0x{self.vrom:06X}"
 
 
     def getName(self) -> Path:
@@ -137,6 +166,23 @@ class File:
         if printVram:
             print(f"{self.vram:08X},", end="")
         print(f"{self.filepath},{self.segmentType},{symCount},{maxSize},{self.size},{averageSize:0.2f}")
+
+
+    def toJson(self) -> dict:
+        fileDict = {
+            "filepath": str(self.filepath),
+            "segmentType": self.segmentType,
+            "vram": self.serializeVram(),
+            "size": self.serializeSize(),
+            "vrom": self.serializeVrom(),
+        }
+
+        symbolsList = []
+        for symbol in self.symbols:
+            symbolsList.append(symbol.toJson())
+
+        fileDict["symbols"] = symbolsList
+        return fileDict
 
 
     def __iter__(self) -> Generator[Symbol, None, None]:
@@ -231,7 +277,7 @@ class MapFile:
                     if size > 0:
                         inFile = True
                         tempFile = File(filepath, vram, size, segmentType)
-                        if loadAddressData is not None and loadAddressData.vram == vram:
+                        if loadAddressData is not None and loadAddressData.vram == vram and not tempFile.isNoloadSegment:
                             tempFile.vrom = loadAddressData.vrom
                         tempFilesList.append(tempFile)
 
@@ -456,6 +502,18 @@ class MapFile:
                 print(f"{file.filepath},", end="")
                 sym.printAsCsv()
         return
+
+
+    def toJson(self) -> dict:
+        filesList = []
+
+        for file in self.filesList:
+            filesList.append(file.toJson())
+
+        result = {
+            "files": filesList
+        }
+        return result
 
 
     def __iter__(self) -> Generator[File, None, None]:
