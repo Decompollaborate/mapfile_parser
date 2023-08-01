@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# SPDX-FileCopyrightText: © 2022 Decompollaborate
+# SPDX-FileCopyrightText: © 2022-2023 Decompollaborate
 # SPDX-License-Identifier: MIT
 
 from __future__ import annotations
@@ -16,6 +16,7 @@ def mapfileParserMain():
     subparsers = parser.add_subparsers(description="action", help="the action to perform", required=True)
 
     mapfile_parser.frontends.first_diff.addSubparser(subparsers)
+    mapfile_parser.frontends.jsonify.addSubparser(subparsers)
     mapfile_parser.frontends.pj64_syms.addSubparser(subparsers)
     mapfile_parser.frontends.progress.addSubparser(subparsers)
     mapfile_parser.frontends.sym_info.addSubparser(subparsers)

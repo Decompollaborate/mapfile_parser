@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# SPDX-FileCopyrightText: © 2022 Decompollaborate
+# SPDX-FileCopyrightText: © 2022-2023 Decompollaborate
 # SPDX-License-Identifier: MIT
 
 from __future__ import annotations
@@ -15,7 +15,7 @@ def processArguments(args: argparse.Namespace):
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(args.mapfile)
     if args.filter_section is not None:
-        mapFile = mapFile.filterBySegmentType(args.filter_section)
+        mapFile = mapFile.filterBySectionType(args.filter_section)
 
     if args.same_folder:
         mapFile = mapFile.mixFolders()

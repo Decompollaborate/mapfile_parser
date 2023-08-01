@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# SPDX-FileCopyrightText: © 2022 Decompollaborate
+# SPDX-FileCopyrightText: © 2022-2023 Decompollaborate
 # SPDX-License-Identifier: MIT
 
 from __future__ import annotations
@@ -14,10 +14,11 @@ from .. import mapfile
 
 
 def writePj64SymsToFile(mapFile: mapfile.MapFile, outFile: TextIO):
-    for file in mapFile:
-        for sym in file:
-            symType = "code" if file.segmentType == ".text" else "data"
-            outFile.write(f"{sym.vram:08X},{symType},{sym.name}\n")
+    for segment in mapFile:
+        for file in segment:
+            for sym in file:
+                symType = "code" if file.sectionType == ".text" else "data"
+                outFile.write(f"{sym.vram:08X},{symType},{sym.name}\n")
 
 def doPj64Syms(mapPath: Path, outputPath: Path|None) -> int:
     mapFile = mapfile.MapFile()

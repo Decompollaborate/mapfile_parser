@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# SPDX-FileCopyrightText: © 2022 Decompollaborate
+# SPDX-FileCopyrightText: © 2022-2023 Decompollaborate
 # SPDX-License-Identifier: MIT
 
 from __future__ import annotations
@@ -18,7 +18,7 @@ def getProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, pathIndex:
     mapFile.debugging = debugging
     mapFile.readMapFile(mapPath)
 
-    return mapFile.filterBySegmentType(".text").getProgress(asmPath, nonmatchingsPath, pathIndex=pathIndex)
+    return mapFile.filterBySectionType(".text").getProgress(asmPath, nonmatchingsPath, pathIndex=pathIndex)
 
 def doProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, pathIndex: int=2, debugging: bool=False) -> int:
     totalStats, progressPerFolder = getProgress(mapPath, asmPath, nonmatchingsPath, pathIndex=pathIndex, debugging=debugging)
