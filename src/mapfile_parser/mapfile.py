@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import dataclasses
 import re
-from typing import Generator
+from typing import Any, Generator
 from pathlib import Path
 
 from .progress_stats import ProgressStats
@@ -60,8 +60,8 @@ class Symbol:
         print(f"{self.name},{self.vram:08X},{self.size}")
 
 
-    def toJson(self) -> dict:
-        result = {
+    def toJson(self) -> dict[str, Any]:
+        result: dict[str, Any] = {
             "name": self.name,
             "vram": self.getVramStr(),
             "size": self.serializeSize(),
@@ -178,8 +178,8 @@ class File:
         print(f"{self.filepath},{self.segmentType},{symCount},{maxSize},{self.size},{averageSize:0.2f}")
 
 
-    def toJson(self) -> dict:
-        fileDict = {
+    def toJson(self) -> dict[str, Any]:
+        fileDict: dict[str, Any] = {
             "filepath": str(self.filepath),
             "segmentType": self.segmentType,
             "vram": self.serializeVram(),
@@ -524,13 +524,13 @@ class MapFile:
         return
 
 
-    def toJson(self) -> dict:
+    def toJson(self) -> dict[str, Any]:
         filesList = []
 
         for file in self.filesList:
             filesList.append(file.toJson())
 
-        result = {
+        result: dict[str, Any] = {
             "files": filesList
         }
         return result
