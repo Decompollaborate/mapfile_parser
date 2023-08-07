@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import dataclasses
 import re
-from typing import Generator
+from typing import Any, Generator
 from pathlib import Path
 
 from .progress_stats import ProgressStats
@@ -75,8 +75,8 @@ class Symbol:
         print(f"{self.name},{self.vram:08X},{self.size}")
 
 
-    def toJson(self) -> dict:
-        result = {
+    def toJson(self) -> dict[str, Any]:
+        result: dict[str, Any] = {
             "name": self.name,
             "vram": self.getVramStr(),
             "size": self.serializeSize(),
@@ -84,6 +84,16 @@ class Symbol:
         }
 
         return result
+
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Symbol):
+            return False
+        return self.name == other.name and self.vram == other.vram
+
+    # https://stackoverflow.com/a/56915493/6292472
+    def __hash__(self):
+        return hash((self.name, self.vram))
 
 
 @dataclasses.dataclass
@@ -182,8 +192,8 @@ class File:
         print(f"{self.filepath},{self.sectionType},{symCount},{maxSize},{self.size},{averageSize:0.2f}")
 
 
-    def toJson(self) -> dict:
-        fileDict: dict = {
+    def toJson(self) -> dict[str, Any]:
+        fileDict: dict[str, Any] = {
             "filepath": str(self.filepath),
             "sectionType": self.sectionType,
             "vram": self.serializeVram(),
@@ -211,6 +221,15 @@ class File:
 
     def __len__(self) -> int:
         return len(self._symbols)
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, File):
+            return False
+        return self.filepath == other.filepath
+
+    # https://stackoverflow.com/a/56915493/6292472
+    def __hash__(self):
+        return hash((self.filepath,))
 
 
 @dataclasses.dataclass
@@ -314,8 +333,8 @@ class Segment:
         return
 
 
-    def toJson(self) -> dict:
-        segmentDict: dict = {
+    def toJson(self) -> dict[str, Any]:
+        segmentDict: dict[str, Any] = {
             "name": self.name,
             "vram": self.serializeVram(),
             "size": self.serializeSize(),
@@ -340,6 +359,15 @@ class Segment:
 
     def __len__(self) -> int:
         return len(self._filesList)
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Segment):
+            return False
+        return self.name == other.name and self.vram == other.vram and self.size == other.size and self.vrom == other.vrom
+
+    # https://stackoverflow.com/a/56915493/6292472
+    def __hash__(self):
+        return hash((self.name, self.vram, self.size, self.vrom))
 
 
 class MapFile:
@@ -623,12 +651,12 @@ class MapFile:
         return
 
 
-    def toJson(self) -> dict:
+    def toJson(self) -> dict[str, Any]:
         segmentsList = []
         for segment in self._segmentsList:
             segmentsList.append(segment.toJson())
 
-        result = {
+        result: dict[str, Any] = {
             "segments": segmentsList
         }
         return result
