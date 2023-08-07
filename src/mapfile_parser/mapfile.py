@@ -7,7 +7,7 @@ from __future__ import annotations
 
 import dataclasses
 import re
-from typing import Generator
+from typing import Any, Generator
 from pathlib import Path
 
 from .progress_stats import ProgressStats
@@ -75,8 +75,8 @@ class Symbol:
         print(f"{self.name},{self.vram:08X},{self.size}")
 
 
-    def toJson(self) -> dict:
-        result = {
+    def toJson(self) -> dict[str, Any]:
+        result: dict[str, Any] = {
             "name": self.name,
             "vram": self.getVramStr(),
             "size": self.serializeSize(),
@@ -192,8 +192,8 @@ class File:
         print(f"{self.filepath},{self.sectionType},{symCount},{maxSize},{self.size},{averageSize:0.2f}")
 
 
-    def toJson(self) -> dict:
-        fileDict: dict = {
+    def toJson(self) -> dict[str, Any]:
+        fileDict: dict[str, Any] = {
             "filepath": str(self.filepath),
             "sectionType": self.sectionType,
             "vram": self.serializeVram(),
@@ -333,8 +333,8 @@ class Segment:
         return
 
 
-    def toJson(self) -> dict:
-        segmentDict: dict = {
+    def toJson(self) -> dict[str, Any]:
+        segmentDict: dict[str, Any] = {
             "name": self.name,
             "vram": self.serializeVram(),
             "size": self.serializeSize(),
@@ -651,12 +651,12 @@ class MapFile:
         return
 
 
-    def toJson(self) -> dict:
+    def toJson(self) -> dict[str, Any]:
         segmentsList = []
         for segment in self._segmentsList:
             segmentsList.append(segment.toJson())
 
-        result = {
+        result: dict[str, Any] = {
             "segments": segmentsList
         }
         return result
