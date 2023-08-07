@@ -11,7 +11,9 @@ import mapfile_parser
 
 
 def mapfileParserMain():
-    parser = argparse.ArgumentParser()
+    parser = argparse.ArgumentParser(description="Interface to call any of the mapfile_parser's CLI utilities", prog="mapfile_parser")
+
+    parser.add_argument("-V", "--version", action="version", version=f"%(prog)s {mapfile_parser.__version__}")
 
     subparsers = parser.add_subparsers(description="action", help="the action to perform", required=True)
 
