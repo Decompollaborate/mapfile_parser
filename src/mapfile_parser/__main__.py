@@ -17,6 +17,7 @@ def mapfileParserMain():
 
     subparsers = parser.add_subparsers(description="action", help="the action to perform", required=True)
 
+    mapfile_parser.frontends.bss_check.addSubparser(subparsers)
     mapfile_parser.frontends.first_diff.addSubparser(subparsers)
     mapfile_parser.frontends.jsonify.addSubparser(subparsers)
     mapfile_parser.frontends.pj64_syms.addSubparser(subparsers)
