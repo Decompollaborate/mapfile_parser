@@ -86,6 +86,16 @@ class Symbol:
         return result
 
 
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Symbol):
+            return False
+        return self.name == other.name and self.vram == other.vram
+
+    # https://stackoverflow.com/a/56915493/6292472
+    def __hash__(self):
+        return hash((self.name, self.vram))
+
+
 @dataclasses.dataclass
 class File:
     filepath: Path
@@ -211,6 +221,15 @@ class File:
 
     def __len__(self) -> int:
         return len(self._symbols)
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, File):
+            return False
+        return self.filepath == other.filepath
+
+    # https://stackoverflow.com/a/56915493/6292472
+    def __hash__(self):
+        return hash((self.filepath,))
 
 
 @dataclasses.dataclass
@@ -340,6 +359,15 @@ class Segment:
 
     def __len__(self) -> int:
         return len(self._filesList)
+
+    def __eq__(self, other: object) -> bool:
+        if not isinstance(other, Segment):
+            return False
+        return self.name == other.name and self.vram == other.vram and self.size == other.size and self.vrom == other.vrom
+
+    # https://stackoverflow.com/a/56915493/6292472
+    def __hash__(self):
+        return hash((self.name, self.vram, self.size, self.vrom))
 
 
 class MapFile:
