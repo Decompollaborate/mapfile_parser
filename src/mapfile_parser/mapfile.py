@@ -42,6 +42,22 @@ class FoundSymbolInfo:
         return f"{message} {self.getAsStr()}"
 
 @dataclasses.dataclass
+class SymbolComparisonInfo:
+    symbol: Symbol
+    buildAddress: int
+    buildFile: File|None
+    expectedAddress: int
+    expectedFile: File|None
+    diff: int|None
+
+class MapsComparisonInfo:
+    def __init__(self):
+        self.badFiles: set[File] = set()
+        self.missingFiles: set[File] = set()
+        self.comparedList: list[SymbolComparisonInfo] = []
+
+
+@dataclasses.dataclass
 class Symbol:
     name: str
     vram: int
@@ -635,6 +651,34 @@ class MapFile:
                             utils.eprint(f" the function is matched! (the function file was not found)")
 
         return totalStats, progressPerFolder
+
+    # Useful for finding bss reorders
+    def compareFilesAndSymbols(self, otherMapFile: MapFile, *, checkOtherOnSelf: bool=True) -> MapsComparisonInfo:
+        compInfo = MapsComparisonInfo()
+
+        for segment in self:
+            for file in segment:
+                for symbol in file:
+                    foundSymInfo = otherMapFile.findSymbolByName(symbol.name)
+                    if foundSymInfo is not None:
+                        comp = SymbolComparisonInfo(symbol, symbol.vram, file, symbol.vram, foundSymInfo.file, symbol.vram - foundSymInfo.symbol.vram)
+                        compInfo.comparedList.append(comp)
+                        if comp.diff != 0:
+                            compInfo.badFiles.add(file)
+                    else:
+                        compInfo.missingFiles.add(file)
+                        compInfo.comparedList.append(SymbolComparisonInfo(symbol, symbol.vram, file, -1, None, None))
+
+        if checkOtherOnSelf:
+            for segment in otherMapFile:
+                for file in segment:
+                    for symbol in file:
+                        foundSymInfo = self.findSymbolByName(symbol.name)
+                        if foundSymInfo is None:
+                            compInfo.missingFiles.add(file)
+                            compInfo.comparedList.append(SymbolComparisonInfo(symbol, -1, None, symbol.vram, file, None))
+
+        return compInfo
 
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
         File.printCsvHeader(printVram)
