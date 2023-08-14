@@ -42,6 +42,22 @@ class FoundSymbolInfo:
         return f"{message} {self.getAsStr()}"
 
 @dataclasses.dataclass
+class SymbolComparisonInfo:
+    symbol: Symbol
+    buildAddress: int
+    buildFile: File|None
+    expectedAddress: int
+    expectedFile: File|None
+    diff: int|None
+
+class MapsComparisonInfo:
+    def __init__(self):
+        self.badFiles: set[File] = set()
+        self.missingFiles: set[File] = set()
+        self.comparedList: list[SymbolComparisonInfo] = []
+
+
+@dataclasses.dataclass
 class Symbol:
     name: str
     vram: int
@@ -376,23 +392,26 @@ class MapFile:
         self.debugging: bool = False
 
     def readMapFile(self, mapPath: Path):
-        tempSegmentsList: list[Segment] = list()
-        tempFilesListList: list[list[File]] = list()
-
         with mapPath.open("r") as f:
             mapData = f.read()
 
-            # Skip the stuff we don't care about
             startIndex = 0
             auxVar = 0
-            while auxVar != -1:
-                startIndex = auxVar
-                auxVar = mapData.find("\nLOAD ", startIndex+1)
-            auxVar = mapData.find("\n", startIndex+1)
+
+            # Skip the stuff we don't care about
+            # Looking for this string will only work on English machines (or C locales)
+            # but it doesn't matter much, because if this string is not found then the
+            # parsing should still work, but just a bit slower because of the extra crap
+            auxVar = mapData.find("\nLinker script and memory map", startIndex+1)
+            if auxVar != -1:
+                auxVar = mapData.find("\n", auxVar+1)
             if auxVar != -1:
                 startIndex = auxVar
             mapData = mapData[startIndex:]
         # print(len(mapData))
+
+        tempSegmentsList: list[Segment] = [Segment("$$dummysegment$$", 0, 0, 0)]
+        tempFilesListList: list[list[File]] = [[]]
 
         inFile = False
 
@@ -420,7 +439,7 @@ class MapFile:
             if not inFile:
                 fillMatch = regex_fill.search(line)
                 entryMatch = regex_fileDataEntry.search(line)
-                loadAddressMatch = regex_segmentEntry.search(line)
+                segmentEntryMatch = regex_segmentEntry.search(line)
 
                 if fillMatch is not None:
                     # Add *fill* size to last file
@@ -436,13 +455,14 @@ class MapFile:
                     if size > 0:
                         inFile = True
                         tempFile = File(filepath, vram, size, sectionType)
+                        assert len(tempFilesListList) > 0, line
                         tempFilesListList[-1].append(tempFile)
 
-                elif loadAddressMatch is not None:
-                    name = loadAddressMatch["name"]
-                    vram = int(loadAddressMatch["vram"], 0)
-                    size = int(loadAddressMatch["size"], 0)
-                    vrom = int(loadAddressMatch["vrom"], 0)
+                elif segmentEntryMatch is not None:
+                    name = segmentEntryMatch["name"]
+                    vram = int(segmentEntryMatch["vram"], 0)
+                    size = int(segmentEntryMatch["size"], 0)
+                    vrom = int(segmentEntryMatch["vrom"], 0)
 
                     if name == "":
                         # If the segment name is too long then this line gets break in two lines
@@ -454,7 +474,8 @@ class MapFile:
 
             prevLine = line
 
-        for i, segment in enumerate(tempSegmentsList):
+        # Skip dummy segment
+        for i, segment in enumerate(tempSegmentsList[1:]):
             filesList = tempFilesListList[i]
 
             vromOffset = segment.vrom
@@ -635,6 +656,34 @@ class MapFile:
                             utils.eprint(f" the function is matched! (the function file was not found)")
 
         return totalStats, progressPerFolder
+
+    # Useful for finding bss reorders
+    def compareFilesAndSymbols(self, otherMapFile: MapFile, *, checkOtherOnSelf: bool=True) -> MapsComparisonInfo:
+        compInfo = MapsComparisonInfo()
+
+        for segment in self:
+            for file in segment:
+                for symbol in file:
+                    foundSymInfo = otherMapFile.findSymbolByName(symbol.name)
+                    if foundSymInfo is not None:
+                        comp = SymbolComparisonInfo(symbol, symbol.vram, file, symbol.vram, foundSymInfo.file, symbol.vram - foundSymInfo.symbol.vram)
+                        compInfo.comparedList.append(comp)
+                        if comp.diff != 0:
+                            compInfo.badFiles.add(file)
+                    else:
+                        compInfo.missingFiles.add(file)
+                        compInfo.comparedList.append(SymbolComparisonInfo(symbol, symbol.vram, file, -1, None, None))
+
+        if checkOtherOnSelf:
+            for segment in otherMapFile:
+                for file in segment:
+                    for symbol in file:
+                        foundSymInfo = self.findSymbolByName(symbol.name)
+                        if foundSymInfo is None:
+                            compInfo.missingFiles.add(file)
+                            compInfo.comparedList.append(SymbolComparisonInfo(symbol, -1, None, symbol.vram, file, None))
+
+        return compInfo
 
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
         File.printCsvHeader(printVram)

@@ -5,7 +5,7 @@
 
 from __future__ import annotations
 
-__version_info__ = (2, 0, 1)
+__version_info__ = (2, 1, 0)
 __version__ = ".".join(map(str, __version_info__))
 __author__ = "Decompollaborate"
 
@@ -16,6 +16,8 @@ from .mapfile import Symbol as Symbol
 from .mapfile import File as File
 from .mapfile import Segment as Segment
 from .mapfile import FoundSymbolInfo as FoundSymbolInfo
+from .mapfile import SymbolComparisonInfo as SymbolComparisonInfo
+from .mapfile import MapsComparisonInfo as MapsComparisonInfo
 
 from .progress_stats import ProgressStats as ProgressStats
 
