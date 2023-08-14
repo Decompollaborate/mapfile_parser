@@ -392,9 +392,6 @@ class MapFile:
         self.debugging: bool = False
 
     def readMapFile(self, mapPath: Path):
-        tempSegmentsList: list[Segment] = list()
-        tempFilesListList: list[list[File]] = list()
-
         with mapPath.open("r") as f:
             mapData = f.read()
 
@@ -409,6 +406,9 @@ class MapFile:
                 startIndex = auxVar
             mapData = mapData[startIndex:]
         # print(len(mapData))
+
+        tempSegmentsList: list[Segment] = [Segment("$$dummysegment$$", 0, 0, 0)]
+        tempFilesListList: list[list[File]] = [[]]
 
         inFile = False
 
@@ -436,7 +436,7 @@ class MapFile:
             if not inFile:
                 fillMatch = regex_fill.search(line)
                 entryMatch = regex_fileDataEntry.search(line)
-                loadAddressMatch = regex_segmentEntry.search(line)
+                segmentEntryMatch = regex_segmentEntry.search(line)
 
                 if fillMatch is not None:
                     # Add *fill* size to last file
@@ -452,13 +452,14 @@ class MapFile:
                     if size > 0:
                         inFile = True
                         tempFile = File(filepath, vram, size, sectionType)
+                        assert len(tempFilesListList) > 0, line
                         tempFilesListList[-1].append(tempFile)
 
-                elif loadAddressMatch is not None:
-                    name = loadAddressMatch["name"]
-                    vram = int(loadAddressMatch["vram"], 0)
-                    size = int(loadAddressMatch["size"], 0)
-                    vrom = int(loadAddressMatch["vrom"], 0)
+                elif segmentEntryMatch is not None:
+                    name = segmentEntryMatch["name"]
+                    vram = int(segmentEntryMatch["vram"], 0)
+                    size = int(segmentEntryMatch["size"], 0)
+                    vrom = int(segmentEntryMatch["vrom"], 0)
 
                     if name == "":
                         # If the segment name is too long then this line gets break in two lines
@@ -470,7 +471,8 @@ class MapFile:
 
             prevLine = line
 
-        for i, segment in enumerate(tempSegmentsList):
+        # Skip dummy segment
+        for i, segment in enumerate(tempSegmentsList[1:]):
             filesList = tempFilesListList[i]
 
             vromOffset = segment.vrom
