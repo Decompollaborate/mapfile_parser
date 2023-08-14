@@ -395,13 +395,16 @@ class MapFile:
         with mapPath.open("r") as f:
             mapData = f.read()
 
-            # Skip the stuff we don't care about
             startIndex = 0
             auxVar = 0
-            while auxVar != -1:
-                startIndex = auxVar
-                auxVar = mapData.find("\nLOAD ", startIndex+1)
-            auxVar = mapData.find("\n", startIndex+1)
+
+            # Skip the stuff we don't care about
+            # Looking for this string will only work on English machines (or C locales)
+            # but it doesn't matter much, because if this string is not found then the
+            # parsing should still work, but just a bit slower because of the extra crap
+            auxVar = mapData.find("\nLinker script and memory map", startIndex+1)
+            if auxVar != -1:
+                auxVar = mapData.find("\n", auxVar+1)
             if auxVar != -1:
                 startIndex = auxVar
             mapData = mapData[startIndex:]
