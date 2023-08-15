@@ -475,7 +475,8 @@ class MapFile:
             prevLine = line
 
         # Skip dummy segment
-        for i, segment in enumerate(tempSegmentsList[1:]):
+        for i in range(1, len(tempSegmentsList)):
+            segment = tempSegmentsList[i]
             filesList = tempFilesListList[i]
 
             vromOffset = segment.vrom
