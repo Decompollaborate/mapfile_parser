@@ -410,7 +410,7 @@ class MapFile:
             mapData = mapData[startIndex:]
         # print(len(mapData))
 
-        tempSegmentsList: list[Segment] = [Segment("$$dummysegment$$", 0, 0, 0)]
+        tempSegmentsList: list[Segment] = [Segment("$nosegment", 0, 0, 0)]
         tempFilesListList: list[list[File]] = [[]]
 
         inFile = False
@@ -476,9 +476,14 @@ class MapFile:
             prevLine = line
 
         # Skip dummy segment
-        for i in range(1, len(tempSegmentsList)):
+        for i in range(len(tempSegmentsList)):
             segment = tempSegmentsList[i]
             filesList = tempFilesListList[i]
+
+            if i == 0:
+                if segment.size == 0 and len(filesList) == 0:
+                    # skip the dummy segment if it has no size, files or symbols
+                    continue
 
             vromOffset = segment.vrom
             for file in filesList:
