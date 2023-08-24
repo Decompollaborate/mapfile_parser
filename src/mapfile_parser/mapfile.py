@@ -443,8 +443,9 @@ class MapFile:
 
                 if fillMatch is not None:
                     # Add *fill* size to last file
-                    size = int(fillMatch["size"], 16)
-                    tempFilesListList[-1][-1].size += size
+                    if len(tempFilesListList[-1]) != 0:
+                        size = int(fillMatch["size"], 16)
+                        tempFilesListList[-1][-1].size += size
                 elif entryMatch is not None:
                     # Find file
                     filepath = Path(entryMatch["name"])
