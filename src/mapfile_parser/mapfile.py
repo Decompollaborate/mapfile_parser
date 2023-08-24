@@ -16,6 +16,7 @@ from . import utils
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
+# regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)((\s*=\s*(?P<expression>.+))?)$")
 regex_label = re.compile(r"^(?P<name>\.?L[0-9A-F]{8})$")
 regex_fill = re.compile(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$")
 regex_segmentEntry = re.compile(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$")
@@ -63,6 +64,7 @@ class Symbol:
     vram: int
     size: int|None = None # in bytes
     vrom: int|None = None
+    expression: str|None = None
 
     def getVramStr(self) -> str:
         return f"0x{self.vram:08X}"
@@ -82,6 +84,8 @@ class Symbol:
             return None
         return f"0x{self.size:X}"
 
+    def serializeExpression(self) -> str|None:
+        return self.expression
 
     @staticmethod
     def printCsvHeader():
@@ -104,6 +108,7 @@ class Symbol:
             "vram": self.getVramStr(),
             "size": self.serializeSize(),
             "vrom": self.getVromStr(),
+            "expression": self.serializeExpression()
         }
 
         return result

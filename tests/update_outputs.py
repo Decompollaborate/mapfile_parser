@@ -13,7 +13,7 @@ print(f"Running mapfile_parser version {mapfile_parser.__version__}")
 outputFolder = Path("tests/output/")
 outputFolder.mkdir(parents=True, exist_ok=True)
 
-for mapPath in Path("tests/maps").iterdir():
+for mapPath in sorted(Path("tests/maps").iterdir()):
     print(mapPath)
 
     print("    .json")
