@@ -442,10 +442,21 @@ class MapFile:
                 segmentEntryMatch = regex_segmentEntry.search(line)
 
                 if fillMatch is not None:
-                    # Add *fill* size to last file
+                    # Make a dummy file to handle *fill*
+                    filepath = Path()
+                    size = int(fillMatch["size"], 16)
+                    vram = 0
+                    sectionType = ""
+
                     if len(tempFilesListList[-1]) != 0:
-                        size = int(fillMatch["size"], 16)
-                        tempFilesListList[-1][-1].size += size
+                        prevFile = tempFilesListList[-1][-1]
+                        filepath = prevFile.filepath.with_name(prevFile.filepath.name + "__fill__")
+                        vram = prevFile.vram + prevFile.size
+                        sectionType = prevFile.sectionType
+
+                    tempFile = File(filepath, vram, size, sectionType)
+                    assert len(tempFilesListList) > 0, line
+                    tempFilesListList[-1].append(tempFile)
                 elif entryMatch is not None:
                     # Find file
                     filepath = Path(entryMatch["name"])
@@ -475,7 +486,6 @@ class MapFile:
 
             prevLine = line
 
-        # Skip dummy segment
         for i in range(len(tempSegmentsList)):
             segment = tempSegmentsList[i]
             filesList = tempFilesListList[i]

@@ -17002,8 +17002,16 @@
                     "filepath": "build/src/main_segment/debug_menu.o",
                     "sectionType": ".rodata",
                     "vram": "0x800AD2E0",
-                    "size": "0x860",
+                    "size": "0x858",
                     "vrom": "0x095100",
+                    "symbols": []
+                },
+                {
+                    "filepath": "build/src/main_segment/debug_menu.o__fill__",
+                    "sectionType": ".rodata",
+                    "vram": "0x800ADB38",
+                    "size": "0x8",
+                    "vrom": "0x095958",
                     "symbols": []
                 },
                 {
