@@ -8,6 +8,8 @@ from __future__ import annotations
 import mapfile_parser
 from pathlib import Path
 
+print(f"Running mapfile_parser version {mapfile_parser.__version__}")
+
 outputFolder = Path("tests/output/")
 outputFolder.mkdir(parents=True, exist_ok=True)
 
