@@ -1,0 +1,14 @@
+VRAM,File,Section type,Num symbols,Max size,Total size,Average size
+80180000,build/us/asm/us/st/cen/data/0.data.s.o,.data,128,800,4820,37.66
+801812D4,build/us/assets/st/cen/g_Rooms.o,.data,2,44,44,22.00
+80181300,build/us/asm/us/st/cen/data/1300.data.s.o,.data,98,8356,49452,504.61
+8018D42C,build/us/asm/us/st/cen/data/D42C.rodata.s.o,.rodata,2,100,132,66.00
+8018D4D8,build/us/asm/us/st/cen/data/D4D8.rodata.s.o,.rodata,20,40,296,14.80
+8018D600,build/us/src/st/cen/D600.c.o,.text,23,4296,14412,626.61
+80190E4C,build/us/src/st/cen/10E4C.c.o,.text,3,764,1076,358.67
+80191280,build/us/src/st/cen/11280.c.o,.text,89,4376,40948,460.09
+8019B274,build/us/src/st/cen/1B274.c.o,.text,13,1200,5264,404.92
+8019C704,build/us/asm/us/st/cen/data/1C704.rodata.s.o,.rodata,1,96,96,96.00
+8019C764,build/us/asm/us/st/cen/data/1C764.rodata.s.o,.rodata,4,3076,3088,772.00
+8019D374,build/us/asm/us/st/cen/data/1D374.rodata.s.o,.rodata,18,108,176,9.78
+8019D424,build/us/asm/us/st/cen/data/1D424.rodata.s.o,.rodata,3,64,72,24.00

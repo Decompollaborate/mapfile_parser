@@ -85,11 +85,18 @@ class Symbol:
 
     @staticmethod
     def printCsvHeader():
-        print("Symbol name,VRAM,Size in bytes")
+        print(Symbol.toCsvHeader())
 
     def printAsCsv(self):
-        print(f"{self.name},{self.vram:08X},{self.size}")
+        print(self.toCsv())
 
+
+    @staticmethod
+    def toCsvHeader() -> str:
+        return "Symbol name,VRAM,Size in bytes"
+
+    def toCsv(self) -> str:
+        return f"{self.name},{self.vram:08X},{self.size}"
 
     def toJson(self) -> dict[str, Any]:
         result: dict[str, Any] = {
@@ -188,13 +195,24 @@ class File:
 
         return None
 
+
     @staticmethod
     def printCsvHeader(printVram: bool=True):
-        if printVram:
-            print("VRAM,", end="")
-        print("File,Section type,Num symbols,Max size,Total size,Average size")
+        print(File.toCsvHeader(printVram=printVram))
 
     def printAsCsv(self, printVram: bool=True):
+        print(self.toCsv(printVram=printVram))
+
+
+    @staticmethod
+    def toCsvHeader(printVram: bool=True) -> str:
+        ret = ""
+        if printVram:
+            ret += "VRAM,"
+        ret += "File,Section type,Num symbols,Max size,Total size,Average size"
+        return ret
+
+    def toCsv(self, printVram: bool=True) -> str:
         # Calculate stats
         symCount = len(self._symbols)
         maxSize = 0
@@ -203,10 +221,11 @@ class File:
             if sym.size is not None and sym.size > maxSize:
                 maxSize = sym.size
 
+        ret = ""
         if printVram:
-            print(f"{self.vram:08X},", end="")
-        print(f"{self.filepath},{self.sectionType},{symCount},{maxSize},{self.size},{averageSize:0.2f}")
-
+            ret += f"{self.vram:08X},"
+        ret += f"{self.filepath},{self.sectionType},{symCount},{maxSize},{self.size},{averageSize:0.2f}"
+        return ret
 
     def toJson(self) -> dict[str, Any]:
         fileDict: dict[str, Any] = {
@@ -330,24 +349,35 @@ class Segment:
 
         return newSegment
 
+
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
+        print(self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols), end="")
+
+    def printSymbolsCsv(self):
+        print(self.toCsvSymbols(), end="")
+
+
+    def toCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True) -> str:
+        ret = ""
         for file in self._filesList:
             if skipWithoutSymbols and len(file) == 0:
                 continue
 
-            file.printAsCsv(printVram)
-        return
+            ret += file.toCsv(printVram=printVram) + "\n"
+        return ret
 
-    def printSymbolsCsv(self):
+    def toCsvSymbols(self) -> str:
+        ret = ""
+
         for file in self._filesList:
             if len(file) == 0:
                 continue
 
             for sym in file:
-                print(f"{file.filepath},", end="")
-                sym.printAsCsv()
-        return
-
+                ret += f"{file.filepath},"
+                ret += sym.toCsv()
+                ret += "\n"
+        return ret
 
     def toJson(self) -> dict[str, Any]:
         segmentDict: dict[str, Any] = {
@@ -702,20 +732,26 @@ class MapFile:
 
         return compInfo
 
+
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
-        File.printCsvHeader(printVram)
-        for segment in self._segmentsList:
-            segment.printAsCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols)
-        return
+        print(self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols), end="")
 
     def printSymbolsCsv(self):
-        print(f"File,", end="")
-        Symbol.printCsvHeader()
+        print(self.toCsvSymbols(), end="")
+
+
+    def toCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True) -> str:
+        ret = File.toCsvHeader(printVram=printVram) + "\n"
+        for segment in self._segmentsList:
+            ret += segment.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols)
+        return ret
+
+    def toCsvSymbols(self) -> str:
+        ret = f"File," + Symbol.toCsvHeader() + "\n"
 
         for segment in self._segmentsList:
-            segment.printSymbolsCsv()
-        return
-
+            ret += segment.toCsvSymbols()
+        return ret
 
     def toJson(self) -> dict[str, Any]:
         segmentsList = []
