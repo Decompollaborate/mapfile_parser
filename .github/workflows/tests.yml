@@ -1,11 +1,11 @@
-name: Tests
+name: Tests cases
 
 # Build on every branch push, tag push, and pull request change:
 on: [push, pull_request]
 
 jobs:
-  tests:
-    name: Tests
+  tests_cases:
+    name: Tests cases
     runs-on: ubuntu-latest
 
     steps:
