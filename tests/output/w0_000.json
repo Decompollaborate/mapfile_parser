@@ -1,6 +1,22 @@
 {
     "segments": [
         {
+            "name": "$nosegment",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000000",
+            "files": [
+                {
+                    "filepath": "build/us/src/weapon/header.c.o",
+                    "sectionType": ".reginfo",
+                    "vram": "0x00000000",
+                    "size": "0x18",
+                    "vrom": "0x000000",
+                    "symbols": []
+                }
+            ]
+        },
+        {
             "name": ".WEAPON_OVL",
             "vram": "0x8017A000",
             "size": "0x1700",

@@ -1,3 +1,4 @@
+00001000,code,entrypoint
 80000460,code,cleararena
 80000498,code,bootproc
 800005A0,code,Main_ThreadEntry
