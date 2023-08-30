@@ -1,0 +1,378 @@
+
+Discarded input sections
+
+ .reginfo       0x0000000000000000       0x18 build/us/src/weapon/w_000.c.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/src/weapon/w_000.c.o
+ .reginfo       0x0000000000000000       0x18 build/us/asm/us/weapon/data/w_000.data.s.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/asm/us/weapon/data/w_000.data.s.o
+ .reginfo       0x0000000000000000       0x18 build/us/asm/us/weapon/data/w_000.sbss.s.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/asm/us/weapon/data/w_000.sbss.s.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+
+.reginfo        0x0000000000000000       0x18
+ .reginfo       0x0000000000000000       0x18 build/us/src/weapon/header.c.o
+
+.MIPS.abiflags  0x0000000000000018       0x18
+ .MIPS.abiflags
+                0x0000000000000018       0x18 build/us/src/weapon/header.c.o
+
+.rel.dyn        0x0000000000000030        0x0
+ .rel.dyn       0x0000000000000030        0x0 build/us/src/weapon/header.c.o
+
+.WEAPON_OVL     0x000000008017a000     0x1700 load address 0x0000000000000000
+ *(.data)
+ .data          0x000000008017a000       0x40 build/us/src/weapon/header.c.o
+                0x000000008017a000                g_Weapon
+ .data          0x000000008017a040        0x0 build/us/src/weapon/w_000.c.o
+ .data          0x000000008017a040     0x1094 build/us/asm/us/weapon/data/w_000.data.s.o
+                0x000000008017a040                D_4000_8017A040
+                0x000000008017a184                D_4000_8017A184
+                0x000000008017a1a0                D_4000_8017A1A0
+                0x000000008017a1bc                D_4000_8017A1BC
+                0x000000008017a1d8                D_4000_8017A1D8
+                0x000000008017a1f4                D_4000_8017A1F4
+                0x000000008017a210                D_4000_8017A210
+                0x000000008017a22c                D_4000_8017A22C
+                0x000000008017a248                D_4000_8017A248
+                0x000000008017a264                D_4000_8017A264
+                0x000000008017a280                D_4000_8017A280
+                0x000000008017a29c                D_4000_8017A29C
+                0x000000008017a2b8                D_4000_8017A2B8
+                0x000000008017a2d4                D_4000_8017A2D4
+                0x000000008017a2f0                D_4000_8017A2F0
+                0x000000008017a30c                D_4000_8017A30C
+                0x000000008017a328                D_4000_8017A328
+                0x000000008017a344                D_4000_8017A344
+                0x000000008017a360                D_4000_8017A360
+                0x000000008017a37c                D_4000_8017A37C
+                0x000000008017a398                D_4000_8017A398
+                0x000000008017a3b4                D_4000_8017A3B4
+                0x000000008017a3d0                D_4000_8017A3D0
+                0x000000008017a3ec                D_4000_8017A3EC
+                0x000000008017a408                D_4000_8017A408
+                0x000000008017a424                D_4000_8017A424
+                0x000000008017a440                D_4000_8017A440
+                0x000000008017a45c                D_4000_8017A45C
+                0x000000008017a478                D_4000_8017A478
+                0x000000008017a494                D_4000_8017A494
+                0x000000008017a4b0                D_4000_8017A4B0
+                0x000000008017a4cc                D_4000_8017A4CC
+                0x000000008017a4e8                D_4000_8017A4E8
+                0x000000008017a504                D_4000_8017A504
+                0x000000008017a520                D_4000_8017A520
+                0x000000008017a53c                D_4000_8017A53C
+                0x000000008017a558                D_4000_8017A558
+                0x000000008017a574                D_4000_8017A574
+                0x000000008017a590                D_4000_8017A590
+                0x000000008017a5ac                D_4000_8017A5AC
+                0x000000008017a5c8                D_4000_8017A5C8
+                0x000000008017a5e4                D_4000_8017A5E4
+                0x000000008017a600                D_4000_8017A600
+                0x000000008017a61c                D_4000_8017A61C
+                0x000000008017a638                D_4000_8017A638
+                0x000000008017a654                D_4000_8017A654
+                0x000000008017a670                D_4000_8017A670
+                0x000000008017a68c                D_4000_8017A68C
+                0x000000008017a6a8                D_4000_8017A6A8
+                0x000000008017a6c4                D_4000_8017A6C4
+                0x000000008017a6e0                D_4000_8017A6E0
+                0x000000008017a6fc                D_4000_8017A6FC
+                0x000000008017a718                D_4000_8017A718
+                0x000000008017a734                D_4000_8017A734
+                0x000000008017a750                D_4000_8017A750
+                0x000000008017a76c                D_4000_8017A76C
+                0x000000008017a788                D_4000_8017A788
+                0x000000008017a7a4                D_4000_8017A7A4
+                0x000000008017a7c0                D_4000_8017A7C0
+                0x000000008017a7dc                D_4000_8017A7DC
+                0x000000008017a7f8                D_4000_8017A7F8
+                0x000000008017a814                D_4000_8017A814
+                0x000000008017a830                D_4000_8017A830
+                0x000000008017a84c                D_4000_8017A84C
+                0x000000008017a868                D_4000_8017A868
+                0x000000008017a884                D_4000_8017A884
+                0x000000008017a8a0                D_4000_8017A8A0
+                0x000000008017a8bc                D_4000_8017A8BC
+                0x000000008017a8d8                D_4000_8017A8D8
+                0x000000008017a8f4                D_4000_8017A8F4
+                0x000000008017a910                D_4000_8017A910
+                0x000000008017a92c                D_4000_8017A92C
+                0x000000008017a948                D_4000_8017A948
+                0x000000008017a964                D_4000_8017A964
+                0x000000008017a980                D_4000_8017A980
+                0x000000008017a99c                D_4000_8017A99C
+                0x000000008017a9b8                D_4000_8017A9B8
+                0x000000008017a9d4                D_4000_8017A9D4
+                0x000000008017a9f0                D_4000_8017A9F0
+                0x000000008017aa0c                D_4000_8017AA0C
+                0x000000008017aa28                D_4000_8017AA28
+                0x000000008017aa44                D_4000_8017AA44
+                0x000000008017ab24                D_4000_8017AB24
+                0x000000008017ac04                D_4000_8017AC04
+                0x000000008017ace4                D_4000_8017ACE4
+                0x000000008017adc4                D_4000_8017ADC4
+                0x000000008017aea4                D_4000_8017AEA4
+                0x000000008017aec0                D_4000_8017AEC0
+                0x000000008017aedc                D_4000_8017AEDC
+                0x000000008017aef8                D_4000_8017AEF8
+                0x000000008017af10                D_4000_8017AF10
+                0x000000008017af28                D_4000_8017AF28
+                0x000000008017af40                D_4000_8017AF40
+                0x000000008017af5c                D_4000_8017AF5C
+                0x000000008017af78                D_4000_8017AF78
+                0x000000008017af94                D_4000_8017AF94
+                0x000000008017afa8                D_4000_8017AFA8
+                0x000000008017afbc                D_4000_8017AFBC
+                0x000000008017afd0                D_4000_8017AFD0
+                0x000000008017b034                D_4000_8017B034
+                0x000000008017b050                D_4000_8017B050
+                0x000000008017b06c                D_4000_8017B06C
+                0x000000008017b0bc                D_4000_8017B0BC
+                0x000000008017b0d0                D_4000_8017B0D0
+ .data          0x000000008017b0d4        0x0 build/us/asm/us/weapon/data/w_000.sbss.s.o
+ *(.rodata)
+ *(.text)
+ .text          0x000000008017b0d4        0x0 build/us/src/weapon/header.c.o
+ .text          0x000000008017b0d4      0x62c build/us/src/weapon/w_000.c.o
+                0x000000008017b0d4                DestroyEntity
+                0x000000008017b140                LoadWeaponPalette
+                0x000000008017b1d8                SetSpriteBank1
+                0x000000008017b200                SetSpriteBank2
+                0x000000008017b228                ResetAnimation
+                0x000000008017b250                DecelerateX
+                0x000000008017b298                DecelerateY
+                0x000000008017b2e0                SetSpeedX
+                0x000000008017b308                DestroyEntityWeapon
+                0x000000008017b378                SetWeaponProperties
+                0x000000008017b474                EntityWeaponAttack
+                0x000000008017b690                func_ptr_80170004
+                0x000000008017b698                func_ptr_80170008
+                0x000000008017b6a0                func_ptr_8017000C
+                0x000000008017b6a8                func_ptr_80170010
+                0x000000008017b6b0                func_ptr_80170014
+                0x000000008017b6b8                GetWeaponId
+                0x000000008017b6c0                func_ptr_80170020
+                0x000000008017b6c8                func_ptr_80170024
+                0x000000008017b6d0                func_ptr_80170028
+                0x000000008017b6d8                WeaponUnused2C
+                0x000000008017b6e0                WeaponUnused30
+                0x000000008017b6e8                WeaponUnused34
+                0x000000008017b6f0                WeaponUnused38
+                0x000000008017b6f8                WeaponUnused3C
+ .text          0x000000008017b700        0x0 build/us/asm/us/weapon/data/w_000.data.s.o
+ .text          0x000000008017b700        0x0 build/us/asm/us/weapon/data/w_000.sbss.s.o
+                0x000000008017b700                end = .
+                0x000000008003c774                g_api = 0x8003c774
+                0x000000008003cb08                g_GpuBuffers = 0x8003cb08
+                0x0000000080072bd0                g_Player = 0x80072bd0
+                0x000000008007308c                g_Camera = 0x8007308c
+                0x00000000800730a0                g_CurrentRoom = 0x800730a0
+                0x0000000080097490                g_pads = 0x80097490
+                0x0000000080097964                g_Status = 0x80097964
+                0x000000008003bdec                D_8003BDEC = 0x8003bdec
+                0x000000008003c908                D_8003C908 = 0x8003c908
+                0x000000008017d000                D_8017D000 = 0x8017d000
+                0x00000000801b77cc                D_801B77CC = 0x801b77cc
+                0x000000008003c788                g_api_o_spriteBanks = 0x8003c788
+                0x000000008003c7b4                g_api_FreePrimitives = 0x8003c7b4
+                0x000000008003c7b8                g_api_AllocPrimitives = 0x8003c7b8
+                0x000000008003c7bc                g_api_CheckCollision = 0x8003c7bc
+                0x000000008003c7c0                g_api_func_80102CD8 = 0x8003c7c0
+                0x000000008003c7c4                g_api_UpdateAnim = 0x8003c7c4
+                0x000000008003c7d0                g_api_GetEquipProperties = 0x8003c7d0
+                0x000000008003c7dc                g_api_PlaySfx = 0x8003c7dc
+                0x000000008003c7f4                g_api_func_8011AAFC = 0x8003c7f4
+                0x000000008003c804                g_api_func_80118894 = 0x8003c804
+                0x000000008003c80c                g_api_func_80118970 = 0x8003c80c
+                0x000000008003c810                g_api_func_80118B18 = 0x8003c810
+                0x000000008003c814                g_api_UpdateUnarmedAnim = 0x8003c814
+                0x000000008003c818                g_api_func_8010DBFC = 0x8003c818
+                0x000000008003c81c                g_api_func_80118C28 = 0x8003c81c
+                0x000000008003c820                g_api_func_8010E168 = 0x8003c820
+                0x000000008003c830                g_api_D_800A4B04 = 0x8003c830
+                0x000000008003c838                g_api_AddHearts = 0x8003c838
+                0x000000008003c84c                g_api_AddToInventory = 0x8003c84c
+                0x000000008003c858                g_api_func_80134714 = 0x8003c858
+                0x000000008003c8c4                D_8003C8C4 = 0x8003c8c4
+                0x000000008003c998                g_blinkTimer = 0x8003c998
+                0x000000008006c37c                g_CurrentBuffer = 0x8006c37c
+                0x000000008006c3b8                g_CurrentEntity = 0x8006c3b8
+                0x000000008006edcc                D_8006EDCC = 0x8006edcc
+                0x000000008006eddc                D_8006EDDC = 0x8006eddc
+                0x000000008006ede0                D_8006EDE0 = 0x8006ede0
+                0x000000008006ee22                D_8006EE22 = 0x8006ee22
+                0x000000008006ee26                D_8006EE26 = 0x8006ee26
+                0x000000008006ee42                D_8006EE42 = 0x8006ee42
+                0x0000000080072ee8                g_Player_padPressed = 0x80072ee8
+                0x0000000080072eec                g_Player_padTapped = 0x80072eec
+                0x0000000080072ef4                g_Player_D_80072EF4 = 0x80072ef4
+                0x0000000080072efc                g_Player_D_80072EFC = 0x80072efc
+                0x0000000080072f12                g_Player_D_80072F12 = 0x80072f12
+                0x0000000080072f14                g_Player_D_80072F14 = 0x80072f14
+                0x0000000080072f16                g_Player_D_80072F16 = 0x80072f16
+                0x0000000080072f18                g_Player_D_80072F18 = 0x80072f18
+                0x0000000080072f20                g_Player_pl_vram_flag = 0x80072f20
+                0x0000000080072f2c                g_Player_unk0C = 0x80072f2c
+                0x0000000080072f40                g_Player_unk20_0 = 0x80072f40
+                0x0000000080072f64                g_Player_unk44 = 0x80072f64
+                0x0000000080072f66                g_Player_unk46 = 0x80072f66
+                0x0000000080072f68                g_Player_unk48 = 0x80072f68
+                0x0000000080072f6c                g_Player_unk4C = 0x80072f6c
+                0x0000000080072f76                g_Player_unk56 = 0x80072f76
+                0x0000000080072f78                g_Player_unk58 = 0x80072f78
+                0x0000000080072f92                g_Player_unk72 = 0x80072f92
+                0x000000008007308e                g_Camera_posX_i_hi = 0x8007308e
+                0x00000000800730c0                g_CurrentRoom_x = 0x800730c0
+                0x00000000800730c8                g_CurrentRoom_width = 0x800730c8
+                0x00000000800733d8                g_Entities = 0x800733d8
+                0x00000000800733da                PLAYER_posX_i_hi = 0x800733da
+                0x00000000800733dc                PLAYER_posY_val = 0x800733dc
+                0x00000000800733de                PLAYER_posY_i_hi = 0x800733de
+                0x00000000800733e0                PLAYER_velocityX = 0x800733e0
+                0x00000000800733e4                PLAYER_velocityY = 0x800733e4
+                0x00000000800733e8                PLAYER_hitboxOffX = 0x800733e8
+                0x00000000800733ea                PLAYER_hitboxOffY = 0x800733ea
+                0x00000000800733ec                PLAYER_facing = 0x800733ec
+                0x00000000800733f1                PLAYER_unk19 = 0x800733f1
+                0x00000000800733f4                D_800733F4 = 0x800733f4
+                0x00000000800733f6                PLAYER_rotAngle = 0x800733f6
+                0x00000000800733fa                PLAYER_rotPivotY = 0x800733fa
+                0x00000000800733fc                PLAYER_zPriority = 0x800733fc
+                0x0000000080073404                PLAYER_step = 0x80073404
+                0x0000000080073406                PLAYER_step_s = 0x80073406
+                0x000000008007340a                PLAYER_entityRoomIndex = 0x8007340a
+                0x0000000080073414                D_80073414 = 0x80073414
+                0x0000000080073416                D_80073416 = 0x80073416
+                0x000000008007341c                PLAYER_unk44 = 0x8007341c
+                0x000000008007341e                D_8007341E = 0x8007341e
+                0x000000008007341f                D_8007341F = 0x8007341f
+                0x0000000080073428                PLAYER_animFrameIdx = 0x80073428
+                0x000000008007342a                PLAYER_animFrameDuration = 0x8007342a
+                0x000000008007342e                PLAYER_animCurFrame = 0x8007342e
+                0x0000000080073444                D_80073444 = 0x80073444
+                0x0000000080073484                PLAYER_ext_generic_unkAC = 0x80073484
+                0x0000000080073f98                D_80073F98 = 0x80073f98
+                0x0000000080073fc8                D_80073FC8 = 0x80073fc8
+                0x0000000080074054                D_80074054 = 0x80074054
+                0x00000000800762d8                g_Entities_STAGE_ENTITY_START = 0x800762d8
+                0x0000000080086fec                g_PrimBuf = 0x80086fec
+                0x000000008008701e                D_8008701E = 0x8008701e
+                0x0000000080097410                D_80097410 = 0x80097410
+                0x0000000080097414                D_80097414 = 0x80097414
+                0x0000000080097420                D_80097420 = 0x80097420
+                0x0000000080097ba8                g_Status_hearts = 0x80097ba8
+                0x0000000080097bac                g_Status_heartsMax = 0x80097bac
+                0x0000000080097bb0                g_Status_mp = 0x80097bb0
+                0x0000000080097bf0                g_Status_gold = 0x80097bf0
+                0x0000000080097bf8                g_Status_D_80097BF8 = 0x80097bf8
+                0x000000008017a5f6                D_D6000_8017A5F6 = 0x8017a5f6
+                0x000000008017a606                D_D6000_8017A606 = 0x8017a606
+                0x000000008017aa9a                D_BA000_8017AA9A = 0x8017aa9a
+                0x000000008017aadd                D_BA000_8017AADD = 0x8017aadd
+                0x000000008017aade                D_BA000_8017AADE = 0x8017aade
+                0x000000008017aadf                D_BA000_8017AADF = 0x8017aadf
+                0x000000008017aae1                D_BA000_8017AAE1 = 0x8017aae1
+                0x000000008017aae2                D_BA000_8017AAE2 = 0x8017aae2
+                0x000000008017aae3                D_BA000_8017AAE3 = 0x8017aae3
+                0x000000008017ab1a                D_C8000_8017AB1A = 0x8017ab1a
+                0x000000008017ac4a                D_35000_8017AC4A = 0x8017ac4a
+                0x000000008017ad6a                D_169000_8017AD6A = 0x8017ad6a
+                0x000000008017ad6e                D_169000_8017AD6E = 0x8017ad6e
+                0x000000008017aea6                D_169000_8017AEA6 = 0x8017aea6
+                0x000000008017af96                D_B000_8017AF96 = 0x8017af96
+                0x000000008017afb9                D_B000_8017AFB9 = 0x8017afb9
+                0x000000008017afba                D_B000_8017AFBA = 0x8017afba
+                0x000000008017afbb                D_B000_8017AFBB = 0x8017afbb
+                0x000000008017afbd                D_B000_8017AFBD = 0x8017afbd
+                0x000000008017afbe                D_B000_8017AFBE = 0x8017afbe
+                0x000000008017afbf                D_B000_8017AFBF = 0x8017afbf
+                0x000000008017b002                D_154000_8017B002 = 0x8017b002
+                0x000000008017ba6a                D_115000_8017BA6A = 0x8017ba6a
+                0x000000008017bbea                D_107000_8017BBEA = 0x8017bbea
+                0x000000008017bc0a                D_107000_8017BC0A = 0x8017bc0a
+                0x000000008017cbd2                D_170000_8017CBD2 = 0x8017cbd2
+                0x000000008017cbd6                D_170000_8017CBD6 = 0x8017cbd6
+                0x000000008017cbfe                D_162000_8017CBFE = 0x8017cbfe
+                0x000000008017cc1e                D_162000_8017CC1E = 0x8017cc1e
+                0x000000008017cd3e                D_162000_8017CD3E = 0x8017cd3e
+                0x00000000800116fc                FntFlush = 0x800116fc
+                0x000000008001195c                FntPrint = 0x8001195c
+                0x000000008001290c                DrawSync = 0x8001290c
+                0x0000000080012b24                LoadImage = 0x80012b24
+                0x0000000080012e8c                PutDrawEnv = 0x80012e8c
+                0x0000000080012fe4                PutDispEnv = 0x80012fe4
+                0x0000000080015288                PadRead = 0x80015288
+                0x0000000080015308                VSync = 0x80015308
+                0x00000000800160e4                rand = 0x800160e4
+                0x0000000080016c9c                rsin = 0x80016c9c
+                0x0000000080016d68                rcos = 0x80016d68
+                0x0000000080016eec                SquareRoot0 = 0x80016eec
+                0x000000008001721c                SquareRoot12 = 0x8001721c
+                0x0000000080017cdc                TransMatrix = 0x80017cdc
+                0x0000000080017e3c                SetRotMatrix = 0x80017e3c
+                0x0000000080017ecc                SetTransMatrix = 0x80017ecc
+                0x000000008001803c                SetGeomOffset = 0x8001803c
+                0x000000008001805c                SetGeomScreen = 0x8001805c
+                0x00000000800182dc                RotTrans = 0x800182dc
+                0x000000008001833c                RotTransPers4 = 0x8001833c
+                0x000000008001849c                RotAverageNclip3 = 0x8001849c
+                0x00000000800186ac                RotMatrix = 0x800186ac
+                0x00000000800190ac                ratan2 = 0x800190ac
+LOAD build/us/src/weapon/header.c.o
+LOAD build/us/src/weapon/w_000.c.o
+LOAD build/us/asm/us/weapon/data/w_000.data.s.o
+LOAD build/us/asm/us/weapon/data/w_000.sbss.s.o
+OUTPUT(build/us/weapon/w0_000.elf elf32-tradlittlemips)
+
+.bss            0x000000008017b700        0x0 load address 0x0000000000001700
+ .bss           0x000000008017b700        0x0 build/us/src/weapon/header.c.o
+ .bss           0x000000008017b700        0x0 build/us/src/weapon/w_000.c.o
+ .bss           0x000000008017b700        0x0 build/us/asm/us/weapon/data/w_000.data.s.o
+ .bss           0x000000008017b700        0x0 build/us/asm/us/weapon/data/w_000.sbss.s.o
+
+.sbss           0x000000008017b700     0x1900 load address 0x0000000000001700
+ .sbss          0x000000008017b700     0x1900 build/us/asm/us/weapon/data/w_000.sbss.s.o
+                0x000000008017b700                D_4000_8017B700
+
+.pdr            0x0000000000000000      0x320
+ .pdr           0x0000000000000000        0x0 build/us/src/weapon/header.c.o
+ .pdr           0x0000000000000000      0x320 build/us/src/weapon/w_000.c.o
+ .pdr           0x0000000000000320        0x0 build/us/asm/us/weapon/data/w_000.data.s.o
+ .pdr           0x0000000000000320        0x0 build/us/asm/us/weapon/data/w_000.sbss.s.o
+
+.gnu.attributes
+                0x0000000000000000       0x10
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/src/weapon/header.c.o
+ .gnu.attributes
+                0x0000000000000010       0x10 build/us/src/weapon/w_000.c.o
+ .gnu.attributes
+                0x0000000000000020       0x10 build/us/asm/us/weapon/data/w_000.data.s.o
+ .gnu.attributes
+                0x0000000000000030       0x10 build/us/asm/us/weapon/data/w_000.sbss.s.o
+
+.debug_line     0x0000000000000000       0xed
+ .debug_line    0x0000000000000000       0xed build/us/src/weapon/w_000.c.o
+
+.debug_info     0x0000000000000000      0x185
+ .debug_info    0x0000000000000000      0x185 build/us/src/weapon/w_000.c.o
+
+.debug_abbrev   0x0000000000000000       0x21
+ .debug_abbrev  0x0000000000000000       0x21 build/us/src/weapon/w_000.c.o
+
+.debug_aranges  0x0000000000000000       0x20
+ .debug_aranges
+                0x0000000000000000       0x20 build/us/src/weapon/w_000.c.o
+
+.debug_str      0x0000000000000000      0x1d0
+ .debug_str     0x0000000000000000      0x1d0 build/us/src/weapon/w_000.c.o

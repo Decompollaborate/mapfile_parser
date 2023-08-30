@@ -16,6 +16,7 @@ from . import utils
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
+# regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)((\s*=\s*(?P<expression>.+))?)$")
 regex_label = re.compile(r"^(?P<name>\.?L[0-9A-F]{8})$")
 regex_fill = re.compile(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$")
 regex_segmentEntry = re.compile(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$")
@@ -77,26 +78,46 @@ class Symbol:
             return "None"
         return f"0x{self.vrom:06X}"
 
-    def serializeSize(self) -> str|None:
+    def serializeVram(self, humanReadable: bool=True) -> str|int|None:
+        if humanReadable:
+            return f"0x{self.vram:08X}"
+        return self.vram
+
+    def serializeSize(self, humanReadable: bool=True) -> str|int|None:
         if self.size is None:
             return None
-        return f"0x{self.size:X}"
+        if humanReadable:
+            return f"0x{self.size:X}"
+        return self.size
 
+    def serializeVrom(self, humanReadable: bool=True) -> str|int|None:
+        if self.vrom is None:
+            return None
+        if humanReadable:
+            return f"0x{self.vrom:06X}"
+        return self.vrom
 
     @staticmethod
     def printCsvHeader():
-        print("Symbol name,VRAM,Size in bytes")
+        print(Symbol.toCsvHeader())
 
     def printAsCsv(self):
-        print(f"{self.name},{self.vram:08X},{self.size}")
+        print(self.toCsv())
 
 
-    def toJson(self) -> dict[str, Any]:
+    @staticmethod
+    def toCsvHeader() -> str:
+        return "Symbol name,VRAM,Size in bytes"
+
+    def toCsv(self) -> str:
+        return f"{self.name},{self.vram:08X},{self.size}"
+
+    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
         result: dict[str, Any] = {
             "name": self.name,
-            "vram": self.getVramStr(),
-            "size": self.serializeSize(),
-            "vrom": self.getVromStr(),
+            "vram": self.serializeVram(humanReadable=humanReadable),
+            "size": self.serializeSize(humanReadable=humanReadable),
+            "vrom": self.serializeVrom(humanReadable=humanReadable),
         }
 
         return result
@@ -126,16 +147,22 @@ class File:
         return self.sectionType == ".bss"
 
 
-    def serializeVram(self) -> str|None:
-        return f"0x{self.vram:08X}"
+    def serializeVram(self, humanReadable: bool=True) -> str|int|None:
+        if humanReadable:
+            return f"0x{self.vram:08X}"
+        return self.vram
 
-    def serializeSize(self) -> str|None:
-        return f"0x{self.size:X}"
+    def serializeSize(self, humanReadable: bool=True) -> str|int|None:
+        if humanReadable:
+            return f"0x{self.size:X}"
+        return self.size
 
-    def serializeVrom(self) -> str|None:
+    def serializeVrom(self, humanReadable: bool=True) -> str|int|None:
         if self.vrom is None:
             return None
-        return f"0x{self.vrom:06X}"
+        if humanReadable:
+            return f"0x{self.vrom:06X}"
+        return self.vrom
 
 
     def getName(self) -> Path:
@@ -188,13 +215,24 @@ class File:
 
         return None
 
+
     @staticmethod
     def printCsvHeader(printVram: bool=True):
-        if printVram:
-            print("VRAM,", end="")
-        print("File,Section type,Num symbols,Max size,Total size,Average size")
+        print(File.toCsvHeader(printVram=printVram))
 
     def printAsCsv(self, printVram: bool=True):
+        print(self.toCsv(printVram=printVram))
+
+
+    @staticmethod
+    def toCsvHeader(printVram: bool=True) -> str:
+        ret = ""
+        if printVram:
+            ret += "VRAM,"
+        ret += "File,Section type,Num symbols,Max size,Total size,Average size"
+        return ret
+
+    def toCsv(self, printVram: bool=True) -> str:
         # Calculate stats
         symCount = len(self._symbols)
         maxSize = 0
@@ -203,23 +241,24 @@ class File:
             if sym.size is not None and sym.size > maxSize:
                 maxSize = sym.size
 
+        ret = ""
         if printVram:
-            print(f"{self.vram:08X},", end="")
-        print(f"{self.filepath},{self.sectionType},{symCount},{maxSize},{self.size},{averageSize:0.2f}")
+            ret += f"{self.vram:08X},"
+        ret += f"{self.filepath},{self.sectionType},{symCount},{maxSize},{self.size},{averageSize:0.2f}"
+        return ret
 
-
-    def toJson(self) -> dict[str, Any]:
+    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
         fileDict: dict[str, Any] = {
             "filepath": str(self.filepath),
             "sectionType": self.sectionType,
-            "vram": self.serializeVram(),
-            "size": self.serializeSize(),
-            "vrom": self.serializeVrom(),
+            "vram": self.serializeVram(humanReadable=humanReadable),
+            "size": self.serializeSize(humanReadable=humanReadable),
+            "vrom": self.serializeVrom(humanReadable=humanReadable),
         }
 
         symbolsList = []
         for symbol in self._symbols:
-            symbolsList.append(symbol.toJson())
+            symbolsList.append(symbol.toJson(humanReadable=humanReadable))
 
         fileDict["symbols"] = symbolsList
         return fileDict
@@ -256,14 +295,20 @@ class Segment:
     vrom: int
     _filesList: list[File] = dataclasses.field(default_factory=list)
 
-    def serializeVram(self) -> str|None:
-        return f"0x{self.vram:08X}"
+    def serializeVram(self, humanReadable: bool=True) -> str|int|None:
+        if humanReadable:
+            return f"0x{self.vram:08X}"
+        return self.vram
 
-    def serializeSize(self) -> str|None:
-        return f"0x{self.size:X}"
+    def serializeSize(self, humanReadable: bool=True) -> str|int|None:
+        if humanReadable:
+            return f"0x{self.size:X}"
+        return self.size
 
-    def serializeVrom(self) -> str|None:
-        return f"0x{self.vrom:06X}"
+    def serializeVrom(self, humanReadable: bool=True) -> str|int|None:
+        if humanReadable:
+            return f"0x{self.vrom:06X}"
+        return self.vrom
 
 
     def filterBySectionType(self, sectionType: str) -> Segment:
@@ -330,36 +375,47 @@ class Segment:
 
         return newSegment
 
+
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
+        print(self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols), end="")
+
+    def printSymbolsCsv(self):
+        print(self.toCsvSymbols(), end="")
+
+
+    def toCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True) -> str:
+        ret = ""
         for file in self._filesList:
             if skipWithoutSymbols and len(file) == 0:
                 continue
 
-            file.printAsCsv(printVram)
-        return
+            ret += file.toCsv(printVram=printVram) + "\n"
+        return ret
 
-    def printSymbolsCsv(self):
+    def toCsvSymbols(self) -> str:
+        ret = ""
+
         for file in self._filesList:
             if len(file) == 0:
                 continue
 
             for sym in file:
-                print(f"{file.filepath},", end="")
-                sym.printAsCsv()
-        return
+                ret += f"{file.filepath},"
+                ret += sym.toCsv()
+                ret += "\n"
+        return ret
 
-
-    def toJson(self) -> dict[str, Any]:
+    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
         segmentDict: dict[str, Any] = {
             "name": self.name,
-            "vram": self.serializeVram(),
-            "size": self.serializeSize(),
-            "vrom": self.serializeVrom(),
+            "vram": self.serializeVram(humanReadable=humanReadable),
+            "size": self.serializeSize(humanReadable=humanReadable),
+            "vrom": self.serializeVrom(humanReadable=humanReadable),
         }
 
         filesList = []
         for file in self._filesList:
-            filesList.append(file.toJson())
+            filesList.append(file.toJson(humanReadable=humanReadable))
 
         segmentDict["files"] = filesList
 
@@ -410,7 +466,7 @@ class MapFile:
             mapData = mapData[startIndex:]
         # print(len(mapData))
 
-        tempSegmentsList: list[Segment] = [Segment("$$dummysegment$$", 0, 0, 0)]
+        tempSegmentsList: list[Segment] = [Segment("$nosegment", 0, 0, 0)]
         tempFilesListList: list[list[File]] = [[]]
 
         inFile = False
@@ -442,9 +498,21 @@ class MapFile:
                 segmentEntryMatch = regex_segmentEntry.search(line)
 
                 if fillMatch is not None:
-                    # Add *fill* size to last file
+                    # Make a dummy file to handle *fill*
+                    filepath = Path()
                     size = int(fillMatch["size"], 16)
-                    tempFilesListList[-1][-1].size += size
+                    vram = 0
+                    sectionType = ""
+
+                    if len(tempFilesListList[-1]) != 0:
+                        prevFile = tempFilesListList[-1][-1]
+                        filepath = prevFile.filepath.with_name(prevFile.filepath.name + "__fill__")
+                        vram = prevFile.vram + prevFile.size
+                        sectionType = prevFile.sectionType
+
+                    tempFile = File(filepath, vram, size, sectionType)
+                    assert len(tempFilesListList) > 0, line
+                    tempFilesListList[-1].append(tempFile)
                 elif entryMatch is not None:
                     # Find file
                     filepath = Path(entryMatch["name"])
@@ -474,10 +542,14 @@ class MapFile:
 
             prevLine = line
 
-        # Skip dummy segment
-        for i in range(1, len(tempSegmentsList)):
+        for i in range(len(tempSegmentsList)):
             segment = tempSegmentsList[i]
             filesList = tempFilesListList[i]
+
+            if i == 0:
+                if segment.size == 0 and len(filesList) == 0:
+                    # skip the dummy segment if it has no size, files or symbols
+                    continue
 
             vromOffset = segment.vrom
             for file in filesList:
@@ -686,25 +758,31 @@ class MapFile:
 
         return compInfo
 
+
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
-        File.printCsvHeader(printVram)
-        for segment in self._segmentsList:
-            segment.printAsCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols)
-        return
+        print(self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols), end="")
 
     def printSymbolsCsv(self):
-        print(f"File,", end="")
-        Symbol.printCsvHeader()
+        print(self.toCsvSymbols(), end="")
+
+
+    def toCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True) -> str:
+        ret = File.toCsvHeader(printVram=printVram) + "\n"
+        for segment in self._segmentsList:
+            ret += segment.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols)
+        return ret
+
+    def toCsvSymbols(self) -> str:
+        ret = f"File," + Symbol.toCsvHeader() + "\n"
 
         for segment in self._segmentsList:
-            segment.printSymbolsCsv()
-        return
+            ret += segment.toCsvSymbols()
+        return ret
 
-
-    def toJson(self) -> dict[str, Any]:
+    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
         segmentsList = []
         for segment in self._segmentsList:
-            segmentsList.append(segment.toJson())
+            segmentsList.append(segment.toJson(humanReadable=humanReadable))
 
         result: dict[str, Any] = {
             "segments": segmentsList

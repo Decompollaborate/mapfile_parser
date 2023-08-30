@@ -1,0 +1,29 @@
+name: Tests cases
+
+# Build on every branch push, tag push, and pull request change:
+on: [push, pull_request]
+
+jobs:
+  tests_cases:
+    name: Tests cases
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Install local mapfile_parser
+      run: pip install .
+
+    - name: Update tests outputs
+      run: python3 tests/update_outputs.py
+
+    - name: Check if there are any changes in the test cases
+      id: tests_changes
+      uses: tj-actions/verify-changed-files@v14
+
+    - name: tables changes
+      if: steps.tests_changes.outputs.files_changed == 'true'
+      run: |
+        echo "Changed files: ${{ steps.tests_changes.outputs.changed_files }}"
+        echo "Please install the latest changes, run \`python3 tests/update_outputs.py\`, check the changes are desirable and commit the result"
+        exit 1
