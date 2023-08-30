@@ -1,0 +1,905 @@
+{
+    "segments": [
+        {
+            "name": "$nosegment",
+            "vram": 0,
+            "size": 0,
+            "vrom": 0,
+            "files": [
+                {
+                    "filepath": "build/us/src/weapon/header.c.o",
+                    "sectionType": ".reginfo",
+                    "vram": 0,
+                    "size": 24,
+                    "vrom": 0,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".WEAPON_OVL",
+            "vram": 2149031936,
+            "size": 5888,
+            "vrom": 0,
+            "files": [
+                {
+                    "filepath": "build/us/src/weapon/header.c.o",
+                    "sectionType": ".data",
+                    "vram": 2149031936,
+                    "size": 64,
+                    "vrom": 0,
+                    "symbols": [
+                        {
+                            "name": "g_Weapon",
+                            "vram": 2149031936,
+                            "size": 64,
+                            "vrom": 0
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/us/asm/us/weapon/data/w_000.data.s.o",
+                    "sectionType": ".data",
+                    "vram": 2149032000,
+                    "size": 4244,
+                    "vrom": 64,
+                    "symbols": [
+                        {
+                            "name": "D_4000_8017A040",
+                            "vram": 2149032000,
+                            "size": 324,
+                            "vrom": 64
+                        },
+                        {
+                            "name": "D_4000_8017A184",
+                            "vram": 2149032324,
+                            "size": 28,
+                            "vrom": 388
+                        },
+                        {
+                            "name": "D_4000_8017A1A0",
+                            "vram": 2149032352,
+                            "size": 28,
+                            "vrom": 416
+                        },
+                        {
+                            "name": "D_4000_8017A1BC",
+                            "vram": 2149032380,
+                            "size": 28,
+                            "vrom": 444
+                        },
+                        {
+                            "name": "D_4000_8017A1D8",
+                            "vram": 2149032408,
+                            "size": 28,
+                            "vrom": 472
+                        },
+                        {
+                            "name": "D_4000_8017A1F4",
+                            "vram": 2149032436,
+                            "size": 28,
+                            "vrom": 500
+                        },
+                        {
+                            "name": "D_4000_8017A210",
+                            "vram": 2149032464,
+                            "size": 28,
+                            "vrom": 528
+                        },
+                        {
+                            "name": "D_4000_8017A22C",
+                            "vram": 2149032492,
+                            "size": 28,
+                            "vrom": 556
+                        },
+                        {
+                            "name": "D_4000_8017A248",
+                            "vram": 2149032520,
+                            "size": 28,
+                            "vrom": 584
+                        },
+                        {
+                            "name": "D_4000_8017A264",
+                            "vram": 2149032548,
+                            "size": 28,
+                            "vrom": 612
+                        },
+                        {
+                            "name": "D_4000_8017A280",
+                            "vram": 2149032576,
+                            "size": 28,
+                            "vrom": 640
+                        },
+                        {
+                            "name": "D_4000_8017A29C",
+                            "vram": 2149032604,
+                            "size": 28,
+                            "vrom": 668
+                        },
+                        {
+                            "name": "D_4000_8017A2B8",
+                            "vram": 2149032632,
+                            "size": 28,
+                            "vrom": 696
+                        },
+                        {
+                            "name": "D_4000_8017A2D4",
+                            "vram": 2149032660,
+                            "size": 28,
+                            "vrom": 724
+                        },
+                        {
+                            "name": "D_4000_8017A2F0",
+                            "vram": 2149032688,
+                            "size": 28,
+                            "vrom": 752
+                        },
+                        {
+                            "name": "D_4000_8017A30C",
+                            "vram": 2149032716,
+                            "size": 28,
+                            "vrom": 780
+                        },
+                        {
+                            "name": "D_4000_8017A328",
+                            "vram": 2149032744,
+                            "size": 28,
+                            "vrom": 808
+                        },
+                        {
+                            "name": "D_4000_8017A344",
+                            "vram": 2149032772,
+                            "size": 28,
+                            "vrom": 836
+                        },
+                        {
+                            "name": "D_4000_8017A360",
+                            "vram": 2149032800,
+                            "size": 28,
+                            "vrom": 864
+                        },
+                        {
+                            "name": "D_4000_8017A37C",
+                            "vram": 2149032828,
+                            "size": 28,
+                            "vrom": 892
+                        },
+                        {
+                            "name": "D_4000_8017A398",
+                            "vram": 2149032856,
+                            "size": 28,
+                            "vrom": 920
+                        },
+                        {
+                            "name": "D_4000_8017A3B4",
+                            "vram": 2149032884,
+                            "size": 28,
+                            "vrom": 948
+                        },
+                        {
+                            "name": "D_4000_8017A3D0",
+                            "vram": 2149032912,
+                            "size": 28,
+                            "vrom": 976
+                        },
+                        {
+                            "name": "D_4000_8017A3EC",
+                            "vram": 2149032940,
+                            "size": 28,
+                            "vrom": 1004
+                        },
+                        {
+                            "name": "D_4000_8017A408",
+                            "vram": 2149032968,
+                            "size": 28,
+                            "vrom": 1032
+                        },
+                        {
+                            "name": "D_4000_8017A424",
+                            "vram": 2149032996,
+                            "size": 28,
+                            "vrom": 1060
+                        },
+                        {
+                            "name": "D_4000_8017A440",
+                            "vram": 2149033024,
+                            "size": 28,
+                            "vrom": 1088
+                        },
+                        {
+                            "name": "D_4000_8017A45C",
+                            "vram": 2149033052,
+                            "size": 28,
+                            "vrom": 1116
+                        },
+                        {
+                            "name": "D_4000_8017A478",
+                            "vram": 2149033080,
+                            "size": 28,
+                            "vrom": 1144
+                        },
+                        {
+                            "name": "D_4000_8017A494",
+                            "vram": 2149033108,
+                            "size": 28,
+                            "vrom": 1172
+                        },
+                        {
+                            "name": "D_4000_8017A4B0",
+                            "vram": 2149033136,
+                            "size": 28,
+                            "vrom": 1200
+                        },
+                        {
+                            "name": "D_4000_8017A4CC",
+                            "vram": 2149033164,
+                            "size": 28,
+                            "vrom": 1228
+                        },
+                        {
+                            "name": "D_4000_8017A4E8",
+                            "vram": 2149033192,
+                            "size": 28,
+                            "vrom": 1256
+                        },
+                        {
+                            "name": "D_4000_8017A504",
+                            "vram": 2149033220,
+                            "size": 28,
+                            "vrom": 1284
+                        },
+                        {
+                            "name": "D_4000_8017A520",
+                            "vram": 2149033248,
+                            "size": 28,
+                            "vrom": 1312
+                        },
+                        {
+                            "name": "D_4000_8017A53C",
+                            "vram": 2149033276,
+                            "size": 28,
+                            "vrom": 1340
+                        },
+                        {
+                            "name": "D_4000_8017A558",
+                            "vram": 2149033304,
+                            "size": 28,
+                            "vrom": 1368
+                        },
+                        {
+                            "name": "D_4000_8017A574",
+                            "vram": 2149033332,
+                            "size": 28,
+                            "vrom": 1396
+                        },
+                        {
+                            "name": "D_4000_8017A590",
+                            "vram": 2149033360,
+                            "size": 28,
+                            "vrom": 1424
+                        },
+                        {
+                            "name": "D_4000_8017A5AC",
+                            "vram": 2149033388,
+                            "size": 28,
+                            "vrom": 1452
+                        },
+                        {
+                            "name": "D_4000_8017A5C8",
+                            "vram": 2149033416,
+                            "size": 28,
+                            "vrom": 1480
+                        },
+                        {
+                            "name": "D_4000_8017A5E4",
+                            "vram": 2149033444,
+                            "size": 28,
+                            "vrom": 1508
+                        },
+                        {
+                            "name": "D_4000_8017A600",
+                            "vram": 2149033472,
+                            "size": 28,
+                            "vrom": 1536
+                        },
+                        {
+                            "name": "D_4000_8017A61C",
+                            "vram": 2149033500,
+                            "size": 28,
+                            "vrom": 1564
+                        },
+                        {
+                            "name": "D_4000_8017A638",
+                            "vram": 2149033528,
+                            "size": 28,
+                            "vrom": 1592
+                        },
+                        {
+                            "name": "D_4000_8017A654",
+                            "vram": 2149033556,
+                            "size": 28,
+                            "vrom": 1620
+                        },
+                        {
+                            "name": "D_4000_8017A670",
+                            "vram": 2149033584,
+                            "size": 28,
+                            "vrom": 1648
+                        },
+                        {
+                            "name": "D_4000_8017A68C",
+                            "vram": 2149033612,
+                            "size": 28,
+                            "vrom": 1676
+                        },
+                        {
+                            "name": "D_4000_8017A6A8",
+                            "vram": 2149033640,
+                            "size": 28,
+                            "vrom": 1704
+                        },
+                        {
+                            "name": "D_4000_8017A6C4",
+                            "vram": 2149033668,
+                            "size": 28,
+                            "vrom": 1732
+                        },
+                        {
+                            "name": "D_4000_8017A6E0",
+                            "vram": 2149033696,
+                            "size": 28,
+                            "vrom": 1760
+                        },
+                        {
+                            "name": "D_4000_8017A6FC",
+                            "vram": 2149033724,
+                            "size": 28,
+                            "vrom": 1788
+                        },
+                        {
+                            "name": "D_4000_8017A718",
+                            "vram": 2149033752,
+                            "size": 28,
+                            "vrom": 1816
+                        },
+                        {
+                            "name": "D_4000_8017A734",
+                            "vram": 2149033780,
+                            "size": 28,
+                            "vrom": 1844
+                        },
+                        {
+                            "name": "D_4000_8017A750",
+                            "vram": 2149033808,
+                            "size": 28,
+                            "vrom": 1872
+                        },
+                        {
+                            "name": "D_4000_8017A76C",
+                            "vram": 2149033836,
+                            "size": 28,
+                            "vrom": 1900
+                        },
+                        {
+                            "name": "D_4000_8017A788",
+                            "vram": 2149033864,
+                            "size": 28,
+                            "vrom": 1928
+                        },
+                        {
+                            "name": "D_4000_8017A7A4",
+                            "vram": 2149033892,
+                            "size": 28,
+                            "vrom": 1956
+                        },
+                        {
+                            "name": "D_4000_8017A7C0",
+                            "vram": 2149033920,
+                            "size": 28,
+                            "vrom": 1984
+                        },
+                        {
+                            "name": "D_4000_8017A7DC",
+                            "vram": 2149033948,
+                            "size": 28,
+                            "vrom": 2012
+                        },
+                        {
+                            "name": "D_4000_8017A7F8",
+                            "vram": 2149033976,
+                            "size": 28,
+                            "vrom": 2040
+                        },
+                        {
+                            "name": "D_4000_8017A814",
+                            "vram": 2149034004,
+                            "size": 28,
+                            "vrom": 2068
+                        },
+                        {
+                            "name": "D_4000_8017A830",
+                            "vram": 2149034032,
+                            "size": 28,
+                            "vrom": 2096
+                        },
+                        {
+                            "name": "D_4000_8017A84C",
+                            "vram": 2149034060,
+                            "size": 28,
+                            "vrom": 2124
+                        },
+                        {
+                            "name": "D_4000_8017A868",
+                            "vram": 2149034088,
+                            "size": 28,
+                            "vrom": 2152
+                        },
+                        {
+                            "name": "D_4000_8017A884",
+                            "vram": 2149034116,
+                            "size": 28,
+                            "vrom": 2180
+                        },
+                        {
+                            "name": "D_4000_8017A8A0",
+                            "vram": 2149034144,
+                            "size": 28,
+                            "vrom": 2208
+                        },
+                        {
+                            "name": "D_4000_8017A8BC",
+                            "vram": 2149034172,
+                            "size": 28,
+                            "vrom": 2236
+                        },
+                        {
+                            "name": "D_4000_8017A8D8",
+                            "vram": 2149034200,
+                            "size": 28,
+                            "vrom": 2264
+                        },
+                        {
+                            "name": "D_4000_8017A8F4",
+                            "vram": 2149034228,
+                            "size": 28,
+                            "vrom": 2292
+                        },
+                        {
+                            "name": "D_4000_8017A910",
+                            "vram": 2149034256,
+                            "size": 28,
+                            "vrom": 2320
+                        },
+                        {
+                            "name": "D_4000_8017A92C",
+                            "vram": 2149034284,
+                            "size": 28,
+                            "vrom": 2348
+                        },
+                        {
+                            "name": "D_4000_8017A948",
+                            "vram": 2149034312,
+                            "size": 28,
+                            "vrom": 2376
+                        },
+                        {
+                            "name": "D_4000_8017A964",
+                            "vram": 2149034340,
+                            "size": 28,
+                            "vrom": 2404
+                        },
+                        {
+                            "name": "D_4000_8017A980",
+                            "vram": 2149034368,
+                            "size": 28,
+                            "vrom": 2432
+                        },
+                        {
+                            "name": "D_4000_8017A99C",
+                            "vram": 2149034396,
+                            "size": 28,
+                            "vrom": 2460
+                        },
+                        {
+                            "name": "D_4000_8017A9B8",
+                            "vram": 2149034424,
+                            "size": 28,
+                            "vrom": 2488
+                        },
+                        {
+                            "name": "D_4000_8017A9D4",
+                            "vram": 2149034452,
+                            "size": 28,
+                            "vrom": 2516
+                        },
+                        {
+                            "name": "D_4000_8017A9F0",
+                            "vram": 2149034480,
+                            "size": 28,
+                            "vrom": 2544
+                        },
+                        {
+                            "name": "D_4000_8017AA0C",
+                            "vram": 2149034508,
+                            "size": 28,
+                            "vrom": 2572
+                        },
+                        {
+                            "name": "D_4000_8017AA28",
+                            "vram": 2149034536,
+                            "size": 28,
+                            "vrom": 2600
+                        },
+                        {
+                            "name": "D_4000_8017AA44",
+                            "vram": 2149034564,
+                            "size": 224,
+                            "vrom": 2628
+                        },
+                        {
+                            "name": "D_4000_8017AB24",
+                            "vram": 2149034788,
+                            "size": 224,
+                            "vrom": 2852
+                        },
+                        {
+                            "name": "D_4000_8017AC04",
+                            "vram": 2149035012,
+                            "size": 224,
+                            "vrom": 3076
+                        },
+                        {
+                            "name": "D_4000_8017ACE4",
+                            "vram": 2149035236,
+                            "size": 224,
+                            "vrom": 3300
+                        },
+                        {
+                            "name": "D_4000_8017ADC4",
+                            "vram": 2149035460,
+                            "size": 224,
+                            "vrom": 3524
+                        },
+                        {
+                            "name": "D_4000_8017AEA4",
+                            "vram": 2149035684,
+                            "size": 28,
+                            "vrom": 3748
+                        },
+                        {
+                            "name": "D_4000_8017AEC0",
+                            "vram": 2149035712,
+                            "size": 28,
+                            "vrom": 3776
+                        },
+                        {
+                            "name": "D_4000_8017AEDC",
+                            "vram": 2149035740,
+                            "size": 28,
+                            "vrom": 3804
+                        },
+                        {
+                            "name": "D_4000_8017AEF8",
+                            "vram": 2149035768,
+                            "size": 24,
+                            "vrom": 3832
+                        },
+                        {
+                            "name": "D_4000_8017AF10",
+                            "vram": 2149035792,
+                            "size": 24,
+                            "vrom": 3856
+                        },
+                        {
+                            "name": "D_4000_8017AF28",
+                            "vram": 2149035816,
+                            "size": 24,
+                            "vrom": 3880
+                        },
+                        {
+                            "name": "D_4000_8017AF40",
+                            "vram": 2149035840,
+                            "size": 28,
+                            "vrom": 3904
+                        },
+                        {
+                            "name": "D_4000_8017AF5C",
+                            "vram": 2149035868,
+                            "size": 28,
+                            "vrom": 3932
+                        },
+                        {
+                            "name": "D_4000_8017AF78",
+                            "vram": 2149035896,
+                            "size": 28,
+                            "vrom": 3960
+                        },
+                        {
+                            "name": "D_4000_8017AF94",
+                            "vram": 2149035924,
+                            "size": 20,
+                            "vrom": 3988
+                        },
+                        {
+                            "name": "D_4000_8017AFA8",
+                            "vram": 2149035944,
+                            "size": 20,
+                            "vrom": 4008
+                        },
+                        {
+                            "name": "D_4000_8017AFBC",
+                            "vram": 2149035964,
+                            "size": 20,
+                            "vrom": 4028
+                        },
+                        {
+                            "name": "D_4000_8017AFD0",
+                            "vram": 2149035984,
+                            "size": 100,
+                            "vrom": 4048
+                        },
+                        {
+                            "name": "D_4000_8017B034",
+                            "vram": 2149036084,
+                            "size": 28,
+                            "vrom": 4148
+                        },
+                        {
+                            "name": "D_4000_8017B050",
+                            "vram": 2149036112,
+                            "size": 28,
+                            "vrom": 4176
+                        },
+                        {
+                            "name": "D_4000_8017B06C",
+                            "vram": 2149036140,
+                            "size": 80,
+                            "vrom": 4204
+                        },
+                        {
+                            "name": "D_4000_8017B0BC",
+                            "vram": 2149036220,
+                            "size": 20,
+                            "vrom": 4284
+                        },
+                        {
+                            "name": "D_4000_8017B0D0",
+                            "vram": 2149036240,
+                            "size": 4,
+                            "vrom": 4304
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/us/src/weapon/w_000.c.o",
+                    "sectionType": ".text",
+                    "vram": 2149036244,
+                    "size": 1580,
+                    "vrom": 4308,
+                    "symbols": [
+                        {
+                            "name": "DestroyEntity",
+                            "vram": 2149036244,
+                            "size": 108,
+                            "vrom": 4308
+                        },
+                        {
+                            "name": "LoadWeaponPalette",
+                            "vram": 2149036352,
+                            "size": 152,
+                            "vrom": 4416
+                        },
+                        {
+                            "name": "SetSpriteBank1",
+                            "vram": 2149036504,
+                            "size": 40,
+                            "vrom": 4568
+                        },
+                        {
+                            "name": "SetSpriteBank2",
+                            "vram": 2149036544,
+                            "size": 40,
+                            "vrom": 4608
+                        },
+                        {
+                            "name": "ResetAnimation",
+                            "vram": 2149036584,
+                            "size": 40,
+                            "vrom": 4648
+                        },
+                        {
+                            "name": "DecelerateX",
+                            "vram": 2149036624,
+                            "size": 72,
+                            "vrom": 4688
+                        },
+                        {
+                            "name": "DecelerateY",
+                            "vram": 2149036696,
+                            "size": 72,
+                            "vrom": 4760
+                        },
+                        {
+                            "name": "SetSpeedX",
+                            "vram": 2149036768,
+                            "size": 40,
+                            "vrom": 4832
+                        },
+                        {
+                            "name": "DestroyEntityWeapon",
+                            "vram": 2149036808,
+                            "size": 112,
+                            "vrom": 4872
+                        },
+                        {
+                            "name": "SetWeaponProperties",
+                            "vram": 2149036920,
+                            "size": 252,
+                            "vrom": 4984
+                        },
+                        {
+                            "name": "EntityWeaponAttack",
+                            "vram": 2149037172,
+                            "size": 540,
+                            "vrom": 5236
+                        },
+                        {
+                            "name": "func_ptr_80170004",
+                            "vram": 2149037712,
+                            "size": 8,
+                            "vrom": 5776
+                        },
+                        {
+                            "name": "func_ptr_80170008",
+                            "vram": 2149037720,
+                            "size": 8,
+                            "vrom": 5784
+                        },
+                        {
+                            "name": "func_ptr_8017000C",
+                            "vram": 2149037728,
+                            "size": 8,
+                            "vrom": 5792
+                        },
+                        {
+                            "name": "func_ptr_80170010",
+                            "vram": 2149037736,
+                            "size": 8,
+                            "vrom": 5800
+                        },
+                        {
+                            "name": "func_ptr_80170014",
+                            "vram": 2149037744,
+                            "size": 8,
+                            "vrom": 5808
+                        },
+                        {
+                            "name": "GetWeaponId",
+                            "vram": 2149037752,
+                            "size": 8,
+                            "vrom": 5816
+                        },
+                        {
+                            "name": "func_ptr_80170020",
+                            "vram": 2149037760,
+                            "size": 8,
+                            "vrom": 5824
+                        },
+                        {
+                            "name": "func_ptr_80170024",
+                            "vram": 2149037768,
+                            "size": 8,
+                            "vrom": 5832
+                        },
+                        {
+                            "name": "func_ptr_80170028",
+                            "vram": 2149037776,
+                            "size": 8,
+                            "vrom": 5840
+                        },
+                        {
+                            "name": "WeaponUnused2C",
+                            "vram": 2149037784,
+                            "size": 8,
+                            "vrom": 5848
+                        },
+                        {
+                            "name": "WeaponUnused30",
+                            "vram": 2149037792,
+                            "size": 8,
+                            "vrom": 5856
+                        },
+                        {
+                            "name": "WeaponUnused34",
+                            "vram": 2149037800,
+                            "size": 8,
+                            "vrom": 5864
+                        },
+                        {
+                            "name": "WeaponUnused38",
+                            "vram": 2149037808,
+                            "size": 8,
+                            "vrom": 5872
+                        },
+                        {
+                            "name": "WeaponUnused3C",
+                            "vram": 2149037816,
+                            "size": 8,
+                            "vrom": 5880
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".bss",
+            "vram": 2149037824,
+            "size": 0,
+            "vrom": 5888,
+            "files": []
+        },
+        {
+            "name": ".sbss",
+            "vram": 2149037824,
+            "size": 6400,
+            "vrom": 5888,
+            "files": [
+                {
+                    "filepath": "build/us/asm/us/weapon/data/w_000.sbss.s.o",
+                    "sectionType": ".sbss",
+                    "vram": 2149037824,
+                    "size": 6400,
+                    "vrom": 5888,
+                    "symbols": [
+                        {
+                            "name": "D_4000_8017B700",
+                            "vram": 2149037824,
+                            "size": 6400,
+                            "vrom": 5888
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/us/src/weapon/w_000.c.o",
+                    "sectionType": ".pdr",
+                    "vram": 0,
+                    "size": 800,
+                    "vrom": 12288,
+                    "symbols": []
+                },
+                {
+                    "filepath": "build/us/src/weapon/w_000.c.o",
+                    "sectionType": ".debug_line",
+                    "vram": 0,
+                    "size": 237,
+                    "vrom": 13088,
+                    "symbols": []
+                },
+                {
+                    "filepath": "build/us/src/weapon/w_000.c.o",
+                    "sectionType": ".debug_info",
+                    "vram": 0,
+                    "size": 389,
+                    "vrom": 13325,
+                    "symbols": []
+                },
+                {
+                    "filepath": "build/us/src/weapon/w_000.c.o",
+                    "sectionType": ".debug_abbrev",
+                    "vram": 0,
+                    "size": 33,
+                    "vrom": 13714,
+                    "symbols": []
+                },
+                {
+                    "filepath": "build/us/src/weapon/w_000.c.o",
+                    "sectionType": ".debug_str",
+                    "vram": 0,
+                    "size": 464,
+                    "vrom": 13747,
+                    "symbols": []
+                }
+            ]
+        }
+    ]
+}
