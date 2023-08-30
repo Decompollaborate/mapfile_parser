@@ -83,6 +83,11 @@ class Symbol:
             return None
         return f"0x{self.size:X}"
 
+    def serializeVrom(self) -> str|None:
+        if self.vrom is None:
+            return None
+        return f"0x{self.size:X}"
+
     @staticmethod
     def printCsvHeader():
         print(Symbol.toCsvHeader())
@@ -103,7 +108,7 @@ class Symbol:
             "name": self.name,
             "vram": self.getVramStr(),
             "size": self.serializeSize(),
-            "vrom": self.getVromStr(),
+            "vrom": self.serializeVrom(),
         }
 
         return result
