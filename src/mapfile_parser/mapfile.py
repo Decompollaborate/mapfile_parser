@@ -64,7 +64,6 @@ class Symbol:
     vram: int
     size: int|None = None # in bytes
     vrom: int|None = None
-    expression: str|None = None
 
     def getVramStr(self) -> str:
         return f"0x{self.vram:08X}"
@@ -83,9 +82,6 @@ class Symbol:
         if self.size is None:
             return None
         return f"0x{self.size:X}"
-
-    def serializeExpression(self) -> str|None:
-        return self.expression
 
     @staticmethod
     def printCsvHeader():
@@ -108,7 +104,6 @@ class Symbol:
             "vram": self.getVramStr(),
             "size": self.serializeSize(),
             "vrom": self.getVromStr(),
-            "expression": self.serializeExpression()
         }
 
         return result
