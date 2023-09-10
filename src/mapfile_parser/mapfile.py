@@ -571,6 +571,14 @@ class MapFile:
                         func = file[index]
                         nextFunc = file[index+1]
 
+                        if index == 0:
+                            if func.vram > file.vram:
+                                # If the vram of the first symbol doesn't match the vram of the file
+                                # it means the first(s) symbols were not emitted in the mapfile (static,
+                                # jumptables, etc)
+                                # We try to adjust the vrom to account for it.
+                                symVrom += func.vram - file.vram
+
                         size = (nextFunc.vram - func.vram)
                         acummulatedSize += size
 

@@ -19690,451 +19690,451 @@
                             "name": "rotate_table_399",
                             "vram": 2148303484,
                             "size": 16,
-                            "vrom": 720784
+                            "vrom": 720812
                         },
                         {
                             "name": "rotate_mtx_400",
                             "vram": 2148303500,
                             "size": 24,
-                            "vrom": 720800
+                            "vrom": 720828
                         },
                         {
                             "name": "_speed_561",
                             "vram": 2148303524,
                             "size": 4,
-                            "vrom": 720824
+                            "vrom": 720852
                         },
                         {
                             "name": "_retryMenu_itemCount",
                             "vram": 2148303528,
                             "size": 8,
-                            "vrom": 720828
+                            "vrom": 720856
                         },
                         {
                             "name": "_big_virus_def_wait",
                             "vram": 2148303536,
                             "size": 12,
-                            "vrom": 720836
+                            "vrom": 720864
                         },
                         {
                             "name": "RO_800C82BC_cn",
                             "vram": 2148303548,
                             "size": 12,
-                            "vrom": 720848
+                            "vrom": 720876
                         },
                         {
                             "name": "RO_800C82C8_cn",
                             "vram": 2148303560,
                             "size": 12,
-                            "vrom": 720860
+                            "vrom": 720888
                         },
                         {
                             "name": "RO_800C82D4_cn",
                             "vram": 2148303572,
                             "size": 20,
-                            "vrom": 720872
+                            "vrom": 720900
                         },
                         {
                             "name": "_mesWriting",
                             "vram": 2148303592,
                             "size": 24,
-                            "vrom": 720892
+                            "vrom": 720920
                         },
                         {
                             "name": "STR_800B1CE0",
                             "vram": 2148303616,
                             "size": 24,
-                            "vrom": 720916
+                            "vrom": 720944
                         },
                         {
                             "name": "RO_800C8318_cn",
                             "vram": 2148303640,
                             "size": 16,
-                            "vrom": 720940
+                            "vrom": 720968
                         },
                         {
                             "name": "RO_800C8328_cn",
                             "vram": 2148303656,
                             "size": 4,
-                            "vrom": 720956
+                            "vrom": 720984
                         },
                         {
                             "name": "RO_800C832C_cn",
                             "vram": 2148303660,
                             "size": 12,
-                            "vrom": 720960
+                            "vrom": 720988
                         },
                         {
                             "name": "RO_800C8338_cn",
                             "vram": 2148303672,
                             "size": 8,
-                            "vrom": 720972
+                            "vrom": 721000
                         },
                         {
                             "name": "RO_800C8340_cn",
                             "vram": 2148303680,
                             "size": 8,
-                            "vrom": 720980
+                            "vrom": 721008
                         },
                         {
                             "name": "RO_800C8348_cn",
                             "vram": 2148303688,
                             "size": 36,
-                            "vrom": 720988
+                            "vrom": 721016
                         },
                         {
                             "name": "RO_800C836C_cn",
                             "vram": 2148303724,
                             "size": 32,
-                            "vrom": 721024
+                            "vrom": 721052
                         },
                         {
                             "name": "RO_800C838C_cn",
                             "vram": 2148303756,
                             "size": 8,
-                            "vrom": 721056
+                            "vrom": 721084
                         },
                         {
                             "name": "_posP4CharBase",
                             "vram": 2148303764,
                             "size": 32,
-                            "vrom": 721064
+                            "vrom": 721092
                         },
                         {
                             "name": "RO_800C83B4_cn",
                             "vram": 2148303796,
                             "size": 72,
-                            "vrom": 721096
+                            "vrom": 721124
                         },
                         {
                             "name": "RO_800C83FC_cn",
                             "vram": 2148303868,
                             "size": 144,
-                            "vrom": 721168
+                            "vrom": 721196
                         },
                         {
                             "name": "RO_800C848C_cn",
                             "vram": 2148304012,
                             "size": 16,
-                            "vrom": 721312
+                            "vrom": 721340
                         },
                         {
                             "name": "RO_800C849C_cn",
                             "vram": 2148304028,
                             "size": 16,
-                            "vrom": 721328
+                            "vrom": 721356
                         },
                         {
                             "name": "RO_800C84AC_cn",
                             "vram": 2148304044,
                             "size": 28,
-                            "vrom": 721344
+                            "vrom": 721372
                         },
                         {
                             "name": "RO_800C84C8_cn",
                             "vram": 2148304072,
                             "size": 8,
-                            "vrom": 721372
+                            "vrom": 721400
                         },
                         {
                             "name": "attack_table_1531",
                             "vram": 2148304080,
                             "size": 12,
-                            "vrom": 721380
+                            "vrom": 721408
                         },
                         {
                             "name": "RO_800C84DC_cn",
                             "vram": 2148304092,
                             "size": 28,
-                            "vrom": 721392
+                            "vrom": 721420
                         },
                         {
                             "name": "jtbl_800C84F8",
                             "vram": 2148304120,
                             "size": 296,
-                            "vrom": 721420
+                            "vrom": 721448
                         },
                         {
                             "name": "RO_800C8620_cn",
                             "vram": 2148304416,
                             "size": 12,
-                            "vrom": 721716
+                            "vrom": 721744
                         },
                         {
                             "name": "RO_800C862C_cn",
                             "vram": 2148304428,
                             "size": 4,
-                            "vrom": 721728
+                            "vrom": 721756
                         },
                         {
                             "name": "RO_800C8630_cn",
                             "vram": 2148304432,
                             "size": 8,
-                            "vrom": 721732
+                            "vrom": 721760
                         },
                         {
                             "name": "RO_800C8638_cn",
                             "vram": 2148304440,
                             "size": 8,
-                            "vrom": 721740
+                            "vrom": 721768
                         },
                         {
                             "name": "jtbl_800C8640",
                             "vram": 2148304448,
                             "size": 24,
-                            "vrom": 721748
+                            "vrom": 721776
                         },
                         {
                             "name": "RO_800C8658_cn",
                             "vram": 2148304472,
                             "size": 8,
-                            "vrom": 721772
+                            "vrom": 721800
                         },
                         {
                             "name": "RO_800C8660_cn",
                             "vram": 2148304480,
                             "size": 48,
-                            "vrom": 721780
+                            "vrom": 721808
                         },
                         {
                             "name": "RO_800C8690_cn",
                             "vram": 2148304528,
                             "size": 8,
-                            "vrom": 721828
+                            "vrom": 721856
                         },
                         {
                             "name": "RO_800C8698_cn",
                             "vram": 2148304536,
                             "size": 8,
-                            "vrom": 721836
+                            "vrom": 721864
                         },
                         {
                             "name": "RO_800C86A0_cn",
                             "vram": 2148304544,
                             "size": 16,
-                            "vrom": 721844
+                            "vrom": 721872
                         },
                         {
                             "name": "RO_800C86B0_cn",
                             "vram": 2148304560,
                             "size": 12,
-                            "vrom": 721860
+                            "vrom": 721888
                         },
                         {
                             "name": "RO_800C86BC_cn",
                             "vram": 2148304572,
                             "size": 12,
-                            "vrom": 721872
+                            "vrom": 721900
                         },
                         {
                             "name": "RO_800C86C8_cn",
                             "vram": 2148304584,
                             "size": 12,
-                            "vrom": 721884
+                            "vrom": 721912
                         },
                         {
                             "name": "RO_800C86D4_cn",
                             "vram": 2148304596,
                             "size": 4,
-                            "vrom": 721896
+                            "vrom": 721924
                         },
                         {
                             "name": "RO_800C86D8_cn",
                             "vram": 2148304600,
                             "size": 4,
-                            "vrom": 721900
+                            "vrom": 721928
                         },
                         {
                             "name": "RO_800C86DC_cn",
                             "vram": 2148304604,
                             "size": 8,
-                            "vrom": 721904
+                            "vrom": 721932
                         },
                         {
                             "name": "RO_800C86E4_cn",
                             "vram": 2148304612,
                             "size": 8,
-                            "vrom": 721912
+                            "vrom": 721940
                         },
                         {
                             "name": "RO_800C86EC_cn",
                             "vram": 2148304620,
                             "size": 24,
-                            "vrom": 721920
+                            "vrom": 721948
                         },
                         {
                             "name": "RO_800C8704_cn",
                             "vram": 2148304644,
                             "size": 20,
-                            "vrom": 721944
+                            "vrom": 721972
                         },
                         {
                             "name": "RO_800C8718_cn",
                             "vram": 2148304664,
                             "size": 8,
-                            "vrom": 721964
+                            "vrom": 721992
                         },
                         {
                             "name": "RO_800C8720_cn",
                             "vram": 2148304672,
                             "size": 8,
-                            "vrom": 721972
+                            "vrom": 722000
                         },
                         {
                             "name": "RO_800C8728_cn",
                             "vram": 2148304680,
                             "size": 8,
-                            "vrom": 721980
+                            "vrom": 722008
                         },
                         {
                             "name": "RO_800C8730_cn",
                             "vram": 2148304688,
                             "size": 8,
-                            "vrom": 721988
+                            "vrom": 722016
                         },
                         {
                             "name": "RO_800C8738_cn",
                             "vram": 2148304696,
                             "size": 8,
-                            "vrom": 721996
+                            "vrom": 722024
                         },
                         {
                             "name": "RO_800C8740_cn",
                             "vram": 2148304704,
                             "size": 8,
-                            "vrom": 722004
+                            "vrom": 722032
                         },
                         {
                             "name": "RO_800C8748_cn",
                             "vram": 2148304712,
                             "size": 80,
-                            "vrom": 722012
+                            "vrom": 722040
                         },
                         {
                             "name": "RO_800C8798_cn",
                             "vram": 2148304792,
                             "size": 24,
-                            "vrom": 722092
+                            "vrom": 722120
                         },
                         {
                             "name": "RO_800C87B0_cn",
                             "vram": 2148304816,
                             "size": 8,
-                            "vrom": 722116
+                            "vrom": 722144
                         },
                         {
                             "name": "jtbl_800C87B8",
                             "vram": 2148304824,
                             "size": 88,
-                            "vrom": 722124
+                            "vrom": 722152
                         },
                         {
                             "name": "jtbl_800C8810",
                             "vram": 2148304912,
                             "size": 68,
-                            "vrom": 722212
+                            "vrom": 722240
                         },
                         {
                             "name": "map_x_table_5383",
                             "vram": 2148304980,
                             "size": 24,
-                            "vrom": 722280
+                            "vrom": 722308
                         },
                         {
                             "name": "map_y_table_5384",
                             "vram": 2148305004,
                             "size": 4,
-                            "vrom": 722304
+                            "vrom": 722332
                         },
                         {
                             "name": "size_table_5385",
                             "vram": 2148305008,
                             "size": 100,
-                            "vrom": 722308
+                            "vrom": 722336
                         },
                         {
                             "name": "RO_800C88D4_cn",
                             "vram": 2148305108,
                             "size": 28,
-                            "vrom": 722408
+                            "vrom": 722436
                         },
                         {
                             "name": "RO_800C88F0_cn",
                             "vram": 2148305136,
                             "size": 12,
-                            "vrom": 722436
+                            "vrom": 722464
                         },
                         {
                             "name": "RO_800C88FC_cn",
                             "vram": 2148305148,
                             "size": 4,
-                            "vrom": 722448
+                            "vrom": 722476
                         },
                         {
                             "name": "RO_800C8900_cn",
                             "vram": 2148305152,
                             "size": 4,
-                            "vrom": 722452
+                            "vrom": 722480
                         },
                         {
                             "name": "RO_800C8904_cn",
                             "vram": 2148305156,
                             "size": 4,
-                            "vrom": 722456
+                            "vrom": 722484
                         },
                         {
                             "name": "RO_800C8908_cn",
                             "vram": 2148305160,
                             "size": 12,
-                            "vrom": 722460
+                            "vrom": 722488
                         },
                         {
                             "name": "RO_800C8914_cn",
                             "vram": 2148305172,
                             "size": 4,
-                            "vrom": 722472
+                            "vrom": 722500
                         },
                         {
                             "name": "RO_800C8918_cn",
                             "vram": 2148305176,
                             "size": 16,
-                            "vrom": 722476
+                            "vrom": 722504
                         },
                         {
                             "name": "jtbl_800C8928",
                             "vram": 2148305192,
                             "size": 32,
-                            "vrom": 722492
+                            "vrom": 722520
                         },
                         {
                             "name": "jtbl_800C8948",
                             "vram": 2148305224,
                             "size": 60,
-                            "vrom": 722524
+                            "vrom": 722552
                         },
                         {
                             "name": "RO_800C8984_cn",
                             "vram": 2148305284,
                             "size": 8,
-                            "vrom": 722584
+                            "vrom": 722612
                         },
                         {
                             "name": "RO_800C898C_cn",
                             "vram": 2148305292,
                             "size": 8,
-                            "vrom": 722592
+                            "vrom": 722620
                         },
                         {
                             "name": "RO_800C8994_cn",
                             "vram": 2148305300,
                             "size": 12,
-                            "vrom": 722600
+                            "vrom": 722628
                         },
                         {
                             "name": "jtbl_800C89A0",
                             "vram": 2148305312,
                             "size": 60,
-                            "vrom": 722612
+                            "vrom": 722640
                         }
                     ]
                 },
