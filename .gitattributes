@@ -1,2 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
+
+tests/maps/* linguist-generated=true
+tests/output/* linguist-generated=true
