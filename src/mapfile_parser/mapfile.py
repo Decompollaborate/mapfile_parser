@@ -46,16 +46,24 @@ class Symbol:
             return "None"
         return f"0x{self.vrom:06X}"
 
-    def serializeSize(self) -> str|None:
-        if self.size < 0:
-            return None
-        return f"0x{self.size:X}"
+    def serializeVram(self, humanReadable: bool=True) -> str|int|None:
+        if humanReadable:
+            return f"0x{self.vram:08X}"
+        return self.vram
 
-    def serializeVrom(self) -> str|None:
+    def serializeSize(self, humanReadable: bool=True) -> str|int|None:
+        if self.size is None:
+            return None
+        if humanReadable:
+            return f"0x{self.size:X}"
+        return self.size
+
+    def serializeVrom(self, humanReadable: bool=True) -> str|int|None:
         if self.vrom is None:
             return None
-        return f"0x{self.vrom:06X}"
-
+        if humanReadable:
+            return f"0x{self.vrom:06X}"
+        return self.vrom
 
     @staticmethod
     def printCsvHeader():
@@ -73,12 +81,12 @@ class Symbol:
         return f"{self.name},{self.vram:08X},{self.size}"
 
 
-    def toJson(self) -> dict[str, Any]:
+    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
         result: dict[str, Any] = {
             "name": self.name,
-            "vram": self.getVramStr(),
-            "size": self.serializeSize(),
-            "vrom": self.serializeVrom(),
+            "vram": self.serializeVram(humanReadable=humanReadable),
+            "size": self.serializeSize(humanReadable=humanReadable),
+            "vrom": self.serializeVrom(humanReadable=humanReadable),
         }
 
         return result
@@ -108,16 +116,22 @@ class File:
         return self.segmentType == ".bss"
 
 
-    def serializeVram(self) -> str|None:
-        return f"0x{self.vram:08X}"
+    def serializeVram(self, humanReadable: bool=True) -> str|int|None:
+        if humanReadable:
+            return f"0x{self.vram:08X}"
+        return self.vram
 
-    def serializeSize(self) -> str|None:
-        return f"0x{self.size:X}"
+    def serializeSize(self, humanReadable: bool=True) -> str|int|None:
+        if humanReadable:
+            return f"0x{self.size:X}"
+        return self.size
 
-    def serializeVrom(self) -> str|None:
+    def serializeVrom(self, humanReadable: bool=True) -> str|int|None:
         if self.vrom is None:
             return None
-        return f"0x{self.vrom:06X}"
+        if humanReadable:
+            return f"0x{self.vrom:06X}"
+        return self.vrom
 
 
     def getName(self) -> Path:
@@ -202,19 +216,18 @@ class File:
         ret += f"{self.filepath},{self.segmentType},{symCount},{maxSize},{self.size},{averageSize:0.2f}"
         return ret
 
-
-    def toJson(self) -> dict[str, Any]:
+    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
         fileDict: dict[str, Any] = {
             "filepath": str(self.filepath),
-            "segmentType": self.segmentType,
-            "vram": self.serializeVram(),
-            "size": self.serializeSize(),
-            "vrom": self.serializeVrom(),
+            "sectionType": self.segmentType,
+            "vram": self.serializeVram(humanReadable=humanReadable),
+            "size": self.serializeSize(humanReadable=humanReadable),
+            "vrom": self.serializeVrom(humanReadable=humanReadable),
         }
 
         symbolsList = []
         for symbol in self.symbols:
-            symbolsList.append(symbol.toJson())
+            symbolsList.append(symbol.toJson(humanReadable=humanReadable))
 
         fileDict["symbols"] = symbolsList
         return fileDict
@@ -558,11 +571,11 @@ class MapFile:
                 ret += "\n"
         return ret
 
-    def toJson(self) -> dict[str, Any]:
+    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
         filesList = []
 
         for file in self.filesList:
-            filesList.append(file.toJson())
+            filesList.append(file.toJson(humanReadable=humanReadable))
 
         result: dict[str, Any] = {
             "files": filesList

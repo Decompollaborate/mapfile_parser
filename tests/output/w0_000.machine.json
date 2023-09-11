@@ -1,0 +1,59 @@
+{
+    "files": [
+        {
+            "filepath": "build/us/asm/us/weapon/data/w_000.sbss.s.o",
+            "sectionType": ".sbss",
+            "vram": 2149037824,
+            "size": 6400,
+            "vrom": 5888,
+            "symbols": [
+                {
+                    "name": "D_4000_8017B700",
+                    "vram": 2149037824,
+                    "size": 6400,
+                    "vrom": 5888
+                }
+            ]
+        },
+        {
+            "filepath": "build/us/src/weapon/w_000.c.o",
+            "sectionType": ".pdr",
+            "vram": 0,
+            "size": 800,
+            "vrom": 12288,
+            "symbols": []
+        },
+        {
+            "filepath": "build/us/src/weapon/w_000.c.o",
+            "sectionType": ".debug_line",
+            "vram": 0,
+            "size": 237,
+            "vrom": 13088,
+            "symbols": []
+        },
+        {
+            "filepath": "build/us/src/weapon/w_000.c.o",
+            "sectionType": ".debug_info",
+            "vram": 0,
+            "size": 389,
+            "vrom": 13325,
+            "symbols": []
+        },
+        {
+            "filepath": "build/us/src/weapon/w_000.c.o",
+            "sectionType": ".debug_abbrev",
+            "vram": 0,
+            "size": 33,
+            "vrom": 13714,
+            "symbols": []
+        },
+        {
+            "filepath": "build/us/src/weapon/w_000.c.o",
+            "sectionType": ".debug_str",
+            "vram": 0,
+            "size": 464,
+            "vrom": 13747,
+            "symbols": []
+        }
+    ]
+}

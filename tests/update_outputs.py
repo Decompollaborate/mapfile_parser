@@ -21,8 +21,8 @@ for mapPath in sorted(Path("tests/maps").iterdir()):
     print("    .json")
     mapfile_parser.frontends.jsonify.doJsonify(mapPath, outputFolder/mapPath.with_suffix(".json").name)
 
-    # print("    .machine.json")
-    # mapfile_parser.frontends.jsonify.doJsonify(mapPath, outputFolder/mapPath.with_suffix(".machine.json").name, humanReadable=False)
+    print("    .machine.json")
+    mapfile_parser.frontends.jsonify.doJsonify(mapPath, outputFolder/mapPath.with_suffix(".machine.json").name, humanReadable=False)
 
     print("    .sym")
     mapfile_parser.frontends.pj64_syms.doPj64Syms(mapPath, outputFolder/mapPath.with_suffix(".sym").name)
