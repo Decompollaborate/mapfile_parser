@@ -1,0 +1,825 @@
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/0.data.s.o
+ .bss           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/0.data.s.o
+ .reginfo       0x0000000000000000       0x18 build/us/asm/us/st/cen/data/0.data.s.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/asm/us/st/cen/data/0.data.s.o
+ .pdr           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/0.data.s.o
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/asm/us/st/cen/data/0.data.s.o
+ .text          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1300.data.s.o
+ .bss           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1300.data.s.o
+ .reginfo       0x0000000000000000       0x18 build/us/asm/us/st/cen/data/1300.data.s.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/asm/us/st/cen/data/1300.data.s.o
+ .pdr           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1300.data.s.o
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/asm/us/st/cen/data/1300.data.s.o
+ .text          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/D42C.rodata.s.o
+ .data          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/D42C.rodata.s.o
+ .bss           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/D42C.rodata.s.o
+ .reginfo       0x0000000000000000       0x18 build/us/asm/us/st/cen/data/D42C.rodata.s.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/asm/us/st/cen/data/D42C.rodata.s.o
+ .pdr           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/D42C.rodata.s.o
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/asm/us/st/cen/data/D42C.rodata.s.o
+ .data          0x0000000000000000        0x0 build/us/src/st/cen/D600.c.o
+ .bss           0x0000000000000000        0x0 build/us/src/st/cen/D600.c.o
+ .reginfo       0x0000000000000000       0x18 build/us/src/st/cen/D600.c.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/src/st/cen/D600.c.o
+ .pdr           0x0000000000000000      0x2e0 build/us/src/st/cen/D600.c.o
+ .debug_line    0x0000000000000000      0x3de build/us/src/st/cen/D600.c.o
+ .debug_info    0x0000000000000000      0x169 build/us/src/st/cen/D600.c.o
+ .debug_abbrev  0x0000000000000000       0x21 build/us/src/st/cen/D600.c.o
+ .debug_aranges
+                0x0000000000000000       0x20 build/us/src/st/cen/D600.c.o
+ .debug_str     0x0000000000000000      0x19e build/us/src/st/cen/D600.c.o
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/src/st/cen/D600.c.o
+ .text          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/D4D8.rodata.s.o
+ .data          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/D4D8.rodata.s.o
+ .bss           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/D4D8.rodata.s.o
+ .reginfo       0x0000000000000000       0x18 build/us/asm/us/st/cen/data/D4D8.rodata.s.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/asm/us/st/cen/data/D4D8.rodata.s.o
+ .pdr           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/D4D8.rodata.s.o
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/asm/us/st/cen/data/D4D8.rodata.s.o
+ .data          0x0000000000000000        0x0 build/us/src/st/cen/10E4C.c.o
+ .bss           0x0000000000000000        0x0 build/us/src/st/cen/10E4C.c.o
+ .reginfo       0x0000000000000000       0x18 build/us/src/st/cen/10E4C.c.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/src/st/cen/10E4C.c.o
+ .pdr           0x0000000000000000       0x60 build/us/src/st/cen/10E4C.c.o
+ .debug_line    0x0000000000000000       0xff build/us/src/st/cen/10E4C.c.o
+ .debug_info    0x0000000000000000       0x51 build/us/src/st/cen/10E4C.c.o
+ .debug_abbrev  0x0000000000000000       0x21 build/us/src/st/cen/10E4C.c.o
+ .debug_aranges
+                0x0000000000000000       0x20 build/us/src/st/cen/10E4C.c.o
+ .debug_str     0x0000000000000000       0x61 build/us/src/st/cen/10E4C.c.o
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/src/st/cen/10E4C.c.o
+ .data          0x0000000000000000        0x0 build/us/src/st/cen/11280.c.o
+ .bss           0x0000000000000000        0x0 build/us/src/st/cen/11280.c.o
+ .reginfo       0x0000000000000000       0x18 build/us/src/st/cen/11280.c.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/src/st/cen/11280.c.o
+ .pdr           0x0000000000000000      0xb20 build/us/src/st/cen/11280.c.o
+ .debug_line    0x0000000000000000      0x55d build/us/src/st/cen/11280.c.o
+ .debug_info    0x0000000000000000      0x505 build/us/src/st/cen/11280.c.o
+ .debug_abbrev  0x0000000000000000       0x21 build/us/src/st/cen/11280.c.o
+ .debug_aranges
+                0x0000000000000000       0x20 build/us/src/st/cen/11280.c.o
+ .debug_str     0x0000000000000000      0x592 build/us/src/st/cen/11280.c.o
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/src/st/cen/11280.c.o
+ .data          0x0000000000000000        0x0 build/us/src/st/cen/1B274.c.o
+ .bss           0x0000000000000000        0x0 build/us/src/st/cen/1B274.c.o
+ .reginfo       0x0000000000000000       0x18 build/us/src/st/cen/1B274.c.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/src/st/cen/1B274.c.o
+ .pdr           0x0000000000000000      0x1a0 build/us/src/st/cen/1B274.c.o
+ .debug_line    0x0000000000000000      0x1d2 build/us/src/st/cen/1B274.c.o
+ .debug_info    0x0000000000000000       0xdd build/us/src/st/cen/1B274.c.o
+ .debug_abbrev  0x0000000000000000       0x21 build/us/src/st/cen/1B274.c.o
+ .debug_aranges
+                0x0000000000000000       0x20 build/us/src/st/cen/1B274.c.o
+ .debug_str     0x0000000000000000       0xfd build/us/src/st/cen/1B274.c.o
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/src/st/cen/1B274.c.o
+ .text          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1C704.rodata.s.o
+ .data          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1C704.rodata.s.o
+ .bss           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1C704.rodata.s.o
+ .reginfo       0x0000000000000000       0x18 build/us/asm/us/st/cen/data/1C704.rodata.s.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/asm/us/st/cen/data/1C704.rodata.s.o
+ .pdr           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1C704.rodata.s.o
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/asm/us/st/cen/data/1C704.rodata.s.o
+ .text          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1C764.rodata.s.o
+ .data          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1C764.rodata.s.o
+ .bss           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1C764.rodata.s.o
+ .reginfo       0x0000000000000000       0x18 build/us/asm/us/st/cen/data/1C764.rodata.s.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/asm/us/st/cen/data/1C764.rodata.s.o
+ .pdr           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1C764.rodata.s.o
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/asm/us/st/cen/data/1C764.rodata.s.o
+ .text          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1D374.rodata.s.o
+ .data          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1D374.rodata.s.o
+ .bss           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1D374.rodata.s.o
+ .reginfo       0x0000000000000000       0x18 build/us/asm/us/st/cen/data/1D374.rodata.s.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/asm/us/st/cen/data/1D374.rodata.s.o
+ .pdr           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1D374.rodata.s.o
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/asm/us/st/cen/data/1D374.rodata.s.o
+ .text          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1D424.rodata.s.o
+ .data          0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1D424.rodata.s.o
+ .bss           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1D424.rodata.s.o
+ .reginfo       0x0000000000000000       0x18 build/us/asm/us/st/cen/data/1D424.rodata.s.o
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/us/asm/us/st/cen/data/1D424.rodata.s.o
+ .pdr           0x0000000000000000        0x0 build/us/asm/us/st/cen/data/1D424.rodata.s.o
+ .gnu.attributes
+                0x0000000000000000       0x10 build/us/asm/us/st/cen/data/1D424.rodata.s.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD build/us/asm/us/st/cen/data/0.data.s.o
+LOAD build/us/assets/st/cen/g_Rooms.o
+LOAD build/us/asm/us/st/cen/data/1300.data.s.o
+LOAD build/us/asm/us/st/cen/data/D42C.rodata.s.o
+LOAD build/us/src/st/cen/D600.c.o
+LOAD build/us/asm/us/st/cen/data/D4D8.rodata.s.o
+LOAD build/us/src/st/cen/10E4C.c.o
+LOAD build/us/src/st/cen/11280.c.o
+LOAD build/us/src/st/cen/1B274.c.o
+LOAD build/us/asm/us/st/cen/data/1C704.rodata.s.o
+LOAD build/us/asm/us/st/cen/data/1C764.rodata.s.o
+LOAD build/us/asm/us/st/cen/data/1D374.rodata.s.o
+LOAD build/us/asm/us/st/cen/data/1D424.rodata.s.o
+                0x000000000001d470                __romPos = 0x0
+                0x0000000000000000                _gp = 0x0
+                0x0000000000000000                stcen_ROM_START = __romPos
+                0x0000000080180000                stcen_VRAM = ADDR (.stcen)
+
+.stcen          0x0000000080180000    0x1d46c load address 0x0000000000000000
+                0x0000000080180000                stcen_DATA_START = .
+                0x0000000080180000                _0_data__s = .
+ build/us/asm/us/st/cen/data/0.data.s.o(.data)
+ .data          0x0000000080180000     0x12d4 build/us/asm/us/st/cen/data/0.data.s.o
+                0x0000000080180000                D_80180000
+                0x0000000080180040                g_SpriteBanks
+                0x00000000801800a0                D_801800A0
+                0x00000000801800d8                D_801800D8
+                0x00000000801800dc                D_801800DC
+                0x00000000801800ec                D_801800EC
+                0x00000000801800fc                D_801800FC
+                0x000000008018010c                D_8018010C
+                0x000000008018011c                D_8018011C
+                0x0000000080180134                D_80180134
+                0x0000000080180148                D_80180148
+                0x0000000080180168                D_80180168
+                0x0000000080180188                D_80180188
+                0x000000008018019c                D_8018019C
+                0x00000000801801ec                D_801801EC
+                0x00000000801802c0                D_801802C0
+                0x0000000080180390                D_80180390
+                0x0000000080180394                PfnEntityUpdates
+                0x0000000080180404                D_80180404
+                0x0000000080180410                D_80180410
+                0x000000008018041c                D_8018041C
+                0x0000000080180428                D_80180428
+                0x0000000080180434                D_80180434
+                0x0000000080180440                D_80180440
+                0x000000008018044c                D_8018044C
+                0x0000000080180458                D_80180458
+                0x0000000080180464                D_80180464
+                0x000000008018047c                D_8018047C
+                0x000000008018048c                D_8018048C
+                0x0000000080180490                D_80180490
+                0x00000000801804a4                D_801804A4
+                0x00000000801804d4                D_801804D4
+                0x00000000801804dc                D_801804DC
+                0x00000000801804e4                D_801804E4
+                0x0000000080180554                D_80180554
+                0x0000000080180564                D_80180564
+                0x0000000080180574                D_80180574
+                0x0000000080180594                D_80180594
+                0x000000008018059c                D_8018059C
+                0x00000000801805a4                D_801805A4
+                0x00000000801805b4                D_801805B4
+                0x00000000801805bc                D_801805BC
+                0x00000000801805d8                D_801805D8
+                0x00000000801805dc                D_801805DC
+                0x00000000801805e0                D_801805E0
+                0x00000000801805e8                D_801805E8
+                0x00000000801805ec                D_801805EC
+                0x00000000801805f4                D_801805F4
+                0x0000000080180684                D_80180684
+                0x000000008018068c                D_8018068C
+                0x0000000080180768                D_80180768
+                0x0000000080180780                D_80180780
+                0x00000000801807b8                UNK_Invincibility0
+                0x00000000801807e4                D_801807E4
+                0x0000000080180b04                D_80180B04
+                0x0000000080180b08                D_80180B08
+                0x0000000080180b10                D_80180B10
+                0x0000000080180b18                D_80180B18
+                0x0000000080180b2c                D_80180B2C
+                0x0000000080180b38                D_80180B38
+                0x0000000080180b78                D_80180B78
+                0x0000000080180b94                D_80180B94
+                0x0000000080180ba4                D_80180BA4
+                0x0000000080180bbc                D_80180BBC
+                0x0000000080180dbc                D_80180DBC
+                0x0000000080180dc0                D_80180DC0
+                0x0000000080180dec                D_80180DEC
+                0x0000000080180dfc                D_80180DFC
+                0x0000000080180e00                D_80180E00
+                0x0000000080180e04                D_80180E04
+                0x0000000080180e08                D_80180E08
+                0x0000000080180e0c                D_80180E0C
+                0x0000000080180e10                D_80180E10
+                0x0000000080180e14                D_80180E14
+                0x0000000080180e18                D_80180E18
+                0x0000000080180e1c                D_80180E1C
+                0x0000000080180e30                D_80180E30
+                0x0000000080180e40                D_80180E40
+                0x0000000080180e44                D_80180E44
+                0x0000000080180e58                D_80180E58
+                0x0000000080180e6c                D_80180E6C
+                0x0000000080180e80                D_80180E80
+                0x0000000080180e94                D_80180E94
+                0x0000000080180ea8                D_80180EA8
+                0x0000000080180ebc                D_80180EBC
+                0x0000000080180ed0                D_80180ED0
+                0x0000000080180ee4                D_80180EE4
+                0x0000000080180eec                D_80180EEC
+                0x0000000080180ef8                D_80180EF8
+                0x0000000080180f1c                D_80180F1C
+                0x0000000080180f30                D_80180F30
+                0x0000000080180f58                D_80180F58
+                0x0000000080180f80                D_80180F80
+                0x0000000080180fe0                D_80180FE0
+                0x0000000080180fe8                D_80180FE8
+                0x0000000080180fec                D_80180FEC
+                0x0000000080181000                D_80181000
+                0x0000000080181014                D_80181014
+                0x0000000080181030                D_80181030
+                0x0000000080181060                D_80181060
+                0x0000000080181094                D_80181094
+                0x0000000080181098                D_80181098
+                0x00000000801810ac                D_801810AC
+                0x00000000801810b0                D_801810B0
+                0x00000000801810c0                D_801810C0
+                0x00000000801810d0                D_801810D0
+                0x00000000801810e0                D_801810E0
+                0x00000000801810f0                D_801810F0
+                0x0000000080181100                D_80181100
+                0x0000000080181110                D_80181110
+                0x0000000080181120                D_80181120
+                0x0000000080181130                D_80181130
+                0x0000000080181148                D_80181148
+                0x0000000080181160                D_80181160
+                0x0000000080181164                D_80181164
+                0x000000008018116c                D_8018116C
+                0x0000000080181174                D_80181174
+                0x0000000080181184                D_80181184
+                0x00000000801811a4                D_801811A4
+                0x00000000801811c8                D_801811C8
+                0x00000000801811d8                D_801811D8
+                0x0000000080181238                D_80181238
+                0x0000000080181248                D_80181248
+                0x000000008018124c                D_8018124C
+                0x0000000080181250                D_80181250
+                0x0000000080181254                D_80181254
+                0x0000000080181258                D_80181258
+                0x000000008018125c                D_8018125C
+                0x00000000801812d4                g_Rooms = .
+ build/us/assets/st/cen/g_Rooms.o(.data)
+ .data          0x00000000801812d4       0x2c build/us/assets/st/cen/g_Rooms.o
+                0x00000000801812d4                _binary_build_us_assets_st_cen_g_Rooms_bin_start
+                0x0000000080181300                _binary_build_us_assets_st_cen_g_Rooms_bin_end
+                0x0000000080181300                _1300_data__s = .
+ build/us/asm/us/st/cen/data/1300.data.s.o(.data)
+ .data          0x0000000080181300     0xc12c build/us/asm/us/st/cen/data/1300.data.s.o
+                0x0000000080181300                D_80181300
+                0x0000000080181314                D_80181314
+                0x0000000080181378                D_80181378
+                0x000000008018138c                D_8018138C
+                0x00000000801813f0                D_801813F0
+                0x0000000080181658                D_80181658
+                0x000000008018199c                D_8018199C
+                0x0000000080183a40                D_80183A40
+                0x0000000080184b70                D_80184B70
+                0x0000000080185830                D_80185830
+                0x000000008018658c                D_8018658C
+                0x000000008018678c                D_8018678C
+                0x000000008018698c                D_8018698C
+                0x00000000801869ac                D_801869AC
+                0x00000000801869ec                D_801869EC
+                0x0000000080186dec                D_80186DEC
+                0x0000000080187fec                D_80187FEC
+                0x00000000801881ec                D_801881EC
+                0x00000000801882ec                D_801882EC
+                0x00000000801883ec                D_801883EC
+                0x00000000801884ec                D_801884EC
+                0x00000000801885fc                D_801885FC
+                0x00000000801895fc                D_801895FC
+                0x000000008018a5fc                D_8018A5FC
+                0x000000008018b5fc                D_8018B5FC
+                0x000000008018c5fc                D_8018C5FC
+                0x000000008018c60c                D_8018C60C
+                0x000000008018c63c                D_8018C63C
+                0x000000008018c658                D_8018C658
+                0x000000008018c674                D_8018C674
+                0x000000008018c690                D_8018C690
+                0x000000008018c6ac                D_8018C6AC
+                0x000000008018c6c8                D_8018C6C8
+                0x000000008018c6e4                D_8018C6E4
+                0x000000008018c700                D_8018C700
+                0x000000008018c71c                D_8018C71C
+                0x000000008018c738                D_8018C738
+                0x000000008018c754                D_8018C754
+                0x000000008018c804                D_8018C804
+                0x000000008018c834                D_8018C834
+                0x000000008018c864                D_8018C864
+                0x000000008018c880                D_8018C880
+                0x000000008018c89c                D_8018C89C
+                0x000000008018c8b8                D_8018C8B8
+                0x000000008018c8d4                D_8018C8D4
+                0x000000008018c8f0                D_8018C8F0
+                0x000000008018c90c                D_8018C90C
+                0x000000008018c928                D_8018C928
+                0x000000008018c958                D_8018C958
+                0x000000008018c988                D_8018C988
+                0x000000008018c9b8                D_8018C9B8
+                0x000000008018c9e8                D_8018C9E8
+                0x000000008018ca18                D_8018CA18
+                0x000000008018ca48                D_8018CA48
+                0x000000008018ca78                D_8018CA78
+                0x000000008018caa8                D_8018CAA8
+                0x000000008018cad8                D_8018CAD8
+                0x000000008018cb08                D_8018CB08
+                0x000000008018cb38                D_8018CB38
+                0x000000008018cb68                D_8018CB68
+                0x000000008018cb98                D_8018CB98
+                0x000000008018cbb4                D_8018CBB4
+                0x000000008018cbfc                D_8018CBFC
+                0x000000008018cc44                D_8018CC44
+                0x000000008018cc74                D_8018CC74
+                0x000000008018cca4                D_8018CCA4
+                0x000000008018ccd4                D_8018CCD4
+                0x000000008018cd04                D_8018CD04
+                0x000000008018cd34                D_8018CD34
+                0x000000008018cd50                D_8018CD50
+                0x000000008018cd6c                D_8018CD6C
+                0x000000008018cd88                D_8018CD88
+                0x000000008018cda4                D_8018CDA4
+                0x000000008018cdc0                D_8018CDC0
+                0x000000008018cddc                D_8018CDDC
+                0x000000008018cdf8                D_8018CDF8
+                0x000000008018ce14                D_8018CE14
+                0x000000008018ce30                D_8018CE30
+                0x000000008018ce78                D_8018CE78
+                0x000000008018cea8                D_8018CEA8
+                0x000000008018ced8                D_8018CED8
+                0x000000008018cf1c                D_8018CF1C
+                0x000000008018cf38                D_8018CF38
+                0x000000008018cf54                D_8018CF54
+                0x000000008018cf9c                D_8018CF9C
+                0x000000008018cfe4                D_8018CFE4
+                0x000000008018d040                D_8018D040
+                0x000000008018d0b4                D_8018D0B4
+                0x000000008018d128                D_8018D128
+                0x000000008018d1b0                D_8018D1B0
+                0x000000008018d238                D_8018D238
+                0x000000008018d2d8                D_8018D2D8
+                0x000000008018d378                D_8018D378
+                0x000000008018d3c0                D_8018D3C0
+                0x000000008018d3dc                D_8018D3DC
+                0x000000008018d3f8                D_8018D3F8
+                0x000000008018d414                D_8018D414
+                0x000000008018d41c                D_8018D41C
+                0x000000008018d42c                stcen_DATA_END = .
+                0x000000000000d42c                stcen_DATA_SIZE = ABSOLUTE ((stcen_DATA_END - stcen_DATA_START))
+                0x000000008018d42c                stcen_RODATA_START = .
+ build/us/asm/us/st/cen/data/D42C.rodata.s.o(.rodata)
+ .rodata        0x000000008018d42c       0x84 build/us/asm/us/st/cen/data/D42C.rodata.s.o
+                0x000000008018d42c                jtbl_8018D42C
+                0x000000008018d44c                jtbl_8018D44C
+ build/us/src/st/cen/D600.c.o(.rodata)
+ .rodata        0x000000008018d4b0       0x28 build/us/src/st/cen/D600.c.o
+ build/us/asm/us/st/cen/data/D4D8.rodata.s.o(.rodata)
+ .rodata        0x000000008018d4d8      0x128 build/us/asm/us/st/cen/data/D4D8.rodata.s.o
+                0x000000008018d4d8                jtbl_8018D4D8
+                0x000000008018d4f0                D_8018D4F0
+                0x000000008018d4f8                D_8018D4F8
+                0x000000008018d500                D_8018D500
+                0x000000008018d508                D_8018D508
+                0x000000008018d510                D_8018D510
+                0x000000008018d518                D_8018D518
+                0x000000008018d520                D_8018D520
+                0x000000008018d528                D_8018D528
+                0x000000008018d530                D_8018D530
+                0x000000008018d538                D_8018D538
+                0x000000008018d540                jtbl_8018D540
+                0x000000008018d560                jtbl_8018D560
+                0x000000008018d578                D_8018D578
+                0x000000008018d588                jtbl_8018D588
+                0x000000008018d5b0                jtbl_8018D5B0
+                0x000000008018d5c4                D_8018D5C4
+                0x000000008018d5d4                D_8018D5D4
+                0x000000008018d5e4                jtbl_8018D5E4
+                0x000000008018d5f8                D_8018D5F8
+                0x000000008018d600                stcen_TEXT_START = .
+ build/us/src/st/cen/D600.c.o(.text)
+ .text          0x000000008018d600     0x384c build/us/src/st/cen/D600.c.o
+                0x000000008018d600                EntityBackgroundBlock
+                0x000000008018d6e0                EntityUnkId12
+                0x000000008018d89c                EntityUnkId01
+                0x000000008018db18                func_8018DB18
+                0x000000008018df0c                func_8018DF0C
+                0x000000008018df60                func_8018DF60
+                0x000000008018e124                func_8018E124
+                0x000000008018e180                func_8018E180
+                0x000000008018e238                func_8018E238
+                0x000000008018e3bc                func_8018E3BC
+                0x000000008018e3e8                func_8018E3E8
+                0x000000008018e6c4                func_8018E6C4
+                0x000000008018e7c8                EntityUnkId16
+                0x000000008018e954                .L8018E954
+                0x000000008018e9d4                .L8018E9D4
+                0x000000008018e9e8                .L8018E9E8
+                0x000000008018ea4c                .L8018EA4C
+                0x000000008018ea58                .L8018EA58
+                0x000000008018eb04                .L8018EB04
+                0x000000008018eb30                .L8018EB30
+                0x000000008018eb60                .L8018EB60
+                0x000000008018eba0                .L8018EBA0
+                0x000000008018ecd8                .L8018ECD8
+                0x000000008018ed50                .L8018ED50
+                0x000000008018ede4                .L8018EDE4
+                0x000000008018ee0c                .L8018EE0C
+                0x000000008018ee34                .L8018EE34
+                0x000000008018ee6c                .L8018EE6C
+                0x000000008018eeb4                .L8018EEB4
+                0x000000008018ef10                .L8018EF10
+                0x000000008018ef74                .L8018EF74
+                0x000000008018efd4                .L8018EFD4
+                0x000000008018f024                .L8018F024
+                0x000000008018f058                .L8018F058
+                0x000000008018f068                .L8018F068
+                0x000000008018f128                .L8018F128
+                0x000000008018f164                .L8018F164
+                0x000000008018f184                .L8018F184
+                0x000000008018f1c0                .L8018F1C0
+                0x000000008018f2c4                .L8018F2C4
+                0x000000008018f2f8                .L8018F2F8
+                0x000000008018f3bc                .L8018F3BC
+                0x000000008018f454                .L8018F454
+                0x000000008018f744                .L8018F744
+                0x000000008018f828                .L8018F828
+                0x000000008018f86c                .L8018F86C
+                0x000000008018f890                func_8018F890
+                0x000000008018f8ec                func_8018F8EC
+                0x000000008018f95c                EntityPlatform
+                0x000000008019007c                EntityRoomDarkness
+                0x0000000080190374                EntityMaria
+                0x000000008019040c                func_8019040C
+                0x00000000801904b8                func_801904B8
+                0x0000000080190540                EntityElevatorStationary
+                0x0000000080190a78                EntityUnkId1B
+                0x0000000080190b64                EntityMovingElevator
+ build/us/src/st/cen/10E4C.c.o(.text)
+ .text          0x0000000080190e4c      0x434 build/us/src/st/cen/10E4C.c.o
+                0x0000000080190e4c                Random
+                0x0000000080190e7c                Update
+                0x0000000080191178                UpdateStageEntities
+ build/us/src/st/cen/11280.c.o(.text)
+ .text          0x0000000080191280     0x9ff4 build/us/src/st/cen/11280.c.o
+                0x0000000080191280                TestCollisions
+                0x0000000080192398                EntityNumericDamage
+                0x0000000080192a3c                CreateEntityFromLayout
+                0x0000000080192b00                CreateEntityWhenInVerticalRange
+                0x0000000080192c18                CreateEntityWhenInHorizontalRange
+                0x0000000080192d30                func_80192D30
+                0x0000000080192d7c                func_80192D7C
+                0x0000000080192dd4                func_80192DD4
+                0x0000000080192ed0                func_80192ED0
+                0x0000000080192fe4                func_80192FE4
+                0x0000000080193030                func_80193030
+                0x0000000080193088                func_80193088
+                0x0000000080193184                func_80193184
+                0x0000000080193298                InitRoomEntities
+                0x0000000080193410                func_80193410
+                0x00000000801934c4                CreateEntityFromCurrentEntity
+                0x0000000080193538                CreateEntityFromEntity
+                0x00000000801935b4                func_801935B4
+                0x000000008019362c                EntityRedDoor
+                0x0000000080193688                .L80193688
+                0x00000000801939d4                .L801939D4
+                0x0000000080193b60                .L80193B60
+                0x0000000080193c10                .L80193C10
+                0x0000000080193c5c                .L80193C5C
+                0x0000000080193ca4                .L80193CA4
+                0x0000000080194264                DestroyEntity
+                0x00000000801942d0                func_801942D0
+                0x000000008019434c                func_8019434C
+                0x0000000080194394                func_80194394
+                0x000000008019444c                func_8019444C
+                0x0000000080194564                GetDistanceToPlayerX
+                0x00000000801945a0                GetDistanceToPlayerY
+                0x00000000801945d4                GetSideToPlayer
+                0x0000000080194618                MoveEntity
+                0x0000000080194648                FallEntity
+                0x0000000080194674                func_80194674
+                0x00000000801948ec                func_801948EC
+                0x0000000080194ad4                AllocEntity
+                0x0000000080194b34                func_80194B34
+                0x0000000080194b60                func_80194B60
+                0x0000000080194b7c                func_80194B7C
+                0x0000000080194be8                func_80194BE8
+                0x0000000080194c20                func_80194C20
+                0x0000000080194c68                func_80194C68
+                0x0000000080194cb0                func_80194CB0
+                0x0000000080194d08                func_80194D08
+                0x0000000080194d94                func_80194D94
+                0x0000000080194dc4                func_80194DC4
+                0x0000000080194dfc                func_80194DFC
+                0x0000000080194e44                func_80194E44
+                0x0000000080194ea4                SetStep
+                0x0000000080194ec4                func_80194EC4
+                0x0000000080194ee0                func_80194EE0
+                0x0000000080194f74                InitializeEntity
+                0x0000000080195070                func_80195070
+                0x0000000080195098                func_80195098
+                0x00000000801951c0                func_801951C0
+                0x0000000080195318                func_80195318
+                0x000000008019565c                func_8019565C
+                0x0000000080195714                func_80195714
+                0x0000000080195798                func_80195798
+                0x00000000801958f4                CollectHeart
+                0x0000000080195974                func_80195974
+                0x0000000080195a50                CollectSubweapon
+                0x0000000080195b68                func_80195B68
+                0x0000000080195c0c                func_80195C0C
+                0x0000000080195c5c                func_80195C5C
+                0x0000000080195c84                EntityPrizeDrop
+                0x0000000080195d5c                .L80195D5C
+                0x0000000080195df0                .L80195DF0
+                0x0000000080195e98                .L80195E98
+                0x0000000080195fcc                .L80195FCC
+                0x000000008019602c                .L8019602C
+                0x0000000080196064                .L80196064
+                0x000000008019610c                .L8019610C
+                0x00000000801964f8                EntityExplosion
+                0x00000000801965f4                func_801965F4
+                0x0000000080196698                EntityEquipItemDrop
+                0x0000000080196718                .L80196718
+                0x0000000080196770                .L80196770
+                0x0000000080196998                .L80196998
+                0x0000000080196a7c                .L80196A7C
+                0x0000000080196ae8                .L80196AE8
+                0x0000000080196b58                .L80196B58
+                0x0000000080196c80                func_80196C80
+                0x0000000080196f30                EntityRelicOrb
+                0x0000000080196fb4                .L80196FB4
+                0x0000000080197184                .L80197184
+                0x00000000801971e4                .L801971E4
+                0x00000000801973a4                .L801973A4
+                0x000000008019746c                .L8019746C
+                0x000000008019751c                .L8019751C
+                0x0000000080197694                .L80197694
+                0x00000000801977f4                .L801977F4
+                0x0000000080197a00                EntityHeartDrop
+                0x0000000080197b28                EntityUnkId0E
+                0x0000000080197b70                .L80197B70
+                0x0000000080197c54                .L80197C54
+                0x0000000080197e30                .L80197E30
+                0x0000000080197f08                .L80197F08
+                0x000000008019800c                .L8019800C
+                0x0000000080198084                func_80198084
+                0x0000000080198174                EntityUnkId13
+                0x0000000080198284                func_80198284
+                0x00000000801983b4                func_801983B4
+                0x000000008019849c                EntityExplosion14
+                0x000000008019858c                EntityUnkId15
+                0x0000000080198680                func_80198680
+                0x00000000801988b0                func_801988B0
+                0x00000000801989ac                func_801989AC
+                0x0000000080198f2c                EntityIntenseExplosion
+                0x000000008019902c                func_8019902C
+                0x00000000801990f8                func_801990F8
+                0x00000000801991c0                func_801991C0
+                0x0000000080199278                func_80199278
+                0x0000000080199450                func_80199450
+                0x0000000080199a30                func_80199A30
+                0x000000008019a130                ClutLerp
+                0x000000008019a328                func_8019A328
+                0x000000008019a420                func_8019A420
+                0x000000008019a5f0                EntityStageNamePopup
+                0x000000008019ab54                .L8019AB54
+                0x000000008019aba4                .L8019ABA4
+                0x000000008019ac3c                .L8019AC3C
+                0x000000008019accc                .L8019ACCC
+                0x000000008019ae44                .L8019AE44
+ build/us/src/st/cen/1B274.c.o(.text)
+ .text          0x000000008019b274     0x1490 build/us/src/st/cen/1B274.c.o
+                0x000000008019b274                EntitySoulStealOrb
+                0x000000008019b608                EntityEnemyBlood
+                0x000000008019bab8                EntityUnkId08
+                0x000000008019bba4                func_8019BBA4
+                0x000000008019bed4                func_8019BED4
+                0x000000008019c2bc                func_8019C2BC
+                0x000000008019c40c                func_8019C40C
+                0x000000008019c43c                func_8019C43C
+                0x000000008019c4b8                func_8019C4B8
+                0x000000008019c540                func_8019C540
+                0x000000008019c620                func_8019C620
+                0x000000008019c674                func_8019C674
+                0x000000008019c6a0                func_8019C6A0
+                0x000000008019c704                stcen_TEXT_END = .
+                0x000000000000f104                stcen_TEXT_SIZE = ABSOLUTE ((stcen_TEXT_END - stcen_TEXT_START))
+ build/us/asm/us/st/cen/data/1C704.rodata.s.o(.rodata)
+ .rodata        0x000000008019c704       0x60 build/us/asm/us/st/cen/data/1C704.rodata.s.o
+                0x000000008019c704                D_8019C704
+ build/us/asm/us/st/cen/data/1C764.rodata.s.o(.rodata)
+ .rodata        0x000000008019c764      0xc10 build/us/asm/us/st/cen/data/1C764.rodata.s.o
+                0x000000008019c764                D_8019C764
+                0x000000008019c768                D_8019C768
+                0x000000008019c76c                D_8019C76C
+                0x000000008019c770                D_8019C770
+ build/us/asm/us/st/cen/data/1D374.rodata.s.o(.rodata)
+ .rodata        0x000000008019d374       0xb0 build/us/asm/us/st/cen/data/1D374.rodata.s.o
+                0x000000008019d374                D_8019D374
+                0x000000008019d378                D_8019D378
+                0x000000008019d37c                D_8019D37C
+                0x000000008019d380                D_8019D380
+                0x000000008019d384                D_8019D384
+                0x000000008019d388                D_8019D388
+                0x000000008019d38c                D_8019D38C
+                0x000000008019d390                D_8019D390
+                0x000000008019d394                D_8019D394
+                0x000000008019d398                D_8019D398
+                0x000000008019d39c                D_8019D39C
+                0x000000008019d3a0                D_8019D3A0
+                0x000000008019d3a4                D_8019D3A4
+                0x000000008019d3a8                D_8019D3A8
+                0x000000008019d3ac                D_8019D3AC
+                0x000000008019d3b0                D_8019D3B0
+                0x000000008019d3b4                D_8019D3B4
+                0x000000008019d3b8                D_8019D3B8
+ build/us/asm/us/st/cen/data/1D424.rodata.s.o(.rodata)
+ .rodata        0x000000008019d424       0x48 build/us/asm/us/st/cen/data/1D424.rodata.s.o
+                0x000000008019d424                D_8019D424
+                0x000000008019d428                D_8019D428
+                0x000000008019d42c                UNK_Update0
+                0x000000008019d46c                stcen_RODATA_END = .
+                0x0000000000010040                stcen_RODATA_SIZE = ABSOLUTE ((stcen_RODATA_END - stcen_RODATA_START))
+                0x000000000001d470                __romPos = (__romPos + SIZEOF (.stcen))
+                0x000000000001d470                __romPos = ALIGN (__romPos, 0x10)
+                0x000000000001d470                stcen_ROM_END = __romPos
+                0x000000008019d46c                stcen_VRAM_END = .
+
+/DISCARD/
+ *(*)
+                0x000000008003c774                g_api = 0x8003c774
+                0x000000008003cb08                g_GpuBuffers = 0x8003cb08
+                0x0000000080072bd0                g_Player = 0x80072bd0
+                0x000000008007308c                g_Camera = 0x8007308c
+                0x00000000800730a0                g_CurrentRoom = 0x800730a0
+                0x0000000080097490                g_pads = 0x80097490
+                0x0000000080097964                g_Status = 0x80097964
+                0x000000008003bdec                D_8003BDEC = 0x8003bdec
+                0x000000008003c908                D_8003C908 = 0x8003c908
+                0x000000008017d000                D_8017D000 = 0x8017d000
+                0x00000000801b77cc                D_801B77CC = 0x801b77cc
+                0x000000001f800004                D_1F800004 = 0x1f800004
+                0x000000008003bde0                g_IsTimeAttackUnlocked = 0x8003bde0
+                0x000000008003bdee                D_8003BDEE = 0x8003bdee
+                0x000000008003bec4                D_8003BEC4 = 0x8003bec4
+                0x000000008003beec                D_8003BEEC = 0x8003beec
+                0x000000008003bf7c                D_8003BF7C = 0x8003bf7c
+                0x000000008003bf9c                D_8003BF9C = 0x8003bf9c
+                0x000000008003c104                D_8003C104 = 0x8003c104
+                0x000000008003c704                D_8003C704 = 0x8003c704
+                0x000000008003c7b4                g_api_FreePrimitives = 0x8003c7b4
+                0x000000008003c7b8                g_api_AllocPrimitives = 0x8003c7b8
+                0x000000008003c7bc                g_api_CheckCollision = 0x8003c7bc
+                0x000000008003c7dc                g_api_PlaySfx = 0x8003c7dc
+                0x000000008003c7e0                g_api_func_800EDB58 = 0x8003c7e0
+                0x000000008003c7f8                g_api_func_80131F68 = 0x8003c7f8
+                0x000000008003c800                g_api_func_80106A28 = 0x8003c800
+                0x000000008003c808                g_api_enemyDefs = 0x8003c808
+                0x000000008003c820                g_api_func_8010E168 = 0x8003c820
+                0x000000008003c824                g_api_func_8010DFF0 = 0x8003c824
+                0x000000008003c828                g_api_DealDamage = 0x8003c828
+                0x000000008003c82c                g_api_LoadEquipIcon = 0x8003c82c
+                0x000000008003c830                g_api_D_800A4B04 = 0x8003c830
+                0x000000008003c834                g_api_D_800A7718 = 0x8003c834
+                0x000000008003c840                g_api_TimeAttackController = 0x8003c840
+                0x000000008003c848                g_api_func_800FE044 = 0x8003c848
+                0x000000008003c84c                g_api_AddToInventory = 0x8003c84c
+                0x000000008003c850                g_api_D_800A8720 = 0x8003c850
+                0x000000008003c858                g_api_func_80134714 = 0x8003c858
+                0x000000008003c864                g_api_CheckEquipmentItemCount = 0x8003c864
+                0x000000008003c868                g_api_func_8010BF64 = 0x8003c868
+                0x000000008003c878                g_api_func_800FF460 = 0x8003c878
+                0x000000008003c87c                g_api_func_800FF494 = 0x8003c87c
+                0x000000008003c8b8                D_8003C8B8 = 0x8003c8b8
+                0x000000008003c8c4                D_8003C8C4 = 0x8003c8c4
+                0x000000008003c998                g_blinkTimer = 0x8003c998
+                0x000000008003c9a0                g_CurrentPlayableCharacter = 0x8003c9a0
+                0x000000008003cb04                D_8003CB04 = 0x8003cb04
+                0x000000008006c3b8                g_CurrentEntity = 0x8006c3b8
+                0x000000008006cbcc                g_Clut = 0x8006cbcc
+                0x0000000080072ef4                g_Player_D_80072EF4 = 0x80072ef4
+                0x0000000080072efc                g_Player_D_80072EFC = 0x80072efc
+                0x0000000080072f20                g_Player_pl_vram_flag = 0x80072f20
+                0x0000000080072f2c                g_Player_unk0C = 0x80072f2c
+                0x0000000080072f30                g_Player_unk10 = 0x80072f30
+                0x0000000080072f76                g_Player_unk56 = 0x80072f76
+                0x0000000080072f78                g_Player_unk58 = 0x80072f78
+                0x0000000080073084                g_CurrentRoomTileLayout = 0x80073084
+                0x000000008007308e                g_Camera_posX_i_hi = 0x8007308e
+                0x0000000080073092                g_Camera_posY_i_hi = 0x80073092
+                0x00000000800730a8                g_CurrentRoom_vSize = 0x800730a8
+                0x00000000800730c0                g_CurrentRoom_x = 0x800730c0
+                0x00000000800730c4                g_CurrentRoom_y = 0x800730c4
+                0x00000000800730c8                g_CurrentRoom_width = 0x800730c8
+                0x00000000800730cc                g_CurrentRoom_height = 0x800730cc
+                0x00000000800733d8                g_Entities = 0x800733d8
+                0x00000000800733da                PLAYER_posX_i_hi = 0x800733da
+                0x00000000800733dc                PLAYER_posY_val = 0x800733dc
+                0x00000000800733de                PLAYER_posY_i_hi = 0x800733de
+                0x00000000800733e0                PLAYER_velocityX = 0x800733e0
+                0x00000000800733e4                PLAYER_velocityY = 0x800733e4
+                0x00000000800733ec                PLAYER_facing = 0x800733ec
+                0x00000000800733fc                PLAYER_zPriority = 0x800733fc
+                0x0000000080073404                PLAYER_step = 0x80073404
+                0x0000000080073412                D_80073412 = 0x80073412
+                0x0000000080073416                D_80073416 = 0x80073416
+                0x0000000080073420                D_80073420 = 0x80073420
+                0x0000000080073490                D_80073490 = 0x80073490
+                0x0000000080073494                g_Entities_1 = 0x80073494
+                0x0000000080073510                g_Entities_1_unk7C_S8_unk0 = 0x80073510
+                0x0000000080075718                D_80075718 = 0x80075718
+                0x00000000800762d8                g_Entities_STAGE_ENTITY_START = 0x800762d8
+                0x000000008007a958                D_8007A958 = 0x8007a958
+                0x000000008007c0d8                D_8007C0D8 = 0x8007c0d8
+                0x000000008007c9a8                D_8007C9A8 = 0x8007c9a8
+                0x000000008007c9d4                D_8007C9D4 = 0x8007c9d4
+                0x000000008007c9d8                D_8007C9D8 = 0x8007c9d8
+                0x000000008007c9dc                D_8007C9DC = 0x8007c9dc
+                0x000000008007d858                D_8007D858 = 0x8007d858
+                0x000000008007ef1c                D_8007EF1C = 0x8007ef1c
+                0x000000008007efd8                g_EvHwCardEnd = 0x8007efd8
+                0x000000008007efe4                D_8007EFE4 = 0x8007efe4
+                0x0000000080086fec                g_PrimBuf = 0x80086fec
+                0x000000008008700c                D_8008700C = 0x8008700c
+                0x000000008008701e                D_8008701E = 0x8008701e
+                0x00000000800973f8                D_800973F8 = 0x800973f8
+                0x00000000800973fc                D_800973FC = 0x800973fc
+                0x0000000080097400                D_80097400 = 0x80097400
+                0x0000000080097408                g_zEntityCenter = 0x80097408
+                0x0000000080097410                D_80097410 = 0x80097410
+                0x0000000080097414                D_80097414 = 0x80097414
+                0x0000000080097428                g_entityDestroyed = 0x80097428
+                0x000000008009748a                D_8009748A = 0x8009748a
+                0x000000008009748e                D_8009748E = 0x8009748e
+                0x0000000080097490                g_pads = 0x80097490
+                0x0000000080097494                g_pads_0_tapped = 0x80097494
+                0x00000000800978b8                g_randomNext = 0x800978b8
+                0x0000000080097908                D_80097908 = 0x80097908
+                0x000000008009790c                D_8009790C = 0x8009790c
+                0x0000000080097914                g_DemoMode = 0x80097914
+                0x0000000080097964                g_Status = 0x80097964
+                0x000000008009796e                g_Status_relics_10 = 0x8009796e
+                0x000000008009796f                g_Status_relics_11 = 0x8009796f
+                0x0000000080097973                g_Status_relics_15 = 0x80097973
+                0x0000000080097ba8                g_Status_hearts = 0x80097ba8
+                0x0000000080097bac                g_Status_heartsMax = 0x80097bac
+                0x0000000080097bf0                g_Status_gold = 0x80097bf0
+                0x0000000080097bf4                g_Status_killCount = 0x80097bf4
+                0x0000000080097bfc                g_Status_subWeapon = 0x80097bfc
+                0x000000008019d37e                D_8019D37E = 0x8019d37e
+                0x000000008019d382                D_8019D382 = 0x8019d382
+                0x000000008019d386                D_8019D386 = 0x8019d386
+                0x000000008019d38a                D_8019D38A = 0x8019d38a
+                0x000000008019d38e                D_8019D38E = 0x8019d38e
+                0x000000008019d38f                D_8019D38F = 0x8019d38f
+                0x000000008019d3b6                D_8019D3B6 = 0x8019d3b6
+                0x000000008001112c                LoadTPage = 0x8001112c
+                0x000000008001195c                FntPrint = 0x8001195c
+                0x0000000080011dec                GetClut = 0x80011dec
+                0x0000000080012a90                ClearImage = 0x80012a90
+                0x0000000080012b24                LoadImage = 0x80012b24
+                0x0000000080012bec                MoveImage = 0x80012bec
+                0x00000000800160e4                rand = 0x800160e4
+                0x0000000080016c9c                rsin = 0x80016c9c
+                0x0000000080016d68                rcos = 0x80016d68
+                0x0000000080017cdc                TransMatrix = 0x80017cdc
+                0x0000000080017d0c                ScaleMatrix = 0x80017d0c
+                0x0000000080017e3c                SetRotMatrix = 0x80017e3c
+                0x0000000080017ecc                SetTransMatrix = 0x80017ecc
+                0x000000008001803c                SetGeomOffset = 0x8001803c
+                0x000000008001805c                SetGeomScreen = 0x8001805c
+                0x000000008001833c                RotTransPers4 = 0x8001833c
+                0x00000000800186ac                RotMatrix = 0x800186ac
+                0x0000000080018bcc                RotMatrixX = 0x80018bcc
+                0x0000000080018d6c                RotMatrixY = 0x80018d6c
+                0x0000000080018f0c                RotMatrixZ = 0x80018f0c
+                0x00000000800190ac                ratan2 = 0x800190ac
+OUTPUT(build/us/stcen.elf elf32-tradlittlemips)
