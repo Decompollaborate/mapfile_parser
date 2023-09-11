@@ -54,10 +54,18 @@ class Symbol:
 
     @staticmethod
     def printCsvHeader():
-        print("Symbol name,VRAM,Size in bytes")
+        print(Symbol.toCsvHeader())
 
     def printAsCsv(self):
-        print(f"{self.name},{self.vram:08X},{self.size}")
+        print(self.toCsv())
+
+
+    @staticmethod
+    def toCsvHeader() -> str:
+        return "Symbol name,VRAM,Size in bytes"
+
+    def toCsv(self) -> str:
+        return f"{self.name},{self.vram:08X},{self.size}"
 
 
     def toJson(self) -> dict[str, Any]:
@@ -159,11 +167,21 @@ class File:
 
     @staticmethod
     def printCsvHeader(printVram: bool=True):
-        if printVram:
-            print("VRAM,", end="")
-        print("File,Segment type,Num symbols,Max size,Total size,Average size")
+        print(File.toCsvHeader(printVram=printVram))
 
     def printAsCsv(self, printVram: bool=True):
+        print(self.toCsv(printVram=printVram))
+
+
+    @staticmethod
+    def toCsvHeader(printVram: bool=True) -> str:
+        ret = ""
+        if printVram:
+            ret += "VRAM,"
+        ret += "File,Segment type,Num symbols,Max size,Total size,Average size"
+        return ret
+
+    def toCsv(self, printVram: bool=True) -> str:
         # Calculate stats
         symCount = len(self.symbols)
         maxSize = 0
@@ -173,9 +191,11 @@ class File:
             if symSize > maxSize:
                 maxSize = symSize
 
+        ret = ""
         if printVram:
-            print(f"{self.vram:08X},", end="")
-        print(f"{self.filepath},{self.segmentType},{symCount},{maxSize},{self.size},{averageSize:0.2f}")
+            ret += f"{self.vram:08X},"
+        ret += f"{self.filepath},{self.segmentType},{symCount},{maxSize},{self.size},{averageSize:0.2f}"
+        return ret
 
 
     def toJson(self) -> dict[str, Any]:
@@ -501,28 +521,37 @@ class MapFile:
 
         return totalStats, progressPerFolder
 
+
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
-        File.printCsvHeader(printVram)
+        print(self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols), end="")
+
+    def printSymbolsCsv(self):
+        print(self.toCsvSymbols(), end="")
+
+
+    def toCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True) -> str:
+        ret = File.toCsvHeader(printVram=printVram) + "\n"
         for file in self.filesList:
             if skipWithoutSymbols and len(file.symbols) == 0:
                 continue
 
-            file.printAsCsv(printVram)
-        return
+            ret += file.toCsv(printVram=printVram) + "\n"
+        return ret
 
-    def printSymbolsCsv(self):
-        print(f"File,", end="")
-        Symbol.printCsvHeader()
+    def toCsvSymbols(self) -> str:
+        ret = "File,"
+        ret += Symbol.toCsvHeader()
+        ret += "\n"
 
         for file in self.filesList:
             if len(file.symbols) == 0:
                 continue
 
-            for sym in file.symbols:
-                print(f"{file.filepath},", end="")
-                sym.printAsCsv()
-        return
-
+            for sym in file:
+                ret += f"{file.filepath},"
+                ret += sym.toCsv()
+                ret += "\n"
+        return ret
 
     def toJson(self) -> dict[str, Any]:
         filesList = []

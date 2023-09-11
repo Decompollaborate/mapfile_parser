@@ -27,8 +27,8 @@ for mapPath in sorted(Path("tests/maps").iterdir()):
     print("    .sym")
     mapfile_parser.frontends.pj64_syms.doPj64Syms(mapPath, outputFolder/mapPath.with_suffix(".sym").name)
 
-    # print("    .csv")
-    # mapfile_parser.frontends.symbol_sizes_csv.doSymbolSizesCsv(mapPath, outputFolder/mapPath.with_suffix(".csv").name)
+    print("    .csv")
+    mapfile_parser.frontends.symbol_sizes_csv.doSymbolSizesCsv(mapPath, outputFolder/mapPath.with_suffix(".csv").name)
 
-    # print("    .symbols.csv")
-    # mapfile_parser.frontends.symbol_sizes_csv.doSymbolSizesCsv(mapPath, outputFolder/mapPath.with_suffix(".symbols.csv").name, symbolsSummary=True)
+    print("    .symbols.csv")
+    mapfile_parser.frontends.symbol_sizes_csv.doSymbolSizesCsv(mapPath, outputFolder/mapPath.with_suffix(".symbols.csv").name, symbolsSummary=True)
