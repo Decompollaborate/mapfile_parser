@@ -1,0 +1,15 @@
+# SPDX-FileCopyrightText: © 2023 Decompollaborate
+# SPDX-License-Identifier: MIT
+
+[package]
+name = "mapfile_parser"
+version = "0.1.0"
+edition = "2021"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+path = "src/rs/lib.rs"
+
+[dependencies]
+regex = "1.9.5"
