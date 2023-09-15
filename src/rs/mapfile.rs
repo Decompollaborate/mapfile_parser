@@ -1,9 +1,11 @@
 /* SPDX-FileCopyrightText: © 2023 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::{vec, fs::File, io::{BufReader, Read}};
+use std::{vec, fs::File, io::{BufReader, Read}, path::PathBuf};
 
 use regex;
+
+use crate::utils;
 
 #[derive(Debug, Clone)]
 pub struct MapFile {
@@ -34,7 +36,7 @@ impl MapFile {
         //let mut map_data: Vec<u8> = Vec::new();
         //let contents_length = f.read_to_end(&mut map_data).expect("Not able to read the whole contents of the file");
         let mut map_data = String::new();
-        let contents_length = f.read_to_string(&mut map_data).expect("Not able to read the whole contents of the file");;
+        let contents_length = f.read_to_string(&mut map_data).expect("Not able to read the whole contents of the file");
 
         // TODO: "Linker script and memory map" stuff
 
@@ -43,31 +45,70 @@ impl MapFile {
         //}
 
         let mut in_file = false;
-        in_file = true; // TODO: remove
 
+        let mut prev_line = "";
         for line in map_data.split("\n") {
             println!("{line}");
 
             if in_file {
                 if !line.starts_with("        ") {
-                    //in_file = false; // TODO: uncomment
+                    in_file = false;
                 } else if !regex_label.is_match(line) {
                     // Filter out jump table's labels
 
                     // Find symbols
-                    let option_entry_match = regex_functionEntry.captures(line);
-
-                    if let Some(entry_match) = option_entry_match {
+                    if let Some(entry_match) = regex_functionEntry.captures(line) {
                         println!("{entry_match:?}");
                         let sym_name = &entry_match["name"];
-                        let sym_vram = u64::from_str_radix(&entry_match["vram"].trim_start_matches("0x"), 16).unwrap();
+                        let sym_vram = utils::parse_hex(&entry_match["vram"]);
 
                         println!("sym info:");
                         println!("  {sym_name}: {sym_vram:X}");
-
                     }
                 }
             }
+
+            if !in_file {
+                if let Some(file_entry_match) = regex_fileDataEntry.captures(line) {
+                    let filepath = std::path::PathBuf::from(&file_entry_match["name"]);
+                    let size = utils::parse_hex(&file_entry_match["size"]);
+                    let vram = utils::parse_hex(&file_entry_match["vram"]);
+                    let section_type = &file_entry_match["section"];
+
+                    if size > 0 {
+                        in_file = true;
+                    }
+
+                    println!("filedata entry:");
+                    println!("  filepath:     {filepath:?}");
+                    println!("  size:         {size:X}");
+                    println!("  vram:         {vram:X}");
+                    println!("  section_type: {section_type}");
+                } else if let Some(segment_entry_match) = regex_segmentEntry.captures(line) {
+                    let mut name = &segment_entry_match["name"];
+                    let vram = utils::parse_hex(&segment_entry_match["vram"]);
+                    let size = utils::parse_hex(&segment_entry_match["size"]);
+                    let vrom = utils::parse_hex(&segment_entry_match["vrom"]);
+
+                    if name == "" {
+                        // If the segment name is too long then this line gets break in two lines
+                        name = prev_line;
+                    }
+
+                    println!("segment entry:");
+                    println!("  name: {name}");
+                    println!("  vram: {vram:X}");
+                    println!("  size: {size:X}");
+                    println!("  vrom: {vrom:X}");
+                } else if let Some(fill_match) = regex_fill.captures(line) {
+                    // Make a dummy file to handle *fill*
+                    let size = utils::parse_hex(&fill_match["size"]);
+                    println!("fill info:");
+                    println!("  {size:X}");
+                }
+            }
+
+            prev_line = line;
         }
 
     }
