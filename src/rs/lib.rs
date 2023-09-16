@@ -7,6 +7,12 @@ pub mod file;
 pub mod symbol;
 pub mod utils;
 
+#[pyo3::prelude::pymodule]
+fn mapfile_parser(_py: pyo3::prelude::Python<'_>, m: &pyo3::prelude::PyModule) -> pyo3::prelude::PyResult<()> {
+    m.add_class::<mapfile::MapFile>()?;
+    Ok(())
+}
+
 pub fn add(left: usize, right: usize) -> usize {
     left + right
 }
@@ -26,6 +32,6 @@ mod tests {
     #[test]
     fn w0_000_map() {
         let mut map = MapFile::new();
-        map.read_map_file(&"tests/maps/w0_000.map".to_string());
+        map.read_map_file("tests/maps/w0_000.map");
     }
 }

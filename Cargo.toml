@@ -9,7 +9,10 @@ edition = "2021"
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [lib]
+name = "mapfile_parser"
 path = "src/rs/lib.rs"
+crate-type = ["cdylib"]
 
 [dependencies]
 regex = "1.9.5"
+pyo3 = "0.19.0"

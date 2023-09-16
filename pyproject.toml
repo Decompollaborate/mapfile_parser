@@ -8,6 +8,11 @@ description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
 requires-python = ">=3.7"
 dynamic = ["dependencies"]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
 
 [project.urls]
 "Homepage" = "https://github.com/Decompollaborate/mapfile_parser"
@@ -16,9 +21,14 @@ dynamic = ["dependencies"]
 [build-system]
 requires = ["hatchling", "hatch-requirements-txt"]
 build-backend = "hatchling.build"
+# requires = ["maturin>=1.2,<2.0"]
+# build-backend = "maturin"
 
 [tool.hatch.metadata.hooks.requirements_txt]
 files = ["requirements.txt"]
 
 [tool.cibuildwheel]
 skip = ["cp36-*"]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]

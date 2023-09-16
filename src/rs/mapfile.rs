@@ -3,17 +3,25 @@
 
 use std::{vec, fs::File, io::{BufReader, Read}, path::PathBuf};
 
-use regex;
+//use regex;
 
 use crate::{utils, segment, file, symbol};
 
 #[derive(Debug, Clone)]
+// TODO: sequence?
+// TODO: maybe not use unsendable?
+#[pyo3::prelude::pyclass(module = "mapfile_parser", unsendable)]
 pub struct MapFile {
+    #[pyo3(get)]
     segments_list: Vec<segment::Segment>,
+
+    #[pyo3(get, set)]
     pub debugging: bool,
 }
 
+#[pyo3::prelude::pymethods]
 impl MapFile {
+    #[new]
     pub fn new() -> Self {
         MapFile {
             segments_list: Vec::new(),
@@ -21,8 +29,11 @@ impl MapFile {
         }
     }
 
+    //#[getter]
+    //fn segments_list(&self) -> 
+
     // TODO: look for equivalent to pathlib.Path
-    pub fn read_map_file(&mut self, map_path: &String) {
+    pub fn read_map_file(&mut self, map_path: &str) {
         // TODO: maybe move somewhere else?
         let regex_fileDataEntry = regex::Regex::new(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
         let regex_functionEntry = regex::Regex::new(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
@@ -42,11 +53,11 @@ impl MapFile {
         // TODO: "Linker script and memory map" stuff
 
         let mut temp_segment_list: Vec<segment::Segment> = Vec::new();
-        temp_segment_list.push(segment::Segment::new(&"$nosegment".into(), 0, 0, 0));
+        temp_segment_list.push(segment::Segment::new("$nosegment".into(), 0, 0, 0));
         {
             let current_segment = temp_segment_list.last_mut().unwrap();
 
-            current_segment.files_list.push(file::File::new(&"".into(), 0, 0, &"".into()));
+            current_segment.files_list.push(file::File::new("".into(), 0, 0, "".into()));
         }
 
         let mut in_file = false;
@@ -95,7 +106,7 @@ impl MapFile {
                         in_file = true;
                         let current_segment = temp_segment_list.last_mut().unwrap();
 
-                        current_segment.files_list.push(file::File::new(&filepath, vram, size, &section_type.into()));
+                        current_segment.files_list.push(file::File::new(filepath, vram, size, section_type.into()));
                     }
                 } else if let Some(segment_entry_match) = regex_segmentEntry.captures(line) {
                     let mut name = &segment_entry_match["name"];
@@ -113,7 +124,7 @@ impl MapFile {
                     println!("  vram: {vram:X}");
                     println!("  size: {size:X}");
                     println!("  vrom: {vrom:X}");
-                    temp_segment_list.push(segment::Segment::new(&name.into(), vram, size, vrom));
+                    temp_segment_list.push(segment::Segment::new(name.into(), vram, size, vrom));
                     //current_segment = temp_segment_list.last_mut().unwrap();
                 } else if let Some(fill_match) = regex_fill.captures(line) {
                     // Make a dummy file to handle *fill*
@@ -137,7 +148,7 @@ impl MapFile {
                     println!("fill info:");
                     println!("  {size:X}");
 
-                    current_segment.files_list.push(file::File::new(&filepath, vram, size, &section_type));
+                    current_segment.files_list.push(file::File::new(filepath, vram, size, &section_type));
                 }
             }
 
