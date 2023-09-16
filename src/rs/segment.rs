@@ -9,7 +9,7 @@ pub struct Segment {
     pub vram: u64,
     pub size: u64,
     pub vrom: u64,
-    files_list: Vec<file::File>,
+    pub files_list: Vec<file::File>,
 }
 
 impl Segment {

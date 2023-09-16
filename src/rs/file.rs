@@ -10,7 +10,7 @@ pub struct File {
     pub size: u64,
     pub section_type: String,
     pub vrom: Option<u64>,
-    symbols: Vec<symbol::Symbol>,
+    pub symbols: Vec<symbol::Symbol>,
 }
 
 impl File {

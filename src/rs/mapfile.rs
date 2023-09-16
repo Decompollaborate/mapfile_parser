@@ -5,7 +5,7 @@ use std::{vec, fs::File, io::{BufReader, Read}, path::PathBuf};
 
 use regex;
 
-use crate::{utils, segment};
+use crate::{utils, segment, file, symbol};
 
 #[derive(Debug, Clone)]
 pub struct MapFile {
@@ -45,6 +45,13 @@ impl MapFile {
         //    println!("{line:?}");
         //}
 
+        let mut temp_segment_list: Vec<segment::Segment> = Vec::new();
+        temp_segment_list.push(segment::Segment::new(&"$nosegment".into(), 0, 0, 0));
+        let mut current_segment = temp_segment_list.last_mut().unwrap();
+
+        current_segment.files_list.push(file::File::new(&"".into(), 0, 0, &"".into()));
+        let mut current_file = current_segment.files_list.last_mut().unwrap();
+
         let mut in_file = false;
 
         let mut prev_line = "";
@@ -65,6 +72,7 @@ impl MapFile {
 
                         println!("sym info:");
                         println!("  {sym_name}: {sym_vram:X}");
+                        current_file.symbols.push(symbol::Symbol::new(&sym_name.into(), sym_vram));
                     }
                 }
             }
@@ -72,19 +80,21 @@ impl MapFile {
             if !in_file {
                 if let Some(file_entry_match) = regex_fileDataEntry.captures(line) {
                     let filepath = std::path::PathBuf::from(&file_entry_match["name"]);
-                    let size = utils::parse_hex(&file_entry_match["size"]);
                     let vram = utils::parse_hex(&file_entry_match["vram"]);
+                    let size = utils::parse_hex(&file_entry_match["size"]);
                     let section_type = &file_entry_match["section"];
-
-                    if size > 0 {
-                        in_file = true;
-                    }
 
                     println!("filedata entry:");
                     println!("  filepath:     {filepath:?}");
                     println!("  size:         {size:X}");
                     println!("  vram:         {vram:X}");
                     println!("  section_type: {section_type}");
+
+                    if size > 0 {
+                        in_file = true;
+                        current_segment.files_list.push(file::File::new(&filepath, vram, size, &section_type.into()));
+                        current_file = current_segment.files_list.last_mut().unwrap();
+                    }
                 } else if let Some(segment_entry_match) = regex_segmentEntry.captures(line) {
                     let mut name = &segment_entry_match["name"];
                     let vram = utils::parse_hex(&segment_entry_match["vram"]);
@@ -101,16 +111,39 @@ impl MapFile {
                     println!("  vram: {vram:X}");
                     println!("  size: {size:X}");
                     println!("  vrom: {vrom:X}");
+                    temp_segment_list.push(segment::Segment::new(&name.into(), vram, size, vrom));
+                    current_segment = temp_segment_list.last_mut().unwrap();
                 } else if let Some(fill_match) = regex_fill.captures(line) {
                     // Make a dummy file to handle *fill*
-                    let size = utils::parse_hex(&fill_match["size"]);
+                    let mut filepath = std::path::PathBuf::new();
+                    let mut vram = 0;
+                    let mut size = utils::parse_hex(&fill_match["size"]);
+                    let mut section_type = "".to_owned();
+
+                    if !current_segment.files_list.is_empty() {
+                        let prev_file = current_segment.files_list.last().unwrap();
+                        let mut name = prev_file.filepath.file_name().unwrap().to_owned();
+
+                        name.push("__file__");
+                        filepath = prev_file.filepath.with_file_name(name);
+                        vram = prev_file.vram + prev_file.size;
+                        section_type = prev_file.section_type.clone();
+                    }
+
                     println!("fill info:");
                     println!("  {size:X}");
+
+                    current_segment.files_list.push(file::File::new(&filepath, vram, size, &section_type));
+                    current_file = current_segment.files_list.last_mut().unwrap();
+
+                    // TODO
                 }
             }
 
             prev_line = line;
         }
+
+        //temp_segment_list.push(current_segment);
 
     }
 }
