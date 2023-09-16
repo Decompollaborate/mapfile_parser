@@ -22,7 +22,7 @@ impl MapFile {
     }
 
     // TODO: look for equivalent to pathlib.Path
-    pub fn read_map_file(&self, map_path: &String) {
+    pub fn read_map_file(&mut self, map_path: &String) {
         // TODO: maybe move somewhere else?
         let regex_fileDataEntry = regex::Regex::new(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
         let regex_functionEntry = regex::Regex::new(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
@@ -41,16 +41,13 @@ impl MapFile {
 
         // TODO: "Linker script and memory map" stuff
 
-        //for line in map_data.split(|&x| x==b'\n') {
-        //    println!("{line:?}");
-        //}
-
         let mut temp_segment_list: Vec<segment::Segment> = Vec::new();
         temp_segment_list.push(segment::Segment::new(&"$nosegment".into(), 0, 0, 0));
-        let mut current_segment = temp_segment_list.last_mut().unwrap();
+        {
+            let current_segment = temp_segment_list.last_mut().unwrap();
 
-        current_segment.files_list.push(file::File::new(&"".into(), 0, 0, &"".into()));
-        let mut current_file = current_segment.files_list.last_mut().unwrap();
+            current_segment.files_list.push(file::File::new(&"".into(), 0, 0, &"".into()));
+        }
 
         let mut in_file = false;
 
@@ -72,6 +69,10 @@ impl MapFile {
 
                         println!("sym info:");
                         println!("  {sym_name}: {sym_vram:X}");
+
+                        let current_segment = temp_segment_list.last_mut().unwrap();
+                        let current_file = current_segment.files_list.last_mut().unwrap();
+
                         current_file.symbols.push(symbol::Symbol::new(&sym_name.into(), sym_vram));
                     }
                 }
@@ -92,8 +93,9 @@ impl MapFile {
 
                     if size > 0 {
                         in_file = true;
+                        let current_segment = temp_segment_list.last_mut().unwrap();
+
                         current_segment.files_list.push(file::File::new(&filepath, vram, size, &section_type.into()));
-                        current_file = current_segment.files_list.last_mut().unwrap();
                     }
                 } else if let Some(segment_entry_match) = regex_segmentEntry.captures(line) {
                     let mut name = &segment_entry_match["name"];
@@ -112,13 +114,15 @@ impl MapFile {
                     println!("  size: {size:X}");
                     println!("  vrom: {vrom:X}");
                     temp_segment_list.push(segment::Segment::new(&name.into(), vram, size, vrom));
-                    current_segment = temp_segment_list.last_mut().unwrap();
+                    //current_segment = temp_segment_list.last_mut().unwrap();
                 } else if let Some(fill_match) = regex_fill.captures(line) {
                     // Make a dummy file to handle *fill*
                     let mut filepath = std::path::PathBuf::new();
                     let mut vram = 0;
                     let mut size = utils::parse_hex(&fill_match["size"]);
                     let mut section_type = "".to_owned();
+
+                    let current_segment = temp_segment_list.last_mut().unwrap();
 
                     if !current_segment.files_list.is_empty() {
                         let prev_file = current_segment.files_list.last().unwrap();
@@ -134,16 +138,82 @@ impl MapFile {
                     println!("  {size:X}");
 
                     current_segment.files_list.push(file::File::new(&filepath, vram, size, &section_type));
-                    current_file = current_segment.files_list.last_mut().unwrap();
-
-                    // TODO
                 }
             }
 
             prev_line = line;
         }
 
-        //temp_segment_list.push(current_segment);
+        for i in 0..temp_segment_list.len() {
+            let segment = &mut temp_segment_list[i];
 
+            if i == 0 {
+                if segment.size == 0 && segment.files_list.is_empty() {
+                    // skip the dummy segment if it has no size, files or symbols
+                    continue;
+                }
+            }
+
+            let mut vrom_offset = segment.vrom;
+            for file in segment.files_list.iter_mut() {
+                let mut acummulated_size = 0;
+                let symbols_count = file.symbols.len();
+                let is_noload_section = file.is_noload_section();
+
+                if file.vrom.is_some() {
+                    vrom_offset = file.vrom.unwrap();
+                }
+
+                if !is_noload_section {
+                    file.vrom = Some(vrom_offset);
+                }
+
+                if symbols_count > 0 {
+                    let mut sym_vrom = vrom_offset;
+
+                    // Calculate size of each symbol
+                    for index in 0..symbols_count-1 {
+                        let next_sym_vram = file.symbols[index+1].vram;
+                        let sym = &mut file.symbols[index];
+
+                        if index == 0 {
+                            if sym.vram > file.vram {
+                                // If the vram of the first symbol doesn't match the vram of the file
+                                // it means the first(s) symbols were not emitted in the mapfile (static,
+                                // jumptables, etc)
+                                // We try to adjust the vrom to account for it.
+                                sym_vrom += sym.vram - file.vram;
+                            }
+                        }
+
+                        let sym_size = next_sym_vram - sym.vram;
+                        acummulated_size += sym_size;
+
+                        sym.size = Some(sym_size);
+
+                        if !is_noload_section {
+                            // Only set vrom of non bss variables
+                            sym.vrom = Some(sym_vrom);
+                            sym_vrom += sym_size;
+                        }
+                    }
+
+                    // Calculate size of last symbol of the file
+                    let sym = &mut file.symbols[symbols_count-1];
+                    let sym_size = file.size - acummulated_size;
+                    sym.size = Some(sym_size);
+                    if !is_noload_section {
+                        sym.vrom = Some(sym_vrom);
+                        sym_vrom += sym_size;
+                    }
+                }
+
+                if !is_noload_section {
+                    vrom_offset += file.size;
+                }
+            }
+
+            self.segments_list.push(segment.clone());
+        }
     }
 }

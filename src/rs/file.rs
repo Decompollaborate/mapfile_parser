@@ -24,4 +24,8 @@ impl File {
             symbols: Vec::new(),
         }
     }
+
+    pub fn is_noload_section(&self) -> bool {
+        return self.section_type == ".bss";
+    }
 }

@@ -25,7 +25,7 @@ mod tests {
 
     #[test]
     fn w0_000_map() {
-        let map = MapFile::new();
+        let mut map = MapFile::new();
         map.read_map_file(&"tests/maps/w0_000.map".to_string());
     }
 }
