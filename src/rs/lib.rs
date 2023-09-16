@@ -2,7 +2,10 @@
 /* SPDX-License-Identifier: MIT */
 
 pub mod mapfile;
-mod utils;
+pub mod segment;
+pub mod file;
+pub mod symbol;
+pub mod utils;
 
 pub fn add(left: usize, right: usize) -> usize {
     left + right

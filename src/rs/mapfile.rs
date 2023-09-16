@@ -5,17 +5,18 @@ use std::{vec, fs::File, io::{BufReader, Read}, path::PathBuf};
 
 use regex;
 
-use crate::utils;
+use crate::{utils, segment};
 
 #[derive(Debug, Clone)]
 pub struct MapFile {
-    // _segments_list: vec,
+    segments_list: Vec<segment::Segment>,
     pub debugging: bool,
 }
 
 impl MapFile {
     pub fn new() -> Self {
         MapFile {
+            segments_list: Vec::new(),
             debugging: false,
         }
     }
