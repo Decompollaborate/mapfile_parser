@@ -167,6 +167,7 @@ class File:
         return self.vrom
 
 
+    #! @deprecated
     def getName(self) -> Path:
         return Path(*self.filepath.with_suffix("").parts[2:])
 

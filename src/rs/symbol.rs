@@ -1,15 +1,23 @@
 /* SPDX-FileCopyrightText: © 2023 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use crate::{utils, file};
+use std::collections::hash_map::DefaultHasher;
+
+// Required to call the `.hash` and `.finish` methods, which are defined on traits.
+use std::hash::{Hash, Hasher};
+
+use pyo3::prelude::*;
+use pyo3::class::basic::CompareOp;
+
+use crate::{utils, file, json_element};
 
 #[derive(Debug, Clone)]
 #[pyo3::prelude::pyclass(module = "mapfile_parser", unsendable)]
 pub struct Symbol {
-    #[pyo3(get, set)]
+    #[pyo3(get)]
     pub name: String,
 
-    #[pyo3(get, set)]
+    #[pyo3(get)]
     pub vram: u64,
 
     #[pyo3(get, set)]
@@ -50,5 +58,93 @@ impl Symbol {
             return format!("0x{0:06X}", vrom);
         }
         "None".into()
+    }
+
+    /*
+    def serializeVram(self, humanReadable: bool=True) -> str|int|None:
+        if humanReadable:
+            return f"0x{self.vram:08X}"
+        return self.vram
+
+    def serializeSize(self, humanReadable: bool=True) -> str|int|None:
+        if self.size is None:
+            return None
+        if humanReadable:
+            return f"0x{self.size:X}"
+        return self.size
+
+    def serializeVrom(self, humanReadable: bool=True) -> str|int|None:
+        if self.vrom is None:
+            return None
+        if humanReadable:
+            return f"0x{self.vrom:06X}"
+        return self.vrom
+    */
+
+
+    // doesn't work because Pyo3 doesn't support exporting enums to Python yet
+    //#[pyo3(name = "serializeVrom")]
+    //pub fn serialize_vrom(&self, human_readable: bool) -> Option<json_element::JsonElement> {
+    //    if let Some(vrom) = self.vrom {
+    //        if human_readable {
+    //            return Some(json_element::JsonElement::String(format!("0x{:06X}", vrom)));
+    //        }
+    //        return Some(json_element::JsonElement::Int(vrom));
+    //    }
+    //    None
+    //}
+
+
+    #[staticmethod]
+    #[pyo3(name = "toCsvHeader")]
+    pub fn to_csv_header() -> String {
+        "Symbol name,VRAM,Size in bytes".to_string()
+    }
+
+    #[pyo3(name = "toCsv")]
+    pub fn to_csv(&self) -> String {
+        format!("{0},{1:08X},{2}", self.name, self.vram, self.get_size_str())
+    }
+
+
+    #[staticmethod]
+    #[pyo3(name = "printCsvHeader")]
+    pub fn print_csv_header() {
+        print!("{}", Self::to_csv_header());
+    }
+
+    #[pyo3(name = "printAsCsv")]
+    pub fn print_as_csv(&self) {
+        print!("{0}", self.to_csv());
+    }
+
+
+    /*
+    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
+        result: dict[str, Any] = {
+            "name": self.name,
+            "vram": self.serializeVram(humanReadable=humanReadable),
+            "size": self.serializeSize(humanReadable=humanReadable),
+            "vrom": self.serializeVrom(humanReadable=humanReadable),
+        }
+
+        return result
+    */
+
+
+    // TODO: implement __eq__ instead when PyO3 0.20 releases
+    fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
+        match op {
+            pyo3::class::basic::CompareOp::Eq => (self.name == other.name && self.vram == other.vram).into_py(py),
+            pyo3::class::basic::CompareOp::Ne => (self.name != other.name || self.vram != other.vram).into_py(py),
+            _ => py.NotImplemented(),
+        }
+    }
+
+    fn __hash__(&self) -> isize {
+        let mut hasher = DefaultHasher::new();
+        self.name.hash(&mut hasher);
+        self.vram.hash(&mut hasher);
+        hasher.finish() as isize
     }
 }
