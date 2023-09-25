@@ -13,7 +13,7 @@ use crate::{utils, segment, file, symbol};
 #[pyo3::prelude::pyclass(module = "mapfile_parser", unsendable)]
 pub struct MapFile {
     #[pyo3(get)]
-    segments_list: Vec<segment::Segment>,
+    pub segments_list: Vec<segment::Segment>,
 
     #[pyo3(get, set)]
     pub debugging: bool,
@@ -33,6 +33,7 @@ impl MapFile {
     //fn segments_list(&self) -> 
 
     // TODO: look for equivalent to pathlib.Path
+    // PathBuf, Path?
     pub fn read_map_file(&mut self, map_path: &str) {
         // TODO: maybe move somewhere else?
         let regex_fileDataEntry = regex::Regex::new(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
