@@ -1,7 +1,7 @@
 /* SPDX-FileCopyrightText: © 2023 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use crate::{utils, file};
+use crate::{file, found_symbol_info};
 
 #[derive(Debug, Clone)]
 #[pyo3::prelude::pyclass(module = "mapfile_parser", unsendable)]
@@ -33,5 +33,14 @@ impl Segment {
             vrom: vrom,
             files_list: Vec::new(),
         }
+    }
+
+    pub fn find_symbol_by_name(&self, sym_name: &str) -> Option<found_symbol_info::FoundSymbolInfo> {
+        for file in &self.files_list {
+            if let Some(sym) = file.find_symbol_by_name(sym_name) {
+                return Some(found_symbol_info::FoundSymbolInfo::new(file.clone(), sym));
+            }
+        }
+        None
     }
 }

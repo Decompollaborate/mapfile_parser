@@ -1,11 +1,18 @@
 /* SPDX-FileCopyrightText: © 2023 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-pub mod mapfile;
-pub mod segment;
-pub mod file;
-pub mod symbol;
+mod mapfile;
+mod segment;
+mod file;
+mod symbol;
+mod found_symbol_info;
 pub mod utils;
+
+pub use mapfile::MapFile;
+pub use segment::Segment;
+pub use file::File;
+pub use symbol::Symbol;
+pub use found_symbol_info::FoundSymbolInfo;
 
 #[pyo3::prelude::pymodule]
 fn mapfile_parser(_py: pyo3::prelude::Python<'_>, m: &pyo3::prelude::PyModule) -> pyo3::prelude::PyResult<()> {

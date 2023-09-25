@@ -447,20 +447,20 @@ class Segment:
 class MapFile:
     def __init__(self):
         self._segmentsList: list[Segment] = list()
+        self._internalMap = MapFileRs()
         self.debugging: bool = False
+        self._originalParser = False
 
     def readMapFile(self, mapPath: Path):
-        """
-        tempRs = MapFileRs()
-        tempRs.read_map_file(str(mapPath))
-        for segment in tempRs.segments_list:
-            print(segment.name)
-            continue
-            for file in segment.files_list:
-                for symbol in segment.symbols:
-                    pass
-        return
-        """
+        self._internalMap.read_map_file(str(mapPath))
+        # for segment in tempRs.segments_list:
+        #     print(segment.name)
+        #     continue
+        #     for file in segment.files_list:
+        #         for symbol in segment.symbols:
+        #             pass
+        if not self._originalParser:
+            return
         with mapPath.open("r") as f:
             mapData = f.read()
 
@@ -641,12 +641,14 @@ class MapFile:
         return newMapFile
 
 
-    def findSymbolByName(self, symName: str) -> FoundSymbolInfo|None:
-        for segment in self._segmentsList:
-            info = segment.findSymbolByName(symName)
-            if info is not None:
-                return info
-        return None
+    # def findSymbolByName(self, symName: str) -> FoundSymbolInfo|None:
+    #     for segment in self._segmentsList:
+    #         info = segment.findSymbolByName(symName)
+    #         if info is not None:
+    #             return info
+    #     return None
+    def findSymbolByName(self, symName: str):
+        return self._internalMap.findSymbolByName(symName)
 
     def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo|None:
         for segment in self._segmentsList:

@@ -21,7 +21,7 @@ pub struct File {
     #[pyo3(get, set)]
     pub vrom: Option<u64>,
 
-    //#[pyo3(get, set)]
+    #[pyo3(get, set)]
     pub symbols: Vec<symbol::Symbol>,
 }
 
@@ -41,5 +41,15 @@ impl File {
 
     pub fn is_noload_section(&self) -> bool {
         return self.section_type == ".bss";
+    }
+
+
+    pub fn find_symbol_by_name(&self, sym_name: &str) -> Option<symbol::Symbol> {
+        for sym in &self.symbols {
+            if sym.name == sym_name {
+                return Some(sym.clone());
+            }
+        }
+        None
     }
 }

@@ -5,7 +5,7 @@ use std::{vec, fs::File, io::{BufReader, Read}, path::PathBuf};
 
 //use regex;
 
-use crate::{utils, segment, file, symbol};
+use crate::{utils, segment, file, symbol, found_symbol_info};
 
 #[derive(Debug, Clone)]
 // TODO: sequence?
@@ -85,7 +85,7 @@ impl MapFile {
                         let current_segment = temp_segment_list.last_mut().unwrap();
                         let current_file = current_segment.files_list.last_mut().unwrap();
 
-                        current_file.symbols.push(symbol::Symbol::new(&sym_name.into(), sym_vram));
+                        current_file.symbols.push(symbol::Symbol::new(sym_name.into(), sym_vram));
                     }
                 }
             }
@@ -227,5 +227,15 @@ impl MapFile {
 
             self.segments_list.push(segment.clone());
         }
+    }
+
+    #[pyo3(name = "findSymbolByName")]
+    pub fn find_symbol_by_name(&self, sym_name: &str) -> Option<found_symbol_info::FoundSymbolInfo> {
+        for segment in &self.segments_list {
+            if let Some(info) = segment.find_symbol_by_name(sym_name) {
+                return Some(info);
+            }
+        }
+        None
     }
 }
