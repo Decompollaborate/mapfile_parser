@@ -64,7 +64,7 @@ impl MapFile {
 
         let mut prev_line = "";
         for line in map_data.split("\n") {
-            println!("{line}");
+            // println!("{line}");
 
             if in_file {
                 if !line.starts_with("        ") {
@@ -74,12 +74,12 @@ impl MapFile {
 
                     // Find symbols
                     if let Some(entry_match) = regex_functionEntry.captures(line) {
-                        println!("{entry_match:?}");
+                        // println!("{entry_match:?}");
                         let sym_name = &entry_match["name"];
                         let sym_vram = utils::parse_hex(&entry_match["vram"]);
 
-                        println!("sym info:");
-                        println!("  {sym_name}: {sym_vram:X}");
+                        // println!("sym info:");
+                        // println!("  {sym_name}: {sym_vram:X}");
 
                         let current_segment = temp_segment_list.last_mut().unwrap();
                         let current_file = current_segment.files_list.last_mut().unwrap();
@@ -96,11 +96,11 @@ impl MapFile {
                     let size = utils::parse_hex(&file_entry_match["size"]);
                     let section_type = &file_entry_match["section"];
 
-                    println!("filedata entry:");
-                    println!("  filepath:     {filepath:?}");
-                    println!("  size:         {size:X}");
-                    println!("  vram:         {vram:X}");
-                    println!("  section_type: {section_type}");
+                    // println!("filedata entry:");
+                    // println!("  filepath:     {filepath:?}");
+                    // println!("  size:         {size:X}");
+                    // println!("  vram:         {vram:X}");
+                    // println!("  section_type: {section_type}");
 
                     if size > 0 {
                         in_file = true;
@@ -119,11 +119,11 @@ impl MapFile {
                         name = prev_line;
                     }
 
-                    println!("segment entry:");
-                    println!("  name: {name}");
-                    println!("  vram: {vram:X}");
-                    println!("  size: {size:X}");
-                    println!("  vrom: {vrom:X}");
+                    // println!("segment entry:");
+                    // println!("  name: {name}");
+                    // println!("  vram: {vram:X}");
+                    // println!("  size: {size:X}");
+                    // println!("  vrom: {vrom:X}");
                     temp_segment_list.push(segment::Segment::new(name.into(), vram, size, vrom));
                     //current_segment = temp_segment_list.last_mut().unwrap();
                 } else if let Some(fill_match) = regex_fill.captures(line) {
@@ -145,8 +145,8 @@ impl MapFile {
                         section_type = prev_file.section_type.clone();
                     }
 
-                    println!("fill info:");
-                    println!("  {size:X}");
+                    // println!("fill info:");
+                    // println!("  {size:X}");
 
                     current_segment.files_list.push(file::File::new(filepath, vram, size, &section_type));
                 }

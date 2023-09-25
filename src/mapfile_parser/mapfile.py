@@ -13,6 +13,8 @@ from pathlib import Path
 from .progress_stats import ProgressStats
 from . import utils
 
+from .mapfile_parser import MapFile as MapFileRs
+
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -448,6 +450,17 @@ class MapFile:
         self.debugging: bool = False
 
     def readMapFile(self, mapPath: Path):
+        """
+        tempRs = MapFileRs()
+        tempRs.read_map_file(str(mapPath))
+        for segment in tempRs.segments_list:
+            print(segment.name)
+            continue
+            for file in segment.files_list:
+                for symbol in segment.symbols:
+                    pass
+        return
+        """
         with mapPath.open("r") as f:
             mapData = f.read()
 
