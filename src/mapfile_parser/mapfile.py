@@ -13,7 +13,42 @@ from pathlib import Path
 from .progress_stats import ProgressStats
 from . import utils
 
+from .mapfile_parser import Symbol as Symbol
 from .mapfile_parser import MapFile as MapFileRs
+
+
+def __symbolrs_serializeVram(self: Symbol, humanReadable: bool=True) -> str|int|None:
+    if humanReadable:
+        return f"0x{self.vram:08X}"
+    return self.vram
+
+def __symbolrs_serializeSize(self: Symbol, humanReadable: bool=True) -> str|int|None:
+    if self.size is None:
+        return None
+    if humanReadable:
+        return f"0x{self.size:X}"
+    return self.size
+
+def __symbolrs_serializeVrom(self: Symbol, humanReadable: bool=True) -> str|int|None:
+    if self.vrom is None:
+        return None
+    if humanReadable:
+        return f"0x{self.vrom:06X}"
+    return self.vrom
+
+def __symbolrs_toJson(self: Symbol, humanReadable: bool=True) -> dict[str, Any]:
+    result: dict[str, Any] = {
+        "name": self.name,
+        "vram": self.serializeVram(humanReadable=humanReadable),
+        "size": self.serializeSize(humanReadable=humanReadable),
+        "vrom": self.serializeVrom(humanReadable=humanReadable),
+    }
+    return result
+
+Symbol.serializeVram = __symbolrs_serializeVram
+Symbol.serializeSize = __symbolrs_serializeSize
+Symbol.serializeVrom = __symbolrs_serializeVrom
+Symbol.toJson = __symbolrs_toJson
 
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -59,7 +94,7 @@ class MapsComparisonInfo:
         self.missingFiles: set[File] = set()
         self.comparedList: list[SymbolComparisonInfo] = []
 
-
+"""
 @dataclasses.dataclass
 class Symbol:
     name: str
@@ -134,6 +169,7 @@ class Symbol:
     def __hash__(self):
         return hash((self.name, self.vram))
 
+"""
 
 @dataclasses.dataclass
 class File:
@@ -453,7 +489,7 @@ class MapFile:
         self._originalParser = False
 
     def readMapFile(self, mapPath: Path):
-        self._internalMap.read_map_file(str(mapPath))
+        self._internalMap.readMapFile(mapPath)
         # for segment in tempRs.segments_list:
         #     print(segment.name)
         #     continue

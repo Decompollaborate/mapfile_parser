@@ -9,8 +9,6 @@ use std::hash::{Hash, Hasher};
 use pyo3::prelude::*;
 use pyo3::class::basic::CompareOp;
 
-use crate::{utils, file, json_element};
-
 #[derive(Debug, Clone)]
 #[pyo3::prelude::pyclass(module = "mapfile_parser", unsendable)]
 pub struct Symbol {
@@ -30,12 +28,12 @@ pub struct Symbol {
 #[pyo3::prelude::pymethods]
 impl Symbol {
     #[new]
-    pub fn new(name: String, vram: u64) -> Self {
+    pub fn new(name: String, vram: u64, size: Option<u64>, vrom: Option<u64>) -> Self {
         Symbol {
-            name: name.into(),
+            name: name,
             vram: vram,
-            size: None,
-            vrom: None,
+            size: size,
+            vrom: vrom,
         }
     }
 
@@ -146,5 +144,16 @@ impl Symbol {
         self.name.hash(&mut hasher);
         self.vram.hash(&mut hasher);
         hasher.finish() as isize
+    }
+}
+
+impl Symbol {
+    pub fn new_default(name: String, vram: u64) -> Self {
+        Symbol {
+            name: name,
+            vram: vram,
+            size: None,
+            vrom: None,
+        }
     }
 }

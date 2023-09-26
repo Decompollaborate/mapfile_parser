@@ -2,9 +2,10 @@
 /* SPDX-License-Identifier: MIT */
 
 use crate::{file, found_symbol_info};
+use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]
-#[pyo3::prelude::pyclass(module = "mapfile_parser", unsendable)]
+#[pyclass(module = "mapfile_parser", unsendable)]
 pub struct Segment {
     #[pyo3(get, set)]
     pub name: String,
@@ -22,7 +23,7 @@ pub struct Segment {
     pub files_list: Vec<file::File>,
 }
 
-#[pyo3::prelude::pymethods]
+#[pymethods]
 impl Segment {
     #[new]
     pub fn new(name: String, vram: u64, size: u64, vrom: u64) -> Self {

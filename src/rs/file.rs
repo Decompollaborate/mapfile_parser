@@ -12,7 +12,7 @@ use pyo3::prelude::*;
 use pyo3::class::basic::CompareOp;
 
 #[derive(Debug, Clone)]
-#[pyo3::prelude::pyclass(module = "mapfile_parser", unsendable, sequence)]
+#[pyclass(module = "mapfile_parser", unsendable, sequence)]
 pub struct File {
     #[pyo3(get, set)]
     pub filepath: PathBuf,
@@ -23,17 +23,17 @@ pub struct File {
     #[pyo3(get, set)]
     pub size: u64,
 
-    #[pyo3(get, set)]
+    #[pyo3(get, set, name = "sectionType")]
     pub section_type: String,
 
     #[pyo3(get, set)]
     pub vrom: Option<u64>,
 
-    #[pyo3(get, set)]
+    #[pyo3(get, set, name = "_symbols")]
     pub symbols: Vec<symbol::Symbol>,
 }
 
-#[pyo3::prelude::pymethods]
+#[pymethods]
 impl File {
     #[new]
     pub fn new(filepath: std::path::PathBuf, vram: u64, size: u64, section_type: &str) -> Self {

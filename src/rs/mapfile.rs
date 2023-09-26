@@ -1,7 +1,8 @@
 /* SPDX-FileCopyrightText: © 2023 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::{vec, fs::File, io::{BufReader, Read}, path::PathBuf};
+use std::{fs::File, path::PathBuf, io::Read};
+use pyo3::prelude::*;
 
 //use regex;
 
@@ -10,7 +11,7 @@ use crate::{utils, segment, file, symbol, found_symbol_info};
 #[derive(Debug, Clone)]
 // TODO: sequence?
 // TODO: maybe not use unsendable?
-#[pyo3::prelude::pyclass(module = "mapfile_parser", unsendable)]
+#[pyclass(module = "mapfile_parser", unsendable)]
 pub struct MapFile {
     #[pyo3(get)]
     pub segments_list: Vec<segment::Segment>,
@@ -19,7 +20,7 @@ pub struct MapFile {
     pub debugging: bool,
 }
 
-#[pyo3::prelude::pymethods]
+#[pymethods]
 impl MapFile {
     #[new]
     pub fn new() -> Self {
@@ -32,16 +33,15 @@ impl MapFile {
     //#[getter]
     //fn segments_list(&self) -> 
 
-    // TODO: look for equivalent to pathlib.Path
-    // PathBuf, Path?
-    pub fn read_map_file(&mut self, map_path: &str) {
+    #[pyo3(name = "readMapFile")]
+    pub fn read_map_file(&mut self, map_path: PathBuf) {
         // TODO: maybe move somewhere else?
-        let regex_fileDataEntry = regex::Regex::new(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
-        let regex_functionEntry = regex::Regex::new(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
-        // regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)((\s*=\s*(?P<expression>.+))?)$")
+        let regex_file_data_entry = regex::Regex::new(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
+        let regex_function_entry = regex::Regex::new(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
+        // regex_function_entry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)((\s*=\s*(?P<expression>.+))?)$")
         let regex_label = regex::Regex::new(r"^(?P<name>\.?L[0-9A-F]{8})$").unwrap();
         let regex_fill = regex::Regex::new(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$").unwrap();
-        let regex_segmentEntry = regex::Regex::new(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$").unwrap();
+        let regex_segment_entry = regex::Regex::new(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$").unwrap();
 
 
 
@@ -49,7 +49,7 @@ impl MapFile {
         //let mut map_data: Vec<u8> = Vec::new();
         //let contents_length = f.read_to_end(&mut map_data).expect("Not able to read the whole contents of the file");
         let mut map_data = String::new();
-        let contents_length = f.read_to_string(&mut map_data).expect("Not able to read the whole contents of the file");
+        let _contents_length = f.read_to_string(&mut map_data).expect("Not able to read the whole contents of the file");
 
         // TODO: "Linker script and memory map" stuff
 
@@ -74,7 +74,7 @@ impl MapFile {
                     // Filter out jump table's labels
 
                     // Find symbols
-                    if let Some(entry_match) = regex_functionEntry.captures(line) {
+                    if let Some(entry_match) = regex_function_entry.captures(line) {
                         // println!("{entry_match:?}");
                         let sym_name = &entry_match["name"];
                         let sym_vram = utils::parse_hex(&entry_match["vram"]);
@@ -85,13 +85,13 @@ impl MapFile {
                         let current_segment = temp_segment_list.last_mut().unwrap();
                         let current_file = current_segment.files_list.last_mut().unwrap();
 
-                        current_file.symbols.push(symbol::Symbol::new(sym_name.into(), sym_vram));
+                        current_file.symbols.push(symbol::Symbol::new_default(sym_name.into(), sym_vram));
                     }
                 }
             }
 
             if !in_file {
-                if let Some(file_entry_match) = regex_fileDataEntry.captures(line) {
+                if let Some(file_entry_match) = regex_file_data_entry.captures(line) {
                     let filepath = std::path::PathBuf::from(&file_entry_match["name"]);
                     let vram = utils::parse_hex(&file_entry_match["vram"]);
                     let size = utils::parse_hex(&file_entry_match["size"]);
@@ -109,7 +109,7 @@ impl MapFile {
 
                         current_segment.files_list.push(file::File::new(filepath, vram, size, section_type.into()));
                     }
-                } else if let Some(segment_entry_match) = regex_segmentEntry.captures(line) {
+                } else if let Some(segment_entry_match) = regex_segment_entry.captures(line) {
                     let mut name = &segment_entry_match["name"];
                     let vram = utils::parse_hex(&segment_entry_match["vram"]);
                     let size = utils::parse_hex(&segment_entry_match["size"]);
@@ -131,7 +131,7 @@ impl MapFile {
                     // Make a dummy file to handle *fill*
                     let mut filepath = std::path::PathBuf::new();
                     let mut vram = 0;
-                    let mut size = utils::parse_hex(&fill_match["size"]);
+                    let size = utils::parse_hex(&fill_match["size"]);
                     let mut section_type = "".to_owned();
 
                     let current_segment = temp_segment_list.last_mut().unwrap();
@@ -216,7 +216,7 @@ impl MapFile {
                     sym.size = Some(sym_size);
                     if !is_noload_section {
                         sym.vrom = Some(sym_vrom);
-                        sym_vrom += sym_size;
+                        //sym_vrom += sym_size;
                     }
                 }
 
