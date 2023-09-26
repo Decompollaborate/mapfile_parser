@@ -269,15 +269,15 @@ impl File {
     // TODO: implement __eq__ instead when PyO3 0.20 releases
     fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
         match op {
-            pyo3::class::basic::CompareOp::Eq => (self.filepath == other.filepath).into_py(py),
-            pyo3::class::basic::CompareOp::Ne => (self.filepath != other.filepath).into_py(py),
+            pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
+            pyo3::class::basic::CompareOp::Ne => (self != other).into_py(py),
             _ => py.NotImplemented(),
         }
     }
 
     fn __hash__(&self) -> isize {
         let mut hasher = DefaultHasher::new();
-        self.filepath.hash(&mut hasher);
+        self.hash(&mut hasher);
         hasher.finish() as isize
     }
 
@@ -294,6 +294,21 @@ impl File {
             vrom: None,
             symbols: Vec::new(),
         }
+    }
+}
+
+// https://doc.rust-lang.org/std/cmp/trait.Eq.html
+impl PartialEq for File {
+    fn eq(&self, other: &Self) -> bool {
+        self.filepath == other.filepath
+    }
+}
+impl Eq for File {}
+
+// https://doc.rust-lang.org/std/hash/trait.Hash.html
+impl Hash for File {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.filepath.hash(state);
     }
 }
 

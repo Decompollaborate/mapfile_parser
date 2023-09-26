@@ -6,7 +6,8 @@ mod segment;
 mod file;
 mod symbol;
 mod found_symbol_info;
-mod json_element;
+mod symbol_comparison_info;
+mod maps_comparison_info;
 pub mod utils;
 
 pub use mapfile::MapFile;
@@ -14,7 +15,8 @@ pub use segment::Segment;
 pub use file::File;
 pub use symbol::Symbol;
 pub use found_symbol_info::FoundSymbolInfo;
-pub use json_element::JsonElement;
+pub use symbol_comparison_info::SymbolComparisonInfo;
+pub use maps_comparison_info::MapsComparisonInfo;
 
 #[pyo3::prelude::pymodule]
 fn mapfile_parser(_py: pyo3::prelude::Python<'_>, m: &pyo3::prelude::PyModule) -> pyo3::prelude::PyResult<()> {

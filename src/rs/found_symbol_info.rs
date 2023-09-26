@@ -3,9 +3,10 @@
 
 use crate::{file, symbol};
 use std::fmt::Write;
+use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]
-#[pyo3::prelude::pyclass(module = "mapfile_parser", unsendable)]
+#[pyclass(module = "mapfile_parser", unsendable)]
 pub struct FoundSymbolInfo {
     #[pyo3(get, set)]
     pub file: file::File,
@@ -17,7 +18,7 @@ pub struct FoundSymbolInfo {
     pub offset: i32,
 }
 
-#[pyo3::prelude::pymethods]
+#[pymethods]
 impl FoundSymbolInfo {
     #[new]
     #[pyo3(signature=(file, symbol, offset=0))]

@@ -14,6 +14,8 @@ from .progress_stats import ProgressStats
 from . import utils
 
 from .mapfile_parser import FoundSymbolInfo as FoundSymbolInfo
+from .mapfile_parser import SymbolComparisonInfo as SymbolComparisonInfo
+from .mapfile_parser import MapsComparisonInfo as MapsComparisonInfo
 from .mapfile_parser import Symbol as Symbol
 from .mapfile_parser import File as File
 from .mapfile_parser import MapFile as MapFileRs
@@ -123,6 +125,7 @@ class FoundSymbolInfo:
 
 """
 
+"""
 @dataclasses.dataclass
 class SymbolComparisonInfo:
     symbol: Symbol
@@ -137,6 +140,7 @@ class MapsComparisonInfo:
         self.badFiles: set[File] = set()
         self.missingFiles: set[File] = set()
         self.comparedList: list[SymbolComparisonInfo] = []
+"""
 
 """
 @dataclasses.dataclass

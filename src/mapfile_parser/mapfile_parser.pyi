@@ -20,6 +20,24 @@ class FoundSymbolInfo:
     def getAsStrPlusOffset(self, symName: str|None=None) -> str: ...
 
 
+class SymbolComparisonInfo:
+    symbol: Symbol
+    buildAddress: int
+    buildFile: File|None
+    expectedAddress: int
+    expectedFile: File|None
+    diff: int|None
+
+    def __init__(self, symbol: Symbol, buildAddress: int, buildFile: File|None, expectedAddress: int, expectedFile: File|None, diff: int|None): ...
+
+class MapsComparisonInfo:
+    badFiles: set[File] = set()
+    missingFiles: set[File] = set()
+    comparedList: list[SymbolComparisonInfo] = []
+
+    def __init__(self): ...
+
+
 class Symbol:
     name: str
     vram: int

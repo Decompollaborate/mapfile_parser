@@ -133,16 +133,15 @@ impl Symbol {
     // TODO: implement __eq__ instead when PyO3 0.20 releases
     fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
         match op {
-            pyo3::class::basic::CompareOp::Eq => (self.name == other.name && self.vram == other.vram).into_py(py),
-            pyo3::class::basic::CompareOp::Ne => (self.name != other.name || self.vram != other.vram).into_py(py),
+            pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
+            pyo3::class::basic::CompareOp::Ne => (self != other).into_py(py),
             _ => py.NotImplemented(),
         }
     }
 
     fn __hash__(&self) -> isize {
         let mut hasher = DefaultHasher::new();
-        self.name.hash(&mut hasher);
-        self.vram.hash(&mut hasher);
+        self.hash(&mut hasher);
         hasher.finish() as isize
     }
 
@@ -157,5 +156,21 @@ impl Symbol {
             size: None,
             vrom: None,
         }
+    }
+}
+
+// https://doc.rust-lang.org/std/cmp/trait.Eq.html
+impl PartialEq for Symbol {
+    fn eq(&self, other: &Self) -> bool {
+        self.name == other.name && self.vram == other.vram
+    }
+}
+impl Eq for Symbol {}
+
+// https://doc.rust-lang.org/std/hash/trait.Hash.html
+impl Hash for Symbol {
+    fn hash<H: Hasher>(&self, state: &mut H) {
+        self.name.hash(state);
+        self.vram.hash(state);
     }
 }
