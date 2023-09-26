@@ -80,7 +80,7 @@ def __filers_toJson(self: File, humanReadable: bool=True) -> dict[str, Any]:
     }
 
     symbolsList = []
-    for symbol in self._symbols:
+    for symbol in self:
         symbolsList.append(symbol.toJson(humanReadable=humanReadable))
 
     fileDict["symbols"] = symbolsList
@@ -457,7 +457,7 @@ class Segment:
                     symbols.append(sym)
 
             tempFile = File(folderPath, vram, size, sectionType, vrom)
-            tempFile._symbols = symbols
+            tempFile.setSymbolList(symbols)
             newSegment._filesList.append(tempFile)
 
         return newSegment
@@ -584,7 +584,7 @@ class MapFile:
                         # Filter out jump table's labels
                         labelMatch = regex_label.search(funcName)
                         if labelMatch is None:
-                            tempFilesListList[-1][-1]._symbols.append(Symbol(funcName, funcVram))
+                            tempFilesListList[-1][-1].appendSymbol(Symbol(funcName, funcVram))
                         # print(hex(funcVram), funcName)
 
                 else:

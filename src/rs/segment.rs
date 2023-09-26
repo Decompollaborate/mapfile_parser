@@ -19,7 +19,7 @@ pub struct Segment {
     #[pyo3(get, set)]
     pub vrom: u64,
 
-    #[pyo3(get, set)]
+    // #[pyo3(get, set)]
     pub files_list: Vec<file::File>,
 }
 
@@ -39,7 +39,7 @@ impl Segment {
     pub fn find_symbol_by_name(&self, sym_name: &str) -> Option<found_symbol_info::FoundSymbolInfo> {
         for file in &self.files_list {
             if let Some(sym) = file.find_symbol_by_name(sym_name) {
-                return Some(found_symbol_info::FoundSymbolInfo::new(file.clone(), sym));
+                return Some(found_symbol_info::FoundSymbolInfo::new_default(file.clone(), sym));
             }
         }
         None

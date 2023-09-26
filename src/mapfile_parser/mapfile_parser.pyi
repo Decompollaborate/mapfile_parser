@@ -56,7 +56,7 @@ class File:
     size: int # in bytes
     sectionType: str
     vrom: int|None
-    _symbols: list[Symbol]
+    # _symbols: list[Symbol]
 
     def __init__(self, filepath: Path, vram: int, size: int, section_type: str, vrom: int|None=None) -> None: ...
 
@@ -82,6 +82,15 @@ class File:
     def printAsCsv(self, printVram: bool=True): ...
 
     def toJson(self, humanReadable: bool=True) -> dict[str, Any]: ...
+
+    def copySymbolList(self) -> list[Symbol]:
+        """Returns a copy (not a reference) of the internal symbol list"""
+
+    def setSymbolList(self, newList: list[Symbol]) -> None:
+        """Replaces the internal symbol list with a copy of `newList`"""
+
+    def appendSymbol(self, sym: Symbol) -> None:
+        """Appends a copy of `sym` into the internal symbol list"""
 
     def __iter__(self) -> Generator[Symbol, None, None]: ...
 

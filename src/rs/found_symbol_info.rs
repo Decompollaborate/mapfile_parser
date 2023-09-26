@@ -52,3 +52,13 @@ impl FoundSymbolInfo {
         format!("{0} {1}", message, self.get_as_str())
     }
 }
+
+impl FoundSymbolInfo {
+    pub fn new_default(file: file::File, symbol: symbol::Symbol) -> Self {
+        FoundSymbolInfo {
+            file: file,
+            symbol: symbol,
+            offset: 0,
+        }
+    }
+}

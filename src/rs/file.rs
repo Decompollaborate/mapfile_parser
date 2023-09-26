@@ -31,7 +31,7 @@ pub struct File {
     #[pyo3(get, set)]
     pub vrom: Option<u64>,
 
-    #[pyo3(get, set, name = "_symbols")]
+    // #[pyo3(get, set, name = "_symbols")]
     pub symbols: Vec<symbol::Symbol>,
 }
 
@@ -82,7 +82,6 @@ impl File {
     }
     //def getName(self) -> Path:
     //    return Path(*self.filepath.with_suffix("").parts[2:])
-
 
     #[pyo3(name = "findSymbolByName")]
     pub fn find_symbol_by_name(&self, sym_name: &str) -> Option<symbol::Symbol> {
@@ -233,9 +232,24 @@ impl File {
         return fileDict
     */
 
+    #[pyo3(name = "copySymbolList")]
+    fn copy_symbol_list(&self) -> Vec<symbol::Symbol> {
+        self.symbols.clone()
+    }
+
+    #[pyo3(name = "setSymbolList")]
+    fn set_symbol_list(&mut self, new_list: Vec<symbol::Symbol>) {
+        self.symbols = new_list;
+    }
+
+    #[pyo3(name = "appendSymbol")]
+    fn append_symbol(&mut self, sym: symbol::Symbol) {
+        self.symbols.push(sym);
+    }
+
     fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<SymbolVecIter>> {
         let iter = SymbolVecIter {
-            inner: slf.symbols.into_iter(),
+            inner: slf.symbols.clone().into_iter(),
         };
         Py::new(slf.py(), iter)
     }

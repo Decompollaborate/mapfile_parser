@@ -13,7 +13,7 @@ use crate::{utils, segment, file, symbol, found_symbol_info};
 // TODO: maybe not use unsendable?
 #[pyclass(module = "mapfile_parser", unsendable)]
 pub struct MapFile {
-    #[pyo3(get)]
+    // #[pyo3(get)]
     pub segments_list: Vec<segment::Segment>,
 
     #[pyo3(get, set)]
