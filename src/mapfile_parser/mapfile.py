@@ -13,6 +13,7 @@ from pathlib import Path
 from .progress_stats import ProgressStats
 from . import utils
 
+from .mapfile_parser import FoundSymbolInfo as FoundSymbolInfo
 from .mapfile_parser import Symbol as Symbol
 from .mapfile_parser import File as File
 from .mapfile_parser import MapFile as MapFileRs
@@ -99,7 +100,7 @@ regex_label = re.compile(r"^(?P<name>\.?L[0-9A-F]{8})$")
 regex_fill = re.compile(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$")
 regex_segmentEntry = re.compile(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$")
 
-
+"""
 @dataclasses.dataclass
 class FoundSymbolInfo:
     file: File
@@ -119,6 +120,8 @@ class FoundSymbolInfo:
         else:
             message = "Symbol"
         return f"{message} {self.getAsStr()}"
+
+"""
 
 @dataclasses.dataclass
 class SymbolComparisonInfo:

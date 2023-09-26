@@ -2,6 +2,7 @@
 /* SPDX-License-Identifier: MIT */
 
 use crate::{file, symbol};
+use std::fmt::Write;
 
 #[derive(Debug, Clone)]
 #[pyo3::prelude::pyclass(module = "mapfile_parser", unsendable)]
@@ -19,11 +20,12 @@ pub struct FoundSymbolInfo {
 #[pyo3::prelude::pymethods]
 impl FoundSymbolInfo {
     #[new]
-    pub fn new(file: file::File, symbol: symbol::Symbol) -> Self {
+    #[pyo3(signature=(file, symbol, offset=0))]
+    pub fn new(file: file::File, symbol: symbol::Symbol, offset: i32) -> Self {
         FoundSymbolInfo {
-            file: file,
-            symbol: symbol,
-            offset: 0,
+            file,
+            symbol,
+            offset,
         }
     }
 
@@ -42,7 +44,7 @@ impl FoundSymbolInfo {
             } else {
                 message = format!("0x{0:X}", self.symbol.vram as i32 + self.offset);
             }
-            message.push_str(&format!(" is at 0x{0:X} bytes inside", self.offset));
+            write!(message, " is at 0x{0:X} bytes inside", self.offset).unwrap();
         } else {
             message = "Symbol".to_string();
         }
