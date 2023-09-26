@@ -14,6 +14,7 @@ from .progress_stats import ProgressStats
 from . import utils
 
 from .mapfile_parser import Symbol as Symbol
+from .mapfile_parser import File as File
 from .mapfile_parser import MapFile as MapFileRs
 
 
@@ -49,6 +50,46 @@ Symbol.serializeVram = __symbolrs_serializeVram
 Symbol.serializeSize = __symbolrs_serializeSize
 Symbol.serializeVrom = __symbolrs_serializeVrom
 Symbol.toJson = __symbolrs_toJson
+
+
+def __filers_serializeVram(self: File, humanReadable: bool=True) -> str|int|None:
+    if humanReadable:
+        return f"0x{self.vram:08X}"
+    return self.vram
+
+def __filers_serializeSize(self: File, humanReadable: bool=True) -> str|int|None:
+    if humanReadable:
+        return f"0x{self.size:X}"
+    return self.size
+
+def __filers_serializeVrom(self: File, humanReadable: bool=True) -> str|int|None:
+    if self.vrom is None:
+        return None
+    if humanReadable:
+        return f"0x{self.vrom:06X}"
+    return self.vrom
+
+def __filers_toJson(self: File, humanReadable: bool=True) -> dict[str, Any]:
+    fileDict: dict[str, Any] = {
+        "filepath": str(self.filepath),
+        "sectionType": self.sectionType,
+        "vram": self.serializeVram(humanReadable=humanReadable),
+        "size": self.serializeSize(humanReadable=humanReadable),
+        "vrom": self.serializeVrom(humanReadable=humanReadable),
+    }
+
+    symbolsList = []
+    for symbol in self._symbols:
+        symbolsList.append(symbol.toJson(humanReadable=humanReadable))
+
+    fileDict["symbols"] = symbolsList
+    return fileDict
+
+File.serializeVram = __filers_serializeVram
+File.serializeSize = __filers_serializeSize
+File.serializeVrom = __filers_serializeVrom
+File.toJson = __filers_toJson
+
 
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -171,6 +212,7 @@ class Symbol:
 
 """
 
+"""
 @dataclasses.dataclass
 class File:
     filepath: Path
@@ -324,6 +366,7 @@ class File:
     # https://stackoverflow.com/a/56915493/6292472
     def __hash__(self):
         return hash((self.filepath,))
+"""
 
 
 @dataclasses.dataclass
@@ -410,7 +453,9 @@ class Segment:
                 for sym in file:
                     symbols.append(sym)
 
-            newSegment._filesList.append(File(folderPath, vram, size, sectionType, vrom, symbols))
+            tempFile = File(folderPath, vram, size, sectionType, vrom)
+            tempFile._symbols = symbols
+            newSegment._filesList.append(tempFile)
 
         return newSegment
 
@@ -678,14 +723,14 @@ class MapFile:
         return newMapFile
 
 
-    # def findSymbolByName(self, symName: str) -> FoundSymbolInfo|None:
-    #     for segment in self._segmentsList:
-    #         info = segment.findSymbolByName(symName)
-    #         if info is not None:
-    #             return info
-    #     return None
-    def findSymbolByName(self, symName: str):
-        return self._internalMap.findSymbolByName(symName)
+    def findSymbolByName(self, symName: str) -> FoundSymbolInfo|None:
+        for segment in self._segmentsList:
+            info = segment.findSymbolByName(symName)
+            if info is not None:
+                return info
+        return None
+    # def findSymbolByName(self, symName: str):
+    #     return self._internalMap.findSymbolByName(symName)
 
     def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo|None:
         for segment in self._segmentsList:

@@ -58,7 +58,7 @@ impl MapFile {
         {
             let current_segment = temp_segment_list.last_mut().unwrap();
 
-            current_segment.files_list.push(file::File::new("".into(), 0, 0, "".into()));
+            current_segment.files_list.push(file::File::new_default("".into(), 0, 0, "".into()));
         }
 
         let mut in_file = false;
@@ -107,7 +107,7 @@ impl MapFile {
                         in_file = true;
                         let current_segment = temp_segment_list.last_mut().unwrap();
 
-                        current_segment.files_list.push(file::File::new(filepath, vram, size, section_type.into()));
+                        current_segment.files_list.push(file::File::new_default(filepath, vram, size, section_type.into()));
                     }
                 } else if let Some(segment_entry_match) = regex_segment_entry.captures(line) {
                     let mut name = &segment_entry_match["name"];
@@ -149,7 +149,7 @@ impl MapFile {
                     // println!("fill info:");
                     // println!("  {size:X}");
 
-                    current_segment.files_list.push(file::File::new(filepath, vram, size, &section_type));
+                    current_segment.files_list.push(file::File::new_default(filepath, vram, size, &section_type));
                 }
             }
 

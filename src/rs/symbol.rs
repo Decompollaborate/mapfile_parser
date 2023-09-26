@@ -145,6 +145,8 @@ impl Symbol {
         self.vram.hash(&mut hasher);
         hasher.finish() as isize
     }
+
+    // TODO: __str__ and __repr__
 }
 
 impl Symbol {

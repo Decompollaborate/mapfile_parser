@@ -6,6 +6,7 @@ use std::collections::hash_map::DefaultHasher;
 
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
 use std::hash::{Hash, Hasher};
+use std::fmt::Write;
 
 use crate::symbol;
 use pyo3::prelude::*;
@@ -15,6 +16,7 @@ use pyo3::class::basic::CompareOp;
 #[pyclass(module = "mapfile_parser", unsendable, sequence)]
 pub struct File {
     #[pyo3(get, set)]
+    // TODO: pyo3 exposes this as str, need to fix somehow
     pub filepath: PathBuf,
 
     #[pyo3(get, set)]
@@ -36,19 +38,19 @@ pub struct File {
 #[pymethods]
 impl File {
     #[new]
-    pub fn new(filepath: std::path::PathBuf, vram: u64, size: u64, section_type: &str) -> Self {
+    pub fn new(filepath: PathBuf, vram: u64, size: u64, section_type: &str, vrom: Option<u64>) -> Self {
         File {
             filepath: filepath,
             vram: vram,
             size: size,
             section_type: section_type.into(),
-            vrom: None,
+            vrom: vrom,
             symbols: Vec::new(),
         }
     }
 
     #[getter]
-    #[pyo3(name = "getVramStr")]
+    #[pyo3(name = "isNoloadSection")]
     pub fn is_noload_section(&self) -> bool {
         return self.section_type == ".bss";
     }
@@ -157,6 +159,62 @@ impl File {
         None
     }
 
+    #[staticmethod]
+    #[pyo3(name = "toCsvHeader", signature=(print_vram=true))]
+    pub fn to_csv_header(print_vram: bool) -> String {
+        let mut ret = String::new();
+
+        if print_vram {
+            ret.push_str("VRAM,");
+        }
+        ret.push_str("File,Section type,Num symbols,Max size,Total size,Average size");
+        ret
+    }
+
+    #[pyo3(name = "toCsv", signature=(print_vram=true))]
+    pub fn to_csv(&self, print_vram: bool) -> String {
+        let mut ret = String::new();
+
+        // Calculate stats
+        let sym_count = self.symbols.len() as u64;
+        let mut max_size = 0;
+        let average_size;
+        if sym_count > 0 {
+            average_size = self.size / sym_count;
+        } else {
+            average_size = self.size / 1;
+        }
+        for sym in &self.symbols {
+            if let Some(sym_size) = sym.size {
+                if sym_size > max_size {
+                    max_size = sym_size;
+                }
+            }
+        }
+
+        if print_vram {
+            //ret.push_str(format!("{:08X}", self.vram));
+            write!(ret, "{:08X}", self.vram).unwrap();
+            //ret += f"{self.vram:08X},";
+        }
+        write!(ret, "{},{},{},{},{},{:0.2}", self.filepath.display(), self.section_type, sym_count, max_size, self.size, average_size).unwrap();
+        //ret += f"{self.filepath},{self.sectionType},{sym_count},{max_size},{self.size},{average_size:0.2f}";
+
+        ret
+    }
+
+
+    #[staticmethod]
+    #[pyo3(name = "printCsvHeader", signature=(print_vram=true))]
+    pub fn print_csv_header(print_vram: bool) {
+        println!("{}", Self::to_csv_header(print_vram));
+    }
+
+    #[pyo3(name = "printAsCsv", signature=(print_vram=true))]
+    pub fn print_as_csv(&self, print_vram: bool) {
+        println!("{}", self.to_csv(print_vram));
+    }
+
     /*
     def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
         fileDict: dict[str, Any] = {
@@ -205,5 +263,20 @@ impl File {
         let mut hasher = DefaultHasher::new();
         self.filepath.hash(&mut hasher);
         hasher.finish() as isize
+    }
+
+    // TODO: __str__ and __repr__
+}
+
+impl File {
+    pub fn new_default(filepath: std::path::PathBuf, vram: u64, size: u64, section_type: &str) -> Self {
+        File {
+            filepath: filepath,
+            vram: vram,
+            size: size,
+            section_type: section_type.into(),
+            vrom: None,
+            symbols: Vec::new(),
+        }
     }
 }
