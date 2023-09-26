@@ -6,7 +6,7 @@
 from __future__ import annotations
 
 from pathlib import Path
-from typing import Any
+from typing import Any, Generator
 
 
 class FoundSymbolInfo:
@@ -83,7 +83,7 @@ class File:
 
     def toJson(self, humanReadable: bool=True) -> dict[str, Any]: ...
 
-    # def __iter__(self) -> Generator[Symbol, None, None]: ...
+    def __iter__(self) -> Generator[Symbol, None, None]: ...
 
     def __getitem__(self, index) -> Symbol: ...
     def __setitem__(self, index, sym: Symbol): ...

@@ -233,10 +233,12 @@ impl File {
         return fileDict
     */
 
-    // TODO: is this required?
-    //def __iter__(self) -> Generator[Symbol, None, None]:
-    //    for sym in self._symbols:
-    //        yield sym
+    fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<SymbolVecIter>> {
+        let iter = SymbolVecIter {
+            inner: slf.symbols.into_iter(),
+        };
+        Py::new(slf.py(), iter)
+    }
 
     fn __getitem__(&self, index: usize) -> symbol::Symbol {
         self.symbols[index].clone()
@@ -278,5 +280,21 @@ impl File {
             vrom: None,
             symbols: Vec::new(),
         }
+    }
+}
+
+#[pyclass]
+struct SymbolVecIter {
+    inner: std::vec::IntoIter<symbol::Symbol>,
+}
+
+#[pymethods]
+impl SymbolVecIter {
+    fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {
+        slf
+    }
+
+    fn __next__(mut slf: PyRefMut<'_, Self>) -> Option<symbol::Symbol> {
+        slf.inner.next()
     }
 }
