@@ -18,6 +18,7 @@ from .mapfile_parser import SymbolComparisonInfo as SymbolComparisonInfo
 from .mapfile_parser import MapsComparisonInfo as MapsComparisonInfo
 from .mapfile_parser import Symbol as Symbol
 from .mapfile_parser import File as File
+from .mapfile_parser import Segment as Segment
 from .mapfile_parser import MapFile as MapFileRs
 
 
@@ -93,6 +94,42 @@ File.serializeSize = __filers_serializeSize
 File.serializeVrom = __filers_serializeVrom
 File.toJson = __filers_toJson
 
+
+def __segmentrs_serializeVram(self: Segment, humanReadable: bool=True) -> str|int|None:
+    if humanReadable:
+        return f"0x{self.vram:08X}"
+    return self.vram
+
+def __segmentrs_serializeSize(self: Segment, humanReadable: bool=True) -> str|int|None:
+    if humanReadable:
+        return f"0x{self.size:X}"
+    return self.size
+
+def __segmentrs_serializeVrom(self: Segment, humanReadable: bool=True) -> str|int|None:
+    if humanReadable:
+        return f"0x{self.vrom:06X}"
+    return self.vrom
+
+def __segmentrs_toJson(self: Segment, humanReadable: bool=True) -> dict[str, Any]:
+    segmentDict: dict[str, Any] = {
+        "name": self.name,
+        "vram": self.serializeVram(humanReadable=humanReadable),
+        "size": self.serializeSize(humanReadable=humanReadable),
+        "vrom": self.serializeVrom(humanReadable=humanReadable),
+    }
+
+    filesList = []
+    for file in self:
+        filesList.append(file.toJson(humanReadable=humanReadable))
+
+    segmentDict["files"] = filesList
+
+    return segmentDict
+
+Segment.serializeVram = __segmentrs_serializeVram
+Segment.serializeSize = __segmentrs_serializeSize
+Segment.serializeVrom = __segmentrs_serializeVrom
+Segment.toJson = __segmentrs_toJson
 
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -375,7 +412,7 @@ class File:
         return hash((self.filepath,))
 """
 
-
+"""
 @dataclasses.dataclass
 class Segment:
     name: str
@@ -531,6 +568,7 @@ class Segment:
     # https://stackoverflow.com/a/56915493/6292472
     def __hash__(self):
         return hash((self.name, self.vram, self.size, self.vrom))
+"""
 
 
 class MapFile:
@@ -703,7 +741,7 @@ class MapFile:
                     # Only increment vrom offset for non bss sections
                     vromOffset += file.size
 
-                segment._filesList.append(file)
+                segment.appendFile(file)
             self._segmentsList.append(segment)
         return
 

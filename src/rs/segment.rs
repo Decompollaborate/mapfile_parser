@@ -216,6 +216,21 @@ impl Segment {
         return segmentDict
     */
 
+    #[pyo3(name = "copyFileList")]
+    fn copy_file_list(&self) -> Vec<file::File> {
+        self.files_list.clone()
+    }
+
+    #[pyo3(name = "setFileList")]
+    fn set_file_list(&mut self, new_list: Vec<file::File>) {
+        self.files_list = new_list;
+    }
+
+    #[pyo3(name = "appendFile")]
+    fn append_file(&mut self, file: file::File) {
+        self.files_list.push(file);
+    }
+
 
     fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<FileVecIter>> {
         let iter = FileVecIter {
