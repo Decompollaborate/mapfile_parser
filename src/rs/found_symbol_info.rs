@@ -15,14 +15,14 @@ pub struct FoundSymbolInfo {
     pub symbol: symbol::Symbol,
 
     #[pyo3(get, set)]
-    pub offset: i32,
+    pub offset: i64,
 }
 
 #[pymethods]
 impl FoundSymbolInfo {
     #[new]
     #[pyo3(signature=(file, symbol, offset=0))]
-    pub fn new(file: file::File, symbol: symbol::Symbol, offset: i32) -> Self {
+    pub fn new(file: file::File, symbol: symbol::Symbol, offset: i64) -> Self {
         FoundSymbolInfo {
             file,
             symbol,
@@ -43,7 +43,7 @@ impl FoundSymbolInfo {
             if let Some(name) = sym_name {
                 message = name;
             } else {
-                message = format!("0x{0:X}", self.symbol.vram as i32 + self.offset);
+                message = format!("0x{0:X}", self.symbol.vram as i64 + self.offset);
             }
             write!(message, " is at 0x{0:X} bytes inside", self.offset).unwrap();
         } else {
