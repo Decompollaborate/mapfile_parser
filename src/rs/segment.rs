@@ -4,11 +4,13 @@
 use crate::{file, found_symbol_info};
 use pyo3::prelude::*;
 use pyo3::class::basic::CompareOp;
+use std::collections::HashMap;
 use std::fmt::Write;
 
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
 use std::hash::{Hash, Hasher};
 use std::collections::hash_map::DefaultHasher;
+use std::path::PathBuf;
 
 #[derive(Debug, Clone)]
 #[pyclass(module = "mapfile_parser", unsendable)]
@@ -108,40 +110,50 @@ impl Segment {
         None
     }
 
-    /*
-    def mixFolders(self) -> Segment:
-        newSegment = Segment(self.name, self.vram, self.size, self.vrom)
+    #[pyo3(name = "mixFolders")]
+    pub fn mix_folders(&self) -> Segment {
+        let mut new_segment = Segment::new(self.name.clone(), self.vram, self.size, self.vrom);
 
-        auxDict: dict[Path, list[File]] = dict()
+        // <PathBuf, Vec<File>>
+        let mut aux_dict = HashMap::new();
 
-        # Put files in the same folder together
-        for file in self._filesList:
-            path = Path(*file.getName().parts[:-1])
-            if path not in auxDict:
-                auxDict[path] = list()
-            auxDict[path].append(file)
+        // Put files in the same folder together
+        for file in &self.files_list {
+            // TODO: this is terrible
+            let mut path: PathBuf = file.filepath.with_extension("").components().skip(2).collect();
+            path = path.components().take(file.filepath.components().count()-1).collect();
 
-        # Pretend files in the same folder are one huge file
-        for folderPath, filesInFolder in auxDict.items():
-            firstFile = filesInFolder[0]
+            if !aux_dict.contains_key(&path) {
+                aux_dict.insert(path, vec![file]);
+            } else {
+                aux_dict.get_mut(&path).unwrap().push(file);
+            }
+        }
 
-            vram = firstFile.vram
-            size = 0
-            vrom = firstFile.vrom
-            sectionType = firstFile.sectionType
+        // Pretend files in the same folder are one huge file
+        for (folder_path, files_in_folder) in aux_dict.iter() {
+            let first_file = files_in_folder[0];
 
-            symbols = list()
-            for file in filesInFolder:
-                size += file.size
-                for sym in file:
-                    symbols.append(sym)
+            let vram = first_file.vram;
+            let mut size = 0;
+            let vrom = first_file.vrom;
+            let section_type = &first_file.section_type;
 
-            tempFile = File(folderPath, vram, size, sectionType, vrom)
-            tempFile.setSymbolList(symbols)
-            newSegment._filesList.append(tempFile)
+            let mut symbols = Vec::new();
+            for file in files_in_folder {
+                size += file.size;
+                for sym in &file.symbols {
+                    symbols.push(sym.clone());
+                }
+            }
 
-        return newSegment
-    */
+            let mut temp_file = file::File::new(folder_path.clone(), vram, size, section_type, vrom);
+            temp_file.symbols = symbols;
+            new_segment.files_list.push(temp_file);
+        }
+
+        new_segment
+    }
 
     #[pyo3(name = "toCsv", signature=(print_vram=true, skip_without_symbols=true))]
     pub fn to_csv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
