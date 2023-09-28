@@ -229,6 +229,40 @@ impl MapFile {
         }
     }
 
+    #[pyo3(name = "filterBySectionType")]
+    pub fn filter_by_section_type(&self, section_type: &str) -> MapFile {
+        let mut new_map_file = MapFile::new();
+
+        new_map_file.debugging = self.debugging;
+
+        for segment in &self.segments_list {
+            let new_segment = segment.filter_by_section_type(section_type);
+
+            if !new_segment.files_list.is_empty() {
+                new_map_file.segments_list.push(new_segment);
+            }
+        }
+
+        new_map_file
+    }
+
+    #[pyo3(name = "getEveryFileExceptSectionType")]
+    pub fn get_every_file_except_section_type(&self, section_type: &str) -> MapFile {
+        let mut new_map_file = MapFile::new();
+
+        new_map_file.debugging = self.debugging;
+
+        for segment in &self.segments_list {
+            let new_segment = segment.get_every_file_except_section_type(section_type);
+
+            if !new_segment.files_list.is_empty() {
+                new_map_file.segments_list.push(new_segment);
+            }
+        }
+
+        new_map_file
+    }
+
     #[pyo3(name = "findSymbolByName")]
     pub fn find_symbol_by_name(&self, sym_name: &str) -> Option<found_symbol_info::FoundSymbolInfo> {
         for segment in &self.segments_list {
@@ -236,6 +270,70 @@ impl MapFile {
                 return Some(info);
             }
         }
+
         None
     }
+
+    #[pyo3(name = "findSymbolByVramOrVrom")]
+    pub fn find_symbol_by_vram_or_vrom(&self, address: u64) -> Option<found_symbol_info::FoundSymbolInfo> {
+        for segment in &self.segments_list {
+            if let Some(info) = segment.find_symbol_by_vram_or_vrom(address) {
+                return Some(info);
+            }
+        }
+
+        None
+    }
+
+    #[pyo3(name = "findLowestDifferingSymbol")]
+    pub fn findLowestDifferingSymbol(&self, otherMapFile: MapFile) -> Option<(symbol::Symbol, file::File, Option<symbol::Symbol>)> {
+        let mut minVram = None;
+        let mut found = None;
+
+        for builtSegement in &self.segments_list {
+            for builtFile in &builtSegement.files_list {
+                for (i, builtSym) in builtFile.symbols.iter().enumerate() {
+                    if let Some(expectedSymInfo) = otherMapFile.find_symbol_by_name(&builtSym.name) {
+                        let expectedSym = &expectedSymInfo.symbol;
+
+                        if builtSym.vram != expectedSym.vram {
+                            if minVram.is_none() || builtSym.vram < minVram.unwrap() {
+                                minVram = Some(builtSym.vram);
+
+                                let mut prevSym = None;
+                                if i > 0 {
+                                    prevSym = Some(builtFile.symbols[i-1].clone());
+                                }
+                                found = Some((builtSym.clone(), builtFile.clone(), prevSym));
+                            /*
+                            if minVram is None or builtSym.vram < minVram {
+                                minVram = builtSym.vram
+                                prevSym = None
+                                if i > 0:
+                                    prevSym = builtFile[i-1]
+                                found = (builtSym, builtFile, prevSym);
+                            }
+                            */
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        found
+    }
+
+    /*
+
+    def mixFolders(self) -> MapFile:
+        newMapFile = MapFile()
+
+        newMapFile.debugging = self.debugging
+
+        for segment in self._segmentsList:
+            newMapFile._segmentsList.append(segment.mixFolders())
+
+        return newMapFile
+    */
 }
