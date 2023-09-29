@@ -38,6 +38,23 @@ class MapsComparisonInfo:
     def __init__(self): ...
 
 
+class ProgressStats:
+    undecompedSize: int
+    decompedSize: int
+
+    def __init__(self): ...
+
+    @property
+    def total(self) -> int: ...
+
+    def getAsFrogressEntry(self, name: str) -> dict[str, int]: ...
+
+    @staticmethod
+    def printHeader() -> None: ...
+
+    def print(self, category: str, totalStats: ProgressStats) -> None: ...
+
+
 class Symbol:
     name: str
     vram: int

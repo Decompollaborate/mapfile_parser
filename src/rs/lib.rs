@@ -8,6 +8,7 @@ mod symbol;
 mod found_symbol_info;
 mod symbol_comparison_info;
 mod maps_comparison_info;
+mod progress_stats;
 pub mod utils;
 
 pub use mapfile::MapFile;
@@ -17,6 +18,7 @@ pub use symbol::Symbol;
 pub use found_symbol_info::FoundSymbolInfo;
 pub use symbol_comparison_info::SymbolComparisonInfo;
 pub use maps_comparison_info::MapsComparisonInfo;
+pub use progress_stats::ProgressStats;
 
 #[pyo3::prelude::pymodule]
 fn mapfile_parser(_py: pyo3::prelude::Python<'_>, m: &pyo3::prelude::PyModule) -> pyo3::prelude::PyResult<()> {

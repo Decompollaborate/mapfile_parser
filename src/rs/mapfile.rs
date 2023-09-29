@@ -455,7 +455,7 @@ impl MapFile {
     }
 
     #[pyo3(name = "toCsvSymbols")]
-    pub fn to_ssv_symbols(&self) -> String {
+    pub fn to_csv_symbols(&self) -> String {
         let mut ret = String::new();
 
         write!(ret, "File,{}\n", symbol::Symbol::to_csv_header()).unwrap();
@@ -468,13 +468,17 @@ impl MapFile {
     }
 
 
+    #[pyo3(name = "printAsCsv", signature=(print_vram=true, skip_without_symbols=true))]
+    pub fn print_as_csv(&self, print_vram: bool, skip_without_symbols: bool) {
+        print!("{}", self.to_csv(print_vram, skip_without_symbols));
+    }
+
+    #[pyo3(name = "printSymbolsCsv")]
+    pub fn print_symbols_csv(&self) {
+        print!("{}", self.to_csv_symbols());
+    }
+
     /*
-    def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
-        print(self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols), end="")
-
-    def printSymbolsCsv(self):
-        print(self.toCsvSymbols(), end="")
-
     def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
         segmentsList = []
         for segment in self._segmentsList:
