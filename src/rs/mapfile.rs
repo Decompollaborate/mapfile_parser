@@ -2,9 +2,10 @@
 /* SPDX-License-Identifier: MIT */
 
 use std::{fs::File, path::PathBuf, io::Read};
+use std::fmt::Write;
 use pyo3::prelude::*;
 
-//use regex;
+use regex::*;
 
 use crate::{utils, segment, file, symbol, found_symbol_info, maps_comparison_info, symbol_comparison_info};
 
@@ -36,12 +37,12 @@ impl MapFile {
     #[pyo3(name = "readMapFile")]
     pub fn read_map_file(&mut self, map_path: PathBuf) {
         // TODO: maybe move somewhere else?
-        let regex_file_data_entry = regex::Regex::new(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
-        let regex_function_entry = regex::Regex::new(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
+        let regex_file_data_entry = Regex::new(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
+        let regex_function_entry = Regex::new(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
         // regex_function_entry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)((\s*=\s*(?P<expression>.+))?)$")
-        let regex_label = regex::Regex::new(r"^(?P<name>\.?L[0-9A-F]{8})$").unwrap();
-        let regex_fill = regex::Regex::new(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$").unwrap();
-        let regex_segment_entry = regex::Regex::new(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$").unwrap();
+        let regex_label = Regex::new(r"^(?P<name>\.?L[0-9A-F]{8})$").unwrap();
+        let regex_fill = Regex::new(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$").unwrap();
+        let regex_segment_entry = Regex::new(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$").unwrap();
 
 
 
@@ -399,7 +400,7 @@ impl MapFile {
     */
 
 
-    #[pyo3(name = "compareFilesAndSymbols", signature= (other_map_file, *, check_other_on_self=true))]
+    #[pyo3(name = "compareFilesAndSymbols", signature=(other_map_file, *, check_other_on_self=true))]
     /// Useful for finding bss reorders
     pub fn compare_files_and_symbols(&self, other_map_file: MapFile, check_other_on_self: bool) -> maps_comparison_info::MapsComparisonInfo {
         let mut comp_info = maps_comparison_info::MapsComparisonInfo::new();
@@ -442,21 +443,32 @@ impl MapFile {
     }
 
 
+    #[pyo3(name = "toCsv", signature=(print_vram=true, skip_without_symbols=true))]
+    pub fn to_csv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
+        let mut ret = file::File::to_csv_header(print_vram) + "\n";
+
+        for segment in &self.segments_list {
+            ret += &segment.to_csv(print_vram, skip_without_symbols);
+        }
+
+        ret
+    }
+
+    #[pyo3(name = "toCsvSymbols")]
+    pub fn to_ssv_symbols(&self) -> String {
+        let mut ret = String::new();
+
+        write!(ret, "File,{}\n", symbol::Symbol::to_csv_header()).unwrap();
+
+        for segment in &self.segments_list {
+            ret += &segment.to_csv_symbols();
+        }
+
+        ret
+    }
+
+
     /*
-    def toCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True) -> str:
-        ret = File.toCsvHeader(printVram=printVram) + "\n"
-        for segment in self._segmentsList:
-            ret += segment.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols)
-        return ret
-
-    def toCsvSymbols(self) -> str:
-        ret = f"File," + Symbol.toCsvHeader() + "\n"
-
-        for segment in self._segmentsList:
-            ret += segment.toCsvSymbols()
-        return ret
-
-
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
         print(self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols), end="")
 
@@ -472,16 +484,55 @@ impl MapFile {
             "segments": segmentsList
         }
         return result
-
-
-    def __iter__(self) -> Generator[Segment, None, None]:
-        for file in self._segmentsList:
-            yield file
-
-    def __getitem__(self, index) -> Segment:
-        return self._segmentsList[index]
-
-    def __len__(self) -> int:
-        return len(self._segmentsList)
     */
+
+    #[pyo3(name = "copySegmentList")]
+    fn copy_segment_list(&self) -> Vec<segment::Segment> {
+        self.segments_list.clone()
+    }
+
+    #[pyo3(name = "setSegmentList")]
+    fn set_segment_list(&mut self, new_list: Vec<segment::Segment>) {
+        self.segments_list = new_list;
+    }
+
+    #[pyo3(name = "appendSegment")]
+    fn append_segment(&mut self, segment: segment::Segment) {
+        self.segments_list.push(segment);
+    }
+
+    fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<SegmentVecIter>> {
+        let iter = SegmentVecIter {
+            inner: slf.segments_list.clone().into_iter(),
+        };
+        Py::new(slf.py(), iter)
+    }
+
+    fn __getitem__(&self, index: usize) -> segment::Segment {
+        self.segments_list[index].clone()
+    }
+
+    fn __setitem__(&mut self, index: usize, element: segment::Segment) {
+        self.segments_list[index] = element;
+    }
+
+    fn __len__(&self) -> usize {
+        self.segments_list.len()
+    }
+}
+
+#[pyclass]
+struct SegmentVecIter {
+    inner: std::vec::IntoIter<segment::Segment>,
+}
+
+#[pymethods]
+impl SegmentVecIter {
+    fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {
+        slf
+    }
+
+    fn __next__(mut slf: PyRefMut<'_, Self>) -> Option<segment::Segment> {
+        slf.inner.next()
+    }
 }
