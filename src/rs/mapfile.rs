@@ -3,11 +3,12 @@
 
 use std::{fs::File, path::PathBuf, io::Read};
 use std::fmt::Write;
+use std::collections::HashMap;
 use pyo3::prelude::*;
 
 use regex::*;
 
-use crate::{utils, segment, file, symbol, found_symbol_info, maps_comparison_info, symbol_comparison_info};
+use crate::{utils, segment, file, symbol, found_symbol_info, maps_comparison_info, symbol_comparison_info, progress_stats};
 
 #[derive(Debug, Clone)]
 // TODO: sequence?
@@ -329,76 +330,58 @@ impl MapFile {
         new_map_file
     }
 
-    //#[pyo3(name = "get_progress", signature = (asmPath, nonmatchings, aliases=HashMap::new(), pathIndex=2))]
-    //pub fn get_progress(&self, asmPath: PathBuf, nonmatchings: PathBuf, aliases: HashMap<String, String>, pathIndex: u32) -> (ProgressStats, HashMap<String, ProgressStats>) {
-    //}
-    /*
-    def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2) -> tuple[ProgressStats, dict[str, ProgressStats]]:
-        totalStats = ProgressStats()
-        progressPerFolder: dict[str, ProgressStats] = dict()
+    #[pyo3(name = "getProgress", signature = (asm_path, nonmatchings, aliases=HashMap::new(), path_index=2))]
+    pub fn get_progress(&self, asm_path: PathBuf, nonmatchings: PathBuf, aliases: HashMap<String, String>, path_index: usize) -> (progress_stats::ProgressStats, HashMap<String, progress_stats::ProgressStats>) {
+        let mut total_stats = progress_stats::ProgressStats::new();
+        let mut progress_per_folder: HashMap<String, progress_stats::ProgressStats> = HashMap::new();
 
-        if self.debugging:
-            utils.eprint(f"getProgress():")
+        for segment in &self.segments_list {
+            for file in &segment.files_list {
+                if file.symbols.is_empty() {
+                    continue;
+                }
 
-        for segment in self._segmentsList:
-            for file in segment:
-                if len(file) == 0:
-                    continue
+                let mut folder = &file.filepath.components().nth(path_index).unwrap().as_os_str().to_str().unwrap().to_string();
+                if let Some(alternative_folder) = aliases.get(folder) {
+                    folder = alternative_folder;
+                }
 
-                folder = file.filepath.parts[pathIndex]
-                if folder in aliases:
-                    folder = aliases[folder]
+                if !progress_per_folder.contains_key(folder) {
+                    progress_per_folder.insert(folder.clone(), progress_stats::ProgressStats::new());
+                }
+                let folder_progress = progress_per_folder.get_mut(folder).unwrap();
 
-                if folder not in progressPerFolder:
-                    progressPerFolder[folder] = ProgressStats()
+                let original_file_path: PathBuf = file.filepath.components().skip(path_index).collect();
 
-                if self.debugging:
-                    utils.eprint(f"  folder path: {folder}")
+                let mut extensionless_file_path = original_file_path;
+                while extensionless_file_path.extension().is_some() {
+                    extensionless_file_path.set_extension("");
+                }
 
-                originalFilePath = Path(*file.filepath.parts[pathIndex:])
+                let full_asm_file = asm_path.join(extensionless_file_path.with_extension(".s"));
+                let whole_file_is_undecomped = full_asm_file.exists();
 
-                extensionlessFilePath = originalFilePath
-                while extensionlessFilePath.suffix:
-                    extensionlessFilePath = extensionlessFilePath.with_suffix("")
+                for func in &file.symbols {
+                    let func_asm_path = nonmatchings.join(extensionless_file_path.clone()).join(func.name.clone()).with_extension(".s");
 
-                fullAsmFile = asmPath / extensionlessFilePath.with_suffix(".s")
-                wholeFileIsUndecomped = fullAsmFile.exists()
+                    let sym_size = func.size.unwrap_or(0) as u32;
 
-                if self.debugging:
-                    utils.eprint(f"  original file path: {originalFilePath}")
-                    utils.eprint(f"  extensionless file path: {extensionlessFilePath}")
-                    utils.eprint(f"  full asm file: {fullAsmFile}")
-                    utils.eprint(f"  whole file is undecomped: {wholeFileIsUndecomped}")
+                    if whole_file_is_undecomped {
+                        total_stats.undecomped_size += sym_size;
+                        folder_progress.undecomped_size += sym_size;
+                    } else if func_asm_path.exists() {
+                        total_stats.undecomped_size += sym_size;
+                        folder_progress.undecomped_size += sym_size;
+                    } else {
+                        total_stats.decomped_size += sym_size;
+                        folder_progress.decomped_size += sym_size;
+                    }
+                }
+            }
+        }
 
-                for func in file:
-                    funcAsmPath = nonmatchings / extensionlessFilePath / f"{func.name}.s"
-
-                    symSize = 0
-                    if func.size is not None:
-                        symSize = func.size
-
-                    if self.debugging:
-                        utils.eprint(f"    Checking function '{funcAsmPath}' (size 0x{symSize:X}) ... ", end="")
-
-                    if wholeFileIsUndecomped:
-                        totalStats.undecompedSize += symSize
-                        progressPerFolder[folder].undecompedSize += symSize
-                        if self.debugging:
-                            utils.eprint(f" the whole file is undecomped (no individual function files exist yet)")
-                    elif funcAsmPath.exists():
-                        totalStats.undecompedSize += symSize
-                        progressPerFolder[folder].undecompedSize += symSize
-                        if self.debugging:
-                            utils.eprint(f" the function hasn't been matched yet (the function file still exists)")
-                    else:
-                        totalStats.decompedSize += symSize
-                        progressPerFolder[folder].decompedSize += symSize
-                        if self.debugging:
-                            utils.eprint(f" the function is matched! (the function file was not found)")
-
-        return totalStats, progressPerFolder
-    */
-
+        (total_stats, progress_per_folder)
+    }
 
     #[pyo3(name = "compareFilesAndSymbols", signature=(other_map_file, *, check_other_on_self=true))]
     /// Useful for finding bss reorders
