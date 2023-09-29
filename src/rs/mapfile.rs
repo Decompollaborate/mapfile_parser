@@ -6,7 +6,7 @@ use pyo3::prelude::*;
 
 //use regex;
 
-use crate::{utils, segment, file, symbol, found_symbol_info};
+use crate::{utils, segment, file, symbol, found_symbol_info, maps_comparison_info, symbol_comparison_info};
 
 #[derive(Debug, Clone)]
 // TODO: sequence?
@@ -286,34 +286,25 @@ impl MapFile {
     }
 
     #[pyo3(name = "findLowestDifferingSymbol")]
-    pub fn findLowestDifferingSymbol(&self, otherMapFile: MapFile) -> Option<(symbol::Symbol, file::File, Option<symbol::Symbol>)> {
-        let mut minVram = None;
+    pub fn find_lowest_differing_symbol(&self, other_map_file: MapFile) -> Option<(symbol::Symbol, file::File, Option<symbol::Symbol>)> {
+        let mut min_vram = u64::MAX;
         let mut found = None;
 
-        for builtSegement in &self.segments_list {
-            for builtFile in &builtSegement.files_list {
-                for (i, builtSym) in builtFile.symbols.iter().enumerate() {
-                    if let Some(expectedSymInfo) = otherMapFile.find_symbol_by_name(&builtSym.name) {
-                        let expectedSym = &expectedSymInfo.symbol;
+        for built_segement in &self.segments_list {
+            for built_file in &built_segement.files_list {
+                for (i, built_sym) in built_file.symbols.iter().enumerate() {
+                    if let Some(expected_sym_info) = other_map_file.find_symbol_by_name(&built_sym.name) {
+                        let expected_sym = &expected_sym_info.symbol;
 
-                        if builtSym.vram != expectedSym.vram {
-                            if minVram.is_none() || builtSym.vram < minVram.unwrap() {
-                                minVram = Some(builtSym.vram);
+                        if built_sym.vram != expected_sym.vram {
+                            if built_sym.vram < min_vram {
+                                min_vram = built_sym.vram;
 
-                                let mut prevSym = None;
+                                let mut prev_sym = None;
                                 if i > 0 {
-                                    prevSym = Some(builtFile.symbols[i-1].clone());
+                                    prev_sym = Some(built_file.symbols[i-1].clone());
                                 }
-                                found = Some((builtSym.clone(), builtFile.clone(), prevSym));
-                            /*
-                            if minVram is None or builtSym.vram < minVram {
-                                minVram = builtSym.vram
-                                prevSym = None
-                                if i > 0:
-                                    prevSym = builtFile[i-1]
-                                found = (builtSym, builtFile, prevSym);
-                            }
-                            */
+                                found = Some((built_sym.clone(), built_file.clone(), prev_sym));
                             }
                         }
                     }
@@ -324,16 +315,173 @@ impl MapFile {
         found
     }
 
+    #[pyo3(name = "mixFolders")]
+    pub fn mix_folders(&self) -> MapFile {
+        let mut new_map_file = MapFile::new();
+
+        new_map_file.debugging = self.debugging;
+
+        for segment in &self.segments_list {
+            new_map_file.segments_list.push(segment.mix_folders());
+        }
+
+        new_map_file
+    }
+
+    //#[pyo3(name = "get_progress", signature = (asmPath, nonmatchings, aliases=HashMap::new(), pathIndex=2))]
+    //pub fn get_progress(&self, asmPath: PathBuf, nonmatchings: PathBuf, aliases: HashMap<String, String>, pathIndex: u32) -> (ProgressStats, HashMap<String, ProgressStats>) {
+    //}
     /*
+    def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2) -> tuple[ProgressStats, dict[str, ProgressStats]]:
+        totalStats = ProgressStats()
+        progressPerFolder: dict[str, ProgressStats] = dict()
 
-    def mixFolders(self) -> MapFile:
-        newMapFile = MapFile()
-
-        newMapFile.debugging = self.debugging
+        if self.debugging:
+            utils.eprint(f"getProgress():")
 
         for segment in self._segmentsList:
-            newMapFile._segmentsList.append(segment.mixFolders())
+            for file in segment:
+                if len(file) == 0:
+                    continue
 
-        return newMapFile
+                folder = file.filepath.parts[pathIndex]
+                if folder in aliases:
+                    folder = aliases[folder]
+
+                if folder not in progressPerFolder:
+                    progressPerFolder[folder] = ProgressStats()
+
+                if self.debugging:
+                    utils.eprint(f"  folder path: {folder}")
+
+                originalFilePath = Path(*file.filepath.parts[pathIndex:])
+
+                extensionlessFilePath = originalFilePath
+                while extensionlessFilePath.suffix:
+                    extensionlessFilePath = extensionlessFilePath.with_suffix("")
+
+                fullAsmFile = asmPath / extensionlessFilePath.with_suffix(".s")
+                wholeFileIsUndecomped = fullAsmFile.exists()
+
+                if self.debugging:
+                    utils.eprint(f"  original file path: {originalFilePath}")
+                    utils.eprint(f"  extensionless file path: {extensionlessFilePath}")
+                    utils.eprint(f"  full asm file: {fullAsmFile}")
+                    utils.eprint(f"  whole file is undecomped: {wholeFileIsUndecomped}")
+
+                for func in file:
+                    funcAsmPath = nonmatchings / extensionlessFilePath / f"{func.name}.s"
+
+                    symSize = 0
+                    if func.size is not None:
+                        symSize = func.size
+
+                    if self.debugging:
+                        utils.eprint(f"    Checking function '{funcAsmPath}' (size 0x{symSize:X}) ... ", end="")
+
+                    if wholeFileIsUndecomped:
+                        totalStats.undecompedSize += symSize
+                        progressPerFolder[folder].undecompedSize += symSize
+                        if self.debugging:
+                            utils.eprint(f" the whole file is undecomped (no individual function files exist yet)")
+                    elif funcAsmPath.exists():
+                        totalStats.undecompedSize += symSize
+                        progressPerFolder[folder].undecompedSize += symSize
+                        if self.debugging:
+                            utils.eprint(f" the function hasn't been matched yet (the function file still exists)")
+                    else:
+                        totalStats.decompedSize += symSize
+                        progressPerFolder[folder].decompedSize += symSize
+                        if self.debugging:
+                            utils.eprint(f" the function is matched! (the function file was not found)")
+
+        return totalStats, progressPerFolder
+    */
+
+
+    #[pyo3(name = "compareFilesAndSymbols", signature= (other_map_file, *, check_other_on_self=true))]
+    /// Useful for finding bss reorders
+    pub fn compare_files_and_symbols(&self, other_map_file: MapFile, check_other_on_self: bool) -> maps_comparison_info::MapsComparisonInfo {
+        let mut comp_info = maps_comparison_info::MapsComparisonInfo::new();
+
+        for segment in &self.segments_list {
+            for file in &segment.files_list {
+                for symbol in &file.symbols {
+                    if let Some(found_sym_info) = other_map_file.find_symbol_by_name(&symbol.name) {
+                        let diff = symbol.vram as i64 - found_sym_info.symbol.vram as i64;
+                        let comp = symbol_comparison_info::SymbolComparisonInfo::new(symbol.clone(), symbol.vram, Some(file.clone()), symbol.vram, Some(found_sym_info.file), Some(diff));
+
+                        if diff != 0 {
+                            comp_info.bad_files.insert(file.clone());
+                        }
+                        comp_info.compared_list.push(comp);
+                    } else {
+                        comp_info.missing_files.insert(file.clone());
+                        comp_info.compared_list.push(symbol_comparison_info::SymbolComparisonInfo::new(symbol.clone(), symbol.vram, Some(file.clone()), u64::MAX, None, None));
+                    }
+                }
+            }
+        }
+
+        if check_other_on_self {
+            for segment in &other_map_file.segments_list {
+                for file in &segment.files_list {
+                    for symbol in &file.symbols {
+                        let found_sym_info = self.find_symbol_by_name(&symbol.name);
+
+                        if found_sym_info.is_none() {
+                            comp_info.missing_files.insert(file.clone());
+                            comp_info.compared_list.push(symbol_comparison_info::SymbolComparisonInfo::new(symbol.clone(), u64::MAX, None, symbol.vram, Some(file.clone()), None));
+                        }
+                    }
+                }
+            }
+        }
+
+        comp_info
+    }
+
+
+    /*
+    def toCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True) -> str:
+        ret = File.toCsvHeader(printVram=printVram) + "\n"
+        for segment in self._segmentsList:
+            ret += segment.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols)
+        return ret
+
+    def toCsvSymbols(self) -> str:
+        ret = f"File," + Symbol.toCsvHeader() + "\n"
+
+        for segment in self._segmentsList:
+            ret += segment.toCsvSymbols()
+        return ret
+
+
+    def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
+        print(self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols), end="")
+
+    def printSymbolsCsv(self):
+        print(self.toCsvSymbols(), end="")
+
+    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
+        segmentsList = []
+        for segment in self._segmentsList:
+            segmentsList.append(segment.toJson(humanReadable=humanReadable))
+
+        result: dict[str, Any] = {
+            "segments": segmentsList
+        }
+        return result
+
+
+    def __iter__(self) -> Generator[Segment, None, None]:
+        for file in self._segmentsList:
+            yield file
+
+    def __getitem__(self, index) -> Segment:
+        return self._segmentsList[index]
+
+    def __len__(self) -> int:
+        return len(self._segmentsList)
     */
 }

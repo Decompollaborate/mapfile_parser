@@ -23,14 +23,14 @@ pub struct SymbolComparisonInfo {
     pub expected_file: Option<file::File>,
 
     #[pyo3(get, set)]
-    pub diff: Option<i32>,
+    pub diff: Option<i64>,
 }
 
 #[pymethods]
 impl SymbolComparisonInfo {
     #[new]
     #[pyo3(signature = (symbol, build_address, build_file, expected_address, expected_file, diff))]
-    pub fn new(symbol: symbol::Symbol, build_address: u64, build_file: Option<file::File>, expected_address: u64, expected_file: Option<file::File>, diff: Option<i32>) -> Self {
+    pub fn new(symbol: symbol::Symbol, build_address: u64, build_file: Option<file::File>, expected_address: u64, expected_file: Option<file::File>, diff: Option<i64>) -> Self {
         SymbolComparisonInfo {
             symbol: symbol,
             build_address: build_address,
