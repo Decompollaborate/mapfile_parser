@@ -5,9 +5,11 @@
 
 from __future__ import annotations
 
-import dataclasses
+# import dataclasses
 
+from .mapfile_parser import ProgressStats as ProgressStats
 
+"""
 @dataclasses.dataclass
 class ProgressStats:
     undecompedSize: int = 0
@@ -29,7 +31,7 @@ class ProgressStats:
 
     def print(self, category: str, totalStats: ProgressStats):
         print(f"{category:<28}: {self.decompedSize:>12} / {self.total:>8} {self.decompedSize / self.total * 100:>10.4f}%  ({self.decompedSize / totalStats.total * 100:>8.4f}% / {self.total / totalStats.total * 100:>8.4f}%)")
-
+"""
 
 def printStats(totalStats: ProgressStats, progressPerFolder: dict[str, ProgressStats]):
     ProgressStats.printHeader()

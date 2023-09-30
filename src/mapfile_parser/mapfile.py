@@ -19,7 +19,7 @@ from .mapfile_parser import MapsComparisonInfo as MapsComparisonInfo
 from .mapfile_parser import Symbol as Symbol
 from .mapfile_parser import File as File
 from .mapfile_parser import Segment as Segment
-from .mapfile_parser import MapFile as MapFileRs
+from .mapfile_parser import MapFile as MapFile
 
 
 def __symbolrs_serializeVram(self: Symbol, humanReadable: bool=True) -> str|int|None:
@@ -132,12 +132,34 @@ Segment.serializeVrom = __segmentrs_serializeVrom
 Segment.toJson = __segmentrs_toJson
 
 
-regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
-regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
-# regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)((\s*=\s*(?P<expression>.+))?)$")
-regex_label = re.compile(r"^(?P<name>\.?L[0-9A-F]{8})$")
-regex_fill = re.compile(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$")
-regex_segmentEntry = re.compile(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$")
+
+def __mapfilers_printAsCsv(self: MapFile, printVram: bool=True, skipWithoutSymbols: bool=True):
+    print(self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols), end="")
+
+def __mapfilers_printSymbolsCsv(self: MapFile):
+    print(self.toCsvSymbols(), end="")
+
+def __mapfilers_toJson(self: MapFile, humanReadable: bool=True) -> dict[str, Any]:
+    segmentsList = []
+    for segment in self:
+        segmentsList.append(segment.toJson(humanReadable=humanReadable))
+
+    result: dict[str, Any] = {
+        "segments": segmentsList
+    }
+    return result
+
+MapFile.printAsCsv = __mapfilers_printAsCsv
+MapFile.printSymbolsCsv = __mapfilers_printSymbolsCsv
+MapFile.toJson = __mapfilers_toJson
+
+
+# regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
+# regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
+# # regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)((\s*=\s*(?P<expression>.+))?)$")
+# regex_label = re.compile(r"^(?P<name>\.?L[0-9A-F]{8})$")
+# regex_fill = re.compile(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$")
+# regex_segmentEntry = re.compile(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$")
 
 """
 @dataclasses.dataclass
@@ -570,7 +592,7 @@ class Segment:
         return hash((self.name, self.vram, self.size, self.vrom))
 """
 
-
+"""
 class MapFile:
     def __init__(self):
         self._segmentsList: list[Segment] = list()
@@ -949,3 +971,4 @@ class MapFile:
 
     def __len__(self) -> int:
         return len(self._segmentsList)
+"""

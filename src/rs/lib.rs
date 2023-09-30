@@ -27,6 +27,9 @@ fn mapfile_parser(_py: pyo3::prelude::Python<'_>, m: &pyo3::prelude::PyModule) -
     m.add_class::<file::File>()?;
     m.add_class::<symbol::Symbol>()?;
     m.add_class::<found_symbol_info::FoundSymbolInfo>()?;
+    m.add_class::<symbol_comparison_info::SymbolComparisonInfo>()?;
+    m.add_class::<maps_comparison_info::MapsComparisonInfo>()?;
+    m.add_class::<progress_stats::ProgressStats>()?;
     Ok(())
 }
 
