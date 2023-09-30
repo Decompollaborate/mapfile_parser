@@ -46,14 +46,7 @@ impl MapFile {
         let regex_segment_entry = Regex::new(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$").unwrap();
 
 
-
-        let mut f = File::open(map_path).expect("Could not open input file");
-        //let mut map_data: Vec<u8> = Vec::new();
-        //let contents_length = f.read_to_end(&mut map_data).expect("Not able to read the whole contents of the file");
-        let mut map_data = String::new();
-        let _contents_length = f.read_to_string(&mut map_data).expect("Not able to read the whole contents of the file");
-
-        // TODO: "Linker script and memory map" stuff
+        let map_data = MapFile::read_map_data(&map_path);
 
         let mut temp_segment_list: Vec<segment::Segment> = Vec::new();
         temp_segment_list.push(segment::Segment::new("$nosegment".into(), 0, 0, 0));
@@ -306,7 +299,7 @@ impl MapFile {
                                 if i > 0 {
                                     prev_sym = Some(built_file.symbols[i-1].clone());
                                 }
-                                found = Some((built_sym.clone(), built_file.clone(), prev_sym));
+                                found = Some((built_sym, built_file, prev_sym));
                             }
                         }
                     }
@@ -314,7 +307,10 @@ impl MapFile {
             }
         }
 
-        found
+        if let Some(found_temp) = found {
+            return Some((found_temp.0.clone(), found_temp.1.clone(), found_temp.2));
+        }
+        None
     }
 
     #[pyo3(name = "mixFolders")]
@@ -505,6 +501,28 @@ impl MapFile {
 
     fn __len__(&self) -> usize {
         self.segments_list.len()
+    }
+}
+
+impl MapFile {
+    fn read_map_data(map_path: &PathBuf) -> String {
+        let mut f = File::open(map_path).expect("Could not open input file");
+        //let mut map_data: Vec<u8> = Vec::new();
+        //let contents_length = f.read_to_end(&mut map_data).expect("Not able to read the whole contents of the file");
+        let mut map_data = String::new();
+        let _contents_length = f.read_to_string(&mut map_data).expect("Not able to read the whole contents of the file");
+
+        // Skip the stuff we don't care about
+        // Looking for this string will only work on English machines (or C locales)
+        // but it doesn't matter much, because if this string is not found then the
+        // parsing should still work, but just a bit slower because of the extra crap
+        if let Some(aux_var) = map_data.find("\nLinker script and memory map") {
+            if let Some(start_index) = map_data[aux_var+1..].find("\n") {
+                map_data = map_data[aux_var+1+start_index+1..].to_string();
+            }
+        }
+
+        map_data
     }
 }
 
