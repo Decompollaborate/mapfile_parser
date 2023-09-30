@@ -45,7 +45,8 @@ impl Symbol {
     #[pyo3(name = "getSizeStr")]
     pub fn get_size_str(&self) -> String {
         if let Some(size) = self.size {
-            return format!("0x{0:X}", size);
+            //return format!("0x{0:X}", size);
+            return format!("{}", size);
         }
         "None".into()
     }

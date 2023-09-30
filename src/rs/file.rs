@@ -179,9 +179,9 @@ impl File {
         let mut max_size = 0;
         let average_size;
         if sym_count > 0 {
-            average_size = self.size / sym_count;
+            average_size = self.size as f64 / sym_count as f64;
         } else {
-            average_size = self.size / 1;
+            average_size = self.size as f64 / 1.0;
         }
         for sym in &self.symbols {
             if let Some(sym_size) = sym.size {
@@ -193,7 +193,7 @@ impl File {
 
         if print_vram {
             //ret.push_str(format!("{:08X}", self.vram));
-            write!(ret, "{:08X}", self.vram).unwrap();
+            write!(ret, "{:08X},", self.vram).unwrap();
             //ret += f"{self.vram:08X},";
         }
         write!(ret, "{},{},{},{},{},{:0.2}", self.filepath.display(), self.section_type, sym_count, max_size, self.size, average_size).unwrap();
