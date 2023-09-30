@@ -269,6 +269,22 @@ impl Segment {
     // TODO: __str__ and __repr__
 }
 
+impl Segment {
+    pub fn new_placeholder() -> Self {
+        Segment {
+            name: "$nosegment".into(),
+            vram: 0,
+            size: 0,
+            vrom: 0,
+            files_list: Vec::new(),
+        }
+    }
+
+    pub fn is_placeholder(&self) -> bool {
+        self.name == "$nosegment" && self.vram == 0 && self.size == 0 && self.files_list.is_empty()
+    }
+}
+
 // https://doc.rust-lang.org/std/cmp/trait.Eq.html
 impl PartialEq for Segment {
     fn eq(&self, other: &Self) -> bool {

@@ -53,7 +53,7 @@ impl MapFile {
         {
             let current_segment = temp_segment_list.last_mut().unwrap();
 
-            current_segment.files_list.push(file::File::new_default("".into(), 0, 0, "".into()));
+            current_segment.files_list.push(file::File::new_placeholder());
         }
 
         let mut in_file = false;
@@ -135,7 +135,7 @@ impl MapFile {
                         let prev_file = current_segment.files_list.last().unwrap();
                         let mut name = prev_file.filepath.file_name().unwrap().to_owned();
 
-                        name.push("__file__");
+                        name.push("__fill__");
                         filepath = prev_file.filepath.with_file_name(name);
                         vram = prev_file.vram + prev_file.size;
                         section_type = prev_file.section_type.clone();
@@ -155,17 +155,31 @@ impl MapFile {
             let segment = &mut temp_segment_list[i];
 
             if i == 0 {
-                if segment.size == 0 && segment.files_list.is_empty() {
+                if segment.is_placeholder() {
                     // skip the dummy segment if it has no size, files or symbols
                     continue;
                 }
+                if segment.files_list.len() == 1 {
+                    if let Some(first) = segment.files_list.first() {
+                        if first.is_placeholder() {
+                            continue;
+                        }
+                    }
+                }
             }
+
+            let mut new_segment = segment::Segment::new(segment.name.clone(), segment.vram, segment.size, segment.vrom);
 
             let mut vrom_offset = segment.vrom;
             for file in segment.files_list.iter_mut() {
                 let mut acummulated_size = 0;
                 let symbols_count = file.symbols.len();
                 let is_noload_section = file.is_noload_section();
+
+                if file.is_placeholder() {
+                    // drop placeholders
+                    continue;
+                }
 
                 if file.vrom.is_some() {
                     vrom_offset = file.vrom.unwrap();
@@ -218,9 +232,11 @@ impl MapFile {
                 if !is_noload_section {
                     vrom_offset += file.size;
                 }
+
+                new_segment.files_list.push(file.clone());
             }
 
-            self.segments_list.push(segment.clone());
+            self.segments_list.push(new_segment);
         }
     }
 

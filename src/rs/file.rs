@@ -295,6 +295,21 @@ impl File {
             symbols: Vec::new(),
         }
     }
+
+    pub fn new_placeholder() -> Self {
+        Self {
+            filepath: "".into(),
+            vram: 0,
+            size: 0,
+            section_type: "".into(),
+            vrom: None,
+            symbols: Vec::new(),
+        }
+    }
+
+    pub fn is_placeholder(&self) -> bool {
+        self.filepath.as_os_str().is_empty() && self.vram == 0 && self.size == 0 && self.section_type == "" && self.vrom.is_none() && self.symbols.is_empty()
+    }
 }
 
 // https://doc.rust-lang.org/std/cmp/trait.Eq.html
