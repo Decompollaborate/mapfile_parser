@@ -2,8 +2,8 @@
 /* SPDX-License-Identifier: MIT */
 
 use crate::{file, symbol};
-use std::fmt::Write;
 use pyo3::prelude::*;
+use std::fmt::Write;
 
 #[derive(Debug, Clone)]
 #[pyclass(module = "mapfile_parser")]
@@ -32,7 +32,14 @@ impl FoundSymbolInfo {
 
     #[pyo3(name = "getAsStr")]
     pub fn get_as_str(&self) -> String {
-        format!("'{0}' (VRAM: {1}, VROM: {2}, SIZE: {3}, {4})", self.symbol.name, self.symbol.get_vram_str(), self.symbol.get_vrom_str(), self.symbol.get_size_str(), self.file.filepath.to_string_lossy())
+        format!(
+            "'{0}' (VRAM: {1}, VROM: {2}, SIZE: {3}, {4})",
+            self.symbol.name,
+            self.symbol.get_vram_str(),
+            self.symbol.get_vrom_str(),
+            self.symbol.get_size_str(),
+            self.file.filepath.to_string_lossy()
+        )
     }
 
     #[pyo3(name = "getAsStrPlusOffset")]

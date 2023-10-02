@@ -1,27 +1,30 @@
 /* SPDX-FileCopyrightText: © 2023 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-mod mapfile;
-mod segment;
 mod file;
-mod symbol;
 mod found_symbol_info;
-mod symbol_comparison_info;
+mod mapfile;
 mod maps_comparison_info;
 mod progress_stats;
+mod segment;
+mod symbol;
+mod symbol_comparison_info;
 pub mod utils;
 
-pub use mapfile::MapFile;
-pub use segment::Segment;
 pub use file::File;
-pub use symbol::Symbol;
 pub use found_symbol_info::FoundSymbolInfo;
-pub use symbol_comparison_info::SymbolComparisonInfo;
+pub use mapfile::MapFile;
 pub use maps_comparison_info::MapsComparisonInfo;
 pub use progress_stats::ProgressStats;
+pub use segment::Segment;
+pub use symbol::Symbol;
+pub use symbol_comparison_info::SymbolComparisonInfo;
 
 #[pyo3::prelude::pymodule]
-fn mapfile_parser(_py: pyo3::prelude::Python<'_>, m: &pyo3::prelude::PyModule) -> pyo3::prelude::PyResult<()> {
+fn mapfile_parser(
+    _py: pyo3::prelude::Python<'_>,
+    m: &pyo3::prelude::PyModule,
+) -> pyo3::prelude::PyResult<()> {
     m.add_class::<mapfile::MapFile>()?;
     m.add_class::<segment::Segment>()?;
     m.add_class::<file::File>()?;

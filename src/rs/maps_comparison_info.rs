@@ -3,19 +3,19 @@
 
 use std::collections::HashSet;
 
-use pyo3::prelude::*;
 use crate::{file, symbol_comparison_info};
+use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]
 #[pyclass(module = "mapfile_parser")]
 pub struct MapsComparisonInfo {
-    #[pyo3(get, set, name="badFiles")]
+    #[pyo3(get, set, name = "badFiles")]
     pub bad_files: HashSet<file::File>,
 
-    #[pyo3(get, set, name="missingFiles")]
+    #[pyo3(get, set, name = "missingFiles")]
     pub missing_files: HashSet<file::File>,
 
-    #[pyo3(get, set, name="comparedList")]
+    #[pyo3(get, set, name = "comparedList")]
     pub compared_list: Vec<symbol_comparison_info::SymbolComparisonInfo>,
 }
 

@@ -2,14 +2,14 @@
 /* SPDX-License-Identifier: MIT */
 
 use crate::{file, found_symbol_info};
-use pyo3::prelude::*;
 use pyo3::class::basic::CompareOp;
+use pyo3::prelude::*;
 use std::collections::HashMap;
 use std::fmt::Write;
 
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
-use std::hash::{Hash, Hasher};
 use std::collections::hash_map::DefaultHasher;
+use std::hash::{Hash, Hasher};
 use std::path::PathBuf;
 
 #[derive(Debug, Clone)]
@@ -44,23 +44,6 @@ impl Segment {
         }
     }
 
-    /*
-    def serializeVram(self, humanReadable: bool=True) -> str|int|None:
-        if humanReadable:
-            return f"0x{self.vram:08X}"
-        return self.vram
-
-    def serializeSize(self, humanReadable: bool=True) -> str|int|None:
-        if humanReadable:
-            return f"0x{self.size:X}"
-        return self.size
-
-    def serializeVrom(self, humanReadable: bool=True) -> str|int|None:
-        if humanReadable:
-            return f"0x{self.vrom:06X}"
-        return self.vrom
-    */
-
     #[pyo3(name = "filterBySectionType")]
     pub fn filter_by_section_type(&self, section_type: &str) -> Segment {
         let mut new_segment = Segment::new(self.name.clone(), self.vram, self.size, self.vrom);
@@ -88,23 +71,36 @@ impl Segment {
     }
 
     #[pyo3(name = "findSymbolByName")]
-    pub fn find_symbol_by_name(&self, sym_name: &str) -> Option<found_symbol_info::FoundSymbolInfo> {
+    pub fn find_symbol_by_name(
+        &self,
+        sym_name: &str,
+    ) -> Option<found_symbol_info::FoundSymbolInfo> {
         for file in &self.files_list {
             if let Some(sym) = file.find_symbol_by_name(sym_name) {
-                return Some(found_symbol_info::FoundSymbolInfo::new_default(file.clone(), sym));
+                return Some(found_symbol_info::FoundSymbolInfo::new_default(
+                    file.clone(),
+                    sym,
+                ));
             }
         }
         None
     }
 
     #[pyo3(name = "findSymbolByVramOrVrom")]
-    pub fn find_symbol_by_vram_or_vrom(&self, address: u64) -> Option<found_symbol_info::FoundSymbolInfo> {
+    pub fn find_symbol_by_vram_or_vrom(
+        &self,
+        address: u64,
+    ) -> Option<found_symbol_info::FoundSymbolInfo> {
         for file in &self.files_list {
             if let Some(pair) = file.find_symbol_by_vram_or_vrom(address) {
                 let sym = pair.0;
                 let offset = pair.1;
 
-                return Some(found_symbol_info::FoundSymbolInfo::new(file.clone(), sym, offset));
+                return Some(found_symbol_info::FoundSymbolInfo::new(
+                    file.clone(),
+                    sym,
+                    offset,
+                ));
             }
         }
         None
@@ -120,8 +116,16 @@ impl Segment {
         // Put files in the same folder together
         for file in &self.files_list {
             // TODO: this is terrible
-            let mut path: PathBuf = file.filepath.with_extension("").components().skip(2).collect();
-            path = path.components().take(file.filepath.components().count()-1).collect();
+            let mut path: PathBuf = file
+                .filepath
+                .with_extension("")
+                .components()
+                .skip(2)
+                .collect();
+            path = path
+                .components()
+                .take(file.filepath.components().count() - 1)
+                .collect();
 
             if !aux_dict.contains_key(&path) {
                 aux_dict.insert(path, vec![file]);
@@ -147,7 +151,8 @@ impl Segment {
                 }
             }
 
-            let mut temp_file = file::File::new(folder_path.clone(), vram, size, section_type, vrom);
+            let mut temp_file =
+                file::File::new(folder_path.clone(), vram, size, section_type, vrom);
             temp_file.symbols = symbols;
             new_segment.files_list.push(temp_file);
         }
@@ -187,7 +192,6 @@ impl Segment {
         ret
     }
 
-
     #[pyo3(name = "printAsCsv", signature=(print_vram=true, skip_without_symbols=true))]
     pub fn print_as_csv(&self, print_vram: bool, skip_without_symbols: bool) {
         print!("{}", self.to_csv(print_vram, skip_without_symbols));
@@ -197,24 +201,6 @@ impl Segment {
     pub fn print_symbols_csv(&self) {
         print!("{}", self.to_csv_symbols());
     }
-
-    /*
-    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
-        segmentDict: dict[str, Any] = {
-            "name": self.name,
-            "vram": self.serializeVram(humanReadable=humanReadable),
-            "size": self.serializeSize(humanReadable=humanReadable),
-            "vrom": self.serializeVrom(humanReadable=humanReadable),
-        }
-
-        filesList = []
-        for file in self._filesList:
-            filesList.append(file.toJson(humanReadable=humanReadable))
-
-        segmentDict["files"] = filesList
-
-        return segmentDict
-    */
 
     #[pyo3(name = "copyFileList")]
     fn copy_file_list(&self) -> Vec<file::File> {
@@ -230,7 +216,6 @@ impl Segment {
     fn append_file(&mut self, file: file::File) {
         self.files_list.push(file);
     }
-
 
     fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<FileVecIter>> {
         let iter = FileVecIter {
@@ -288,7 +273,10 @@ impl Segment {
 // https://doc.rust-lang.org/std/cmp/trait.Eq.html
 impl PartialEq for Segment {
     fn eq(&self, other: &Self) -> bool {
-        self.name == other.name && self.vram == other.vram && self.size == other.size && self.vrom == other.vrom
+        self.name == other.name
+            && self.vram == other.vram
+            && self.size == other.size
+            && self.vrom == other.vrom
     }
 }
 impl Eq for Segment {}

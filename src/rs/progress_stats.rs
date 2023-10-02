@@ -43,10 +43,21 @@ impl ProgressStats {
     #[staticmethod]
     #[pyo3(name = "printHeader")]
     pub fn print_header() {
-        println!("{:<28}: {:>12} / {:>8} {:>10}%  ({:>20}%)", "Category", "DecompedSize", "Total", "OfFolder", "OfTotal");
+        println!(
+            "{:<28}: {:>12} / {:>8} {:>10}%  ({:>20}%)",
+            "Category", "DecompedSize", "Total", "OfFolder", "OfTotal"
+        );
     }
 
     pub fn print(&self, category: &str, total_stats: &ProgressStats) {
-        println!("{:<28}: {:>12} / {:>8} {:>10.4}%  ({:>8.4}% / {:>8.4}%)", category, self.decomped_size, self.total(), self.decomped_size as f32 / self.total() as f32 * 100.0, self.decomped_size as f32 / total_stats.total() as f32 * 100.0, self.total() as f32 / total_stats.total() as f32 * 100.0);
+        println!(
+            "{:<28}: {:>12} / {:>8} {:>10.4}%  ({:>8.4}% / {:>8.4}%)",
+            category,
+            self.decomped_size,
+            self.total(),
+            self.decomped_size as f32 / self.total() as f32 * 100.0,
+            self.decomped_size as f32 / total_stats.total() as f32 * 100.0,
+            self.total() as f32 / total_stats.total() as f32 * 100.0
+        );
     }
 }

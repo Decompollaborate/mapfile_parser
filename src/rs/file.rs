@@ -1,21 +1,21 @@
 /* SPDX-FileCopyrightText: © 2023 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::path::PathBuf;
 use std::collections::hash_map::DefaultHasher;
+use std::path::PathBuf;
 
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
-use std::hash::{Hash, Hasher};
 use std::fmt::Write;
+use std::hash::{Hash, Hasher};
 
 use crate::symbol;
-use pyo3::prelude::*;
 use pyo3::class::basic::CompareOp;
+use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]
 #[pyclass(module = "mapfile_parser", sequence)]
 pub struct File {
-    #[pyo3(get, set, name="_filepath_internal")]
+    #[pyo3(get, set, name = "_filepath_internal")]
     // TODO: pyo3 exposes this as str, need to fix somehow
     pub filepath: PathBuf,
 
@@ -38,7 +38,13 @@ pub struct File {
 #[pymethods]
 impl File {
     #[new]
-    pub fn new(filepath: PathBuf, vram: u64, size: u64, section_type: &str, vrom: Option<u64>) -> Self {
+    pub fn new(
+        filepath: PathBuf,
+        vram: u64,
+        size: u64,
+        section_type: &str,
+        vrom: Option<u64>,
+    ) -> Self {
         File {
             filepath: filepath,
             vram: vram,
@@ -55,33 +61,15 @@ impl File {
         return self.section_type == ".bss";
     }
 
-    /*
-    def serializeVram(self, humanReadable: bool=True) -> str|int|None:
-        if humanReadable:
-            return f"0x{self.vram:08X}"
-        return self.vram
-
-    def serializeSize(self, humanReadable: bool=True) -> str|int|None:
-        if humanReadable:
-            return f"0x{self.size:X}"
-        return self.size
-
-    def serializeVrom(self, humanReadable: bool=True) -> str|int|None:
-        if self.vrom is None:
-            return None
-        if humanReadable:
-            return f"0x{self.vrom:06X}"
-        return self.vrom
-    */
-
-
     // ! @deprecated
     #[pyo3(name = "getName")]
     fn get_name(&self) -> PathBuf {
-        self.filepath.with_extension("").components().skip(2).collect()
+        self.filepath
+            .with_extension("")
+            .components()
+            .skip(2)
+            .collect()
     }
-    //def getName(self) -> Path:
-    //    return Path(*self.filepath.with_suffix("").parts[2:])
 
     #[pyo3(name = "findSymbolByName")]
     pub fn find_symbol_by_name(&self, sym_name: &str) -> Option<symbol::Symbol> {
@@ -196,12 +184,20 @@ impl File {
             write!(ret, "{:08X},", self.vram).unwrap();
             //ret += f"{self.vram:08X},";
         }
-        write!(ret, "{},{},{},{},{},{:0.2}", self.filepath.display(), self.section_type, sym_count, max_size, self.size, average_size).unwrap();
-        //ret += f"{self.filepath},{self.sectionType},{sym_count},{max_size},{self.size},{average_size:0.2f}";
+        write!(
+            ret,
+            "{},{},{},{},{},{:0.2}",
+            self.filepath.display(),
+            self.section_type,
+            sym_count,
+            max_size,
+            self.size,
+            average_size
+        )
+        .unwrap();
 
         ret
     }
-
 
     #[staticmethod]
     #[pyo3(name = "printCsvHeader", signature=(print_vram=true))]
@@ -285,7 +281,12 @@ impl File {
 }
 
 impl File {
-    pub fn new_default(filepath: std::path::PathBuf, vram: u64, size: u64, section_type: &str) -> Self {
+    pub fn new_default(
+        filepath: std::path::PathBuf,
+        vram: u64,
+        size: u64,
+        section_type: &str,
+    ) -> Self {
         File {
             filepath: filepath,
             vram: vram,
@@ -308,7 +309,12 @@ impl File {
     }
 
     pub fn is_placeholder(&self) -> bool {
-        self.filepath.as_os_str().is_empty() && self.vram == 0 && self.size == 0 && self.section_type == "" && self.vrom.is_none() && self.symbols.is_empty()
+        self.filepath.as_os_str().is_empty()
+            && self.vram == 0
+            && self.size == 0
+            && self.section_type == ""
+            && self.vrom.is_none()
+            && self.symbols.is_empty()
     }
 }
 
