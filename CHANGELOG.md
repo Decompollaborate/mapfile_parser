@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.1.5] - 2023-10-02
+
 ### Added
 
 - Add `CHANGELOG.md`
@@ -15,6 +17,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Cleanup the `README.md` a bit
+- Update Github Action's dependencies
 
 ### Deprecated
 
