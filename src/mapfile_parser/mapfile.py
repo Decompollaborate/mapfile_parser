@@ -165,6 +165,7 @@ class File:
         return self.vrom
 
 
+    #! @deprecated
     def getName(self) -> Path:
         return Path(*self.filepath.with_suffix("").parts[2:])
 
@@ -445,6 +446,8 @@ class Segment:
 class MapFile:
     def __init__(self):
         self._segmentsList: list[Segment] = list()
+
+        #! @deprecated
         self.debugging: bool = False
 
     def readMapFile(self, mapPath: Path):

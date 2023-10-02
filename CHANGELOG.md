@@ -16,6 +16,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Cleanup the `README.md` a bit
 
+### Deprecated
+
+- Deprecate `File.getName`
+  - The method itself doesn't make sense, instead operate on `File.filepath` directly
+- Deprecate `MapFile.debugging`
+- Deprecate `progress` frontend's `--debugging` flag
+
 ## [2.1.4] - 2023-09-11
 
 ### Fixed
