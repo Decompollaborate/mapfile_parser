@@ -17,8 +17,13 @@ jobs:
         toolchain: stable
         override: true
 
+    - name: Setup requirements
+      run: |
+        python3 -m pip install -U -r requirements.txt
+        python3 -m pip install -U maturin
+
     - name: Install local mapfile_parser
-      run: pip install .
+      run: python3 -m pip install .
 
     - name: Update tests outputs
       run: python3 tests/update_outputs.py

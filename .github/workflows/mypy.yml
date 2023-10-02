@@ -17,8 +17,9 @@ jobs:
 
     - name: Install Dependencies
       run: |
-        pip3 install -r requirements.txt
-        pip3 install mypy -U
+        python3 -m pip install -r requirements.txt
+        python3 -m pip install -U maturin
+        python3 -m pip install -U mypy
 
     - name: mypy
       run: mypy --show-column-numbers --hide-error-context .
