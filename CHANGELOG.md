@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add new Rust re-implementation
+  - Allows using this library in native Rust projects
+  - It does not replace the Python implementation due to restrictions on how
+    Rust bindings work.
+
+### Changed
+
+- Speed-up the actual parsing of a mapfile by using the native Rust implementation
+  - Up to 10 times faster parsing has been registered
+- Change build system from `hatchling` to `maturin`
+
 ## [2.1.5] - 2023-10-02
 
 ### Added
