@@ -10,6 +10,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add `CHANGELOG.md`
+- Add markdown linter to CI
+
+### Changed
+
+- Cleanup the `README.md` a bit
 
 ## [2.1.4] - 2023-09-11
 
