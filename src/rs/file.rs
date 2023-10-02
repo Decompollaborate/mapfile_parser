@@ -15,7 +15,7 @@ use pyo3::class::basic::CompareOp;
 #[derive(Debug, Clone)]
 #[pyclass(module = "mapfile_parser", unsendable, sequence)]
 pub struct File {
-    #[pyo3(get, set)]
+    #[pyo3(get, set, name="_filepath_internal")]
     // TODO: pyo3 exposes this as str, need to fix somehow
     pub filepath: PathBuf,
 

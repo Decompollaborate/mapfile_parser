@@ -47,6 +47,6 @@ impl ProgressStats {
     }
 
     pub fn print(&self, category: &str, totalStats: &ProgressStats) {
-        println!("{:<28}: {:>12} / {:>8} {:>10.4}%  ({:>8.4}% / {:>8.4}%)", category, self.decomped_size, self.total(), self.decomped_size / self.total() * 100, self.decomped_size / totalStats.total() * 100, self.total() / totalStats.total() * 100);
+        println!("{:<28}: {:>12} / {:>8} {:>10.4}%  ({:>8.4}% / {:>8.4}%)", category, self.decomped_size, self.total(), self.decomped_size as f32 / self.total() as f32 * 100.0, self.decomped_size as f32 / totalStats.total() as f32 * 100.0, self.total() as f32 / totalStats.total() as f32 * 100.0);
     }
 }
