@@ -46,13 +46,13 @@ def __symbolrs_toJson(self: Symbol, humanReadable: bool=True) -> dict[str, Any]:
     }
     return result
 
-Symbol.serializeVram = __symbolrs_serializeVram
-Symbol.serializeSize = __symbolrs_serializeSize
-Symbol.serializeVrom = __symbolrs_serializeVrom
-Symbol.toJson = __symbolrs_toJson
+Symbol.serializeVram = __symbolrs_serializeVram # type: ignore
+Symbol.serializeSize = __symbolrs_serializeSize # type: ignore
+Symbol.serializeVrom = __symbolrs_serializeVrom # type: ignore
+Symbol.toJson = __symbolrs_toJson # type: ignore
 
 
-@property
+@property # type: ignore
 def __filers_filepath(self: File) -> Path:
     return Path(self._filepath_internal)
 @__filers_filepath.setter
@@ -93,10 +93,10 @@ def __filers_toJson(self: File, humanReadable: bool=True) -> dict[str, Any]:
     return fileDict
 
 File.filepath = __filers_filepath # type: ignore
-File.serializeVram = __filers_serializeVram
-File.serializeSize = __filers_serializeSize
-File.serializeVrom = __filers_serializeVrom
-File.toJson = __filers_toJson
+File.serializeVram = __filers_serializeVram # type: ignore
+File.serializeSize = __filers_serializeSize # type: ignore
+File.serializeVrom = __filers_serializeVrom # type: ignore
+File.toJson = __filers_toJson # type: ignore
 
 
 def __segmentrs_serializeVram(self: Segment, humanReadable: bool=True) -> str|int|None:
@@ -130,10 +130,10 @@ def __segmentrs_toJson(self: Segment, humanReadable: bool=True) -> dict[str, Any
 
     return segmentDict
 
-Segment.serializeVram = __segmentrs_serializeVram
-Segment.serializeSize = __segmentrs_serializeSize
-Segment.serializeVrom = __segmentrs_serializeVrom
-Segment.toJson = __segmentrs_toJson
+Segment.serializeVram = __segmentrs_serializeVram # type: ignore
+Segment.serializeSize = __segmentrs_serializeSize # type: ignore
+Segment.serializeVrom = __segmentrs_serializeVrom # type: ignore
+Segment.toJson = __segmentrs_toJson # type: ignore
 
 
 
@@ -153,6 +153,6 @@ def __mapfilers_toJson(self: MapFile, humanReadable: bool=True) -> dict[str, Any
     }
     return result
 
-MapFile.printAsCsv = __mapfilers_printAsCsv
-MapFile.printSymbolsCsv = __mapfilers_printSymbolsCsv
-MapFile.toJson = __mapfilers_toJson
+MapFile.printAsCsv = __mapfilers_printAsCsv # type: ignore
+MapFile.printSymbolsCsv = __mapfilers_printSymbolsCsv # type: ignore
+MapFile.toJson = __mapfilers_toJson # type: ignore
