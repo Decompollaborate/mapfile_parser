@@ -370,11 +370,11 @@ impl MapFile {
                     extensionless_file_path.set_extension("");
                 }
 
-                let full_asm_file = asm_path.join(extensionless_file_path.with_extension(".s"));
+                let full_asm_file = asm_path.join(extensionless_file_path.with_extension("s"));
                 let whole_file_is_undecomped = full_asm_file.exists();
 
                 for func in &file.symbols {
-                    let func_asm_path = nonmatchings.join(extensionless_file_path.clone()).join(func.name.clone()).with_extension(".s");
+                    let func_asm_path = nonmatchings.join(extensionless_file_path.clone()).join(func.name.clone() + ".s");
 
                     let sym_size = func.size.unwrap_or(0) as u32;
 
