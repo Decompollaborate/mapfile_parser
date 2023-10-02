@@ -11,6 +11,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    - name: Setup Rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
     - name: Install local mapfile_parser
       run: pip install .
 
