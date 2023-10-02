@@ -475,7 +475,7 @@ class MapFile:
     def __init__(self):
         self._segmentsList: list[Segment] = list()
 
-        # Deprecated
+        #! @deprecated
         self.debugging: bool = False
 
     def readMapFile(self, mapPath: Path):
