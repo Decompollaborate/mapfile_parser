@@ -6,7 +6,7 @@ use std::collections::HashMap;
 use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]
-#[pyclass(module = "mapfile_parser", unsendable, sequence)]
+#[pyclass(module = "mapfile_parser", sequence)]
 pub struct ProgressStats {
     #[pyo3(get, set, name = "undecompedSize")]
     pub undecomped_size: u32,
@@ -46,7 +46,7 @@ impl ProgressStats {
         println!("{:<28}: {:>12} / {:>8} {:>10}%  ({:>20}%)", "Category", "DecompedSize", "Total", "OfFolder", "OfTotal");
     }
 
-    pub fn print(&self, category: &str, totalStats: &ProgressStats) {
-        println!("{:<28}: {:>12} / {:>8} {:>10.4}%  ({:>8.4}% / {:>8.4}%)", category, self.decomped_size, self.total(), self.decomped_size as f32 / self.total() as f32 * 100.0, self.decomped_size as f32 / totalStats.total() as f32 * 100.0, self.total() as f32 / totalStats.total() as f32 * 100.0);
+    pub fn print(&self, category: &str, total_stats: &ProgressStats) {
+        println!("{:<28}: {:>12} / {:>8} {:>10.4}%  ({:>8.4}% / {:>8.4}%)", category, self.decomped_size, self.total(), self.decomped_size as f32 / self.total() as f32 * 100.0, self.decomped_size as f32 / total_stats.total() as f32 * 100.0, self.total() as f32 / total_stats.total() as f32 * 100.0);
     }
 }

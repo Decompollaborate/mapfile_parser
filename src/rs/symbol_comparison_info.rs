@@ -5,7 +5,7 @@ use pyo3::prelude::*;
 use crate::{file, symbol};
 
 #[derive(Debug, Clone)]
-#[pyclass(module = "mapfile_parser", unsendable)]
+#[pyclass(module = "mapfile_parser")]
 pub struct SymbolComparisonInfo {
     #[pyo3(get, set)]
     pub symbol: symbol::Symbol,

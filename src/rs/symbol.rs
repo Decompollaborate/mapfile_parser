@@ -10,7 +10,7 @@ use pyo3::prelude::*;
 use pyo3::class::basic::CompareOp;
 
 #[derive(Debug, Clone)]
-#[pyo3::prelude::pyclass(module = "mapfile_parser", unsendable)]
+#[pyo3::prelude::pyclass(module = "mapfile_parser")]
 pub struct Symbol {
     #[pyo3(get)]
     pub name: String,

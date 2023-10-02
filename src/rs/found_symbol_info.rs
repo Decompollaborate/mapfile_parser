@@ -6,7 +6,7 @@ use std::fmt::Write;
 use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]
-#[pyclass(module = "mapfile_parser", unsendable)]
+#[pyclass(module = "mapfile_parser")]
 pub struct FoundSymbolInfo {
     #[pyo3(get, set)]
     pub file: file::File,

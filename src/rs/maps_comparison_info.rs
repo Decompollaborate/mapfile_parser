@@ -7,7 +7,7 @@ use pyo3::prelude::*;
 use crate::{file, symbol_comparison_info};
 
 #[derive(Debug, Clone)]
-#[pyclass(module = "mapfile_parser", unsendable)]
+#[pyclass(module = "mapfile_parser")]
 pub struct MapsComparisonInfo {
     #[pyo3(get, set, name="badFiles")]
     pub bad_files: HashSet<file::File>,

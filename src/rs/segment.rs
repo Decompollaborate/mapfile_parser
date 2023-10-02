@@ -13,7 +13,7 @@ use std::collections::hash_map::DefaultHasher;
 use std::path::PathBuf;
 
 #[derive(Debug, Clone)]
-#[pyclass(module = "mapfile_parser", unsendable)]
+#[pyclass(module = "mapfile_parser")]
 pub struct Segment {
     #[pyo3(get, set)]
     pub name: String,
