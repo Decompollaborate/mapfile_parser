@@ -42,7 +42,6 @@ class FoundSymbolInfo:
             message = "Symbol"
         return f"{message} {self.getAsStr()}"
 
-
 @dataclasses.dataclass
 class SymbolComparisonInfo:
     symbol: Symbol
@@ -132,7 +131,6 @@ class Symbol:
     # https://stackoverflow.com/a/56915493/6292472
     def __hash__(self):
         return hash((self.name, self.vram))
-
 
 
 @dataclasses.dataclass
@@ -481,162 +479,22 @@ class MapFile:
         self.debugging: bool = False
 
     def readMapFile(self, mapPath: Path):
-        with mapPath.open("r") as f:
-            mapData = f.read()
+        from .mapfile_rs import MapFile
 
-            startIndex = 0
-            auxVar = 0
+        nativeMapFile = MapFile()
+        nativeMapFile.readMapFile(mapPath)
 
-            # Skip the stuff we don't care about
-            # Looking for this string will only work on English machines (or C locales)
-            # but it doesn't matter much, because if this string is not found then the
-            # parsing should still work, but just a bit slower because of the extra crap
-            auxVar = mapData.find("\nLinker script and memory map", startIndex+1)
-            if auxVar != -1:
-                auxVar = mapData.find("\n", auxVar+1)
-            if auxVar != -1:
-                startIndex = auxVar
-            mapData = mapData[startIndex:]
-        # print(len(mapData))
+        for segment in nativeMapFile:
+            newSegment = Segment(segment.name, segment.vram, segment.size, segment.vrom)
+            for file in segment:
+                newFile = File(file.filepath, file.vram, file.size, file.sectionType, file.vrom)
+                for symbol in file:
+                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom)
 
-        tempSegmentsList: list[Segment] = [Segment("$nosegment", 0, 0, 0)]
-        tempFilesListList: list[list[File]] = [[]]
+                    newFile._symbols.append(newSymbol)
+                newSegment._filesList.append(newFile)
+            self._segmentsList.append(newSegment)
 
-        inFile = False
-
-        prevLine = ""
-        mapLines = mapData.split("\n")
-        for line in mapLines:
-            if inFile:
-                if line.startswith("                "):
-                    entryMatch = regex_functionEntry.search(line)
-
-                    # Find function
-                    if entryMatch is not None:
-                        funcName = entryMatch["name"]
-                        funcVram = int(entryMatch["vram"], 16)
-
-                        # Filter out jump table's labels
-                        labelMatch = regex_label.search(funcName)
-                        if labelMatch is None:
-                            tempFilesListList[-1][-1].appendSymbol(Symbol(funcName, funcVram))
-                        # print(hex(funcVram), funcName)
-
-                else:
-                    inFile = False
-
-            if not inFile:
-                fillMatch = regex_fill.search(line)
-                entryMatch = regex_fileDataEntry.search(line)
-                segmentEntryMatch = regex_segmentEntry.search(line)
-
-                if fillMatch is not None:
-                    # Make a dummy file to handle *fill*
-                    filepath = Path()
-                    size = int(fillMatch["size"], 16)
-                    vram = 0
-                    sectionType = ""
-
-                    if len(tempFilesListList[-1]) != 0:
-                        prevFile = tempFilesListList[-1][-1]
-                        filepath = prevFile.filepath.with_name(prevFile.filepath.name + "__fill__")
-                        vram = prevFile.vram + prevFile.size
-                        sectionType = prevFile.sectionType
-
-                    tempFile = File(filepath, vram, size, sectionType)
-                    assert len(tempFilesListList) > 0, line
-                    tempFilesListList[-1].append(tempFile)
-                elif entryMatch is not None:
-                    # Find file
-                    filepath = Path(entryMatch["name"])
-                    size = int(entryMatch["size"], 16)
-                    vram = int(entryMatch["vram"], 16)
-                    sectionType = entryMatch["section"]
-
-                    if size > 0:
-                        inFile = True
-                        tempFile = File(filepath, vram, size, sectionType)
-                        assert len(tempFilesListList) > 0, line
-                        tempFilesListList[-1].append(tempFile)
-
-                elif segmentEntryMatch is not None:
-                    name = segmentEntryMatch["name"]
-                    vram = int(segmentEntryMatch["vram"], 0)
-                    size = int(segmentEntryMatch["size"], 0)
-                    vrom = int(segmentEntryMatch["vrom"], 0)
-
-                    if name == "":
-                        # If the segment name is too long then this line gets break in two lines
-                        name = prevLine
-
-                    tempSegment = Segment(name, vram, size, vrom)
-                    tempSegmentsList.append(tempSegment)
-                    tempFilesListList.append([])
-
-            prevLine = line
-
-        for i in range(len(tempSegmentsList)):
-            segment = tempSegmentsList[i]
-            filesList = tempFilesListList[i]
-
-            if i == 0:
-                if segment.size == 0 and len(filesList) == 0:
-                    # skip the dummy segment if it has no size, files or symbols
-                    continue
-
-            vromOffset = segment.vrom
-            for file in filesList:
-                acummulatedSize = 0
-                symbolsCount = len(file)
-
-                if file.vrom is not None:
-                    vromOffset = file.vrom
-
-                isNoloadSection = file.isNoloadSection
-                if not isNoloadSection:
-                    file.vrom = vromOffset
-
-                if symbolsCount > 0:
-                    symVrom = vromOffset
-
-                    # Calculate size of each symbol
-                    for index in range(symbolsCount-1):
-                        func = file[index]
-                        nextFunc = file[index+1]
-
-                        if index == 0:
-                            if func.vram > file.vram:
-                                # If the vram of the first symbol doesn't match the vram of the file
-                                # it means the first(s) symbols were not emitted in the mapfile (static,
-                                # jumptables, etc)
-                                # We try to adjust the vrom to account for it.
-                                symVrom += func.vram - file.vram
-
-                        size = (nextFunc.vram - func.vram)
-                        acummulatedSize += size
-
-                        file[index] = Symbol(func.name, func.vram, size)
-
-                        if not isNoloadSection:
-                            # Only set vrom of non bss variables
-                            file[index].vrom = symVrom
-                            symVrom += size
-
-                    # Calculate size of last symbol of the file
-                    func = file[symbolsCount-1]
-                    size = file.size - acummulatedSize
-                    file[symbolsCount-1] = Symbol(func.name, func.vram, size)
-                    if not isNoloadSection:
-                        file[symbolsCount-1].vrom = symVrom
-                        symVrom += size
-
-                if not isNoloadSection:
-                    # Only increment vrom offset for non bss sections
-                    vromOffset += file.size
-
-                segment.appendFile(file)
-            self._segmentsList.append(segment)
-        return
 
     def filterBySectionType(self, sectionType: str) -> MapFile:
         newMapFile = MapFile()
@@ -667,8 +525,6 @@ class MapFile:
             if info is not None:
                 return info
         return None
-    # def findSymbolByName(self, symName: str):
-    #     return self._internalMap.findSymbolByName(symName)
 
     def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo|None:
         for segment in self._segmentsList:
