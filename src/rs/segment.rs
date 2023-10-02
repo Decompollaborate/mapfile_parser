@@ -36,10 +36,10 @@ impl Segment {
     #[new]
     pub fn new(name: String, vram: u64, size: u64, vrom: u64) -> Self {
         Segment {
-            name: name.into(),
-            vram: vram,
-            size: size,
-            vrom: vrom,
+            name: name,
+            vram,
+            size,
+            vrom,
             files_list: Vec::new(),
         }
     }
@@ -169,7 +169,7 @@ impl Segment {
                 continue;
             }
 
-            write!(ret, "{}\n", file.to_csv(print_vram)).unwrap();
+            writeln!(ret, "{}", file.to_csv(print_vram)).unwrap();
         }
 
         ret
@@ -185,7 +185,7 @@ impl Segment {
             }
 
             for sym in &file.symbols {
-                write!(ret, "{},{}\n", file.filepath.display(), sym.to_csv()).unwrap();
+                writeln!(ret, "{},{}", file.filepath.display(), sym.to_csv()).unwrap();
             }
         }
 

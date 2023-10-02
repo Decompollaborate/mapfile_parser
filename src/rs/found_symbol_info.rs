@@ -64,8 +64,8 @@ impl FoundSymbolInfo {
 impl FoundSymbolInfo {
     pub fn new_default(file: file::File, symbol: symbol::Symbol) -> Self {
         FoundSymbolInfo {
-            file: file,
-            symbol: symbol,
+            file,
+            symbol,
             offset: 0,
         }
     }

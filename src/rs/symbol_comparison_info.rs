@@ -39,12 +39,12 @@ impl SymbolComparisonInfo {
         diff: Option<i64>,
     ) -> Self {
         SymbolComparisonInfo {
-            symbol: symbol,
-            build_address: build_address,
-            build_file: build_file,
-            expected_address: expected_address,
-            expected_file: expected_file,
-            diff: diff,
+            symbol,
+            build_address,
+            build_file,
+            expected_address,
+            expected_file,
+            diff,
         }
     }
 }

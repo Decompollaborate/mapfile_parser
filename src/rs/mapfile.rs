@@ -61,7 +61,7 @@ impl MapFile {
         let mut in_file = false;
 
         let mut prev_line = "";
-        for line in map_data.split("\n") {
+        for line in map_data.split('\n') {
             if in_file {
                 if !line.starts_with("        ") {
                     in_file = false;
@@ -99,7 +99,7 @@ impl MapFile {
                             filepath,
                             vram,
                             size,
-                            section_type.into(),
+                            section_type,
                         ));
                     }
                 } else if let Some(segment_entry_match) = regex_segment_entry.captures(line) {
@@ -108,7 +108,7 @@ impl MapFile {
                     let size = utils::parse_hex(&segment_entry_match["size"]);
                     let vrom = utils::parse_hex(&segment_entry_match["vrom"]);
 
-                    if name == "" {
+                    if name.is_empty() {
                         // If the segment name is too long then this line gets break in two lines
                         name = prev_line;
                     }
@@ -197,14 +197,12 @@ impl MapFile {
                         let next_sym_vram = file.symbols[index + 1].vram;
                         let sym = &mut file.symbols[index];
 
-                        if index == 0 {
-                            if sym.vram > file.vram {
-                                // If the vram of the first symbol doesn't match the vram of the file
-                                // it means the first(s) symbols were not emitted in the mapfile (static,
-                                // jumptables, etc)
-                                // We try to adjust the vrom to account for it.
-                                sym_vrom += sym.vram - file.vram;
-                            }
+                        if index == 0 && sym.vram > file.vram {
+                            // If the vram of the first symbol doesn't match the vram of the file
+                            // it means the first(s) symbols were not emitted in the mapfile (static,
+                            // jumptables, etc)
+                            // We try to adjust the vrom to account for it.
+                            sym_vrom += sym.vram - file.vram;
                         }
 
                         let sym_size = next_sym_vram - sym.vram;
@@ -318,16 +316,14 @@ impl MapFile {
                     {
                         let expected_sym = &expected_sym_info.symbol;
 
-                        if built_sym.vram != expected_sym.vram {
-                            if built_sym.vram < min_vram {
-                                min_vram = built_sym.vram;
+                        if built_sym.vram != expected_sym.vram && built_sym.vram < min_vram {
+                            min_vram = built_sym.vram;
 
-                                let mut prev_sym = None;
-                                if i > 0 {
-                                    prev_sym = Some(built_file.symbols[i - 1].clone());
-                                }
-                                found = Some((built_sym, built_file, prev_sym));
+                            let mut prev_sym = None;
+                            if i > 0 {
+                                prev_sym = Some(built_file.symbols[i - 1].clone());
                             }
+                            found = Some((built_sym, built_file, prev_sym));
                         }
                     }
                 }
@@ -514,7 +510,7 @@ impl MapFile {
     pub fn to_csv_symbols(&self) -> String {
         let mut ret = String::new();
 
-        write!(ret, "File,{}\n", symbol::Symbol::to_csv_header()).unwrap();
+        writeln!(ret, "File,{}", symbol::Symbol::to_csv_header()).unwrap();
 
         for segment in &self.segments_list {
             ret += &segment.to_csv_symbols();
@@ -581,7 +577,7 @@ impl MapFile {
         // but it doesn't matter much, because if this string is not found then the
         // parsing should still work, but just a bit slower because of the extra crap
         if let Some(aux_var) = map_data.find("\nLinker script and memory map") {
-            if let Some(start_index) = map_data[aux_var + 1..].find("\n") {
+            if let Some(start_index) = map_data[aux_var + 1..].find('\n') {
                 map_data = map_data[aux_var + 1 + start_index + 1..].to_string();
             }
         }

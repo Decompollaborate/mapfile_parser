@@ -46,11 +46,11 @@ impl File {
         vrom: Option<u64>,
     ) -> Self {
         File {
-            filepath: filepath,
-            vram: vram,
-            size: size,
+            filepath,
+            vram,
+            size,
             section_type: section_type.into(),
-            vrom: vrom,
+            vrom,
             symbols: Vec::new(),
         }
     }
@@ -58,7 +58,7 @@ impl File {
     #[getter]
     #[pyo3(name = "isNoloadSection")]
     pub fn is_noload_section(&self) -> bool {
-        return self.section_type == ".bss";
+        self.section_type == ".bss"
     }
 
     // ! @deprecated
@@ -288,9 +288,9 @@ impl File {
         section_type: &str,
     ) -> Self {
         File {
-            filepath: filepath,
-            vram: vram,
-            size: size,
+            filepath,
+            vram,
+            size,
             section_type: section_type.into(),
             vrom: None,
             symbols: Vec::new(),
@@ -312,7 +312,7 @@ impl File {
         self.filepath.as_os_str().is_empty()
             && self.vram == 0
             && self.size == 0
-            && self.section_type == ""
+            && self.section_type.is_empty()
             && self.vrom.is_none()
             && self.symbols.is_empty()
     }

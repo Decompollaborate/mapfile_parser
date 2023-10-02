@@ -30,10 +30,10 @@ impl Symbol {
     #[new]
     pub fn new(name: String, vram: u64, size: Option<u64>, vrom: Option<u64>) -> Self {
         Symbol {
-            name: name,
-            vram: vram,
-            size: size,
-            vrom: vrom,
+            name,
+            vram,
+            size,
+            vrom,
         }
     }
 
@@ -102,8 +102,8 @@ impl Symbol {
 impl Symbol {
     pub fn new_default(name: String, vram: u64) -> Self {
         Symbol {
-            name: name,
-            vram: vram,
+            name,
+            vram,
             size: None,
             vrom: None,
         }
