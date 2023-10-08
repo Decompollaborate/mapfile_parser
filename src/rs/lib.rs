@@ -36,21 +36,11 @@ fn mapfile_parser(
     Ok(())
 }
 
-pub fn add(left: usize, right: usize) -> usize {
-    left + right
-}
-
 #[cfg(test)]
 mod tests {
     use crate::mapfile::MapFile;
 
-    use super::*;
-
-    #[test]
-    fn it_works() {
-        let result = add(2, 2);
-        assert_eq!(result, 4);
-    }
+    // TODO: tests
 
     #[test]
     fn w0_000_map() {
