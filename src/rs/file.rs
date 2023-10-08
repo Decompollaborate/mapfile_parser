@@ -165,12 +165,12 @@ impl File {
         // Calculate stats
         let sym_count = self.symbols.len() as u64;
         let mut max_size = 0;
-        let average_size;
-        if sym_count > 0 {
-            average_size = self.size as f64 / sym_count as f64;
+        let average_size = if sym_count > 0 {
+            self.size as f64 / sym_count as f64
         } else {
-            average_size = self.size as f64 / 1.0;
-        }
+            self.size as f64 / 1.0
+        };
+
         for sym in &self.symbols {
             if let Some(sym_size) = sym.size {
                 if sym_size > max_size {

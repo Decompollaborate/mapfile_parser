@@ -61,3 +61,9 @@ impl ProgressStats {
         );
     }
 }
+
+impl Default for ProgressStats {
+    fn default() -> Self {
+        Self::new()
+    }
+}

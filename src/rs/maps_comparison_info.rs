@@ -30,3 +30,9 @@ impl MapsComparisonInfo {
         }
     }
 }
+
+impl Default for MapsComparisonInfo {
+    fn default() -> Self {
+        Self::new()
+    }
+}

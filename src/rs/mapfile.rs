@@ -145,8 +145,7 @@ impl MapFile {
             prev_line = line;
         }
 
-        for i in 0..temp_segment_list.len() {
-            let segment = &mut temp_segment_list[i];
+        for (i, segment) in temp_segment_list.iter_mut().enumerate() {
 
             if i == 0 {
                 if segment.is_placeholder() {
@@ -407,10 +406,7 @@ impl MapFile {
 
                     let sym_size = func.size.unwrap_or(0) as u32;
 
-                    if whole_file_is_undecomped {
-                        total_stats.undecomped_size += sym_size;
-                        folder_progress.undecomped_size += sym_size;
-                    } else if func_asm_path.exists() {
+                    if whole_file_is_undecomped || func_asm_path.exists() {
                         total_stats.undecomped_size += sym_size;
                         folder_progress.undecomped_size += sym_size;
                     } else {
@@ -583,6 +579,12 @@ impl MapFile {
         }
 
         map_data
+    }
+}
+
+impl Default for MapFile {
+    fn default() -> Self {
+        Self::new()
     }
 }
 

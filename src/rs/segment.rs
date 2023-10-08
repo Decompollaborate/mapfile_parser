@@ -36,7 +36,7 @@ impl Segment {
     #[new]
     pub fn new(name: String, vram: u64, size: u64, vrom: u64) -> Self {
         Segment {
-            name: name,
+            name,
             vram,
             size,
             vrom,
