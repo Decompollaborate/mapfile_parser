@@ -8,7 +8,7 @@ use std::collections::HashMap;
 use std::fmt::Write;
 
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
-use std::collections::hash_map::DefaultHasher;
+use std::collections::hash_map::{DefaultHasher, Entry};
 use std::hash::{Hash, Hasher};
 use std::path::PathBuf;
 
@@ -127,10 +127,13 @@ impl Segment {
                 .take(file.filepath.components().count() - 1)
                 .collect();
 
-            if !aux_dict.contains_key(&path) {
-                aux_dict.insert(path, vec![file]);
-            } else {
-                aux_dict.get_mut(&path).unwrap().push(file);
+            match aux_dict.entry(path) {
+                Entry::Vacant(e) => {
+                    e.insert(vec![file]);
+                }
+                Entry::Occupied(e) => {
+                    e.into_mut().push(file);
+                }
             }
         }
 
