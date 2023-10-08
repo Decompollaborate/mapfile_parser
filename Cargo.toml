@@ -8,6 +8,8 @@ edition = "2021"
 authors = ["Anghelo Carvajal <angheloalf95@gmail.com>"]
 description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
+homepage = "https://github.com/Decompollaborate/mapfile_parser"
+repository = "https://github.com/Decompollaborate/mapfile_parser"
 license = "MIT"
 keywords = ["mapfile", "parser", "decomp", "decompilation"]
 
