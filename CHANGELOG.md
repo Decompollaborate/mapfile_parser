@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Allows using this library in native Rust projects
   - It does not replace the Python implementation due to restrictions on how
     Rust bindings work.
+- Now this library has a Rust crate.
+  - Check it at <https://crates.io/crates/mapfile_parser>
 
 ### Changed
 
@@ -223,14 +225,15 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
-[2.1.4]: https://github.com/Decompollaborate/mapfile_parser/compare/1.3.2...2.1.4
-[1.3.2]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.3...1.3.2
+[2.1.5]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.4...2.1.5
+[2.1.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.3...2.1.4
+[1.3.2]: https://github.com/Decompollaborate/mapfile_parser/compare/1.3.1...1.3.2
 [2.1.3]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.2...2.1.3
 [2.1.2]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.1...2.1.2
 [2.1.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.0...2.1.1
 [2.1.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.0.1...2.1.0
-[2.0.1]: https://github.com/Decompollaborate/mapfile_parser/compare/1.3.1...2.0.1
-[1.3.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.0.0...1.3.1
+[2.0.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.0.0...2.0.1
+[1.3.1]: https://github.com/Decompollaborate/mapfile_parser/compare/1.3.0...1.3.1
 [2.0.0]: https://github.com/Decompollaborate/mapfile_parser/compare/1.3.0...2.0.0
 [1.3.0]: https://github.com/Decompollaborate/mapfile_parser/compare/1.2.1...1.3.0
 [1.2.1]: https://github.com/Decompollaborate/mapfile_parser/compare/1.2.0...1.2.1

@@ -5,6 +5,11 @@
 name = "mapfile_parser"
 version = "2.2.0"
 edition = "2021"
+authors = ["Anghelo Carvajal <angheloalf95@gmail.com>"]
+description = "Map file parser library focusing decompilation projects"
+readme = "README.md"
+license = "MIT"
+keywords = ["mapfile", "parser", "decomp", "decompilation"]
 
 # See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
