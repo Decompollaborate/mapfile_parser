@@ -11,7 +11,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Add new Rust re-implementation
+- Add new Rust re-implementation (#15)
   - Allows using this library in native Rust projects
   - It does not replace the Python implementation due to restrictions on how
     Rust bindings work.
