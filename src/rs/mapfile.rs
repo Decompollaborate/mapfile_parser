@@ -146,7 +146,6 @@ impl MapFile {
         }
 
         for (i, segment) in temp_segment_list.iter_mut().enumerate() {
-
             if i == 0 {
                 if segment.is_placeholder() {
                     // skip the dummy segment if it has no size, files or symbols
