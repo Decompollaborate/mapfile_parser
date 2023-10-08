@@ -1,0 +1,23 @@
+# SPDX-FileCopyrightText: © 2023 Decompollaborate
+# SPDX-License-Identifier: MIT
+
+[package]
+name = "mapfile_parser"
+version = "2.2.0"
+edition = "2021"
+authors = ["Anghelo Carvajal <angheloalf95@gmail.com>"]
+description = "Map file parser library focusing decompilation projects"
+readme = "README.md"
+license = "MIT"
+keywords = ["mapfile", "parser", "decomp", "decompilation"]
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[lib]
+name = "mapfile_parser"
+path = "src/rs/lib.rs"
+crate-type = ["cdylib", "staticlib", "rlib"]
+
+[dependencies]
+regex = "1.9.5"
+pyo3 = "0.19.0"

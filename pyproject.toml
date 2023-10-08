@@ -3,22 +3,31 @@
 
 [project]
 name = "mapfile_parser"
-version = "2.1.5"
+version = "2.2.0.dev0"
 description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
 requires-python = ">=3.7"
-dynamic = ["dependencies"]
+dependencies = [
+    "requests"
+]
+classifiers = [
+    "Programming Language :: Rust",
+    "Programming Language :: Python :: Implementation :: CPython",
+    "Programming Language :: Python :: Implementation :: PyPy",
+]
 
 [project.urls]
 "Homepage" = "https://github.com/Decompollaborate/mapfile_parser"
 "Bug Tracker" = "https://github.com/Decompollaborate/mapfile_parser/issues"
 
 [build-system]
-requires = ["hatchling", "hatch-requirements-txt"]
-build-backend = "hatchling.build"
-
-[tool.hatch.metadata.hooks.requirements_txt]
-files = ["requirements.txt"]
+requires = ["maturin>=1.2,<2.0"]
+build-backend = "maturin"
 
 [tool.cibuildwheel]
 skip = ["cp36-*"]
+
+[tool.maturin]
+features = ["pyo3/extension-module"]
+# https://github.com/PyO3/maturin/blob/0dee40510083c03607834c821eea76964140a126/Readme.md#mixed-rustpython-projects
+python-source = "src"

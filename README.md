@@ -4,26 +4,33 @@
 [![GitHub License](https://img.shields.io/github/license/Decompollaborate/mapfile_parser)](https://github.com/Decompollaborate/mapfile_parser/releases/latest)
 [![GitHub release (latest SemVer)](https://img.shields.io/github/v/release/Decompollaborate/mapfile_parser)](https://github.com/Decompollaborate/mapfile_parser/releases/latest)
 [![PyPI](https://img.shields.io/pypi/v/mapfile-parser)](https://pypi.org/project/mapfile-parser/)
+![crate.io](https://img.shields.io/crates/dv/mapfile-parser)
 [![GitHub contributors](https://img.shields.io/github/contributors/Decompollaborate/mapfile_parser?logo=purple)](https://github.com/Decompollaborate/mapfile_parser/graphs/contributors)
 
 Map file parser library focusing decompilation projects.
 
+This library is available for Python3 and Rust
+
 ## Installing
+
+### Python version
+
+See this package at <https://pypi.org/project/mapfile_parser/>.
 
 The recommended way to install is using from the PyPi release, via `pip`:
 
 ```bash
-pip install mapfile_parser
+python3 -m pip install -U mapfile_parser
 ```
 
 If you use a `requirements.txt` file in your repository, then you can add
 this library with the following line:
 
 ```txt
-mapfile_parser>=2.1.5,<3.0.0
+mapfile_parser>=2.2.0,<3.0.0
 ```
 
-### Development version
+#### Development version
 
 The unstable development version is located at the [develop](https://github.com/Decompollaborate/mapfile_parser/tree/develop)
 branch. PRs should be made into that branch instead of the main one.
@@ -39,12 +46,21 @@ In case you want to mess with the latest development version without wanting to
 clone the repository, then you could use the following command:
 
 ```bash
-pip uninstall mapfile_parser
-pip install git+https://github.com/Decompollaborate/mapfile_parser.git@develop
+python3 -m pip uninstall mapfile_parser
+python3 -m pip install git+https://github.com/Decompollaborate/mapfile_parser.git@develop
 ```
 
 NOTE: Installing the development version is not recommended unless you know what
 you are doing. Proceed at your own risk.
+
+### Rust version
+
+See this crate at <https://crates.io/crates/mapfile_parser>.
+
+```toml
+[build]
+mapfile_parser = "2.2.0"
+```
 
 ## Versioning and changelog
 
