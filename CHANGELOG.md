@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Allows using this library in native Rust projects
   - It does not replace the Python implementation due to restrictions on how
     Rust bindings work.
+  - Python bindings for the Rust implementation exists, but they are not used
+    or exposed to the user
 - Now this library has a Rust crate.
   - Check it at <https://crates.io/crates/mapfile_parser>
 
