@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix Rust crate size being too big
+  - crates.io was rejecting the package because of the size
+  - Cargo was packaging all the map files and test cases, making the package be
+    15 MiB. Now it is around 16.3 KiB
+
 ## [2.2.0] - 2023-10-08
 
 ### Added
