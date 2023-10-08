@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.2.1] - 2023-10-08
+
 ### Fixed
 
 - Fix Rust crate size being too big
@@ -236,6 +238,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.2.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.2.0...2.2.1
 [2.2.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.5...2.2.0
 [2.1.5]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.4...2.1.5
 [2.1.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.3...2.1.4
