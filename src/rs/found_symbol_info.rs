@@ -2,8 +2,9 @@
 /* SPDX-License-Identifier: MIT */
 
 use crate::{file, symbol};
-use pyo3::prelude::*;
 use std::fmt::Write;
+
+use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]
 #[pyclass(module = "mapfile_parser")]

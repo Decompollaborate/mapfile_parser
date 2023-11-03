@@ -1,12 +1,13 @@
 /* SPDX-FileCopyrightText: © 2023 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use pyo3::prelude::*;
 use std::collections::HashMap;
 use std::fmt::Write;
 use std::{fs::File, io::Read, path::PathBuf};
 
 use regex::*;
+
+use pyo3::prelude::*;
 
 use crate::{
     file, found_symbol_info, maps_comparison_info, progress_stats, segment, symbol,
@@ -20,7 +21,7 @@ pub struct MapFile {
     pub segments_list: Vec<segment::Segment>,
 
     #[pyo3(get, set)]
-    pub debugging: bool,
+    debugging: bool,
 }
 
 #[pymethods]
@@ -524,21 +525,25 @@ impl MapFile {
         print!("{}", self.to_csv_symbols());
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "copySegmentList")]
     fn copy_segment_list(&self) -> Vec<segment::Segment> {
         self.segments_list.clone()
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "setSegmentList")]
     fn set_segment_list(&mut self, new_list: Vec<segment::Segment>) {
         self.segments_list = new_list;
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "appendSegment")]
     fn append_segment(&mut self, segment: segment::Segment) {
         self.segments_list.push(segment);
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<SegmentVecIter>> {
         let iter = SegmentVecIter {
             inner: slf.segments_list.clone().into_iter(),
@@ -546,14 +551,17 @@ impl MapFile {
         Py::new(slf.py(), iter)
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __getitem__(&self, index: usize) -> segment::Segment {
         self.segments_list[index].clone()
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __setitem__(&mut self, index: usize, element: segment::Segment) {
         self.segments_list[index] = element;
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __len__(&self) -> usize {
         self.segments_list.len()
     }
@@ -587,11 +595,13 @@ impl Default for MapFile {
     }
 }
 
+#[cfg(feature = "python_bindings")]
 #[pyclass]
 struct SegmentVecIter {
     inner: std::vec::IntoIter<segment::Segment>,
 }
 
+#[cfg(feature = "python_bindings")]
 #[pymethods]
 impl SegmentVecIter {
     fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {

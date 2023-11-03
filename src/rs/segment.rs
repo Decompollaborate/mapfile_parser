@@ -2,15 +2,19 @@
 /* SPDX-License-Identifier: MIT */
 
 use crate::{file, found_symbol_info};
-use pyo3::class::basic::CompareOp;
-use pyo3::prelude::*;
 use std::collections::HashMap;
 use std::fmt::Write;
+use std::path::PathBuf;
 
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
-use std::collections::hash_map::{DefaultHasher, Entry};
+use std::collections::hash_map::Entry;
 use std::hash::{Hash, Hasher};
-use std::path::PathBuf;
+
+#[cfg(feature = "python_bindings")]
+use std::collections::hash_map::DefaultHasher;
+#[cfg(feature = "python_bindings")]
+use pyo3::class::basic::CompareOp;
+use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]
 #[pyclass(module = "mapfile_parser")]
@@ -205,21 +209,25 @@ impl Segment {
         print!("{}", self.to_csv_symbols());
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "copyFileList")]
     fn copy_file_list(&self) -> Vec<file::File> {
         self.files_list.clone()
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "setFileList")]
     fn set_file_list(&mut self, new_list: Vec<file::File>) {
         self.files_list = new_list;
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "appendFile")]
     fn append_file(&mut self, file: file::File) {
         self.files_list.push(file);
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<FileVecIter>> {
         let iter = FileVecIter {
             inner: slf.files_list.clone().into_iter(),
@@ -227,19 +235,23 @@ impl Segment {
         Py::new(slf.py(), iter)
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __getitem__(&self, index: usize) -> file::File {
         self.files_list[index].clone()
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __setitem__(&mut self, index: usize, element: file::File) {
         self.files_list[index] = element;
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __len__(&self) -> usize {
         self.files_list.len()
     }
 
     // TODO: implement __eq__ instead when PyO3 0.20 releases
+    #[cfg(feature = "python_bindings")]
     fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
         match op {
             pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
@@ -248,6 +260,7 @@ impl Segment {
         }
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __hash__(&self) -> isize {
         let mut hasher = DefaultHasher::new();
         self.hash(&mut hasher);
@@ -294,11 +307,13 @@ impl Hash for Segment {
     }
 }
 
+#[cfg(feature = "python_bindings")]
 #[pyclass]
 struct FileVecIter {
     inner: std::vec::IntoIter<file::File>,
 }
 
+#[cfg(feature = "python_bindings")]
 #[pymethods]
 impl FileVecIter {
     fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {

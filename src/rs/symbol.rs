@@ -1,16 +1,17 @@
 /* SPDX-FileCopyrightText: © 2023 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::collections::hash_map::DefaultHasher;
-
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
 use std::hash::{Hash, Hasher};
 
+#[cfg(feature = "python_bindings")]
+use std::collections::hash_map::DefaultHasher;
+#[cfg(feature = "python_bindings")]
 use pyo3::class::basic::CompareOp;
 use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]
-#[pyo3::prelude::pyclass(module = "mapfile_parser")]
+#[pyclass(module = "mapfile_parser")]
 pub struct Symbol {
     #[pyo3(get)]
     pub name: String,
@@ -25,7 +26,7 @@ pub struct Symbol {
     pub vrom: Option<u64>,
 }
 
-#[pyo3::prelude::pymethods]
+#[pymethods]
 impl Symbol {
     #[new]
     pub fn new(name: String, vram: u64, size: Option<u64>, vrom: Option<u64>) -> Self {
@@ -82,6 +83,7 @@ impl Symbol {
     }
 
     // TODO: implement __eq__ instead when PyO3 0.20 releases
+    #[cfg(feature = "python_bindings")]
     fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
         match op {
             pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
@@ -90,6 +92,7 @@ impl Symbol {
         }
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __hash__(&self) -> isize {
         let mut hasher = DefaultHasher::new();
         self.hash(&mut hasher);
