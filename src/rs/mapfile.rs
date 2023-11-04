@@ -3,7 +3,7 @@
 
 use std::collections::HashMap;
 use std::fmt::Write;
-use std::{fs::File, io::Read, path::PathBuf};
+use std::path::PathBuf;
 
 use regex::*;
 
@@ -34,8 +34,43 @@ impl MapFile {
         }
     }
 
+    /**
+    Opens the mapfile pointed by the `mapPath` argument and parses it.
+
+    The format of the map will be guessed based on its contents.
+
+    Currently supported map formats:
+    - GNU ld
+     */
     #[pyo3(name = "readMapFile")]
     pub fn read_map_file(&mut self, map_path: PathBuf) {
+        let map_contents = utils::read_file_contents(&map_path);
+
+        self.parse_map_contents(map_contents);
+    }
+
+    /**
+    Parses the contents of the map.
+
+    The `mapContents` argument must contain the contents of a mapfile.
+
+    The format of the map will be guessed based on its contents.
+
+    Currently supported mapfile formats:
+    - GNU ld
+    */
+    #[pyo3(name = "parseMapContents")]
+    pub fn parse_map_contents(&mut self, map_contents: String) {
+        self.parse_map_contents_gnu(map_contents);
+    }
+
+    /**
+    Parses the contents of a GNU ld map.
+
+    The `mapContents` argument must contain the contents of a GNU ld mapfile.
+     */
+    #[pyo3(name = "parseMapContentsGnu")]
+    pub fn parse_map_contents_gnu(&mut self, map_contents: String) {
         // TODO: maybe move somewhere else?
         let regex_file_data_entry = Regex::new(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
         let regex_function_entry =
@@ -47,7 +82,7 @@ impl MapFile {
                 .unwrap();
         let regex_segment_entry = Regex::new(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$").unwrap();
 
-        let map_data = MapFile::read_map_data(&map_path);
+        let map_data = MapFile::preprocess_map_data_gnu(map_contents);
 
         let mut temp_segment_list: Vec<segment::Segment> = Vec::new();
         temp_segment_list.push(segment::Segment::new("$nosegment".into(), 0, 0, 0));
@@ -568,13 +603,8 @@ impl MapFile {
 }
 
 impl MapFile {
-    fn read_map_data(map_path: &PathBuf) -> String {
-        let mut f = File::open(map_path).expect("Could not open input file");
-        let mut map_data = String::new();
-        let _contents_length = f
-            .read_to_string(&mut map_data)
-            .expect("Not able to read the whole contents of the file");
-
+    // TODO: figure out if this is doing unnecessary copies or something
+    fn preprocess_map_data_gnu(mut map_data: String) -> String {
         // Skip the stuff we don't care about
         // Looking for this string will only work on English machines (or C locales)
         // but it doesn't matter much, because if this string is not found then the

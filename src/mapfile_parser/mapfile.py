@@ -13,6 +13,7 @@ from pathlib import Path
 from .progress_stats import ProgressStats
 from . import utils
 
+from .mapfile_rs import MapFile as MapFileRs
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -478,12 +479,7 @@ class MapFile:
         #! @deprecated
         self.debugging: bool = False
 
-    def readMapFile(self, mapPath: Path):
-        from .mapfile_rs import MapFile
-
-        nativeMapFile = MapFile()
-        nativeMapFile.readMapFile(mapPath)
-
+    def _transferContentsFromNativeMapFile(self, nativeMapFile: MapFileRs):
         for segment in nativeMapFile:
             newSegment = Segment(segment.name, segment.vram, segment.size, segment.vrom)
             for file in segment:
@@ -494,6 +490,50 @@ class MapFile:
                     newFile._symbols.append(newSymbol)
                 newSegment._filesList.append(newFile)
             self._segmentsList.append(newSegment)
+
+    def readMapFile(self, mapPath: Path):
+        """
+        Opens the mapfile pointed by the `mapPath` argument and parses it.
+
+        The format of the map will be guessed based on its contents.
+
+        Currently supported map formats:
+        - GNU ld
+        """
+
+        nativeMapFile = MapFileRs()
+        nativeMapFile.readMapFile(mapPath)
+
+        self._transferContentsFromNativeMapFile(nativeMapFile)
+
+    def parseMapContents(self, mapContents: str):
+        """
+        Parses the contents of the map.
+
+        The `mapContents` argument must contain the contents of a mapfile.
+
+        The format of the map will be guessed based on its contents.
+
+        Currently supported mapfile formats:
+        - GNU ld
+        """
+
+        nativeMapFile = MapFileRs()
+        nativeMapFile.parseMapContents(mapContents)
+
+        self._transferContentsFromNativeMapFile(nativeMapFile)
+
+    def parseMapContentsGnu(self, mapContents: str):
+        """
+        Parses the contents of a GNU ld map.
+
+        The `mapContents` argument must contain the contents of a GNU ld mapfile.
+        """
+
+        nativeMapFile = MapFileRs()
+        nativeMapFile.parseMapContentsGnu(mapContents)
+
+        self._transferContentsFromNativeMapFile(nativeMapFile)
 
 
     def filterBySectionType(self, sectionType: str) -> MapFile:

@@ -7,6 +7,24 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- New functions:
+  - `MapFile.parseMapContents`/`MapFile::parse_map_contents`
+    - Parses the map contents passed as the argument, without requiring the map
+      being on an actual file.
+    - The map format will be guessed on the contents. Currently only the GNU ld
+      map format is recognized.
+  - `MapFile.parseMapContentsGnu`/`MapFile::parse_map_contents_gnu`
+    - Parses the map contents passed as the argument, without requiring the map
+      being on an actual file.
+    - This function only parses the GNU ld map format.
+
+### Changed
+
+- `MapFile.readMapFile`/`MapFile::read_map_file` can now guess the map format
+  between any of the known formats.
+
 ## [2.2.1] - 2023-10-08
 
 ### Fixed
