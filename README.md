@@ -57,9 +57,28 @@ you are doing. Proceed at your own risk.
 
 See this crate at <https://crates.io/crates/mapfile_parser>.
 
+To add this library to your project using Cargo:
+
+```bash
+cargo add mapfile_parser
+```
+
+Or add the following line manually to your `Cargo.toml` file:
+
 ```toml
-[build]
-mapfile_parser = "2.2.0"
+mapfile_parser = "2.2.1"
+```
+
+#### System-wide dependencies
+
+Due to how intrusive `pyo3` is (and even impossible to disable via Cargo
+features), Python development files are required to build and use the Rust
+version of this library
+
+To install those dependencies on a Debian/Ubuntu Linux distro:
+
+```bash
+sudo apt install libpython3-dev
 ```
 
 ## Versioning and changelog
