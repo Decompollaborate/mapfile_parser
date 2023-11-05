@@ -25,6 +25,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `MapFile.readMapFile`/`MapFile::read_map_file` can now guess the map format
   between any of the known formats.
 
+### Fixed
+
+- Fix parser not detecting `*fill*` lines on GNU ld maps if they specified the
+  value that was used for filling/padding.
+
 ## [2.2.1] - 2023-10-08
 
 ### Fixed

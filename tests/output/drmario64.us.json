@@ -16551,47 +16551,55 @@
                     "symbols": []
                 },
                 {
+                    "filepath": "build/src/main_segment/debug_menu.o__fill__",
+                    "sectionType": ".rodata",
+                    "vram": "0x800ADB38",
+                    "size": "0x8",
+                    "vrom": "0x095958",
+                    "symbols": []
+                },
+                {
                     "filepath": "build/src/main_segment/tex_func.o",
                     "sectionType": ".rodata",
                     "vram": "0x800ADB40",
                     "size": "0xD0",
-                    "vrom": "0x095958",
+                    "vrom": "0x095960",
                     "symbols": [
                         {
                             "name": "_modes_96",
                             "vram": "0x800ADB40",
                             "size": "0x50",
-                            "vrom": "0x095958"
+                            "vrom": "0x095960"
                         },
                         {
                             "name": "DBL_800ADB90",
                             "vram": "0x800ADB90",
                             "size": "0x10",
-                            "vrom": "0x0959A8"
+                            "vrom": "0x0959B0"
                         },
                         {
                             "name": "DBL_800ADBA0",
                             "vram": "0x800ADBA0",
                             "size": "0x10",
-                            "vrom": "0x0959B8"
+                            "vrom": "0x0959C0"
                         },
                         {
                             "name": "DBL_800ADBB0",
                             "vram": "0x800ADBB0",
                             "size": "0x8",
-                            "vrom": "0x0959C8"
+                            "vrom": "0x0959D0"
                         },
                         {
                             "name": "DBL_800ADBB8",
                             "vram": "0x800ADBB8",
                             "size": "0x8",
-                            "vrom": "0x0959D0"
+                            "vrom": "0x0959D8"
                         },
                         {
                             "name": "RO_800ADBC0",
                             "vram": "0x800ADBC0",
                             "size": "0x50",
-                            "vrom": "0x0959D8"
+                            "vrom": "0x0959E0"
                         }
                     ]
                 },
@@ -16600,1327 +16608,1327 @@
                     "sectionType": ".rodata",
                     "vram": "0x800ADC10",
                     "size": "0x3D40",
-                    "vrom": "0x095A28",
+                    "vrom": "0x095A30",
                     "symbols": [
                         {
                             "name": "color_251",
                             "vram": "0x800ADC50",
                             "size": "0x10",
-                            "vrom": "0x095A68"
+                            "vrom": "0x095A70"
                         },
                         {
                             "name": "fade_normal_texture_init_dl",
                             "vram": "0x800ADC60",
                             "size": "0x18",
-                            "vrom": "0x095A78"
+                            "vrom": "0x095A80"
                         },
                         {
                             "name": "fade_alpha_texture_init_dl",
                             "vram": "0x800ADC78",
                             "size": "0x18",
-                            "vrom": "0x095A90"
+                            "vrom": "0x095A98"
                         },
                         {
                             "name": "fade_intensity_texture_init_dl",
                             "vram": "0x800ADC90",
                             "size": "0x28",
-                            "vrom": "0x095AA8"
+                            "vrom": "0x095AB0"
                         },
                         {
                             "name": "fade_fillrect_init_dl",
                             "vram": "0x800ADCB8",
                             "size": "0x28",
-                            "vrom": "0x095AD0"
+                            "vrom": "0x095AD8"
                         },
                         {
                             "name": "fade_shadow_texture_init_dl",
                             "vram": "0x800ADCE0",
                             "size": "0x20",
-                            "vrom": "0x095AF8"
+                            "vrom": "0x095B00"
                         },
                         {
                             "name": "FLT_800ADD00",
                             "vram": "0x800ADD00",
                             "size": "0x3C",
-                            "vrom": "0x095B18"
+                            "vrom": "0x095B20"
                         },
                         {
                             "name": "_timeAttack_levelTable",
                             "vram": "0x800ADD3C",
                             "size": "0x4",
-                            "vrom": "0x095B54"
+                            "vrom": "0x095B5C"
                         },
                         {
                             "name": "_mesP1",
                             "vram": "0x800ADD40",
                             "size": "0x20",
-                            "vrom": "0x095B58"
+                            "vrom": "0x095B60"
                         },
                         {
                             "name": "_mes2P",
                             "vram": "0x800ADD60",
                             "size": "0x20",
-                            "vrom": "0x095B78"
+                            "vrom": "0x095B80"
                         },
                         {
                             "name": "_mes4P",
                             "vram": "0x800ADD80",
                             "size": "0x3C",
-                            "vrom": "0x095B98"
+                            "vrom": "0x095BA0"
                         },
                         {
                             "name": "_mesOpt",
                             "vram": "0x800ADDBC",
                             "size": "0x34",
-                            "vrom": "0x095BD4"
+                            "vrom": "0x095BDC"
                         },
                         {
                             "name": "_mesSt",
                             "vram": "0x800ADDF0",
                             "size": "0x13C",
-                            "vrom": "0x095C08"
+                            "vrom": "0x095C10"
                         },
                         {
                             "name": "_mesLv",
                             "vram": "0x800ADF2C",
                             "size": "0x144",
-                            "vrom": "0x095D44"
+                            "vrom": "0x095D4C"
                         },
                         {
                             "name": "_mesVsCom",
                             "vram": "0x800AE070",
                             "size": "0x168",
-                            "vrom": "0x095E88"
+                            "vrom": "0x095E90"
                         },
                         {
                             "name": "_mesVcFlash",
                             "vram": "0x800AE1D8",
                             "size": "0x164",
-                            "vrom": "0x095FF0"
+                            "vrom": "0x095FF8"
                         },
                         {
                             "name": "_mesLvTaiQ",
                             "vram": "0x800AE33C",
                             "size": "0x18C",
-                            "vrom": "0x096154"
+                            "vrom": "0x09615C"
                         },
                         {
                             "name": "_mesLvTimeAt",
                             "vram": "0x800AE4C8",
                             "size": "0x120",
-                            "vrom": "0x0962E0"
+                            "vrom": "0x0962E8"
                         },
                         {
                             "name": "_mesNs1",
                             "vram": "0x800AE5E8",
                             "size": "0x68",
-                            "vrom": "0x096400"
+                            "vrom": "0x096408"
                         },
                         {
                             "name": "_mesNs2",
                             "vram": "0x800AE650",
                             "size": "0x1C",
-                            "vrom": "0x096468"
+                            "vrom": "0x096470"
                         },
                         {
                             "name": "_mesVsMan",
                             "vram": "0x800AE66C",
                             "size": "0x128",
-                            "vrom": "0x096484"
+                            "vrom": "0x09648C"
                         },
                         {
                             "name": "_mesVmFlash",
                             "vram": "0x800AE794",
                             "size": "0x104",
-                            "vrom": "0x0965AC"
+                            "vrom": "0x0965B4"
                         },
                         {
                             "name": "_mesVmTimeAt",
                             "vram": "0x800AE898",
                             "size": "0x120",
-                            "vrom": "0x0966B0"
+                            "vrom": "0x0966B8"
                         },
                         {
                             "name": "_mesVsNum",
                             "vram": "0x800AE9B8",
                             "size": "0x14",
-                            "vrom": "0x0967D0"
+                            "vrom": "0x0967D8"
                         },
                         {
                             "name": "_mesVs4P",
                             "vram": "0x800AE9CC",
                             "size": "0x170",
-                            "vrom": "0x0967E4"
+                            "vrom": "0x0967EC"
                         },
                         {
                             "name": "_mes4PTag",
                             "vram": "0x800AEB3C",
                             "size": "0x214",
-                            "vrom": "0x096954"
+                            "vrom": "0x09695C"
                         },
                         {
                             "name": "_mes4PFlash",
                             "vram": "0x800AED50",
                             "size": "0x154",
-                            "vrom": "0x096B68"
+                            "vrom": "0x096B70"
                         },
                         {
                             "name": "_mesRec",
                             "vram": "0x800AEEA4",
                             "size": "0x2C",
-                            "vrom": "0x096CBC"
+                            "vrom": "0x096CC4"
                         },
                         {
                             "name": "_mesTutol",
                             "vram": "0x800AEED0",
                             "size": "0x34",
-                            "vrom": "0x096CE8"
+                            "vrom": "0x096CF0"
                         },
                         {
                             "name": "_mesName",
                             "vram": "0x800AEF04",
                             "size": "0x34",
-                            "vrom": "0x096D1C"
+                            "vrom": "0x096D24"
                         },
                         {
                             "name": "_mesVsCnt",
                             "vram": "0x800AEF38",
                             "size": "0x3C",
-                            "vrom": "0x096D50"
+                            "vrom": "0x096D58"
                         },
                         {
                             "name": "_mesSnd",
                             "vram": "0x800AEF74",
                             "size": "0x6C",
-                            "vrom": "0x096D8C"
+                            "vrom": "0x096D94"
                         },
                         {
                             "name": "_mesBak",
                             "vram": "0x800AEFE0",
                             "size": "0x34",
-                            "vrom": "0x096DF8"
+                            "vrom": "0x096E00"
                         },
                         {
                             "name": "_mesMisc",
                             "vram": "0x800AF014",
                             "size": "0x34",
-                            "vrom": "0x096E2C"
+                            "vrom": "0x096E34"
                         },
                         {
                             "name": "_mesRecMs1",
                             "vram": "0x800AF048",
                             "size": "0x28",
-                            "vrom": "0x096E60"
+                            "vrom": "0x096E68"
                         },
                         {
                             "name": "_mesRecMs2",
                             "vram": "0x800AF070",
                             "size": "0x2C",
-                            "vrom": "0x096E88"
+                            "vrom": "0x096E90"
                         },
                         {
                             "name": "_mesRule1",
                             "vram": "0x800AF09C",
                             "size": "0x30",
-                            "vrom": "0x096EB4"
+                            "vrom": "0x096EBC"
                         },
                         {
                             "name": "_mesRule2",
                             "vram": "0x800AF0CC",
                             "size": "0x30",
-                            "vrom": "0x096EE4"
+                            "vrom": "0x096EEC"
                         },
                         {
                             "name": "_mesRule3",
                             "vram": "0x800AF0FC",
                             "size": "0x38",
-                            "vrom": "0x096F14"
+                            "vrom": "0x096F1C"
                         },
                         {
                             "name": "_mesRule4",
                             "vram": "0x800AF134",
                             "size": "0x38",
-                            "vrom": "0x096F4C"
+                            "vrom": "0x096F54"
                         },
                         {
                             "name": "_mesKotu",
                             "vram": "0x800AF16C",
                             "size": "0x20",
-                            "vrom": "0x096F84"
+                            "vrom": "0x096F8C"
                         },
                         {
                             "name": "_mesNameSel",
                             "vram": "0x800AF18C",
                             "size": "0x30",
-                            "vrom": "0x096FA4"
+                            "vrom": "0x096FAC"
                         },
                         {
                             "name": "_mesNameErase",
                             "vram": "0x800AF1BC",
                             "size": "0x78",
-                            "vrom": "0x096FD4"
+                            "vrom": "0x096FDC"
                         },
                         {
                             "name": "_mesNameErase2",
                             "vram": "0x800AF234",
                             "size": "0x34",
-                            "vrom": "0x09704C"
+                            "vrom": "0x097054"
                         },
                         {
                             "name": "_mesVsCnt2",
                             "vram": "0x800AF268",
                             "size": "0x34",
-                            "vrom": "0x097080"
+                            "vrom": "0x097088"
                         },
                         {
                             "name": "_mesSound",
                             "vram": "0x800AF29C",
                             "size": "0x44",
-                            "vrom": "0x0970B4"
+                            "vrom": "0x0970BC"
                         },
                         {
                             "name": "_mesStereo",
                             "vram": "0x800AF2E0",
                             "size": "0x24",
-                            "vrom": "0x0970F8"
+                            "vrom": "0x097100"
                         },
                         {
                             "name": "_mesMono",
                             "vram": "0x800AF304",
                             "size": "0x20",
-                            "vrom": "0x09711C"
+                            "vrom": "0x097124"
                         },
                         {
                             "name": "_mesDoErase",
                             "vram": "0x800AF324",
                             "size": "0x6C",
-                            "vrom": "0x09713C"
+                            "vrom": "0x097144"
                         },
                         {
                             "name": "_mesDoErase1",
                             "vram": "0x800AF390",
                             "size": "0x34",
-                            "vrom": "0x0971A8"
+                            "vrom": "0x0971B0"
                         },
                         {
                             "name": "_mesNoCont2",
                             "vram": "0x800AF3C4",
                             "size": "0x34",
-                            "vrom": "0x0971DC"
+                            "vrom": "0x0971E4"
                         },
                         {
                             "name": "_mesNoCont3",
                             "vram": "0x800AF3F8",
                             "size": "0x34",
-                            "vrom": "0x097210"
+                            "vrom": "0x097218"
                         },
                         {
                             "name": "_mesNoCont4",
                             "vram": "0x800AF42C",
                             "size": "0x34",
-                            "vrom": "0x097244"
+                            "vrom": "0x09724C"
                         },
                         {
                             "name": "_mesScore",
                             "vram": "0x800AF460",
                             "size": "0x38",
-                            "vrom": "0x097278"
+                            "vrom": "0x097280"
                         },
                         {
                             "name": "_mesScoreOnOff",
                             "vram": "0x800AF498",
                             "size": "0x2C",
-                            "vrom": "0x0972B0"
+                            "vrom": "0x0972B8"
                         },
                         {
                             "name": "STR_800AF4C4",
                             "vram": "0x800AF4C4",
                             "size": "0x28",
-                            "vrom": "0x0972DC"
+                            "vrom": "0x0972E4"
                         },
                         {
                             "name": "STR_800AF4EC",
                             "vram": "0x800AF4EC",
                             "size": "0x28",
-                            "vrom": "0x097304"
+                            "vrom": "0x09730C"
                         },
                         {
                             "name": "_gameLvItemColor",
                             "vram": "0x800AF514",
                             "size": "0x18",
-                            "vrom": "0x09732C"
+                            "vrom": "0x097334"
                         },
                         {
                             "name": "_musicItemColor",
                             "vram": "0x800AF52C",
                             "size": "0x4",
-                            "vrom": "0x097344"
+                            "vrom": "0x09734C"
                         },
                         {
                             "name": "RO_800AF530",
                             "vram": "0x800AF530",
                             "size": "0x8",
-                            "vrom": "0x097348"
+                            "vrom": "0x097350"
                         },
                         {
                             "name": "jtbl_800AF538",
                             "vram": "0x800AF538",
                             "size": "0x128",
-                            "vrom": "0x097350"
+                            "vrom": "0x097358"
                         },
                         {
                             "name": "_menuCursor_cursor_4_pattern",
                             "vram": "0x800AF660",
                             "size": "0x78",
-                            "vrom": "0x097478"
+                            "vrom": "0x097480"
                         },
                         {
                             "name": "_color_1040",
                             "vram": "0x800AF6D8",
                             "size": "0x30",
-                            "vrom": "0x0974F0"
+                            "vrom": "0x0974F8"
                         },
                         {
                             "name": "_pnts_1106",
                             "vram": "0x800AF708",
                             "size": "0x120",
-                            "vrom": "0x097520"
+                            "vrom": "0x097528"
                         },
                         {
                             "name": "jtbl_800AF828",
                             "vram": "0x800AF828",
                             "size": "0x24",
-                            "vrom": "0x097640"
+                            "vrom": "0x097648"
                         },
                         {
                             "name": "_type_1345",
                             "vram": "0x800AF84C",
                             "size": "0x40",
-                            "vrom": "0x097664"
+                            "vrom": "0x09766C"
                         },
                         {
                             "name": "cap_pos_1442",
                             "vram": "0x800AF88C",
                             "size": "0x23C",
-                            "vrom": "0x0976A4"
+                            "vrom": "0x0976AC"
                         },
                         {
                             "name": "_lvGauge_step",
                             "vram": "0x800AFAC8",
                             "size": "0xC",
-                            "vrom": "0x0978E0"
+                            "vrom": "0x0978E8"
                         },
                         {
                             "name": "_size_1542",
                             "vram": "0x800AFAD4",
                             "size": "0x18",
-                            "vrom": "0x0978EC"
+                            "vrom": "0x0978F4"
                         },
                         {
                             "name": "_type_1543",
                             "vram": "0x800AFAEC",
                             "size": "0xC",
-                            "vrom": "0x097904"
+                            "vrom": "0x09790C"
                         },
                         {
                             "name": "_yn_1691",
                             "vram": "0x800AFAF8",
                             "size": "0x20",
-                            "vrom": "0x097910"
+                            "vrom": "0x097918"
                         },
                         {
                             "name": "RO_800AFB18",
                             "vram": "0x800AFB18",
                             "size": "0x4",
-                            "vrom": "0x097930"
+                            "vrom": "0x097938"
                         },
                         {
                             "name": "RO_800AFB1C",
                             "vram": "0x800AFB1C",
                             "size": "0x1C",
-                            "vrom": "0x097934"
+                            "vrom": "0x09793C"
                         },
                         {
                             "name": "RO_800AFB38",
                             "vram": "0x800AFB38",
                             "size": "0x10",
-                            "vrom": "0x097950"
+                            "vrom": "0x097958"
                         },
                         {
                             "name": "_size_1948",
                             "vram": "0x800AFB48",
                             "size": "0x20",
-                            "vrom": "0x097960"
+                            "vrom": "0x097968"
                         },
                         {
                             "name": "_pos_1959",
                             "vram": "0x800AFB68",
                             "size": "0x28",
-                            "vrom": "0x097980"
+                            "vrom": "0x097988"
                         },
                         {
                             "name": "_seq_2327",
                             "vram": "0x800AFB90",
                             "size": "0x20",
-                            "vrom": "0x0979A8"
+                            "vrom": "0x0979B0"
                         },
                         {
                             "name": "RO_800AFBB0",
                             "vram": "0x800AFBB0",
                             "size": "0x28",
-                            "vrom": "0x0979C8"
+                            "vrom": "0x0979D0"
                         },
                         {
                             "name": "RO_800AFBD8",
                             "vram": "0x800AFBD8",
                             "size": "0x8",
-                            "vrom": "0x0979F0"
+                            "vrom": "0x0979F8"
                         },
                         {
                             "name": "RO_800AFBE0",
                             "vram": "0x800AFBE0",
                             "size": "0xC",
-                            "vrom": "0x0979F8"
+                            "vrom": "0x097A00"
                         },
                         {
                             "name": "_posDesc_2860",
                             "vram": "0x800AFBEC",
                             "size": "0x28",
-                            "vrom": "0x097A04"
+                            "vrom": "0x097A0C"
                         },
                         {
                             "name": "_posLine_2861",
                             "vram": "0x800AFC14",
                             "size": "0x8",
-                            "vrom": "0x097A2C"
+                            "vrom": "0x097A34"
                         },
                         {
                             "name": "_line_2914",
                             "vram": "0x800AFC1C",
                             "size": "0x4",
-                            "vrom": "0x097A34"
+                            "vrom": "0x097A3C"
                         },
                         {
                             "name": "RO_800AFC20",
                             "vram": "0x800AFC20",
                             "size": "0x4",
-                            "vrom": "0x097A38"
+                            "vrom": "0x097A40"
                         },
                         {
                             "name": "_panel_3220",
                             "vram": "0x800AFC24",
                             "size": "0x1C",
-                            "vrom": "0x097A3C"
+                            "vrom": "0x097A44"
                         },
                         {
                             "name": "_texEndOrGuest_3608",
                             "vram": "0x800AFC40",
                             "size": "0x8",
-                            "vrom": "0x097A58"
+                            "vrom": "0x097A60"
                         },
                         {
                             "name": "RO_800AFC48",
                             "vram": "0x800AFC48",
                             "size": "0x4",
-                            "vrom": "0x097A60"
+                            "vrom": "0x097A68"
                         },
                         {
                             "name": "_panel_3859",
                             "vram": "0x800AFC4C",
                             "size": "0x10",
-                            "vrom": "0x097A64"
+                            "vrom": "0x097A6C"
                         },
                         {
                             "name": "_pos_4015",
                             "vram": "0x800AFC5C",
                             "size": "0x8",
-                            "vrom": "0x097A74"
+                            "vrom": "0x097A7C"
                         },
                         {
                             "name": "_y_4020",
                             "vram": "0x800AFC64",
                             "size": "0x10",
-                            "vrom": "0x097A7C"
+                            "vrom": "0x097A84"
                         },
                         {
                             "name": "RO_800AFC74",
                             "vram": "0x800AFC74",
                             "size": "0x68",
-                            "vrom": "0x097A8C"
+                            "vrom": "0x097A94"
                         },
                         {
                             "name": "_panel_4108",
                             "vram": "0x800AFCDC",
                             "size": "0x10",
-                            "vrom": "0x097AF4"
+                            "vrom": "0x097AFC"
                         },
                         {
                             "name": "_lvNumScale_4308",
                             "vram": "0x800AFCEC",
                             "size": "0x10",
-                            "vrom": "0x097B04"
+                            "vrom": "0x097B0C"
                         },
                         {
                             "name": "_player_4309",
                             "vram": "0x800AFCFC",
                             "size": "0x10",
-                            "vrom": "0x097B14"
+                            "vrom": "0x097B1C"
                         },
                         {
                             "name": "_lvNum_4310",
                             "vram": "0x800AFD0C",
                             "size": "0x10",
-                            "vrom": "0x097B24"
+                            "vrom": "0x097B2C"
                         },
                         {
                             "name": "_lvGauge_4311",
                             "vram": "0x800AFD1C",
                             "size": "0x10",
-                            "vrom": "0x097B34"
+                            "vrom": "0x097B3C"
                         },
                         {
                             "name": "_speedAsk_4312",
                             "vram": "0x800AFD2C",
                             "size": "0x10",
-                            "vrom": "0x097B44"
+                            "vrom": "0x097B4C"
                         },
                         {
                             "name": "_speedItem_4313",
                             "vram": "0x800AFD3C",
                             "size": "0x10",
-                            "vrom": "0x097B54"
+                            "vrom": "0x097B5C"
                         },
                         {
                             "name": "_glvAsk_4314",
                             "vram": "0x800AFD4C",
                             "size": "0x10",
-                            "vrom": "0x097B64"
+                            "vrom": "0x097B6C"
                         },
                         {
                             "name": "_glvItem_4315",
                             "vram": "0x800AFD5C",
                             "size": "0x10",
-                            "vrom": "0x097B74"
+                            "vrom": "0x097B7C"
                         },
                         {
                             "name": "_okY_4316",
                             "vram": "0x800AFD6C",
                             "size": "0x8",
-                            "vrom": "0x097B84"
+                            "vrom": "0x097B8C"
                         },
                         {
                             "name": "_cursor_4317",
                             "vram": "0x800AFD74",
                             "size": "0x44",
-                            "vrom": "0x097B8C"
+                            "vrom": "0x097B94"
                         },
                         {
                             "name": "jtbl_800AFDB8",
                             "vram": "0x800AFDB8",
                             "size": "0x74",
-                            "vrom": "0x097BD0"
+                            "vrom": "0x097BD8"
                         },
                         {
                             "name": "_charTbl_4601",
                             "vram": "0x800AFE2C",
                             "size": "0x3C",
-                            "vrom": "0x097C44"
+                            "vrom": "0x097C4C"
                         },
                         {
                             "name": "_type_4602",
                             "vram": "0x800AFE68",
                             "size": "0x40",
-                            "vrom": "0x097C80"
+                            "vrom": "0x097C88"
                         },
                         {
                             "name": "_texPanelP4_4617",
                             "vram": "0x800AFEA8",
                             "size": "0x8",
-                            "vrom": "0x097CC0"
+                            "vrom": "0x097CC8"
                         },
                         {
                             "name": "_texPanelP2_4618",
                             "vram": "0x800AFEB0",
                             "size": "0x8",
-                            "vrom": "0x097CC8"
+                            "vrom": "0x097CD0"
                         },
                         {
                             "name": "RO_800AFEB8",
                             "vram": "0x800AFEB8",
                             "size": "0x14",
-                            "vrom": "0x097CD0"
+                            "vrom": "0x097CD8"
                         },
                         {
                             "name": "_bgCursor_4920",
                             "vram": "0x800AFECC",
                             "size": "0x10",
-                            "vrom": "0x097CE4"
+                            "vrom": "0x097CEC"
                         },
                         {
                             "name": "_cursor_4921",
                             "vram": "0x800AFEDC",
                             "size": "0x14C",
-                            "vrom": "0x097CF4"
+                            "vrom": "0x097CFC"
                         },
                         {
                             "name": "_root_5339",
                             "vram": "0x800B0028",
                             "size": "0x10",
-                            "vrom": "0x097E40"
+                            "vrom": "0x097E48"
                         },
                         {
                             "name": "_play1_5340",
                             "vram": "0x800B0038",
                             "size": "0x18",
-                            "vrom": "0x097E50"
+                            "vrom": "0x097E58"
                         },
                         {
                             "name": "_play2_5341",
                             "vram": "0x800B0050",
                             "size": "0xC",
-                            "vrom": "0x097E68"
+                            "vrom": "0x097E70"
                         },
                         {
                             "name": "_play4_5342",
                             "vram": "0x800B005C",
                             "size": "0x10",
-                            "vrom": "0x097E74"
+                            "vrom": "0x097E7C"
                         },
                         {
                             "name": "_play4type_5343",
                             "vram": "0x800B006C",
                             "size": "0xC",
-                            "vrom": "0x097E84"
+                            "vrom": "0x097E8C"
                         },
                         {
                             "name": "_option_5344",
                             "vram": "0x800B0078",
                             "size": "0x14",
-                            "vrom": "0x097E90"
+                            "vrom": "0x097E98"
                         },
                         {
                             "name": "_recMs_5345",
                             "vram": "0x800B008C",
                             "size": "0x8",
-                            "vrom": "0x097EA4"
+                            "vrom": "0x097EAC"
                         },
                         {
                             "name": "_recMs1_5346",
                             "vram": "0x800B0094",
                             "size": "0x18",
-                            "vrom": "0x097EAC"
+                            "vrom": "0x097EB4"
                         },
                         {
                             "name": "_recMs2_5347",
                             "vram": "0x800B00AC",
                             "size": "0xC",
-                            "vrom": "0x097EC4"
+                            "vrom": "0x097ECC"
                         },
                         {
                             "name": "_tutorial_5348",
                             "vram": "0x800B00B8",
                             "size": "0x14",
-                            "vrom": "0x097ED0"
+                            "vrom": "0x097ED8"
                         },
                         {
                             "name": "_count_5349",
                             "vram": "0x800B00CC",
                             "size": "0xC",
-                            "vrom": "0x097EE4"
+                            "vrom": "0x097EEC"
                         },
                         {
                             "name": "_backup_5350",
                             "vram": "0x800B00D8",
                             "size": "0x8",
-                            "vrom": "0x097EF0"
+                            "vrom": "0x097EF8"
                         },
                         {
                             "name": "_misc_5351",
                             "vram": "0x800B00E0",
                             "size": "0xC",
-                            "vrom": "0x097EF8"
+                            "vrom": "0x097F00"
                         },
                         {
                             "name": "_score_5352",
                             "vram": "0x800B00EC",
                             "size": "0x224",
-                            "vrom": "0x097F04"
+                            "vrom": "0x097F0C"
                         },
                         {
                             "name": "RO_800B0310",
                             "vram": "0x800B0310",
                             "size": "0x10",
-                            "vrom": "0x098128"
+                            "vrom": "0x098130"
                         },
                         {
                             "name": "RO_800B0320",
                             "vram": "0x800B0320",
                             "size": "0x18",
-                            "vrom": "0x098138"
+                            "vrom": "0x098140"
                         },
                         {
                             "name": "RO_800B0338",
                             "vram": "0x800B0338",
                             "size": "0x18",
-                            "vrom": "0x098150"
+                            "vrom": "0x098158"
                         },
                         {
                             "name": "RO_800B0350",
                             "vram": "0x800B0350",
                             "size": "0xC",
-                            "vrom": "0x098168"
+                            "vrom": "0x098170"
                         },
                         {
                             "name": "RO_800B035C",
                             "vram": "0x800B035C",
                             "size": "0x4",
-                            "vrom": "0x098174"
+                            "vrom": "0x09817C"
                         },
                         {
                             "name": "RO_800B0360",
                             "vram": "0x800B0360",
                             "size": "0x4",
-                            "vrom": "0x098178"
+                            "vrom": "0x098180"
                         },
                         {
                             "name": "RO_800B0364",
                             "vram": "0x800B0364",
                             "size": "0x14",
-                            "vrom": "0x09817C"
+                            "vrom": "0x098184"
                         },
                         {
                             "name": "RO_800B0378",
                             "vram": "0x800B0378",
                             "size": "0x4",
-                            "vrom": "0x098190"
+                            "vrom": "0x098198"
                         },
                         {
                             "name": "RO_800B037C",
                             "vram": "0x800B037C",
                             "size": "0x4",
-                            "vrom": "0x098194"
+                            "vrom": "0x09819C"
                         },
                         {
                             "name": "RO_800B0380",
                             "vram": "0x800B0380",
                             "size": "0x1C",
-                            "vrom": "0x098198"
+                            "vrom": "0x0981A0"
                         },
                         {
                             "name": "RO_800B039C",
                             "vram": "0x800B039C",
                             "size": "0x4",
-                            "vrom": "0x0981B4"
+                            "vrom": "0x0981BC"
                         },
                         {
                             "name": "RO_800B03A0",
                             "vram": "0x800B03A0",
                             "size": "0x4",
-                            "vrom": "0x0981B8"
+                            "vrom": "0x0981C0"
                         },
                         {
                             "name": "RO_800B03A4",
                             "vram": "0x800B03A4",
                             "size": "0x1C",
-                            "vrom": "0x0981BC"
+                            "vrom": "0x0981C4"
                         },
                         {
                             "name": "RO_800B03C0",
                             "vram": "0x800B03C0",
                             "size": "0x4",
-                            "vrom": "0x0981D8"
+                            "vrom": "0x0981E0"
                         },
                         {
                             "name": "RO_800B03C4",
                             "vram": "0x800B03C4",
                             "size": "0x14",
-                            "vrom": "0x0981DC"
+                            "vrom": "0x0981E4"
                         },
                         {
                             "name": "RO_800B03D8",
                             "vram": "0x800B03D8",
                             "size": "0x14",
-                            "vrom": "0x0981F0"
+                            "vrom": "0x0981F8"
                         },
                         {
                             "name": "RO_800B03EC",
                             "vram": "0x800B03EC",
                             "size": "0xC",
-                            "vrom": "0x098204"
+                            "vrom": "0x09820C"
                         },
                         {
                             "name": "RO_800B03F8",
                             "vram": "0x800B03F8",
                             "size": "0xC",
-                            "vrom": "0x098210"
+                            "vrom": "0x098218"
                         },
                         {
                             "name": "RO_800B0404",
                             "vram": "0x800B0404",
                             "size": "0xC",
-                            "vrom": "0x09821C"
+                            "vrom": "0x098224"
                         },
                         {
                             "name": "RO_800B0410",
                             "vram": "0x800B0410",
                             "size": "0xC",
-                            "vrom": "0x098228"
+                            "vrom": "0x098230"
                         },
                         {
                             "name": "RO_800B041C",
                             "vram": "0x800B041C",
                             "size": "0x8",
-                            "vrom": "0x098234"
+                            "vrom": "0x09823C"
                         },
                         {
                             "name": "RO_800B0424",
                             "vram": "0x800B0424",
                             "size": "0x18",
-                            "vrom": "0x09823C"
+                            "vrom": "0x098244"
                         },
                         {
                             "name": "RO_800B043C",
                             "vram": "0x800B043C",
                             "size": "0xC",
-                            "vrom": "0x098254"
+                            "vrom": "0x09825C"
                         },
                         {
                             "name": "RO_800B0448",
                             "vram": "0x800B0448",
                             "size": "0x8",
-                            "vrom": "0x098260"
+                            "vrom": "0x098268"
                         },
                         {
                             "name": "jtbl_800B0450",
                             "vram": "0x800B0450",
                             "size": "0x20",
-                            "vrom": "0x098268"
+                            "vrom": "0x098270"
                         },
                         {
                             "name": "jtbl_800B0470",
                             "vram": "0x800B0470",
                             "size": "0x118",
-                            "vrom": "0x098288"
+                            "vrom": "0x098290"
                         },
                         {
                             "name": "jtbl_800B0588",
                             "vram": "0x800B0588",
                             "size": "0x128",
-                            "vrom": "0x0983A0"
+                            "vrom": "0x0983A8"
                         },
                         {
                             "name": "jtbl_800B06B0",
                             "vram": "0x800B06B0",
                             "size": "0x48",
-                            "vrom": "0x0984C8"
+                            "vrom": "0x0984D0"
                         },
                         {
                             "name": "jtbl_800B06F8",
                             "vram": "0x800B06F8",
                             "size": "0xF0",
-                            "vrom": "0x098510"
+                            "vrom": "0x098518"
                         },
                         {
                             "name": "jtbl_800B07E8",
                             "vram": "0x800B07E8",
                             "size": "0xF0",
-                            "vrom": "0x098600"
+                            "vrom": "0x098608"
                         },
                         {
                             "name": "jtbl_800B08D8",
                             "vram": "0x800B08D8",
                             "size": "0x68",
-                            "vrom": "0x0986F0"
+                            "vrom": "0x0986F8"
                         },
                         {
                             "name": "_pat_6137",
                             "vram": "0x800B0940",
                             "size": "0x18",
-                            "vrom": "0x098758"
+                            "vrom": "0x098760"
                         },
                         {
                             "name": "DBL_800B0958",
                             "vram": "0x800B0958",
                             "size": "0x8",
-                            "vrom": "0x098770"
+                            "vrom": "0x098778"
                         },
                         {
                             "name": "DBL_800B0960",
                             "vram": "0x800B0960",
                             "size": "0x8",
-                            "vrom": "0x098778"
+                            "vrom": "0x098780"
                         },
                         {
                             "name": "_pos_6413",
                             "vram": "0x800B0968",
                             "size": "0x90",
-                            "vrom": "0x098780"
+                            "vrom": "0x098788"
                         },
                         {
                             "name": "_posChar_6445",
                             "vram": "0x800B09F8",
                             "size": "0x10",
-                            "vrom": "0x098810"
+                            "vrom": "0x098818"
                         },
                         {
                             "name": "_posBgCursor_6446",
                             "vram": "0x800B0A08",
                             "size": "0x10",
-                            "vrom": "0x098820"
+                            "vrom": "0x098828"
                         },
                         {
                             "name": "_cursor_6447",
                             "vram": "0x800B0A18",
                             "size": "0x30",
-                            "vrom": "0x098830"
+                            "vrom": "0x098838"
                         },
                         {
                             "name": "DBL_800B0A48",
                             "vram": "0x800B0A48",
                             "size": "0x8",
-                            "vrom": "0x098860"
+                            "vrom": "0x098868"
                         },
                         {
                             "name": "RO_800B0A50",
                             "vram": "0x800B0A50",
                             "size": "0xC",
-                            "vrom": "0x098868"
+                            "vrom": "0x098870"
                         },
                         {
                             "name": "RO_800B0A5C",
                             "vram": "0x800B0A5C",
                             "size": "0x10",
-                            "vrom": "0x098874"
+                            "vrom": "0x09887C"
                         },
                         {
                             "name": "RO_800B0A6C",
                             "vram": "0x800B0A6C",
                             "size": "0x10",
-                            "vrom": "0x098884"
+                            "vrom": "0x09888C"
                         },
                         {
                             "name": "RO_800B0A7C",
                             "vram": "0x800B0A7C",
                             "size": "0x90",
-                            "vrom": "0x098894"
+                            "vrom": "0x09889C"
                         },
                         {
                             "name": "RO_800B0B0C",
                             "vram": "0x800B0B0C",
                             "size": "0x8",
-                            "vrom": "0x098924"
+                            "vrom": "0x09892C"
                         },
                         {
                             "name": "_cursor_7325",
                             "vram": "0x800B0B14",
                             "size": "0x3C",
-                            "vrom": "0x09892C"
+                            "vrom": "0x098934"
                         },
                         {
                             "name": "_pos_7882",
                             "vram": "0x800B0B50",
                             "size": "0x20",
-                            "vrom": "0x098968"
+                            "vrom": "0x098970"
                         },
                         {
                             "name": "jtbl_800B0B70",
                             "vram": "0x800B0B70",
                             "size": "0x78",
-                            "vrom": "0x098988"
+                            "vrom": "0x098990"
                         },
                         {
                             "name": "jtbl_800B0BE8",
                             "vram": "0x800B0BE8",
                             "size": "0x74",
-                            "vrom": "0x098A00"
+                            "vrom": "0x098A08"
                         },
                         {
                             "name": "_charTbl_8108",
                             "vram": "0x800B0C5C",
                             "size": "0x128",
-                            "vrom": "0x098A74"
+                            "vrom": "0x098A7C"
                         },
                         {
                             "name": "RO_800B0D84",
                             "vram": "0x800B0D84",
                             "size": "0x10",
-                            "vrom": "0x098B9C"
+                            "vrom": "0x098BA4"
                         },
                         {
                             "name": "_tex_8297",
                             "vram": "0x800B0D94",
                             "size": "0x8",
-                            "vrom": "0x098BAC"
+                            "vrom": "0x098BB4"
                         },
                         {
                             "name": "_pos_8298",
                             "vram": "0x800B0D9C",
                             "size": "0x10",
-                            "vrom": "0x098BB4"
+                            "vrom": "0x098BBC"
                         },
                         {
                             "name": "_moveTbl_8521",
                             "vram": "0x800B0DAC",
                             "size": "0x8",
-                            "vrom": "0x098BC4"
+                            "vrom": "0x098BCC"
                         },
                         {
                             "name": "_onaji_8534",
                             "vram": "0x800B0DB4",
                             "size": "0x10",
-                            "vrom": "0x098BCC"
+                            "vrom": "0x098BD4"
                         },
                         {
                             "name": "_panel2_8535",
                             "vram": "0x800B0DC4",
                             "size": "0x10",
-                            "vrom": "0x098BDC"
+                            "vrom": "0x098BE4"
                         },
                         {
                             "name": "_panel4_8536",
                             "vram": "0x800B0DD4",
                             "size": "0x9C",
-                            "vrom": "0x098BEC"
+                            "vrom": "0x098BF4"
                         },
                         {
                             "name": "jtbl_800B0E70",
                             "vram": "0x800B0E70",
                             "size": "0x78",
-                            "vrom": "0x098C88"
+                            "vrom": "0x098C90"
                         },
                         {
                             "name": "jtbl_800B0EE8",
                             "vram": "0x800B0EE8",
                             "size": "0x74",
-                            "vrom": "0x098D00"
+                            "vrom": "0x098D08"
                         },
                         {
                             "name": "RO_800B0F5C",
                             "vram": "0x800B0F5C",
                             "size": "0x114",
-                            "vrom": "0x098D74"
+                            "vrom": "0x098D7C"
                         },
                         {
                             "name": "jtbl_800B1070",
                             "vram": "0x800B1070",
                             "size": "0xF8",
-                            "vrom": "0x098E88"
+                            "vrom": "0x098E90"
                         },
                         {
                             "name": "RO_800B1168",
                             "vram": "0x800B1168",
                             "size": "0x18",
-                            "vrom": "0x098F80"
+                            "vrom": "0x098F88"
                         },
                         {
                             "name": "DBL_800B1180",
                             "vram": "0x800B1180",
                             "size": "0x8",
-                            "vrom": "0x098F98"
+                            "vrom": "0x098FA0"
                         },
                         {
                             "name": "jtbl_800B1188",
                             "vram": "0x800B1188",
                             "size": "0x1C",
-                            "vrom": "0x098FA0"
+                            "vrom": "0x098FA8"
                         },
                         {
                             "name": "_posX_0_9712",
                             "vram": "0x800B11A4",
                             "size": "0x28",
-                            "vrom": "0x098FBC"
+                            "vrom": "0x098FC4"
                         },
                         {
                             "name": "_posX_1_9713",
                             "vram": "0x800B11CC",
                             "size": "0x14",
-                            "vrom": "0x098FE4"
+                            "vrom": "0x098FEC"
                         },
                         {
                             "name": "_posX_2_9714",
                             "vram": "0x800B11E0",
                             "size": "0x18",
-                            "vrom": "0x098FF8"
+                            "vrom": "0x099000"
                         },
                         {
                             "name": "_posX_4_9715",
                             "vram": "0x800B11F8",
                             "size": "0x18",
-                            "vrom": "0x099010"
+                            "vrom": "0x099018"
                         },
                         {
                             "name": "RO_800B1210",
                             "vram": "0x800B1210",
                             "size": "0x8",
-                            "vrom": "0x099028"
+                            "vrom": "0x099030"
                         },
                         {
                             "name": "DBL_800B1218",
                             "vram": "0x800B1218",
                             "size": "0x8",
-                            "vrom": "0x099030"
+                            "vrom": "0x099038"
                         },
                         {
                             "name": "RO_800B1220",
                             "vram": "0x800B1220",
                             "size": "0x10",
-                            "vrom": "0x099038"
+                            "vrom": "0x099040"
                         },
                         {
                             "name": "RO_800B1230",
                             "vram": "0x800B1230",
                             "size": "0xC",
-                            "vrom": "0x099048"
+                            "vrom": "0x099050"
                         },
                         {
                             "name": "RO_800B123C",
                             "vram": "0x800B123C",
                             "size": "0x4C",
-                            "vrom": "0x099054"
+                            "vrom": "0x09905C"
                         },
                         {
                             "name": "DBL_800B1288",
                             "vram": "0x800B1288",
                             "size": "0x8",
-                            "vrom": "0x0990A0"
+                            "vrom": "0x0990A8"
                         },
                         {
                             "name": "RO_800B1290",
                             "vram": "0x800B1290",
                             "size": "0x8",
-                            "vrom": "0x0990A8"
+                            "vrom": "0x0990B0"
                         },
                         {
                             "name": "RO_800B1298",
                             "vram": "0x800B1298",
                             "size": "0x10",
-                            "vrom": "0x0990B0"
+                            "vrom": "0x0990B8"
                         },
                         {
                             "name": "RO_800B12A8",
                             "vram": "0x800B12A8",
                             "size": "0x10",
-                            "vrom": "0x0990C0"
+                            "vrom": "0x0990C8"
                         },
                         {
                             "name": "RO_800B12B8",
                             "vram": "0x800B12B8",
                             "size": "0x10",
-                            "vrom": "0x0990D0"
+                            "vrom": "0x0990D8"
                         },
                         {
                             "name": "RO_800B12C8",
                             "vram": "0x800B12C8",
                             "size": "0x10",
-                            "vrom": "0x0990E0"
+                            "vrom": "0x0990E8"
                         },
                         {
                             "name": "RO_800B12D8",
                             "vram": "0x800B12D8",
                             "size": "0xC",
-                            "vrom": "0x0990F0"
+                            "vrom": "0x0990F8"
                         },
                         {
                             "name": "RO_800B12E4",
                             "vram": "0x800B12E4",
                             "size": "0xC",
-                            "vrom": "0x0990FC"
+                            "vrom": "0x099104"
                         },
                         {
                             "name": "RO_800B12F0",
                             "vram": "0x800B12F0",
                             "size": "0xC",
-                            "vrom": "0x099108"
+                            "vrom": "0x099110"
                         },
                         {
                             "name": "RO_800B12FC",
                             "vram": "0x800B12FC",
                             "size": "0xC",
-                            "vrom": "0x099114"
+                            "vrom": "0x09911C"
                         },
                         {
                             "name": "RO_800B1308",
                             "vram": "0x800B1308",
                             "size": "0xC",
-                            "vrom": "0x099120"
+                            "vrom": "0x099128"
                         },
                         {
                             "name": "RO_800B1314",
                             "vram": "0x800B1314",
                             "size": "0xC",
-                            "vrom": "0x09912C"
+                            "vrom": "0x099134"
                         },
                         {
                             "name": "RO_800B1320",
                             "vram": "0x800B1320",
                             "size": "0x10",
-                            "vrom": "0x099138"
+                            "vrom": "0x099140"
                         },
                         {
                             "name": "RO_800B1330",
                             "vram": "0x800B1330",
                             "size": "0x10",
-                            "vrom": "0x099148"
+                            "vrom": "0x099150"
                         },
                         {
                             "name": "RO_800B1340",
                             "vram": "0x800B1340",
                             "size": "0x10",
-                            "vrom": "0x099158"
+                            "vrom": "0x099160"
                         },
                         {
                             "name": "RO_800B1350",
                             "vram": "0x800B1350",
                             "size": "0x10",
-                            "vrom": "0x099168"
+                            "vrom": "0x099170"
                         },
                         {
                             "name": "RO_800B1360",
                             "vram": "0x800B1360",
                             "size": "0x10",
-                            "vrom": "0x099178"
+                            "vrom": "0x099180"
                         },
                         {
                             "name": "RO_800B1370",
                             "vram": "0x800B1370",
                             "size": "0x10",
-                            "vrom": "0x099188"
+                            "vrom": "0x099190"
                         },
                         {
                             "name": "jtbl_800B1380",
                             "vram": "0x800B1380",
                             "size": "0x28",
-                            "vrom": "0x099198"
+                            "vrom": "0x0991A0"
                         },
                         {
                             "name": "jtbl_800B13A8",
                             "vram": "0x800B13A8",
                             "size": "0x28",
-                            "vrom": "0x0991C0"
+                            "vrom": "0x0991C8"
                         },
                         {
                             "name": "jtbl_800B13D0",
                             "vram": "0x800B13D0",
                             "size": "0x28",
-                            "vrom": "0x0991E8"
+                            "vrom": "0x0991F0"
                         },
                         {
                             "name": "_lr_10544",
                             "vram": "0x800B13F8",
                             "size": "0x38",
-                            "vrom": "0x099210"
+                            "vrom": "0x099218"
                         },
                         {
                             "name": "RO_800B1430",
                             "vram": "0x800B1430",
                             "size": "0x8",
-                            "vrom": "0x099248"
+                            "vrom": "0x099250"
                         },
                         {
                             "name": "_dir_10660",
                             "vram": "0x800B1438",
                             "size": "0x558",
-                            "vrom": "0x099250"
+                            "vrom": "0x099258"
                         }
                     ]
                 },
@@ -17929,13 +17937,13 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B1950",
                     "size": "0x40",
-                    "vrom": "0x099768",
+                    "vrom": "0x099770",
                     "symbols": [
                         {
                             "name": "init_dl_135",
                             "vram": "0x800B1950",
                             "size": "0x40",
-                            "vrom": "0x099768"
+                            "vrom": "0x099770"
                         }
                     ]
                 },
@@ -17944,25 +17952,25 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B1990",
                     "size": "0xD0",
-                    "vrom": "0x0997A8",
+                    "vrom": "0x0997B0",
                     "symbols": [
                         {
                             "name": "sMessageColorTable",
                             "vram": "0x800B1990",
                             "size": "0xC4",
-                            "vrom": "0x0997A8"
+                            "vrom": "0x0997B0"
                         },
                         {
                             "name": "STR_800B1A54",
                             "vram": "0x800B1A54",
                             "size": "0x4",
-                            "vrom": "0x09986C"
+                            "vrom": "0x099874"
                         },
                         {
                             "name": "DBL_800B1A58",
                             "vram": "0x800B1A58",
                             "size": "0x8",
-                            "vrom": "0x099870"
+                            "vrom": "0x099878"
                         }
                     ]
                 },
@@ -17971,25 +17979,25 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B1A60",
                     "size": "0x140",
-                    "vrom": "0x099878",
+                    "vrom": "0x099880",
                     "symbols": [
                         {
                             "name": "_size_122",
                             "vram": "0x800B1A60",
                             "size": "0x50",
-                            "vrom": "0x099878"
+                            "vrom": "0x099880"
                         },
                         {
                             "name": "_addrTbl_124",
                             "vram": "0x800B1AB0",
                             "size": "0x50",
-                            "vrom": "0x0998C8"
+                            "vrom": "0x0998D0"
                         },
                         {
                             "name": "_centerTbl_125",
                             "vram": "0x800B1B00",
                             "size": "0xA0",
-                            "vrom": "0x099918"
+                            "vrom": "0x099920"
                         }
                     ]
                 },
@@ -17998,37 +18006,37 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B1BA0",
                     "size": "0x90",
-                    "vrom": "0x0999B8",
+                    "vrom": "0x0999C0",
                     "symbols": [
                         {
                             "name": "RO_800B1BA0",
                             "vram": "0x800B1BA0",
                             "size": "0x28",
-                            "vrom": "0x0999B8"
+                            "vrom": "0x0999C0"
                         },
                         {
                             "name": "_n_343",
                             "vram": "0x800B1BC8",
                             "size": "0x4",
-                            "vrom": "0x0999E0"
+                            "vrom": "0x0999E8"
                         },
                         {
                             "name": "RO_800B1BCC",
                             "vram": "0x800B1BCC",
                             "size": "0x4",
-                            "vrom": "0x0999E4"
+                            "vrom": "0x0999EC"
                         },
                         {
                             "name": "RO_800B1BD0",
                             "vram": "0x800B1BD0",
                             "size": "0x40",
-                            "vrom": "0x0999E8"
+                            "vrom": "0x0999F0"
                         },
                         {
                             "name": "jtbl_800B1C10",
                             "vram": "0x800B1C10",
                             "size": "0x20",
-                            "vrom": "0x099A28"
+                            "vrom": "0x099A30"
                         }
                     ]
                 },
@@ -18037,457 +18045,457 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B1C30",
                     "size": "0x7D0",
-                    "vrom": "0x099A48",
+                    "vrom": "0x099A50",
                     "symbols": [
                         {
                             "name": "RO_800B1C4C",
                             "vram": "0x800B1C4C",
                             "size": "0x10",
-                            "vrom": "0x099A64"
+                            "vrom": "0x099A6C"
                         },
                         {
                             "name": "RO_800B1C5C",
                             "vram": "0x800B1C5C",
                             "size": "0x18",
-                            "vrom": "0x099A74"
+                            "vrom": "0x099A7C"
                         },
                         {
                             "name": "_speed_561",
                             "vram": "0x800B1C74",
                             "size": "0x4",
-                            "vrom": "0x099A8C"
+                            "vrom": "0x099A94"
                         },
                         {
                             "name": "_retryMenu_itemCount",
                             "vram": "0x800B1C78",
                             "size": "0x8",
-                            "vrom": "0x099A90"
+                            "vrom": "0x099A98"
                         },
                         {
                             "name": "_big_virus_def_wait",
                             "vram": "0x800B1C80",
                             "size": "0xC",
-                            "vrom": "0x099A98"
+                            "vrom": "0x099AA0"
                         },
                         {
                             "name": "_big_virus_min_wait",
                             "vram": "0x800B1C8C",
                             "size": "0xC",
-                            "vrom": "0x099AA4"
+                            "vrom": "0x099AAC"
                         },
                         {
                             "name": "RO_800B1C98",
                             "vram": "0x800B1C98",
                             "size": "0xC",
-                            "vrom": "0x099AB0"
+                            "vrom": "0x099AB8"
                         },
                         {
                             "name": "RO_800B1CA4",
                             "vram": "0x800B1CA4",
                             "size": "0x14",
-                            "vrom": "0x099ABC"
+                            "vrom": "0x099AC4"
                         },
                         {
                             "name": "_mesWriting",
                             "vram": "0x800B1CB8",
                             "size": "0x28",
-                            "vrom": "0x099AD0"
+                            "vrom": "0x099AD8"
                         },
                         {
                             "name": "STR_800B1CE0",
                             "vram": "0x800B1CE0",
                             "size": "0x28",
-                            "vrom": "0x099AF8"
+                            "vrom": "0x099B00"
                         },
                         {
                             "name": "_posStP4StarX",
                             "vram": "0x800B1D08",
                             "size": "0x10",
-                            "vrom": "0x099B20"
+                            "vrom": "0x099B28"
                         },
                         {
                             "name": "_posStStar",
                             "vram": "0x800B1D18",
                             "size": "0x10",
-                            "vrom": "0x099B30"
+                            "vrom": "0x099B38"
                         },
                         {
                             "name": "RO_800B1D28",
                             "vram": "0x800B1D28",
                             "size": "0x8",
-                            "vrom": "0x099B40"
+                            "vrom": "0x099B48"
                         },
                         {
                             "name": "_posP2StarX",
                             "vram": "0x800B1D30",
                             "size": "0x8",
-                            "vrom": "0x099B48"
+                            "vrom": "0x099B50"
                         },
                         {
                             "name": "_posP2StarY",
                             "vram": "0x800B1D38",
                             "size": "0x24",
-                            "vrom": "0x099B50"
+                            "vrom": "0x099B58"
                         },
                         {
                             "name": "_posP4Bottle",
                             "vram": "0x800B1D5C",
                             "size": "0x20",
-                            "vrom": "0x099B74"
+                            "vrom": "0x099B7C"
                         },
                         {
                             "name": "RO_800B1D7C",
                             "vram": "0x800B1D7C",
                             "size": "0x8",
-                            "vrom": "0x099B94"
+                            "vrom": "0x099B9C"
                         },
                         {
                             "name": "_posP4CharBase",
                             "vram": "0x800B1D84",
                             "size": "0x20",
-                            "vrom": "0x099B9C"
+                            "vrom": "0x099BA4"
                         },
                         {
                             "name": "_posP4TeamStarX",
                             "vram": "0x800B1DA4",
                             "size": "0x48",
-                            "vrom": "0x099BBC"
+                            "vrom": "0x099BC4"
                         },
                         {
                             "name": "_posP4CharStarX",
                             "vram": "0x800B1DEC",
                             "size": "0x90",
-                            "vrom": "0x099C04"
+                            "vrom": "0x099C0C"
                         },
                         {
                             "name": "_posP4StockCap",
                             "vram": "0x800B1E7C",
                             "size": "0x10",
-                            "vrom": "0x099C94"
+                            "vrom": "0x099C9C"
                         },
                         {
                             "name": "_posP2VirusNum",
                             "vram": "0x800B1E8C",
                             "size": "0x10",
-                            "vrom": "0x099CA4"
+                            "vrom": "0x099CAC"
                         },
                         {
                             "name": "_posP2CharFrm",
                             "vram": "0x800B1E9C",
                             "size": "0x1C",
-                            "vrom": "0x099CB4"
+                            "vrom": "0x099CBC"
                         },
                         {
                             "name": "black_color_1384",
                             "vram": "0x800B1EB8",
                             "size": "0x8",
-                            "vrom": "0x099CD0"
+                            "vrom": "0x099CD8"
                         },
                         {
                             "name": "RO_800B1EC0",
                             "vram": "0x800B1EC0",
                             "size": "0xC",
-                            "vrom": "0x099CD8"
+                            "vrom": "0x099CE0"
                         },
                         {
                             "name": "RO_800B1ECC",
                             "vram": "0x800B1ECC",
                             "size": "0x1C",
-                            "vrom": "0x099CE4"
+                            "vrom": "0x099CEC"
                         },
                         {
                             "name": "DBL_800B1EE8",
                             "vram": "0x800B1EE8",
                             "size": "0x8",
-                            "vrom": "0x099D00"
+                            "vrom": "0x099D08"
                         },
                         {
                             "name": "jtbl_800B1EF0",
                             "vram": "0x800B1EF0",
                             "size": "0x78",
-                            "vrom": "0x099D08"
+                            "vrom": "0x099D10"
                         },
                         {
                             "name": "DBL_800B1F68",
                             "vram": "0x800B1F68",
                             "size": "0x8",
-                            "vrom": "0x099D80"
+                            "vrom": "0x099D88"
                         },
                         {
                             "name": "jtbl_800B1F70",
                             "vram": "0x800B1F70",
                             "size": "0x80",
-                            "vrom": "0x099D88"
+                            "vrom": "0x099D90"
                         },
                         {
                             "name": "jtbl_800B1FF0",
                             "vram": "0x800B1FF0",
                             "size": "0x18",
-                            "vrom": "0x099E08"
+                            "vrom": "0x099E10"
                         },
                         {
                             "name": "jtbl_800B2008",
                             "vram": "0x800B2008",
                             "size": "0x18",
-                            "vrom": "0x099E20"
+                            "vrom": "0x099E28"
                         },
                         {
                             "name": "_tbl_2997",
                             "vram": "0x800B2020",
                             "size": "0xC",
-                            "vrom": "0x099E38"
+                            "vrom": "0x099E40"
                         },
                         {
                             "name": "_clr_3004",
                             "vram": "0x800B202C",
                             "size": "0x24",
-                            "vrom": "0x099E44"
+                            "vrom": "0x099E4C"
                         },
                         {
                             "name": "jtbl_800B2050",
                             "vram": "0x800B2050",
                             "size": "0x18",
-                            "vrom": "0x099E68"
+                            "vrom": "0x099E70"
                         },
                         {
                             "name": "RO_800B2068",
                             "vram": "0x800B2068",
                             "size": "0x8",
-                            "vrom": "0x099E80"
+                            "vrom": "0x099E88"
                         },
                         {
                             "name": "cap_pal_4164",
                             "vram": "0x800B2070",
                             "size": "0x30",
-                            "vrom": "0x099E88"
+                            "vrom": "0x099E90"
                         },
                         {
                             "name": "DBL_800B20A0",
                             "vram": "0x800B20A0",
                             "size": "0x8",
-                            "vrom": "0x099EB8"
+                            "vrom": "0x099EC0"
                         },
                         {
                             "name": "DBL_800B20A8",
                             "vram": "0x800B20A8",
                             "size": "0x8",
-                            "vrom": "0x099EC0"
+                            "vrom": "0x099EC8"
                         },
                         {
                             "name": "DBL_800B20B0",
                             "vram": "0x800B20B0",
                             "size": "0x8",
-                            "vrom": "0x099EC8"
+                            "vrom": "0x099ED0"
                         },
                         {
                             "name": "DBL_800B20B8",
                             "vram": "0x800B20B8",
                             "size": "0x8",
-                            "vrom": "0x099ED0"
+                            "vrom": "0x099ED8"
                         },
                         {
                             "name": "DBL_800B20C0",
                             "vram": "0x800B20C0",
                             "size": "0x8",
-                            "vrom": "0x099ED8"
+                            "vrom": "0x099EE0"
                         },
                         {
                             "name": "DBL_800B20C8",
                             "vram": "0x800B20C8",
                             "size": "0x8",
-                            "vrom": "0x099EE0"
+                            "vrom": "0x099EE8"
                         },
                         {
                             "name": "RO_800B20D0",
                             "vram": "0x800B20D0",
                             "size": "0x10",
-                            "vrom": "0x099EE8"
+                            "vrom": "0x099EF0"
                         },
                         {
                             "name": "RO_800B20E0",
                             "vram": "0x800B20E0",
                             "size": "0xC",
-                            "vrom": "0x099EF8"
+                            "vrom": "0x099F00"
                         },
                         {
                             "name": "_tex_4374",
                             "vram": "0x800B20EC",
                             "size": "0xC",
-                            "vrom": "0x099F04"
+                            "vrom": "0x099F0C"
                         },
                         {
                             "name": "_row_4375",
                             "vram": "0x800B20F8",
                             "size": "0xC",
-                            "vrom": "0x099F10"
+                            "vrom": "0x099F18"
                         },
                         {
                             "name": "_pos_4415",
                             "vram": "0x800B2104",
                             "size": "0x4",
-                            "vrom": "0x099F1C"
+                            "vrom": "0x099F24"
                         },
                         {
                             "name": "_col_4416",
                             "vram": "0x800B2108",
                             "size": "0x4",
-                            "vrom": "0x099F20"
+                            "vrom": "0x099F28"
                         },
                         {
                             "name": "_pos_4426",
                             "vram": "0x800B210C",
                             "size": "0x8",
-                            "vrom": "0x099F24"
+                            "vrom": "0x099F2C"
                         },
                         {
                             "name": "_col_4427",
                             "vram": "0x800B2114",
                             "size": "0x8",
-                            "vrom": "0x099F2C"
+                            "vrom": "0x099F34"
                         },
                         {
                             "name": "_tex_4459",
                             "vram": "0x800B211C",
                             "size": "0x18",
-                            "vrom": "0x099F34"
+                            "vrom": "0x099F3C"
                         },
                         {
                             "name": "RO_800B2134",
                             "vram": "0x800B2134",
                             "size": "0x2C",
-                            "vrom": "0x099F4C"
+                            "vrom": "0x099F54"
                         },
                         {
                             "name": "_x_4663",
                             "vram": "0x800B2160",
                             "size": "0x8",
-                            "vrom": "0x099F78"
+                            "vrom": "0x099F80"
                         },
                         {
                             "name": "_x_4670",
                             "vram": "0x800B2168",
                             "size": "0x8",
-                            "vrom": "0x099F80"
+                            "vrom": "0x099F88"
                         },
                         {
                             "name": "_x_4676",
                             "vram": "0x800B2170",
                             "size": "0x8",
-                            "vrom": "0x099F88"
+                            "vrom": "0x099F90"
                         },
                         {
                             "name": "_x_4693",
                             "vram": "0x800B2178",
                             "size": "0x8",
-                            "vrom": "0x099F90"
+                            "vrom": "0x099F98"
                         },
                         {
                             "name": "RO_800B2180",
                             "vram": "0x800B2180",
                             "size": "0x4",
-                            "vrom": "0x099F98"
+                            "vrom": "0x099FA0"
                         },
                         {
                             "name": "RO_800B2184",
                             "vram": "0x800B2184",
                             "size": "0x4",
-                            "vrom": "0x099F9C"
+                            "vrom": "0x099FA4"
                         },
                         {
                             "name": "RO_800B2188",
                             "vram": "0x800B2188",
                             "size": "0x4",
-                            "vrom": "0x099FA0"
+                            "vrom": "0x099FA8"
                         },
                         {
                             "name": "RO_800B218C",
                             "vram": "0x800B218C",
                             "size": "0x44",
-                            "vrom": "0x099FA4"
+                            "vrom": "0x099FAC"
                         },
                         {
                             "name": "_pat_4838",
                             "vram": "0x800B21D0",
                             "size": "0xC4",
-                            "vrom": "0x099FE8"
+                            "vrom": "0x099FF0"
                         },
                         {
                             "name": "map_x_table_5383",
                             "vram": "0x800B2294",
                             "size": "0x18",
-                            "vrom": "0x09A0AC"
+                            "vrom": "0x09A0B4"
                         },
                         {
                             "name": "map_y_table_5384",
                             "vram": "0x800B22AC",
                             "size": "0x4",
-                            "vrom": "0x09A0C4"
+                            "vrom": "0x09A0CC"
                         },
                         {
                             "name": "size_table_5385",
                             "vram": "0x800B22B0",
                             "size": "0x64",
-                            "vrom": "0x09A0C8"
+                            "vrom": "0x09A0D0"
                         },
                         {
                             "name": "_bgPos_5792",
                             "vram": "0x800B2314",
                             "size": "0x1C",
-                            "vrom": "0x09A12C"
+                            "vrom": "0x09A134"
                         },
                         {
                             "name": "_panelPos_5793",
                             "vram": "0x800B2330",
                             "size": "0xC",
-                            "vrom": "0x09A148"
+                            "vrom": "0x09A150"
                         },
                         {
                             "name": "_bgTex_5794",
                             "vram": "0x800B233C",
                             "size": "0x4",
-                            "vrom": "0x09A154"
+                            "vrom": "0x09A15C"
                         },
                         {
                             "name": "_magTex_5795",
                             "vram": "0x800B2340",
                             "size": "0x4",
-                            "vrom": "0x09A158"
+                            "vrom": "0x09A160"
                         },
                         {
                             "name": "_scrTex_5796",
                             "vram": "0x800B2344",
                             "size": "0x4",
-                            "vrom": "0x09A15C"
+                            "vrom": "0x09A164"
                         },
                         {
                             "name": "_panelTex_5797",
                             "vram": "0x800B2348",
                             "size": "0xC",
-                            "vrom": "0x09A160"
+                            "vrom": "0x09A168"
                         },
                         {
                             "name": "tbl_5867",
                             "vram": "0x800B2354",
                             "size": "0x70",
-                            "vrom": "0x09A16C"
+                            "vrom": "0x09A174"
                         },
                         {
                             "name": "_x_6416",
                             "vram": "0x800B23C4",
                             "size": "0x8",
-                            "vrom": "0x09A1DC"
+                            "vrom": "0x09A1E4"
                         },
                         {
                             "name": "dir_6435",
                             "vram": "0x800B23CC",
                             "size": "0x8",
-                            "vrom": "0x09A1E4"
+                            "vrom": "0x09A1EC"
                         },
                         {
                             "name": "color2index_6470",
                             "vram": "0x800B23D4",
                             "size": "0x48",
-                            "vrom": "0x09A1EC"
+                            "vrom": "0x09A1F4"
                         }
                     ]
                 },
@@ -18496,463 +18504,463 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B2400",
                     "size": "0xE40",
-                    "vrom": "0x09A218",
+                    "vrom": "0x09A220",
                     "symbols": [
                         {
                             "name": "RO_800B2408",
                             "vram": "0x800B2408",
                             "size": "0x8",
-                            "vrom": "0x09A220"
+                            "vrom": "0x09A228"
                         },
                         {
                             "name": "RO_800B2410",
                             "vram": "0x800B2410",
                             "size": "0x8",
-                            "vrom": "0x09A228"
+                            "vrom": "0x09A230"
                         },
                         {
                             "name": "RO_800B2418",
                             "vram": "0x800B2418",
                             "size": "0x8",
-                            "vrom": "0x09A230"
+                            "vrom": "0x09A238"
                         },
                         {
                             "name": "RO_800B2420",
                             "vram": "0x800B2420",
                             "size": "0x8",
-                            "vrom": "0x09A238"
+                            "vrom": "0x09A240"
                         },
                         {
                             "name": "RO_800B2428",
                             "vram": "0x800B2428",
                             "size": "0x8",
-                            "vrom": "0x09A240"
+                            "vrom": "0x09A248"
                         },
                         {
                             "name": "RO_800B2430",
                             "vram": "0x800B2430",
                             "size": "0x8",
-                            "vrom": "0x09A248"
+                            "vrom": "0x09A250"
                         },
                         {
                             "name": "RO_800B2438",
                             "vram": "0x800B2438",
                             "size": "0x8",
-                            "vrom": "0x09A250"
+                            "vrom": "0x09A258"
                         },
                         {
                             "name": "RO_800B2440",
                             "vram": "0x800B2440",
                             "size": "0x8",
-                            "vrom": "0x09A258"
+                            "vrom": "0x09A260"
                         },
                         {
                             "name": "virus_1_1",
                             "vram": "0x800B2448",
                             "size": "0x24",
-                            "vrom": "0x09A260"
+                            "vrom": "0x09A268"
                         },
                         {
                             "name": "RO_800B246C",
                             "vram": "0x800B246C",
                             "size": "0x8",
-                            "vrom": "0x09A284"
+                            "vrom": "0x09A28C"
                         },
                         {
                             "name": "RO_800B2474",
                             "vram": "0x800B2474",
                             "size": "0x8",
-                            "vrom": "0x09A28C"
+                            "vrom": "0x09A294"
                         },
                         {
                             "name": "position_1_1",
                             "vram": "0x800B247C",
                             "size": "0x10",
-                            "vrom": "0x09A294"
+                            "vrom": "0x09A29C"
                         },
                         {
                             "name": "virus_2_1",
                             "vram": "0x800B248C",
                             "size": "0x3C",
-                            "vrom": "0x09A2A4"
+                            "vrom": "0x09A2AC"
                         },
                         {
                             "name": "capsel_2_1",
                             "vram": "0x800B24C8",
                             "size": "0xC",
-                            "vrom": "0x09A2E0"
+                            "vrom": "0x09A2E8"
                         },
                         {
                             "name": "position_2_1",
                             "vram": "0x800B24D4",
                             "size": "0x28",
-                            "vrom": "0x09A2EC"
+                            "vrom": "0x09A2F4"
                         },
                         {
                             "name": "virus_3_1",
                             "vram": "0x800B24FC",
                             "size": "0x3C",
-                            "vrom": "0x09A314"
+                            "vrom": "0x09A31C"
                         },
                         {
                             "name": "capsel_3_1",
                             "vram": "0x800B2538",
                             "size": "0xC",
-                            "vrom": "0x09A350"
+                            "vrom": "0x09A358"
                         },
                         {
                             "name": "position_3_1",
                             "vram": "0x800B2544",
                             "size": "0x28",
-                            "vrom": "0x09A35C"
+                            "vrom": "0x09A364"
                         },
                         {
                             "name": "virus_4_1",
                             "vram": "0x800B256C",
                             "size": "0x30",
-                            "vrom": "0x09A384"
+                            "vrom": "0x09A38C"
                         },
                         {
                             "name": "capsel_4_1",
                             "vram": "0x800B259C",
                             "size": "0x14",
-                            "vrom": "0x09A3B4"
+                            "vrom": "0x09A3BC"
                         },
                         {
                             "name": "position_4_1",
                             "vram": "0x800B25B0",
                             "size": "0x40",
-                            "vrom": "0x09A3C8"
+                            "vrom": "0x09A3D0"
                         },
                         {
                             "name": "mes_1_1",
                             "vram": "0x800B25F0",
                             "size": "0x28",
-                            "vrom": "0x09A408"
+                            "vrom": "0x09A410"
                         },
                         {
                             "name": "mes_1_2",
                             "vram": "0x800B2618",
                             "size": "0x4C",
-                            "vrom": "0x09A430"
+                            "vrom": "0x09A438"
                         },
                         {
                             "name": "mes_1_3",
                             "vram": "0x800B2664",
                             "size": "0x50",
-                            "vrom": "0x09A47C"
+                            "vrom": "0x09A484"
                         },
                         {
                             "name": "mes_1_4",
                             "vram": "0x800B26B4",
                             "size": "0x38",
-                            "vrom": "0x09A4CC"
+                            "vrom": "0x09A4D4"
                         },
                         {
                             "name": "mes_1_5",
                             "vram": "0x800B26EC",
                             "size": "0x4C",
-                            "vrom": "0x09A504"
+                            "vrom": "0x09A50C"
                         },
                         {
                             "name": "mes_1_6",
                             "vram": "0x800B2738",
                             "size": "0x48",
-                            "vrom": "0x09A550"
+                            "vrom": "0x09A558"
                         },
                         {
                             "name": "mes_1_7",
                             "vram": "0x800B2780",
                             "size": "0x54",
-                            "vrom": "0x09A598"
+                            "vrom": "0x09A5A0"
                         },
                         {
                             "name": "mes_1_8",
                             "vram": "0x800B27D4",
                             "size": "0x34",
-                            "vrom": "0x09A5EC"
+                            "vrom": "0x09A5F4"
                         },
                         {
                             "name": "mes_2_1",
                             "vram": "0x800B2808",
                             "size": "0x44",
-                            "vrom": "0x09A620"
+                            "vrom": "0x09A628"
                         },
                         {
                             "name": "mes_2_2",
                             "vram": "0x800B284C",
                             "size": "0x48",
-                            "vrom": "0x09A664"
+                            "vrom": "0x09A66C"
                         },
                         {
                             "name": "mes_2_3",
                             "vram": "0x800B2894",
                             "size": "0x48",
-                            "vrom": "0x09A6AC"
+                            "vrom": "0x09A6B4"
                         },
                         {
                             "name": "mes_2_4",
                             "vram": "0x800B28DC",
                             "size": "0x38",
-                            "vrom": "0x09A6F4"
+                            "vrom": "0x09A6FC"
                         },
                         {
                             "name": "mes_2_5",
                             "vram": "0x800B2914",
                             "size": "0x44",
-                            "vrom": "0x09A72C"
+                            "vrom": "0x09A734"
                         },
                         {
                             "name": "mes_2_6",
                             "vram": "0x800B2958",
                             "size": "0x3C",
-                            "vrom": "0x09A770"
+                            "vrom": "0x09A778"
                         },
                         {
                             "name": "mes_2_7",
                             "vram": "0x800B2994",
                             "size": "0x4C",
-                            "vrom": "0x09A7AC"
+                            "vrom": "0x09A7B4"
                         },
                         {
                             "name": "mes_2_8",
                             "vram": "0x800B29E0",
                             "size": "0x40",
-                            "vrom": "0x09A7F8"
+                            "vrom": "0x09A800"
                         },
                         {
                             "name": "mes_2_9",
                             "vram": "0x800B2A20",
                             "size": "0x34",
-                            "vrom": "0x09A838"
+                            "vrom": "0x09A840"
                         },
                         {
                             "name": "mes_3_1",
                             "vram": "0x800B2A54",
                             "size": "0x44",
-                            "vrom": "0x09A86C"
+                            "vrom": "0x09A874"
                         },
                         {
                             "name": "mes_3_2",
                             "vram": "0x800B2A98",
                             "size": "0x44",
-                            "vrom": "0x09A8B0"
+                            "vrom": "0x09A8B8"
                         },
                         {
                             "name": "mes_3_3",
                             "vram": "0x800B2ADC",
                             "size": "0x48",
-                            "vrom": "0x09A8F4"
+                            "vrom": "0x09A8FC"
                         },
                         {
                             "name": "mes_3_4",
                             "vram": "0x800B2B24",
                             "size": "0x34",
-                            "vrom": "0x09A93C"
+                            "vrom": "0x09A944"
                         },
                         {
                             "name": "mes_3_5",
                             "vram": "0x800B2B58",
                             "size": "0x50",
-                            "vrom": "0x09A970"
+                            "vrom": "0x09A978"
                         },
                         {
                             "name": "mes_3_6",
                             "vram": "0x800B2BA8",
                             "size": "0x4C",
-                            "vrom": "0x09A9C0"
+                            "vrom": "0x09A9C8"
                         },
                         {
                             "name": "mes_3_7",
                             "vram": "0x800B2BF4",
                             "size": "0x50",
-                            "vrom": "0x09AA0C"
+                            "vrom": "0x09AA14"
                         },
                         {
                             "name": "mes_3_8",
                             "vram": "0x800B2C44",
                             "size": "0x4C",
-                            "vrom": "0x09AA5C"
+                            "vrom": "0x09AA64"
                         },
                         {
                             "name": "mes_3_9",
                             "vram": "0x800B2C90",
                             "size": "0x4C",
-                            "vrom": "0x09AAA8"
+                            "vrom": "0x09AAB0"
                         },
                         {
                             "name": "mes_3_10",
                             "vram": "0x800B2CDC",
                             "size": "0x4C",
-                            "vrom": "0x09AAF4"
+                            "vrom": "0x09AAFC"
                         },
                         {
                             "name": "mes_3_11",
                             "vram": "0x800B2D28",
                             "size": "0x38",
-                            "vrom": "0x09AB40"
+                            "vrom": "0x09AB48"
                         },
                         {
                             "name": "mes_3_12",
                             "vram": "0x800B2D60",
                             "size": "0x30",
-                            "vrom": "0x09AB78"
+                            "vrom": "0x09AB80"
                         },
                         {
                             "name": "mes_3_13",
                             "vram": "0x800B2D90",
                             "size": "0x48",
-                            "vrom": "0x09ABA8"
+                            "vrom": "0x09ABB0"
                         },
                         {
                             "name": "mes_3_14",
                             "vram": "0x800B2DD8",
                             "size": "0x4C",
-                            "vrom": "0x09ABF0"
+                            "vrom": "0x09ABF8"
                         },
                         {
                             "name": "mes_3_15",
                             "vram": "0x800B2E24",
                             "size": "0x34",
-                            "vrom": "0x09AC3C"
+                            "vrom": "0x09AC44"
                         },
                         {
                             "name": "mes_4_1",
                             "vram": "0x800B2E58",
                             "size": "0x38",
-                            "vrom": "0x09AC70"
+                            "vrom": "0x09AC78"
                         },
                         {
                             "name": "mes_4_2",
                             "vram": "0x800B2E90",
                             "size": "0x44",
-                            "vrom": "0x09ACA8"
+                            "vrom": "0x09ACB0"
                         },
                         {
                             "name": "mes_4_3",
                             "vram": "0x800B2ED4",
                             "size": "0x4C",
-                            "vrom": "0x09ACEC"
+                            "vrom": "0x09ACF4"
                         },
                         {
                             "name": "mes_4_4",
                             "vram": "0x800B2F20",
                             "size": "0x40",
-                            "vrom": "0x09AD38"
+                            "vrom": "0x09AD40"
                         },
                         {
                             "name": "mes_4_5",
                             "vram": "0x800B2F60",
                             "size": "0x4C",
-                            "vrom": "0x09AD78"
+                            "vrom": "0x09AD80"
                         },
                         {
                             "name": "mes_4_6",
                             "vram": "0x800B2FAC",
                             "size": "0x38",
-                            "vrom": "0x09ADC4"
+                            "vrom": "0x09ADCC"
                         },
                         {
                             "name": "mes_4_7",
                             "vram": "0x800B2FE4",
                             "size": "0x48",
-                            "vrom": "0x09ADFC"
+                            "vrom": "0x09AE04"
                         },
                         {
                             "name": "mes_4_8",
                             "vram": "0x800B302C",
                             "size": "0x28",
-                            "vrom": "0x09AE44"
+                            "vrom": "0x09AE4C"
                         },
                         {
                             "name": "mes_4_9",
                             "vram": "0x800B3054",
                             "size": "0x24",
-                            "vrom": "0x09AE6C"
+                            "vrom": "0x09AE74"
                         },
                         {
                             "name": "mes_4_10",
                             "vram": "0x800B3078",
                             "size": "0x78",
-                            "vrom": "0x09AE90"
+                            "vrom": "0x09AE98"
                         },
                         {
                             "name": "jtbl_800B30F0",
                             "vram": "0x800B30F0",
                             "size": "0x40",
-                            "vrom": "0x09AF08"
+                            "vrom": "0x09AF10"
                         },
                         {
                             "name": "_tex_884",
                             "vram": "0x800B3130",
                             "size": "0x10",
-                            "vrom": "0x09AF48"
+                            "vrom": "0x09AF50"
                         },
                         {
                             "name": "_pos_885",
                             "vram": "0x800B3140",
                             "size": "0x10",
-                            "vrom": "0x09AF58"
+                            "vrom": "0x09AF60"
                         },
                         {
                             "name": "RO_800B3150",
                             "vram": "0x800B3150",
                             "size": "0x18",
-                            "vrom": "0x09AF68"
+                            "vrom": "0x09AF70"
                         },
                         {
                             "name": "DBL_800B3168",
                             "vram": "0x800B3168",
                             "size": "0x8",
-                            "vrom": "0x09AF80"
+                            "vrom": "0x09AF88"
                         },
                         {
                             "name": "DBL_800B3170",
                             "vram": "0x800B3170",
                             "size": "0x8",
-                            "vrom": "0x09AF88"
+                            "vrom": "0x09AF90"
                         },
                         {
                             "name": "_posContPanel",
                             "vram": "0x800B3178",
                             "size": "0x8",
-                            "vrom": "0x09AF90"
+                            "vrom": "0x09AF98"
                         },
                         {
                             "name": "_posCircle_924",
                             "vram": "0x800B3180",
                             "size": "0x20",
-                            "vrom": "0x09AF98"
+                            "vrom": "0x09AFA0"
                         },
                         {
                             "name": "_posFinger_925",
                             "vram": "0x800B31A0",
                             "size": "0x20",
-                            "vrom": "0x09AFB8"
+                            "vrom": "0x09AFC0"
                         },
                         {
                             "name": "map_x_table_1036",
                             "vram": "0x800B31C0",
                             "size": "0x18",
-                            "vrom": "0x09AFD8"
+                            "vrom": "0x09AFE0"
                         },
                         {
                             "name": "_seqTbl_1037",
                             "vram": "0x800B31D8",
                             "size": "0x4",
-                            "vrom": "0x09AFF0"
+                            "vrom": "0x09AFF8"
                         },
                         {
                             "name": "map_y_table_1038",
                             "vram": "0x800B31DC",
                             "size": "0x4",
-                            "vrom": "0x09AFF4"
+                            "vrom": "0x09AFFC"
                         },
                         {
                             "name": "size_table_1039",
                             "vram": "0x800B31E0",
                             "size": "0x68",
-                            "vrom": "0x09AFF8"
+                            "vrom": "0x09B000"
                         }
                     ]
                 },
@@ -18961,31 +18969,31 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B3240",
                     "size": "0x120",
-                    "vrom": "0x09B058",
+                    "vrom": "0x09B060",
                     "symbols": [
                         {
                             "name": "_stageTbl",
                             "vram": "0x800B3240",
                             "size": "0x30",
-                            "vrom": "0x09B058"
+                            "vrom": "0x09B060"
                         },
                         {
                             "name": "STR_800B32A8",
                             "vram": "0x800B3270",
                             "size": "0x38",
-                            "vrom": "0x09B088"
+                            "vrom": "0x09B090"
                         },
                         {
                             "name": "_mesBootContErr",
                             "vram": "0x800B32A8",
                             "size": "0x70",
-                            "vrom": "0x09B0C0"
+                            "vrom": "0x09B0C8"
                         },
                         {
                             "name": "_mesBootCSumErr",
                             "vram": "0x800B3318",
                             "size": "0x48",
-                            "vrom": "0x09B130"
+                            "vrom": "0x09B138"
                         }
                     ]
                 },
@@ -18994,85 +19002,85 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B3360",
                     "size": "0xF0",
-                    "vrom": "0x09B178",
+                    "vrom": "0x09B180",
                     "symbols": [
                         {
                             "name": "DBL_800B3360",
                             "vram": "0x800B3360",
                             "size": "0x8",
-                            "vrom": "0x09B178"
+                            "vrom": "0x09B180"
                         },
                         {
                             "name": "DBL_800B3368",
                             "vram": "0x800B3368",
                             "size": "0x8",
-                            "vrom": "0x09B180"
+                            "vrom": "0x09B188"
                         },
                         {
                             "name": "DBL_800B3370",
                             "vram": "0x800B3370",
                             "size": "0x8",
-                            "vrom": "0x09B188"
+                            "vrom": "0x09B190"
                         },
                         {
                             "name": "DBL_800B3378",
                             "vram": "0x800B3378",
                             "size": "0x8",
-                            "vrom": "0x09B190"
+                            "vrom": "0x09B198"
                         },
                         {
                             "name": "DBL_800B3380",
                             "vram": "0x800B3380",
                             "size": "0x8",
-                            "vrom": "0x09B198"
+                            "vrom": "0x09B1A0"
                         },
                         {
                             "name": "DBL_800B3388",
                             "vram": "0x800B3388",
                             "size": "0x8",
-                            "vrom": "0x09B1A0"
+                            "vrom": "0x09B1A8"
                         },
                         {
                             "name": "DBL_800B3390",
                             "vram": "0x800B3390",
                             "size": "0x8",
-                            "vrom": "0x09B1A8"
+                            "vrom": "0x09B1B0"
                         },
                         {
                             "name": "DBL_800B3398",
                             "vram": "0x800B3398",
                             "size": "0x8",
-                            "vrom": "0x09B1B0"
+                            "vrom": "0x09B1B8"
                         },
                         {
                             "name": "DBL_800B33A0",
                             "vram": "0x800B33A0",
                             "size": "0x8",
-                            "vrom": "0x09B1B8"
+                            "vrom": "0x09B1C0"
                         },
                         {
                             "name": "DBL_800B33A8",
                             "vram": "0x800B33A8",
                             "size": "0x8",
-                            "vrom": "0x09B1C0"
+                            "vrom": "0x09B1C8"
                         },
                         {
                             "name": "DBL_800B33B0",
                             "vram": "0x800B33B0",
                             "size": "0x8",
-                            "vrom": "0x09B1C8"
+                            "vrom": "0x09B1D0"
                         },
                         {
                             "name": "DBL_800B33B8",
                             "vram": "0x800B33B8",
                             "size": "0x20",
-                            "vrom": "0x09B1D0"
+                            "vrom": "0x09B1D8"
                         },
                         {
                             "name": "jtbl_800B33D8",
                             "vram": "0x800B33D8",
                             "size": "0x78",
-                            "vrom": "0x09B1F0"
+                            "vrom": "0x09B1F8"
                         }
                     ]
                 },
@@ -19081,67 +19089,67 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B3450",
                     "size": "0x50",
-                    "vrom": "0x09B268",
+                    "vrom": "0x09B270",
                     "symbols": [
                         {
                             "name": "DBL_800B3450",
                             "vram": "0x800B3450",
                             "size": "0x8",
-                            "vrom": "0x09B268"
+                            "vrom": "0x09B270"
                         },
                         {
                             "name": "DBL_800B3458",
                             "vram": "0x800B3458",
                             "size": "0x8",
-                            "vrom": "0x09B270"
+                            "vrom": "0x09B278"
                         },
                         {
                             "name": "DBL_800B3460",
                             "vram": "0x800B3460",
                             "size": "0x8",
-                            "vrom": "0x09B278"
+                            "vrom": "0x09B280"
                         },
                         {
                             "name": "DBL_800B3468",
                             "vram": "0x800B3468",
                             "size": "0x8",
-                            "vrom": "0x09B280"
+                            "vrom": "0x09B288"
                         },
                         {
                             "name": "DBL_800B3470",
                             "vram": "0x800B3470",
                             "size": "0x8",
-                            "vrom": "0x09B288"
+                            "vrom": "0x09B290"
                         },
                         {
                             "name": "DBL_800B3478",
                             "vram": "0x800B3478",
                             "size": "0x8",
-                            "vrom": "0x09B290"
+                            "vrom": "0x09B298"
                         },
                         {
                             "name": "DBL_800B3480",
                             "vram": "0x800B3480",
                             "size": "0x8",
-                            "vrom": "0x09B298"
+                            "vrom": "0x09B2A0"
                         },
                         {
                             "name": "DBL_800B3488",
                             "vram": "0x800B3488",
                             "size": "0x8",
-                            "vrom": "0x09B2A0"
+                            "vrom": "0x09B2A8"
                         },
                         {
                             "name": "DBL_800B3490",
                             "vram": "0x800B3490",
                             "size": "0x8",
-                            "vrom": "0x09B2A8"
+                            "vrom": "0x09B2B0"
                         },
                         {
                             "name": "DBL_800B3498",
                             "vram": "0x800B3498",
                             "size": "0x8",
-                            "vrom": "0x09B2B0"
+                            "vrom": "0x09B2B8"
                         }
                     ]
                 },
@@ -19150,25 +19158,25 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B34A0",
                     "size": "0x50",
-                    "vrom": "0x09B2B8",
+                    "vrom": "0x09B2C0",
                     "symbols": [
                         {
                             "name": "DBL_800B34D8",
                             "vram": "0x800B34D8",
                             "size": "0x8",
-                            "vrom": "0x09B2F0"
+                            "vrom": "0x09B2F8"
                         },
                         {
                             "name": "DBL_800B34E0",
                             "vram": "0x800B34E0",
                             "size": "0x8",
-                            "vrom": "0x09B2F8"
+                            "vrom": "0x09B300"
                         },
                         {
                             "name": "DBL_800B34E8",
                             "vram": "0x800B34E8",
                             "size": "0x40",
-                            "vrom": "0x09B300"
+                            "vrom": "0x09B308"
                         }
                     ]
                 },
@@ -19177,79 +19185,79 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B34F0",
                     "size": "0x60",
-                    "vrom": "0x09B308",
+                    "vrom": "0x09B310",
                     "symbols": [
                         {
                             "name": "DBL_800B34F0",
                             "vram": "0x800B34F0",
                             "size": "0x8",
-                            "vrom": "0x09B308"
+                            "vrom": "0x09B310"
                         },
                         {
                             "name": "DBL_800B34F8",
                             "vram": "0x800B34F8",
                             "size": "0x8",
-                            "vrom": "0x09B310"
+                            "vrom": "0x09B318"
                         },
                         {
                             "name": "DBL_800B3500",
                             "vram": "0x800B3500",
                             "size": "0x8",
-                            "vrom": "0x09B318"
+                            "vrom": "0x09B320"
                         },
                         {
                             "name": "DBL_800B3508",
                             "vram": "0x800B3508",
                             "size": "0x8",
-                            "vrom": "0x09B320"
+                            "vrom": "0x09B328"
                         },
                         {
                             "name": "DBL_800B3510",
                             "vram": "0x800B3510",
                             "size": "0x8",
-                            "vrom": "0x09B328"
+                            "vrom": "0x09B330"
                         },
                         {
                             "name": "DBL_800B3518",
                             "vram": "0x800B3518",
                             "size": "0x8",
-                            "vrom": "0x09B330"
+                            "vrom": "0x09B338"
                         },
                         {
                             "name": "DBL_800B3520",
                             "vram": "0x800B3520",
                             "size": "0x8",
-                            "vrom": "0x09B338"
+                            "vrom": "0x09B340"
                         },
                         {
                             "name": "DBL_800B3528",
                             "vram": "0x800B3528",
                             "size": "0x8",
-                            "vrom": "0x09B340"
+                            "vrom": "0x09B348"
                         },
                         {
                             "name": "DBL_800B3530",
                             "vram": "0x800B3530",
                             "size": "0x8",
-                            "vrom": "0x09B348"
+                            "vrom": "0x09B350"
                         },
                         {
                             "name": "DBL_800B3538",
                             "vram": "0x800B3538",
                             "size": "0x8",
-                            "vrom": "0x09B350"
+                            "vrom": "0x09B358"
                         },
                         {
                             "name": "DBL_800B3540",
                             "vram": "0x800B3540",
                             "size": "0x8",
-                            "vrom": "0x09B358"
+                            "vrom": "0x09B360"
                         },
                         {
                             "name": "DBL_800B3548",
                             "vram": "0x800B3548",
                             "size": "0x8",
-                            "vrom": "0x09B360"
+                            "vrom": "0x09B368"
                         }
                     ]
                 },
@@ -19258,169 +19266,169 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B3550",
                     "size": "0xE0",
-                    "vrom": "0x09B368",
+                    "vrom": "0x09B370",
                     "symbols": [
                         {
                             "name": "DBL_800B3550",
                             "vram": "0x800B3550",
                             "size": "0x8",
-                            "vrom": "0x09B368"
+                            "vrom": "0x09B370"
                         },
                         {
                             "name": "DBL_800B3558",
                             "vram": "0x800B3558",
                             "size": "0x8",
-                            "vrom": "0x09B370"
+                            "vrom": "0x09B378"
                         },
                         {
                             "name": "DBL_800B3560",
                             "vram": "0x800B3560",
                             "size": "0x8",
-                            "vrom": "0x09B378"
+                            "vrom": "0x09B380"
                         },
                         {
                             "name": "DBL_800B3568",
                             "vram": "0x800B3568",
                             "size": "0x8",
-                            "vrom": "0x09B380"
+                            "vrom": "0x09B388"
                         },
                         {
                             "name": "DBL_800B3570",
                             "vram": "0x800B3570",
                             "size": "0x8",
-                            "vrom": "0x09B388"
+                            "vrom": "0x09B390"
                         },
                         {
                             "name": "DBL_800B3578",
                             "vram": "0x800B3578",
                             "size": "0x8",
-                            "vrom": "0x09B390"
+                            "vrom": "0x09B398"
                         },
                         {
                             "name": "DBL_800B3580",
                             "vram": "0x800B3580",
                             "size": "0x8",
-                            "vrom": "0x09B398"
+                            "vrom": "0x09B3A0"
                         },
                         {
                             "name": "DBL_800B3588",
                             "vram": "0x800B3588",
                             "size": "0x8",
-                            "vrom": "0x09B3A0"
+                            "vrom": "0x09B3A8"
                         },
                         {
                             "name": "DBL_800B3590",
                             "vram": "0x800B3590",
                             "size": "0x8",
-                            "vrom": "0x09B3A8"
+                            "vrom": "0x09B3B0"
                         },
                         {
                             "name": "DBL_800B3598",
                             "vram": "0x800B3598",
                             "size": "0x8",
-                            "vrom": "0x09B3B0"
+                            "vrom": "0x09B3B8"
                         },
                         {
                             "name": "DBL_800B35A0",
                             "vram": "0x800B35A0",
                             "size": "0x8",
-                            "vrom": "0x09B3B8"
+                            "vrom": "0x09B3C0"
                         },
                         {
                             "name": "DBL_800B35A8",
                             "vram": "0x800B35A8",
                             "size": "0x8",
-                            "vrom": "0x09B3C0"
+                            "vrom": "0x09B3C8"
                         },
                         {
                             "name": "DBL_800B35B0",
                             "vram": "0x800B35B0",
                             "size": "0x8",
-                            "vrom": "0x09B3C8"
+                            "vrom": "0x09B3D0"
                         },
                         {
                             "name": "DBL_800B35B8",
                             "vram": "0x800B35B8",
                             "size": "0x8",
-                            "vrom": "0x09B3D0"
+                            "vrom": "0x09B3D8"
                         },
                         {
                             "name": "DBL_800B35C0",
                             "vram": "0x800B35C0",
                             "size": "0x8",
-                            "vrom": "0x09B3D8"
+                            "vrom": "0x09B3E0"
                         },
                         {
                             "name": "DBL_800B35C8",
                             "vram": "0x800B35C8",
                             "size": "0x8",
-                            "vrom": "0x09B3E0"
+                            "vrom": "0x09B3E8"
                         },
                         {
                             "name": "DBL_800B35D0",
                             "vram": "0x800B35D0",
                             "size": "0x8",
-                            "vrom": "0x09B3E8"
+                            "vrom": "0x09B3F0"
                         },
                         {
                             "name": "DBL_800B35D8",
                             "vram": "0x800B35D8",
                             "size": "0x8",
-                            "vrom": "0x09B3F0"
+                            "vrom": "0x09B3F8"
                         },
                         {
                             "name": "DBL_800B35E0",
                             "vram": "0x800B35E0",
                             "size": "0x8",
-                            "vrom": "0x09B3F8"
+                            "vrom": "0x09B400"
                         },
                         {
                             "name": "DBL_800B35E8",
                             "vram": "0x800B35E8",
                             "size": "0x8",
-                            "vrom": "0x09B400"
+                            "vrom": "0x09B408"
                         },
                         {
                             "name": "DBL_800B35F0",
                             "vram": "0x800B35F0",
                             "size": "0x8",
-                            "vrom": "0x09B408"
+                            "vrom": "0x09B410"
                         },
                         {
                             "name": "DBL_800B35F8",
                             "vram": "0x800B35F8",
                             "size": "0x8",
-                            "vrom": "0x09B410"
+                            "vrom": "0x09B418"
                         },
                         {
                             "name": "DBL_800B3600",
                             "vram": "0x800B3600",
                             "size": "0x8",
-                            "vrom": "0x09B418"
+                            "vrom": "0x09B420"
                         },
                         {
                             "name": "DBL_800B3608",
                             "vram": "0x800B3608",
                             "size": "0x8",
-                            "vrom": "0x09B420"
+                            "vrom": "0x09B428"
                         },
                         {
                             "name": "DBL_800B3610",
                             "vram": "0x800B3610",
                             "size": "0x8",
-                            "vrom": "0x09B428"
+                            "vrom": "0x09B430"
                         },
                         {
                             "name": "DBL_800B3618",
                             "vram": "0x800B3618",
                             "size": "0x8",
-                            "vrom": "0x09B430"
+                            "vrom": "0x09B438"
                         },
                         {
                             "name": "DBL_800B3620",
                             "vram": "0x800B3620",
                             "size": "0x10",
-                            "vrom": "0x09B438"
+                            "vrom": "0x09B440"
                         }
                     ]
                 },
@@ -19429,7 +19437,7 @@
                     "sectionType": ".rodata",
                     "vram": "0x800B3630",
                     "size": "0x10",
-                    "vrom": "0x09B448",
+                    "vrom": "0x09B450",
                     "symbols": []
                 }
             ]
