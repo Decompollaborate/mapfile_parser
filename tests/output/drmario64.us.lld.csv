@@ -235,10 +235,10 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 800841D0,build/asm/us/libmus/aud_thread.o,.text,2,392,704,352.00
 80084490,build/asm/us/libmus/lib_memory.o,.text,6,116,320,53.33
 800845D0,build/asm/us/libmus/aud_samples.o,.text,2,120,192,96.00
-80084690,build/asm/us/data/rsp/rspboot.o,.text,2,0,208,104.00
-80084760,build/asm/us/data/rsp/aspMain.o,.text,2,0,3616,1808.00
-80085580,build/asm/us/data/rsp/f3dex2.o,.text,2,0,5008,2504.00
-80086910,build/asm/us/data/rsp/s2dex.o,.text,2,0,6128,3064.00
+80084690,build/asm/us/data/libultra/rsp/rspboot.o,.text,2,0,208,104.00
+80084760,build/asm/us/data/libultra/rsp/aspMain.o,.text,2,0,3616,1808.00
+80085580,build/asm/us/data/libultra/rsp/f3dex2.o,.text,2,0,5008,2504.00
+80086910,build/asm/us/data/libultra/rsp/s2dex.o,.text,2,0,6128,3064.00
 80088100,build/src/main_segment/000280.o,.data,2,4,16,8.00
 80088110,build/src/main_segment/graphic.o,.data,6,16,64,10.67
 80088150,build/src/main_segment/graphics/graphic_dlists.o,.data,8,224,672,84.00
@@ -268,9 +268,9 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 800ABD10,build/lib/libmus/src/player_fx.o,.data,8,136,528,66.00
 800ABF20,build/asm/us/data/libmus/aud_sched.data.o,.data,2,12,16,8.00
 800ABF30,build/asm/us/data/libmus/aud_thread.data.o,.data,1,16,16,16.00
-800ABF40,build/asm/us/data/rsp/aspMain.o,.data,2,0,704,352.00
-800AC200,build/asm/us/data/rsp/f3dex2.o,.data,2,0,1056,528.00
-800AC620,build/asm/us/data/rsp/s2dex.o,.data,2,0,960,480.00
+800ABF40,build/asm/us/data/libultra/rsp/aspMain.o,.data,2,0,704,352.00
+800AC200,build/asm/us/data/libultra/rsp/f3dex2.o,.data,2,0,1056,528.00
+800AC620,build/asm/us/data/libultra/rsp/s2dex.o,.data,2,0,960,480.00
 800ACA10,build/src/main_segment/sound.o,.rodata,3,624,752,250.67
 800ACD20,build/src/main_segment/main1x.o,.rodata,12,64,400,33.33
 800ACEB0,build/src/main_segment/aiset.o,.rodata,5,48,144,28.80
