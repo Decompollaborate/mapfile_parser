@@ -24,6 +24,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - `MapFile.readMapFile`/`MapFile::read_map_file` can now guess the map format
   between any of the known formats.
+- Some known symbol names will be automatically filtered out during the parsing
+  step.
+  - Currently only `gcc2_compiled.` is filtered out.
 
 ### Fixed
 

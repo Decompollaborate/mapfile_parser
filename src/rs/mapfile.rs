@@ -2,6 +2,7 @@
 /* SPDX-License-Identifier: MIT */
 
 use std::collections::HashMap;
+use std::collections::HashSet;
 use std::fmt::Write;
 use std::path::PathBuf;
 
@@ -13,6 +14,14 @@ use crate::{
     file, found_symbol_info, maps_comparison_info, progress_stats, segment, symbol,
     symbol_comparison_info, utils,
 };
+
+lazy_static! {
+    static ref BANNED_SYMBOL_NAMES: HashSet<&'static str> = {
+        let mut symbol_names = HashSet::new();
+        symbol_names.insert("gcc2_compiled.");
+        symbol_names
+    };
+}
 
 #[derive(Debug, Clone)]
 // TODO: sequence?
@@ -107,14 +116,17 @@ impl MapFile {
                     if let Some(entry_match) = regex_function_entry.captures(line) {
                         // println!("{entry_match:?}");
                         let sym_name = &entry_match["name"];
-                        let sym_vram = utils::parse_hex(&entry_match["vram"]);
 
-                        let current_segment = temp_segment_list.last_mut().unwrap();
-                        let current_file = current_segment.files_list.last_mut().unwrap();
+                        if !BANNED_SYMBOL_NAMES.contains(&sym_name) {
+                            let sym_vram = utils::parse_hex(&entry_match["vram"]);
 
-                        current_file
-                            .symbols
-                            .push(symbol::Symbol::new_default(sym_name.into(), sym_vram));
+                            let current_segment = temp_segment_list.last_mut().unwrap();
+                            let current_file = current_segment.files_list.last_mut().unwrap();
+
+                            current_file
+                                .symbols
+                                .push(symbol::Symbol::new_default(sym_name.into(), sym_vram));
+                        }
                     }
                 }
             }
@@ -341,25 +353,25 @@ impl MapFile {
                 // pass
             } else if let Some(symbol_entry_match) = regex_symbol_entry.captures(line) {
                 let name = &symbol_entry_match["name"];
-                let vram = utils::parse_hex(&symbol_entry_match["vram"]);
-                let size = utils::parse_hex(&symbol_entry_match["size"]);
-                let vrom = utils::parse_hex(&symbol_entry_match["vrom"]);
-                let align = utils::parse_hex(&symbol_entry_match["align"]);
 
-                //println!("        symbol: {name}");
-                //println!("            {vram:08X} {size:08X} {vrom:08X} {align:08X}");
+                if !BANNED_SYMBOL_NAMES.contains(&name) {
+                    let vram = utils::parse_hex(&symbol_entry_match["vram"]);
+                    let size = utils::parse_hex(&symbol_entry_match["size"]);
+                    let vrom = utils::parse_hex(&symbol_entry_match["vrom"]);
+                    let align = utils::parse_hex(&symbol_entry_match["align"]);
 
-                let current_segment = temp_segment_list.last_mut().unwrap();
-                let current_file = current_segment.files_list.last_mut().unwrap();
+                    let current_segment = temp_segment_list.last_mut().unwrap();
+                    let current_file = current_segment.files_list.last_mut().unwrap();
 
-                let mut new_symbol = symbol::Symbol::new_default(name.into(), vram);
-                if size > 0 {
-                    new_symbol.size = Some(size);
+                    let mut new_symbol = symbol::Symbol::new_default(name.into(), vram);
+                    if size > 0 {
+                        new_symbol.size = Some(size);
+                    }
+                    if !current_file.is_noload_section() {
+                        new_symbol.vrom = Some(vrom)
+                    }
+                    current_file.symbols.push(new_symbol);
                 }
-                if !current_file.is_noload_section() {
-                    new_symbol.vrom = Some(vrom)
-                }
-                current_file.symbols.push(new_symbol);
             }
         }
 
