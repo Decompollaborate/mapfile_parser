@@ -14,3 +14,20 @@ pub fn read_file_contents(file_path: &PathBuf) -> String {
 
     file_contents
 }
+
+pub fn is_noload_section(section_name: &str) -> bool {
+    if section_name == ".bss" {
+        return true;
+    }
+    if section_name == ".sbss" {
+        return true;
+    }
+    if section_name == "COMMON" {
+        return true;
+    }
+    if section_name == ".scommon" {
+        return true;
+    }
+
+    false
+}

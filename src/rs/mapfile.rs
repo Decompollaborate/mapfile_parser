@@ -312,7 +312,10 @@ impl MapFile {
                     section_type = prev_file.section_type.clone();
                 }
 
-                let mut new_file = file::File::new(filepath, vram, size, &section_type, Some(vrom));
+                let mut new_file = file::File::new_default(filepath, vram, size, &section_type);
+                if !utils::is_noload_section(&section_type) {
+                    new_file.vrom = Some(vrom);
+                }
                 current_segment.files_list.push(new_file);
             } else if let Some(file_entry_match) = regex_file_data_entry.captures(line) {
                 let filepath = std::path::PathBuf::from(&file_entry_match["name"]);
@@ -328,7 +331,10 @@ impl MapFile {
                 if size > 0 {
                     let current_segment = temp_segment_list.last_mut().unwrap();
 
-                    let mut new_file = file::File::new(filepath,vram,size,section_type,Some(vrom));
+                    let mut new_file = file::File::new_default(filepath,vram,size,&section_type);
+                    if !utils::is_noload_section(&section_type) {
+                        new_file.vrom = Some(vrom);
+                    }
                     current_segment.files_list.push(new_file);
                 }
             } else if regex_label.is_match(line) {
@@ -346,7 +352,13 @@ impl MapFile {
                 let current_segment = temp_segment_list.last_mut().unwrap();
                 let current_file = current_segment.files_list.last_mut().unwrap();
 
-                let mut new_symbol = symbol::Symbol::new(name.into(), vram, Some(size), Some(vrom));
+                let mut new_symbol = symbol::Symbol::new_default(name.into(), vram);
+                if size > 0 {
+                    new_symbol.size = Some(size);
+                }
+                if !current_file.is_noload_section() {
+                    new_symbol.vrom = Some(vrom)
+                }
                 current_file.symbols.push(new_symbol);
             }
         }

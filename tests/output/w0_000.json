@@ -849,13 +849,13 @@
                     "sectionType": ".sbss",
                     "vram": "0x8017B700",
                     "size": "0x1900",
-                    "vrom": "0x001700",
+                    "vrom": null,
                     "symbols": [
                         {
                             "name": "D_4000_8017B700",
                             "vram": "0x8017B700",
                             "size": "0x1900",
-                            "vrom": "0x001700"
+                            "vrom": null
                         }
                     ]
                 },
@@ -864,7 +864,7 @@
                     "sectionType": ".pdr",
                     "vram": "0x00000000",
                     "size": "0x320",
-                    "vrom": "0x003000",
+                    "vrom": "0x001700",
                     "symbols": []
                 },
                 {
@@ -872,7 +872,7 @@
                     "sectionType": ".debug_line",
                     "vram": "0x00000000",
                     "size": "0xED",
-                    "vrom": "0x003320",
+                    "vrom": "0x001A20",
                     "symbols": []
                 },
                 {
@@ -880,7 +880,7 @@
                     "sectionType": ".debug_info",
                     "vram": "0x00000000",
                     "size": "0x185",
-                    "vrom": "0x00340D",
+                    "vrom": "0x001B0D",
                     "symbols": []
                 },
                 {
@@ -888,7 +888,7 @@
                     "sectionType": ".debug_abbrev",
                     "vram": "0x00000000",
                     "size": "0x21",
-                    "vrom": "0x003592",
+                    "vrom": "0x001C92",
                     "symbols": []
                 },
                 {
@@ -896,7 +896,7 @@
                     "sectionType": ".debug_str",
                     "vram": "0x00000000",
                     "size": "0x1D0",
-                    "vrom": "0x0035B3",
+                    "vrom": "0x001CB3",
                     "symbols": []
                 }
             ]

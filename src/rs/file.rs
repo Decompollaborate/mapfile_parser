@@ -7,7 +7,7 @@ use std::path::PathBuf;
 use std::fmt::Write;
 use std::hash::{Hash, Hasher};
 
-use crate::symbol;
+use crate::{symbol, utils};
 
 #[cfg(feature = "python_bindings")]
 use std::collections::hash_map::DefaultHasher;
@@ -61,7 +61,7 @@ impl File {
     #[getter]
     #[pyo3(name = "isNoloadSection")]
     pub fn is_noload_section(&self) -> bool {
-        self.section_type == ".bss"
+        utils::is_noload_section(&self.section_type)
     }
 
     #[cfg(feature = "python_bindings")]

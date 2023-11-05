@@ -29,6 +29,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Fix parser not detecting `*fill*` lines on GNU ld maps if they specified the
   value that was used for filling/padding.
+- `.sbss`, `COMMON` and `.scommon` sections are now properly considered noload
+  sections.
 
 ## [2.2.1] - 2023-10-08
 
