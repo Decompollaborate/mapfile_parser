@@ -397,10 +397,37 @@ impl MapFile {
                 segment.vrom,
             );
 
-            for file in segment.files_list.iter() {
+            for file in segment.files_list.iter_mut() {
                 if file.is_placeholder() {
                     // drop placeholders
                     continue;
+                }
+
+                let mut acummulated_size = 0;
+                let symbols_count = file.symbols.len();
+
+                if symbols_count > 0 {
+                    // Calculate the size of symbols that the map file did not report.
+                    // usually asm symbols and not C ones
+
+                    for index in 0..symbols_count - 1 {
+                        let next_sym_vram = file.symbols[index + 1].vram;
+                        let sym = &mut file.symbols[index];
+
+                        let sym_size = next_sym_vram - sym.vram;
+                        acummulated_size += sym_size;
+
+                        if sym.size.is_none() {
+                            sym.size = Some(sym_size);
+                        }
+                    }
+
+                    // Calculate size of last symbol of the file
+                    let sym = &mut file.symbols[symbols_count - 1];
+                    if sym.size.is_none() {
+                        let sym_size = file.size - acummulated_size;
+                        sym.size = Some(sym_size);
+                    }
                 }
 
                 new_segment.files_list.push(file.clone());
