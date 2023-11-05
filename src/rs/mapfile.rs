@@ -162,7 +162,7 @@ impl MapFile {
                         name = prev_line;
                     }
 
-                    temp_segment_list.push(segment::Segment::new(name.into(), vram, size, vrom));
+                    temp_segment_list.push(segment::Segment::new_default(name.into(), vram, size, vrom));
                 } else if let Some(fill_match) = regex_fill.captures(line) {
                     // Make a dummy file to handle *fill*
                     let mut filepath = std::path::PathBuf::new();
@@ -202,12 +202,7 @@ impl MapFile {
                 }
             }
 
-            let mut new_segment = segment::Segment::new(
-                segment.name.clone(),
-                segment.vram,
-                segment.size,
-                segment.vrom,
-            );
+            let mut new_segment = segment.clone_no_filelist();
 
             let mut vrom_offset = segment.vrom;
             for file in segment.files_list.iter_mut() {
@@ -302,7 +297,9 @@ impl MapFile {
                 let vrom = utils::parse_hex(&segment_entry_match["vrom"]);
                 let align = utils::parse_hex(&segment_entry_match["align"]);
 
-                let mut new_segment = segment::Segment::new(name.into(), vram, size, vrom);
+                let mut new_segment = segment::Segment::new_default(name.into(), vram, size, vrom);
+                new_segment.align = Some(align);
+
                 temp_segment_list.push(new_segment);
                 //println!("segment: {name}");
                 //println!("    {vram:08X} {size:08X} {vrom:08X} {align:08X}");
@@ -314,7 +311,7 @@ impl MapFile {
                 let vram = utils::parse_hex(&fill_entry_match["vram"]);
                 let size = utils::parse_hex(&fill_entry_match["size"]);
                 let vrom = utils::parse_hex(&fill_entry_match["vrom"]);
-                let align = utils::parse_hex(&fill_entry_match["align"]);
+                // let align = utils::parse_hex(&fill_entry_match["align"]);
                 let mut section_type = "".to_owned();
 
                 //println!("    fill: {expr}");
@@ -354,6 +351,8 @@ impl MapFile {
                     if !utils::is_noload_section(&section_type) {
                         new_file.vrom = Some(vrom);
                     }
+                    new_file.align = Some(align);
+
                     current_segment.files_list.push(new_file);
                 }
             } else if regex_label.is_match(line) {
@@ -377,6 +376,8 @@ impl MapFile {
                     if !current_file.is_noload_section() {
                         new_symbol.vrom = Some(vrom)
                     }
+                    new_symbol.align = Some(align);
+
                     current_file.symbols.push(new_symbol);
                 }
             }
@@ -390,12 +391,7 @@ impl MapFile {
                 }
             }
 
-            let mut new_segment = segment::Segment::new(
-                segment.name.clone(),
-                segment.vram,
-                segment.size,
-                segment.vrom,
-            );
+            let mut new_segment = segment.clone_no_filelist();
 
             for file in segment.files_list.iter_mut() {
                 if file.is_placeholder() {

@@ -31,6 +31,9 @@ pub struct Segment {
     #[pyo3(get, set)]
     pub vrom: u64,
 
+    #[pyo3(get, set)]
+    pub align: Option<u64>,
+
     // #[pyo3(get, set)]
     pub files_list: Vec<file::File>,
 }
@@ -38,19 +41,20 @@ pub struct Segment {
 #[pymethods]
 impl Segment {
     #[new]
-    pub fn new(name: String, vram: u64, size: u64, vrom: u64) -> Self {
+    pub fn new(name: String, vram: u64, size: u64, vrom: u64, align: Option<u64>) -> Self {
         Segment {
             name,
             vram,
             size,
             vrom,
+            align,
             files_list: Vec::new(),
         }
     }
 
     #[pyo3(name = "filterBySectionType")]
     pub fn filter_by_section_type(&self, section_type: &str) -> Segment {
-        let mut new_segment = Segment::new(self.name.clone(), self.vram, self.size, self.vrom);
+        let mut new_segment = self.clone_no_filelist();
 
         for file in &self.files_list {
             if file.section_type == section_type {
@@ -63,7 +67,7 @@ impl Segment {
 
     #[pyo3(name = "getEveryFileExceptSectionType")]
     pub fn get_every_file_except_section_type(&self, section_type: &str) -> Segment {
-        let mut new_segment = Segment::new(self.name.clone(), self.vram, self.size, self.vrom);
+        let mut new_segment = self.clone_no_filelist();
 
         for file in &self.files_list {
             if file.section_type != section_type {
@@ -112,7 +116,7 @@ impl Segment {
 
     #[pyo3(name = "mixFolders")]
     pub fn mix_folders(&self) -> Segment {
-        let mut new_segment = Segment::new(self.name.clone(), self.vram, self.size, self.vrom);
+        let mut new_segment = self.clone_no_filelist();
 
         // <PathBuf, Vec<File>>
         let mut aux_dict = HashMap::new();
@@ -149,6 +153,7 @@ impl Segment {
             let mut size = 0;
             let vrom = first_file.vrom;
             let section_type = &first_file.section_type;
+            let align = first_file.align;
 
             let mut symbols = Vec::new();
             for file in files_in_folder {
@@ -159,7 +164,7 @@ impl Segment {
             }
 
             let mut temp_file =
-                file::File::new(folder_path.clone(), vram, size, section_type, vrom);
+                file::File::new(folder_path.clone(), vram, size, section_type, vrom, align);
             temp_file.symbols = symbols;
             new_segment.files_list.push(temp_file);
         }
@@ -271,18 +276,41 @@ impl Segment {
 }
 
 impl Segment {
+    pub fn new_default(name: String, vram: u64, size: u64, vrom: u64) -> Self {
+        Segment {
+            name,
+            vram,
+            size,
+            vrom,
+            align: None,
+            files_list: Vec::new(),
+        }
+    }
+
+    pub fn clone_no_filelist(&self) -> Self {
+        Segment {
+            name: self.name.clone(),
+            vram: self.vram,
+            size: self.size,
+            vrom: self.vrom,
+            align: self.align,
+            files_list: Vec::new(),
+        }
+    }
+
     pub fn new_placeholder() -> Self {
         Segment {
             name: "$nosegment".into(),
             vram: 0,
             size: 0,
             vrom: 0,
+            align: None,
             files_list: vec![file::File::new_placeholder()],
         }
     }
 
     pub fn is_placeholder(&self) -> bool {
-        if self.name == "$nosegment" && self.vram == 0 && self.size == 0 {
+        if self.name == "$nosegment" && self.vram == 0 && self.size == 0 && self.vrom == 0 && self.align.is_none() {
             if self.files_list.is_empty() {
                 return true;
             }

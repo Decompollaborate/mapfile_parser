@@ -65,6 +65,7 @@ class Symbol:
     vram: int
     size: int|None = None # in bytes
     vrom: int|None = None
+    align: int|None = None
 
     def getVramStr(self) -> str:
         return f"0x{self.vram:08X}"
@@ -141,6 +142,7 @@ class File:
     size: int # in bytes
     sectionType: str
     vrom: int|None = None
+    align: int|None = None
     _symbols: list[Symbol] = dataclasses.field(default_factory=list)
 
     @property
@@ -308,6 +310,7 @@ class Segment:
     vram: int
     size: int
     vrom: int
+    align: int|None = None
     _filesList: list[File] = dataclasses.field(default_factory=list)
 
     def serializeVram(self, humanReadable: bool=True) -> str|int|None:
@@ -481,11 +484,11 @@ class MapFile:
 
     def _transferContentsFromNativeMapFile(self, nativeMapFile: MapFileRs):
         for segment in nativeMapFile:
-            newSegment = Segment(segment.name, segment.vram, segment.size, segment.vrom)
+            newSegment = Segment(segment.name, segment.vram, segment.size, segment.vrom, segment.align)
             for file in segment:
-                newFile = File(file.filepath, file.vram, file.size, file.sectionType, file.vrom)
+                newFile = File(file.filepath, file.vram, file.size, file.sectionType, file.vrom, file.align)
                 for symbol in file:
-                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom)
+                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align)
 
                     newFile._symbols.append(newSymbol)
                 newSegment._filesList.append(newFile)

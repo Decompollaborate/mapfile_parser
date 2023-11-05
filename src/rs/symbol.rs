@@ -24,17 +24,21 @@ pub struct Symbol {
 
     #[pyo3(get, set)]
     pub vrom: Option<u64>,
+
+    #[pyo3(get, set)]
+    pub align: Option<u64>,
 }
 
 #[pymethods]
 impl Symbol {
     #[new]
-    pub fn new(name: String, vram: u64, size: Option<u64>, vrom: Option<u64>) -> Self {
+    pub fn new(name: String, vram: u64, size: Option<u64>, vrom: Option<u64>, align: Option<u64>) -> Self {
         Symbol {
             name,
             vram,
             size,
             vrom,
+            align,
         }
     }
 
@@ -109,6 +113,17 @@ impl Symbol {
             vram,
             size: None,
             vrom: None,
+            align: None,
+        }
+    }
+
+    pub fn clone(&self) -> Self {
+        Symbol {
+            name: self.name.clone(),
+            vram: self.vram,
+            size: self.size,
+            vrom: self.vrom,
+            align: self.align,
         }
     }
 }

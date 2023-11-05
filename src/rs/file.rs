@@ -34,6 +34,9 @@ pub struct File {
     #[pyo3(get, set)]
     pub vrom: Option<u64>,
 
+    #[pyo3(get, set)]
+    pub align: Option<u64>,
+
     // #[pyo3(get, set, name = "_symbols")]
     pub symbols: Vec<symbol::Symbol>,
 }
@@ -47,6 +50,7 @@ impl File {
         size: u64,
         section_type: &str,
         vrom: Option<u64>,
+        align: Option<u64>,
     ) -> Self {
         File {
             filepath,
@@ -54,6 +58,7 @@ impl File {
             size,
             section_type: section_type.into(),
             vrom,
+            align,
             symbols: Vec::new(),
         }
     }
@@ -306,6 +311,19 @@ impl File {
             size,
             section_type: section_type.into(),
             vrom: None,
+            align: None,
+            symbols: Vec::new(),
+        }
+    }
+
+    pub fn clone_no_symbollist(&self) -> Self {
+        File {
+            filepath: self.filepath.clone(),
+            vram: self.vram,
+            size: self.size,
+            section_type: self.section_type.clone(),
+            vrom: self.vrom,
+            align: self.align,
             symbols: Vec::new(),
         }
     }
@@ -317,6 +335,7 @@ impl File {
             size: 0,
             section_type: "".into(),
             vrom: None,
+            align: None,
             symbols: Vec::new(),
         }
     }
@@ -327,6 +346,7 @@ impl File {
             && self.size == 0
             && self.section_type.is_empty()
             && self.vrom.is_none()
+            && self.align.is_none()
             && self.symbols.is_empty()
     }
 }
