@@ -290,7 +290,8 @@ impl MapFile {
 
         let regex_segment_entry = Regex::new(r"^(?P<name>[^\s]+)$").unwrap();
         let regex_fill = Regex::new(r"^\s+(?P<expr>\.\s*\+=\s*.+)$").unwrap();
-        let regex_file_data_entry = Regex::new(r"^\s+(?P<name>[^\s]+):\((?P<section>[^\s()]+)\)$$").unwrap();
+        let regex_file_data_entry =
+            Regex::new(r"^\s+(?P<name>[^\s]+):\((?P<section>[^\s()]+)\)$$").unwrap();
         let regex_label = Regex::new(r"^\s+(?P<name>\.?L[0-9A-F]{8})$").unwrap();
         let regex_symbol_entry = Regex::new(r"^\s+(?P<name>[^\s]+)$").unwrap();
 
@@ -308,7 +309,8 @@ impl MapFile {
                 if let Some(segment_entry_match) = regex_segment_entry.captures(subline) {
                     let name = &segment_entry_match["name"];
 
-                    let mut new_segment = segment::Segment::new_default(name.into(), vram, size, vrom);
+                    let mut new_segment =
+                        segment::Segment::new_default(name.into(), vram, size, vrom);
                     new_segment.align = Some(align);
 
                     temp_segment_list.push(new_segment);
@@ -341,7 +343,8 @@ impl MapFile {
                     if size > 0 {
                         let current_segment = temp_segment_list.last_mut().unwrap();
 
-                        let mut new_file = file::File::new_default(filepath, vram, size, section_type);
+                        let mut new_file =
+                            file::File::new_default(filepath, vram, size, section_type);
                         if !utils::is_noload_section(section_type) {
                             new_file.vrom = Some(vrom);
                         }
