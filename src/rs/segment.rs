@@ -277,12 +277,25 @@ impl Segment {
             vram: 0,
             size: 0,
             vrom: 0,
-            files_list: Vec::new(),
+            files_list: vec![file::File::new_placeholder()],
         }
     }
 
     pub fn is_placeholder(&self) -> bool {
-        self.name == "$nosegment" && self.vram == 0 && self.size == 0 && self.files_list.is_empty()
+        if self.name == "$nosegment" && self.vram == 0 && self.size == 0 {
+            if self.files_list.is_empty() {
+                return true;
+            }
+
+            if self.files_list.len() == 1 {
+                let first = self.files_list.first().unwrap();
+                if first.is_placeholder() {
+                    return true;
+                }
+            }
+        }
+
+        false
     }
 }
 

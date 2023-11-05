@@ -91,15 +91,7 @@ impl MapFile {
 
         let map_data = MapFile::preprocess_map_data_gnu(map_contents);
 
-        let mut temp_segment_list: Vec<segment::Segment> = Vec::new();
-        temp_segment_list.push(segment::Segment::new("$nosegment".into(), 0, 0, 0));
-        {
-            let current_segment = temp_segment_list.last_mut().unwrap();
-
-            current_segment
-                .files_list
-                .push(file::File::new_placeholder());
-        }
+        let mut temp_segment_list = vec![segment::Segment::new_placeholder()];
 
         let mut in_file = false;
 
@@ -193,14 +185,6 @@ impl MapFile {
                 if segment.is_placeholder() {
                     // skip the dummy segment if it has no size, files or symbols
                     continue;
-                }
-
-                if segment.files_list.len() == 1 {
-                    if let Some(first) = segment.files_list.first() {
-                        if first.is_placeholder() {
-                            continue;
-                        }
-                    }
                 }
             }
 
