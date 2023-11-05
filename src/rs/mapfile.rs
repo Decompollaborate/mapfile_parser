@@ -61,7 +61,14 @@ impl MapFile {
     */
     #[pyo3(name = "parseMapContents")]
     pub fn parse_map_contents(&mut self, map_contents: String) {
-        self.parse_map_contents_gnu(map_contents);
+        let regex_lld_header = Regex::new(r"\s+VMA\s+LMA\s+Size\s+Align\s+Out\s+In\s+Symbol").unwrap();
+
+        if regex_lld_header.is_match(&map_contents) {
+            self.parse_map_contents_lld(map_contents);
+        } else {
+            // GNU is the fallback
+            self.parse_map_contents_gnu(map_contents);
+        }
     }
 
     /**
@@ -269,6 +276,69 @@ impl MapFile {
             }
 
             self.segments_list.push(new_segment);
+        }
+    }
+
+    #[pyo3(name = "parseMapContentsLld")]
+    pub fn parse_map_contents_lld(&mut self, map_contents: String) {
+        let map_data = map_contents;
+
+        let regex_segment_entry = Regex::new(r"^\s*(?P<vram>[0-9a-fA-F]+)\s+(?P<vrom>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+) (?P<name>[^\s]+)$").unwrap();
+        let regex_fill = Regex::new(r"^\s*(?P<vram>[0-9a-fA-F]+)\s+(?P<vrom>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+) \s+(?P<expr>\.\s*\+=\s*.+)$").unwrap();
+        let regex_file_data_entry = Regex::new(r"^\s*(?P<vram>[0-9a-fA-F]+)\s+(?P<vrom>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+) \s+(?P<name>[^\s]+):\((?P<section>[^\s()]+)\)$$").unwrap();
+        let regex_label = Regex::new(r"^\s*(?P<vram>[0-9a-fA-F]+)\s+(?P<vrom>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+) \s+(?P<name>\.?L[0-9A-F]{8})$").unwrap();
+        let regex_symbol_entry = Regex::new(r"^\s*(?P<vram>[0-9a-fA-F]+)\s+(?P<vrom>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+) \s+(?P<name>[^\s]+)$").unwrap();
+
+        //let mut prev_line = "";
+        for line in map_data.split('\n') {
+            if let Some(segment_entry_match) = regex_segment_entry.captures(line) {
+                let name = &segment_entry_match["name"];
+                let vram = utils::parse_hex(&segment_entry_match["vram"]);
+                let size = utils::parse_hex(&segment_entry_match["size"]);
+                let vrom = utils::parse_hex(&segment_entry_match["vrom"]);
+                let align = utils::parse_hex(&segment_entry_match["align"]);
+
+                //if name.is_empty() {
+                //    // If the segment name is too long then this line gets break in two lines
+                //    name = prev_line;
+                //}
+
+                //temp_segment_list.push(segment::Segment::new(name.into(), vram, size, vrom));
+                println!("segment: {name}");
+                println!("    {vram:08X} {size:08X} {vrom:08X} {align:08X}");
+            } else if let Some(fill_entry_match) = regex_fill.captures(line) {
+                let expr = &fill_entry_match["expr"];
+                let vram = utils::parse_hex(&fill_entry_match["vram"]);
+                let size = utils::parse_hex(&fill_entry_match["size"]);
+                let vrom = utils::parse_hex(&fill_entry_match["vrom"]);
+                let align = utils::parse_hex(&fill_entry_match["align"]);
+
+                println!("    fill: {expr}");
+                println!("        {vram:08X} {size:08X} {vrom:08X} {align:08X}");
+            } else if let Some(file_entry_match) = regex_file_data_entry.captures(line) {
+                let filepath = std::path::PathBuf::from(&file_entry_match["name"]);
+                let section_type = &file_entry_match["section"];
+                let vram = utils::parse_hex(&file_entry_match["vram"]);
+                let size = utils::parse_hex(&file_entry_match["size"]);
+                let vrom = utils::parse_hex(&file_entry_match["vrom"]);
+                let align = utils::parse_hex(&file_entry_match["align"]);
+
+                println!("    file: {filepath:?} {section_type}");
+                println!("        {vram:08X} {size:08X} {vrom:08X} {align:08X}");
+            } else if regex_label.is_match(line) {
+                // pass
+            } else if let Some(symbol_entry_match) = regex_symbol_entry.captures(line) {
+                let name = &symbol_entry_match["name"];
+                let vram = utils::parse_hex(&symbol_entry_match["vram"]);
+                let size = utils::parse_hex(&symbol_entry_match["size"]);
+                let vrom = utils::parse_hex(&symbol_entry_match["vrom"]);
+                let align = utils::parse_hex(&symbol_entry_match["align"]);
+
+                println!("        symbol: {name}");
+                println!("            {vram:08X} {size:08X} {vrom:08X} {align:08X}");
+                //let current_segment = temp_segment_list.last_mut().unwrap();
+                //let current_file = current_segment.files_list.last_mut().unwrap();
+            }
         }
     }
 
