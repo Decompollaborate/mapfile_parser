@@ -13,7 +13,11 @@ This library is available for Python3 and Rust
 
 ## Features
 
-TODO
+- Fast parsing written in Rust.
+- Support map formats:
+  - GNU ld
+  - clang lld
+- Built-in cli utilities to process the parsed map file (see [Examples](#examples)).
 
 ## Installing
 
