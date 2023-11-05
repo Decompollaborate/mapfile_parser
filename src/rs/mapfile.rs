@@ -312,10 +312,9 @@ impl MapFile {
                     new_segment.align = Some(align);
 
                     temp_segment_list.push(new_segment);
-                } else if let Some(fill_entry_match) = regex_fill.captures(subline) {
+                } else if regex_fill.is_match(subline) {
                     // Make a dummy file to handle pads (. += XX)
 
-                    //let expr = &fill_entry_match["expr"];
                     let mut filepath = std::path::PathBuf::new();
                     let mut section_type = "".to_owned();
 

@@ -7,8 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.3.0] - 2023-11-05
+
 ### Added
 
+- Support for parsing clang lld's map fles.
 - New functions:
   - `MapFile.parseMapContents`/`MapFile::parse_map_contents`
     - Parses the map contents passed as the argument, without requiring the map
@@ -23,6 +26,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     - Parses the map contents passed as the argument, without requiring the map
       being on an actual file.
     - This function only parses the clang ld.lld map format.
+- New members:
+  - `Symbol.align`/`Symbol::align`, `File.align`/`File::align` and
+    `Segment.align`/`Segment::align`: The alignment the given type. This member
+    will be filled by the parser only if the mapfile provides this information.
 
 ### Changed
 
@@ -270,6 +277,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.3.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.2.1...2.3.0
 [2.2.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.2.0...2.2.1
 [2.2.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.5...2.2.0
 [2.1.5]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.4...2.1.5
