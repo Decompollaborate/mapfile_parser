@@ -122,16 +122,6 @@ impl Symbol {
             align: None,
         }
     }
-
-    pub fn clone(&self) -> Self {
-        Symbol {
-            name: self.name.clone(),
-            vram: self.vram,
-            size: self.size,
-            vrom: self.vrom,
-            align: self.align,
-        }
-    }
 }
 
 // https://doc.rust-lang.org/std/cmp/trait.Eq.html

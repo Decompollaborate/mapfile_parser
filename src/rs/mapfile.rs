@@ -201,11 +201,9 @@ impl MapFile {
         }
 
         for (i, segment) in temp_segment_list.iter_mut().enumerate() {
-            if i == 0 {
-                if segment.is_placeholder() {
-                    // skip the dummy segment if it has no size, files or symbols
-                    continue;
-                }
+            if i == 0 && segment.is_placeholder() {
+                // skip the dummy segment if it has no size, files or symbols
+                continue;
             }
 
             let mut new_segment = segment.clone_no_filelist();
@@ -353,8 +351,8 @@ impl MapFile {
                 if size > 0 {
                     let current_segment = temp_segment_list.last_mut().unwrap();
 
-                    let mut new_file = file::File::new_default(filepath, vram, size, &section_type);
-                    if !utils::is_noload_section(&section_type) {
+                    let mut new_file = file::File::new_default(filepath, vram, size, section_type);
+                    if !utils::is_noload_section(section_type) {
                         new_file.vrom = Some(vrom);
                     }
                     new_file.align = Some(align);
@@ -390,11 +388,9 @@ impl MapFile {
         }
 
         for (i, segment) in temp_segment_list.iter_mut().enumerate() {
-            if i == 0 {
-                if segment.is_placeholder() {
-                    // skip the dummy segment if it has no size, files or symbols
-                    continue;
-                }
+            if i == 0 && segment.is_placeholder() {
+                // skip the dummy segment if it has no size, files or symbols
+                continue;
             }
 
             let mut new_segment = segment.clone_no_filelist();
