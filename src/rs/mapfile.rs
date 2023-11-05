@@ -285,104 +285,91 @@ impl MapFile {
     pub fn parse_map_contents_lld(&mut self, map_contents: String) {
         let map_data = map_contents;
 
-        let regex_segment_entry = Regex::new(r"^\s*(?P<vram>[0-9a-fA-F]+)\s+(?P<vrom>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+) (?P<name>[^\s]+)$").unwrap();
-        let regex_fill = Regex::new(r"^\s*(?P<vram>[0-9a-fA-F]+)\s+(?P<vrom>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+) \s+(?P<expr>\.\s*\+=\s*.+)$").unwrap();
-        let regex_file_data_entry = Regex::new(r"^\s*(?P<vram>[0-9a-fA-F]+)\s+(?P<vrom>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+) \s+(?P<name>[^\s]+):\((?P<section>[^\s()]+)\)$$").unwrap();
-        let regex_label = Regex::new(r"^\s*(?P<vram>[0-9a-fA-F]+)\s+(?P<vrom>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+) \s+(?P<name>\.?L[0-9A-F]{8})$").unwrap();
-        let regex_symbol_entry = Regex::new(r"^\s*(?P<vram>[0-9a-fA-F]+)\s+(?P<vrom>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+) \s+(?P<name>[^\s]+)$").unwrap();
+        // Every line starts with this information, so instead of duplicating it we put them on one single regex
+        let regex_row_entry = Regex::new(r"^\s*(?P<vram>[0-9a-fA-F]+)\s+(?P<vrom>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+) ").unwrap();
+
+        let regex_segment_entry = Regex::new(r"^(?P<name>[^\s]+)$").unwrap();
+        let regex_fill = Regex::new(r"^\s+(?P<expr>\.\s*\+=\s*.+)$").unwrap();
+        let regex_file_data_entry = Regex::new(r"^\s+(?P<name>[^\s]+):\((?P<section>[^\s()]+)\)$$").unwrap();
+        let regex_label = Regex::new(r"^\s+(?P<name>\.?L[0-9A-F]{8})$").unwrap();
+        let regex_symbol_entry = Regex::new(r"^\s+(?P<name>[^\s]+)$").unwrap();
 
         let mut temp_segment_list = vec![segment::Segment::new_placeholder()];
 
         for line in map_data.split('\n') {
-            if let Some(segment_entry_match) = regex_segment_entry.captures(line) {
-                let name = &segment_entry_match["name"];
-                let vram = utils::parse_hex(&segment_entry_match["vram"]);
-                let size = utils::parse_hex(&segment_entry_match["size"]);
-                let vrom = utils::parse_hex(&segment_entry_match["vrom"]);
-                let align = utils::parse_hex(&segment_entry_match["align"]);
+            if let Some(row_entry_match) = regex_row_entry.captures(line) {
+                let vram = utils::parse_hex(&row_entry_match["vram"]);
+                let vrom = utils::parse_hex(&row_entry_match["vrom"]);
+                let size = utils::parse_hex(&row_entry_match["size"]);
+                let align = utils::parse_hex(&row_entry_match["align"]);
 
-                let mut new_segment = segment::Segment::new_default(name.into(), vram, size, vrom);
-                new_segment.align = Some(align);
+                let subline = &line[row_entry_match.get(0).unwrap().len()..];
 
-                temp_segment_list.push(new_segment);
-                //println!("segment: {name}");
-                //println!("    {vram:08X} {size:08X} {vrom:08X} {align:08X}");
-            } else if let Some(fill_entry_match) = regex_fill.captures(line) {
-                // Make a dummy file to handle pads (. += XX)
+                if let Some(segment_entry_match) = regex_segment_entry.captures(subline) {
+                    let name = &segment_entry_match["name"];
 
-                //let expr = &fill_entry_match["expr"];
-                let mut filepath = std::path::PathBuf::new();
-                let vram = utils::parse_hex(&fill_entry_match["vram"]);
-                let size = utils::parse_hex(&fill_entry_match["size"]);
-                let vrom = utils::parse_hex(&fill_entry_match["vrom"]);
-                // let align = utils::parse_hex(&fill_entry_match["align"]);
-                let mut section_type = "".to_owned();
+                    let mut new_segment = segment::Segment::new_default(name.into(), vram, size, vrom);
+                    new_segment.align = Some(align);
 
-                //println!("    fill: {expr}");
-                //println!("        {vram:08X} {size:08X} {vrom:08X} {align:08X}");
+                    temp_segment_list.push(new_segment);
+                } else if let Some(fill_entry_match) = regex_fill.captures(subline) {
+                    // Make a dummy file to handle pads (. += XX)
 
-                let current_segment = temp_segment_list.last_mut().unwrap();
+                    //let expr = &fill_entry_match["expr"];
+                    let mut filepath = std::path::PathBuf::new();
+                    let mut section_type = "".to_owned();
 
-                if !current_segment.files_list.is_empty() {
-                    let prev_file = current_segment.files_list.last().unwrap();
-                    let mut name = prev_file.filepath.file_name().unwrap().to_owned();
-
-                    name.push("__fill__");
-                    filepath = prev_file.filepath.with_file_name(name);
-                    section_type = prev_file.section_type.clone();
-                }
-
-                let mut new_file = file::File::new_default(filepath, vram, size, &section_type);
-                if !utils::is_noload_section(&section_type) {
-                    new_file.vrom = Some(vrom);
-                }
-                current_segment.files_list.push(new_file);
-            } else if let Some(file_entry_match) = regex_file_data_entry.captures(line) {
-                let filepath = std::path::PathBuf::from(&file_entry_match["name"]);
-                let section_type = &file_entry_match["section"];
-                let vram = utils::parse_hex(&file_entry_match["vram"]);
-                let size = utils::parse_hex(&file_entry_match["size"]);
-                let vrom = utils::parse_hex(&file_entry_match["vrom"]);
-                let align = utils::parse_hex(&file_entry_match["align"]);
-
-                //println!("    file: {filepath:?} {section_type}");
-                //println!("        {vram:08X} {size:08X} {vrom:08X} {align:08X}");
-
-                if size > 0 {
                     let current_segment = temp_segment_list.last_mut().unwrap();
 
-                    let mut new_file = file::File::new_default(filepath, vram, size, section_type);
-                    if !utils::is_noload_section(section_type) {
+                    if !current_segment.files_list.is_empty() {
+                        let prev_file = current_segment.files_list.last().unwrap();
+                        let mut name = prev_file.filepath.file_name().unwrap().to_owned();
+
+                        name.push("__fill__");
+                        filepath = prev_file.filepath.with_file_name(name);
+                        section_type = prev_file.section_type.clone();
+                    }
+
+                    let mut new_file = file::File::new_default(filepath, vram, size, &section_type);
+                    if !utils::is_noload_section(&section_type) {
                         new_file.vrom = Some(vrom);
                     }
-                    new_file.align = Some(align);
-
                     current_segment.files_list.push(new_file);
-                }
-            } else if regex_label.is_match(line) {
-                // pass
-            } else if let Some(symbol_entry_match) = regex_symbol_entry.captures(line) {
-                let name = &symbol_entry_match["name"];
+                } else if let Some(file_entry_match) = regex_file_data_entry.captures(subline) {
+                    let filepath = std::path::PathBuf::from(&file_entry_match["name"]);
+                    let section_type = &file_entry_match["section"];
 
-                if !BANNED_SYMBOL_NAMES.contains(&name) {
-                    let vram = utils::parse_hex(&symbol_entry_match["vram"]);
-                    let size = utils::parse_hex(&symbol_entry_match["size"]);
-                    let vrom = utils::parse_hex(&symbol_entry_match["vrom"]);
-                    let align = utils::parse_hex(&symbol_entry_match["align"]);
-
-                    let current_segment = temp_segment_list.last_mut().unwrap();
-                    let current_file = current_segment.files_list.last_mut().unwrap();
-
-                    let mut new_symbol = symbol::Symbol::new_default(name.into(), vram);
                     if size > 0 {
-                        new_symbol.size = Some(size);
-                    }
-                    if !current_file.is_noload_section() {
-                        new_symbol.vrom = Some(vrom)
-                    }
-                    new_symbol.align = Some(align);
+                        let current_segment = temp_segment_list.last_mut().unwrap();
 
-                    current_file.symbols.push(new_symbol);
+                        let mut new_file = file::File::new_default(filepath, vram, size, section_type);
+                        if !utils::is_noload_section(section_type) {
+                            new_file.vrom = Some(vrom);
+                        }
+                        new_file.align = Some(align);
+
+                        current_segment.files_list.push(new_file);
+                    }
+                } else if regex_label.is_match(subline) {
+                    // pass
+                } else if let Some(symbol_entry_match) = regex_symbol_entry.captures(subline) {
+                    let name = &symbol_entry_match["name"];
+
+                    if !BANNED_SYMBOL_NAMES.contains(&name) {
+                        let current_segment = temp_segment_list.last_mut().unwrap();
+                        let current_file = current_segment.files_list.last_mut().unwrap();
+
+                        let mut new_symbol = symbol::Symbol::new_default(name.into(), vram);
+                        if size > 0 {
+                            new_symbol.size = Some(size);
+                        }
+                        if !current_file.is_noload_section() {
+                            new_symbol.vrom = Some(vrom)
+                        }
+                        new_symbol.align = Some(align);
+
+                        current_file.symbols.push(new_symbol);
+                    }
                 }
             }
         }
