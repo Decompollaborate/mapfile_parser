@@ -11,6 +11,14 @@ Map file parser library focusing decompilation projects.
 
 This library is available for Python3 and Rust
 
+## Features
+
+- Fast parsing written in Rust.
+- Support map formats:
+  - GNU ld
+  - clang lld
+- Built-in cli utilities to process the parsed map file (see [Examples](#examples)).
+
 ## Installing
 
 ### Python version
@@ -27,7 +35,7 @@ If you use a `requirements.txt` file in your repository, then you can add
 this library with the following line:
 
 ```txt
-mapfile_parser>=2.2.0,<3.0.0
+mapfile_parser>=2.3.0,<3.0.0
 ```
 
 #### Development version
@@ -57,9 +65,28 @@ you are doing. Proceed at your own risk.
 
 See this crate at <https://crates.io/crates/mapfile_parser>.
 
+To add this library to your project using Cargo:
+
+```bash
+cargo add mapfile_parser
+```
+
+Or add the following line manually to your `Cargo.toml` file:
+
 ```toml
-[build]
-mapfile_parser = "2.2.0"
+mapfile_parser = "2.3.0"
+```
+
+#### System-wide dependencies
+
+Due to how intrusive `pyo3` is (and even impossible to disable via Cargo
+features), Python development files are required to build and use the Rust
+version of this library
+
+To install those dependencies on a Debian/Ubuntu Linux distro:
+
+```bash
+sudo apt install libpython3-dev
 ```
 
 ## Versioning and changelog

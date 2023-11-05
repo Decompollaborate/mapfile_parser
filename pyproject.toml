@@ -3,7 +3,7 @@
 
 [project]
 name = "mapfile_parser"
-version = "2.2.1"
+version = "2.3.0"
 description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
 requires-python = ">=3.7"
@@ -28,6 +28,6 @@ build-backend = "maturin"
 skip = ["cp36-*"]
 
 [tool.maturin]
-features = ["pyo3/extension-module"]
+features = ["pyo3/extension-module", "python_bindings"]
 # https://github.com/PyO3/maturin/blob/0dee40510083c03607834c821eea76964140a126/Readme.md#mixed-rustpython-projects
 python-source = "src"

@@ -7,6 +7,45 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.3.0] - 2023-11-05
+
+### Added
+
+- Support for parsing clang lld's map fles.
+- New functions:
+  - `MapFile.parseMapContents`/`MapFile::parse_map_contents`
+    - Parses the map contents passed as the argument, without requiring the map
+      being on an actual file.
+    - The map format will be guessed on the contents. Currently both the GNU ld
+      and clang ld.lld map formats are recognized.
+  - `MapFile.parseMapContentsGNU`/`MapFile::parse_map_contents_gnu`
+    - Parses the map contents passed as the argument, without requiring the map
+      being on an actual file.
+    - This function only parses the GNU ld map format.
+  - `MapFile.parseMapContentsLLD`/`MapFile::parse_map_contents_lld`
+    - Parses the map contents passed as the argument, without requiring the map
+      being on an actual file.
+    - This function only parses the clang ld.lld map format.
+- New members:
+  - `Symbol.align`/`Symbol::align`, `File.align`/`File::align` and
+    `Segment.align`/`Segment::align`: The alignment the given type. This member
+    will be filled by the parser only if the mapfile provides this information.
+
+### Changed
+
+- `MapFile.readMapFile`/`MapFile::read_map_file` can now guess the map format
+  between any of the known formats.
+- Some known symbol names will be automatically filtered out during the parsing
+  step.
+  - Currently only `gcc2_compiled.` is filtered out.
+
+### Fixed
+
+- Fix parser not detecting `*fill*` lines on GNU ld maps if they specified the
+  value that was used for filling/padding.
+- `.sbss`, `COMMON` and `.scommon` sections are now properly considered noload
+  sections.
+
 ## [2.2.1] - 2023-10-08
 
 ### Fixed
@@ -238,6 +277,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.3.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.2.1...2.3.0
 [2.2.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.2.0...2.2.1
 [2.2.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.5...2.2.0
 [2.1.5]: https://github.com/Decompollaborate/mapfile_parser/compare/2.1.4...2.1.5

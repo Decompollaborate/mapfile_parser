@@ -13,6 +13,7 @@ from pathlib import Path
 from .progress_stats import ProgressStats
 from . import utils
 
+from .mapfile_rs import MapFile as MapFileRs
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -64,6 +65,7 @@ class Symbol:
     vram: int
     size: int|None = None # in bytes
     vrom: int|None = None
+    align: int|None = None
 
     def getVramStr(self) -> str:
         return f"0x{self.vram:08X}"
@@ -140,6 +142,7 @@ class File:
     size: int # in bytes
     sectionType: str
     vrom: int|None = None
+    align: int|None = None
     _symbols: list[Symbol] = dataclasses.field(default_factory=list)
 
     @property
@@ -307,6 +310,7 @@ class Segment:
     vram: int
     size: int
     vrom: int
+    align: int|None = None
     _filesList: list[File] = dataclasses.field(default_factory=list)
 
     def serializeVram(self, humanReadable: bool=True) -> str|int|None:
@@ -478,22 +482,75 @@ class MapFile:
         #! @deprecated
         self.debugging: bool = False
 
-    def readMapFile(self, mapPath: Path):
-        from .mapfile_rs import MapFile
-
-        nativeMapFile = MapFile()
-        nativeMapFile.readMapFile(mapPath)
-
+    def _transferContentsFromNativeMapFile(self, nativeMapFile: MapFileRs):
         for segment in nativeMapFile:
-            newSegment = Segment(segment.name, segment.vram, segment.size, segment.vrom)
+            newSegment = Segment(segment.name, segment.vram, segment.size, segment.vrom, segment.align)
             for file in segment:
-                newFile = File(file.filepath, file.vram, file.size, file.sectionType, file.vrom)
+                newFile = File(file.filepath, file.vram, file.size, file.sectionType, file.vrom, file.align)
                 for symbol in file:
-                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom)
+                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align)
 
                     newFile._symbols.append(newSymbol)
                 newSegment._filesList.append(newFile)
             self._segmentsList.append(newSegment)
+
+    def readMapFile(self, mapPath: Path):
+        """
+        Opens the mapfile pointed by the `mapPath` argument and parses it.
+
+        The format of the map will be guessed based on its contents.
+
+        Currently supported map formats:
+        - GNU ld
+        - clang ld.lld
+        """
+
+        nativeMapFile = MapFileRs()
+        nativeMapFile.readMapFile(mapPath)
+
+        self._transferContentsFromNativeMapFile(nativeMapFile)
+
+    def parseMapContents(self, mapContents: str):
+        """
+        Parses the contents of the map.
+
+        The `mapContents` argument must contain the contents of a mapfile.
+
+        The format of the map will be guessed based on its contents.
+
+        Currently supported mapfile formats:
+        - GNU ld
+        - clang ld.lld
+        """
+
+        nativeMapFile = MapFileRs()
+        nativeMapFile.parseMapContents(mapContents)
+
+        self._transferContentsFromNativeMapFile(nativeMapFile)
+
+    def parseMapContentsGNU(self, mapContents: str):
+        """
+        Parses the contents of a GNU ld map.
+
+        The `mapContents` argument must contain the contents of a GNU ld mapfile.
+        """
+
+        nativeMapFile = MapFileRs()
+        nativeMapFile.parseMapContentsGNU(mapContents)
+
+        self._transferContentsFromNativeMapFile(nativeMapFile)
+
+    def parseMapContentsLLD(self, mapContents: str):
+        """
+        Parses the contents of a clang ld.lld map.
+
+        The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
+        """
+
+        nativeMapFile = MapFileRs()
+        nativeMapFile.parseMapContentsLLD(mapContents)
+
+        self._transferContentsFromNativeMapFile(nativeMapFile)
 
 
     def filterBySectionType(self, sectionType: str) -> MapFile:

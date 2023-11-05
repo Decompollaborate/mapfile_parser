@@ -1,16 +1,19 @@
 /* SPDX-FileCopyrightText: © 2023 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::collections::hash_map::DefaultHasher;
 use std::path::PathBuf;
 
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
 use std::fmt::Write;
 use std::hash::{Hash, Hasher};
 
-use crate::symbol;
+use crate::{symbol, utils};
+
+#[cfg(feature = "python_bindings")]
 use pyo3::class::basic::CompareOp;
 use pyo3::prelude::*;
+#[cfg(feature = "python_bindings")]
+use std::collections::hash_map::DefaultHasher;
 
 #[derive(Debug, Clone)]
 #[pyclass(module = "mapfile_parser", sequence)]
@@ -31,6 +34,9 @@ pub struct File {
     #[pyo3(get, set)]
     pub vrom: Option<u64>,
 
+    #[pyo3(get, set)]
+    pub align: Option<u64>,
+
     // #[pyo3(get, set, name = "_symbols")]
     pub symbols: Vec<symbol::Symbol>,
 }
@@ -44,6 +50,7 @@ impl File {
         size: u64,
         section_type: &str,
         vrom: Option<u64>,
+        align: Option<u64>,
     ) -> Self {
         File {
             filepath,
@@ -51,6 +58,7 @@ impl File {
             size,
             section_type: section_type.into(),
             vrom,
+            align,
             symbols: Vec::new(),
         }
     }
@@ -58,9 +66,10 @@ impl File {
     #[getter]
     #[pyo3(name = "isNoloadSection")]
     pub fn is_noload_section(&self) -> bool {
-        self.section_type == ".bss"
+        utils::is_noload_section(&self.section_type)
     }
 
+    #[cfg(feature = "python_bindings")]
     // ! @deprecated
     #[pyo3(name = "getName")]
     fn get_name(&self) -> PathBuf {
@@ -228,21 +237,25 @@ impl File {
         return fileDict
     */
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "copySymbolList")]
     fn copy_symbol_list(&self) -> Vec<symbol::Symbol> {
         self.symbols.clone()
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "setSymbolList")]
     fn set_symbol_list(&mut self, new_list: Vec<symbol::Symbol>) {
         self.symbols = new_list;
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "appendSymbol")]
     fn append_symbol(&mut self, sym: symbol::Symbol) {
         self.symbols.push(sym);
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<SymbolVecIter>> {
         let iter = SymbolVecIter {
             inner: slf.symbols.clone().into_iter(),
@@ -250,19 +263,23 @@ impl File {
         Py::new(slf.py(), iter)
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __getitem__(&self, index: usize) -> symbol::Symbol {
         self.symbols[index].clone()
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __setitem__(&mut self, index: usize, element: symbol::Symbol) {
         self.symbols[index] = element;
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __len__(&self) -> usize {
         self.symbols.len()
     }
 
     // TODO: implement __eq__ instead when PyO3 0.20 releases
+    #[cfg(feature = "python_bindings")]
     fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
         match op {
             pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
@@ -271,6 +288,7 @@ impl File {
         }
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __hash__(&self) -> isize {
         let mut hasher = DefaultHasher::new();
         self.hash(&mut hasher);
@@ -293,6 +311,19 @@ impl File {
             size,
             section_type: section_type.into(),
             vrom: None,
+            align: None,
+            symbols: Vec::new(),
+        }
+    }
+
+    pub fn clone_no_symbollist(&self) -> Self {
+        File {
+            filepath: self.filepath.clone(),
+            vram: self.vram,
+            size: self.size,
+            section_type: self.section_type.clone(),
+            vrom: self.vrom,
+            align: self.align,
             symbols: Vec::new(),
         }
     }
@@ -304,6 +335,7 @@ impl File {
             size: 0,
             section_type: "".into(),
             vrom: None,
+            align: None,
             symbols: Vec::new(),
         }
     }
@@ -314,6 +346,7 @@ impl File {
             && self.size == 0
             && self.section_type.is_empty()
             && self.vrom.is_none()
+            && self.align.is_none()
             && self.symbols.is_empty()
     }
 }
@@ -333,11 +366,13 @@ impl Hash for File {
     }
 }
 
+#[cfg(feature = "python_bindings")]
 #[pyclass]
 struct SymbolVecIter {
     inner: std::vec::IntoIter<symbol::Symbol>,
 }
 
+#[cfg(feature = "python_bindings")]
 #[pymethods]
 impl SymbolVecIter {
     fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {

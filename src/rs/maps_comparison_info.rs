@@ -4,6 +4,7 @@
 use std::collections::HashSet;
 
 use crate::{file, symbol_comparison_info};
+
 use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]

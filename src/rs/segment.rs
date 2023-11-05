@@ -2,15 +2,19 @@
 /* SPDX-License-Identifier: MIT */
 
 use crate::{file, found_symbol_info};
-use pyo3::class::basic::CompareOp;
-use pyo3::prelude::*;
 use std::collections::HashMap;
 use std::fmt::Write;
+use std::path::PathBuf;
 
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
-use std::collections::hash_map::{DefaultHasher, Entry};
+use std::collections::hash_map::Entry;
 use std::hash::{Hash, Hasher};
-use std::path::PathBuf;
+
+#[cfg(feature = "python_bindings")]
+use pyo3::class::basic::CompareOp;
+use pyo3::prelude::*;
+#[cfg(feature = "python_bindings")]
+use std::collections::hash_map::DefaultHasher;
 
 #[derive(Debug, Clone)]
 #[pyclass(module = "mapfile_parser")]
@@ -27,6 +31,9 @@ pub struct Segment {
     #[pyo3(get, set)]
     pub vrom: u64,
 
+    #[pyo3(get, set)]
+    pub align: Option<u64>,
+
     // #[pyo3(get, set)]
     pub files_list: Vec<file::File>,
 }
@@ -34,19 +41,20 @@ pub struct Segment {
 #[pymethods]
 impl Segment {
     #[new]
-    pub fn new(name: String, vram: u64, size: u64, vrom: u64) -> Self {
+    pub fn new(name: String, vram: u64, size: u64, vrom: u64, align: Option<u64>) -> Self {
         Segment {
             name,
             vram,
             size,
             vrom,
+            align,
             files_list: Vec::new(),
         }
     }
 
     #[pyo3(name = "filterBySectionType")]
     pub fn filter_by_section_type(&self, section_type: &str) -> Segment {
-        let mut new_segment = Segment::new(self.name.clone(), self.vram, self.size, self.vrom);
+        let mut new_segment = self.clone_no_filelist();
 
         for file in &self.files_list {
             if file.section_type == section_type {
@@ -59,7 +67,7 @@ impl Segment {
 
     #[pyo3(name = "getEveryFileExceptSectionType")]
     pub fn get_every_file_except_section_type(&self, section_type: &str) -> Segment {
-        let mut new_segment = Segment::new(self.name.clone(), self.vram, self.size, self.vrom);
+        let mut new_segment = self.clone_no_filelist();
 
         for file in &self.files_list {
             if file.section_type != section_type {
@@ -108,7 +116,7 @@ impl Segment {
 
     #[pyo3(name = "mixFolders")]
     pub fn mix_folders(&self) -> Segment {
-        let mut new_segment = Segment::new(self.name.clone(), self.vram, self.size, self.vrom);
+        let mut new_segment = self.clone_no_filelist();
 
         // <PathBuf, Vec<File>>
         let mut aux_dict = HashMap::new();
@@ -145,6 +153,7 @@ impl Segment {
             let mut size = 0;
             let vrom = first_file.vrom;
             let section_type = &first_file.section_type;
+            let align = first_file.align;
 
             let mut symbols = Vec::new();
             for file in files_in_folder {
@@ -155,7 +164,7 @@ impl Segment {
             }
 
             let mut temp_file =
-                file::File::new(folder_path.clone(), vram, size, section_type, vrom);
+                file::File::new(folder_path.clone(), vram, size, section_type, vrom, align);
             temp_file.symbols = symbols;
             new_segment.files_list.push(temp_file);
         }
@@ -205,21 +214,25 @@ impl Segment {
         print!("{}", self.to_csv_symbols());
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "copyFileList")]
     fn copy_file_list(&self) -> Vec<file::File> {
         self.files_list.clone()
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "setFileList")]
     fn set_file_list(&mut self, new_list: Vec<file::File>) {
         self.files_list = new_list;
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "appendFile")]
     fn append_file(&mut self, file: file::File) {
         self.files_list.push(file);
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<FileVecIter>> {
         let iter = FileVecIter {
             inner: slf.files_list.clone().into_iter(),
@@ -227,19 +240,23 @@ impl Segment {
         Py::new(slf.py(), iter)
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __getitem__(&self, index: usize) -> file::File {
         self.files_list[index].clone()
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __setitem__(&mut self, index: usize, element: file::File) {
         self.files_list[index] = element;
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __len__(&self) -> usize {
         self.files_list.len()
     }
 
     // TODO: implement __eq__ instead when PyO3 0.20 releases
+    #[cfg(feature = "python_bindings")]
     fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
         match op {
             pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
@@ -248,6 +265,7 @@ impl Segment {
         }
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __hash__(&self) -> isize {
         let mut hasher = DefaultHasher::new();
         self.hash(&mut hasher);
@@ -258,18 +276,59 @@ impl Segment {
 }
 
 impl Segment {
+    pub fn new_default(name: String, vram: u64, size: u64, vrom: u64) -> Self {
+        Segment {
+            name,
+            vram,
+            size,
+            vrom,
+            align: None,
+            files_list: Vec::new(),
+        }
+    }
+
+    pub fn clone_no_filelist(&self) -> Self {
+        Segment {
+            name: self.name.clone(),
+            vram: self.vram,
+            size: self.size,
+            vrom: self.vrom,
+            align: self.align,
+            files_list: Vec::new(),
+        }
+    }
+
     pub fn new_placeholder() -> Self {
         Segment {
             name: "$nosegment".into(),
             vram: 0,
             size: 0,
             vrom: 0,
-            files_list: Vec::new(),
+            align: None,
+            files_list: vec![file::File::new_placeholder()],
         }
     }
 
     pub fn is_placeholder(&self) -> bool {
-        self.name == "$nosegment" && self.vram == 0 && self.size == 0 && self.files_list.is_empty()
+        if self.name == "$nosegment"
+            && self.vram == 0
+            && self.size == 0
+            && self.vrom == 0
+            && self.align.is_none()
+        {
+            if self.files_list.is_empty() {
+                return true;
+            }
+
+            if self.files_list.len() == 1 {
+                let first = self.files_list.first().unwrap();
+                if first.is_placeholder() {
+                    return true;
+                }
+            }
+        }
+
+        false
     }
 }
 
@@ -294,11 +353,13 @@ impl Hash for Segment {
     }
 }
 
+#[cfg(feature = "python_bindings")]
 #[pyclass]
 struct FileVecIter {
     inner: std::vec::IntoIter<file::File>,
 }
 
+#[cfg(feature = "python_bindings")]
 #[pymethods]
 impl FileVecIter {
     fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {

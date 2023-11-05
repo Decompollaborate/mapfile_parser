@@ -849,13 +849,13 @@
                     "sectionType": ".sbss",
                     "vram": 2149037824,
                     "size": 6400,
-                    "vrom": 5888,
+                    "vrom": null,
                     "symbols": [
                         {
                             "name": "D_4000_8017B700",
                             "vram": 2149037824,
                             "size": 6400,
-                            "vrom": 5888
+                            "vrom": null
                         }
                     ]
                 },
@@ -864,7 +864,7 @@
                     "sectionType": ".pdr",
                     "vram": 0,
                     "size": 800,
-                    "vrom": 12288,
+                    "vrom": 5888,
                     "symbols": []
                 },
                 {
@@ -872,7 +872,7 @@
                     "sectionType": ".debug_line",
                     "vram": 0,
                     "size": 237,
-                    "vrom": 13088,
+                    "vrom": 6688,
                     "symbols": []
                 },
                 {
@@ -880,7 +880,7 @@
                     "sectionType": ".debug_info",
                     "vram": 0,
                     "size": 389,
-                    "vrom": 13325,
+                    "vrom": 6925,
                     "symbols": []
                 },
                 {
@@ -888,7 +888,7 @@
                     "sectionType": ".debug_abbrev",
                     "vram": 0,
                     "size": 33,
-                    "vrom": 13714,
+                    "vrom": 7314,
                     "symbols": []
                 },
                 {
@@ -896,7 +896,7 @@
                     "sectionType": ".debug_str",
                     "vram": 0,
                     "size": 464,
-                    "vrom": 13747,
+                    "vrom": 7347,
                     "symbols": []
                 }
             ]

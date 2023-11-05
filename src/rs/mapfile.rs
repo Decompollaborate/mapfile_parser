@@ -1,17 +1,27 @@
 /* SPDX-FileCopyrightText: © 2023 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use pyo3::prelude::*;
 use std::collections::HashMap;
+use std::collections::HashSet;
 use std::fmt::Write;
-use std::{fs::File, io::Read, path::PathBuf};
+use std::path::PathBuf;
 
 use regex::*;
+
+use pyo3::prelude::*;
 
 use crate::{
     file, found_symbol_info, maps_comparison_info, progress_stats, segment, symbol,
     symbol_comparison_info, utils,
 };
+
+lazy_static! {
+    static ref BANNED_SYMBOL_NAMES: HashSet<&'static str> = {
+        let mut symbol_names = HashSet::new();
+        symbol_names.insert("gcc2_compiled.");
+        symbol_names
+    };
+}
 
 #[derive(Debug, Clone)]
 // TODO: sequence?
@@ -20,7 +30,7 @@ pub struct MapFile {
     pub segments_list: Vec<segment::Segment>,
 
     #[pyo3(get, set)]
-    pub debugging: bool,
+    debugging: bool,
 }
 
 #[pymethods]
@@ -33,8 +43,53 @@ impl MapFile {
         }
     }
 
+    /**
+    Opens the mapfile pointed by the `mapPath` argument and parses it.
+
+    The format of the map will be guessed based on its contents.
+
+    Currently supported map formats:
+    - GNU ld
+    - clang ld.lld
+     */
     #[pyo3(name = "readMapFile")]
     pub fn read_map_file(&mut self, map_path: PathBuf) {
+        let map_contents = utils::read_file_contents(&map_path);
+
+        self.parse_map_contents(map_contents);
+    }
+
+    /**
+    Parses the contents of the map.
+
+    The `mapContents` argument must contain the contents of a mapfile.
+
+    The format of the map will be guessed based on its contents.
+
+    Currently supported mapfile formats:
+    - GNU ld
+    - clang ld.lld
+    */
+    #[pyo3(name = "parseMapContents")]
+    pub fn parse_map_contents(&mut self, map_contents: String) {
+        let regex_lld_header =
+            Regex::new(r"\s+VMA\s+LMA\s+Size\s+Align\s+Out\s+In\s+Symbol").unwrap();
+
+        if regex_lld_header.is_match(&map_contents) {
+            self.parse_map_contents_lld(map_contents);
+        } else {
+            // GNU is the fallback
+            self.parse_map_contents_gnu(map_contents);
+        }
+    }
+
+    /**
+    Parses the contents of a GNU ld map.
+
+    The `mapContents` argument must contain the contents of a GNU ld mapfile.
+     */
+    #[pyo3(name = "parseMapContentsGNU")]
+    pub fn parse_map_contents_gnu(&mut self, map_contents: String) {
         // TODO: maybe move somewhere else?
         let regex_file_data_entry = Regex::new(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
         let regex_function_entry =
@@ -42,21 +97,13 @@ impl MapFile {
         // regex_function_entry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)((\s*=\s*(?P<expression>.+))?)$")
         let regex_label = Regex::new(r"(?P<name>\.?L[0-9A-F]{8})$").unwrap();
         let regex_fill =
-            Regex::new(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$")
+            Regex::new(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<fillValue>[0-9a-zA-Z]*)$")
                 .unwrap();
         let regex_segment_entry = Regex::new(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$").unwrap();
 
-        let map_data = MapFile::read_map_data(&map_path);
+        let map_data = MapFile::preprocess_map_data_gnu(map_contents);
 
-        let mut temp_segment_list: Vec<segment::Segment> = Vec::new();
-        temp_segment_list.push(segment::Segment::new("$nosegment".into(), 0, 0, 0));
-        {
-            let current_segment = temp_segment_list.last_mut().unwrap();
-
-            current_segment
-                .files_list
-                .push(file::File::new_placeholder());
-        }
+        let mut temp_segment_list = vec![segment::Segment::new_placeholder()];
 
         let mut in_file = false;
 
@@ -72,14 +119,17 @@ impl MapFile {
                     if let Some(entry_match) = regex_function_entry.captures(line) {
                         // println!("{entry_match:?}");
                         let sym_name = &entry_match["name"];
-                        let sym_vram = utils::parse_hex(&entry_match["vram"]);
 
-                        let current_segment = temp_segment_list.last_mut().unwrap();
-                        let current_file = current_segment.files_list.last_mut().unwrap();
+                        if !BANNED_SYMBOL_NAMES.contains(&sym_name) {
+                            let sym_vram = utils::parse_hex(&entry_match["vram"]);
 
-                        current_file
-                            .symbols
-                            .push(symbol::Symbol::new_default(sym_name.into(), sym_vram));
+                            let current_segment = temp_segment_list.last_mut().unwrap();
+                            let current_file = current_segment.files_list.last_mut().unwrap();
+
+                            current_file
+                                .symbols
+                                .push(symbol::Symbol::new_default(sym_name.into(), sym_vram));
+                        }
                     }
                 }
             }
@@ -113,7 +163,12 @@ impl MapFile {
                         name = prev_line;
                     }
 
-                    temp_segment_list.push(segment::Segment::new(name.into(), vram, size, vrom));
+                    temp_segment_list.push(segment::Segment::new_default(
+                        name.into(),
+                        vram,
+                        size,
+                        vrom,
+                    ));
                 } else if let Some(fill_match) = regex_fill.captures(line) {
                     // Make a dummy file to handle *fill*
                     let mut filepath = std::path::PathBuf::new();
@@ -146,27 +201,12 @@ impl MapFile {
         }
 
         for (i, segment) in temp_segment_list.iter_mut().enumerate() {
-            if i == 0 {
-                if segment.is_placeholder() {
-                    // skip the dummy segment if it has no size, files or symbols
-                    continue;
-                }
-
-                if segment.files_list.len() == 1 {
-                    if let Some(first) = segment.files_list.first() {
-                        if first.is_placeholder() {
-                            continue;
-                        }
-                    }
-                }
+            if i == 0 && segment.is_placeholder() {
+                // skip the dummy segment if it has no size, files or symbols
+                continue;
             }
 
-            let mut new_segment = segment::Segment::new(
-                segment.name.clone(),
-                segment.vram,
-                segment.size,
-                segment.vrom,
-            );
+            let mut new_segment = segment.clone_no_filelist();
 
             let mut vrom_offset = segment.vrom;
             for file in segment.files_list.iter_mut() {
@@ -227,6 +267,154 @@ impl MapFile {
 
                 if !is_noload_section {
                     vrom_offset += file.size;
+                }
+
+                new_segment.files_list.push(file.clone());
+            }
+
+            self.segments_list.push(new_segment);
+        }
+    }
+
+    /**
+    Parses the contents of a clang ld.lld map.
+
+    The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
+     */
+    #[pyo3(name = "parseMapContentsLLD")]
+    pub fn parse_map_contents_lld(&mut self, map_contents: String) {
+        let map_data = map_contents;
+
+        // Every line starts with this information, so instead of duplicating it we put them on one single regex
+        let regex_row_entry = Regex::new(r"^\s*(?P<vram>[0-9a-fA-F]+)\s+(?P<vrom>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+) ").unwrap();
+
+        let regex_segment_entry = Regex::new(r"^(?P<name>[^\s]+)$").unwrap();
+        let regex_fill = Regex::new(r"^\s+(?P<expr>\.\s*\+=\s*.+)$").unwrap();
+        let regex_file_data_entry =
+            Regex::new(r"^\s+(?P<name>[^\s]+):\((?P<section>[^\s()]+)\)$$").unwrap();
+        let regex_label = Regex::new(r"^\s+(?P<name>\.?L[0-9A-F]{8})$").unwrap();
+        let regex_symbol_entry = Regex::new(r"^\s+(?P<name>[^\s]+)$").unwrap();
+
+        let mut temp_segment_list = vec![segment::Segment::new_placeholder()];
+
+        for line in map_data.split('\n') {
+            if let Some(row_entry_match) = regex_row_entry.captures(line) {
+                let vram = utils::parse_hex(&row_entry_match["vram"]);
+                let vrom = utils::parse_hex(&row_entry_match["vrom"]);
+                let size = utils::parse_hex(&row_entry_match["size"]);
+                let align = utils::parse_hex(&row_entry_match["align"]);
+
+                let subline = &line[row_entry_match.get(0).unwrap().len()..];
+
+                if let Some(segment_entry_match) = regex_segment_entry.captures(subline) {
+                    let name = &segment_entry_match["name"];
+
+                    let mut new_segment =
+                        segment::Segment::new_default(name.into(), vram, size, vrom);
+                    new_segment.align = Some(align);
+
+                    temp_segment_list.push(new_segment);
+                } else if regex_fill.is_match(subline) {
+                    // Make a dummy file to handle pads (. += XX)
+
+                    let mut filepath = std::path::PathBuf::new();
+                    let mut section_type = "".to_owned();
+
+                    let current_segment = temp_segment_list.last_mut().unwrap();
+
+                    if !current_segment.files_list.is_empty() {
+                        let prev_file = current_segment.files_list.last().unwrap();
+                        let mut name = prev_file.filepath.file_name().unwrap().to_owned();
+
+                        name.push("__fill__");
+                        filepath = prev_file.filepath.with_file_name(name);
+                        section_type = prev_file.section_type.clone();
+                    }
+
+                    let mut new_file = file::File::new_default(filepath, vram, size, &section_type);
+                    if !utils::is_noload_section(&section_type) {
+                        new_file.vrom = Some(vrom);
+                    }
+                    current_segment.files_list.push(new_file);
+                } else if let Some(file_entry_match) = regex_file_data_entry.captures(subline) {
+                    let filepath = std::path::PathBuf::from(&file_entry_match["name"]);
+                    let section_type = &file_entry_match["section"];
+
+                    if size > 0 {
+                        let current_segment = temp_segment_list.last_mut().unwrap();
+
+                        let mut new_file =
+                            file::File::new_default(filepath, vram, size, section_type);
+                        if !utils::is_noload_section(section_type) {
+                            new_file.vrom = Some(vrom);
+                        }
+                        new_file.align = Some(align);
+
+                        current_segment.files_list.push(new_file);
+                    }
+                } else if regex_label.is_match(subline) {
+                    // pass
+                } else if let Some(symbol_entry_match) = regex_symbol_entry.captures(subline) {
+                    let name = &symbol_entry_match["name"];
+
+                    if !BANNED_SYMBOL_NAMES.contains(&name) {
+                        let current_segment = temp_segment_list.last_mut().unwrap();
+                        let current_file = current_segment.files_list.last_mut().unwrap();
+
+                        let mut new_symbol = symbol::Symbol::new_default(name.into(), vram);
+                        if size > 0 {
+                            new_symbol.size = Some(size);
+                        }
+                        if !current_file.is_noload_section() {
+                            new_symbol.vrom = Some(vrom)
+                        }
+                        new_symbol.align = Some(align);
+
+                        current_file.symbols.push(new_symbol);
+                    }
+                }
+            }
+        }
+
+        for (i, segment) in temp_segment_list.iter_mut().enumerate() {
+            if i == 0 && segment.is_placeholder() {
+                // skip the dummy segment if it has no size, files or symbols
+                continue;
+            }
+
+            let mut new_segment = segment.clone_no_filelist();
+
+            for file in segment.files_list.iter_mut() {
+                if file.is_placeholder() {
+                    // drop placeholders
+                    continue;
+                }
+
+                let mut acummulated_size = 0;
+                let symbols_count = file.symbols.len();
+
+                if symbols_count > 0 {
+                    // Calculate the size of symbols that the map file did not report.
+                    // usually asm symbols and not C ones
+
+                    for index in 0..symbols_count - 1 {
+                        let next_sym_vram = file.symbols[index + 1].vram;
+                        let sym = &mut file.symbols[index];
+
+                        let sym_size = next_sym_vram - sym.vram;
+                        acummulated_size += sym_size;
+
+                        if sym.size.is_none() {
+                            sym.size = Some(sym_size);
+                        }
+                    }
+
+                    // Calculate size of last symbol of the file
+                    let sym = &mut file.symbols[symbols_count - 1];
+                    if sym.size.is_none() {
+                        let sym_size = file.size - acummulated_size;
+                        sym.size = Some(sym_size);
+                    }
                 }
 
                 new_segment.files_list.push(file.clone());
@@ -524,21 +712,25 @@ impl MapFile {
         print!("{}", self.to_csv_symbols());
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "copySegmentList")]
     fn copy_segment_list(&self) -> Vec<segment::Segment> {
         self.segments_list.clone()
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "setSegmentList")]
     fn set_segment_list(&mut self, new_list: Vec<segment::Segment>) {
         self.segments_list = new_list;
     }
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(name = "appendSegment")]
     fn append_segment(&mut self, segment: segment::Segment) {
         self.segments_list.push(segment);
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<SegmentVecIter>> {
         let iter = SegmentVecIter {
             inner: slf.segments_list.clone().into_iter(),
@@ -546,27 +738,25 @@ impl MapFile {
         Py::new(slf.py(), iter)
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __getitem__(&self, index: usize) -> segment::Segment {
         self.segments_list[index].clone()
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __setitem__(&mut self, index: usize, element: segment::Segment) {
         self.segments_list[index] = element;
     }
 
+    #[cfg(feature = "python_bindings")]
     fn __len__(&self) -> usize {
         self.segments_list.len()
     }
 }
 
 impl MapFile {
-    fn read_map_data(map_path: &PathBuf) -> String {
-        let mut f = File::open(map_path).expect("Could not open input file");
-        let mut map_data = String::new();
-        let _contents_length = f
-            .read_to_string(&mut map_data)
-            .expect("Not able to read the whole contents of the file");
-
+    // TODO: figure out if this is doing unnecessary copies or something
+    fn preprocess_map_data_gnu(mut map_data: String) -> String {
         // Skip the stuff we don't care about
         // Looking for this string will only work on English machines (or C locales)
         // but it doesn't matter much, because if this string is not found then the
@@ -587,11 +777,13 @@ impl Default for MapFile {
     }
 }
 
+#[cfg(feature = "python_bindings")]
 #[pyclass]
 struct SegmentVecIter {
     inner: std::vec::IntoIter<segment::Segment>,
 }
 
+#[cfg(feature = "python_bindings")]
 #[pymethods]
 impl SegmentVecIter {
     fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {
