@@ -88,7 +88,7 @@ impl MapFile {
 
     The `mapContents` argument must contain the contents of a GNU ld mapfile.
      */
-    #[pyo3(name = "parseMapContentsGnu")]
+    #[pyo3(name = "parseMapContentsGNU")]
     pub fn parse_map_contents_gnu(&mut self, map_contents: String) {
         // TODO: maybe move somewhere else?
         let regex_file_data_entry = Regex::new(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
@@ -281,7 +281,7 @@ impl MapFile {
 
     The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
      */
-    #[pyo3(name = "parseMapContentsLld")]
+    #[pyo3(name = "parseMapContentsLLD")]
     pub fn parse_map_contents_lld(&mut self, map_contents: String) {
         let map_data = map_contents;
 

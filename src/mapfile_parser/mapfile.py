@@ -528,7 +528,7 @@ class MapFile:
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
-    def parseMapContentsGnu(self, mapContents: str):
+    def parseMapContentsGNU(self, mapContents: str):
         """
         Parses the contents of a GNU ld map.
 
@@ -536,11 +536,11 @@ class MapFile:
         """
 
         nativeMapFile = MapFileRs()
-        nativeMapFile.parseMapContentsGnu(mapContents)
+        nativeMapFile.parseMapContentsGNU(mapContents)
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
-    def parseMapContentsLld(self, mapContents: str):
+    def parseMapContentsLLD(self, mapContents: str):
         """
         Parses the contents of a clang ld.lld map.
 
@@ -548,7 +548,7 @@ class MapFile:
         """
 
         nativeMapFile = MapFileRs()
-        nativeMapFile.parseMapContentsLld(mapContents)
+        nativeMapFile.parseMapContentsLLD(mapContents)
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 

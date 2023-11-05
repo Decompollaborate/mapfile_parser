@@ -15,11 +15,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
       being on an actual file.
     - The map format will be guessed on the contents. Currently both the GNU ld
       and clang ld.lld map formats are recognized.
-  - `MapFile.parseMapContentsGnu`/`MapFile::parse_map_contents_gnu`
+  - `MapFile.parseMapContentsGNU`/`MapFile::parse_map_contents_gnu`
     - Parses the map contents passed as the argument, without requiring the map
       being on an actual file.
     - This function only parses the GNU ld map format.
-  - `MapFile.parseMapContentsLld`/`MapFile::parse_map_contents_lld`
+  - `MapFile.parseMapContentsLLD`/`MapFile::parse_map_contents_lld`
     - Parses the map contents passed as the argument, without requiring the map
       being on an actual file.
     - This function only parses the clang ld.lld map format.
