@@ -11,10 +11,10 @@ use std::collections::hash_map::Entry;
 use std::hash::{Hash, Hasher};
 
 #[cfg(feature = "python_bindings")]
-use std::collections::hash_map::DefaultHasher;
-#[cfg(feature = "python_bindings")]
 use pyo3::class::basic::CompareOp;
 use pyo3::prelude::*;
+#[cfg(feature = "python_bindings")]
+use std::collections::hash_map::DefaultHasher;
 
 #[derive(Debug, Clone)]
 #[pyclass(module = "mapfile_parser")]
@@ -310,7 +310,12 @@ impl Segment {
     }
 
     pub fn is_placeholder(&self) -> bool {
-        if self.name == "$nosegment" && self.vram == 0 && self.size == 0 && self.vrom == 0 && self.align.is_none() {
+        if self.name == "$nosegment"
+            && self.vram == 0
+            && self.size == 0
+            && self.vrom == 0
+            && self.align.is_none()
+        {
             if self.files_list.is_empty() {
                 return true;
             }

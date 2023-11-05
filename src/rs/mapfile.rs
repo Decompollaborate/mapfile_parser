@@ -72,7 +72,8 @@ impl MapFile {
     */
     #[pyo3(name = "parseMapContents")]
     pub fn parse_map_contents(&mut self, map_contents: String) {
-        let regex_lld_header = Regex::new(r"\s+VMA\s+LMA\s+Size\s+Align\s+Out\s+In\s+Symbol").unwrap();
+        let regex_lld_header =
+            Regex::new(r"\s+VMA\s+LMA\s+Size\s+Align\s+Out\s+In\s+Symbol").unwrap();
 
         if regex_lld_header.is_match(&map_contents) {
             self.parse_map_contents_lld(map_contents);
@@ -162,7 +163,12 @@ impl MapFile {
                         name = prev_line;
                     }
 
-                    temp_segment_list.push(segment::Segment::new_default(name.into(), vram, size, vrom));
+                    temp_segment_list.push(segment::Segment::new_default(
+                        name.into(),
+                        vram,
+                        size,
+                        vrom,
+                    ));
                 } else if let Some(fill_match) = regex_fill.captures(line) {
                     // Make a dummy file to handle *fill*
                     let mut filepath = std::path::PathBuf::new();
@@ -347,7 +353,7 @@ impl MapFile {
                 if size > 0 {
                     let current_segment = temp_segment_list.last_mut().unwrap();
 
-                    let mut new_file = file::File::new_default(filepath,vram,size,&section_type);
+                    let mut new_file = file::File::new_default(filepath, vram, size, &section_type);
                     if !utils::is_noload_section(&section_type) {
                         new_file.vrom = Some(vrom);
                     }

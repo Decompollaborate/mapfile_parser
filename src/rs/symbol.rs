@@ -5,10 +5,10 @@
 use std::hash::{Hash, Hasher};
 
 #[cfg(feature = "python_bindings")]
-use std::collections::hash_map::DefaultHasher;
-#[cfg(feature = "python_bindings")]
 use pyo3::class::basic::CompareOp;
 use pyo3::prelude::*;
+#[cfg(feature = "python_bindings")]
+use std::collections::hash_map::DefaultHasher;
 
 #[derive(Debug, Clone)]
 #[pyclass(module = "mapfile_parser")]
@@ -32,7 +32,13 @@ pub struct Symbol {
 #[pymethods]
 impl Symbol {
     #[new]
-    pub fn new(name: String, vram: u64, size: Option<u64>, vrom: Option<u64>, align: Option<u64>) -> Self {
+    pub fn new(
+        name: String,
+        vram: u64,
+        size: Option<u64>,
+        vrom: Option<u64>,
+        align: Option<u64>,
+    ) -> Self {
         Symbol {
             name,
             vram,

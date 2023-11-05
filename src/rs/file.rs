@@ -10,10 +10,10 @@ use std::hash::{Hash, Hasher};
 use crate::{symbol, utils};
 
 #[cfg(feature = "python_bindings")]
-use std::collections::hash_map::DefaultHasher;
-#[cfg(feature = "python_bindings")]
 use pyo3::class::basic::CompareOp;
 use pyo3::prelude::*;
+#[cfg(feature = "python_bindings")]
+use std::collections::hash_map::DefaultHasher;
 
 #[derive(Debug, Clone)]
 #[pyclass(module = "mapfile_parser", sequence)]
