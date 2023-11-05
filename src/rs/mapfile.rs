@@ -50,6 +50,7 @@ impl MapFile {
 
     Currently supported map formats:
     - GNU ld
+    - clang ld.lld
      */
     #[pyo3(name = "readMapFile")]
     pub fn read_map_file(&mut self, map_path: PathBuf) {
@@ -67,6 +68,7 @@ impl MapFile {
 
     Currently supported mapfile formats:
     - GNU ld
+    - clang ld.lld
     */
     #[pyo3(name = "parseMapContents")]
     pub fn parse_map_contents(&mut self, map_contents: String) {
@@ -275,6 +277,11 @@ impl MapFile {
         }
     }
 
+    /**
+    Parses the contents of a clang ld.lld map.
+
+    The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
+     */
     #[pyo3(name = "parseMapContentsLld")]
     pub fn parse_map_contents_lld(&mut self, map_contents: String) {
         let map_data = map_contents;

@@ -499,6 +499,7 @@ class MapFile:
 
         Currently supported map formats:
         - GNU ld
+        - clang ld.lld
         """
 
         nativeMapFile = MapFileRs()
@@ -516,6 +517,7 @@ class MapFile:
 
         Currently supported mapfile formats:
         - GNU ld
+        - clang ld.lld
         """
 
         nativeMapFile = MapFileRs()
@@ -532,6 +534,18 @@ class MapFile:
 
         nativeMapFile = MapFileRs()
         nativeMapFile.parseMapContentsGnu(mapContents)
+
+        self._transferContentsFromNativeMapFile(nativeMapFile)
+
+    def parseMapContentsLld(self, mapContents: str):
+        """
+        Parses the contents of a clang ld.lld map.
+
+        The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
+        """
+
+        nativeMapFile = MapFileRs()
+        nativeMapFile.parseMapContentsLld(mapContents)
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 

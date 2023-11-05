@@ -11,6 +11,10 @@ Map file parser library focusing decompilation projects.
 
 This library is available for Python3 and Rust
 
+## Features
+
+TODO
+
 ## Installing
 
 ### Python version
