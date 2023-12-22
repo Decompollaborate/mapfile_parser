@@ -3,7 +3,7 @@
 
 [package]
 name = "mapfile_parser"
-version = "2.3.0"
+version = "2.3.1"
 edition = "2021"
 authors = ["Anghelo Carvajal <angheloalf95@gmail.com>"]
 description = "Map file parser library focusing decompilation projects"
