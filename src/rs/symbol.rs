@@ -137,9 +137,21 @@ pub(crate) mod python_bindings {
             Ok(self.name.clone())
         }
 
+        #[setter]
+        fn set_name(&mut self, value: String) -> PyResult<()> {
+            self.name = value;
+            Ok(())
+        }
+
         #[getter]
         fn get_vram(&self) -> PyResult<u64> {
             Ok(self.vram)
+        }
+
+        #[setter]
+        fn set_vram(&mut self, value: u64) -> PyResult<()> {
+            self.vram = value;
+            Ok(())
         }
 
         #[getter]
