@@ -8,6 +8,7 @@ use std::path::PathBuf;
 
 use regex::*;
 
+#[cfg(feature = "python_bindings")]
 use pyo3::prelude::*;
 
 use crate::{
@@ -25,20 +26,21 @@ lazy_static! {
 
 #[derive(Debug, Clone)]
 // TODO: sequence?
-#[pyclass(module = "mapfile_parser")]
+#[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 pub struct MapFile {
     pub segments_list: Vec<segment::Segment>,
 
+    #[cfg(feature = "python_bindings")]
     #[pyo3(get, set)]
     debugging: bool,
 }
 
-#[pymethods]
 impl MapFile {
-    #[new]
     pub fn new() -> Self {
         MapFile {
             segments_list: Vec::new(),
+
+            #[cfg(feature = "python_bindings")]
             debugging: false,
         }
     }
@@ -52,7 +54,6 @@ impl MapFile {
     - GNU ld
     - clang ld.lld
      */
-    #[pyo3(name = "readMapFile")]
     pub fn read_map_file(&mut self, map_path: PathBuf) {
         let map_contents = utils::read_file_contents(&map_path);
 
@@ -70,7 +71,6 @@ impl MapFile {
     - GNU ld
     - clang ld.lld
     */
-    #[pyo3(name = "parseMapContents")]
     pub fn parse_map_contents(&mut self, map_contents: String) {
         let regex_lld_header =
             Regex::new(r"\s+VMA\s+LMA\s+Size\s+Align\s+Out\s+In\s+Symbol").unwrap();
@@ -88,7 +88,6 @@ impl MapFile {
 
     The `mapContents` argument must contain the contents of a GNU ld mapfile.
      */
-    #[pyo3(name = "parseMapContentsGNU")]
     pub fn parse_map_contents_gnu(&mut self, map_contents: String) {
         // TODO: maybe move somewhere else?
         let regex_file_data_entry = Regex::new(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
@@ -281,7 +280,6 @@ impl MapFile {
 
     The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
      */
-    #[pyo3(name = "parseMapContentsLLD")]
     pub fn parse_map_contents_lld(&mut self, map_contents: String) {
         let map_data = map_contents;
 
@@ -424,11 +422,8 @@ impl MapFile {
         }
     }
 
-    #[pyo3(name = "filterBySectionType")]
     pub fn filter_by_section_type(&self, section_type: &str) -> MapFile {
         let mut new_map_file = MapFile::new();
-
-        new_map_file.debugging = self.debugging;
 
         for segment in &self.segments_list {
             let new_segment = segment.filter_by_section_type(section_type);
@@ -441,11 +436,8 @@ impl MapFile {
         new_map_file
     }
 
-    #[pyo3(name = "getEveryFileExceptSectionType")]
     pub fn get_every_file_except_section_type(&self, section_type: &str) -> MapFile {
         let mut new_map_file = MapFile::new();
-
-        new_map_file.debugging = self.debugging;
 
         for segment in &self.segments_list {
             let new_segment = segment.get_every_file_except_section_type(section_type);
@@ -458,7 +450,6 @@ impl MapFile {
         new_map_file
     }
 
-    #[pyo3(name = "findSymbolByName")]
     pub fn find_symbol_by_name(
         &self,
         sym_name: &str,
@@ -472,7 +463,6 @@ impl MapFile {
         None
     }
 
-    #[pyo3(name = "findSymbolByVramOrVrom")]
     pub fn find_symbol_by_vram_or_vrom(
         &self,
         address: u64,
@@ -486,7 +476,6 @@ impl MapFile {
         None
     }
 
-    #[pyo3(name = "findLowestDifferingSymbol")]
     pub fn find_lowest_differing_symbol(
         &self,
         other_map_file: MapFile,
@@ -522,11 +511,8 @@ impl MapFile {
         None
     }
 
-    #[pyo3(name = "mixFolders")]
     pub fn mix_folders(&self) -> MapFile {
         let mut new_map_file = MapFile::new();
-
-        new_map_file.debugging = self.debugging;
 
         for segment in &self.segments_list {
             new_map_file.segments_list.push(segment.mix_folders());
@@ -535,7 +521,6 @@ impl MapFile {
         new_map_file
     }
 
-    #[pyo3(name = "getProgress", signature = (asm_path, nonmatchings, aliases=HashMap::new(), path_index=2))]
     pub fn get_progress(
         &self,
         asm_path: PathBuf,
@@ -607,7 +592,6 @@ impl MapFile {
         (total_stats, progress_per_folder)
     }
 
-    #[pyo3(name = "compareFilesAndSymbols", signature=(other_map_file, *, check_other_on_self=true))]
     /// Useful for finding bss reorders
     pub fn compare_files_and_symbols(
         &self,
@@ -678,7 +662,6 @@ impl MapFile {
         comp_info
     }
 
-    #[pyo3(name = "toCsv", signature=(print_vram=true, skip_without_symbols=true))]
     pub fn to_csv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
         let mut ret = file::File::to_csv_header(print_vram) + "\n";
 
@@ -689,7 +672,6 @@ impl MapFile {
         ret
     }
 
-    #[pyo3(name = "toCsvSymbols")]
     pub fn to_csv_symbols(&self) -> String {
         let mut ret = String::new();
 
@@ -702,55 +684,12 @@ impl MapFile {
         ret
     }
 
-    #[pyo3(name = "printAsCsv", signature=(print_vram=true, skip_without_symbols=true))]
     pub fn print_as_csv(&self, print_vram: bool, skip_without_symbols: bool) {
         print!("{}", self.to_csv(print_vram, skip_without_symbols));
     }
 
-    #[pyo3(name = "printSymbolsCsv")]
     pub fn print_symbols_csv(&self) {
         print!("{}", self.to_csv_symbols());
-    }
-
-    #[cfg(feature = "python_bindings")]
-    #[pyo3(name = "copySegmentList")]
-    fn copy_segment_list(&self) -> Vec<segment::Segment> {
-        self.segments_list.clone()
-    }
-
-    #[cfg(feature = "python_bindings")]
-    #[pyo3(name = "setSegmentList")]
-    fn set_segment_list(&mut self, new_list: Vec<segment::Segment>) {
-        self.segments_list = new_list;
-    }
-
-    #[cfg(feature = "python_bindings")]
-    #[pyo3(name = "appendSegment")]
-    fn append_segment(&mut self, segment: segment::Segment) {
-        self.segments_list.push(segment);
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<SegmentVecIter>> {
-        let iter = SegmentVecIter {
-            inner: slf.segments_list.clone().into_iter(),
-        };
-        Py::new(slf.py(), iter)
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __getitem__(&self, index: usize) -> segment::Segment {
-        self.segments_list[index].clone()
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __setitem__(&mut self, index: usize, element: segment::Segment) {
-        self.segments_list[index] = element;
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __len__(&self) -> usize {
-        self.segments_list.len()
     }
 }
 
@@ -778,19 +717,168 @@ impl Default for MapFile {
 }
 
 #[cfg(feature = "python_bindings")]
-#[pyclass]
-struct SegmentVecIter {
-    inner: std::vec::IntoIter<segment::Segment>,
-}
+#[allow(non_snake_case)]
+pub(crate) mod python_bindings {
+    use pyo3::prelude::*;
 
-#[cfg(feature = "python_bindings")]
-#[pymethods]
-impl SegmentVecIter {
-    fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {
-        slf
+    use std::collections::HashMap;
+    use std::path::PathBuf;
+
+    use crate::{
+        file, found_symbol_info, maps_comparison_info, progress_stats, segment, symbol,
+    };
+
+    #[pymethods]
+    impl super::MapFile {
+        #[new]
+        pub fn py_new() -> Self {
+            Self::new()
+        }
+
+        pub fn readMapFile(&mut self, map_path: PathBuf) {
+            self.read_map_file(map_path)
+        }
+
+        pub fn parseMapContents(&mut self, map_contents: String) {
+            self.parse_map_contents(map_contents)
+        }
+
+        pub fn parseMapContentsGNU(&mut self, map_contents: String) {
+            self.parse_map_contents_gnu(map_contents)
+        }
+
+        /**
+        Parses the contents of a clang ld.lld map.
+
+        The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
+        */
+        #[pyo3(name = "parseMapContentsLLD")]
+        pub fn parseMapContentsLLD(&mut self, map_contents: String) {
+            self.parse_map_contents_lld(map_contents)
+        }
+
+        pub fn filterBySectionType(&self, section_type: &str) -> Self {
+            self.filter_by_section_type(section_type)
+        }
+
+        pub fn getEveryFileExceptSectionType(&self, section_type: &str) -> Self {
+            self.get_every_file_except_section_type(section_type)
+        }
+
+        pub fn findSymbolByName(
+            &self,
+            sym_name: &str,
+        ) -> Option<found_symbol_info::FoundSymbolInfo> {
+            self.find_symbol_by_name(sym_name)
+        }
+
+        pub fn findSymbolByVramOrVrom(
+            &self,
+            address: u64,
+        ) -> Option<found_symbol_info::FoundSymbolInfo> {
+            self.find_symbol_by_vram_or_vrom(address)
+        }
+
+        pub fn findLowestDifferingSymbol(
+            &self,
+            other_map_file: Self,
+        ) -> Option<(symbol::Symbol, file::File, Option<symbol::Symbol>)> {
+            self.find_lowest_differing_symbol(other_map_file)
+        }
+
+        pub fn mixFolders(&self) -> Self {
+            self.mix_folders()
+        }
+
+        #[pyo3(signature = (asm_path, nonmatchings, aliases=HashMap::new(), path_index=2))]
+        pub fn getProgress(
+            &self,
+            asm_path: PathBuf,
+            nonmatchings: PathBuf,
+            aliases: HashMap<String, String>,
+            path_index: usize,
+        ) -> (
+            progress_stats::ProgressStats,
+            HashMap<String, progress_stats::ProgressStats>,
+        ) {
+            self.get_progress(asm_path,
+                nonmatchings,
+                aliases,
+                path_index)
+        }
+
+        #[pyo3(signature=(other_map_file, *, check_other_on_self=true))]
+        pub fn compareFilesAndSymbols(
+            &self,
+            other_map_file: Self,
+            check_other_on_self: bool,
+        ) -> maps_comparison_info::MapsComparisonInfo {
+            self.compare_files_and_symbols(other_map_file, check_other_on_self)
+        }
+
+        #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
+        pub fn toCsv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
+            self.to_csv(print_vram, skip_without_symbols)
+        }
+
+        pub fn toCsvSymbols(&self) -> String {
+            self.to_csv_symbols()
+        }
+
+        #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
+        pub fn printAsCsv(&self, print_vram: bool, skip_without_symbols: bool) {
+            self.print_as_csv(print_vram, skip_without_symbols)
+        }
+
+        pub fn printSymbolsCsv(&self) {
+            self.print_symbols_csv()
+        }
+
+        fn copySegmentList(&self) -> Vec<segment::Segment> {
+            self.segments_list.clone()
+        }
+
+        fn setSegmentList(&mut self, new_list: Vec<segment::Segment>) {
+            self.segments_list = new_list;
+        }
+
+        fn appendSegment(&mut self, segment: segment::Segment) {
+            self.segments_list.push(segment);
+        }
+
+        fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<SegmentVecIter>> {
+            let iter = SegmentVecIter {
+                inner: slf.segments_list.clone().into_iter(),
+            };
+            Py::new(slf.py(), iter)
+        }
+
+        fn __getitem__(&self, index: usize) -> segment::Segment {
+            self.segments_list[index].clone()
+        }
+
+        fn __setitem__(&mut self, index: usize, element: segment::Segment) {
+            self.segments_list[index] = element;
+        }
+
+        fn __len__(&self) -> usize {
+            self.segments_list.len()
+        }
     }
 
-    fn __next__(mut slf: PyRefMut<'_, Self>) -> Option<segment::Segment> {
-        slf.inner.next()
+    #[pyclass]
+    struct SegmentVecIter {
+        inner: std::vec::IntoIter<segment::Segment>,
+    }
+
+    #[pymethods]
+    impl SegmentVecIter {
+        fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {
+            slf
+        }
+
+        fn __next__(mut slf: PyRefMut<'_, Self>) -> Option<segment::Segment> {
+            slf.inner.next()
+        }
     }
 }
