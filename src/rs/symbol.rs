@@ -4,24 +4,20 @@
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
 use std::hash::{Hash, Hasher};
 
+#[cfg(feature = "python_bindings")]
 use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]
-#[pyclass(module = "mapfile_parser")]
+#[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 pub struct Symbol {
-    #[pyo3(get)]
     pub name: String,
 
-    #[pyo3(get)]
     pub vram: u64,
 
-    #[pyo3(get, set)]
     pub size: Option<u64>,
 
-    #[pyo3(get, set)]
     pub vrom: Option<u64>,
 
-    #[pyo3(get, set)]
     pub align: Option<u64>,
 }
 
@@ -132,6 +128,53 @@ pub(crate) mod python_bindings {
                 align,
             )
         }
+
+        /* Getters and setters */
+
+        #[getter]
+        fn get_name(&self) -> PyResult<String> {
+            Ok(self.name.clone())
+        }
+
+        #[getter]
+        fn get_vram(&self) -> PyResult<u64> {
+            Ok(self.vram)
+        }
+
+        #[getter]
+        fn get_size(&self) -> PyResult<Option<u64>> {
+            Ok(self.size)
+        }
+
+        #[setter]
+        fn set_size(&mut self, value: Option<u64>) -> PyResult<()> {
+            self.size = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_vrom(&self) -> PyResult<Option<u64>> {
+            Ok(self.vrom)
+        }
+
+        #[setter]
+        fn set_vrom(&mut self, value: Option<u64>) -> PyResult<()> {
+            self.vrom = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_align(&self) -> PyResult<Option<u64>> {
+            Ok(self.align)
+        }
+
+        #[setter]
+        fn set_align(&mut self, value: Option<u64>) -> PyResult<()> {
+            self.align = value;
+            Ok(())
+        }
+
+        /* Methods */
 
         pub fn getVramStr(&self) -> String {
             self.get_vram_str()
