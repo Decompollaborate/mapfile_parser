@@ -121,12 +121,7 @@ pub(crate) mod python_bindings {
             vrom: Option<u64>,
             align: Option<u64>,
         ) -> Self {
-            Self::new(name,
-                vram,
-                size,
-                vrom,
-                align,
-            )
+            Self::new(name, vram, size, vrom, align)
         }
 
         /* Getters and setters */

@@ -724,9 +724,7 @@ pub(crate) mod python_bindings {
     use std::collections::HashMap;
     use std::path::PathBuf;
 
-    use crate::{
-        file, found_symbol_info, maps_comparison_info, progress_stats, segment, symbol,
-    };
+    use crate::{file, found_symbol_info, maps_comparison_info, progress_stats, segment, symbol};
 
     #[pymethods]
     impl super::MapFile {
@@ -801,10 +799,7 @@ pub(crate) mod python_bindings {
             progress_stats::ProgressStats,
             HashMap<String, progress_stats::ProgressStats>,
         ) {
-            self.get_progress(asm_path,
-                nonmatchings,
-                aliases,
-                path_index)
+            self.get_progress(asm_path, nonmatchings, aliases, path_index)
         }
 
         #[pyo3(signature=(other_map_file, *, check_other_on_self=true))]

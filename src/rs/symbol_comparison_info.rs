@@ -61,7 +61,7 @@ pub(crate) mod python_bindings {
             expected_file: Option<file::File>,
             diff: Option<i64>,
         ) -> Self {
-            Self::new (
+            Self::new(
                 symbol,
                 build_address,
                 build_file,

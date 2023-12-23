@@ -80,7 +80,10 @@ pub(crate) mod python_bindings {
         }
 
         #[setter]
-        fn set_comparedList(&mut self, value: Vec<symbol_comparison_info::SymbolComparisonInfo>) -> PyResult<()> {
+        fn set_comparedList(
+            &mut self,
+            value: Vec<symbol_comparison_info::SymbolComparisonInfo>,
+        ) -> PyResult<()> {
             self.compared_list = value;
             Ok(())
         }

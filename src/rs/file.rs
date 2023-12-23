@@ -280,14 +280,7 @@ pub(crate) mod python_bindings {
             vrom: Option<u64>,
             align: Option<u64>,
         ) -> Self {
-            Self::new(
-                filepath,
-                vram,
-                size,
-                section_type,
-                vrom,
-                align,
-            )
+            Self::new(filepath, vram, size, section_type, vrom, align)
         }
 
         /* Getters and setters */

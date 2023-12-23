@@ -75,11 +75,7 @@ pub(crate) mod python_bindings {
         #[new]
         #[pyo3(signature=(file, symbol, offset=0))]
         pub fn py_new(file: file::File, symbol: symbol::Symbol, offset: i64) -> Self {
-            Self::new (
-                file,
-                symbol,
-                offset,
-            )
+            Self::new(file, symbol, offset)
         }
 
         /* Getters and setters */
