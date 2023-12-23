@@ -32,7 +32,7 @@ def processArguments(args: argparse.Namespace):
     asmPath: Path = args.asmpath
     nonmatchingsPath: Path = args.nonmatchingspath
     pathIndex: int = args.path_index
-    debugging: bool = args.debugging
+    debugging: bool = args.debugging #! @deprecated
 
     exit(doProgress(mapPath, asmPath, nonmatchingsPath, pathIndex=pathIndex, debugging=debugging))
 
@@ -43,6 +43,6 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser])
     parser.add_argument("asmpath", help="Path to asm folder", type=Path)
     parser.add_argument("nonmatchingspath", help="Path to nonmatchings folder", type=Path)
     parser.add_argument("-i", "--path-index", help="Specify the index to start reading the file paths. Defaults to 2", type=int, default=2)
-    parser.add_argument("-d", "--debugging", help="Enable debugging prints", action="store_true")
+    parser.add_argument("-d", "--debugging", help="Enable debugging prints. This option is deprecated", action="store_true")
 
     parser.set_defaults(func=processArguments)

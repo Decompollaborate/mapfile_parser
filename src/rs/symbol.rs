@@ -5,33 +5,23 @@
 use std::hash::{Hash, Hasher};
 
 #[cfg(feature = "python_bindings")]
-use pyo3::class::basic::CompareOp;
 use pyo3::prelude::*;
-#[cfg(feature = "python_bindings")]
-use std::collections::hash_map::DefaultHasher;
 
 #[derive(Debug, Clone)]
-#[pyclass(module = "mapfile_parser")]
+#[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 pub struct Symbol {
-    #[pyo3(get)]
     pub name: String,
 
-    #[pyo3(get)]
     pub vram: u64,
 
-    #[pyo3(get, set)]
     pub size: Option<u64>,
 
-    #[pyo3(get, set)]
     pub vrom: Option<u64>,
 
-    #[pyo3(get, set)]
     pub align: Option<u64>,
 }
 
-#[pymethods]
 impl Symbol {
-    #[new]
     pub fn new(
         name: String,
         vram: u64,
@@ -39,7 +29,7 @@ impl Symbol {
         vrom: Option<u64>,
         align: Option<u64>,
     ) -> Self {
-        Symbol {
+        Self {
             name,
             vram,
             size,
@@ -48,12 +38,20 @@ impl Symbol {
         }
     }
 
-    #[pyo3(name = "getVramStr")]
+    pub fn new_default(name: String, vram: u64) -> Self {
+        Self {
+            name,
+            vram,
+            size: None,
+            vrom: None,
+            align: None,
+        }
+    }
+
     pub fn get_vram_str(&self) -> String {
         format!("0x{0:08X}", self.vram)
     }
 
-    #[pyo3(name = "getSizeStr")]
     pub fn get_size_str(&self) -> String {
         if let Some(size) = self.size {
             //return format!("0x{0:X}", size);
@@ -62,7 +60,6 @@ impl Symbol {
         "None".into()
     }
 
-    #[pyo3(name = "getVromStr")]
     pub fn get_vrom_str(&self) -> String {
         if let Some(vrom) = self.vrom {
             return format!("0x{0:06X}", vrom);
@@ -70,57 +67,20 @@ impl Symbol {
         "None".into()
     }
 
-    #[staticmethod]
-    #[pyo3(name = "toCsvHeader")]
     pub fn to_csv_header() -> String {
         "Symbol name,VRAM,Size in bytes".to_string()
     }
 
-    #[pyo3(name = "toCsv")]
     pub fn to_csv(&self) -> String {
         format!("{0},{1:08X},{2}", self.name, self.vram, self.get_size_str())
     }
 
-    #[staticmethod]
-    #[pyo3(name = "printCsvHeader")]
     pub fn print_csv_header() {
         print!("{}", Self::to_csv_header());
     }
 
-    #[pyo3(name = "printAsCsv")]
     pub fn print_as_csv(&self) {
         print!("{0}", self.to_csv());
-    }
-
-    // TODO: implement __eq__ instead when PyO3 0.20 releases
-    #[cfg(feature = "python_bindings")]
-    fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
-        match op {
-            pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
-            pyo3::class::basic::CompareOp::Ne => (self != other).into_py(py),
-            _ => py.NotImplemented(),
-        }
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __hash__(&self) -> isize {
-        let mut hasher = DefaultHasher::new();
-        self.hash(&mut hasher);
-        hasher.finish() as isize
-    }
-
-    // TODO: __str__ and __repr__
-}
-
-impl Symbol {
-    pub fn new_default(name: String, vram: u64) -> Self {
-        Symbol {
-            name,
-            vram,
-            size: None,
-            vrom: None,
-            align: None,
-        }
     }
 }
 
@@ -137,5 +97,137 @@ impl Hash for Symbol {
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.name.hash(state);
         self.vram.hash(state);
+    }
+}
+
+#[cfg(feature = "python_bindings")]
+#[allow(non_snake_case)]
+pub(crate) mod python_bindings {
+    use pyo3::class::basic::CompareOp;
+    use pyo3::prelude::*;
+
+    use std::collections::hash_map::DefaultHasher;
+
+    // Required to call the `.hash` and `.finish` methods, which are defined on traits.
+    use std::hash::{Hash, Hasher};
+
+    #[pymethods]
+    impl super::Symbol {
+        #[new]
+        pub fn py_new(
+            name: String,
+            vram: u64,
+            size: Option<u64>,
+            vrom: Option<u64>,
+            align: Option<u64>,
+        ) -> Self {
+            Self::new(name, vram, size, vrom, align)
+        }
+
+        /* Getters and setters */
+
+        #[getter]
+        fn get_name(&self) -> PyResult<String> {
+            Ok(self.name.clone())
+        }
+
+        #[setter]
+        fn set_name(&mut self, value: String) -> PyResult<()> {
+            self.name = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_vram(&self) -> PyResult<u64> {
+            Ok(self.vram)
+        }
+
+        #[setter]
+        fn set_vram(&mut self, value: u64) -> PyResult<()> {
+            self.vram = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_size(&self) -> PyResult<Option<u64>> {
+            Ok(self.size)
+        }
+
+        #[setter]
+        fn set_size(&mut self, value: Option<u64>) -> PyResult<()> {
+            self.size = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_vrom(&self) -> PyResult<Option<u64>> {
+            Ok(self.vrom)
+        }
+
+        #[setter]
+        fn set_vrom(&mut self, value: Option<u64>) -> PyResult<()> {
+            self.vrom = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_align(&self) -> PyResult<Option<u64>> {
+            Ok(self.align)
+        }
+
+        #[setter]
+        fn set_align(&mut self, value: Option<u64>) -> PyResult<()> {
+            self.align = value;
+            Ok(())
+        }
+
+        /* Methods */
+
+        pub fn getVramStr(&self) -> String {
+            self.get_vram_str()
+        }
+
+        pub fn getSizeStr(&self) -> String {
+            self.get_size_str()
+        }
+
+        pub fn getVromStr(&self) -> String {
+            self.get_vrom_str()
+        }
+
+        #[staticmethod]
+        pub fn toCsvHeader() -> String {
+            Self::to_csv_header()
+        }
+
+        pub fn toCsv(&self) -> String {
+            self.to_csv()
+        }
+
+        #[staticmethod]
+        pub fn printCsvHeader() {
+            Self::print_csv_header()
+        }
+
+        pub fn printAsCsv(&self) {
+            self.print_as_csv()
+        }
+
+        // TODO: implement __eq__ instead when PyO3 0.20 releases
+        fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
+            match op {
+                pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
+                pyo3::class::basic::CompareOp::Ne => (self != other).into_py(py),
+                _ => py.NotImplemented(),
+            }
+        }
+
+        fn __hash__(&self) -> isize {
+            let mut hasher = DefaultHasher::new();
+            self.hash(&mut hasher);
+            hasher.finish() as isize
+        }
+
+        // TODO: __str__ and __repr__
     }
 }

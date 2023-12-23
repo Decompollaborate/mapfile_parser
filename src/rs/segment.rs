@@ -11,36 +11,25 @@ use std::collections::hash_map::Entry;
 use std::hash::{Hash, Hasher};
 
 #[cfg(feature = "python_bindings")]
-use pyo3::class::basic::CompareOp;
 use pyo3::prelude::*;
-#[cfg(feature = "python_bindings")]
-use std::collections::hash_map::DefaultHasher;
 
 #[derive(Debug, Clone)]
-#[pyclass(module = "mapfile_parser")]
+#[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 pub struct Segment {
-    #[pyo3(get, set)]
     pub name: String,
 
-    #[pyo3(get, set)]
     pub vram: u64,
 
-    #[pyo3(get, set)]
     pub size: u64,
 
-    #[pyo3(get, set)]
     pub vrom: u64,
 
-    #[pyo3(get, set)]
     pub align: Option<u64>,
 
-    // #[pyo3(get, set)]
     pub files_list: Vec<file::File>,
 }
 
-#[pymethods]
 impl Segment {
-    #[new]
     pub fn new(name: String, vram: u64, size: u64, vrom: u64, align: Option<u64>) -> Self {
         Segment {
             name,
@@ -52,8 +41,7 @@ impl Segment {
         }
     }
 
-    #[pyo3(name = "filterBySectionType")]
-    pub fn filter_by_section_type(&self, section_type: &str) -> Segment {
+    pub fn filter_by_section_type(&self, section_type: &str) -> Self {
         let mut new_segment = self.clone_no_filelist();
 
         for file in &self.files_list {
@@ -65,8 +53,7 @@ impl Segment {
         new_segment
     }
 
-    #[pyo3(name = "getEveryFileExceptSectionType")]
-    pub fn get_every_file_except_section_type(&self, section_type: &str) -> Segment {
+    pub fn get_every_file_except_section_type(&self, section_type: &str) -> Self {
         let mut new_segment = self.clone_no_filelist();
 
         for file in &self.files_list {
@@ -78,7 +65,6 @@ impl Segment {
         new_segment
     }
 
-    #[pyo3(name = "findSymbolByName")]
     pub fn find_symbol_by_name(
         &self,
         sym_name: &str,
@@ -94,7 +80,6 @@ impl Segment {
         None
     }
 
-    #[pyo3(name = "findSymbolByVramOrVrom")]
     pub fn find_symbol_by_vram_or_vrom(
         &self,
         address: u64,
@@ -114,8 +99,7 @@ impl Segment {
         None
     }
 
-    #[pyo3(name = "mixFolders")]
-    pub fn mix_folders(&self) -> Segment {
+    pub fn mix_folders(&self) -> Self {
         let mut new_segment = self.clone_no_filelist();
 
         // <PathBuf, Vec<File>>
@@ -172,7 +156,6 @@ impl Segment {
         new_segment
     }
 
-    #[pyo3(name = "toCsv", signature=(print_vram=true, skip_without_symbols=true))]
     pub fn to_csv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
         let mut ret = String::new();
 
@@ -187,7 +170,6 @@ impl Segment {
         ret
     }
 
-    #[pyo3(name = "toCsvSymbols")]
     pub fn to_csv_symbols(&self) -> String {
         let mut ret = String::new();
 
@@ -204,78 +186,14 @@ impl Segment {
         ret
     }
 
-    #[pyo3(name = "printAsCsv", signature=(print_vram=true, skip_without_symbols=true))]
     pub fn print_as_csv(&self, print_vram: bool, skip_without_symbols: bool) {
         print!("{}", self.to_csv(print_vram, skip_without_symbols));
     }
 
-    #[pyo3(name = "printSymbolsCsv")]
     pub fn print_symbols_csv(&self) {
         print!("{}", self.to_csv_symbols());
     }
 
-    #[cfg(feature = "python_bindings")]
-    #[pyo3(name = "copyFileList")]
-    fn copy_file_list(&self) -> Vec<file::File> {
-        self.files_list.clone()
-    }
-
-    #[cfg(feature = "python_bindings")]
-    #[pyo3(name = "setFileList")]
-    fn set_file_list(&mut self, new_list: Vec<file::File>) {
-        self.files_list = new_list;
-    }
-
-    #[cfg(feature = "python_bindings")]
-    #[pyo3(name = "appendFile")]
-    fn append_file(&mut self, file: file::File) {
-        self.files_list.push(file);
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<FileVecIter>> {
-        let iter = FileVecIter {
-            inner: slf.files_list.clone().into_iter(),
-        };
-        Py::new(slf.py(), iter)
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __getitem__(&self, index: usize) -> file::File {
-        self.files_list[index].clone()
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __setitem__(&mut self, index: usize, element: file::File) {
-        self.files_list[index] = element;
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __len__(&self) -> usize {
-        self.files_list.len()
-    }
-
-    // TODO: implement __eq__ instead when PyO3 0.20 releases
-    #[cfg(feature = "python_bindings")]
-    fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
-        match op {
-            pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
-            pyo3::class::basic::CompareOp::Ne => (self != other).into_py(py),
-            _ => py.NotImplemented(),
-        }
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __hash__(&self) -> isize {
-        let mut hasher = DefaultHasher::new();
-        self.hash(&mut hasher);
-        hasher.finish() as isize
-    }
-
-    // TODO: __str__ and __repr__
-}
-
-impl Segment {
     pub fn new_default(name: String, vram: u64, size: u64, vrom: u64) -> Self {
         Segment {
             name,
@@ -354,19 +272,203 @@ impl Hash for Segment {
 }
 
 #[cfg(feature = "python_bindings")]
-#[pyclass]
-struct FileVecIter {
-    inner: std::vec::IntoIter<file::File>,
-}
+#[allow(non_snake_case)]
+pub(crate) mod python_bindings {
+    use pyo3::class::basic::CompareOp;
+    use pyo3::prelude::*;
 
-#[cfg(feature = "python_bindings")]
-#[pymethods]
-impl FileVecIter {
-    fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {
-        slf
+    use std::collections::hash_map::DefaultHasher;
+
+    // Required to call the `.hash` and `.finish` methods, which are defined on traits.
+    use std::hash::{Hash, Hasher};
+
+    use crate::{file, found_symbol_info};
+
+    #[pymethods]
+    impl super::Segment {
+        #[new]
+        pub fn py_new(name: String, vram: u64, size: u64, vrom: u64, align: Option<u64>) -> Self {
+            Self::new(name, vram, size, vrom, align)
+        }
+
+        /* Getters and setters */
+
+        #[getter]
+        fn get_name(&self) -> PyResult<String> {
+            Ok(self.name.clone())
+        }
+
+        #[setter]
+        fn set_name(&mut self, value: String) -> PyResult<()> {
+            self.name = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_vram(&self) -> PyResult<u64> {
+            Ok(self.vram)
+        }
+
+        #[setter]
+        fn set_vram(&mut self, value: u64) -> PyResult<()> {
+            self.vram = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_size(&self) -> PyResult<u64> {
+            Ok(self.size)
+        }
+
+        #[setter]
+        fn set_size(&mut self, value: u64) -> PyResult<()> {
+            self.size = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_vrom(&self) -> PyResult<u64> {
+            Ok(self.vrom)
+        }
+
+        #[setter]
+        fn set_vrom(&mut self, value: u64) -> PyResult<()> {
+            self.vrom = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_align(&self) -> PyResult<Option<u64>> {
+            Ok(self.align)
+        }
+
+        #[setter]
+        fn set_align(&mut self, value: Option<u64>) -> PyResult<()> {
+            self.align = value;
+            Ok(())
+        }
+
+        /*
+        #[getter]
+        fn get_files_list(&self) -> PyResult<Vec<file::File>> {
+            Ok(self.files_list)
+        }
+
+        #[setter]
+        fn set_files_list(&mut self, value: Vec<file::File>) -> PyResult<()> {
+            self.files_list = value;
+            Ok(())
+        }
+        */
+
+        /* Methods */
+
+        pub fn filterBySectionType(&self, section_type: &str) -> Self {
+            self.filter_by_section_type(section_type)
+        }
+
+        pub fn getEveryFileExceptSectionType(&self, section_type: &str) -> Self {
+            self.get_every_file_except_section_type(section_type)
+        }
+
+        pub fn findSymbolByName(
+            &self,
+            sym_name: &str,
+        ) -> Option<found_symbol_info::FoundSymbolInfo> {
+            self.find_symbol_by_name(sym_name)
+        }
+
+        pub fn findSymbolByVramOrVrom(
+            &self,
+            address: u64,
+        ) -> Option<found_symbol_info::FoundSymbolInfo> {
+            self.find_symbol_by_vram_or_vrom(address)
+        }
+
+        pub fn mixFolders(&self) -> Self {
+            self.mix_folders()
+        }
+
+        #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
+        pub fn toCsv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
+            self.to_csv(print_vram, skip_without_symbols)
+        }
+
+        pub fn toCsvSymbols(&self) -> String {
+            self.to_csv_symbols()
+        }
+
+        #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
+        pub fn printAsCsv(&self, print_vram: bool, skip_without_symbols: bool) {
+            self.print_as_csv(print_vram, skip_without_symbols)
+        }
+
+        pub fn printSymbolsCsv(&self) {
+            self.print_symbols_csv()
+        }
+
+        fn copyFileList(&self) -> Vec<file::File> {
+            self.files_list.clone()
+        }
+
+        fn setFileList(&mut self, new_list: Vec<file::File>) {
+            self.files_list = new_list;
+        }
+
+        fn appendFile(&mut self, file: file::File) {
+            self.files_list.push(file);
+        }
+
+        fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<FileVecIter>> {
+            let iter = FileVecIter {
+                inner: slf.files_list.clone().into_iter(),
+            };
+            Py::new(slf.py(), iter)
+        }
+
+        fn __getitem__(&self, index: usize) -> file::File {
+            self.files_list[index].clone()
+        }
+
+        fn __setitem__(&mut self, index: usize, element: file::File) {
+            self.files_list[index] = element;
+        }
+
+        fn __len__(&self) -> usize {
+            self.files_list.len()
+        }
+
+        // TODO: implement __eq__ instead when PyO3 0.20 releases
+        fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
+            match op {
+                pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
+                pyo3::class::basic::CompareOp::Ne => (self != other).into_py(py),
+                _ => py.NotImplemented(),
+            }
+        }
+
+        fn __hash__(&self) -> isize {
+            let mut hasher = DefaultHasher::new();
+            self.hash(&mut hasher);
+            hasher.finish() as isize
+        }
+
+        // TODO: __str__ and __repr__
     }
 
-    fn __next__(mut slf: PyRefMut<'_, Self>) -> Option<file::File> {
-        slf.inner.next()
+    #[pyclass]
+    struct FileVecIter {
+        inner: std::vec::IntoIter<file::File>,
+    }
+
+    #[pymethods]
+    impl FileVecIter {
+        fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {
+            slf
+        }
+
+        fn __next__(mut slf: PyRefMut<'_, Self>) -> Option<file::File> {
+            slf.inner.next()
+        }
     }
 }

@@ -4,34 +4,36 @@
 use crate::{file, symbol};
 use std::fmt::Write;
 
+#[cfg(feature = "python_bindings")]
 use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]
-#[pyclass(module = "mapfile_parser")]
+#[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 pub struct FoundSymbolInfo {
-    #[pyo3(get, set)]
     pub file: file::File,
 
-    #[pyo3(get, set)]
     pub symbol: symbol::Symbol,
 
-    #[pyo3(get, set)]
     pub offset: i64,
 }
 
-#[pymethods]
 impl FoundSymbolInfo {
-    #[new]
-    #[pyo3(signature=(file, symbol, offset=0))]
     pub fn new(file: file::File, symbol: symbol::Symbol, offset: i64) -> Self {
-        FoundSymbolInfo {
+        Self {
             file,
             symbol,
             offset,
         }
     }
 
-    #[pyo3(name = "getAsStr")]
+    pub fn new_default(file: file::File, symbol: symbol::Symbol) -> Self {
+        Self {
+            file,
+            symbol,
+            offset: 0,
+        }
+    }
+
     pub fn get_as_str(&self) -> String {
         format!(
             "'{0}' (VRAM: {1}, VROM: {2}, SIZE: {3}, {4})",
@@ -43,7 +45,6 @@ impl FoundSymbolInfo {
         )
     }
 
-    #[pyo3(name = "getAsStrPlusOffset")]
     pub fn get_as_str_plus_offset(&self, sym_name: Option<String>) -> String {
         let mut message;
 
@@ -62,12 +63,66 @@ impl FoundSymbolInfo {
     }
 }
 
-impl FoundSymbolInfo {
-    pub fn new_default(file: file::File, symbol: symbol::Symbol) -> Self {
-        FoundSymbolInfo {
-            file,
-            symbol,
-            offset: 0,
+#[cfg(feature = "python_bindings")]
+#[allow(non_snake_case)]
+pub(crate) mod python_bindings {
+    use pyo3::prelude::*;
+
+    use crate::{file, symbol};
+
+    #[pymethods]
+    impl super::FoundSymbolInfo {
+        #[new]
+        #[pyo3(signature=(file, symbol, offset=0))]
+        pub fn py_new(file: file::File, symbol: symbol::Symbol, offset: i64) -> Self {
+            Self::new(file, symbol, offset)
+        }
+
+        /* Getters and setters */
+
+        #[getter]
+        fn get_file(&self) -> PyResult<file::File> {
+            Ok(self.file.clone())
+        }
+
+        #[setter]
+        fn set_file(&mut self, value: file::File) -> PyResult<()> {
+            self.file = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_symbol(&self) -> PyResult<symbol::Symbol> {
+            Ok(self.symbol.clone())
+        }
+
+        #[setter]
+        fn set_symbol(&mut self, value: symbol::Symbol) -> PyResult<()> {
+            self.symbol = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_offset(&self) -> PyResult<i64> {
+            Ok(self.offset)
+        }
+
+        #[setter]
+        fn set_offset(&mut self, value: i64) -> PyResult<()> {
+            self.offset = value;
+            Ok(())
+        }
+
+        /* Methods */
+
+        #[pyo3(name = "getAsStr")]
+        pub fn getAsStr(&self) -> String {
+            self.get_as_str()
+        }
+
+        #[pyo3(name = "getAsStrPlusOffset")]
+        pub fn getAsStrPlusOffset(&self, sym_name: Option<String>) -> String {
+            self.get_as_str_plus_offset(sym_name)
         }
     }
 }
