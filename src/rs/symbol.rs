@@ -67,6 +67,13 @@ impl Symbol {
         "None".into()
     }
 
+    pub fn get_align_str(&self) -> String {
+        if let Some(align) = self.align {
+            return format!("0x{:X}", align);
+        }
+        "None".into()
+    }
+
     pub fn to_csv_header() -> String {
         "Symbol name,VRAM,Size in bytes".to_string()
     }
@@ -105,6 +112,7 @@ impl Hash for Symbol {
 pub(crate) mod python_bindings {
     use pyo3::class::basic::CompareOp;
     use pyo3::prelude::*;
+    use pyo3::types::IntoPyDict;
 
     use std::collections::hash_map::DefaultHasher;
 
@@ -114,6 +122,7 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl super::Symbol {
         #[new]
+        #[pyo3(signature=(name,vram,size=None,vrom=None,align=None))]
         pub fn py_new(
             name: String,
             vram: u64,
@@ -181,6 +190,64 @@ pub(crate) mod python_bindings {
             Ok(())
         }
 
+        /* Serializers */
+
+        #[pyo3(signature=(_humanReadable=true))]
+        fn serializeName(&self, _humanReadable: bool) -> PyObject {
+            Python::with_gil(|py| self.name.to_object(py))
+        }
+
+        #[pyo3(signature=(humanReadable=true))]
+        fn serializeVram(&self, humanReadable: bool) -> PyObject {
+            Python::with_gil(|py| {
+                if humanReadable {
+                    return format!("0x{:08X}", self.vram).to_object(py);
+                }
+
+                self.vram.to_object(py)
+            })
+        }
+
+        #[pyo3(signature=(humanReadable=true))]
+        fn serializeSize(&self, humanReadable: bool) -> PyObject {
+            Python::with_gil(|py| match self.size {
+                None => Python::None(py),
+                Some(size) => {
+                    if humanReadable {
+                        return format!("0x{:X}", size).to_object(py);
+                    }
+                    size.to_object(py)
+                }
+            })
+        }
+
+        #[pyo3(signature=(humanReadable=true))]
+        fn serializeVrom(&self, humanReadable: bool) -> PyObject {
+            Python::with_gil(|py| match self.vrom {
+                None => Python::None(py),
+                Some(vrom) => {
+                    if humanReadable {
+                        return format!("0x{:06X}", vrom).to_object(py);
+                    }
+                    vrom.to_object(py)
+                }
+            })
+        }
+
+        #[pyo3(signature=(humanReadable=true))]
+        fn toJson(&self, humanReadable: bool) -> PyObject {
+            Python::with_gil(|py| {
+                [
+                    ("name", self.serializeName(humanReadable)),
+                    ("vram", self.serializeVram(humanReadable)),
+                    ("size", self.serializeSize(humanReadable)),
+                    ("vrom", self.serializeVrom(humanReadable)),
+                ]
+                .into_py_dict(py)
+                .to_object(py)
+            })
+        }
+
         /* Methods */
 
         pub fn getVramStr(&self) -> String {
@@ -193,6 +260,10 @@ pub(crate) mod python_bindings {
 
         pub fn getVromStr(&self) -> String {
             self.get_vrom_str()
+        }
+
+        pub fn getAlignStr(&self) -> String {
+            self.get_align_str()
         }
 
         #[staticmethod]
@@ -213,6 +284,8 @@ pub(crate) mod python_bindings {
             self.print_as_csv()
         }
 
+        /* Python specific */
+
         // TODO: implement __eq__ instead when PyO3 0.20 releases
         fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
             match op {
@@ -228,6 +301,15 @@ pub(crate) mod python_bindings {
             hasher.finish() as isize
         }
 
-        // TODO: __str__ and __repr__
+        fn __repr__(&self) -> String {
+            format!(
+                "Symbol(name='{}', vram={}, size={}, vrom={}, align={})",
+                self.name,
+                self.get_vram_str(),
+                self.get_size_str(),
+                self.get_vrom_str(),
+                self.get_align_str()
+            )
+        }
     }
 }
