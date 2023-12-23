@@ -4,12 +4,11 @@
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
 use std::hash::{Hash, Hasher};
 
-//#[cfg(feature = "python_bindings")]
+#[cfg(feature = "python_bindings")]
 use pyo3::prelude::*;
 
 #[derive(Debug, Clone)]
-//#[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
-#[pyclass(module = "mapfile_parser")]
+#[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 pub struct Symbol {
     pub name: String,
 
@@ -101,7 +100,7 @@ impl Hash for Symbol {
     }
 }
 
-//#[cfg(feature = "python_bindings")]
+#[cfg(feature = "python_bindings")]
 #[allow(non_snake_case)]
 pub(crate) mod python_bindings {
     use pyo3::class::basic::CompareOp;

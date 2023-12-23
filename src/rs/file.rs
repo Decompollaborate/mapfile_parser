@@ -10,40 +10,27 @@ use std::hash::{Hash, Hasher};
 use crate::{symbol, utils};
 
 #[cfg(feature = "python_bindings")]
-use pyo3::class::basic::CompareOp;
 use pyo3::prelude::*;
-#[cfg(feature = "python_bindings")]
-use std::collections::hash_map::DefaultHasher;
 
 #[derive(Debug, Clone)]
-#[pyclass(module = "mapfile_parser", sequence)]
+#[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 pub struct File {
-    #[pyo3(get, set, name = "_filepath_internal")]
-    // TODO: pyo3 exposes this as str, need to fix somehow
     pub filepath: PathBuf,
 
-    #[pyo3(get, set)]
     pub vram: u64,
 
-    #[pyo3(get, set)]
     pub size: u64,
 
-    #[pyo3(get, set, name = "sectionType")]
     pub section_type: String,
 
-    #[pyo3(get, set)]
     pub vrom: Option<u64>,
 
-    #[pyo3(get, set)]
     pub align: Option<u64>,
 
-    // #[pyo3(get, set, name = "_symbols")]
     pub symbols: Vec<symbol::Symbol>,
 }
 
-#[pymethods]
 impl File {
-    #[new]
     pub fn new(
         filepath: PathBuf,
         vram: u64,
@@ -52,7 +39,7 @@ impl File {
         vrom: Option<u64>,
         align: Option<u64>,
     ) -> Self {
-        File {
+        Self {
             filepath,
             vram,
             size,
@@ -63,24 +50,10 @@ impl File {
         }
     }
 
-    #[getter]
-    #[pyo3(name = "isNoloadSection")]
     pub fn is_noload_section(&self) -> bool {
         utils::is_noload_section(&self.section_type)
     }
 
-    #[cfg(feature = "python_bindings")]
-    // ! @deprecated
-    #[pyo3(name = "getName")]
-    fn get_name(&self) -> PathBuf {
-        self.filepath
-            .with_extension("")
-            .components()
-            .skip(2)
-            .collect()
-    }
-
-    #[pyo3(name = "findSymbolByName")]
     pub fn find_symbol_by_name(&self, sym_name: &str) -> Option<symbol::Symbol> {
         for sym in &self.symbols {
             if sym.name == sym_name {
@@ -90,7 +63,6 @@ impl File {
         None
     }
 
-    #[pyo3(name = "findSymbolByVramOrVrom")]
     pub fn find_symbol_by_vram_or_vrom(&self, address: u64) -> Option<(symbol::Symbol, i64)> {
         let mut prev_sym: Option<&symbol::Symbol> = None;
 
@@ -155,8 +127,6 @@ impl File {
         None
     }
 
-    #[staticmethod]
-    #[pyo3(name = "toCsvHeader", signature=(print_vram=true))]
     pub fn to_csv_header(print_vram: bool) -> String {
         let mut ret = String::new();
 
@@ -167,7 +137,6 @@ impl File {
         ret
     }
 
-    #[pyo3(name = "toCsv", signature=(print_vram=true))]
     pub fn to_csv(&self, print_vram: bool) -> String {
         let mut ret = String::new();
 
@@ -208,94 +177,13 @@ impl File {
         ret
     }
 
-    #[staticmethod]
-    #[pyo3(name = "printCsvHeader", signature=(print_vram=true))]
     pub fn print_csv_header(print_vram: bool) {
         println!("{}", Self::to_csv_header(print_vram));
     }
 
-    #[pyo3(name = "printAsCsv", signature=(print_vram=true))]
     pub fn print_as_csv(&self, print_vram: bool) {
         println!("{}", self.to_csv(print_vram));
     }
-
-    /*
-    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
-        fileDict: dict[str, Any] = {
-            "filepath": str(self.filepath),
-            "sectionType": self.sectionType,
-            "vram": self.serializeVram(humanReadable=humanReadable),
-            "size": self.serializeSize(humanReadable=humanReadable),
-            "vrom": self.serializeVrom(humanReadable=humanReadable),
-        }
-
-        symbolsList = []
-        for symbol in self._symbols:
-            symbolsList.append(symbol.toJson(humanReadable=humanReadable))
-
-        fileDict["symbols"] = symbolsList
-        return fileDict
-    */
-
-    #[cfg(feature = "python_bindings")]
-    #[pyo3(name = "copySymbolList")]
-    fn copy_symbol_list(&self) -> Vec<symbol::Symbol> {
-        self.symbols.clone()
-    }
-
-    #[cfg(feature = "python_bindings")]
-    #[pyo3(name = "setSymbolList")]
-    fn set_symbol_list(&mut self, new_list: Vec<symbol::Symbol>) {
-        self.symbols = new_list;
-    }
-
-    #[cfg(feature = "python_bindings")]
-    #[pyo3(name = "appendSymbol")]
-    fn append_symbol(&mut self, sym: symbol::Symbol) {
-        self.symbols.push(sym);
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<SymbolVecIter>> {
-        let iter = SymbolVecIter {
-            inner: slf.symbols.clone().into_iter(),
-        };
-        Py::new(slf.py(), iter)
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __getitem__(&self, index: usize) -> symbol::Symbol {
-        self.symbols[index].clone()
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __setitem__(&mut self, index: usize, element: symbol::Symbol) {
-        self.symbols[index] = element;
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __len__(&self) -> usize {
-        self.symbols.len()
-    }
-
-    // TODO: implement __eq__ instead when PyO3 0.20 releases
-    #[cfg(feature = "python_bindings")]
-    fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
-        match op {
-            pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
-            pyo3::class::basic::CompareOp::Ne => (self != other).into_py(py),
-            _ => py.NotImplemented(),
-        }
-    }
-
-    #[cfg(feature = "python_bindings")]
-    fn __hash__(&self) -> isize {
-        let mut hasher = DefaultHasher::new();
-        self.hash(&mut hasher);
-        hasher.finish() as isize
-    }
-
-    // TODO: __str__ and __repr__
 }
 
 impl File {
@@ -367,19 +255,249 @@ impl Hash for File {
 }
 
 #[cfg(feature = "python_bindings")]
-#[pyclass]
-struct SymbolVecIter {
-    inner: std::vec::IntoIter<symbol::Symbol>,
-}
+#[allow(non_snake_case)]
+pub(crate) mod python_bindings {
+    use pyo3::class::basic::CompareOp;
+    use pyo3::prelude::*;
 
-#[cfg(feature = "python_bindings")]
-#[pymethods]
-impl SymbolVecIter {
-    fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {
-        slf
+    use std::path::PathBuf;
+
+    // Required to call the `.hash` and `.finish` methods, which are defined on traits.
+    use std::hash::{Hash, Hasher};
+
+    use crate::symbol;
+
+    use std::collections::hash_map::DefaultHasher;
+
+    #[pymethods]
+    impl super::File {
+        #[new]
+        pub fn py_new(
+            filepath: PathBuf,
+            vram: u64,
+            size: u64,
+            section_type: &str,
+            vrom: Option<u64>,
+            align: Option<u64>,
+        ) -> Self {
+            Self::new(
+                filepath,
+                vram,
+                size,
+                section_type,
+                vrom,
+                align,
+            )
+        }
+
+        /* Getters and setters */
+
+        // TODO: pyo3 exposes this as str, need to fix somehow
+        #[getter]
+        fn get__filepath_internal(&self) -> PyResult<PathBuf> {
+            Ok(self.filepath.clone())
+        }
+
+        #[setter]
+        fn set__filepath_internal(&mut self, value: PathBuf) -> PyResult<()> {
+            self.filepath = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_vram(&self) -> PyResult<u64> {
+            Ok(self.vram)
+        }
+
+        #[setter]
+        fn set_vram(&mut self, value: u64) -> PyResult<()> {
+            self.vram = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_size(&self) -> PyResult<u64> {
+            Ok(self.size)
+        }
+
+        #[setter]
+        fn set_size(&mut self, value: u64) -> PyResult<()> {
+            self.size = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_sectionType(&self) -> PyResult<String> {
+            Ok(self.section_type.clone())
+        }
+
+        #[setter]
+        fn set_sectionType(&mut self, value: String) -> PyResult<()> {
+            self.section_type = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_vrom(&self) -> PyResult<Option<u64>> {
+            Ok(self.vrom)
+        }
+
+        #[setter]
+        fn set_vrom(&mut self, value: Option<u64>) -> PyResult<()> {
+            self.vrom = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_align(&self) -> PyResult<Option<u64>> {
+            Ok(self.align)
+        }
+
+        #[setter]
+        fn set_align(&mut self, value: Option<u64>) -> PyResult<()> {
+            self.align = value;
+            Ok(())
+        }
+
+        /*
+        #[getter]
+        fn get__symbols(&self) -> PyResult<Vec<symbol::Symbol>> {
+            Ok(self.symbols)
+        }
+
+        #[setter]
+        fn set__symbols(&mut self, value: Vec<symbol::Symbol>) -> PyResult<()> {
+            self.symbols = value;
+            Ok(())
+        }
+        */
+
+        #[getter]
+        pub fn isNoloadSection(&self) -> bool {
+            self.is_noload_section()
+        }
+
+        /* Methods */
+
+        // ! @deprecated
+        fn getName(&self) -> PathBuf {
+            self.filepath
+                .with_extension("")
+                .components()
+                .skip(2)
+                .collect()
+        }
+
+        pub fn findSymbolByName(&self, sym_name: &str) -> Option<symbol::Symbol> {
+            self.find_symbol_by_name(sym_name)
+        }
+
+        pub fn findSymbolByVramOrVrom(&self, address: u64) -> Option<(symbol::Symbol, i64)> {
+            self.find_symbol_by_vram_or_vrom(address)
+        }
+
+        #[staticmethod]
+        #[pyo3(signature=(print_vram=true))]
+        pub fn toCsvHeader(print_vram: bool) -> String {
+            Self::to_csv_header(print_vram)
+        }
+
+        #[pyo3(signature=(print_vram=true))]
+        pub fn toCsv(&self, print_vram: bool) -> String {
+            self.to_csv(print_vram)
+        }
+
+        #[staticmethod]
+        #[pyo3(signature=(print_vram=true))]
+        pub fn printCsvHeader(print_vram: bool) {
+            Self::print_csv_header(print_vram)
+        }
+
+        #[pyo3(signature=(print_vram=true))]
+        pub fn printAsCsv(&self, print_vram: bool) {
+            self.print_as_csv(print_vram)
+        }
+
+        /*
+        def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
+            fileDict: dict[str, Any] = {
+                "filepath": str(self.filepath),
+                "sectionType": self.sectionType,
+                "vram": self.serializeVram(humanReadable=humanReadable),
+                "size": self.serializeSize(humanReadable=humanReadable),
+                "vrom": self.serializeVrom(humanReadable=humanReadable),
+            }
+
+            symbolsList = []
+            for symbol in self._symbols:
+                symbolsList.append(symbol.toJson(humanReadable=humanReadable))
+
+            fileDict["symbols"] = symbolsList
+            return fileDict
+        */
+
+        fn copySymbolList(&self) -> Vec<symbol::Symbol> {
+            self.symbols.clone()
+        }
+
+        fn setSymbolList(&mut self, new_list: Vec<symbol::Symbol>) {
+            self.symbols = new_list;
+        }
+
+        fn appendSymbol(&mut self, sym: symbol::Symbol) {
+            self.symbols.push(sym);
+        }
+
+        fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<SymbolVecIter>> {
+            let iter = SymbolVecIter {
+                inner: slf.symbols.clone().into_iter(),
+            };
+            Py::new(slf.py(), iter)
+        }
+
+        fn __getitem__(&self, index: usize) -> symbol::Symbol {
+            self.symbols[index].clone()
+        }
+
+        fn __setitem__(&mut self, index: usize, element: symbol::Symbol) {
+            self.symbols[index] = element;
+        }
+
+        fn __len__(&self) -> usize {
+            self.symbols.len()
+        }
+
+        // TODO: implement __eq__ instead when PyO3 0.20 releases
+        fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
+            match op {
+                pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
+                pyo3::class::basic::CompareOp::Ne => (self != other).into_py(py),
+                _ => py.NotImplemented(),
+            }
+        }
+
+        fn __hash__(&self) -> isize {
+            let mut hasher = DefaultHasher::new();
+            self.hash(&mut hasher);
+            hasher.finish() as isize
+        }
+
+        // TODO: __str__ and __repr__
     }
 
-    fn __next__(mut slf: PyRefMut<'_, Self>) -> Option<symbol::Symbol> {
-        slf.inner.next()
+    #[pyclass]
+    struct SymbolVecIter {
+        inner: std::vec::IntoIter<symbol::Symbol>,
+    }
+
+    #[pymethods]
+    impl SymbolVecIter {
+        fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {
+            slf
+        }
+
+        fn __next__(mut slf: PyRefMut<'_, Self>) -> Option<symbol::Symbol> {
+            slf.inner.next()
+        }
     }
 }
