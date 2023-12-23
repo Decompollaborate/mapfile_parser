@@ -105,7 +105,7 @@ pub(crate) mod python_bindings {
 
         #[getter]
         fn get_expectedAddress(&self) -> PyResult<u64> {
-            Ok(self.expected_address.clone())
+            Ok(self.expected_address)
         }
         #[setter]
         fn set_expectedAddress(&mut self, value: u64) -> PyResult<()> {
@@ -126,7 +126,7 @@ pub(crate) mod python_bindings {
 
         #[getter]
         fn get_diff(&self) -> PyResult<Option<i64>> {
-            Ok(self.diff.clone())
+            Ok(self.diff)
         }
 
         #[setter]

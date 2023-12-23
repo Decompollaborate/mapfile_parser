@@ -98,7 +98,7 @@ jobs:
           path: dist
 
   check_clippy_python_bindings:
-    name: Check clippy for C bindings
+    name: Check clippy for Python bindings
     runs-on: ubuntu-latest
 
     steps:
