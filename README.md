@@ -77,18 +77,6 @@ Or add the following line manually to your `Cargo.toml` file:
 mapfile_parser = "2.3.0"
 ```
 
-#### System-wide dependencies
-
-Due to how intrusive `pyo3` is (and even impossible to disable via Cargo
-features), Python development files are required to build and use the Rust
-version of this library
-
-To install those dependencies on a Debian/Ubuntu Linux distro:
-
-```bash
-sudo apt install libpython3-dev
-```
-
 ## Versioning and changelog
 
 This library follows [Semantic Versioning](https://semver.org/spec/v2.0.0.html).
