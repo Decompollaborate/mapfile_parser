@@ -19,6 +19,9 @@ pub struct Symbol {
     pub vrom: Option<u64>,
 
     pub align: Option<u64>,
+
+    #[cfg(feature = "python_bindings")]
+    chached_name: Option<PyObject>,
 }
 
 impl Symbol {
@@ -35,6 +38,9 @@ impl Symbol {
             size,
             vrom,
             align,
+
+            #[cfg(feature = "python_bindings")]
+            chached_name: None,
         }
     }
 
@@ -45,6 +51,9 @@ impl Symbol {
             size: None,
             vrom: None,
             align: None,
+
+            #[cfg(feature = "python_bindings")]
+            chached_name: None,
         }
     }
 
@@ -136,12 +145,19 @@ pub(crate) mod python_bindings {
         /* Getters and setters */
 
         #[getter]
-        fn get_name(&self) -> PyResult<String> {
-            Ok(self.name.clone())
+        fn get_name(&mut self) -> PyObject {
+            Python::with_gil(|py| {
+                if self.chached_name.is_none() {
+                    self.chached_name = Some(self.name.to_object(py));
+                }
+
+                self.chached_name.as_ref().unwrap().to_object(py)
+            })
         }
 
         #[setter]
         fn set_name(&mut self, value: String) -> PyResult<()> {
+            self.chached_name = None;
             self.name = value;
             Ok(())
         }
