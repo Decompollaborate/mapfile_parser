@@ -59,10 +59,7 @@ impl ProgressStats {
     }
 
     pub fn print_header() {
-        println!(
-            "{}",
-            Self::get_header_as_str()
-        );
+        println!("{}", Self::get_header_as_str());
     }
 
     pub fn get_entry_as_str(&self, category: &str, total_stats: &Self) -> String {
@@ -78,10 +75,7 @@ impl ProgressStats {
     }
 
     pub fn print(&self, category: &str, total_stats: &Self) {
-        println!(
-            "{}",
-            self.get_entry_as_str(category, total_stats)
-        );
+        println!("{}", self.get_entry_as_str(category, total_stats));
     }
 }
 
