@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add a few utility methods to `ProgressStats`.
+
 ### Changed
 
 - `pyo3` is no longer needed to use this crate as Rust-only library.

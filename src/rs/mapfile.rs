@@ -576,7 +576,7 @@ impl MapFile {
                         .join(extensionless_file_path.clone())
                         .join(func.name.clone() + ".s");
 
-                    let sym_size = func.size.unwrap_or(0) as u32;
+                    let sym_size = func.size.unwrap_or(0) as usize;
 
                     if whole_file_is_undecomped || func_asm_path.exists() {
                         total_stats.undecomped_size += sym_size;

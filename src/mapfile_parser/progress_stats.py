@@ -17,6 +17,18 @@ class ProgressStats:
     def total(self) -> int:
         return self.undecompedSize + self.decompedSize
 
+    def undecompedPercentage(self) -> float:
+        return self.undecompedSize / self.total * 100
+
+    def decompedPercentage(self) -> float:
+        return self.decompedSize / self.total * 100
+
+    def undecompedPercentageTotal(self, totalStats: ProgressStats) -> float:
+        return self.undecompedSize / totalStats.total * 100
+
+    def decompedPercentageTotal(self, totalStats: ProgressStats) -> float:
+        return self.decompedSize / totalStats.total * 100
+
     def getAsFrogressEntry(self, name: str) -> dict[str, int]:
         categories: dict[str, int] = {}
         categories[name] = self.decompedSize
@@ -24,11 +36,18 @@ class ProgressStats:
         return categories
 
     @staticmethod
+    def getHeaderAsStr() -> str:
+        return f"{'Category':<28}: {'DecompedSize':>12} / {'Total':>8} {'OfFolder':>10}%  ({'OfTotal':>20}%)"
+
+    @staticmethod
     def printHeader():
-        print(f"{'Category':<28}: {'DecompedSize':>12} / {'Total':>8} {'OfFolder':>10}%  ({'OfTotal':>20}%)")
+        print(ProgressStats.getHeaderAsStr())
+
+    def getEntryAsStr(self, category: str, totalStats: ProgressStats) -> str:
+        return f"{category:<28}: {self.decompedSize:>12} / {self.total:>8} {self.decompedPercentage():>10.4f}%  ({self.decompedPercentageTotal(totalStats):>8.4f}% / {self.total / totalStats.total * 100:>8.4f}%)"
 
     def print(self, category: str, totalStats: ProgressStats):
-        print(f"{category:<28}: {self.decompedSize:>12} / {self.total:>8} {self.decompedSize / self.total * 100:>10.4f}%  ({self.decompedSize / totalStats.total * 100:>8.4f}% / {self.total / totalStats.total * 100:>8.4f}%)")
+        print(self.getEntryAsStr(category, totalStats))
 
 
 def printStats(totalStats: ProgressStats, progressPerFolder: dict[str, ProgressStats]):

@@ -4,12 +4,13 @@ name: Tests cases
 on: [push, pull_request]
 
 jobs:
-  tests_cases:
-    name: Tests cases
+  check_if_output_files_changed:
+    name: Check if output files changed
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v4
+    - name: Checkout reposistory
+      uses: actions/checkout@v4
 
     - name: Setup Rust toolchain
       uses: actions-rs/toolchain@v1
@@ -38,3 +39,28 @@ jobs:
         echo "Changed files: ${{ steps.tests_changes.outputs.changed_files }}"
         echo "Please install the latest changes, run \`python3 tests/update_outputs.py\`, check the changes are desirable and commit the result"
         exit 1
+
+  check_progress_nonmatchings:
+    name: Check progress by NON_MATCHING symbols
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout reposistory
+      uses: actions/checkout@v4
+
+    - name: Setup Rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Setup requirements
+      run: |
+        python3 -m pip install -U -r requirements.txt
+        python3 -m pip install -U maturin
+
+    - name: Install local mapfile_parser
+      run: python3 -m pip install .
+
+    - name: Update tests outputs
+      run: python3 tests/check_progress_nonmatchings.py
