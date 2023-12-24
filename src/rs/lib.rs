@@ -24,11 +24,14 @@ pub use symbol_comparison_info::SymbolComparisonInfo;
 extern crate lazy_static;
 
 #[cfg(feature = "python_bindings")]
-#[pyo3::prelude::pymodule]
+use pyo3::prelude::*;
+
+#[cfg(feature = "python_bindings")]
+#[pymodule]
 fn mapfile_parser(
-    _py: pyo3::prelude::Python<'_>,
-    m: &pyo3::prelude::PyModule,
-) -> pyo3::prelude::PyResult<()> {
+    _py: Python<'_>,
+    m: &PyModule,
+) -> PyResult<()> {
     m.add_class::<mapfile::MapFile>()?;
     m.add_class::<segment::Segment>()?;
     m.add_class::<file::File>()?;

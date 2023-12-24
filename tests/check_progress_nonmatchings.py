@@ -95,4 +95,5 @@ for (mapPath, version, expected) in cases:
 
     print()
 
+print(f"Total errors: {errors}")
 exit(errors)

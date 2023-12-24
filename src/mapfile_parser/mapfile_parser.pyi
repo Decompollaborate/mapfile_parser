@@ -109,8 +109,7 @@ class Symbol:
 
 
 class File:
-    # filepath: Path
-    _filepath_internal: str
+    filepath: Path
     vram: int
     size: int # in bytes
     sectionType: str
@@ -119,11 +118,6 @@ class File:
     # _symbols: list[Symbol]
 
     def __init__(self, filepath: Path, vram: int, size: int, section_type: str, vrom: int|None=None, align: int|None=None) -> None: ...
-
-    @property
-    def filepath(self) -> Path: ...
-    @filepath.setter
-    def filepath(self, newPath: Path) -> None: ...
 
     @property
     def isNoloadSection(self) -> bool: ...

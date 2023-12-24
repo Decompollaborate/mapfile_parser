@@ -6,7 +6,6 @@
 from __future__ import annotations
 
 from typing import Any
-from pathlib import Path
 
 
 from .mapfile_parser import FoundSymbolInfo as FoundSymbolInfo
@@ -17,13 +16,6 @@ from .mapfile_parser import File as File
 from .mapfile_parser import Segment as Segment
 from .mapfile_parser import MapFile as MapFile
 
-
-@property # type: ignore
-def __filers_filepath(self: File) -> Path:
-    return Path(self._filepath_internal)
-@__filers_filepath.setter
-def __filers_filepath(self: File, newPath: Path):
-    self._filepath_internal = str(newPath)
 
 def __filers_serializeVram(self: File, humanReadable: bool=True) -> str|int|None:
     if humanReadable:
@@ -58,7 +50,6 @@ def __filers_toJson(self: File, humanReadable: bool=True) -> dict[str, Any]:
     fileDict["symbols"] = symbolsList
     return fileDict
 
-File.filepath = __filers_filepath # type: ignore
 File.serializeVram = __filers_serializeVram # type: ignore
 File.serializeSize = __filers_serializeSize # type: ignore
 File.serializeVrom = __filers_serializeVrom # type: ignore
