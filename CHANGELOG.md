@@ -14,6 +14,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - `pyo3` is no longer needed to use this crate as Rust-only library.
+- Updated Rust dependencies.
 
 ## [2.3.0] - 2023-11-05
 

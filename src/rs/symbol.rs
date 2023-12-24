@@ -302,13 +302,8 @@ pub(crate) mod python_bindings {
 
         /* Python specific */
 
-        // TODO: implement __eq__ instead when PyO3 0.20 releases
-        fn __richcmp__(&self, other: &Self, op: CompareOp, py: Python<'_>) -> PyObject {
-            match op {
-                pyo3::class::basic::CompareOp::Eq => (self == other).into_py(py),
-                pyo3::class::basic::CompareOp::Ne => (self != other).into_py(py),
-                _ => py.NotImplemented(),
-            }
+        fn __eq__(&self, other: &Self) -> bool {
+            self == other
         }
 
         fn __hash__(&self) -> isize {
