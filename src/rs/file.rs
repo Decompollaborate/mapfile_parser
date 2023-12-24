@@ -257,7 +257,7 @@ impl Hash for File {
 #[cfg(feature = "python_bindings")]
 #[allow(non_snake_case)]
 pub(crate) mod python_bindings {
-    use pyo3::{prelude::*, intern};
+    use pyo3::{intern, prelude::*};
 
     use std::path::PathBuf;
 
