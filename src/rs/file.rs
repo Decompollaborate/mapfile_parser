@@ -257,7 +257,6 @@ impl Hash for File {
 #[cfg(feature = "python_bindings")]
 #[allow(non_snake_case)]
 pub(crate) mod python_bindings {
-    use pyo3::class::basic::CompareOp;
     use pyo3::prelude::*;
 
     use std::path::PathBuf;
