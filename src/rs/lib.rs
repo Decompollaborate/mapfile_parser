@@ -23,6 +23,7 @@ pub use symbol_comparison_info::SymbolComparisonInfo;
 #[macro_use]
 extern crate lazy_static;
 
+#[cfg(feature = "python_bindings")]
 #[pyo3::prelude::pymodule]
 fn mapfile_parser(
     _py: pyo3::prelude::Python<'_>,

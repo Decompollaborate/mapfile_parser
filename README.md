@@ -35,7 +35,7 @@ If you use a `requirements.txt` file in your repository, then you can add
 this library with the following line:
 
 ```txt
-mapfile_parser>=2.3.0,<3.0.0
+mapfile_parser>=2.3.1,<3.0.0
 ```
 
 #### Development version
@@ -74,19 +74,7 @@ cargo add mapfile_parser
 Or add the following line manually to your `Cargo.toml` file:
 
 ```toml
-mapfile_parser = "2.3.0"
-```
-
-#### System-wide dependencies
-
-Due to how intrusive `pyo3` is (and even impossible to disable via Cargo
-features), Python development files are required to build and use the Rust
-version of this library
-
-To install those dependencies on a Debian/Ubuntu Linux distro:
-
-```bash
-sudo apt install libpython3-dev
+mapfile_parser = "2.3.1"
 ```
 
 ## Versioning and changelog

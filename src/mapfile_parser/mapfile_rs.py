@@ -18,40 +18,6 @@ from .mapfile_parser import Segment as Segment
 from .mapfile_parser import MapFile as MapFile
 
 
-def __symbolrs_serializeVram(self: Symbol, humanReadable: bool=True) -> str|int|None:
-    if humanReadable:
-        return f"0x{self.vram:08X}"
-    return self.vram
-
-def __symbolrs_serializeSize(self: Symbol, humanReadable: bool=True) -> str|int|None:
-    if self.size is None:
-        return None
-    if humanReadable:
-        return f"0x{self.size:X}"
-    return self.size
-
-def __symbolrs_serializeVrom(self: Symbol, humanReadable: bool=True) -> str|int|None:
-    if self.vrom is None:
-        return None
-    if humanReadable:
-        return f"0x{self.vrom:06X}"
-    return self.vrom
-
-def __symbolrs_toJson(self: Symbol, humanReadable: bool=True) -> dict[str, Any]:
-    result: dict[str, Any] = {
-        "name": self.name,
-        "vram": self.serializeVram(humanReadable=humanReadable),
-        "size": self.serializeSize(humanReadable=humanReadable),
-        "vrom": self.serializeVrom(humanReadable=humanReadable),
-    }
-    return result
-
-Symbol.serializeVram = __symbolrs_serializeVram # type: ignore
-Symbol.serializeSize = __symbolrs_serializeSize # type: ignore
-Symbol.serializeVrom = __symbolrs_serializeVrom # type: ignore
-Symbol.toJson = __symbolrs_toJson # type: ignore
-
-
 @property # type: ignore
 def __filers_filepath(self: File) -> Path:
     return Path(self._filepath_internal)
