@@ -54,7 +54,12 @@ impl ProgressStats {
     pub fn get_header_as_str(category_column_size: usize) -> String {
         format!(
             "{:<category_column_size$}: {:>12} / {:>8} {:>10}%  ({:>20}%)",
-            "Category", "DecompedSize", "Total", "OfFolder", "OfTotal", category_column_size=category_column_size
+            "Category",
+            "DecompedSize",
+            "Total",
+            "OfFolder",
+            "OfTotal",
+            category_column_size = category_column_size
         )
     }
 
@@ -62,7 +67,12 @@ impl ProgressStats {
         println!("{}", Self::get_header_as_str(category_column_size));
     }
 
-    pub fn get_entry_as_str(&self, category: &str, total_stats: &Self, category_column_size: usize) -> String {
+    pub fn get_entry_as_str(
+        &self,
+        category: &str,
+        total_stats: &Self,
+        category_column_size: usize,
+    ) -> String {
         format!(
             "{:<category_column_size$}: {:>12} / {:>8} {:>10.4}%  ({:>8.4}% / {:>8.4}%)",
             category,
@@ -70,12 +80,16 @@ impl ProgressStats {
             self.total(),
             self.decomped_percentage(),
             self.decomped_percentage_total(total_stats),
-            self.total() as f32 / total_stats.total() as f32 * 100.0, category_column_size=category_column_size
+            self.total() as f32 / total_stats.total() as f32 * 100.0,
+            category_column_size = category_column_size
         )
     }
 
     pub fn print(&self, category: &str, total_stats: &Self, category_column_size: usize) {
-        println!("{}", self.get_entry_as_str(category, total_stats, category_column_size));
+        println!(
+            "{}",
+            self.get_entry_as_str(category, total_stats, category_column_size)
+        );
     }
 }
 
@@ -164,7 +178,12 @@ pub(crate) mod python_bindings {
         }
 
         #[pyo3(signature=(category, total_stats, category_column_size=28))]
-        pub fn getEntryAsStr(&self, category: &str, total_stats: &Self, category_column_size: usize) -> String {
+        pub fn getEntryAsStr(
+            &self,
+            category: &str,
+            total_stats: &Self,
+            category_column_size: usize,
+        ) -> String {
             self.get_entry_as_str(category, total_stats, category_column_size)
         }
 
