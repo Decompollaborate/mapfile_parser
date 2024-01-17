@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# SPDX-FileCopyrightText: © 2023 Decompollaborate
+# SPDX-FileCopyrightText: © 2023-2024 Decompollaborate
 # SPDX-License-Identifier: MIT
 
 from __future__ import annotations
@@ -95,4 +95,5 @@ for (mapPath, version, expected) in cases:
 
     print()
 
+print(f"Total errors: {errors}")
 exit(errors)

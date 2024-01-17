@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# SPDX-FileCopyrightText: © 2023 Decompollaborate
+# SPDX-FileCopyrightText: © 2023-2024 Decompollaborate
 # SPDX-License-Identifier: MIT
 
 from __future__ import annotations
@@ -62,16 +62,16 @@ class ProgressStats:
     def getAsFrogressEntry(self, name: str) -> dict[str, int]: ...
 
     @staticmethod
-    def getHeaderAsStr() -> str:
+    def getHeaderAsStr(categoryColumnSize: int=28) -> str:
         ...
 
     @staticmethod
-    def printHeader() -> None: ...
+    def printHeader(categoryColumnSize: int=28) -> None: ...
 
-    def getEntryAsStr(self, category: str, totalStats: ProgressStats) -> str:
+    def getEntryAsStr(self, category: str, totalStats: ProgressStats, categoryColumnSize: int=28) -> str:
         ...
 
-    def print(self, category: str, totalStats: ProgressStats) -> None: ...
+    def print(self, category: str, totalStats: ProgressStats, categoryColumnSize: int=28) -> None: ...
 
 
 class Symbol:
@@ -109,8 +109,7 @@ class Symbol:
 
 
 class File:
-    # filepath: Path
-    _filepath_internal: str
+    filepath: Path
     vram: int
     size: int # in bytes
     sectionType: str
@@ -119,11 +118,6 @@ class File:
     # _symbols: list[Symbol]
 
     def __init__(self, filepath: Path, vram: int, size: int, section_type: str, vrom: int|None=None, align: int|None=None) -> None: ...
-
-    @property
-    def filepath(self) -> Path: ...
-    @filepath.setter
-    def filepath(self, newPath: Path) -> None: ...
 
     @property
     def isNoloadSection(self) -> bool: ...

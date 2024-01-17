@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: © 2022-2023 Decompollaborate
+# SPDX-FileCopyrightText: © 2022-2024 Decompollaborate
 # SPDX-License-Identifier: MIT
 
 [project]
 name = "mapfile_parser"
-version = "2.3.1"
+version = "2.3.2"
 description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
 requires-python = ">=3.7"

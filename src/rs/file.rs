@@ -1,4 +1,4 @@
-/* SPDX-FileCopyrightText: © 2023 Decompollaborate */
+/* SPDX-FileCopyrightText: © 2023-2024 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
 use std::path::PathBuf;
@@ -257,7 +257,7 @@ impl Hash for File {
 #[cfg(feature = "python_bindings")]
 #[allow(non_snake_case)]
 pub(crate) mod python_bindings {
-    use pyo3::prelude::*;
+    use pyo3::{intern, prelude::*};
 
     use std::path::PathBuf;
 
@@ -284,14 +284,20 @@ pub(crate) mod python_bindings {
 
         /* Getters and setters */
 
-        // TODO: pyo3 exposes this as str, need to fix somehow
+        // Manually convert PathBuf into a pathlib.Path object since pyo3 refuses to do so
         #[getter]
-        fn get__filepath_internal(&self) -> PyResult<PathBuf> {
-            Ok(self.filepath.clone())
+        fn get_filepath(&self) -> PyResult<PyObject> {
+            Python::with_gil(|py| {
+                let pathlib = py.import("pathlib")?;
+                let pathlib_path = pathlib.getattr(intern!(py, "Path"))?;
+                let args = (self.filepath.clone(),);
+
+                Ok(pathlib_path.call1(args)?.to_object(py))
+            })
         }
 
         #[setter]
-        fn set__filepath_internal(&mut self, value: PathBuf) -> PyResult<()> {
+        fn set_filepath(&mut self, value: PathBuf) -> PyResult<()> {
             self.filepath = value;
             Ok(())
         }

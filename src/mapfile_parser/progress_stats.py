@@ -1,6 +1,6 @@
 #!/usr/bin/env python3
 
-# SPDX-FileCopyrightText: © 2022-2023 Decompollaborate
+# SPDX-FileCopyrightText: © 2022-2024 Decompollaborate
 # SPDX-License-Identifier: MIT
 
 from __future__ import annotations
@@ -36,18 +36,20 @@ class ProgressStats:
         return categories
 
     @staticmethod
-    def getHeaderAsStr() -> str:
-        return f"{'Category':<28}: {'DecompedSize':>12} / {'Total':>8} {'OfFolder':>10}%  ({'OfTotal':>20}%)"
+    def getHeaderAsStr(categoryColumnSize: int=28) -> str:
+        categoryStr = "{0:<{1}}".format('Category', categoryColumnSize)
+        return f"{categoryStr}: {'DecompedSize':>12} / {'Total':>8} {'OfFolder':>10}%  ({'OfTotal':>20}%)"
 
     @staticmethod
-    def printHeader():
-        print(ProgressStats.getHeaderAsStr())
+    def printHeader(categoryColumnSize: int=28):
+        print(ProgressStats.getHeaderAsStr(categoryColumnSize=categoryColumnSize))
 
-    def getEntryAsStr(self, category: str, totalStats: ProgressStats) -> str:
-        return f"{category:<28}: {self.decompedSize:>12} / {self.total:>8} {self.decompedPercentage():>10.4f}%  ({self.decompedPercentageTotal(totalStats):>8.4f}% / {self.total / totalStats.total * 100:>8.4f}%)"
+    def getEntryAsStr(self, category: str, totalStats: ProgressStats, categoryColumnSize: int=28) -> str:
+        categoryStr = "{0:<{1}}".format(category, categoryColumnSize)
+        return f"{categoryStr}: {self.decompedSize:>12} / {self.total:>8} {self.decompedPercentage():>10.4f}%  ({self.decompedPercentageTotal(totalStats):>8.4f}% / {self.total / totalStats.total * 100:>8.4f}%)"
 
-    def print(self, category: str, totalStats: ProgressStats):
-        print(self.getEntryAsStr(category, totalStats))
+    def print(self, category: str, totalStats: ProgressStats, categoryColumnSize: int=28):
+        print(self.getEntryAsStr(category, totalStats, categoryColumnSize=categoryColumnSize))
 
 
 def printStats(totalStats: ProgressStats, progressPerFolder: dict[str, ProgressStats]):

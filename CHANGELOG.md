@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.3.2] - 2024-01-17
+
+### Added
+
+- Add optional `categoryColumnSize` parameter to `ProgressStats.getHeaderAsStr`
+  and `ProgressStats.getEntryAsStr`.
+  - Allows to set the size of the first column.
+
+### Fixed
+
+- Fix Rust's implementation of `File` not returning a `pathlib.Path` object for
+  the `filepath` member.
+
 ## [2.3.1] - 2023-12-23
 
 ### Added
