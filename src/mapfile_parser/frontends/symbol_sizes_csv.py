@@ -12,6 +12,10 @@ from .. import mapfile
 
 
 def doSymbolSizesCsv(mapPath: Path, outputPath: Path|None, filterSection: str|None=None, sameFolder: bool=False, symbolsSummary: bool=False, allFiles: bool=False) -> int:
+    if not mapPath.exists():
+        print(f"Could not find mapfile at '{mapPath}'")
+        return 1
+
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(mapPath)
 

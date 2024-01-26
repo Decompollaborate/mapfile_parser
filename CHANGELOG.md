@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Frontend scripts now give a better error if the mapfile does not exist.
+
 ## [2.3.2] - 2024-01-17
 
 ### Added

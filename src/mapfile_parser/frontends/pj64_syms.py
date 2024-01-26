@@ -21,6 +21,10 @@ def writePj64SymsToFile(mapFile: mapfile.MapFile, outFile: TextIO):
                 outFile.write(f"{sym.vram:08X},{symType},{sym.name}\n")
 
 def doPj64Syms(mapPath: Path, outputPath: Path|None) -> int:
+    if not mapPath.exists():
+        print(f"Could not find mapfile at '{mapPath}'")
+        return 1
+
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(mapPath)
 

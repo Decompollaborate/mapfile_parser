@@ -53,6 +53,10 @@ def uploadEntriesToFrogress(entries: dict[str, int], category: str, url: str, ap
 
 
 def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, project: str, version: str, category: str, baseurl: str, apikey: str|None=None, verbose: bool=False) -> int:
+    if not mapPath.exists():
+        print(f"Could not find mapfile at '{mapPath}'")
+        return 1
+
     totalStats, progressPerFolder = progress.getProgress(mapPath, asmPath, nonmatchingsPath)
 
     entries: dict[str, int] = getFrogressEntriesFromStats(totalStats, progressPerFolder, verbose)

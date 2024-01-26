@@ -13,6 +13,10 @@ from .. import utils
 
 
 def doSymInfo(mapPath: Path, symName: str) -> int:
+    if not mapPath.exists():
+        print(f"Could not find mapfile at '{mapPath}'")
+        return 1
+
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(mapPath)
 

@@ -21,6 +21,10 @@ def getProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, pathIndex:
     return mapFile.filterBySectionType(".text").getProgress(asmPath, nonmatchingsPath, pathIndex=pathIndex)
 
 def doProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, pathIndex: int=2, debugging: bool=False) -> int:
+    if not mapPath.exists():
+        print(f"Could not find mapfile at '{mapPath}'")
+        return 1
+
     totalStats, progressPerFolder = getProgress(mapPath, asmPath, nonmatchingsPath, pathIndex=pathIndex, debugging=debugging)
 
     progress_stats.printStats(totalStats, progressPerFolder)
