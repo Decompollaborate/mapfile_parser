@@ -13,6 +13,10 @@ from .. import mapfile
 
 
 def doJsonify(mapPath: Path, outputPath: Path|None, humanReadable: bool=True) -> int:
+    if not mapPath.exists():
+        print(f"Could not find mapfile at '{mapPath}'")
+        return 1
+
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(mapPath)
 

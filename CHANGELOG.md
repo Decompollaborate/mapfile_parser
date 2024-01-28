@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.3.4] - 2024-01-26
+
+### Changed
+
+- Frontend scripts now give a better error if the mapfile does not exist.
+
 ## [2.3.2] - 2024-01-17
 
 ### Added
@@ -301,6 +307,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.3.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.2...2.3.4
 [2.3.2]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.1...2.3.2
 [2.3.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.0...2.3.1
 [2.3.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.2.1...2.3.0
