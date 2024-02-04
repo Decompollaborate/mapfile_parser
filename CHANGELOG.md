@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix `MapFile.compareFilesAndSymbols` reporting the wrong address as the
+  expected address.
+
 ## [2.3.4] - 2024-01-26
 
 ### Changed
