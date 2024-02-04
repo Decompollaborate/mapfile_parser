@@ -695,7 +695,7 @@ class MapFile:
                 for symbol in file:
                     foundSymInfo = otherMapFile.findSymbolByName(symbol.name)
                     if foundSymInfo is not None:
-                        comp = SymbolComparisonInfo(symbol, symbol.vram, file, symbol.vram, foundSymInfo.file, symbol.vram - foundSymInfo.symbol.vram)
+                        comp = SymbolComparisonInfo(symbol, symbol.vram, file, foundSymInfo.symbol.vram, foundSymInfo.file, symbol.vram - foundSymInfo.symbol.vram)
                         compInfo.comparedList.append(comp)
                         if comp.diff != 0:
                             compInfo.badFiles.add(file)
