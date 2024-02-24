@@ -1,0 +1,59 @@
+name: Frug Report
+description: File a frug report
+title: "[Frug]: "
+labels: ["frug"]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Thank you for filing a frug report!
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: Explain the problem.
+      description: What happened? What did you expect to happen?
+      placeholder: What went wrong?
+    validations:
+      required: true
+  - type: textarea
+    id: reproducer
+    attributes:
+      label: Reproducer
+      description: Please provide instructions to reproduce the problem.
+      placeholder: |
+        Use the following file (attach it please) and run IJK with parameters ABC.
+        Clone the repo github.com/example/example and do XYZ
+    validations:
+      required: true
+  - type: textarea
+    id: mapfile_parser-flavour
+    attributes:
+      label: mapfile_parser flavour
+      description: Which flavour of mapfile_parser were you using?
+      placeholder: |
+        - The Python cli?
+        - As a Python library?
+        - As a Rust library?
+        - Etc
+    validations:
+      required: true
+  - type: input
+    id: mapfile_parser-version
+    attributes:
+      label: mapfile_parser version
+      description: What version of mapfile_parser are you running? (i.e. `python3 -m mapfile_parser --version`)
+    validations:
+      required: true
+  - type: textarea
+    id: other-version
+    attributes:
+      label: "Optional: Version of other stuff"
+      description: Here you can put the version of whatever other software you think may be relevant, like Rust, rabbitizer, binutils, OS, etc.
+      placeholder: |
+        - Python: 4.18
+        - Rust: 72.½
+        - binutils: 2.π
+        - Wine on WSL2 on Windows 11 on VirtualBox on OpenBSD on Minecraft command blocks.
+        - Etc
+    validations:
+      required: false
