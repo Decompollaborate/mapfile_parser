@@ -9,6 +9,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [2.3.6] - 2024-02-23
 
+### Added
+
+- Add issue templates for bug reports and feature suggestions.
+
 ### Fixed
 
 - Fix not recognizing sections that don't start with dots (`.`).
