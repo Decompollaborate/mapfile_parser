@@ -90,7 +90,7 @@ impl MapFile {
      */
     pub fn parse_map_contents_gnu(&mut self, map_contents: String) {
         // TODO: maybe move somewhere else?
-        let regex_file_data_entry = Regex::new(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
+        let regex_file_data_entry = Regex::new(r"^\s+(?P<section>[^*][^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
         let regex_function_entry =
             Regex::new(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
         // regex_function_entry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)((\s*=\s*(?P<expression>.+))?)$")

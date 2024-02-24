@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix not recognizing sections that don't start with dots (`.`).
+
 ## [2.3.5] - 2024-02-04
 
 ### Fixed
