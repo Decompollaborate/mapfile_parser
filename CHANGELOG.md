@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Fix not recognizing file entries which are splited in two lines because its
+  section name was too long to fit.
+
 ## [2.3.6] - 2024-02-23
 
 ### Added
