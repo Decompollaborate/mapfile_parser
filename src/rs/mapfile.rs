@@ -154,7 +154,9 @@ impl MapFile {
                                 size,
                                 section_type,
                             ));
-                        } else if let Some(section_alone_match) = regex_section_alone_entry.captures(prev_line) {
+                        } else if let Some(section_alone_match) =
+                            regex_section_alone_entry.captures(prev_line)
+                        {
                             // Some sections may be too large, making the entry be splitted between two lines, making the section name be in one line and the rest of the info in the next one
 
                             let section_type = &section_alone_match["section"];
