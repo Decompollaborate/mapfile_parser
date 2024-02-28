@@ -90,7 +90,8 @@ impl MapFile {
      */
     pub fn parse_map_contents_gnu(&mut self, map_contents: String) {
         // TODO: maybe move somewhere else?
-        let regex_file_data_entry = Regex::new(r"^\s+(?P<section>[^*][^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
+        let regex_section_alone_entry = Regex::new(r"^\s+(?P<section>[^*][^\s]+)\s*$").unwrap();
+        let regex_file_data_entry = Regex::new(r"^\s+(?P<section>([^*][^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
         let regex_function_entry =
             Regex::new(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
         // regex_function_entry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)((\s*=\s*(?P<expression>.+))?)$")
@@ -141,15 +142,35 @@ impl MapFile {
                     let section_type = &file_entry_match["section"];
 
                     if size > 0 {
-                        in_file = true;
-                        let current_segment = temp_segment_list.last_mut().unwrap();
+                        // TODO: de-duplicate the following code:
 
-                        current_segment.files_list.push(file::File::new_default(
-                            filepath,
-                            vram,
-                            size,
-                            section_type,
-                        ));
+                        if !section_type.is_empty() {
+                            in_file = true;
+                            let current_segment = temp_segment_list.last_mut().unwrap();
+
+                            current_segment.files_list.push(file::File::new_default(
+                                filepath,
+                                vram,
+                                size,
+                                section_type,
+                            ));
+                        } else if let Some(section_alone_match) =
+                            regex_section_alone_entry.captures(prev_line)
+                        {
+                            // Some sections may be too large, making the entry be splitted between two lines, making the section name be in one line and the rest of the info in the next one
+
+                            let section_type = &section_alone_match["section"];
+
+                            in_file = true;
+                            let current_segment = temp_segment_list.last_mut().unwrap();
+
+                            current_segment.files_list.push(file::File::new_default(
+                                filepath,
+                                vram,
+                                size,
+                                section_type,
+                            ));
+                        }
                     }
                 } else if let Some(segment_entry_match) = regex_segment_entry.captures(line) {
                     let mut name = &segment_entry_match["name"];
