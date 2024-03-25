@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add `endian` argument to `doFirstDiff`.
+- Add `--endian` option to `first_diff` script.
+
 ## [2.3.7] - 2024-02-27
 
 ### Fixed

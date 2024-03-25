@@ -7,13 +7,13 @@ from __future__ import annotations
 
 import argparse
 from pathlib import Path
-from typing import Callable
+from typing import Callable, Literal
 
 from .. import mapfile
 from .. import utils
 
 
-def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRomPath: Path, diffCount: int=5, mismatchSize: bool=False, addColons: bool=True, bytesConverterCallback:Callable[[bytes, mapfile.MapFile],str|None]|None=None) -> int:
+def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRomPath: Path, diffCount: int=5, mismatchSize: bool=False, addColons: bool=True, bytesConverterCallback:Callable[[bytes, mapfile.MapFile],str|None]|None=None, endian: Literal["big", "little"] ="big") -> int:
     if not mapPath.exists():
         print(f"{mapPath} must exist")
         return 1
@@ -45,6 +45,10 @@ def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRom
     expectedMapFile = mapfile.MapFile()
     expectedMapFile.readMapFile(expectedMapPath)
 
+    endian_diff = 0
+    if endian == "little":
+        endian_diff = 3
+
     map_search_diff: set[str] = set()
     diffs = 0
     shift_cap = 1000
@@ -74,7 +78,7 @@ def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRom
 
         if (
             len(map_search_diff) < diffCount
-            and builtRom[i] >> 2 != expectedRom[i] >> 2
+            and builtRom[i+endian_diff] >> 2 != expectedRom[i+endian_diff] >> 2
         ):
             vromInfo = builtMapFile.findSymbolByVramOrVrom(i)
             if vromInfo is not None:
@@ -133,7 +137,9 @@ def processArguments(args: argparse.Namespace):
     diffCount: int = args.count
     mismatchSize: bool = args.mismatch_size
 
-    exit(doFirstDiff(mapPath, expectedMapPath, romPath, expectedRomPath, diffCount, mismatchSize))
+    endian = args.endian
+
+    exit(doFirstDiff(mapPath, expectedMapPath, romPath, expectedRomPath, diffCount, mismatchSize, endian=endian))
 
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser]):
@@ -146,5 +152,6 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser])
 
     parser.add_argument("-c", "--count", type=int, default=5, help="find up to this many instruction difference(s)")
     parser.add_argument("-m", "--mismatch-size", help="Do not exit early if the ROM sizes does not match", action="store_true")
+    parser.add_argument("-e", "--endian", help="Specify endianness of the binary", choices=["big", "little"], default="big")
 
     parser.set_defaults(func=processArguments)
