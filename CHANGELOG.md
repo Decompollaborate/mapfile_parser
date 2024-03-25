@@ -7,6 +7,18 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.4.0] - 2024-03-25
+
+### Added
+
+- Add `endian` argument to `doFirstDiff`.
+- Add `--endian` option to `first_diff` script.
+
+### Removed
+
+- Dropped Python 3.7 support.
+  - Python 3.8 is the minimum supported version now.
+
 ## [2.3.7] - 2024-02-27
 
 ### Fixed
@@ -331,6 +343,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.4.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.7...2.4.0
 [2.3.7]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.6...2.3.7
 [2.3.6]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.5...2.3.6
 [2.3.5]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.4...2.3.5
