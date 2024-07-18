@@ -50,7 +50,23 @@ class SymbolComparisonInfo:
     buildFile: File|None
     expectedAddress: int
     expectedFile: File|None
-    diff: int|None
+
+    @property
+    def diff(self) -> int|None:
+        if self.buildAddress < 0:
+            return None
+        if self.expectedAddress < 0:
+            return None
+
+        buildAddress = self.buildAddress
+        expectedAddress = self.expectedAddress
+
+        if self.buildFile is not None and self.expectedFile is not None:
+            buildAddress = buildAddress - self.buildFile.vram
+            expectedAddress = expectedAddress - self.expectedFile.vram
+
+        return buildAddress - expectedAddress
+
 
 class MapsComparisonInfo:
     def __init__(self):
@@ -695,13 +711,13 @@ class MapFile:
                 for symbol in file:
                     foundSymInfo = otherMapFile.findSymbolByName(symbol.name)
                     if foundSymInfo is not None:
-                        comp = SymbolComparisonInfo(symbol, symbol.vram, file, foundSymInfo.symbol.vram, foundSymInfo.file, symbol.vram - foundSymInfo.symbol.vram)
+                        comp = SymbolComparisonInfo(symbol, symbol.vram, file, foundSymInfo.symbol.vram, foundSymInfo.file)
                         compInfo.comparedList.append(comp)
                         if comp.diff != 0:
                             compInfo.badFiles.add(file)
                     else:
                         compInfo.missingFiles.add(file)
-                        compInfo.comparedList.append(SymbolComparisonInfo(symbol, symbol.vram, file, -1, None, None))
+                        compInfo.comparedList.append(SymbolComparisonInfo(symbol, symbol.vram, file, -1, None))
 
         if checkOtherOnSelf:
             for segment in otherMapFile:
@@ -710,7 +726,7 @@ class MapFile:
                         foundSymInfo = self.findSymbolByName(symbol.name)
                         if foundSymInfo is None:
                             compInfo.missingFiles.add(file)
-                            compInfo.comparedList.append(SymbolComparisonInfo(symbol, -1, None, symbol.vram, file, None))
+                            compInfo.comparedList.append(SymbolComparisonInfo(symbol, -1, None, symbol.vram, file))
 
         return compInfo
 
