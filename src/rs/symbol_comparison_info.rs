@@ -48,11 +48,17 @@ impl SymbolComparisonInfo {
         let mut build_address = self.build_address;
         let mut expected_address = self.expected_address;
 
+        // If both symbols are present in the same file then we do a diff
+        // between their offsets into their respectives file.
+        // This is done as a way to avoid too much noise in case an earlier file
+        // did shift.
         if let Some(build_file) = &self.build_file {
-            build_address -= build_file.vram;
-        }
-        if let Some(expected_file) = &self.expected_file {
-            expected_address -= expected_file.vram;
+            if let Some(expected_file) = &self.expected_file {
+                if build_file.filepath == expected_file.filepath {
+                    build_address -= build_file.vram;
+                    expected_address -= expected_file.vram;
+                }
+            }
         }
 
         Some(build_address as i64 - expected_address as i64)

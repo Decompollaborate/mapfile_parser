@@ -61,9 +61,14 @@ class SymbolComparisonInfo:
         buildAddress = self.buildAddress
         expectedAddress = self.expectedAddress
 
+        # If both symbols are present in the same file then we do a diff
+        # between their offsets into their respectives file.
+        # This is done as a way to avoid too much noise in case an earlier file
+        # did shift.
         if self.buildFile is not None and self.expectedFile is not None:
-            buildAddress = buildAddress - self.buildFile.vram
-            expectedAddress = expectedAddress - self.expectedFile.vram
+            if self.buildFile.filepath == self.expectedFile.filepath:
+                buildAddress -= self.buildFile.vram
+                expectedAddress -= self.expectedFile.vram
 
         return buildAddress - expectedAddress
 
