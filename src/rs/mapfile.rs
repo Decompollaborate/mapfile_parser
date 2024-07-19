@@ -205,7 +205,7 @@ impl MapFile {
                         name.push("__fill__");
                         filepath = prev_file.filepath.with_file_name(name);
                         vram = prev_file.vram + prev_file.size;
-                        section_type = prev_file.section_type.clone();
+                        section_type.clone_from(&prev_file.section_type);
                     }
 
                     current_segment.files_list.push(file::File::new_default(
@@ -347,7 +347,7 @@ impl MapFile {
 
                         name.push("__fill__");
                         filepath = prev_file.filepath.with_file_name(name);
-                        section_type = prev_file.section_type.clone();
+                        section_type.clone_from(&prev_file.section_type);
                     }
 
                     let mut new_file = file::File::new_default(filepath, vram, size, &section_type);
