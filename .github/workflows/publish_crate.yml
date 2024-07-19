@@ -58,6 +58,19 @@ jobs:
     - name: Run tests
       run: cargo test --workspace
 
+  msrv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout reposistory
+        uses: actions/checkout@v4
+
+      - name: Setup MSRV checker
+        uses: taiki-e/install-action@cargo-hack
+
+      - name: Run MSRV checker
+        run: cargo hack check --rust-version --workspace --all-targets --ignore-private
+
+
   publish:
     name: Publish
     runs-on: ubuntu-latest

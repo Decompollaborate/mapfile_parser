@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add Minimal Supported Rust Version (MSRV) to Cargo.toml.
+
 ### Changed
 
 - Tweak symbol comparison logic a bit.
