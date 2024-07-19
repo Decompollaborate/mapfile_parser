@@ -625,17 +625,15 @@ impl MapFile {
             for file in &segment.files_list {
                 for symbol in &file.symbols {
                     if let Some(found_sym_info) = other_map_file.find_symbol_by_name(&symbol.name) {
-                        let diff = symbol.vram as i64 - found_sym_info.symbol.vram as i64;
                         let comp = symbol_comparison_info::SymbolComparisonInfo::new(
                             symbol.clone(),
                             symbol.vram,
                             Some(file.clone()),
                             symbol.vram,
                             Some(found_sym_info.file),
-                            Some(diff),
                         );
 
-                        if diff != 0 {
+                        if comp.diff() != Some(0) {
                             comp_info.bad_files.insert(file.clone());
                         }
                         comp_info.compared_list.push(comp);
@@ -647,7 +645,6 @@ impl MapFile {
                                 symbol.vram,
                                 Some(file.clone()),
                                 u64::MAX,
-                                None,
                                 None,
                             ),
                         );
@@ -671,7 +668,6 @@ impl MapFile {
                                     None,
                                     symbol.vram,
                                     Some(file.clone()),
-                                    None,
                                 ),
                             );
                         }

@@ -26,9 +26,10 @@ class SymbolComparisonInfo:
     buildFile: File|None
     expectedAddress: int
     expectedFile: File|None
-    diff: int|None
 
-    def __init__(self, symbol: Symbol, buildAddress: int, buildFile: File|None, expectedAddress: int, expectedFile: File|None, diff: int|None): ...
+    def __init__(self, symbol: Symbol, buildAddress: int, buildFile: File|None, expectedAddress: int, expectedFile: File|None): ...
+
+    def diff(self) -> int|None: ...
 
 class MapsComparisonInfo:
     badFiles: set[File] = set()
