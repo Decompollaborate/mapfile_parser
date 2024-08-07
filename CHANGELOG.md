@@ -11,6 +11,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add Minimal Supported Rust Version (MSRV) to Cargo.toml.
 - Add `MapFile::new_from_map_file` function to simplify `MapFile` creation.
+- Add `serde` feature to the Rust crate.
+  - Allows serializing and deserializing a `MapFile` object using serde.
 
 ### Changed
 

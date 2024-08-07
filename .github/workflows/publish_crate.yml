@@ -41,6 +41,46 @@ jobs:
     - name: Run clippy
       run: cargo clippy --all-targets -- -D warnings
 
+  check_clippy_serde:
+    name: Check clippy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout reposistory
+      uses: actions/checkout@v4
+
+    - name: Setup Rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Setup clippy
+      run: rustup component add clippy
+
+    - name: Run clippy
+      run: cargo clippy --all-targets --features serde -- -D warnings
+
+  check_clippy_all_features:
+    name: Check clippy
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout reposistory
+      uses: actions/checkout@v4
+
+    - name: Setup Rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Setup clippy
+      run: rustup component add clippy
+
+    - name: Run clippy
+      run: cargo clippy --all-targets --all-features -- -D warnings
+
   run_tests:
     name: Run tests
     runs-on: ubuntu-latest

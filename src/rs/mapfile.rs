@@ -12,6 +12,9 @@ use regex::*;
 #[cfg(feature = "python_bindings")]
 use pyo3::prelude::*;
 
+#[cfg(feature = "serde")]
+use serde::{Deserialize, Serialize};
+
 use crate::{
     file, found_symbol_info, maps_comparison_info, progress_stats, segment, symbol,
     symbol_comparison_info, utils,
@@ -28,6 +31,7 @@ lazy_static! {
 #[derive(Debug, Clone)]
 // TODO: sequence?
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct MapFile {
     pub segments_list: Vec<segment::Segment>,
 

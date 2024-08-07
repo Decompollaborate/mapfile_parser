@@ -13,8 +13,12 @@ use std::hash::{Hash, Hasher};
 #[cfg(feature = "python_bindings")]
 use pyo3::prelude::*;
 
+#[cfg(feature = "serde")]
+use serde::{Deserialize, Serialize};
+
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Segment {
     pub name: String,
 
