@@ -10,6 +10,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Added
 
 - Add Minimal Supported Rust Version (MSRV) to Cargo.toml.
+- Add `MapFile::new_from_map_file` function to simplify `MapFile` creation.
 
 ### Changed
 

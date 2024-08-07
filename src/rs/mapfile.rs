@@ -46,8 +46,22 @@ impl MapFile {
         }
     }
 
+    /// Creates a new `MapFile` object and fills it with the contents from the
+    /// file pointed by the `map_path` argument.
+    ///
+    /// The format of the map will be guessed based on its contents.
+    ///
+    /// Currently supported map formats:
+    /// - GNU ld
+    /// - clang ld.lld
+    pub fn new_from_map_file(map_path: &Path) -> Self {
+        let mut m = Self::new();
+        m.read_map_file(map_path);
+        m
+    }
+
     /**
-    Opens the mapfile pointed by the `mapPath` argument and parses it.
+    Opens the mapfile pointed by the `map_path` argument and parses it.
 
     The format of the map will be guessed based on its contents.
 
@@ -64,7 +78,7 @@ impl MapFile {
     /**
     Parses the contents of the map.
 
-    The `mapContents` argument must contain the contents of a mapfile.
+    The `map_contents` argument must contain the contents of a mapfile.
 
     The format of the map will be guessed based on its contents.
 
@@ -87,7 +101,7 @@ impl MapFile {
     /**
     Parses the contents of a GNU ld map.
 
-    The `mapContents` argument must contain the contents of a GNU ld mapfile.
+    The `map_contents` argument must contain the contents of a GNU ld mapfile.
      */
     pub fn parse_map_contents_gnu(&mut self, map_contents: &str) {
         // TODO: maybe move somewhere else?
@@ -300,7 +314,7 @@ impl MapFile {
     /**
     Parses the contents of a clang ld.lld map.
 
-    The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
+    The `map_contents` argument must contain the contents of a clang ld.lld mapfile.
      */
     pub fn parse_map_contents_lld(&mut self, map_contents: &str) {
         let map_data = map_contents;
@@ -748,6 +762,11 @@ pub(crate) mod python_bindings {
         #[new]
         pub fn py_new() -> Self {
             Self::new()
+        }
+
+        #[staticmethod]
+        pub fn newFromMapFile(map_path: PathBuf) -> Self {
+            Self::new_from_map_file(&map_path)
         }
 
         pub fn readMapFile(&mut self, map_path: PathBuf) {
