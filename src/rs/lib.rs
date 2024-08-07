@@ -42,6 +42,8 @@ fn mapfile_parser(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
 
 #[cfg(test)]
 mod tests {
+    use std::path::PathBuf;
+
     use crate::mapfile::MapFile;
 
     // TODO: tests
@@ -49,6 +51,6 @@ mod tests {
     #[test]
     fn w0_000_map() {
         let mut map = MapFile::new();
-        map.read_map_file("tests/maps/w0_000.map".into());
+        map.read_map_file(&PathBuf::from("tests/maps/w0_000.map"));
     }
 }
