@@ -614,9 +614,10 @@ class MapFile:
     def findLowestDifferingSymbol(self, otherMapFile: MapFile) -> tuple[Symbol, File, Symbol|None]|None:
         minVram = None
         found = None
-        for builtSegement in self._segmentsList:
-            for builtFile in builtSegement:
-                for i, builtSym in enumerate(builtFile):
+        foundIndices = (0, 0)
+        for i, builtSegement in enumerate(self._segmentsList):
+            for j, builtFile in enumerate(builtSegement):
+                for k, builtSym in enumerate(builtFile):
                     expectedSymInfo = otherMapFile.findSymbolByName(builtSym.name)
                     if expectedSymInfo is None:
                         continue
@@ -626,9 +627,38 @@ class MapFile:
                         if minVram is None or builtSym.vram < minVram:
                             minVram = builtSym.vram
                             prevSym = None
-                            if i > 0:
-                                prevSym = builtFile[i-1]
+                            if k > 0:
+                                prevSym = builtFile[k-1]
                             found = (builtSym, builtFile, prevSym)
+                            foundIndices = (i, j)
+
+        if found is not None and found[2] is None:
+            # Previous symbol was not in the same section of the given
+            # file, so we try to backtrack until we find any symbol.
+
+            foundBuiltSym, foundBuiltFile, _ = found
+            i, j = foundIndices
+
+            # We want to check the previous file, not the current one,
+            # since we already know the current one doesn't have a symbol
+            # preceding the one we found.
+            j -= 1;
+
+            while i >= 0:
+                builtSegment = self[i]
+                while j >= 0:
+                    builtFile = builtSegment[j]
+
+                    if len(builtFile) > 0:
+                        found = (foundBuiltSym, foundBuiltFile, builtFile[-1])
+                        i = -1
+                        j = -1
+                        break
+                    j -= 1
+                i -= 1
+                if i >= 0:
+                    j = len(self[i]) - 1
+
         return found
 
 

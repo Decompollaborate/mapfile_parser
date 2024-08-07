@@ -519,13 +519,14 @@ impl MapFile {
     pub fn find_lowest_differing_symbol(
         &self,
         other_map_file: &Self,
-    ) -> Option<(symbol::Symbol, file::File, Option<symbol::Symbol>)> {
+    ) -> Option<(&symbol::Symbol, &file::File, Option<&symbol::Symbol>)> {
         let mut min_vram = u64::MAX;
         let mut found = None;
+        let mut found_indices = (0, 0);
 
-        for built_segement in &self.segments_list {
-            for built_file in &built_segement.files_list {
-                for (i, built_sym) in built_file.symbols.iter().enumerate() {
+        for (i, built_segment) in self.segments_list.iter().enumerate() {
+            for (j, built_file) in built_segment.files_list.iter().enumerate() {
+                for (k, built_sym) in built_file.symbols.iter().enumerate() {
                     if let Some(expected_sym_info) =
                         other_map_file.find_symbol_by_name(&built_sym.name)
                     {
@@ -534,21 +535,58 @@ impl MapFile {
                         if built_sym.vram != expected_sym.vram && built_sym.vram < min_vram {
                             min_vram = built_sym.vram;
 
-                            let mut prev_sym = None;
-                            if i > 0 {
-                                prev_sym = Some(built_file.symbols[i - 1].clone());
-                            }
+                            let prev_sym = if k > 0 {
+                                Some(&built_file.symbols[k - 1])
+                            } else {
+                                None
+                            };
                             found = Some((built_sym, built_file, prev_sym));
+                            found_indices = (i as isize, j as isize);
                         }
                     }
                 }
             }
         }
 
-        if let Some(found_temp) = found {
-            return Some((found_temp.0.clone(), found_temp.1.clone(), found_temp.2));
+        if let Some((found_built_sym, found_built_file, prev_sym)) = found {
+            if prev_sym.is_none() {
+                // Previous symbol was not in the same section of the given
+                // file, so we try to backtrack until we find any symbol.
+
+                let (mut i, mut j) = found_indices;
+
+                // We want to check the previous file, not the current one,
+                // since we already know the current one doesn't have a symbol
+                // preceding the one we found.
+                j -= 1;
+
+                'outer: while i >= 0 {
+                    let built_segment = &self.segments_list[i as usize];
+
+                    while j >= 0 {
+                        let built_file = &built_segment.files_list[j as usize];
+
+                        if !built_file.symbols.is_empty() {
+                            found = Some((
+                                found_built_sym,
+                                found_built_file,
+                                built_file.symbols.last(),
+                            ));
+                            break 'outer;
+                        }
+
+                        j -= 1;
+                    }
+
+                    i -= 1;
+                    if i >= 0 {
+                        j = self.segments_list[i as usize].files_list.len() as isize - 1;
+                    }
+                }
+            }
         }
-        None
+
+        found
     }
 
     pub fn mix_folders(&self) -> Self {
@@ -821,7 +859,11 @@ pub(crate) mod python_bindings {
             &self,
             other_map_file: &Self,
         ) -> Option<(symbol::Symbol, file::File, Option<symbol::Symbol>)> {
-            self.find_lowest_differing_symbol(other_map_file)
+            if let Some((s, f, os)) = self.find_lowest_differing_symbol(other_map_file) {
+                Some((s.clone(), f.clone(), os.cloned()))
+            } else {
+                None
+            }
         }
 
         pub fn mixFolders(&self) -> Self {

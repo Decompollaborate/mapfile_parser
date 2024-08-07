@@ -23,6 +23,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Change Rust functions to properly take references instead of consuming the
   argument.
 
+### Fixed
+
+- Fix `MapFile::find_lowest_differing_symbol` not returning a previous symbol
+  from a previous file if the symbol found is the first symbol from the file.
+
 ## [2.4.0] - 2024-03-25
 
 ### Added
