@@ -77,7 +77,7 @@ impl Segment {
             if let Some(sym) = file.find_symbol_by_name(sym_name) {
                 return Some(found_symbol_info::FoundSymbolInfo::new_default(
                     file.clone(),
-                    sym,
+                    sym.clone(),
                 ));
             }
         }
@@ -89,13 +89,10 @@ impl Segment {
         address: u64,
     ) -> Option<found_symbol_info::FoundSymbolInfo> {
         for file in &self.files_list {
-            if let Some(pair) = file.find_symbol_by_vram_or_vrom(address) {
-                let sym = pair.0;
-                let offset = pair.1;
-
+            if let Some((sym, offset)) = file.find_symbol_by_vram_or_vrom(address) {
                 return Some(found_symbol_info::FoundSymbolInfo::new(
                     file.clone(),
-                    sym,
+                    sym.clone(),
                     offset,
                 ));
             }
@@ -106,7 +103,6 @@ impl Segment {
     pub fn mix_folders(&self) -> Self {
         let mut new_segment = self.clone_no_filelist();
 
-        // <PathBuf, Vec<File>>
         let mut aux_dict = HashMap::new();
 
         // Put files in the same folder together

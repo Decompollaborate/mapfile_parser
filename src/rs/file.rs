@@ -58,27 +58,22 @@ impl File {
         utils::is_noload_section(&self.section_type)
     }
 
-    pub fn find_symbol_by_name(&self, sym_name: &str) -> Option<symbol::Symbol> {
-        for sym in &self.symbols {
-            if sym.name == sym_name {
-                return Some(sym.clone());
-            }
-        }
-        None
+    pub fn find_symbol_by_name(&self, sym_name: &str) -> Option<&symbol::Symbol> {
+        self.symbols.iter().find(|&sym| sym.name == sym_name)
     }
 
-    pub fn find_symbol_by_vram_or_vrom(&self, address: u64) -> Option<(symbol::Symbol, i64)> {
+    pub fn find_symbol_by_vram_or_vrom(&self, address: u64) -> Option<(&symbol::Symbol, i64)> {
         let mut prev_sym: Option<&symbol::Symbol> = None;
 
         let is_vram = address >= 0x1000000;
 
         for sym in &self.symbols {
             if sym.vram == address {
-                return Some((sym.clone(), 0));
+                return Some((sym, 0));
             }
             if let Some(sym_vrom_temp) = sym.vrom {
                 if sym_vrom_temp == address {
-                    return Some((sym.clone(), 0));
+                    return Some((sym, 0));
                 }
             }
 
@@ -90,7 +85,7 @@ impl File {
                             if offset < 0 {
                                 return None;
                             }
-                            return Some((prev_sym_temp.clone(), offset));
+                            return Some((prev_sym_temp, offset));
                         }
                     }
                 }
@@ -99,7 +94,7 @@ impl File {
                     if offset < 0 {
                         return None;
                     }
-                    return Some((prev_sym_temp.clone(), offset));
+                    return Some((prev_sym_temp, offset));
                 }
             }
 
@@ -114,7 +109,7 @@ impl File {
                         if offset < 0 {
                             return None;
                         }
-                        return Some((prev_sym_temp.clone(), offset));
+                        return Some((prev_sym_temp, offset));
                     }
                 }
 
@@ -123,7 +118,7 @@ impl File {
                     if offset < 0 {
                         return None;
                     }
-                    return Some((prev_sym_temp.clone(), offset));
+                    return Some((prev_sym_temp, offset));
                 }
             }
         }
@@ -391,11 +386,15 @@ pub(crate) mod python_bindings {
         }
 
         pub fn findSymbolByName(&self, sym_name: &str) -> Option<symbol::Symbol> {
-            self.find_symbol_by_name(sym_name)
+            self.find_symbol_by_name(sym_name).cloned()
         }
 
         pub fn findSymbolByVramOrVrom(&self, address: u64) -> Option<(symbol::Symbol, i64)> {
-            self.find_symbol_by_vram_or_vrom(address)
+            if let Some((sym, offset)) = self.find_symbol_by_vram_or_vrom(address) {
+                Some((sym.clone(), offset))
+            } else {
+                None
+            }
         }
 
         #[staticmethod]
