@@ -13,8 +13,12 @@ use std::hash::{Hash, Hasher};
 #[cfg(feature = "python_bindings")]
 use pyo3::prelude::*;
 
+#[cfg(feature = "serde")]
+use serde::{Deserialize, Serialize};
+
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Segment {
     pub name: String,
 
@@ -73,7 +77,7 @@ impl Segment {
             if let Some(sym) = file.find_symbol_by_name(sym_name) {
                 return Some(found_symbol_info::FoundSymbolInfo::new_default(
                     file.clone(),
-                    sym,
+                    sym.clone(),
                 ));
             }
         }
@@ -85,13 +89,10 @@ impl Segment {
         address: u64,
     ) -> Option<found_symbol_info::FoundSymbolInfo> {
         for file in &self.files_list {
-            if let Some(pair) = file.find_symbol_by_vram_or_vrom(address) {
-                let sym = pair.0;
-                let offset = pair.1;
-
+            if let Some((sym, offset)) = file.find_symbol_by_vram_or_vrom(address) {
                 return Some(found_symbol_info::FoundSymbolInfo::new(
                     file.clone(),
-                    sym,
+                    sym.clone(),
                     offset,
                 ));
             }
@@ -102,7 +103,6 @@ impl Segment {
     pub fn mix_folders(&self) -> Self {
         let mut new_segment = self.clone_no_filelist();
 
-        // <PathBuf, Vec<File>>
         let mut aux_dict = HashMap::new();
 
         // Put files in the same folder together
@@ -286,7 +286,7 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl super::Segment {
         #[new]
-        pub fn py_new(name: String, vram: u64, size: u64, vrom: u64, align: Option<u64>) -> Self {
+        fn py_new(name: String, vram: u64, size: u64, vrom: u64, align: Option<u64>) -> Self {
             Self::new(name, vram, size, vrom, align)
         }
 
@@ -362,47 +362,44 @@ pub(crate) mod python_bindings {
 
         /* Methods */
 
-        pub fn filterBySectionType(&self, section_type: &str) -> Self {
+        fn filterBySectionType(&self, section_type: &str) -> Self {
             self.filter_by_section_type(section_type)
         }
 
-        pub fn getEveryFileExceptSectionType(&self, section_type: &str) -> Self {
+        fn getEveryFileExceptSectionType(&self, section_type: &str) -> Self {
             self.get_every_file_except_section_type(section_type)
         }
 
-        pub fn findSymbolByName(
-            &self,
-            sym_name: &str,
-        ) -> Option<found_symbol_info::FoundSymbolInfo> {
+        fn findSymbolByName(&self, sym_name: &str) -> Option<found_symbol_info::FoundSymbolInfo> {
             self.find_symbol_by_name(sym_name)
         }
 
-        pub fn findSymbolByVramOrVrom(
+        fn findSymbolByVramOrVrom(
             &self,
             address: u64,
         ) -> Option<found_symbol_info::FoundSymbolInfo> {
             self.find_symbol_by_vram_or_vrom(address)
         }
 
-        pub fn mixFolders(&self) -> Self {
+        fn mixFolders(&self) -> Self {
             self.mix_folders()
         }
 
         #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
-        pub fn toCsv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
+        fn toCsv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
             self.to_csv(print_vram, skip_without_symbols)
         }
 
-        pub fn toCsvSymbols(&self) -> String {
+        fn toCsvSymbols(&self) -> String {
             self.to_csv_symbols()
         }
 
         #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
-        pub fn printAsCsv(&self, print_vram: bool, skip_without_symbols: bool) {
+        fn printAsCsv(&self, print_vram: bool, skip_without_symbols: bool) {
             self.print_as_csv(print_vram, skip_without_symbols)
         }
 
-        pub fn printSymbolsCsv(&self) {
+        fn printSymbolsCsv(&self) {
             self.print_symbols_csv()
         }
 

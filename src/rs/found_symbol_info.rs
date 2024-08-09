@@ -74,7 +74,7 @@ pub(crate) mod python_bindings {
     impl super::FoundSymbolInfo {
         #[new]
         #[pyo3(signature=(file, symbol, offset=0))]
-        pub fn py_new(file: file::File, symbol: symbol::Symbol, offset: i64) -> Self {
+        fn py_new(file: file::File, symbol: symbol::Symbol, offset: i64) -> Self {
             Self::new(file, symbol, offset)
         }
 
@@ -116,12 +116,12 @@ pub(crate) mod python_bindings {
         /* Methods */
 
         #[pyo3(name = "getAsStr")]
-        pub fn getAsStr(&self) -> String {
+        fn getAsStr(&self) -> String {
             self.get_as_str()
         }
 
         #[pyo3(name = "getAsStrPlusOffset")]
-        pub fn getAsStrPlusOffset(&self, sym_name: Option<String>) -> String {
+        fn getAsStrPlusOffset(&self, sym_name: Option<String>) -> String {
             self.get_as_str_plus_offset(sym_name)
         }
     }

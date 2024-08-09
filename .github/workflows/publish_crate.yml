@@ -22,7 +22,7 @@ jobs:
       run: cargo fmt --check
 
   check_clippy:
-    name: Check clippy
+    name: Check clippy: no features
     runs-on: ubuntu-latest
 
     steps:
@@ -41,6 +41,46 @@ jobs:
     - name: Run clippy
       run: cargo clippy --all-targets -- -D warnings
 
+  check_clippy_serde:
+    name: Check clippy: features: serde
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout reposistory
+      uses: actions/checkout@v4
+
+    - name: Setup Rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Setup clippy
+      run: rustup component add clippy
+
+    - name: Run clippy
+      run: cargo clippy --all-targets --features serde -- -D warnings
+
+  check_clippy_all_features:
+    name: Check clippy: features: all
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Checkout reposistory
+      uses: actions/checkout@v4
+
+    - name: Setup Rust toolchain
+      uses: actions-rs/toolchain@v1
+      with:
+        toolchain: stable
+        override: true
+
+    - name: Setup clippy
+      run: rustup component add clippy
+
+    - name: Run clippy
+      run: cargo clippy --all-targets --all-features -- -D warnings
+
   run_tests:
     name: Run tests
     runs-on: ubuntu-latest
@@ -57,6 +97,19 @@ jobs:
 
     - name: Run tests
       run: cargo test --workspace
+
+  msrv:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout reposistory
+        uses: actions/checkout@v4
+
+      - name: Setup MSRV checker
+        uses: taiki-e/install-action@cargo-hack
+
+      - name: Run MSRV checker
+        run: cargo hack check --rust-version --workspace --all-targets --ignore-private
+
 
   publish:
     name: Publish

@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.0] - 2024-08-09
+
+### Added
+
+- Add Minimal Supported Rust Version (MSRV) to Cargo.toml.
+- Add `MapFile::new_from_map_file` function to simplify `MapFile` creation.
+- Add `serde` feature to the Rust crate.
+  - Allows serializing and deserializing a `MapFile` object using serde.
+
+### Changed
+
+- Tweak symbol comparison logic a bit.
+  - Symbol shifting (due to different sizes or extra/missing symbols) should
+    not affect comparing non shifted files.
+- `Cargo.lock` file is now committed to the repo.
+- Change Rust functions to properly take references instead of consuming the
+  argument.
+
+### Fixed
+
+- Fix `MapFile::find_lowest_differing_symbol` not returning a previous symbol
+  from a previous file if the symbol found is the first symbol from the file.
+
 ## [2.4.0] - 2024-03-25
 
 ### Added
@@ -343,6 +366,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.5.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.4.0...2.5.0
 [2.4.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.7...2.4.0
 [2.3.7]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.6...2.3.7
 [2.3.6]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.5...2.3.6

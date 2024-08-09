@@ -3,12 +3,12 @@
 
 [package]
 name = "mapfile_parser"
-version = "2.4.0"
+version = "2.5.0"
 edition = "2021"
+rust-version = "1.65.0"
 authors = ["Anghelo Carvajal <angheloalf95@gmail.com>"]
 description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
-homepage = "https://github.com/Decompollaborate/mapfile_parser"
 repository = "https://github.com/Decompollaborate/mapfile_parser"
 license = "MIT"
 keywords = ["mapfile", "parser", "decomp", "decompilation"]
@@ -25,6 +25,8 @@ crate-type = ["cdylib", "staticlib", "rlib"]
 regex = "1.10.2"
 pyo3 = { version = "0.20.0", optional = true, features = ["abi3", "abi3-py37"]}
 lazy_static = "1.4.0"
+serde = { version = "1.0", features = ["derive"], optional = true }
 
 [features]
 python_bindings = ["dep:pyo3"]
+serde = ["dep:serde"]

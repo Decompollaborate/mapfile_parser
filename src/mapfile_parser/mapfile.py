@@ -50,7 +50,28 @@ class SymbolComparisonInfo:
     buildFile: File|None
     expectedAddress: int
     expectedFile: File|None
-    diff: int|None
+
+    @property
+    def diff(self) -> int|None:
+        if self.buildAddress < 0:
+            return None
+        if self.expectedAddress < 0:
+            return None
+
+        buildAddress = self.buildAddress
+        expectedAddress = self.expectedAddress
+
+        # If both symbols are present in the same file then we do a diff
+        # between their offsets into their respectives file.
+        # This is done as a way to avoid too much noise in case an earlier file
+        # did shift.
+        if self.buildFile is not None and self.expectedFile is not None:
+            if self.buildFile.filepath == self.expectedFile.filepath:
+                buildAddress -= self.buildFile.vram
+                expectedAddress -= self.expectedFile.vram
+
+        return buildAddress - expectedAddress
+
 
 class MapsComparisonInfo:
     def __init__(self):
@@ -593,9 +614,10 @@ class MapFile:
     def findLowestDifferingSymbol(self, otherMapFile: MapFile) -> tuple[Symbol, File, Symbol|None]|None:
         minVram = None
         found = None
-        for builtSegement in self._segmentsList:
-            for builtFile in builtSegement:
-                for i, builtSym in enumerate(builtFile):
+        foundIndices = (0, 0)
+        for i, builtSegement in enumerate(self._segmentsList):
+            for j, builtFile in enumerate(builtSegement):
+                for k, builtSym in enumerate(builtFile):
                     expectedSymInfo = otherMapFile.findSymbolByName(builtSym.name)
                     if expectedSymInfo is None:
                         continue
@@ -605,9 +627,38 @@ class MapFile:
                         if minVram is None or builtSym.vram < minVram:
                             minVram = builtSym.vram
                             prevSym = None
-                            if i > 0:
-                                prevSym = builtFile[i-1]
+                            if k > 0:
+                                prevSym = builtFile[k-1]
                             found = (builtSym, builtFile, prevSym)
+                            foundIndices = (i, j)
+
+        if found is not None and found[2] is None:
+            # Previous symbol was not in the same section of the given
+            # file, so we try to backtrack until we find any symbol.
+
+            foundBuiltSym, foundBuiltFile, _ = found
+            i, j = foundIndices
+
+            # We want to check the previous file, not the current one,
+            # since we already know the current one doesn't have a symbol
+            # preceding the one we found.
+            j -= 1;
+
+            while i >= 0:
+                builtSegment = self[i]
+                while j >= 0:
+                    builtFile = builtSegment[j]
+
+                    if len(builtFile) > 0:
+                        found = (foundBuiltSym, foundBuiltFile, builtFile[-1])
+                        i = -1
+                        j = -1
+                        break
+                    j -= 1
+                i -= 1
+                if i >= 0:
+                    j = len(self[i]) - 1
+
         return found
 
 
@@ -695,13 +746,13 @@ class MapFile:
                 for symbol in file:
                     foundSymInfo = otherMapFile.findSymbolByName(symbol.name)
                     if foundSymInfo is not None:
-                        comp = SymbolComparisonInfo(symbol, symbol.vram, file, foundSymInfo.symbol.vram, foundSymInfo.file, symbol.vram - foundSymInfo.symbol.vram)
+                        comp = SymbolComparisonInfo(symbol, symbol.vram, file, foundSymInfo.symbol.vram, foundSymInfo.file)
                         compInfo.comparedList.append(comp)
                         if comp.diff != 0:
                             compInfo.badFiles.add(file)
                     else:
                         compInfo.missingFiles.add(file)
-                        compInfo.comparedList.append(SymbolComparisonInfo(symbol, symbol.vram, file, -1, None, None))
+                        compInfo.comparedList.append(SymbolComparisonInfo(symbol, symbol.vram, file, -1, None))
 
         if checkOtherOnSelf:
             for segment in otherMapFile:
@@ -710,7 +761,7 @@ class MapFile:
                         foundSymInfo = self.findSymbolByName(symbol.name)
                         if foundSymInfo is None:
                             compInfo.missingFiles.add(file)
-                            compInfo.comparedList.append(SymbolComparisonInfo(symbol, -1, None, symbol.vram, file, None))
+                            compInfo.comparedList.append(SymbolComparisonInfo(symbol, -1, None, symbol.vram, file))
 
         return compInfo
 

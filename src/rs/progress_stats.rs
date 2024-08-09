@@ -109,7 +109,7 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl super::ProgressStats {
         #[new]
-        pub fn py_new() -> Self {
+        fn py_new() -> Self {
             Self::new()
         }
 
@@ -139,7 +139,7 @@ pub(crate) mod python_bindings {
 
         #[getter]
         #[pyo3(name = "total")]
-        pub fn py_total(&self) -> usize {
+        fn py_total(&self) -> usize {
             self.total()
         }
 
@@ -161,24 +161,24 @@ pub(crate) mod python_bindings {
             self.decomped_percentage_total(total_stats)
         }
 
-        pub fn getAsFrogressEntry(&self, name: &str) -> HashMap<String, usize> {
+        fn getAsFrogressEntry(&self, name: &str) -> HashMap<String, usize> {
             self.get_as_frogress_entry(name)
         }
 
         #[staticmethod]
         #[pyo3(signature=(category_column_size=28))]
-        pub fn getHeaderAsStr(category_column_size: usize) -> String {
+        fn getHeaderAsStr(category_column_size: usize) -> String {
             Self::get_header_as_str(category_column_size)
         }
 
         #[staticmethod]
         #[pyo3(signature=(category_column_size=28))]
-        pub fn printHeader(category_column_size: usize) {
+        fn printHeader(category_column_size: usize) {
             Self::print_header(category_column_size)
         }
 
         #[pyo3(signature=(category, total_stats, category_column_size=28))]
-        pub fn getEntryAsStr(
+        fn getEntryAsStr(
             &self,
             category: &str,
             total_stats: &Self,
@@ -189,7 +189,7 @@ pub(crate) mod python_bindings {
 
         #[pyo3(name = "print")]
         #[pyo3(signature=(category, total_stats, category_column_size=28))]
-        pub fn py_print(&self, category: &str, total_stats: &Self, category_column_size: usize) {
+        fn py_print(&self, category: &str, total_stats: &Self, category_column_size: usize) {
             self.print(category, total_stats, category_column_size)
         }
     }

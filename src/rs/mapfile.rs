@@ -4,12 +4,16 @@
 use std::collections::HashMap;
 use std::collections::HashSet;
 use std::fmt::Write;
+use std::path::Path;
 use std::path::PathBuf;
 
 use regex::*;
 
 #[cfg(feature = "python_bindings")]
 use pyo3::prelude::*;
+
+#[cfg(feature = "serde")]
+use serde::{Deserialize, Serialize};
 
 use crate::{
     file, found_symbol_info, maps_comparison_info, progress_stats, segment, symbol,
@@ -27,6 +31,7 @@ lazy_static! {
 #[derive(Debug, Clone)]
 // TODO: sequence?
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
+#[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct MapFile {
     pub segments_list: Vec<segment::Segment>,
 
@@ -37,7 +42,7 @@ pub struct MapFile {
 
 impl MapFile {
     pub fn new() -> Self {
-        MapFile {
+        Self {
             segments_list: Vec::new(),
 
             #[cfg(feature = "python_bindings")]
@@ -45,8 +50,22 @@ impl MapFile {
         }
     }
 
+    /// Creates a new `MapFile` object and fills it with the contents from the
+    /// file pointed by the `map_path` argument.
+    ///
+    /// The format of the map will be guessed based on its contents.
+    ///
+    /// Currently supported map formats:
+    /// - GNU ld
+    /// - clang ld.lld
+    pub fn new_from_map_file(map_path: &Path) -> Self {
+        let mut m = Self::new();
+        m.read_map_file(map_path);
+        m
+    }
+
     /**
-    Opens the mapfile pointed by the `mapPath` argument and parses it.
+    Opens the mapfile pointed by the `map_path` argument and parses it.
 
     The format of the map will be guessed based on its contents.
 
@@ -54,16 +73,16 @@ impl MapFile {
     - GNU ld
     - clang ld.lld
      */
-    pub fn read_map_file(&mut self, map_path: PathBuf) {
-        let map_contents = utils::read_file_contents(&map_path);
+    pub fn read_map_file(&mut self, map_path: &Path) {
+        let map_contents = utils::read_file_contents(map_path);
 
-        self.parse_map_contents(map_contents);
+        self.parse_map_contents(&map_contents);
     }
 
     /**
     Parses the contents of the map.
 
-    The `mapContents` argument must contain the contents of a mapfile.
+    The `map_contents` argument must contain the contents of a mapfile.
 
     The format of the map will be guessed based on its contents.
 
@@ -71,11 +90,11 @@ impl MapFile {
     - GNU ld
     - clang ld.lld
     */
-    pub fn parse_map_contents(&mut self, map_contents: String) {
+    pub fn parse_map_contents(&mut self, map_contents: &str) {
         let regex_lld_header =
             Regex::new(r"\s+VMA\s+LMA\s+Size\s+Align\s+Out\s+In\s+Symbol").unwrap();
 
-        if regex_lld_header.is_match(&map_contents) {
+        if regex_lld_header.is_match(map_contents) {
             self.parse_map_contents_lld(map_contents);
         } else {
             // GNU is the fallback
@@ -86,9 +105,9 @@ impl MapFile {
     /**
     Parses the contents of a GNU ld map.
 
-    The `mapContents` argument must contain the contents of a GNU ld mapfile.
+    The `map_contents` argument must contain the contents of a GNU ld mapfile.
      */
-    pub fn parse_map_contents_gnu(&mut self, map_contents: String) {
+    pub fn parse_map_contents_gnu(&mut self, map_contents: &str) {
         // TODO: maybe move somewhere else?
         let regex_section_alone_entry = Regex::new(r"^\s+(?P<section>[^*][^\s]+)\s*$").unwrap();
         let regex_file_data_entry = Regex::new(r"^\s+(?P<section>([^*][^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
@@ -205,7 +224,7 @@ impl MapFile {
                         name.push("__fill__");
                         filepath = prev_file.filepath.with_file_name(name);
                         vram = prev_file.vram + prev_file.size;
-                        section_type = prev_file.section_type.clone();
+                        section_type.clone_from(&prev_file.section_type);
                     }
 
                     current_segment.files_list.push(file::File::new_default(
@@ -299,9 +318,9 @@ impl MapFile {
     /**
     Parses the contents of a clang ld.lld map.
 
-    The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
+    The `map_contents` argument must contain the contents of a clang ld.lld mapfile.
      */
-    pub fn parse_map_contents_lld(&mut self, map_contents: String) {
+    pub fn parse_map_contents_lld(&mut self, map_contents: &str) {
         let map_data = map_contents;
 
         // Every line starts with this information, so instead of duplicating it we put them on one single regex
@@ -347,7 +366,7 @@ impl MapFile {
 
                         name.push("__fill__");
                         filepath = prev_file.filepath.with_file_name(name);
-                        section_type = prev_file.section_type.clone();
+                        section_type.clone_from(&prev_file.section_type);
                     }
 
                     let mut new_file = file::File::new_default(filepath, vram, size, &section_type);
@@ -443,7 +462,7 @@ impl MapFile {
         }
     }
 
-    pub fn filter_by_section_type(&self, section_type: &str) -> MapFile {
+    pub fn filter_by_section_type(&self, section_type: &str) -> Self {
         let mut new_map_file = MapFile::new();
 
         for segment in &self.segments_list {
@@ -457,7 +476,7 @@ impl MapFile {
         new_map_file
     }
 
-    pub fn get_every_file_except_section_type(&self, section_type: &str) -> MapFile {
+    pub fn get_every_file_except_section_type(&self, section_type: &str) -> Self {
         let mut new_map_file = MapFile::new();
 
         for segment in &self.segments_list {
@@ -499,14 +518,15 @@ impl MapFile {
 
     pub fn find_lowest_differing_symbol(
         &self,
-        other_map_file: MapFile,
-    ) -> Option<(symbol::Symbol, file::File, Option<symbol::Symbol>)> {
+        other_map_file: &Self,
+    ) -> Option<(&symbol::Symbol, &file::File, Option<&symbol::Symbol>)> {
         let mut min_vram = u64::MAX;
         let mut found = None;
+        let mut found_indices = (0, 0);
 
-        for built_segement in &self.segments_list {
-            for built_file in &built_segement.files_list {
-                for (i, built_sym) in built_file.symbols.iter().enumerate() {
+        for (i, built_segment) in self.segments_list.iter().enumerate() {
+            for (j, built_file) in built_segment.files_list.iter().enumerate() {
+                for (k, built_sym) in built_file.symbols.iter().enumerate() {
                     if let Some(expected_sym_info) =
                         other_map_file.find_symbol_by_name(&built_sym.name)
                     {
@@ -515,24 +535,61 @@ impl MapFile {
                         if built_sym.vram != expected_sym.vram && built_sym.vram < min_vram {
                             min_vram = built_sym.vram;
 
-                            let mut prev_sym = None;
-                            if i > 0 {
-                                prev_sym = Some(built_file.symbols[i - 1].clone());
-                            }
+                            let prev_sym = if k > 0 {
+                                Some(&built_file.symbols[k - 1])
+                            } else {
+                                None
+                            };
                             found = Some((built_sym, built_file, prev_sym));
+                            found_indices = (i as isize, j as isize);
                         }
                     }
                 }
             }
         }
 
-        if let Some(found_temp) = found {
-            return Some((found_temp.0.clone(), found_temp.1.clone(), found_temp.2));
+        if let Some((found_built_sym, found_built_file, prev_sym)) = found {
+            if prev_sym.is_none() {
+                // Previous symbol was not in the same section of the given
+                // file, so we try to backtrack until we find any symbol.
+
+                let (mut i, mut j) = found_indices;
+
+                // We want to check the previous file, not the current one,
+                // since we already know the current one doesn't have a symbol
+                // preceding the one we found.
+                j -= 1;
+
+                'outer: while i >= 0 {
+                    let built_segment = &self.segments_list[i as usize];
+
+                    while j >= 0 {
+                        let built_file = &built_segment.files_list[j as usize];
+
+                        if !built_file.symbols.is_empty() {
+                            found = Some((
+                                found_built_sym,
+                                found_built_file,
+                                built_file.symbols.last(),
+                            ));
+                            break 'outer;
+                        }
+
+                        j -= 1;
+                    }
+
+                    i -= 1;
+                    if i >= 0 {
+                        j = self.segments_list[i as usize].files_list.len() as isize - 1;
+                    }
+                }
+            }
         }
-        None
+
+        found
     }
 
-    pub fn mix_folders(&self) -> MapFile {
+    pub fn mix_folders(&self) -> Self {
         let mut new_map_file = MapFile::new();
 
         for segment in &self.segments_list {
@@ -544,9 +601,9 @@ impl MapFile {
 
     pub fn get_progress(
         &self,
-        asm_path: PathBuf,
-        nonmatchings: PathBuf,
-        aliases: HashMap<String, String>,
+        asm_path: &Path,
+        nonmatchings: &Path,
+        aliases: &HashMap<String, String>,
         path_index: usize,
     ) -> (
         progress_stats::ProgressStats,
@@ -616,7 +673,7 @@ impl MapFile {
     /// Useful for finding bss reorders
     pub fn compare_files_and_symbols(
         &self,
-        other_map_file: MapFile,
+        other_map_file: &Self,
         check_other_on_self: bool,
     ) -> maps_comparison_info::MapsComparisonInfo {
         let mut comp_info = maps_comparison_info::MapsComparisonInfo::new();
@@ -625,17 +682,15 @@ impl MapFile {
             for file in &segment.files_list {
                 for symbol in &file.symbols {
                     if let Some(found_sym_info) = other_map_file.find_symbol_by_name(&symbol.name) {
-                        let diff = symbol.vram as i64 - found_sym_info.symbol.vram as i64;
                         let comp = symbol_comparison_info::SymbolComparisonInfo::new(
                             symbol.clone(),
                             symbol.vram,
                             Some(file.clone()),
                             symbol.vram,
                             Some(found_sym_info.file),
-                            Some(diff),
                         );
 
-                        if diff != 0 {
+                        if comp.diff() != Some(0) {
                             comp_info.bad_files.insert(file.clone());
                         }
                         comp_info.compared_list.push(comp);
@@ -647,7 +702,6 @@ impl MapFile {
                                 symbol.vram,
                                 Some(file.clone()),
                                 u64::MAX,
-                                None,
                                 None,
                             ),
                         );
@@ -671,7 +725,6 @@ impl MapFile {
                                     None,
                                     symbol.vram,
                                     Some(file.clone()),
-                                    None,
                                 ),
                             );
                         }
@@ -716,18 +769,18 @@ impl MapFile {
 
 impl MapFile {
     // TODO: figure out if this is doing unnecessary copies or something
-    fn preprocess_map_data_gnu(mut map_data: String) -> String {
+    fn preprocess_map_data_gnu(map_data: &str) -> String {
         // Skip the stuff we don't care about
         // Looking for this string will only work on English machines (or C locales)
         // but it doesn't matter much, because if this string is not found then the
         // parsing should still work, but just a bit slower because of the extra crap
         if let Some(aux_var) = map_data.find("\nLinker script and memory map") {
             if let Some(start_index) = map_data[aux_var + 1..].find('\n') {
-                map_data = map_data[aux_var + 1 + start_index + 1..].to_string();
+                return map_data[aux_var + 1 + start_index + 1..].to_string();
             }
         }
 
-        map_data
+        map_data.to_string()
     }
 }
 
@@ -742,27 +795,31 @@ impl Default for MapFile {
 pub(crate) mod python_bindings {
     use pyo3::prelude::*;
 
-    use std::collections::HashMap;
-    use std::path::PathBuf;
+    use std::{collections::HashMap, path::PathBuf};
 
     use crate::{file, found_symbol_info, maps_comparison_info, progress_stats, segment, symbol};
 
     #[pymethods]
     impl super::MapFile {
         #[new]
-        pub fn py_new() -> Self {
+        fn py_new() -> Self {
             Self::new()
         }
 
-        pub fn readMapFile(&mut self, map_path: PathBuf) {
-            self.read_map_file(map_path)
+        #[staticmethod]
+        fn newFromMapFile(map_path: PathBuf) -> Self {
+            Self::new_from_map_file(&map_path)
         }
 
-        pub fn parseMapContents(&mut self, map_contents: String) {
+        fn readMapFile(&mut self, map_path: PathBuf) {
+            self.read_map_file(&map_path)
+        }
+
+        fn parseMapContents(&mut self, map_contents: &str) {
             self.parse_map_contents(map_contents)
         }
 
-        pub fn parseMapContentsGNU(&mut self, map_contents: String) {
+        fn parseMapContentsGNU(&mut self, map_contents: &str) {
             self.parse_map_contents_gnu(map_contents)
         }
 
@@ -772,45 +829,46 @@ pub(crate) mod python_bindings {
         The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
         */
         #[pyo3(name = "parseMapContentsLLD")]
-        pub fn parseMapContentsLLD(&mut self, map_contents: String) {
+        fn parseMapContentsLLD(&mut self, map_contents: &str) {
             self.parse_map_contents_lld(map_contents)
         }
 
-        pub fn filterBySectionType(&self, section_type: &str) -> Self {
+        fn filterBySectionType(&self, section_type: &str) -> Self {
             self.filter_by_section_type(section_type)
         }
 
-        pub fn getEveryFileExceptSectionType(&self, section_type: &str) -> Self {
+        fn getEveryFileExceptSectionType(&self, section_type: &str) -> Self {
             self.get_every_file_except_section_type(section_type)
         }
 
-        pub fn findSymbolByName(
-            &self,
-            sym_name: &str,
-        ) -> Option<found_symbol_info::FoundSymbolInfo> {
+        fn findSymbolByName(&self, sym_name: &str) -> Option<found_symbol_info::FoundSymbolInfo> {
             self.find_symbol_by_name(sym_name)
         }
 
-        pub fn findSymbolByVramOrVrom(
+        fn findSymbolByVramOrVrom(
             &self,
             address: u64,
         ) -> Option<found_symbol_info::FoundSymbolInfo> {
             self.find_symbol_by_vram_or_vrom(address)
         }
 
-        pub fn findLowestDifferingSymbol(
+        fn findLowestDifferingSymbol(
             &self,
-            other_map_file: Self,
+            other_map_file: &Self,
         ) -> Option<(symbol::Symbol, file::File, Option<symbol::Symbol>)> {
-            self.find_lowest_differing_symbol(other_map_file)
+            if let Some((s, f, os)) = self.find_lowest_differing_symbol(other_map_file) {
+                Some((s.clone(), f.clone(), os.cloned()))
+            } else {
+                None
+            }
         }
 
-        pub fn mixFolders(&self) -> Self {
+        fn mixFolders(&self) -> Self {
             self.mix_folders()
         }
 
         #[pyo3(signature = (asm_path, nonmatchings, aliases=HashMap::new(), path_index=2))]
-        pub fn getProgress(
+        fn getProgress(
             &self,
             asm_path: PathBuf,
             nonmatchings: PathBuf,
@@ -820,33 +878,33 @@ pub(crate) mod python_bindings {
             progress_stats::ProgressStats,
             HashMap<String, progress_stats::ProgressStats>,
         ) {
-            self.get_progress(asm_path, nonmatchings, aliases, path_index)
+            self.get_progress(&asm_path, &nonmatchings, &aliases, path_index)
         }
 
         #[pyo3(signature=(other_map_file, *, check_other_on_self=true))]
-        pub fn compareFilesAndSymbols(
+        fn compareFilesAndSymbols(
             &self,
-            other_map_file: Self,
+            other_map_file: &Self,
             check_other_on_self: bool,
         ) -> maps_comparison_info::MapsComparisonInfo {
             self.compare_files_and_symbols(other_map_file, check_other_on_self)
         }
 
         #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
-        pub fn toCsv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
+        fn toCsv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
             self.to_csv(print_vram, skip_without_symbols)
         }
 
-        pub fn toCsvSymbols(&self) -> String {
+        fn toCsvSymbols(&self) -> String {
             self.to_csv_symbols()
         }
 
         #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
-        pub fn printAsCsv(&self, print_vram: bool, skip_without_symbols: bool) {
+        fn printAsCsv(&self, print_vram: bool, skip_without_symbols: bool) {
             self.print_as_csv(print_vram, skip_without_symbols)
         }
 
-        pub fn printSymbolsCsv(&self) {
+        fn printSymbolsCsv(&self) {
             self.print_symbols_csv()
         }
 
