@@ -22,7 +22,7 @@ jobs:
       run: cargo fmt --check
 
   check_clippy:
-    name: Check clippy: no features
+    name: Check clippy - no features
     runs-on: ubuntu-latest
 
     steps:
@@ -42,7 +42,7 @@ jobs:
       run: cargo clippy --all-targets -- -D warnings
 
   check_clippy_serde:
-    name: Check clippy: features: serde
+    name: Check clippy - features - serde
     runs-on: ubuntu-latest
 
     steps:
@@ -62,7 +62,7 @@ jobs:
       run: cargo clippy --all-targets --features serde -- -D warnings
 
   check_clippy_all_features:
-    name: Check clippy: features: all
+    name: Check clippy - features- all
     runs-on: ubuntu-latest
 
     steps:
