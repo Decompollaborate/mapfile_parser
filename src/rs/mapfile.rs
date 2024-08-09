@@ -802,24 +802,24 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl super::MapFile {
         #[new]
-        pub fn py_new() -> Self {
+        fn py_new() -> Self {
             Self::new()
         }
 
         #[staticmethod]
-        pub fn newFromMapFile(map_path: PathBuf) -> Self {
+        fn newFromMapFile(map_path: PathBuf) -> Self {
             Self::new_from_map_file(&map_path)
         }
 
-        pub fn readMapFile(&mut self, map_path: PathBuf) {
+        fn readMapFile(&mut self, map_path: PathBuf) {
             self.read_map_file(&map_path)
         }
 
-        pub fn parseMapContents(&mut self, map_contents: &str) {
+        fn parseMapContents(&mut self, map_contents: &str) {
             self.parse_map_contents(map_contents)
         }
 
-        pub fn parseMapContentsGNU(&mut self, map_contents: &str) {
+        fn parseMapContentsGNU(&mut self, map_contents: &str) {
             self.parse_map_contents_gnu(map_contents)
         }
 
@@ -829,33 +829,33 @@ pub(crate) mod python_bindings {
         The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
         */
         #[pyo3(name = "parseMapContentsLLD")]
-        pub fn parseMapContentsLLD(&mut self, map_contents: &str) {
+        fn parseMapContentsLLD(&mut self, map_contents: &str) {
             self.parse_map_contents_lld(map_contents)
         }
 
-        pub fn filterBySectionType(&self, section_type: &str) -> Self {
+        fn filterBySectionType(&self, section_type: &str) -> Self {
             self.filter_by_section_type(section_type)
         }
 
-        pub fn getEveryFileExceptSectionType(&self, section_type: &str) -> Self {
+        fn getEveryFileExceptSectionType(&self, section_type: &str) -> Self {
             self.get_every_file_except_section_type(section_type)
         }
 
-        pub fn findSymbolByName(
+        fn findSymbolByName(
             &self,
             sym_name: &str,
         ) -> Option<found_symbol_info::FoundSymbolInfo> {
             self.find_symbol_by_name(sym_name)
         }
 
-        pub fn findSymbolByVramOrVrom(
+        fn findSymbolByVramOrVrom(
             &self,
             address: u64,
         ) -> Option<found_symbol_info::FoundSymbolInfo> {
             self.find_symbol_by_vram_or_vrom(address)
         }
 
-        pub fn findLowestDifferingSymbol(
+        fn findLowestDifferingSymbol(
             &self,
             other_map_file: &Self,
         ) -> Option<(symbol::Symbol, file::File, Option<symbol::Symbol>)> {
@@ -866,12 +866,12 @@ pub(crate) mod python_bindings {
             }
         }
 
-        pub fn mixFolders(&self) -> Self {
+        fn mixFolders(&self) -> Self {
             self.mix_folders()
         }
 
         #[pyo3(signature = (asm_path, nonmatchings, aliases=HashMap::new(), path_index=2))]
-        pub fn getProgress(
+        fn getProgress(
             &self,
             asm_path: PathBuf,
             nonmatchings: PathBuf,
@@ -885,7 +885,7 @@ pub(crate) mod python_bindings {
         }
 
         #[pyo3(signature=(other_map_file, *, check_other_on_self=true))]
-        pub fn compareFilesAndSymbols(
+        fn compareFilesAndSymbols(
             &self,
             other_map_file: &Self,
             check_other_on_self: bool,
@@ -894,20 +894,20 @@ pub(crate) mod python_bindings {
         }
 
         #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
-        pub fn toCsv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
+        fn toCsv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
             self.to_csv(print_vram, skip_without_symbols)
         }
 
-        pub fn toCsvSymbols(&self) -> String {
+        fn toCsvSymbols(&self) -> String {
             self.to_csv_symbols()
         }
 
         #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
-        pub fn printAsCsv(&self, print_vram: bool, skip_without_symbols: bool) {
+        fn printAsCsv(&self, print_vram: bool, skip_without_symbols: bool) {
             self.print_as_csv(print_vram, skip_without_symbols)
         }
 
-        pub fn printSymbolsCsv(&self) {
+        fn printSymbolsCsv(&self) {
             self.print_symbols_csv()
         }
 

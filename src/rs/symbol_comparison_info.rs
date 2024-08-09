@@ -76,7 +76,7 @@ pub(crate) mod python_bindings {
     impl super::SymbolComparisonInfo {
         #[new]
         #[pyo3(signature = (symbol, build_address, build_file, expected_address, expected_file))]
-        pub fn py_new(
+        fn py_new(
             symbol: symbol::Symbol,
             build_address: u64,
             build_file: Option<file::File>,

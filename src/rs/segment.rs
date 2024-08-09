@@ -286,7 +286,7 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl super::Segment {
         #[new]
-        pub fn py_new(name: String, vram: u64, size: u64, vrom: u64, align: Option<u64>) -> Self {
+        fn py_new(name: String, vram: u64, size: u64, vrom: u64, align: Option<u64>) -> Self {
             Self::new(name, vram, size, vrom, align)
         }
 
@@ -362,47 +362,47 @@ pub(crate) mod python_bindings {
 
         /* Methods */
 
-        pub fn filterBySectionType(&self, section_type: &str) -> Self {
+        fn filterBySectionType(&self, section_type: &str) -> Self {
             self.filter_by_section_type(section_type)
         }
 
-        pub fn getEveryFileExceptSectionType(&self, section_type: &str) -> Self {
+        fn getEveryFileExceptSectionType(&self, section_type: &str) -> Self {
             self.get_every_file_except_section_type(section_type)
         }
 
-        pub fn findSymbolByName(
+        fn findSymbolByName(
             &self,
             sym_name: &str,
         ) -> Option<found_symbol_info::FoundSymbolInfo> {
             self.find_symbol_by_name(sym_name)
         }
 
-        pub fn findSymbolByVramOrVrom(
+        fn findSymbolByVramOrVrom(
             &self,
             address: u64,
         ) -> Option<found_symbol_info::FoundSymbolInfo> {
             self.find_symbol_by_vram_or_vrom(address)
         }
 
-        pub fn mixFolders(&self) -> Self {
+        fn mixFolders(&self) -> Self {
             self.mix_folders()
         }
 
         #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
-        pub fn toCsv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
+        fn toCsv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
             self.to_csv(print_vram, skip_without_symbols)
         }
 
-        pub fn toCsvSymbols(&self) -> String {
+        fn toCsvSymbols(&self) -> String {
             self.to_csv_symbols()
         }
 
         #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
-        pub fn printAsCsv(&self, print_vram: bool, skip_without_symbols: bool) {
+        fn printAsCsv(&self, print_vram: bool, skip_without_symbols: bool) {
             self.print_as_csv(print_vram, skip_without_symbols)
         }
 
-        pub fn printSymbolsCsv(&self) {
+        fn printSymbolsCsv(&self) {
             self.print_symbols_csv()
         }
 

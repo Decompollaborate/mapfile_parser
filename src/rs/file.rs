@@ -270,7 +270,7 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl super::File {
         #[new]
-        pub fn py_new(
+        fn py_new(
             filepath: PathBuf,
             vram: u64,
             size: u64,
@@ -370,7 +370,7 @@ pub(crate) mod python_bindings {
         */
 
         #[getter]
-        pub fn isNoloadSection(&self) -> bool {
+        fn isNoloadSection(&self) -> bool {
             self.is_noload_section()
         }
 
@@ -385,11 +385,11 @@ pub(crate) mod python_bindings {
                 .collect()
         }
 
-        pub fn findSymbolByName(&self, sym_name: &str) -> Option<symbol::Symbol> {
+        fn findSymbolByName(&self, sym_name: &str) -> Option<symbol::Symbol> {
             self.find_symbol_by_name(sym_name).cloned()
         }
 
-        pub fn findSymbolByVramOrVrom(&self, address: u64) -> Option<(symbol::Symbol, i64)> {
+        fn findSymbolByVramOrVrom(&self, address: u64) -> Option<(symbol::Symbol, i64)> {
             if let Some((sym, offset)) = self.find_symbol_by_vram_or_vrom(address) {
                 Some((sym.clone(), offset))
             } else {
@@ -399,23 +399,23 @@ pub(crate) mod python_bindings {
 
         #[staticmethod]
         #[pyo3(signature=(print_vram=true))]
-        pub fn toCsvHeader(print_vram: bool) -> String {
+        fn toCsvHeader(print_vram: bool) -> String {
             Self::to_csv_header(print_vram)
         }
 
         #[pyo3(signature=(print_vram=true))]
-        pub fn toCsv(&self, print_vram: bool) -> String {
+        fn toCsv(&self, print_vram: bool) -> String {
             self.to_csv(print_vram)
         }
 
         #[staticmethod]
         #[pyo3(signature=(print_vram=true))]
-        pub fn printCsvHeader(print_vram: bool) {
+        fn printCsvHeader(print_vram: bool) {
             Self::print_csv_header(print_vram)
         }
 
         #[pyo3(signature=(print_vram=true))]
-        pub fn printAsCsv(&self, print_vram: bool) {
+        fn printAsCsv(&self, print_vram: bool) {
             self.print_as_csv(print_vram)
         }
 

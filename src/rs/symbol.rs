@@ -139,7 +139,7 @@ pub(crate) mod python_bindings {
     impl super::Symbol {
         #[new]
         #[pyo3(signature=(name,vram,size=None,vrom=None,align=None))]
-        pub fn py_new(
+        fn py_new(
             name: String,
             vram: u64,
             size: Option<u64>,
@@ -283,37 +283,37 @@ pub(crate) mod python_bindings {
 
         /* Methods */
 
-        pub fn getVramStr(&self) -> String {
+        fn getVramStr(&self) -> String {
             self.get_vram_str()
         }
 
-        pub fn getSizeStr(&self) -> String {
+        fn getSizeStr(&self) -> String {
             self.get_size_str()
         }
 
-        pub fn getVromStr(&self) -> String {
+        fn getVromStr(&self) -> String {
             self.get_vrom_str()
         }
 
-        pub fn getAlignStr(&self) -> String {
+        fn getAlignStr(&self) -> String {
             self.get_align_str()
         }
 
         #[staticmethod]
-        pub fn toCsvHeader() -> String {
+        fn toCsvHeader() -> String {
             Self::to_csv_header()
         }
 
-        pub fn toCsv(&self) -> String {
+        fn toCsv(&self) -> String {
             self.to_csv()
         }
 
         #[staticmethod]
-        pub fn printCsvHeader() {
+        fn printCsvHeader() {
             Self::print_csv_header()
         }
 
-        pub fn printAsCsv(&self) {
+        fn printAsCsv(&self) {
             self.print_as_csv()
         }
 

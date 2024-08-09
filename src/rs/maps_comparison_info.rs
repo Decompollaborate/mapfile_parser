@@ -46,7 +46,7 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl super::MapsComparisonInfo {
         #[new]
-        pub fn py_new() -> Self {
+        fn py_new() -> Self {
             Self::new()
         }
 
