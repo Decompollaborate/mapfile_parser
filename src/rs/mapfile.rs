@@ -841,10 +841,7 @@ pub(crate) mod python_bindings {
             self.get_every_file_except_section_type(section_type)
         }
 
-        fn findSymbolByName(
-            &self,
-            sym_name: &str,
-        ) -> Option<found_symbol_info::FoundSymbolInfo> {
+        fn findSymbolByName(&self, sym_name: &str) -> Option<found_symbol_info::FoundSymbolInfo> {
             self.find_symbol_by_name(sym_name)
         }
 
