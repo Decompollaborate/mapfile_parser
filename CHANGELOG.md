@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.5.0] - 2024-08-09
+
 ### Added
 
 - Add Minimal Supported Rust Version (MSRV) to Cargo.toml.
@@ -364,6 +366,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.5.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.4.0...2.5.0
 [2.4.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.7...2.4.0
 [2.3.7]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.6...2.3.7
 [2.3.6]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.5...2.3.6

@@ -3,7 +3,7 @@
 
 [project]
 name = "mapfile_parser"
-version = "2.4.1-dev0"
+version = "2.5.0"
 description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
 requires-python = ">=3.8"
