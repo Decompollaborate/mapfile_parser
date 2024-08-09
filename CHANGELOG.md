@@ -16,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Tweak symbol comparison logic a bit.
   - Symbol shifting (due to different sizes or extra/missing symbols) should
     not affect comparing non shifted files.
+- `Cargo.lock` file is now committed to the repo.
 
 ## [2.4.0] - 2024-03-25
 
