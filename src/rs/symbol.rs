@@ -26,7 +26,7 @@ pub struct Symbol {
 
     // idk if it is worth to continue maintaining this, given the complexity introduced by other features
     #[cfg(feature = "python_bindings")]
-    #[cfg(not(feature = "serde"))]
+    #[cfg_attr(feature = "serde", serde(skip))]
     chached_name: Option<PyObject>,
 }
 
@@ -46,7 +46,6 @@ impl Symbol {
             align,
 
             #[cfg(feature = "python_bindings")]
-            #[cfg(not(feature = "serde"))]
             chached_name: None,
         }
     }
@@ -60,7 +59,6 @@ impl Symbol {
             align: None,
 
             #[cfg(feature = "python_bindings")]
-            #[cfg(not(feature = "serde"))]
             chached_name: None,
         }
     }
@@ -152,7 +150,6 @@ pub(crate) mod python_bindings {
         /* Getters and setters */
 
         #[getter]
-        #[cfg(not(feature = "serde"))]
         fn get_name(&mut self) -> PyObject {
             Python::with_gil(|py| {
                 if self.chached_name.is_none() {
@@ -163,18 +160,8 @@ pub(crate) mod python_bindings {
             })
         }
 
-        #[getter]
-        #[cfg(feature = "serde")]
-        fn get_name(&self) -> PyResult<String> {
-            Ok(self.name.clone())
-        }
-
         #[setter]
         fn set_name(&mut self, value: String) -> PyResult<()> {
-            #[cfg(not(feature = "serde"))]
-            {
-                self.chached_name = None;
-            }
             self.name = value;
             Ok(())
         }
