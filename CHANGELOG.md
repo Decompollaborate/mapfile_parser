@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add new parameters to `bss_check.printSymbolComparison`.
+  - `printGoods`: Allows toggling printing the GOOD symbols.
+  - `printingStyle`: The style to use to print the symbols, either `"csv"` or `"listing"`.
+  - TODO: port to Rust.
+
 ### Changed
 
 - Minor cleanups

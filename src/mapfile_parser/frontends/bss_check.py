@@ -24,7 +24,7 @@ def getComparison(mapPath: Path, expectedMapPath: Path, *, reverseCheck: bool=Tr
 
     return buildMap.compareFilesAndSymbols(expectedMap, checkOtherOnSelf=reverseCheck)
 
-def printSymbolComparison(comparisonInfo: mapfile.MapsComparisonInfo, printAll: bool=False):
+def printSymbolComparisonAsCsv(comparisonInfo: mapfile.MapsComparisonInfo, printAll: bool=False, printGoods: bool=True):
     print("Symbol Name,Build Address,Build File,Expected Address,Expected File,Difference,GOOD/BAD/MISSING")
 
     # If it's bad or missing, don't need to do anything special.
@@ -48,9 +48,63 @@ def printSymbolComparison(comparisonInfo: mapfile.MapsComparisonInfo, printAll: 
                     if not printAll:
                         continue
 
+        if not printGoods and symbolState == "GOOD":
+            continue
+
         if buildFile != expectedFile:
             symbolState += " MOVED"
         print(f"{symbolInfo.symbol.name},{symbolInfo.buildAddress:X},{buildFilePath},{symbolInfo.expectedAddress:X},{expectedFilePath},{symbolInfo.diff:X},{symbolState}")
+
+def printSymbolComparisonAsListing(comparisonInfo: mapfile.MapsComparisonInfo, printAll: bool=False, printGoods: bool=True):
+    # print("Symbol Name,Build Address,Build File,Expected Address,Expected File,Difference,GOOD/BAD/MISSING")
+
+    # If it's bad or missing, don't need to do anything special.
+    # If it's good, check for if it's in a file with bad or missing stuff, and check if print all is on. If none of these, print it.
+
+    for symbolInfo in comparisonInfo.comparedList:
+        buildFile = symbolInfo.buildFile
+        expectedFile = symbolInfo.expectedFile
+        buildFilePath = buildFile.filepath if buildFile is not None else None
+        expectedFilePath = expectedFile.filepath if expectedFile is not None else None
+
+        if symbolInfo.diff is None:
+            print(f"Symbol: {symbolInfo.symbol.name} (MISSING)")
+            if symbolInfo.buildAddress != -1:
+                print(f"    Build:      0x{symbolInfo.buildAddress:08X} (file: {buildFilePath})")
+            if symbolInfo.expectedAddress != -1:
+                print(f"    Expected:   0x{symbolInfo.expectedAddress:08X} (file: {expectedFilePath})")
+            continue
+
+        symbolState = "BAD"
+        if symbolInfo.diff == 0:
+            symbolState = "GOOD"
+            if not buildFile in comparisonInfo.badFiles and not expectedFile in comparisonInfo.badFiles:
+                if not buildFile in comparisonInfo.badFiles and not expectedFile in comparisonInfo.badFiles:
+                    if not printAll:
+                        continue
+
+        if not printGoods and symbolState == "GOOD":
+            continue
+
+        if buildFile != expectedFile:
+            symbolState += " MOVED"
+
+        if symbolInfo.diff < 0:
+            diffStr = f"-0x{-symbolInfo.diff:02X}"
+        else:
+            diffStr = f"0x{symbolInfo.diff:02X}"
+
+        print(f"Symbol: {symbolInfo.symbol.name} ({symbolState}) (diff: {diffStr})")
+        print(f"    Build:      0x{symbolInfo.buildAddress:08X} (file: {buildFilePath})")
+        print(f"    Expected:   0x{symbolInfo.expectedAddress:08X} (file: {expectedFilePath})")
+
+def printSymbolComparison(comparisonInfo: mapfile.MapsComparisonInfo, printAll: bool=False, printGoods: bool=True, printingStyle: str="csv"):
+    if printingStyle == "csv":
+        printSymbolComparisonAsCsv(comparisonInfo, printAll, printGoods)
+    elif printingStyle == "listing":
+        printSymbolComparisonAsListing(comparisonInfo, printAll, printGoods)
+    else:
+        printSymbolComparisonAsListing(comparisonInfo, printAll, printGoods)
 
 def printFileComparison(comparisonInfo: mapfile.MapsComparisonInfo):
     utils.eprint("")
