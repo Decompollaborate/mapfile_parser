@@ -17,10 +17,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - New `MapFile.fixupNonMatchingSymbols` method.
   - Allows to fixup size calculation of symbols messed up by symbols with the
     same name suffixed with `.NON_MATCHING`.
+- Add support for `.NON_MATCHING` suffix on symbols on progress calculation.
+  - If a symbol exists and has a `.NON_MATCHING`-suffixed counterpart then
+    consider it not mateched yet.
 
 ### Changed
 
-- Minor cleanups
+- Minor cleanups.
 
 ## [2.5.1] - 2024-08-09
 

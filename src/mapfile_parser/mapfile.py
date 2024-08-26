@@ -704,7 +704,7 @@ class MapFile:
 
         return newMapFile
 
-    def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2) -> tuple[ProgressStats, dict[str, ProgressStats]]:
+    def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2, checkFunctionFiles: bool=True) -> tuple[ProgressStats, dict[str, ProgressStats]]:
         totalStats = ProgressStats()
         progressPerFolder: dict[str, ProgressStats] = dict()
 
@@ -742,6 +742,9 @@ class MapFile:
                     utils.eprint(f"  whole file is undecomped: {wholeFileIsUndecomped}")
 
                 for func in file:
+                    if func.name.endswith(".NON_MATCHING"):
+                        continue
+
                     funcAsmPath = nonmatchings / extensionlessFilePath / f"{func.name}.s"
 
                     symSize = 0
@@ -756,7 +759,12 @@ class MapFile:
                         progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
                             utils.eprint(f" the whole file is undecomped (no individual function files exist yet)")
-                    elif funcAsmPath.exists():
+                    elif self.findSymbolByName(f"{func.name}.NON_MATCHING") is not None:
+                        totalStats.undecompedSize += symSize
+                        progressPerFolder[folder].undecompedSize += symSize
+                        if self.debugging:
+                            utils.eprint(f" the function hasn't been matched yet (there's a `.NON_MATCHING` symbol with the same name)")
+                    elif checkFunctionFiles and funcAsmPath.exists():
                         totalStats.undecompedSize += symSize
                         progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:

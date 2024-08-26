@@ -616,6 +616,7 @@ impl MapFile {
         nonmatchings: &Path,
         aliases: &HashMap<String, String>,
         path_index: usize,
+        check_function_files: bool,
     ) -> (
         progress_stats::ProgressStats,
         HashMap<String, progress_stats::ProgressStats>,
@@ -661,13 +662,22 @@ impl MapFile {
                 let whole_file_is_undecomped = full_asm_file.exists();
 
                 for func in &file.symbols {
+                    if func.name.ends_with(".NON_MATCHING") {
+                        continue;
+                    }
+
                     let func_asm_path = nonmatchings
                         .join(extensionless_file_path.clone())
                         .join(func.name.clone() + ".s");
 
                     let sym_size = func.size.unwrap_or(0) as usize;
 
-                    if whole_file_is_undecomped || func_asm_path.exists() {
+                    if whole_file_is_undecomped
+                        || self
+                            .find_symbol_by_name(&format!("{}.NON_MATCHING", func.name))
+                            .is_some()
+                        || (check_function_files && func_asm_path.exists())
+                    {
                         total_stats.undecomped_size += sym_size;
                         folder_progress.undecomped_size += sym_size;
                     } else {
@@ -882,18 +892,25 @@ pub(crate) mod python_bindings {
             self.fixup_non_matching_symbols()
         }
 
-        #[pyo3(signature = (asm_path, nonmatchings, aliases=HashMap::new(), path_index=2))]
+        #[pyo3(signature = (asm_path, nonmatchings, aliases=HashMap::new(), path_index=2, check_function_files=true))]
         fn getProgress(
             &self,
             asm_path: PathBuf,
             nonmatchings: PathBuf,
             aliases: HashMap<String, String>,
             path_index: usize,
+            check_function_files: bool,
         ) -> (
             progress_stats::ProgressStats,
             HashMap<String, progress_stats::ProgressStats>,
         ) {
-            self.get_progress(&asm_path, &nonmatchings, &aliases, path_index)
+            self.get_progress(
+                &asm_path,
+                &nonmatchings,
+                &aliases,
+                path_index,
+                check_function_files,
+            )
         }
 
         #[pyo3(signature=(other_map_file, *, check_other_on_self=true))]

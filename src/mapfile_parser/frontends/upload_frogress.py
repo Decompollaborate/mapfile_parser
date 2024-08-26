@@ -52,12 +52,12 @@ def uploadEntriesToFrogress(entries: dict[str, int], category: str, url: str, ap
     return 0
 
 
-def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, project: str, version: str, category: str, baseurl: str, apikey: str|None=None, verbose: bool=False) -> int:
+def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, project: str, version: str, category: str, baseurl: str, apikey: str|None=None, verbose: bool=False, checkFunctionFiles: bool=True) -> int:
     if not mapPath.exists():
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
 
-    totalStats, progressPerFolder = progress.getProgress(mapPath, asmPath, nonmatchingsPath)
+    totalStats, progressPerFolder = progress.getProgress(mapPath, asmPath, nonmatchingsPath, checkFunctionFiles=checkFunctionFiles)
 
     entries: dict[str, int] = getFrogressEntriesFromStats(totalStats, progressPerFolder, verbose)
 
@@ -75,8 +75,9 @@ def processArguments(args: argparse.Namespace):
     baseurl: str = args.baseurl
     apikey: str|None = args.apikey
     verbose: bool = args.verbose
+    checkFunctionFiles: bool = not args.avoid_function_files
 
-    exit(doUploadFrogress(mapPath, asmPath, nonmatchingsPath, project, version, category, baseurl, apikey, verbose))
+    exit(doUploadFrogress(mapPath, asmPath, nonmatchingsPath, project, version, category, baseurl, apikey, verbose, checkFunctionFiles))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser]):
     parser = subparser.add_parser("upload_frogress", help="Uploads current progress of the matched functions to frogress (https://github.com/decompals/frogress).")
@@ -90,5 +91,6 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser])
     parser.add_argument("--baseurl", help="API base URL", default="https://progress.deco.mp")
     parser.add_argument("--apikey", help="API key. Dry run is performed if this option is omitted")
     parser.add_argument("-v", "--verbose", action="store_true")
+    parser.add_argument("-f", "--avoid-function-files", help="Avoid checking if the assembly file for a function exists as a way to determine if the function has been matched or not", action="store_true")
 
     parser.set_defaults(func=processArguments)
