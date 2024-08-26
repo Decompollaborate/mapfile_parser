@@ -599,6 +599,17 @@ impl MapFile {
         new_map_file
     }
 
+    pub fn fixup_non_matching_symbols(&self) -> Self {
+        let mut new_map_file = self.clone();
+
+        new_map_file
+            .segments_list
+            .iter_mut()
+            .for_each(|x| x.fixup_non_matching_symbols());
+
+        new_map_file
+    }
+
     pub fn get_progress(
         &self,
         asm_path: &Path,
@@ -865,6 +876,10 @@ pub(crate) mod python_bindings {
 
         fn mixFolders(&self) -> Self {
             self.mix_folders()
+        }
+
+        fn fixupNonMatchingSymbols(&self) -> Self {
+            self.fixup_non_matching_symbols()
         }
 
         #[pyo3(signature = (asm_path, nonmatchings, aliases=HashMap::new(), path_index=2))]

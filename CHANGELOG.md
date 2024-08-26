@@ -11,8 +11,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Add new parameters to `bss_check.printSymbolComparison`.
   - `printGoods`: Allows toggling printing the GOOD symbols.
-  - `printingStyle`: The style to use to print the symbols, either `"csv"` or `"listing"`.
+  - `printingStyle`: The style to use to print the symbols, either `"csv"` or
+    `"listing"`.
   - TODO: port to Rust.
+- New `MapFile.fixupNonMatchingSymbols` method.
+  - Allows to fixup size calculation of symbols messed up by symbols with the
+    same name suffixed with `.NON_MATCHING`.
 
 ### Changed
 

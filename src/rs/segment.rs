@@ -156,6 +156,12 @@ impl Segment {
         new_segment
     }
 
+    pub fn fixup_non_matching_symbols(&mut self) {
+        self.files_list
+            .iter_mut()
+            .for_each(|x| x.fixup_non_matching_symbols())
+    }
+
     pub fn to_csv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
         let mut ret = String::new();
 
@@ -383,6 +389,10 @@ pub(crate) mod python_bindings {
 
         fn mixFolders(&self) -> Self {
             self.mix_folders()
+        }
+
+        fn fixupNonMatchingSymbols(&mut self) {
+            self.fixup_non_matching_symbols()
         }
 
         #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]
