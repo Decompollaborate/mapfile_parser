@@ -7,6 +7,26 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.6.0] - 2024-08-26
+
+### Added
+
+- Add new parameters to `bss_check.printSymbolComparison`.
+  - `printGoods`: Allows toggling printing the GOOD symbols.
+  - `printingStyle`: The style to use to print the symbols, either `"csv"` or
+    `"listing"`.
+  - TODO: port to Rust.
+- New `MapFile.fixupNonMatchingSymbols` method.
+  - Allows to fixup size calculation of symbols messed up by symbols with the
+    same name suffixed with `.NON_MATCHING`.
+- Add support for `.NON_MATCHING` suffix on symbols on progress calculation.
+  - If a symbol exists and has a `.NON_MATCHING`-suffixed counterpart then
+    consider it not mateched yet.
+
+### Changed
+
+- Minor cleanups.
+
 ## [2.5.1] - 2024-08-09
 
 ### Fixed
@@ -372,6 +392,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.6.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.5.1...2.6.0
 [2.5.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.5.0...2.5.1
 [2.5.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.4.0...2.5.0
 [2.4.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.3.7...2.4.0

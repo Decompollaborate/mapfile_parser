@@ -62,6 +62,22 @@ impl File {
         self.symbols.iter().find(|&sym| sym.name == sym_name)
     }
 
+    pub fn find_symbol_and_index_by_name(
+        &self,
+        sym_name: &str,
+    ) -> Option<(&symbol::Symbol, usize)> {
+        for (index, sym) in self.symbols.iter().enumerate() {
+            if sym.name == sym_name {
+                return Some((sym, index));
+            }
+        }
+        None
+    }
+
+    pub fn find_symbol_by_name_mut(&mut self, sym_name: &str) -> Option<&mut symbol::Symbol> {
+        self.symbols.iter_mut().find(|sym| sym.name == sym_name)
+    }
+
     pub fn find_symbol_by_vram_or_vrom(&self, address: u64) -> Option<(&symbol::Symbol, i64)> {
         let mut prev_sym: Option<&symbol::Symbol> = None;
 
@@ -124,6 +140,29 @@ impl File {
         }
 
         None
+    }
+
+    pub fn fixup_non_matching_symbols(&mut self) {
+        let mut symbols_to_fix = Vec::new();
+
+        for (index, sym) in self.symbols.iter().enumerate() {
+            if sym.name.ends_with(".NON_MATCHING") && sym.size.is_some() && sym.size == Some(0) {
+                let real_name = sym.name.replace(".NON_MATCHING", "");
+
+                if let Some((_real_sym, real_index)) =
+                    self.find_symbol_and_index_by_name(&real_name)
+                {
+                    symbols_to_fix.push((real_index, sym.size));
+                    symbols_to_fix.push((index, Some(0)));
+                }
+            }
+        }
+
+        for (index, new_size) in symbols_to_fix {
+            if let Some(sym) = self.symbols.get_mut(index) {
+                sym.size = new_size;
+            }
+        }
     }
 
     pub fn to_csv_header(print_vram: bool) -> String {
@@ -395,6 +434,10 @@ pub(crate) mod python_bindings {
             } else {
                 None
             }
+        }
+
+        fn fixupNonMatchingSymbols(&mut self) {
+            self.fixup_non_matching_symbols()
         }
 
         #[staticmethod]

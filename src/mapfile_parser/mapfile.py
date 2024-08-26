@@ -146,6 +146,10 @@ class Symbol:
         return result
 
 
+    def clone(self) -> Symbol:
+        return Symbol(self.name, self.vram, self.size, self.vrom, self.align)
+
+
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Symbol):
             return False
@@ -300,6 +304,13 @@ class File:
     def appendSymbol(self, sym: Symbol) -> None:
         """Appends a copy of `sym` into the internal symbol list"""
         self._symbols.append(sym)
+
+
+    def clone(self) -> File:
+        f = File(self.filepath, self.vram, self.size, self.sectionType, self.vrom, self.align)
+        for sym in self._symbols:
+            f._symbols.append(sym.clone())
+        return f
 
 
     def __iter__(self) -> Generator[Symbol, None, None]:
@@ -474,6 +485,13 @@ class Segment:
     def appendFile(self, file: File) -> None:
         """Appends a copy of `file` into the internal file list"""
         self._filesList.append(file)
+
+
+    def clone(self) -> Segment:
+        s = Segment(self.name, self.vram, self.size, self.vrom, self.align)
+        for f in self._filesList:
+            s._filesList.append(f.clone())
+        return s
 
 
     def __iter__(self) -> Generator[File, None, None]:
@@ -672,7 +690,21 @@ class MapFile:
 
         return newMapFile
 
-    def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2) -> tuple[ProgressStats, dict[str, ProgressStats]]:
+    def fixupNonMatchingSymbols(self) -> MapFile:
+        newMapFile = self.clone()
+
+        for segment in newMapFile._segmentsList:
+            for file in segment._filesList:
+                for sym in file._symbols:
+                    if sym.name.endswith(".NON_MATCHING") and sym.size != 0:
+                        realSym = file.findSymbolByName(sym.name.replace(".NON_MATCHING", ""))
+                        if realSym is not None and realSym.size == 0:
+                            realSym.size = sym.size
+                            sym.size = 0
+
+        return newMapFile
+
+    def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2, checkFunctionFiles: bool=True) -> tuple[ProgressStats, dict[str, ProgressStats]]:
         totalStats = ProgressStats()
         progressPerFolder: dict[str, ProgressStats] = dict()
 
@@ -710,6 +742,9 @@ class MapFile:
                     utils.eprint(f"  whole file is undecomped: {wholeFileIsUndecomped}")
 
                 for func in file:
+                    if func.name.endswith(".NON_MATCHING"):
+                        continue
+
                     funcAsmPath = nonmatchings / extensionlessFilePath / f"{func.name}.s"
 
                     symSize = 0
@@ -724,7 +759,12 @@ class MapFile:
                         progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
                             utils.eprint(f" the whole file is undecomped (no individual function files exist yet)")
-                    elif funcAsmPath.exists():
+                    elif self.findSymbolByName(f"{func.name}.NON_MATCHING") is not None:
+                        totalStats.undecompedSize += symSize
+                        progressPerFolder[folder].undecompedSize += symSize
+                        if self.debugging:
+                            utils.eprint(f" the function hasn't been matched yet (there's a `.NON_MATCHING` symbol with the same name)")
+                    elif checkFunctionFiles and funcAsmPath.exists():
                         totalStats.undecompedSize += symSize
                         progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
@@ -808,6 +848,14 @@ class MapFile:
     def appendSegment(self, segment: Segment) -> None:
         """Appends a copy of `segment` into the internal segment list"""
         self._segmentsList.append(segment)
+
+
+    def clone(self) -> MapFile:
+        m = MapFile()
+        m.debugging = self.debugging
+        for s in self._segmentsList:
+            m._segmentsList.append(s.clone())
+        return m
 
 
     def __iter__(self) -> Generator[Segment, None, None]:
