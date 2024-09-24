@@ -37,7 +37,7 @@ def processArguments(args: argparse.Namespace):
     mapPath: Path = args.mapfile
     outputPath: Path|None = Path(args.output) if args.output is not None else None
     machine: bool = args.machine
-    applyFixes: bool = args.applyFixes
+    applyFixes: bool = args.apply_fixes
 
     exit(doJsonify(mapPath, outputPath, humanReadable=not machine, applyFixes=applyFixes))
 
