@@ -84,12 +84,43 @@ impl Segment {
         None
     }
 
+    #[deprecated(
+        since = "2.7.0",
+        note = "Use `find_symbol_by_vram` or `find_symbol_by_vrom` instead."
+    )]
     pub fn find_symbol_by_vram_or_vrom(
         &self,
         address: u64,
     ) -> Option<found_symbol_info::FoundSymbolInfo> {
         for file in &self.files_list {
+            #[allow(deprecated)]
             if let Some((sym, offset)) = file.find_symbol_by_vram_or_vrom(address) {
+                return Some(found_symbol_info::FoundSymbolInfo::new(
+                    file.clone(),
+                    sym.clone(),
+                    offset,
+                ));
+            }
+        }
+        None
+    }
+
+    pub fn find_symbol_by_vram(&self, address: u64) -> Option<found_symbol_info::FoundSymbolInfo> {
+        for file in &self.files_list {
+            if let Some((sym, offset)) = file.find_symbol_by_vram(address) {
+                return Some(found_symbol_info::FoundSymbolInfo::new(
+                    file.clone(),
+                    sym.clone(),
+                    offset,
+                ));
+            }
+        }
+        None
+    }
+
+    pub fn find_symbol_by_vrom(&self, address: u64) -> Option<found_symbol_info::FoundSymbolInfo> {
+        for file in &self.files_list {
+            if let Some((sym, offset)) = file.find_symbol_by_vrom(address) {
                 return Some(found_symbol_info::FoundSymbolInfo::new(
                     file.clone(),
                     sym.clone(),
@@ -384,7 +415,16 @@ pub(crate) mod python_bindings {
             &self,
             address: u64,
         ) -> Option<found_symbol_info::FoundSymbolInfo> {
+            #[allow(deprecated)]
             self.find_symbol_by_vram_or_vrom(address)
+        }
+
+        fn findSymbolByVram(&self, address: u64) -> Option<found_symbol_info::FoundSymbolInfo> {
+            self.find_symbol_by_vram(address)
+        }
+
+        fn findSymbolByVrom(&self, address: u64) -> Option<found_symbol_info::FoundSymbolInfo> {
+            self.find_symbol_by_vrom(address)
         }
 
         fn mixFolders(&self) -> Self {

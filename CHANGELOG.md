@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `MapFile.findSymbolByVram` and `MapFile.findSymbolByVrom` methods.
+  - Allow to search a symbol given a given address. The address will be treated
+    as either a vram address or a vrom address respectively.
+
+### Deprecated
+
+- `MapFile.findSymbolByVramOrVrom`.
+  - Use `MapFile.findSymbolByVram` and `MapFile.findSymbolByVrom` instead.
+
 ### Fixed
 
 - Fix typo that prevented using `jsonify`.

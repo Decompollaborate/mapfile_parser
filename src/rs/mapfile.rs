@@ -503,12 +503,37 @@ impl MapFile {
         None
     }
 
+    #[deprecated(
+        since = "2.7.0",
+        note = "Use `find_symbol_by_vram` or `find_symbol_by_vrom` instead."
+    )]
     pub fn find_symbol_by_vram_or_vrom(
         &self,
         address: u64,
     ) -> Option<found_symbol_info::FoundSymbolInfo> {
         for segment in &self.segments_list {
+            #[allow(deprecated)]
             if let Some(info) = segment.find_symbol_by_vram_or_vrom(address) {
+                return Some(info);
+            }
+        }
+
+        None
+    }
+
+    pub fn find_symbol_by_vram(&self, address: u64) -> Option<found_symbol_info::FoundSymbolInfo> {
+        for segment in &self.segments_list {
+            if let Some(info) = segment.find_symbol_by_vram(address) {
+                return Some(info);
+            }
+        }
+
+        None
+    }
+
+    pub fn find_symbol_by_vrom(&self, address: u64) -> Option<found_symbol_info::FoundSymbolInfo> {
+        for segment in &self.segments_list {
+            if let Some(info) = segment.find_symbol_by_vrom(address) {
                 return Some(info);
             }
         }
@@ -870,7 +895,16 @@ pub(crate) mod python_bindings {
             &self,
             address: u64,
         ) -> Option<found_symbol_info::FoundSymbolInfo> {
+            #[allow(deprecated)]
             self.find_symbol_by_vram_or_vrom(address)
+        }
+
+        fn findSymbolByVram(&self, address: u64) -> Option<found_symbol_info::FoundSymbolInfo> {
+            self.find_symbol_by_vram(address)
+        }
+
+        fn findSymbolByVrom(&self, address: u64) -> Option<found_symbol_info::FoundSymbolInfo> {
+            self.find_symbol_by_vrom(address)
         }
 
         fn findLowestDifferingSymbol(

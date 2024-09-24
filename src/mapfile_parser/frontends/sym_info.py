@@ -21,7 +21,10 @@ def doSymInfo(mapPath: Path, symName: str) -> int:
     mapFile.readMapFile(mapPath)
 
     if utils.convertibleToInt(symName, 0):
-        info = mapFile.findSymbolByVramOrVrom(int(symName, 0))
+        address = int(symName, 0)
+        info = mapFile.findSymbolByVram(address)
+        if info is None:
+            info = mapFile.findSymbolByVrom(address)
     else:
         info = mapFile.findSymbolByName(symName)
 

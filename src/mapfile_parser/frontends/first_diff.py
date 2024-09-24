@@ -61,7 +61,7 @@ def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRom
             or builtRom[i + 3] != expectedRom[i + 3]
         ):
             if diffs == 0:
-                vromInfo = builtMapFile.findSymbolByVramOrVrom(i)
+                vromInfo = builtMapFile.findSymbolByVrom(i)
                 extraMessage = ""
                 if vromInfo is not None:
                     extraMessage = f", {vromInfo.getAsStrPlusOffset()}"
@@ -80,7 +80,7 @@ def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRom
             len(map_search_diff) < diffCount
             and builtRom[i+endian_diff] >> 2 != expectedRom[i+endian_diff] >> 2
         ):
-            vromInfo = builtMapFile.findSymbolByVramOrVrom(i)
+            vromInfo = builtMapFile.findSymbolByVrom(i)
             if vromInfo is not None:
                 vromMessage = vromInfo.getAsStr()
                 if vromMessage not in map_search_diff:

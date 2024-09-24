@@ -203,6 +203,7 @@ class File:
                 return sym
         return None
 
+    #! @deprecated: Use either `findSymbolByVram` or `findSymbolByVrom` instead.
     def findSymbolByVramOrVrom(self, address: int) -> tuple[Symbol, int]|None:
         prevVram = self.vram
         prevVrom = self.vrom
@@ -238,6 +239,63 @@ class File:
                 else:
                     assert isinstance(prevVrom, int)
                     offset = address - prevVrom
+                if offset < 0:
+                    return None
+                return prevSym, offset
+
+        return None
+
+    def findSymbolByVram(self, address: int) -> tuple[Symbol, int]|None:
+        prevSym: Symbol|None = None
+
+        for sym in self._symbols:
+            if sym.vram == address:
+                return sym, 0
+            if sym.vrom == address:
+                return sym, 0
+
+            if prevSym is not None:
+                if sym.vram > address:
+                    offset = address - sym.vram
+                    if offset < 0:
+                        return None
+                    return prevSym, offset
+
+            prevSym = sym
+
+        if prevSym is not None:
+            if prevSym.size is not None and prevSym.vram + prevSym.size > address:
+                offset = address - prevSym.vram
+                if offset < 0:
+                    return None
+                return prevSym, offset
+
+        return None
+
+    def findSymbolByVrom(self, address: int) -> tuple[Symbol, int]|None:
+        prevVrom = self.vrom if self.vrom is not None else 0
+        prevSym: Symbol|None = None
+
+        for sym in self._symbols:
+            if sym.vram == address:
+                return sym, 0
+            if sym.vrom == address:
+                return sym, 0
+
+            if prevSym is not None:
+                if sym.vrom is not None and sym.vrom > address:
+                    offset = address - prevVrom
+                    if offset < 0:
+                        return None
+                    return prevSym, offset
+
+            if sym.vrom is not None:
+                prevVrom = sym.vrom
+            prevSym = sym
+
+        if prevSym is not None:
+            if prevSym.vrom is not None and prevSym.size is not None and prevSym.vrom + prevSym.size > address:
+                offset = address - prevVrom
                 if offset < 0:
                     return None
                 return prevSym, offset
@@ -385,9 +443,26 @@ class Segment:
                 return FoundSymbolInfo(file, sym)
         return None
 
+    #! @deprecated: Use either `findSymbolByVram` or `findSymbolByVrom` instead.
     def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo|None:
         for file in self._filesList:
             pair = file.findSymbolByVramOrVrom(address)
+            if pair is not None:
+                sym, offset = pair
+                return FoundSymbolInfo(file, sym, offset)
+        return None
+
+    def findSymbolByVram(self, address: int) -> FoundSymbolInfo|None:
+        for file in self._filesList:
+            pair = file.findSymbolByVram(address)
+            if pair is not None:
+                sym, offset = pair
+                return FoundSymbolInfo(file, sym, offset)
+        return None
+
+    def findSymbolByVrom(self, address: int) -> FoundSymbolInfo|None:
+        for file in self._filesList:
+            pair = file.findSymbolByVrom(address)
             if pair is not None:
                 sym, offset = pair
                 return FoundSymbolInfo(file, sym, offset)
@@ -622,9 +697,24 @@ class MapFile:
                 return info
         return None
 
+    #! @deprecated: Use either `findSymbolByVram` or `findSymbolByVrom` instead.
     def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo|None:
         for segment in self._segmentsList:
             info = segment.findSymbolByVramOrVrom(address)
+            if info is not None:
+                return info
+        return None
+
+    def findSymbolByVram(self, address: int) -> FoundSymbolInfo|None:
+        for segment in self._segmentsList:
+            info = segment.findSymbolByVram(address)
+            if info is not None:
+                return info
+        return None
+
+    def findSymbolByVrom(self, address: int) -> FoundSymbolInfo|None:
+        for segment in self._segmentsList:
+            info = segment.findSymbolByVrom(address)
             if info is not None:
                 return info
         return None
