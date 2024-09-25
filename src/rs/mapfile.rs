@@ -239,7 +239,15 @@ impl MapFile {
             prev_line = line;
         }
 
-        for (i, segment) in temp_segment_list.iter_mut().enumerate() {
+        self.segments_list = Self::post_process_segments_gnu(temp_segment_list);
+    }
+
+    fn post_process_segments_gnu(
+        temp_segment_list: Vec<segment::Segment>,
+    ) -> Vec<segment::Segment> {
+        let mut segments_list = Vec::with_capacity(temp_segment_list.len());
+
+        for (i, segment) in temp_segment_list.into_iter().enumerate() {
             if i == 0 && segment.is_placeholder() {
                 // skip the dummy segment if it has no size, files or symbols
                 continue;
@@ -248,7 +256,7 @@ impl MapFile {
             let mut new_segment = segment.clone_no_filelist();
 
             let mut vrom_offset = segment.vrom;
-            for file in segment.files_list.iter_mut() {
+            for mut file in segment.files_list.into_iter() {
                 let mut acummulated_size = 0;
                 let symbols_count = file.symbols.len();
                 let is_noload_section = file.is_noload_section();
@@ -308,11 +316,14 @@ impl MapFile {
                     vrom_offset += file.size;
                 }
 
-                new_segment.files_list.push(file.clone());
+                new_segment.files_list.push(file);
             }
 
-            self.segments_list.push(new_segment);
+            segments_list.push(new_segment);
         }
+
+        segments_list.shrink_to_fit();
+        segments_list
     }
 
     /**
@@ -414,7 +425,15 @@ impl MapFile {
             }
         }
 
-        for (i, segment) in temp_segment_list.iter_mut().enumerate() {
+        self.segments_list = Self::post_process_segments_lld(temp_segment_list);
+    }
+
+    fn post_process_segments_lld(
+        temp_segment_list: Vec<segment::Segment>,
+    ) -> Vec<segment::Segment> {
+        let mut segments_list = Vec::with_capacity(temp_segment_list.len());
+
+        for (i, segment) in temp_segment_list.into_iter().enumerate() {
             if i == 0 && segment.is_placeholder() {
                 // skip the dummy segment if it has no size, files or symbols
                 continue;
@@ -422,7 +441,7 @@ impl MapFile {
 
             let mut new_segment = segment.clone_no_filelist();
 
-            for file in segment.files_list.iter_mut() {
+            for mut file in segment.files_list.into_iter() {
                 if file.is_placeholder() {
                     // drop placeholders
                     continue;
@@ -455,11 +474,14 @@ impl MapFile {
                     }
                 }
 
-                new_segment.files_list.push(file.clone());
+                new_segment.files_list.push(file);
             }
 
-            self.segments_list.push(new_segment);
+            segments_list.push(new_segment);
         }
+
+        segments_list.shrink_to_fit();
+        segments_list
     }
 
     pub fn filter_by_section_type(&self, section_type: &str) -> Self {
@@ -731,11 +753,11 @@ impl MapFile {
     }
 
     /// Useful for finding bss reorders
-    pub fn compare_files_and_symbols(
-        &self,
-        other_map_file: &Self,
+    pub fn compare_files_and_symbols<'a>(
+        &'a self,
+        other_map_file: &'a Self,
         check_other_on_self: bool,
-    ) -> maps_comparison_info::MapsComparisonInfo {
+    ) -> maps_comparison_info::MapsComparisonInfo<'a> {
         let mut comp_info = maps_comparison_info::MapsComparisonInfo::new();
 
         for segment in &self.segments_list {
@@ -743,24 +765,24 @@ impl MapFile {
                 for symbol in &file.symbols {
                     if let Some(found_sym_info) = other_map_file.find_symbol_by_name(&symbol.name) {
                         let comp = symbol_comparison_info::SymbolComparisonInfo::new(
-                            symbol.clone(),
+                            symbol,
                             symbol.vram,
-                            Some(file.clone()),
+                            Some(file),
                             symbol.vram,
                             Some(found_sym_info.file),
                         );
 
                         if comp.diff() != Some(0) {
-                            comp_info.bad_files.insert(file.clone());
+                            comp_info.bad_files.insert(file);
                         }
                         comp_info.compared_list.push(comp);
                     } else {
-                        comp_info.missing_files.insert(file.clone());
+                        comp_info.missing_files.insert(file);
                         comp_info.compared_list.push(
                             symbol_comparison_info::SymbolComparisonInfo::new(
-                                symbol.clone(),
+                                symbol,
                                 symbol.vram,
-                                Some(file.clone()),
+                                Some(file),
                                 u64::MAX,
                                 None,
                             ),
@@ -777,14 +799,14 @@ impl MapFile {
                         let found_sym_info = self.find_symbol_by_name(&symbol.name);
 
                         if found_sym_info.is_none() {
-                            comp_info.missing_files.insert(file.clone());
+                            comp_info.missing_files.insert(file);
                             comp_info.compared_list.push(
                                 symbol_comparison_info::SymbolComparisonInfo::new(
-                                    symbol.clone(),
+                                    symbol,
                                     u64::MAX,
                                     None,
                                     symbol.vram,
-                                    Some(file.clone()),
+                                    Some(file),
                                 ),
                             );
                         }
@@ -901,32 +923,49 @@ pub(crate) mod python_bindings {
             self.get_every_file_except_section_type(section_type)
         }
 
-        fn findSymbolByName(&self, sym_name: &str) -> Option<found_symbol_info::FoundSymbolInfo> {
+        fn findSymbolByName(
+            &self,
+            sym_name: &str,
+        ) -> Option<found_symbol_info::python_bindings::PyFoundSymbolInfo> {
             self.find_symbol_by_name(sym_name)
+                .map(found_symbol_info::python_bindings::PyFoundSymbolInfo::from)
         }
 
         fn findSymbolByVramOrVrom(
             &self,
             address: u64,
-        ) -> Option<found_symbol_info::FoundSymbolInfo> {
+        ) -> Option<found_symbol_info::python_bindings::PyFoundSymbolInfo> {
             #[allow(deprecated)]
             self.find_symbol_by_vram_or_vrom(address)
+                .map(found_symbol_info::python_bindings::PyFoundSymbolInfo::from)
         }
 
         fn findSymbolByVram(
             &self,
             address: u64,
-        ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<file::File>) {
+        ) -> (
+            Option<found_symbol_info::python_bindings::PyFoundSymbolInfo>,
+            Vec<file::File>,
+        ) {
             let (info, possible_files) = self.find_symbol_by_vram(address);
-            (info, possible_files.into_iter().cloned().collect())
+            (
+                info.map(found_symbol_info::python_bindings::PyFoundSymbolInfo::from),
+                possible_files.into_iter().cloned().collect(),
+            )
         }
 
         fn findSymbolByVrom(
             &self,
             address: u64,
-        ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<file::File>) {
+        ) -> (
+            Option<found_symbol_info::python_bindings::PyFoundSymbolInfo>,
+            Vec<file::File>,
+        ) {
             let (info, possible_files) = self.find_symbol_by_vrom(address);
-            (info, possible_files.into_iter().cloned().collect())
+            (
+                info.map(found_symbol_info::python_bindings::PyFoundSymbolInfo::from),
+                possible_files.into_iter().cloned().collect(),
+            )
         }
 
         fn findLowestDifferingSymbol(
@@ -974,8 +1013,9 @@ pub(crate) mod python_bindings {
             &self,
             other_map_file: &Self,
             check_other_on_self: bool,
-        ) -> maps_comparison_info::MapsComparisonInfo {
+        ) -> maps_comparison_info::python_bindings::PyMapsComparisonInfo {
             self.compare_files_and_symbols(other_map_file, check_other_on_self)
+                .into()
         }
 
         #[pyo3(signature=(print_vram=true, skip_without_symbols=true))]

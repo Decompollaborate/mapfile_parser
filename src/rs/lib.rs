@@ -33,9 +33,9 @@ fn mapfile_parser(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
     m.add_class::<segment::Segment>()?;
     m.add_class::<file::File>()?;
     m.add_class::<symbol::Symbol>()?;
-    m.add_class::<found_symbol_info::FoundSymbolInfo>()?;
-    m.add_class::<symbol_comparison_info::SymbolComparisonInfo>()?;
-    m.add_class::<maps_comparison_info::MapsComparisonInfo>()?;
+    m.add_class::<found_symbol_info::python_bindings::PyFoundSymbolInfo>()?;
+    m.add_class::<symbol_comparison_info::python_bindings::PySymbolComparisonInfo>()?;
+    m.add_class::<maps_comparison_info::python_bindings::PyMapsComparisonInfo>()?;
     m.add_class::<progress_stats::ProgressStats>()?;
     Ok(())
 }

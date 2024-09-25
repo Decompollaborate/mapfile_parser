@@ -5,20 +5,16 @@ use std::collections::HashSet;
 
 use crate::{file, symbol_comparison_info};
 
-#[cfg(feature = "python_bindings")]
-use pyo3::prelude::*;
-
 #[derive(Debug, Clone)]
-#[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
-pub struct MapsComparisonInfo {
-    pub bad_files: HashSet<file::File>,
+pub struct MapsComparisonInfo<'a> {
+    pub bad_files: HashSet<&'a file::File>,
 
-    pub missing_files: HashSet<file::File>,
+    pub missing_files: HashSet<&'a file::File>,
 
-    pub compared_list: Vec<symbol_comparison_info::SymbolComparisonInfo>,
+    pub compared_list: Vec<symbol_comparison_info::SymbolComparisonInfo<'a>>,
 }
 
-impl MapsComparisonInfo {
+impl<'a> MapsComparisonInfo<'a> {
     pub fn new() -> Self {
         Self {
             bad_files: HashSet::new(),
@@ -28,7 +24,7 @@ impl MapsComparisonInfo {
     }
 }
 
-impl Default for MapsComparisonInfo {
+impl<'a> Default for MapsComparisonInfo<'a> {
     fn default() -> Self {
         Self::new()
     }
@@ -43,11 +39,25 @@ pub(crate) mod python_bindings {
 
     use crate::{file, symbol_comparison_info};
 
+    #[derive(Debug, Clone)]
+    #[pyclass(module = "mapfile_parser", name = "MapsComparisonInfo")]
+    pub struct PyMapsComparisonInfo {
+        pub bad_files: HashSet<file::File>,
+
+        pub missing_files: HashSet<file::File>,
+
+        pub compared_list: Vec<symbol_comparison_info::python_bindings::PySymbolComparisonInfo>,
+    }
+
     #[pymethods]
-    impl super::MapsComparisonInfo {
+    impl PyMapsComparisonInfo {
         #[new]
         fn py_new() -> Self {
-            Self::new()
+            Self {
+                bad_files: HashSet::new(),
+                missing_files: HashSet::new(),
+                compared_list: Vec::new(),
+            }
         }
 
         /* Getters and setters */
@@ -75,17 +85,48 @@ pub(crate) mod python_bindings {
         }
 
         #[getter]
-        fn get_comparedList(&self) -> PyResult<Vec<symbol_comparison_info::SymbolComparisonInfo>> {
+        fn get_comparedList(
+            &self,
+        ) -> PyResult<Vec<symbol_comparison_info::python_bindings::PySymbolComparisonInfo>>
+        {
             Ok(self.compared_list.clone())
         }
 
         #[setter]
         fn set_comparedList(
             &mut self,
-            value: Vec<symbol_comparison_info::SymbolComparisonInfo>,
+            value: Vec<symbol_comparison_info::python_bindings::PySymbolComparisonInfo>,
         ) -> PyResult<()> {
             self.compared_list = value;
             Ok(())
+        }
+    }
+
+    impl<'a> From<&'a PyMapsComparisonInfo> for super::MapsComparisonInfo<'a> {
+        fn from(value: &'a PyMapsComparisonInfo) -> Self {
+            Self {
+                bad_files: value.bad_files.iter().collect(),
+                missing_files: value.missing_files.iter().collect(),
+                compared_list: value
+                    .compared_list
+                    .iter()
+                    .map(symbol_comparison_info::SymbolComparisonInfo::from)
+                    .collect(),
+            }
+        }
+    }
+
+    impl<'a> From<super::MapsComparisonInfo<'a>> for PyMapsComparisonInfo {
+        fn from(value: super::MapsComparisonInfo) -> Self {
+            Self {
+                bad_files: value.bad_files.into_iter().cloned().collect(),
+                missing_files: value.missing_files.into_iter().cloned().collect(),
+                compared_list: value
+                    .compared_list
+                    .into_iter()
+                    .map(symbol_comparison_info::python_bindings::PySymbolComparisonInfo::from)
+                    .collect(),
+            }
         }
     }
 }

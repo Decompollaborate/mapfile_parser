@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.1] - 2024-09-25
+
+### Added
+
+- Add `--json` flag to `progress` frontend.
+  - Prints the output as json instead of using a human readable format.
+
+### Changed
+
+- Improve lifetime usage and avoid unnecessary clones on Rust side.
+
 ## [2.7.0] - 2024-09-24
 
 ### Added
@@ -415,6 +426,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.7.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.0...2.7.1
 [2.7.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.6.0...2.7.0
 [2.6.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.5.1...2.6.0
 [2.5.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.5.0...2.5.1
