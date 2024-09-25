@@ -239,7 +239,13 @@ impl MapFile {
             prev_line = line;
         }
 
-        for (i, segment) in temp_segment_list.iter_mut().enumerate() {
+        self.segments_list = Self::post_process_segments_gnu(temp_segment_list);
+    }
+
+    fn post_process_segments_gnu(temp_segment_list: Vec<segment::Segment>) -> Vec<segment::Segment> {
+        let mut segments_list = Vec::with_capacity(temp_segment_list.len());
+
+        for (i, segment) in temp_segment_list.into_iter().enumerate() {
             if i == 0 && segment.is_placeholder() {
                 // skip the dummy segment if it has no size, files or symbols
                 continue;
@@ -248,7 +254,7 @@ impl MapFile {
             let mut new_segment = segment.clone_no_filelist();
 
             let mut vrom_offset = segment.vrom;
-            for file in segment.files_list.iter_mut() {
+            for mut file in segment.files_list.into_iter() {
                 let mut acummulated_size = 0;
                 let symbols_count = file.symbols.len();
                 let is_noload_section = file.is_noload_section();
@@ -308,11 +314,14 @@ impl MapFile {
                     vrom_offset += file.size;
                 }
 
-                new_segment.files_list.push(file.clone());
+                new_segment.files_list.push(file);
             }
 
-            self.segments_list.push(new_segment);
+            segments_list.push(new_segment);
         }
+
+        segments_list.shrink_to_fit();
+        segments_list
     }
 
     /**
@@ -414,7 +423,13 @@ impl MapFile {
             }
         }
 
-        for (i, segment) in temp_segment_list.iter_mut().enumerate() {
+        self.segments_list = Self::post_process_segments_lld(temp_segment_list);
+    }
+
+    fn post_process_segments_lld(temp_segment_list: Vec<segment::Segment>) -> Vec<segment::Segment> {
+        let mut segments_list = Vec::with_capacity(temp_segment_list.len());
+
+        for (i, segment) in temp_segment_list.into_iter().enumerate() {
             if i == 0 && segment.is_placeholder() {
                 // skip the dummy segment if it has no size, files or symbols
                 continue;
@@ -422,7 +437,7 @@ impl MapFile {
 
             let mut new_segment = segment.clone_no_filelist();
 
-            for file in segment.files_list.iter_mut() {
+            for mut file in segment.files_list.into_iter() {
                 if file.is_placeholder() {
                     // drop placeholders
                     continue;
@@ -455,11 +470,14 @@ impl MapFile {
                     }
                 }
 
-                new_segment.files_list.push(file.clone());
+                new_segment.files_list.push(file);
             }
 
-            self.segments_list.push(new_segment);
+            segments_list.push(new_segment);
         }
+
+        segments_list.shrink_to_fit();
+        segments_list
     }
 
     pub fn filter_by_section_type(&self, section_type: &str) -> Self {
