@@ -7,6 +7,29 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.0] - 2024-09-24
+
+### Added
+
+- `MapFile.findSymbolByVram` and `MapFile.findSymbolByVrom` methods.
+  - Allow to search a symbol given a given address. The address will be treated
+    as either a vram address or a vrom address respectively.
+- Add `--vram`, `--vrom` and `--name` arguments to `sym_info` frontend.
+  - Allow to tell to `sym_info` exactly how to treat the argument instead of
+    trying to guess how to use it.
+- `sym_info` can now detect that an address may belong to a file even when the
+  symbol itself may not exist on the mapfile.
+  - This can happen for local symbols, for example for rodata literals.
+
+### Deprecated
+
+- `MapFile.findSymbolByVramOrVrom`.
+  - Use `MapFile.findSymbolByVram` and `MapFile.findSymbolByVrom` instead.
+
+### Fixed
+
+- Fix typo that prevented using `jsonify`.
+
 ## [2.6.0] - 2024-08-26
 
 ### Added
@@ -392,6 +415,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.7.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.6.0...2.7.0
 [2.6.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.5.1...2.6.0
 [2.5.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.5.0...2.5.1
 [2.5.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.4.0...2.5.0

@@ -503,17 +503,56 @@ impl MapFile {
         None
     }
 
+    #[deprecated(
+        since = "2.7.0",
+        note = "Use `find_symbol_by_vram` or `find_symbol_by_vrom` instead."
+    )]
     pub fn find_symbol_by_vram_or_vrom(
         &self,
         address: u64,
     ) -> Option<found_symbol_info::FoundSymbolInfo> {
         for segment in &self.segments_list {
+            #[allow(deprecated)]
             if let Some(info) = segment.find_symbol_by_vram_or_vrom(address) {
                 return Some(info);
             }
         }
 
         None
+    }
+
+    pub fn find_symbol_by_vram(
+        &self,
+        address: u64,
+    ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<&file::File>) {
+        let mut possible_files = Vec::new();
+
+        for segment in &self.segments_list {
+            let (maybe_info, possible_files_aux) = segment.find_symbol_by_vram(address);
+            if let Some(info) = maybe_info {
+                return (Some(info), Vec::new());
+            }
+            possible_files.extend(possible_files_aux);
+        }
+
+        (None, possible_files)
+    }
+
+    pub fn find_symbol_by_vrom(
+        &self,
+        address: u64,
+    ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<&file::File>) {
+        let mut possible_files = Vec::new();
+
+        for segment in &self.segments_list {
+            let (maybe_info, possible_files_aux) = segment.find_symbol_by_vrom(address);
+            if let Some(info) = maybe_info {
+                return (Some(info), Vec::new());
+            }
+            possible_files.extend(possible_files_aux);
+        }
+
+        (None, possible_files)
     }
 
     pub fn find_lowest_differing_symbol(
@@ -870,7 +909,24 @@ pub(crate) mod python_bindings {
             &self,
             address: u64,
         ) -> Option<found_symbol_info::FoundSymbolInfo> {
+            #[allow(deprecated)]
             self.find_symbol_by_vram_or_vrom(address)
+        }
+
+        fn findSymbolByVram(
+            &self,
+            address: u64,
+        ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<file::File>) {
+            let (info, possible_files) = self.find_symbol_by_vram(address);
+            (info, possible_files.into_iter().cloned().collect())
+        }
+
+        fn findSymbolByVrom(
+            &self,
+            address: u64,
+        ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<file::File>) {
+            let (info, possible_files) = self.find_symbol_by_vrom(address);
+            (info, possible_files.into_iter().cloned().collect())
         }
 
         fn findLowestDifferingSymbol(

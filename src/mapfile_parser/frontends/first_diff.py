@@ -61,10 +61,12 @@ def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRom
             or builtRom[i + 3] != expectedRom[i + 3]
         ):
             if diffs == 0:
-                vromInfo = builtMapFile.findSymbolByVramOrVrom(i)
+                vromInfo, possibleFiles = builtMapFile.findSymbolByVrom(i)
                 extraMessage = ""
                 if vromInfo is not None:
                     extraMessage = f", {vromInfo.getAsStrPlusOffset()}"
+                elif len(possibleFiles) > 0:
+                    extraMessage = f", in file {possibleFiles[0].asStr()}"
                 print(f"First difference at ROM addr 0x{i:X}{extraMessage}")
                 builtBytes = builtRom[i : i + 4]
                 expectedBytes = expectedRom[i : i + 4]
@@ -80,15 +82,13 @@ def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRom
             len(map_search_diff) < diffCount
             and builtRom[i+endian_diff] >> 2 != expectedRom[i+endian_diff] >> 2
         ):
-            vromInfo = builtMapFile.findSymbolByVramOrVrom(i)
+            vromInfo, possibleFiles = builtMapFile.findSymbolByVrom(i)
             if vromInfo is not None:
                 vromMessage = vromInfo.getAsStr()
                 if vromMessage not in map_search_diff:
                     map_search_diff.add(vromMessage)
 
-                    extraMessage = ""
-                    if vromInfo is not None:
-                        extraMessage = f", {vromInfo.getAsStrPlusOffset()}"
+                    extraMessage = f", {vromInfo.getAsStrPlusOffset()}"
                     print(f"Instruction difference at ROM addr 0x{i:X}{extraMessage}")
                     builtBytes = builtRom[i : i + 4]
                     expectedBytes = expectedRom[i : i + 4]
@@ -98,6 +98,17 @@ def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRom
                         expectedConverted = bytesConverterCallback(expectedBytes, expectedMapFile)
                         if builtConverted is not None and expectedConverted is not None:
                             print(f"{builtConverted} vs {expectedConverted}")
+            elif len(possibleFiles) > 0:
+                extraMessage = f", in file {possibleFiles[0].asStr()}"
+                print(f"Instruction difference at ROM addr 0x{i:X}{extraMessage}")
+                builtBytes = builtRom[i : i + 4]
+                expectedBytes = expectedRom[i : i + 4]
+                print(f"Bytes: {utils.hexbytes(builtBytes, addColons=addColons)} vs {utils.hexbytes(expectedBytes, addColons=addColons)}")
+                if bytesConverterCallback is not None:
+                    builtConverted = bytesConverterCallback(builtBytes, builtMapFile)
+                    expectedConverted = bytesConverterCallback(expectedBytes, expectedMapFile)
+                    if builtConverted is not None and expectedConverted is not None:
+                        print(f"{builtConverted} vs {expectedConverted}")
 
         if len(map_search_diff) >= diffCount and diffs > shift_cap:
             break

@@ -78,6 +78,10 @@ impl File {
         self.symbols.iter_mut().find(|sym| sym.name == sym_name)
     }
 
+    #[deprecated(
+        since = "2.7.0",
+        note = "Use `find_symbol_by_vram` or `find_symbol_by_vrom` instead."
+    )]
     pub fn find_symbol_by_vram_or_vrom(&self, address: u64) -> Option<(&symbol::Symbol, i64)> {
         let mut prev_sym: Option<&symbol::Symbol> = None;
 
@@ -135,6 +139,86 @@ impl File {
                         return None;
                     }
                     return Some((prev_sym_temp, offset));
+                }
+            }
+        }
+
+        None
+    }
+
+    pub fn find_symbol_by_vram(&self, address: u64) -> Option<(&symbol::Symbol, i64)> {
+        let mut prev_sym: Option<&symbol::Symbol> = None;
+
+        for sym in &self.symbols {
+            if sym.vram == address {
+                return Some((sym, 0));
+            }
+
+            if let Some(prev_sym_temp) = prev_sym {
+                if sym.vram > address {
+                    let offset = address as i64 - prev_sym_temp.vram as i64;
+                    if offset < 0 {
+                        return None;
+                    }
+                    return Some((prev_sym_temp, offset));
+                }
+            }
+
+            prev_sym = Some(sym);
+        }
+
+        if let Some(prev_sym_temp) = prev_sym {
+            if let Some(prev_sym_temp_size) = prev_sym_temp.size {
+                if prev_sym_temp.vram + prev_sym_temp_size > address {
+                    let offset = address as i64 - prev_sym_temp.vram as i64;
+                    if offset < 0 {
+                        return None;
+                    }
+                    return Some((prev_sym_temp, offset));
+                }
+            }
+        }
+
+        None
+    }
+
+    pub fn find_symbol_by_vrom(&self, address: u64) -> Option<(&symbol::Symbol, i64)> {
+        let mut prev_sym: Option<&symbol::Symbol> = None;
+
+        for sym in &self.symbols {
+            if let Some(sym_vrom_temp) = sym.vrom {
+                if sym_vrom_temp == address {
+                    return Some((sym, 0));
+                }
+            }
+
+            if let Some(prev_sym_temp) = prev_sym {
+                if let Some(sym_vrom) = sym.vrom {
+                    if sym_vrom > address {
+                        if let Some(prev_vrom_temp) = prev_sym_temp.vrom {
+                            let offset = address as i64 - prev_vrom_temp as i64;
+                            if offset < 0 {
+                                return None;
+                            }
+                            return Some((prev_sym_temp, offset));
+                        }
+                    }
+                }
+            }
+
+            prev_sym = Some(sym);
+        }
+
+        if let Some(prev_sym_temp) = prev_sym {
+            if let Some(prev_sym_temp_size) = prev_sym_temp.size {
+                if let Some(prev_sym_temp_vrom) = prev_sym_temp.vrom {
+                    if prev_sym_temp_vrom + prev_sym_temp_size > address {
+                        let offset = address as i64 - prev_sym_temp_vrom as i64;
+                        if offset < 0 {
+                            return None;
+                        }
+                        return Some((prev_sym_temp, offset));
+                    }
                 }
             }
         }
@@ -429,7 +513,24 @@ pub(crate) mod python_bindings {
         }
 
         fn findSymbolByVramOrVrom(&self, address: u64) -> Option<(symbol::Symbol, i64)> {
+            #[allow(deprecated)]
             if let Some((sym, offset)) = self.find_symbol_by_vram_or_vrom(address) {
+                Some((sym.clone(), offset))
+            } else {
+                None
+            }
+        }
+
+        fn findSymbolByVram(&self, address: u64) -> Option<(symbol::Symbol, i64)> {
+            if let Some((sym, offset)) = self.find_symbol_by_vram(address) {
+                Some((sym.clone(), offset))
+            } else {
+                None
+            }
+        }
+
+        fn findSymbolByVrom(&self, address: u64) -> Option<(symbol::Symbol, i64)> {
+            if let Some((sym, offset)) = self.find_symbol_by_vrom(address) {
                 Some((sym.clone(), offset))
             } else {
                 None
