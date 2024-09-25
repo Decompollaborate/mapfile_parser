@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.0] - 2024-09-24
+
 ### Added
 
 - `MapFile.findSymbolByVram` and `MapFile.findSymbolByVrom` methods.
@@ -407,6 +409,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.7.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.6.0...2.7.0
 [2.6.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.5.1...2.6.0
 [2.5.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.5.0...2.5.1
 [2.5.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.4.0...2.5.0

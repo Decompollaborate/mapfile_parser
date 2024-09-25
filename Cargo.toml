@@ -3,7 +3,7 @@
 
 [package]
 name = "mapfile_parser"
-version = "2.7.0-dev0"
+version = "2.7.0"
 edition = "2021"
 rust-version = "1.65.0"
 authors = ["Anghelo Carvajal <angheloalf95@gmail.com>"]
