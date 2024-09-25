@@ -3,30 +3,26 @@
 
 use crate::{file, symbol};
 
-#[cfg(feature = "python_bindings")]
-use pyo3::prelude::*;
-
 #[derive(Debug, Clone)]
-#[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
-pub struct SymbolComparisonInfo {
-    pub symbol: symbol::Symbol,
+pub struct SymbolComparisonInfo<'a> {
+    pub symbol: &'a symbol::Symbol,
 
     pub build_address: u64,
 
-    pub build_file: Option<file::File>,
+    pub build_file: Option<&'a file::File>,
 
     pub expected_address: u64,
 
-    pub expected_file: Option<file::File>,
+    pub expected_file: Option<&'a file::File>,
 }
 
-impl SymbolComparisonInfo {
+impl<'a> SymbolComparisonInfo<'a> {
     pub fn new(
-        symbol: symbol::Symbol,
+        symbol: &'a symbol::Symbol,
         build_address: u64,
-        build_file: Option<file::File>,
+        build_file: Option<&'a file::File>,
         expected_address: u64,
-        expected_file: Option<file::File>,
+        expected_file: Option<&'a file::File>,
     ) -> Self {
         Self {
             symbol,
@@ -72,24 +68,38 @@ pub(crate) mod python_bindings {
 
     use crate::{file, symbol};
 
+    #[derive(Debug, Clone)]
+    #[pyclass(module = "mapfile_parser", name = "SymbolComparisonInfo")]
+    pub struct PySymbolComparisonInfo {
+        pub symbol: symbol::Symbol,
+
+        pub build_address: u64,
+
+        pub build_file: Option<file::File>,
+
+        pub expected_address: u64,
+
+        pub expected_file: Option<file::File>,
+    }
+
     #[pymethods]
-    impl super::SymbolComparisonInfo {
+    impl PySymbolComparisonInfo {
         #[new]
         #[pyo3(signature = (symbol, build_address, build_file, expected_address, expected_file))]
-        fn py_new(
+        fn new(
             symbol: symbol::Symbol,
             build_address: u64,
             build_file: Option<file::File>,
             expected_address: u64,
             expected_file: Option<file::File>,
         ) -> Self {
-            Self::new(
+            Self {
                 symbol,
                 build_address,
                 build_file,
                 expected_address,
                 expected_file,
-            )
+            }
         }
 
         /* Getters and setters */
@@ -147,7 +157,32 @@ pub(crate) mod python_bindings {
 
         #[pyo3(name = "diff")]
         fn py_diff(&self) -> PyResult<Option<i64>> {
-            Ok(self.diff())
+            let temp = super::SymbolComparisonInfo::from(self);
+            Ok(temp.diff())
+        }
+    }
+
+    impl<'a> From<&'a PySymbolComparisonInfo> for super::SymbolComparisonInfo<'a> {
+        fn from(value: &'a PySymbolComparisonInfo) -> Self {
+            Self::new(
+                &value.symbol,
+                value.build_address,
+                value.build_file.as_ref(),
+                value.expected_address,
+                value.expected_file.as_ref(),
+            )
+        }
+    }
+
+    impl<'a> From<super::SymbolComparisonInfo<'a>> for PySymbolComparisonInfo {
+        fn from(value: super::SymbolComparisonInfo) -> Self {
+            Self::new(
+                value.symbol.clone(),
+                value.build_address,
+                value.build_file.cloned(),
+                value.expected_address,
+                value.expected_file.cloned(),
+            )
         }
     }
 }

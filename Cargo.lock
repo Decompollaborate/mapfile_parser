@@ -65,7 +65,7 @@ dependencies = [
 
 [[package]]
 name = "mapfile_parser"
-version = "2.7.0"
+version = "2.7.1-dev0"
 dependencies = [
  "lazy_static",
  "pyo3",

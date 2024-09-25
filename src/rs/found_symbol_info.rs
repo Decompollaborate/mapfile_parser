@@ -4,21 +4,17 @@
 use crate::{file, symbol};
 use std::fmt::Write;
 
-#[cfg(feature = "python_bindings")]
-use pyo3::prelude::*;
-
 #[derive(Debug, Clone)]
-#[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
-pub struct FoundSymbolInfo {
-    pub file: file::File,
+pub struct FoundSymbolInfo<'a> {
+    pub file: &'a file::File,
 
-    pub symbol: symbol::Symbol,
+    pub symbol: &'a symbol::Symbol,
 
     pub offset: i64,
 }
 
-impl FoundSymbolInfo {
-    pub fn new(file: file::File, symbol: symbol::Symbol, offset: i64) -> Self {
+impl<'a> FoundSymbolInfo<'a> {
+    pub fn new(file: &'a file::File, symbol: &'a symbol::Symbol, offset: i64) -> Self {
         Self {
             file,
             symbol,
@@ -26,7 +22,7 @@ impl FoundSymbolInfo {
         }
     }
 
-    pub fn new_default(file: file::File, symbol: symbol::Symbol) -> Self {
+    pub fn new_default(file: &'a file::File, symbol: &'a symbol::Symbol) -> Self {
         Self {
             file,
             symbol,
@@ -70,12 +66,26 @@ pub(crate) mod python_bindings {
 
     use crate::{file, symbol};
 
+    #[derive(Debug, Clone)]
+    #[pyclass(module = "mapfile_parser", name = "FoundSymbolInfo")]
+    pub struct PyFoundSymbolInfo {
+        pub file: file::File,
+
+        pub symbol: symbol::Symbol,
+
+        pub offset: i64,
+    }
+
     #[pymethods]
-    impl super::FoundSymbolInfo {
+    impl PyFoundSymbolInfo {
         #[new]
         #[pyo3(signature=(file, symbol, offset=0))]
-        fn py_new(file: file::File, symbol: symbol::Symbol, offset: i64) -> Self {
-            Self::new(file, symbol, offset)
+        fn new(file: file::File, symbol: symbol::Symbol, offset: i64) -> Self {
+            Self {
+                file,
+                symbol,
+                offset,
+            }
         }
 
         /* Getters and setters */
@@ -117,12 +127,26 @@ pub(crate) mod python_bindings {
 
         #[pyo3(name = "getAsStr")]
         fn getAsStr(&self) -> String {
-            self.get_as_str()
+            let temp = super::FoundSymbolInfo::from(self);
+            temp.get_as_str()
         }
 
         #[pyo3(name = "getAsStrPlusOffset")]
         fn getAsStrPlusOffset(&self, sym_name: Option<String>) -> String {
-            self.get_as_str_plus_offset(sym_name)
+            let temp = super::FoundSymbolInfo::from(self);
+            temp.get_as_str_plus_offset(sym_name)
+        }
+    }
+
+    impl<'a> From<&'a PyFoundSymbolInfo> for super::FoundSymbolInfo<'a> {
+        fn from(value: &'a PyFoundSymbolInfo) -> Self {
+            Self::new(&value.file, &value.symbol, value.offset)
+        }
+    }
+
+    impl<'a> From<super::FoundSymbolInfo<'a>> for PyFoundSymbolInfo {
+        fn from(value: super::FoundSymbolInfo) -> Self {
+            Self::new(value.file.clone(), value.symbol.clone(), value.offset)
         }
     }
 }

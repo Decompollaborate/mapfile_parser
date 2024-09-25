@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Improve lifetime usage and avoid unnecessary clones on Rust side.
+
 ## [2.7.0] - 2024-09-24
 
 ### Added

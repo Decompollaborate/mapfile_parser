@@ -75,10 +75,7 @@ impl Segment {
     ) -> Option<found_symbol_info::FoundSymbolInfo> {
         for file in &self.files_list {
             if let Some(sym) = file.find_symbol_by_name(sym_name) {
-                return Some(found_symbol_info::FoundSymbolInfo::new_default(
-                    file.clone(),
-                    sym.clone(),
-                ));
+                return Some(found_symbol_info::FoundSymbolInfo::new_default(file, sym));
             }
         }
         None
@@ -95,11 +92,7 @@ impl Segment {
         for file in &self.files_list {
             #[allow(deprecated)]
             if let Some((sym, offset)) = file.find_symbol_by_vram_or_vrom(address) {
-                return Some(found_symbol_info::FoundSymbolInfo::new(
-                    file.clone(),
-                    sym.clone(),
-                    offset,
-                ));
+                return Some(found_symbol_info::FoundSymbolInfo::new(file, sym, offset));
             }
         }
         None
@@ -113,11 +106,7 @@ impl Segment {
         for file in &self.files_list {
             if let Some((sym, offset)) = file.find_symbol_by_vram(address) {
                 return (
-                    Some(found_symbol_info::FoundSymbolInfo::new(
-                        file.clone(),
-                        sym.clone(),
-                        offset,
-                    )),
+                    Some(found_symbol_info::FoundSymbolInfo::new(file, sym, offset)),
                     Vec::new(),
                 );
             }
@@ -136,11 +125,7 @@ impl Segment {
         for file in &self.files_list {
             if let Some((sym, offset)) = file.find_symbol_by_vrom(address) {
                 return (
-                    Some(found_symbol_info::FoundSymbolInfo::new(
-                        file.clone(),
-                        sym.clone(),
-                        offset,
-                    )),
+                    Some(found_symbol_info::FoundSymbolInfo::new(file, sym, offset)),
                     Vec::new(),
                 );
             }
@@ -427,32 +412,49 @@ pub(crate) mod python_bindings {
             self.get_every_file_except_section_type(section_type)
         }
 
-        fn findSymbolByName(&self, sym_name: &str) -> Option<found_symbol_info::FoundSymbolInfo> {
+        fn findSymbolByName(
+            &self,
+            sym_name: &str,
+        ) -> Option<found_symbol_info::python_bindings::PyFoundSymbolInfo> {
             self.find_symbol_by_name(sym_name)
+                .map(found_symbol_info::python_bindings::PyFoundSymbolInfo::from)
         }
 
         fn findSymbolByVramOrVrom(
             &self,
             address: u64,
-        ) -> Option<found_symbol_info::FoundSymbolInfo> {
+        ) -> Option<found_symbol_info::python_bindings::PyFoundSymbolInfo> {
             #[allow(deprecated)]
             self.find_symbol_by_vram_or_vrom(address)
+                .map(found_symbol_info::python_bindings::PyFoundSymbolInfo::from)
         }
 
         fn findSymbolByVram(
             &self,
             address: u64,
-        ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<file::File>) {
+        ) -> (
+            Option<found_symbol_info::python_bindings::PyFoundSymbolInfo>,
+            Vec<file::File>,
+        ) {
             let (info, possible_files) = self.find_symbol_by_vram(address);
-            (info, possible_files.into_iter().cloned().collect())
+            (
+                info.map(found_symbol_info::python_bindings::PyFoundSymbolInfo::from),
+                possible_files.into_iter().cloned().collect(),
+            )
         }
 
         fn findSymbolByVrom(
             &self,
             address: u64,
-        ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<file::File>) {
+        ) -> (
+            Option<found_symbol_info::python_bindings::PyFoundSymbolInfo>,
+            Vec<file::File>,
+        ) {
             let (info, possible_files) = self.find_symbol_by_vrom(address);
-            (info, possible_files.into_iter().cloned().collect())
+            (
+                info.map(found_symbol_info::python_bindings::PyFoundSymbolInfo::from),
+                possible_files.into_iter().cloned().collect(),
+            )
         }
 
         fn mixFolders(&self) -> Self {
