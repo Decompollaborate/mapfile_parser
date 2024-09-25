@@ -51,6 +51,13 @@ class ProgressStats:
     def print(self, category: str, totalStats: ProgressStats, categoryColumnSize: int=28):
         print(self.getEntryAsStr(category, totalStats, categoryColumnSize=categoryColumnSize))
 
+    def asJsonEntry(self) -> dict[str, int|float]:
+        return {
+            "decomped": self.decompedSize,
+            "total": self.total,
+            "percentage": round(self.decompedPercentage(), 4)
+        }
+
 
 def printStats(totalStats: ProgressStats, progressPerFolder: dict[str, ProgressStats]):
     ProgressStats.printHeader()
