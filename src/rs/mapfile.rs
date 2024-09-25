@@ -242,7 +242,9 @@ impl MapFile {
         self.segments_list = Self::post_process_segments_gnu(temp_segment_list);
     }
 
-    fn post_process_segments_gnu(temp_segment_list: Vec<segment::Segment>) -> Vec<segment::Segment> {
+    fn post_process_segments_gnu(
+        temp_segment_list: Vec<segment::Segment>,
+    ) -> Vec<segment::Segment> {
         let mut segments_list = Vec::with_capacity(temp_segment_list.len());
 
         for (i, segment) in temp_segment_list.into_iter().enumerate() {
@@ -426,7 +428,9 @@ impl MapFile {
         self.segments_list = Self::post_process_segments_lld(temp_segment_list);
     }
 
-    fn post_process_segments_lld(temp_segment_list: Vec<segment::Segment>) -> Vec<segment::Segment> {
+    fn post_process_segments_lld(
+        temp_segment_list: Vec<segment::Segment>,
+    ) -> Vec<segment::Segment> {
         let mut segments_list = Vec::with_capacity(temp_segment_list.len());
 
         for (i, segment) in temp_segment_list.into_iter().enumerate() {

@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add `--json` flag to `progress` frontend.
+  - Prints the output as json instead of using a human readable format.
+
 ### Changed
 
 - Improve lifetime usage and avoid unnecessary clones on Rust side.
