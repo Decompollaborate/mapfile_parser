@@ -14,6 +14,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `MapFile.findSymbolByVram` and `MapFile.findSymbolByVrom` methods.
   - Allow to search a symbol given a given address. The address will be treated
     as either a vram address or a vrom address respectively.
+- Add `--vram`, `--vrom` and `--name` arguments to `sym_info` frontend.
+  - Allow to tell to `sym_info` exactly how to treat the argument instead of
+    trying to guess how to use it.
 
 ### Deprecated
 

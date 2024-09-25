@@ -251,8 +251,6 @@ class File:
         for sym in self._symbols:
             if sym.vram == address:
                 return sym, 0
-            if sym.vrom == address:
-                return sym, 0
 
             if prevSym is not None:
                 if sym.vram > address:
@@ -277,8 +275,6 @@ class File:
         prevSym: Symbol|None = None
 
         for sym in self._symbols:
-            if sym.vram == address:
-                return sym, 0
             if sym.vrom == address:
                 return sym, 0
 
