@@ -20,29 +20,36 @@ def doSymInfo(mapPath: Path, symName: str, *, as_vram: bool=False, as_vrom: bool
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(mapPath)
 
+    possibleFiles: list[mapfile.File] = []
+
     if as_vram:
         address = int(symName, 0)
-        info = mapFile.findSymbolByVram(address)
+        info, possibleFiles = mapFile.findSymbolByVram(address)
     elif as_vrom:
         address = int(symName, 0)
-        info = mapFile.findSymbolByVrom(address)
+        info, possibleFiles = mapFile.findSymbolByVrom(address)
     elif as_name:
         info = mapFile.findSymbolByName(symName)
 
     # Start the guessing game
     elif utils.convertibleToInt(symName, 0):
         address = int(symName, 0)
-        info = mapFile.findSymbolByVram(address)
+        info, possibleFiles = mapFile.findSymbolByVram(address)
         if info is None:
-            info = mapFile.findSymbolByVrom(address)
+            info, possibleFiles2 = mapFile.findSymbolByVrom(address)
+            possibleFiles.extend(possibleFiles2)
     else:
         info = mapFile.findSymbolByName(symName)
 
-    if info is None:
-        print(f"'{symName}' not found in map file '{mapPath}'")
-        return 1
-    print(info.getAsStrPlusOffset(symName))
-    return 0
+    if info is not None:
+        print(info.getAsStrPlusOffset(symName))
+        return 0
+    print(f"'{symName}' not found in map file '{mapPath}'")
+    if len(possibleFiles) > 0:
+        print("But it may be a local symbol of either of the following files:")
+        for f in possibleFiles:
+            print(f"    {f.asStr()})")
+    return 1
 
 
 def processArguments(args: argparse.Namespace):

@@ -254,7 +254,7 @@ class File:
 
             if prevSym is not None:
                 if sym.vram > address:
-                    offset = address - sym.vram
+                    offset = address - prevSym.vram
                     if offset < 0:
                         return None
                     return prevSym, offset
@@ -345,6 +345,9 @@ class File:
 
         fileDict["symbols"] = symbolsList
         return fileDict
+
+    def asStr(self) -> str:
+        return f"{self.filepath}({self.sectionType}) (VRAM: {self.serializeVram(True)}, VROM: {self.serializeVrom(True)}, SIZE: {self.serializeSize(humanReadable=True)})"
 
 
     def copySymbolList(self) -> list[Symbol]:
@@ -448,21 +451,29 @@ class Segment:
                 return FoundSymbolInfo(file, sym, offset)
         return None
 
-    def findSymbolByVram(self, address: int) -> FoundSymbolInfo|None:
+    def findSymbolByVram(self, address: int) -> tuple[FoundSymbolInfo|None, list[File]]:
+        possibleFiles: list[File] = []
         for file in self._filesList:
             pair = file.findSymbolByVram(address)
             if pair is not None:
                 sym, offset = pair
-                return FoundSymbolInfo(file, sym, offset)
-        return None
+                return FoundSymbolInfo(file, sym, offset), []
+            if address >= file.vram and address < file.vram + file.size:
+                possibleFiles.append(file)
+        return None, possibleFiles
 
-    def findSymbolByVrom(self, address: int) -> FoundSymbolInfo|None:
+    def findSymbolByVrom(self, address: int) -> tuple[FoundSymbolInfo|None, list[File]]:
+        possibleFiles: list[File] = []
         for file in self._filesList:
+            if file.vrom is None:
+                continue
             pair = file.findSymbolByVrom(address)
             if pair is not None:
                 sym, offset = pair
-                return FoundSymbolInfo(file, sym, offset)
-        return None
+                return FoundSymbolInfo(file, sym, offset), []
+            if address >= file.vrom and address < file.vrom + file.size:
+                possibleFiles.append(file)
+        return None, possibleFiles
 
 
     def mixFolders(self) -> Segment:
@@ -701,19 +712,41 @@ class MapFile:
                 return info
         return None
 
-    def findSymbolByVram(self, address: int) -> FoundSymbolInfo|None:
-        for segment in self._segmentsList:
-            info = segment.findSymbolByVram(address)
-            if info is not None:
-                return info
-        return None
+    def findSymbolByVram(self, address: int) -> tuple[FoundSymbolInfo|None, list[File]]:
+        """
+        Returns a symbol with the specified VRAM address (or with an addend) if
+        it exists on the mapfile.
 
-    def findSymbolByVrom(self, address: int) -> FoundSymbolInfo|None:
+        If no symbol if found, then a list of possible files where this symbol
+        may belong to is returned. This may happen if the symbol is not
+        globally visible.
+        """
+
+        possibleFiles: list[File] = []
         for segment in self._segmentsList:
-            info = segment.findSymbolByVrom(address)
+            info, possibleFilesAux = segment.findSymbolByVram(address)
             if info is not None:
-                return info
-        return None
+                return info, []
+            possibleFiles.extend(possibleFilesAux)
+        return None, possibleFiles
+
+    def findSymbolByVrom(self, address: int) -> tuple[FoundSymbolInfo|None, list[File]]:
+        """
+        Returns a symbol with the specified VRAM address (or with an addend) if
+        it exists on the mapfile.
+
+        If no symbol if found, then a list of possible files where this symbol
+        may belong to is returned. This may happen if the symbol is not
+        globally visible.
+        """
+
+        possibleFiles: list[File] = []
+        for segment in self._segmentsList:
+            info, possibleFilesAux = segment.findSymbolByVrom(address)
+            if info is not None:
+                return info, []
+            possibleFiles.extend(possibleFilesAux)
+        return None, possibleFiles
 
     def findLowestDifferingSymbol(self, otherMapFile: MapFile) -> tuple[Symbol, File, Symbol|None]|None:
         minVram = None

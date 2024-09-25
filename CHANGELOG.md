@@ -17,6 +17,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Add `--vram`, `--vrom` and `--name` arguments to `sym_info` frontend.
   - Allow to tell to `sym_info` exactly how to treat the argument instead of
     trying to guess how to use it.
+- `sym_info` can now detect that an address may belong to a file even when the
+  symbol itself may not exist on the mapfile.
+  - This can happen for local symbols, for example for rodata literals.
 
 ### Deprecated
 
