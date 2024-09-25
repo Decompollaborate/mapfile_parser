@@ -105,15 +105,21 @@ impl Segment {
         None
     }
 
-    pub fn find_symbol_by_vram(&self, address: u64) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<&file::File>) {
+    pub fn find_symbol_by_vram(
+        &self,
+        address: u64,
+    ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<&file::File>) {
         let mut possible_files = Vec::new();
         for file in &self.files_list {
             if let Some((sym, offset)) = file.find_symbol_by_vram(address) {
-                return (Some(found_symbol_info::FoundSymbolInfo::new(
-                    file.clone(),
-                    sym.clone(),
-                    offset,
-                )), Vec::new());
+                return (
+                    Some(found_symbol_info::FoundSymbolInfo::new(
+                        file.clone(),
+                        sym.clone(),
+                        offset,
+                    )),
+                    Vec::new(),
+                );
             }
             if address >= file.vram && address < file.vram + file.size {
                 possible_files.push(file);
@@ -122,15 +128,21 @@ impl Segment {
         (None, possible_files)
     }
 
-    pub fn find_symbol_by_vrom(&self, address: u64) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<&file::File>) {
+    pub fn find_symbol_by_vrom(
+        &self,
+        address: u64,
+    ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<&file::File>) {
         let mut possible_files = Vec::new();
         for file in &self.files_list {
             if let Some((sym, offset)) = file.find_symbol_by_vrom(address) {
-                return (Some(found_symbol_info::FoundSymbolInfo::new(
-                    file.clone(),
-                    sym.clone(),
-                    offset,
-                )), Vec::new());
+                return (
+                    Some(found_symbol_info::FoundSymbolInfo::new(
+                        file.clone(),
+                        sym.clone(),
+                        offset,
+                    )),
+                    Vec::new(),
+                );
             }
             if address >= file.vram && address < file.vram + file.size {
                 possible_files.push(file);
@@ -427,12 +439,18 @@ pub(crate) mod python_bindings {
             self.find_symbol_by_vram_or_vrom(address)
         }
 
-        fn findSymbolByVram(&self, address: u64) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<file::File>) {
+        fn findSymbolByVram(
+            &self,
+            address: u64,
+        ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<file::File>) {
             let (info, possible_files) = self.find_symbol_by_vram(address);
             (info, possible_files.into_iter().cloned().collect())
         }
 
-        fn findSymbolByVrom(&self, address: u64) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<file::File>) {
+        fn findSymbolByVrom(
+            &self,
+            address: u64,
+        ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<file::File>) {
             let (info, possible_files) = self.find_symbol_by_vrom(address);
             (info, possible_files.into_iter().cloned().collect())
         }
