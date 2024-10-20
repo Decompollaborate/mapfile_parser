@@ -11,6 +11,9 @@ mod symbol;
 mod symbol_comparison_info;
 pub mod utils;
 
+#[cfg(feature = "objdiff_report")]
+mod report;
+
 pub use file::File;
 pub use found_symbol_info::FoundSymbolInfo;
 pub use mapfile::MapFile;
