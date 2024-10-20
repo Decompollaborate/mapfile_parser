@@ -1,7 +1,7 @@
 /* SPDX-FileCopyrightText: © 2023-2024 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
 use std::fmt::Write;
@@ -122,24 +122,22 @@ impl File {
         }
 
         if let Some(prev_sym_temp) = prev_sym {
-            if let Some(prev_sym_temp_size) = prev_sym_temp.size {
-                if let Some(prev_sym_temp_vrom) = prev_sym_temp.vrom {
-                    if prev_sym_temp_vrom + prev_sym_temp_size > address {
-                        let offset = address as i64 - prev_sym_temp_vrom as i64;
-                        if offset < 0 {
-                            return None;
-                        }
-                        return Some((prev_sym_temp, offset));
-                    }
-                }
-
-                if is_vram && prev_sym_temp.vram + prev_sym_temp_size > address {
-                    let offset = address as i64 - prev_sym_temp.vram as i64;
+            if let Some(prev_sym_temp_vrom) = prev_sym_temp.vrom {
+                if prev_sym_temp_vrom + prev_sym_temp.size > address {
+                    let offset = address as i64 - prev_sym_temp_vrom as i64;
                     if offset < 0 {
                         return None;
                     }
                     return Some((prev_sym_temp, offset));
                 }
+            }
+
+            if is_vram && prev_sym_temp.vram + prev_sym_temp.size > address {
+                let offset = address as i64 - prev_sym_temp.vram as i64;
+                if offset < 0 {
+                    return None;
+                }
+                return Some((prev_sym_temp, offset));
             }
         }
 
@@ -168,14 +166,12 @@ impl File {
         }
 
         if let Some(prev_sym_temp) = prev_sym {
-            if let Some(prev_sym_temp_size) = prev_sym_temp.size {
-                if prev_sym_temp.vram + prev_sym_temp_size > address {
-                    let offset = address as i64 - prev_sym_temp.vram as i64;
-                    if offset < 0 {
-                        return None;
-                    }
-                    return Some((prev_sym_temp, offset));
+            if prev_sym_temp.vram + prev_sym_temp.size > address {
+                let offset = address as i64 - prev_sym_temp.vram as i64;
+                if offset < 0 {
+                    return None;
                 }
+                return Some((prev_sym_temp, offset));
             }
         }
 
@@ -210,15 +206,13 @@ impl File {
         }
 
         if let Some(prev_sym_temp) = prev_sym {
-            if let Some(prev_sym_temp_size) = prev_sym_temp.size {
-                if let Some(prev_sym_temp_vrom) = prev_sym_temp.vrom {
-                    if prev_sym_temp_vrom + prev_sym_temp_size > address {
-                        let offset = address as i64 - prev_sym_temp_vrom as i64;
-                        if offset < 0 {
-                            return None;
-                        }
-                        return Some((prev_sym_temp, offset));
+            if let Some(prev_sym_temp_vrom) = prev_sym_temp.vrom {
+                if prev_sym_temp_vrom + prev_sym_temp.size > address {
+                    let offset = address as i64 - prev_sym_temp_vrom as i64;
+                    if offset < 0 {
+                        return None;
                     }
+                    return Some((prev_sym_temp, offset));
                 }
             }
         }
@@ -230,14 +224,14 @@ impl File {
         let mut symbols_to_fix = Vec::new();
 
         for (index, sym) in self.symbols.iter().enumerate() {
-            if sym.name.ends_with(".NON_MATCHING") && sym.size.is_some() && sym.size == Some(0) {
+            if sym.name.ends_with(".NON_MATCHING") && sym.size == 0 {
                 let real_name = sym.name.replace(".NON_MATCHING", "");
 
                 if let Some((_real_sym, real_index)) =
                     self.find_symbol_and_index_by_name(&real_name)
                 {
                     symbols_to_fix.push((real_index, sym.size));
-                    symbols_to_fix.push((index, Some(0)));
+                    symbols_to_fix.push((index, 0));
                 }
             }
         }
@@ -272,10 +266,8 @@ impl File {
         };
 
         for sym in &self.symbols {
-            if let Some(sym_size) = sym.size {
-                if sym_size > max_size {
-                    max_size = sym_size;
-                }
+            if sym.size > max_size {
+                max_size = sym.size;
             }
         }
 
@@ -359,12 +351,53 @@ impl File {
             && self.align.is_none()
             && self.symbols.is_empty()
     }
+
+    pub fn symbol_match_state_iter(
+        &self,
+        path_decomp_settings: Option<&PathDecompSettings>,
+    ) -> SymbolDecompStateIter {
+        let mut check_function_files = false;
+        let mut whole_file_is_undecomped = false;
+        let mut functions_path = None;
+
+        if let Some(path_decomp_settings) = path_decomp_settings {
+            check_function_files = path_decomp_settings.check_function_files;
+
+            let original_file_path: PathBuf = self
+                .filepath
+                .components()
+                .skip(path_decomp_settings.path_index)
+                .collect();
+
+            let mut extensionless_file_path = original_file_path;
+            while extensionless_file_path.extension().is_some() {
+                extensionless_file_path.set_extension("");
+            }
+
+            let full_asm_file = path_decomp_settings
+                .asm_path
+                .join(extensionless_file_path.with_extension("s"));
+            whole_file_is_undecomped = full_asm_file.exists();
+            functions_path = Some(
+                path_decomp_settings
+                    .nonmatchings
+                    .join(extensionless_file_path.clone()),
+            );
+        }
+
+        SymbolDecompStateIter::new(
+            self,
+            whole_file_is_undecomped,
+            check_function_files,
+            functions_path,
+        )
+    }
 }
 
 // https://doc.rust-lang.org/std/cmp/trait.Eq.html
 impl PartialEq for File {
     fn eq(&self, other: &Self) -> bool {
-        self.filepath == other.filepath
+        self.filepath == other.filepath && self.section_type == other.section_type
     }
 }
 impl Eq for File {}
@@ -373,6 +406,83 @@ impl Eq for File {}
 impl Hash for File {
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.filepath.hash(state);
+        self.section_type.hash(state);
+    }
+}
+
+pub struct PathDecompSettings<'ap, 'np> {
+    pub asm_path: &'ap Path,
+    pub nonmatchings: &'np Path,
+    pub path_index: usize,
+    pub check_function_files: bool,
+}
+
+pub enum SymbolDecompState<'sect> {
+    Decomped(&'sect symbol::Symbol),
+    Undecomped(&'sect symbol::Symbol),
+}
+
+pub struct SymbolDecompStateIter<'sect> {
+    section: &'sect File,
+    whole_file_is_undecomped: bool,
+    check_function_files: bool,
+    functions_path: Option<PathBuf>,
+
+    index: usize,
+}
+
+impl<'sect> SymbolDecompStateIter<'sect> {
+    fn new(
+        section: &'sect File,
+        whole_file_is_undecomped: bool,
+        check_function_files: bool,
+        functions_path: Option<PathBuf>,
+    ) -> Self {
+        Self {
+            section,
+            whole_file_is_undecomped,
+            check_function_files,
+            functions_path,
+
+            index: 0,
+        }
+    }
+}
+
+impl<'sect> Iterator for SymbolDecompStateIter<'sect> {
+    type Item = SymbolDecompState<'sect>;
+
+    fn next(&mut self) -> Option<Self::Item> {
+        while self.index < self.section.symbols.len() {
+            let sym = &self.section.symbols[self.index];
+            if !sym.name.ends_with(".NON_MATCHING") {
+                break;
+            }
+            self.index += 1;
+        }
+        if self.index >= self.section.symbols.len() {
+            return None;
+        }
+
+        let sym = &self.section.symbols[self.index];
+        self.index += 1;
+
+        if self.whole_file_is_undecomped
+            || self
+                .section
+                .find_symbol_by_name(&format!("{}.NON_MATCHING", sym.name))
+                .is_some()
+        {
+            return Some(SymbolDecompState::Undecomped(sym));
+        } else if self.check_function_files {
+            if let Some(functions_path) = &self.functions_path {
+                if functions_path.join(sym.name.clone() + ".s").exists() {
+                    return Some(SymbolDecompState::Undecomped(sym));
+                }
+            }
+        }
+
+        Some(SymbolDecompState::Decomped(sym))
     }
 }
 

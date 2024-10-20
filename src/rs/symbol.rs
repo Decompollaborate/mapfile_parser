@@ -18,7 +18,7 @@ pub struct Symbol {
 
     pub vram: u64,
 
-    pub size: Option<u64>,
+    pub size: u64,
 
     pub vrom: Option<u64>,
 
@@ -34,7 +34,7 @@ impl Symbol {
     pub fn new(
         name: String,
         vram: u64,
-        size: Option<u64>,
+        size: u64,
         vrom: Option<u64>,
         align: Option<u64>,
     ) -> Self {
@@ -54,7 +54,7 @@ impl Symbol {
         Self {
             name,
             vram,
-            size: None,
+            size: 0,
             vrom: None,
             align: None,
 
@@ -68,11 +68,7 @@ impl Symbol {
     }
 
     pub fn get_size_str(&self) -> String {
-        if let Some(size) = self.size {
-            //return format!("0x{0:X}", size);
-            return format!("{}", size);
-        }
-        "None".into()
+        format!("{}", self.size)
     }
 
     pub fn get_vrom_str(&self) -> String {
@@ -136,11 +132,11 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl super::Symbol {
         #[new]
-        #[pyo3(signature=(name,vram,size=None,vrom=None,align=None))]
+        #[pyo3(signature=(name,vram,size=0,vrom=None,align=None))]
         fn py_new(
             name: String,
             vram: u64,
-            size: Option<u64>,
+            size: u64,
             vrom: Option<u64>,
             align: Option<u64>,
         ) -> Self {
@@ -178,12 +174,12 @@ pub(crate) mod python_bindings {
         }
 
         #[getter]
-        fn get_size(&self) -> PyResult<Option<u64>> {
+        fn get_size(&self) -> PyResult<u64> {
             Ok(self.size)
         }
 
         #[setter]
-        fn set_size(&mut self, value: Option<u64>) -> PyResult<()> {
+        fn set_size(&mut self, value: u64) -> PyResult<()> {
             self.size = value;
             Ok(())
         }
@@ -230,15 +226,13 @@ pub(crate) mod python_bindings {
 
         #[pyo3(signature=(humanReadable=true))]
         fn serializeSize(&self, humanReadable: bool) -> PyObject {
-            Python::with_gil(|py| match self.size {
-                None => Python::None(py),
-                Some(size) => {
+            Python::with_gil(|py| {
                     if humanReadable {
-                        return format!("0x{:X}", size).to_object(py);
+                        return format!("0x{:X}", self.size).to_object(py);
                     }
-                    size.to_object(py)
+                    self.size.to_object(py)
                 }
-            })
+            )
         }
 
         #[pyo3(signature=(humanReadable=true))]

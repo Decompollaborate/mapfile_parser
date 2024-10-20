@@ -78,11 +78,11 @@ class ProgressStats:
 class Symbol:
     name: str
     vram: int
-    size: int|None # in bytes
+    size: int # in bytes
     vrom: int|None
     align: int|None
 
-    def __init__(self, name: str, vram: int, size: int|None=None, vrom: int|None=None, align: int|None=None): ...
+    def __init__(self, name: str, vram: int, size: int=0, vrom: int|None=None, align: int|None=None): ...
 
     def getVramStr(self) -> str: ...
     def getSizeStr(self) -> str: ...

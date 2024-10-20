@@ -1,11 +1,9 @@
 /* SPDX-FileCopyrightText: © 2023-2024 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::collections::HashMap;
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 use std::fmt::Write;
 use std::path::Path;
-use std::path::PathBuf;
 
 use regex::*;
 
@@ -293,7 +291,7 @@ impl MapFile {
                         let sym_size = next_sym_vram - sym.vram;
                         acummulated_size += sym_size;
 
-                        sym.size = Some(sym_size);
+                        sym.size = sym_size;
 
                         if !is_noload_section {
                             // Only set vrom of non bss variables
@@ -305,7 +303,7 @@ impl MapFile {
                     // Calculate size of last symbol of the file
                     let sym = &mut file.symbols[symbols_count - 1];
                     let sym_size = file.size - acummulated_size;
-                    sym.size = Some(sym_size);
+                    sym.size = sym_size;
                     if !is_noload_section {
                         sym.vrom = Some(sym_vrom);
                         //sym_vrom += sym_size;
@@ -412,7 +410,7 @@ impl MapFile {
 
                         let mut new_symbol = symbol::Symbol::new_default(name.into(), vram);
                         if size > 0 {
-                            new_symbol.size = Some(size);
+                            new_symbol.size = size;
                         }
                         if !current_file.is_noload_section() {
                             new_symbol.vrom = Some(vrom)
@@ -461,16 +459,16 @@ impl MapFile {
                         let sym_size = next_sym_vram - sym.vram;
                         acummulated_size += sym_size;
 
-                        if sym.size.is_none() {
-                            sym.size = Some(sym_size);
+                        if sym.size == 0 {
+                            sym.size = sym_size;
                         }
                     }
 
                     // Calculate size of last symbol of the file
                     let sym = &mut file.symbols[symbols_count - 1];
-                    if sym.size.is_none() {
+                    if sym.size == 0{
                         let sym_size = file.size - acummulated_size;
-                        sym.size = Some(sym_size);
+                        sym.size = sym_size;
                     }
                 }
 
@@ -673,11 +671,8 @@ impl MapFile {
 
     pub fn get_progress(
         &self,
-        asm_path: &Path,
-        nonmatchings: &Path,
+        path_decomp_settings: Option<&file::PathDecompSettings>,
         aliases: &HashMap<String, String>,
-        path_index: usize,
-        check_function_files: bool,
     ) -> (
         progress_stats::ProgressStats,
         HashMap<String, progress_stats::ProgressStats>,
@@ -692,58 +687,44 @@ impl MapFile {
                     continue;
                 }
 
-                let mut folder = &file
-                    .filepath
-                    .components()
-                    .nth(path_index)
-                    .unwrap()
-                    .as_os_str()
-                    .to_str()
-                    .unwrap()
-                    .to_string();
-                if let Some(alternative_folder) = aliases.get(folder) {
-                    folder = alternative_folder;
-                }
-
-                if !progress_per_folder.contains_key(folder) {
-                    progress_per_folder
-                        .insert(folder.clone(), progress_stats::ProgressStats::new());
-                }
-                let folder_progress = progress_per_folder.get_mut(folder).unwrap();
-
-                let original_file_path: PathBuf =
-                    file.filepath.components().skip(path_index).collect();
-
-                let mut extensionless_file_path = original_file_path;
-                while extensionless_file_path.extension().is_some() {
-                    extensionless_file_path.set_extension("");
-                }
-
-                let full_asm_file = asm_path.join(extensionless_file_path.with_extension("s"));
-                let whole_file_is_undecomped = full_asm_file.exists();
-
-                for func in &file.symbols {
-                    if func.name.ends_with(".NON_MATCHING") {
-                        continue;
-                    }
-
-                    let func_asm_path = nonmatchings
-                        .join(extensionless_file_path.clone())
-                        .join(func.name.clone() + ".s");
-
-                    let sym_size = func.size.unwrap_or(0) as usize;
-
-                    if whole_file_is_undecomped
-                        || self
-                            .find_symbol_by_name(&format!("{}.NON_MATCHING", func.name))
-                            .is_some()
-                        || (check_function_files && func_asm_path.exists())
-                    {
-                        total_stats.undecomped_size += sym_size;
-                        folder_progress.undecomped_size += sym_size;
+                let folder = {
+                    let path_index = if let Some(path_decomp_settings) = path_decomp_settings {
+                        path_decomp_settings.path_index
                     } else {
-                        total_stats.decomped_size += sym_size;
-                        folder_progress.decomped_size += sym_size;
+                        file.filepath.components().count().saturating_sub(1)
+                    };
+
+                    let temp = file
+                        .filepath
+                        .components()
+                        .nth(path_index)
+                        .unwrap()
+                        .as_os_str()
+                        .to_str()
+                        .unwrap();
+                    if let Some(alternative_folder) = aliases.get(temp) {
+                        alternative_folder
+                    } else {
+                        temp
+                    }
+                };
+
+                let folder_progress = progress_per_folder.entry(folder.to_string()).or_default();
+
+                for sym_state in file.symbol_match_state_iter(path_decomp_settings) {
+                    match sym_state {
+                        file::SymbolDecompState::Decomped(sym) => {
+                            let sym_size = sym.size as usize;
+
+                            total_stats.decomped_size += sym_size;
+                            folder_progress.decomped_size += sym_size;
+                        }
+                        file::SymbolDecompState::Undecomped(sym) => {
+                            let sym_size = sym.size as usize;
+
+                            total_stats.undecomped_size += sym_size;
+                            folder_progress.undecomped_size += sym_size;
+                        }
                     }
                 }
             }
@@ -999,13 +980,14 @@ pub(crate) mod python_bindings {
             progress_stats::ProgressStats,
             HashMap<String, progress_stats::ProgressStats>,
         ) {
-            self.get_progress(
-                &asm_path,
-                &nonmatchings,
-                &aliases,
+            let path_decomp_settings = file::PathDecompSettings {
+                asm_path: &asm_path,
+                nonmatchings: &nonmatchings,
                 path_index,
                 check_function_files,
-            )
+            };
+
+            self.get_progress(Some(&path_decomp_settings), &aliases)
         }
 
         #[pyo3(signature=(other_map_file, *, check_other_on_self=true))]
