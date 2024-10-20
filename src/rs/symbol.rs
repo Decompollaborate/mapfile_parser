@@ -31,13 +31,7 @@ pub struct Symbol {
 }
 
 impl Symbol {
-    pub fn new(
-        name: String,
-        vram: u64,
-        size: u64,
-        vrom: Option<u64>,
-        align: Option<u64>,
-    ) -> Self {
+    pub fn new(name: String, vram: u64, size: u64, vrom: Option<u64>, align: Option<u64>) -> Self {
         Self {
             name,
             vram,
@@ -227,12 +221,11 @@ pub(crate) mod python_bindings {
         #[pyo3(signature=(humanReadable=true))]
         fn serializeSize(&self, humanReadable: bool) -> PyObject {
             Python::with_gil(|py| {
-                    if humanReadable {
-                        return format!("0x{:X}", self.size).to_object(py);
-                    }
-                    self.size.to_object(py)
+                if humanReadable {
+                    return format!("0x{:X}", self.size).to_object(py);
                 }
-            )
+                self.size.to_object(py)
+            })
         }
 
         #[pyo3(signature=(humanReadable=true))]

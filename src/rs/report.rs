@@ -16,43 +16,49 @@ fn do_report(mapfile: &mapfile::MapFile) -> report::Report {
     for (segment_index, segment) in mapfile.segments_list.iter().enumerate() {
         for section in &segment.files_list {
             let section_path = section.filepath.to_string_lossy().to_string();
+            let mut new_report_unit = report_from_section(section);
 
             if let Some(report_unit) = units.iter_mut().find(|x| x.name == section_path) {
-                report_unit.measures = measures_from_section(report_unit.measures, section);
-                report_unit.sections.push(report_item_from_section(section));
-                report_unit
-                    .functions
-                    .extend(gather_functions_from_section(section));
+                report_unit.measures =
+                    merge_measures(report_unit.measures, new_report_unit.measures);
+                report_unit.sections.extend(new_report_unit.sections);
+                report_unit.functions.extend(new_report_unit.functions);
             } else {
-                let report_unit = report::ReportUnit {
-                    name: section_path.clone(),
-                    measures: measures_from_section(None, section),
-                    sections: vec![report_item_from_section(section)],
-                    functions: gather_functions_from_section(section),
-                    metadata: Some(report::ReportUnitMetadata {
-                        complete: None,
-                        module_name: Some(segment.name.clone()),
-                        module_id: Some(segment_index as u32),
-                        source_path: Some(section_path),
-                        progress_categories: Vec::new(), // TODO
-                        auto_generated: None,            // TODO: What?
-                    }),
-                };
+                new_report_unit.metadata = Some(report::ReportUnitMetadata {
+                    complete: None,
+                    module_name: Some(segment.name.clone()),
+                    module_id: Some(segment_index as u32),
+                    source_path: Some(section_path),
+                    progress_categories: Vec::new(), // TODO
+                    auto_generated: None,            // TODO: What?
+                });
 
-                units.push(report_unit);
+                units.push(new_report_unit);
             }
         }
     }
 
     for unit in units.iter_mut() {
         if let Some(measures) = &mut unit.measures {
+            if measures.total_code > 0 {
+                measures.matched_code_percent =
+                    measures.matched_code as f32 / measures.total_code as f32 * 100.0;
+            }
+            if measures.total_data > 0 {
+                measures.matched_data_percent =
+                    measures.matched_data as f32 / measures.total_data as f32 * 100.0;
+            }
+            if measures.total_functions > 0 {
+                measures.matched_functions_percent =
+                    measures.matched_functions as f32 / measures.total_functions as f32 * 100.0;
+            }
+
             let total = measures.total_code + measures.total_data;
             if total > 0 {
-                measures.fuzzy_match_percent = (measures.matched_code + measures.matched_data) as f32 / total as f32 * 100.0;
+                measures.fuzzy_match_percent =
+                    (measures.matched_code + measures.matched_data) as f32 / total as f32 * 100.0;
             }
         }
-
-        // unit.sections // .fuzzy_match_percent
     }
 
     let measures = units.iter().flat_map(|u| u.measures.into_iter()).collect();
@@ -71,56 +77,93 @@ fn do_report(mapfile: &mapfile::MapFile) -> report::Report {
     report
 }
 
-fn measures_from_section(
-    measures_aux: Option<report::Measures>,
-    section: &file::File,
-) -> Option<report::Measures> {
-    if section.size == 0 {
-        return None;
-    }
+fn report_from_section(section: &file::File) -> report::ReportUnit {
+    let mut measures = report::Measures::default();
+    let mut report_item = report_item_from_section(section);
+    let mut functions = Vec::new();
 
-    let mut measures = measures_aux.unwrap_or_default();
     let is_text = matches!(section.section_type.as_str(), ".text" | ".start");
 
     for sym_state in section.symbol_match_state_iter(None) {
-        let sym_size;
-        match sym_state {
+        let mut fuzzy_match_percent = 0.0;
+
+        let sym = match sym_state {
             file::SymbolDecompState::Decomped(sym) => {
-                sym_size = sym.size;
                 if is_text {
                     measures.matched_code += sym.size;
                     measures.matched_functions += 1;
+                    fuzzy_match_percent = 100.0;
                 } else {
                     measures.matched_data += sym.size;
                 }
-            },
-            file::SymbolDecompState::Undecomped(sym) => {
-                sym_size = sym.size;
-            },
-        }
+                sym
+            }
+            file::SymbolDecompState::Undecomped(sym) => sym,
+        };
 
         if is_text {
-            measures.total_code += sym_size;
+            measures.total_code += sym.size;
             measures.total_functions += 1;
+
+            functions.push(report::ReportItem {
+                name: sym.name.clone(),
+                size: sym.size,
+                fuzzy_match_percent,
+                metadata: Some(report::ReportItemMetadata {
+                    demangled_name: None,
+                    virtual_address: Some(sym.vram),
+                }),
+            });
         } else {
-            measures.total_data += sym_size;
+            measures.total_data += sym.size;
         }
     }
 
-    if measures.total_code > 0 {
-        measures.matched_code_percent = measures.matched_code as f32 / measures.total_code as f32 * 100.0;
-    }
-    if measures.total_data > 0 {
-        measures.matched_data_percent = measures.matched_data as f32 / measures.total_data as f32 * 100.0;
-    }
-    if measures.total_functions > 0 {
-        measures.matched_functions_percent = measures.matched_functions as f32 / measures.total_functions as f32 * 100.0;
+    if measures.total_code + measures.total_data > 0 {
+        report_item.fuzzy_match_percent = (measures.matched_code + measures.matched_data) as f32
+            / (measures.total_code + measures.total_data) as f32
+            * 100.0;
     }
 
     // An unit always contains a singular unit, no more, no less. Right?
     measures.total_units = 1;
 
-    Some(measures)
+    report::ReportUnit {
+        name: section.filepath.to_string_lossy().to_string(),
+        measures: Some(measures),
+        sections: vec![report_item],
+        functions,
+        metadata: None,
+    }
+}
+
+fn merge_measures(
+    a: Option<report::Measures>,
+    b: Option<report::Measures>,
+) -> Option<report::Measures> {
+    match (a, b) {
+        (None, None) => None,
+        (None, Some(b)) => Some(b),
+        (Some(a), None) => Some(a),
+        (Some(a), Some(b)) => Some(report::Measures {
+            fuzzy_match_percent: 0.0,
+            total_code: a.total_code + b.total_code,
+            matched_code: a.matched_code + b.matched_code,
+            matched_code_percent: 0.0,
+            total_data: a.total_data + b.total_data,
+            matched_data: a.matched_data + b.matched_data,
+            matched_data_percent: 0.0,
+            total_functions: a.total_functions + b.total_functions,
+            matched_functions: a.matched_functions + b.matched_functions,
+            matched_functions_percent: 0.0,
+            complete_code: 0,
+            complete_code_percent: 0.0,
+            complete_data: 0,
+            complete_data_percent: 0.0,
+            total_units: 1,
+            complete_units: 0,
+        }),
+    }
 }
 
 fn report_item_from_section(section: &file::File) -> report::ReportItem {
@@ -133,26 +176,4 @@ fn report_item_from_section(section: &file::File) -> report::ReportItem {
             virtual_address: Some(section.vram),
         }),
     }
-}
-
-fn gather_functions_from_section(section: &file::File) -> Vec<report::ReportItem> {
-    if section.section_type != ".text" && section.section_type != ".start" {
-        return Vec::new();
-    }
-
-    let mut funcs = Vec::new();
-
-    for sym in &section.symbols {
-        funcs.push(report::ReportItem {
-            name: sym.name.clone(),
-            size: sym.size,
-            fuzzy_match_percent: 0.0, // TODO
-            metadata: Some(report::ReportItemMetadata {
-                demangled_name: None,
-                virtual_address: Some(sym.vram),
-            }),
-        });
-    }
-
-    funcs
 }

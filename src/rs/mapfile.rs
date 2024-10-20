@@ -466,7 +466,7 @@ impl MapFile {
 
                     // Calculate size of last symbol of the file
                     let sym = &mut file.symbols[symbols_count - 1];
-                    if sym.size == 0{
+                    if sym.size == 0 {
                         let sym_size = file.size - acummulated_size;
                         sym.size = sym_size;
                     }
