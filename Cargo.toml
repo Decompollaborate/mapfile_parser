@@ -25,7 +25,7 @@ crate-type = ["cdylib", "staticlib", "rlib"]
 default = []
 python_bindings = ["dep:pyo3"]
 serde = ["dep:serde"]
-objdiff_report = ["dep:objdiff-core", "dep:serde"]
+objdiff_report = ["dep:objdiff-core"]
 
 [dependencies]
 regex = "1.10.2"

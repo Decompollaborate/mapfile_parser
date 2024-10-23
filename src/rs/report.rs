@@ -1,22 +1,39 @@
 /* SPDX-FileCopyrightText: © 2024 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use crate::{file, mapfile};
+use std::collections::HashSet;
+
+use crate::{
+    file::{self, PathDecompSettings},
+    mapfile,
+};
 use objdiff_core::bindings::report;
 
 impl mapfile::MapFile {
-    pub fn get_objdiff_report(&self) -> report::Report {
-        do_report(self)
+    pub fn get_objdiff_report(
+        &self,
+        path_decomp_settings: Option<&PathDecompSettings>,
+    ) -> report::Report {
+        do_report(self, path_decomp_settings)
     }
 }
 
-fn do_report(mapfile: &mapfile::MapFile) -> report::Report {
+fn do_report(
+    mapfile: &mapfile::MapFile,
+    path_decomp_settings: Option<&PathDecompSettings>,
+) -> report::Report {
     let mut units: Vec<report::ReportUnit> = Vec::new();
+    let mut progress_categories = HashSet::new();
+    let path_index = if let Some(path_decomp_settings) = path_decomp_settings {
+        path_decomp_settings.path_index
+    } else {
+        0
+    };
 
     for (segment_index, segment) in mapfile.segments_list.iter().enumerate() {
         for section in &segment.files_list {
             let section_path = section.filepath.to_string_lossy().to_string();
-            let mut new_report_unit = report_from_section(section);
+            let mut new_report_unit = report_from_section(section, path_decomp_settings);
 
             if let Some(report_unit) = units.iter_mut().find(|x| x.name == section_path) {
                 report_unit.measures =
@@ -24,14 +41,29 @@ fn do_report(mapfile: &mapfile::MapFile) -> report::Report {
                 report_unit.sections.extend(new_report_unit.sections);
                 report_unit.functions.extend(new_report_unit.functions);
             } else {
+                let cat = match section.filepath.components().nth(path_index) {
+                    Some(x) if path_index > 0 => x,
+                    _ => section
+                        .filepath
+                        .components()
+                        .nth(section.filepath.components().count().saturating_sub(1))
+                        .unwrap(),
+                }
+                .as_os_str()
+                .to_str()
+                .unwrap()
+                .to_string();
+
                 new_report_unit.metadata = Some(report::ReportUnitMetadata {
                     complete: None,
                     module_name: Some(segment.name.clone()),
                     module_id: Some(segment_index as u32),
                     source_path: Some(section_path),
-                    progress_categories: Vec::new(), // TODO
-                    auto_generated: None,            // TODO: What?
+                    progress_categories: vec![cat.clone()],
+                    auto_generated: None, // TODO: What?
                 });
+
+                progress_categories.insert(cat);
 
                 units.push(new_report_unit);
             }
@@ -63,8 +95,14 @@ fn do_report(mapfile: &mapfile::MapFile) -> report::Report {
 
     let measures = units.iter().flat_map(|u| u.measures.into_iter()).collect();
 
-    let categories = Vec::new();
-    // TODO: fill categories
+    let mut categories = Vec::new();
+    for category in progress_categories {
+        categories.push(report::ReportCategory {
+            id: category.clone(),
+            name: category,
+            measures: Some(Default::default()),
+        });
+    }
 
     let mut report = report::Report {
         measures: Some(measures),
@@ -77,14 +115,17 @@ fn do_report(mapfile: &mapfile::MapFile) -> report::Report {
     report
 }
 
-fn report_from_section(section: &file::File) -> report::ReportUnit {
+fn report_from_section(
+    section: &file::File,
+    path_decomp_settings: Option<&PathDecompSettings>,
+) -> report::ReportUnit {
     let mut measures = report::Measures::default();
     let mut report_item = report_item_from_section(section);
     let mut functions = Vec::new();
 
     let is_text = matches!(section.section_type.as_str(), ".text" | ".start");
 
-    for sym_state in section.symbol_match_state_iter(None) {
+    for sym_state in section.symbol_match_state_iter(path_decomp_settings) {
         let mut fuzzy_match_percent = 0.0;
 
         let sym = match sym_state {
@@ -170,7 +211,7 @@ fn report_item_from_section(section: &file::File) -> report::ReportItem {
     report::ReportItem {
         name: format!("{:?}({})", section.filepath, section.section_type),
         size: section.size,
-        fuzzy_match_percent: 0.0, // TODO
+        fuzzy_match_percent: 0.0,
         metadata: Some(report::ReportItemMetadata {
             demangled_name: None,
             virtual_address: Some(section.vram),
