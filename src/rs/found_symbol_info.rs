@@ -132,6 +132,7 @@ pub(crate) mod python_bindings {
         }
 
         #[pyo3(name = "getAsStrPlusOffset")]
+        #[pyo3(signature = (sym_name=None))]
         fn getAsStrPlusOffset(&self, sym_name: Option<String>) -> String {
             let temp = super::FoundSymbolInfo::from(self);
             temp.get_as_str_plus_offset(sym_name)
@@ -144,7 +145,7 @@ pub(crate) mod python_bindings {
         }
     }
 
-    impl<'a> From<super::FoundSymbolInfo<'a>> for PyFoundSymbolInfo {
+    impl From<super::FoundSymbolInfo<'_>> for PyFoundSymbolInfo {
         fn from(value: super::FoundSymbolInfo) -> Self {
             Self::new(value.file.clone(), value.symbol.clone(), value.offset)
         }

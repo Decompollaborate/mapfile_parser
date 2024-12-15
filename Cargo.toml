@@ -3,7 +3,7 @@
 
 [package]
 name = "mapfile_parser"
-version = "2.7.1"
+version = "2.7.2"
 edition = "2021"
 rust-version = "1.65.0"
 authors = ["Anghelo Carvajal <angheloalf95@gmail.com>"]
@@ -23,7 +23,7 @@ crate-type = ["cdylib", "staticlib", "rlib"]
 
 [dependencies]
 regex = "1.10.2"
-pyo3 = { version = "0.20.0", optional = true, features = ["abi3", "abi3-py37"]}
+pyo3 = { version = "0.23.2", optional = true, features = ["extension-module"]}
 lazy_static = "1.4.0"
 serde = { version = "1.0", features = ["derive"], optional = true }
 

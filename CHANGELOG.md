@@ -7,6 +7,25 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.2] - 2024-12-15
+
+### Added
+
+- Prebuilt binaries for Python 3.13.
+
+### Changed
+
+- Python 3.9 or later is now required.
+  - Bump from Python 3.8 to 3.9.
+  - Older versions can't be checked on CI anymore, so I prefer to not claim to
+    support something that may have broken without anybody noticing.
+  - Nothing really changed. Just the CI tools I was using are refusing to use
+    any Python version older than this. Sorry if you were affected by this.
+- Use newer pyo3 version.
+  - From 0.20 to 0.23.
+  - Updated to avoid warnings with newer Rust versions.
+  - Fix issues introduced by updating pyo3.
+
 ## [2.7.1] - 2024-09-25
 
 ### Added
@@ -426,6 +445,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.7.2]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.1...2.7.2
 [2.7.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.0...2.7.1
 [2.7.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.6.0...2.7.0
 [2.6.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.5.1...2.6.0
