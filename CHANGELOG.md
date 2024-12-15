@@ -19,6 +19,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     support something that may have broken without anybody noticing.
   - Nothing really changed. Just the CI tools I was using are refusing to use
     any Python version older than this. Sorry if you were affected by this.
+- Use newer pyo3 version.
+  - From 0.20 to 0.23.
+  - Updated to avoid warnings with newer Rust versions.
+  - Fix issues introduced by updating pyo3.
 
 ## [2.7.1] - 2024-09-25
 

@@ -132,6 +132,7 @@ pub(crate) mod python_bindings {
         }
 
         #[pyo3(name = "getAsStrPlusOffset")]
+        #[pyo3(signature = (sym_name=None))]
         fn getAsStrPlusOffset(&self, sym_name: Option<String>) -> String {
             let temp = super::FoundSymbolInfo::from(self);
             temp.get_as_str_plus_offset(sym_name)
