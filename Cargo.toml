@@ -23,7 +23,7 @@ crate-type = ["cdylib", "staticlib", "rlib"]
 
 [dependencies]
 regex = "1.10.2"
-pyo3 = { version = "0.23.2", optional = true, features = ["abi3"]}
+pyo3 = { version = "0.23.2", optional = true, features = ["extension-module"]}
 lazy_static = "1.4.0"
 serde = { version = "1.0", features = ["derive"], optional = true }
 
