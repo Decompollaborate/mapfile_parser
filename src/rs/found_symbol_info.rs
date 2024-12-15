@@ -144,7 +144,7 @@ pub(crate) mod python_bindings {
         }
     }
 
-    impl<'a> From<super::FoundSymbolInfo<'a>> for PyFoundSymbolInfo {
+    impl From<super::FoundSymbolInfo<'_>> for PyFoundSymbolInfo {
         fn from(value: super::FoundSymbolInfo) -> Self {
             Self::new(value.file.clone(), value.symbol.clone(), value.offset)
         }

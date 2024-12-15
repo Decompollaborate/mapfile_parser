@@ -14,7 +14,7 @@ pub struct MapsComparisonInfo<'a> {
     pub compared_list: Vec<symbol_comparison_info::SymbolComparisonInfo<'a>>,
 }
 
-impl<'a> MapsComparisonInfo<'a> {
+impl MapsComparisonInfo<'_> {
     pub fn new() -> Self {
         Self {
             bad_files: HashSet::new(),
@@ -24,7 +24,7 @@ impl<'a> MapsComparisonInfo<'a> {
     }
 }
 
-impl<'a> Default for MapsComparisonInfo<'a> {
+impl Default for MapsComparisonInfo<'_> {
     fn default() -> Self {
         Self::new()
     }
@@ -116,7 +116,7 @@ pub(crate) mod python_bindings {
         }
     }
 
-    impl<'a> From<super::MapsComparisonInfo<'a>> for PyMapsComparisonInfo {
+    impl From<super::MapsComparisonInfo<'_>> for PyMapsComparisonInfo {
         fn from(value: super::MapsComparisonInfo) -> Self {
             Self {
                 bad_files: value.bad_files.into_iter().cloned().collect(),

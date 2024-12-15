@@ -390,8 +390,10 @@ pub(crate) mod python_bindings {
 
     use std::collections::hash_map::DefaultHasher;
 
+    use super::*;
+
     #[pymethods]
-    impl super::File {
+    impl File {
         #[new]
         fn py_new(
             filepath: PathBuf,
