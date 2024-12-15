@@ -6,7 +6,7 @@ name = "mapfile_parser"
 version = "2.7.1"
 description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
-requires-python = ">=3.8"
+requires-python = ">=3.9"
 dependencies = [
     "requests"
 ]
