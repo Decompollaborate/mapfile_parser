@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.7.2] - 2024-12-15
+
 ### Added
 
 - Prebuilt binaries for Python 3.13.
@@ -443,6 +445,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.7.2]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.1...2.7.2
 [2.7.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.0...2.7.1
 [2.7.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.6.0...2.7.0
 [2.6.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.5.1...2.6.0
