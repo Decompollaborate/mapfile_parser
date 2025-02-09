@@ -277,19 +277,20 @@ impl MapFile {
                 if symbols_count > 0 {
                     let mut sym_vrom = vrom_offset;
 
+                    // The first symbol of the file on the mapfile may not be the actual first
+                    // symbol if it is marked `static`, be a jumptable, etc, producing a mismatch
+                    // on the vrom address of each symbol of this section.
+                    // A way to adjust this difference is by increasing the start of the vrom
+                    // by the difference in vram address between the first symbol and the vram
+                    // of the file.
+                    if let Some(first_sym) = file.symbols.first() {
+                        sym_vrom += first_sym.vram - file.vram;
+                    }
+
                     // Calculate size of each symbol
                     for index in 0..symbols_count - 1 {
                         let next_sym_vram = file.symbols[index + 1].vram;
                         let sym = &mut file.symbols[index];
-
-                        if index == 0 && sym.vram > file.vram {
-                            // If the vram of the first symbol doesn't match the vram of the file
-                            // it means the first(s) symbols were not emitted in the mapfile (static,
-                            // jumptables, etc)
-                            // We try to adjust the vrom to account for it.
-                            sym_vrom += sym.vram - file.vram;
-                        }
-
                         let sym_size = next_sym_vram - sym.vram;
                         acummulated_size += sym_size;
 

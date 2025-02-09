@@ -88,7 +88,7 @@
                             "name": "do_outofmem_msg.part.0",
                             "vram": 4199338,
                             "size": 853,
-                            "vrom": 1943
+                            "vrom": 2113
                         }
                     ]
                 },
@@ -191,7 +191,7 @@
                             "name": "ex_equal.lto_priv.0",
                             "vram": 4219353,
                             "size": 1154,
-                            "vrom": 21852
+                            "vrom": 22128
                         }
                     ]
                 },
@@ -206,7 +206,7 @@
                             "name": "ex_endfunction",
                             "vram": 4220454,
                             "size": 1282,
-                            "vrom": 23006
+                            "vrom": 23229
                         }
                     ]
                 },
@@ -245,7 +245,7 @@
                             "name": "cs_usage_msg.lto_priv.0",
                             "vram": 4226537,
                             "size": 1122,
-                            "vrom": 28491
+                            "vrom": 29312
                         }
                     ]
                 },
@@ -589,7 +589,7 @@
                             "name": "msg_outtrans.isra.0",
                             "vram": 4273797,
                             "size": 556,
-                            "vrom": 76270
+                            "vrom": 76572
                         }
                     ]
                 },
@@ -22933,7 +22933,7 @@
                             "name": "_nc_trim_sgr0",
                             "vram": 7085824,
                             "size": 1931,
-                            "vrom": 2887927
+                            "vrom": 2888599
                         }
                     ]
                 },
@@ -24563,7 +24563,7 @@
                             "name": "__gconv_load_conf",
                             "vram": 7140832,
                             "size": 4087,
-                            "vrom": 2939543
+                            "vrom": 2943607
                         }
                     ]
                 },
@@ -24832,7 +24832,7 @@
                             "name": "setlocale",
                             "vram": 7179904,
                             "size": 2907,
-                            "vrom": 2982071
+                            "vrom": 2982679
                         }
                     ]
                 },
@@ -25191,7 +25191,7 @@
                             "name": "_nl_expand_alias",
                             "vram": 7201728,
                             "size": 1729,
-                            "vrom": 3003191
+                            "vrom": 3004503
                         }
                     ]
                 },
@@ -25422,7 +25422,7 @@
                             "name": "__libc_sigaction",
                             "vram": 7212464,
                             "size": 505,
-                            "vrom": 3015207
+                            "vrom": 3015239
                         }
                     ]
                 },
@@ -39558,7 +39558,7 @@
                             "name": "__vfscanf_internal",
                             "vram": 7761136,
                             "size": 32201,
-                            "vrom": 3563799
+                            "vrom": 3563911
                         }
                     ]
                 },
@@ -39581,7 +39581,7 @@
                             "name": "__vfprintf_internal",
                             "vram": 7805408,
                             "size": 21775,
-                            "vrom": 3596007
+                            "vrom": 3608183
                         }
                     ]
                 },
@@ -39604,7 +39604,7 @@
                             "name": "__vfwprintf_internal",
                             "vram": 7827856,
                             "size": 22767,
-                            "vrom": 3617783
+                            "vrom": 3630631
                         }
                     ]
                 },
@@ -40797,7 +40797,7 @@
                             "name": "__pthread_tunables_init",
                             "vram": 7855264,
                             "size": 127,
-                            "vrom": 3658007
+                            "vrom": 3658039
                         }
                     ]
                 },
@@ -42956,7 +42956,7 @@
                             "name": "_dl_map_object_deps",
                             "vram": 7891392,
                             "size": 5694,
-                            "vrom": 3693175
+                            "vrom": 3694167
                         }
                     ]
                 },
@@ -43000,7 +43000,7 @@
                             "name": "_dl_init",
                             "vram": 7896800,
                             "size": 636,
-                            "vrom": 3699335
+                            "vrom": 3699575
                         }
                     ]
                 },
@@ -43076,7 +43076,7 @@
                             "name": "_dl_lookup_symbol_x",
                             "vram": 7919104,
                             "size": 6546,
-                            "vrom": 3718167
+                            "vrom": 3721879
                         }
                     ]
                 },
@@ -47582,7 +47582,7 @@
                             "name": "__gcc_personality_v0",
                             "vram": 8116304,
                             "size": 1172,
-                            "vrom": 3918631
+                            "vrom": 3919079
                         }
                     ]
                 },
@@ -47690,7 +47690,7 @@
                             "name": "_nl_locale_subfreeres",
                             "vram": 8119520,
                             "size": 723,
-                            "vrom": 3922095
+                            "vrom": 3922287
                         }
                     ]
                 },
@@ -48065,7 +48065,7 @@
                             "name": "utf8len_tab.lto_priv.0",
                             "vram": 8129312,
                             "size": 360,
-                            "vrom": 3928937
+                            "vrom": 3928969
                         }
                     ]
                 },
@@ -48112,7 +48112,7 @@
                             "name": "CSWTCH.957.lto_priv.0",
                             "vram": 8130944,
                             "size": 688,
-                            "vrom": 3929993
+                            "vrom": 3930601
                         }
                     ]
                 },
@@ -48247,7 +48247,7 @@
                             "name": "BOL_prohibition_punct.3.lto_priv.0",
                             "vram": 8149504,
                             "size": 972,
-                            "vrom": 3948361
+                            "vrom": 3949161
                         }
                     ]
                 },
@@ -48326,7 +48326,7 @@
                             "name": "included_patches.lto_priv.0",
                             "vram": 8157568,
                             "size": 964,
-                            "vrom": 3956801
+                            "vrom": 3957249
                         }
                     ]
                 },
@@ -48804,7 +48804,7 @@
                             "name": "__PRETTY_FUNCTION__.5.lto_priv.0",
                             "vram": 8179312,
                             "size": 706,
-                            "vrom": 3978345
+                            "vrom": 3979033
                         }
                     ]
                 },
@@ -48899,7 +48899,7 @@
                             "name": "utf8len_tab_zero.lto_priv.0",
                             "vram": 8185184,
                             "size": 1632,
-                            "vrom": 3983594
+                            "vrom": 3984938
                         }
                     ]
                 },
@@ -49079,7 +49079,7 @@
                             "name": "opchars.lto_priv.0",
                             "vram": 8191712,
                             "size": 1114,
-                            "vrom": 3990458
+                            "vrom": 3991482
                         }
                     ]
                 },
@@ -49094,7 +49094,7 @@
                             "name": "_nl_POSIX_name",
                             "vram": 8192185,
                             "size": 429,
-                            "vrom": 3991572
+                            "vrom": 3991955
                         }
                     ]
                 },
@@ -49677,7 +49677,7 @@
                             "name": "_nl_C_name",
                             "vram": 8226374,
                             "size": 4275,
-                            "vrom": 4022522
+                            "vrom": 4026192
                         }
                     ]
                 },
@@ -52027,7 +52027,7 @@
                             "name": "_nl_default_locale_path",
                             "vram": 8501904,
                             "size": 32,
-                            "vrom": 4305069
+                            "vrom": 4305085
                         }
                     ]
                 },
@@ -55442,7 +55442,7 @@
                             "name": "__nptl_version",
                             "vram": 8616141,
                             "size": 152,
-                            "vrom": 4420477
+                            "vrom": 4420624
                         }
                     ]
                 },
@@ -65208,7 +65208,7 @@
                             "name": "prt_mediasize.lto_priv.0",
                             "vram": 9043936,
                             "size": 352,
-                            "vrom": 4844280
+                            "vrom": 4844408
                         }
                     ]
                 },
@@ -69211,7 +69211,7 @@
                             "name": "last_used_sid",
                             "vram": 9186856,
                             "size": 1240,
-                            "vrom": 4986196
+                            "vrom": 4987324
                         }
                     ]
                 },
@@ -69234,7 +69234,7 @@
                             "name": "printer_opts",
                             "vram": 9189120,
                             "size": 2704,
-                            "vrom": 4987444
+                            "vrom": 4989588
                         }
                     ]
                 },
@@ -69885,7 +69885,7 @@
                             "name": "e_invalid_value_for_argument_str_str",
                             "vram": 9217664,
                             "size": 397,
-                            "vrom": 5017972
+                            "vrom": 5018132
                         }
                     ]
                 },
@@ -69908,7 +69908,7 @@
                             "name": "e_current_location_list_was_changed",
                             "vram": 9218080,
                             "size": 969,
-                            "vrom": 5018388
+                            "vrom": 5018548
                         }
                     ]
                 },
@@ -70167,7 +70167,7 @@
                             "name": "e_unknown_sign_str",
                             "vram": 9223664,
                             "size": 415,
-                            "vrom": 5023988
+                            "vrom": 5024132
                         }
                     ]
                 },
@@ -70190,7 +70190,7 @@
                             "name": "e_format_error_in_spell_file",
                             "vram": 9224096,
                             "size": 303,
-                            "vrom": 5024404
+                            "vrom": 5024564
                         }
                     ]
                 },
@@ -70252,7 +70252,7 @@
                             "name": "msg_no_items.lto_priv.0",
                             "vram": 9225664,
                             "size": 1077,
-                            "vrom": 5026004
+                            "vrom": 5026132
                         }
                     ]
                 },
@@ -70275,7 +70275,7 @@
                             "name": "e_missing_equal_str",
                             "vram": 9227952,
                             "size": 1738,
-                            "vrom": 5027092
+                            "vrom": 5028420
                         }
                     ]
                 },
@@ -70314,7 +70314,7 @@
                             "name": "rbg_status.lto_priv.0",
                             "vram": 9228912,
                             "size": 591,
-                            "vrom": 5029108
+                            "vrom": 5029380
                         }
                     ]
                 },
