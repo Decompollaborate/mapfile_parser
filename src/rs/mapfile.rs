@@ -283,7 +283,7 @@ impl MapFile {
                     // A way to adjust this difference is by increasing the start of the vrom
                     // by the difference in vram address between the first symbol and the vram
                     // of the file.
-                    if let Some(first_sym) = file.symbols.get(0) {
+                    if let Some(first_sym) = file.symbols.first() {
                         sym_vrom += first_sym.vram - file.vram;
                     }
 
