@@ -17063,7 +17063,7 @@
                             "name": "sFileBumpRodataAlignment",
                             "vram": "0x800C3FE8",
                             "size": "0x40",
-                            "vrom": "0x0C4BB0"
+                            "vrom": "0x0C4BE8"
                         }
                     ]
                 },
