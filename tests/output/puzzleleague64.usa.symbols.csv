@@ -2290,7 +2290,7 @@ build/src/main/sfxlimit.o,RO_DBL_800C3098_usa,800C3098,8
 build/src/main/sfxlimit.o,RO_DBL_800C30A0_usa,800C30A0,8
 build/src/main/sfxlimit.o,RO_DBL_800C30A8_usa,800C30A8,8
 build/src/main/sfxlimit.o,RO_DBL_800C30B0_usa,800C30B0,8
-build/src/main/sfxlimit.o,jtbl_800C30B8_usa,800C30B8,32
+build/src/main/sfxlimit.o,jtbl_800C30B8_usa,800C30B8,24
 build/src/main/title.o,RO_DBL_800C3118_usa,800C3118,8
 build/src/main/title.o,RO_DBL_800C3120_usa,800C3120,8
 build/src/main/title.o,RO_STR_800C3128_usa,800C3128,12
@@ -2298,7 +2298,7 @@ build/src/main/title.o,RO_STR_800C3134_usa,800C3134,16
 build/src/main/title.o,RO_STR_800C3144_usa,800C3144,8
 build/src/main/title.o,RO_STR_800C314C_usa,800C314C,8
 build/src/main/title.o,RO_STR_800C3154_usa,800C3154,12
-build/src/main/title.o,jtbl_800C3160_usa,800C3160,168
+build/src/main/title.o,jtbl_800C3160_usa,800C3160,96
 build/asm/usa/data/main/0C3DC0.rodata.o,RO_STR_800C31C0_usa,800C31C0,40
 build/asm/usa/data/main/0C3DC0.rodata.o,jtbl_800C31E8_usa,800C31E8,24
 build/asm/usa/data/main/0C3DC0.rodata.o,jtbl_800C3200_usa,800C3200,20
@@ -2416,7 +2416,7 @@ build/asm/usa/data/main/0C3EF0.rodata.o,RO_DBL_800C3F68_usa,800C3F68,8
 build/asm/usa/data/main/0C3EF0.rodata.o,RO_DBL_800C3F70_usa,800C3F70,8
 build/asm/usa/data/main/0C3EF0.rodata.o,RO_STR_800C3F78_usa,800C3F78,12
 build/asm/usa/data/main/0C3EF0.rodata.o,RO_STR_800C3F84_usa,800C3F84,44
-build/src/main/file.o,sFileBumpRodataAlignment,800C3FE8,64
+build/src/main/file.o,sFileBumpRodataAlignment,800C3FE8,8
 build/src/main/image.o,RO_STR_800C3FF0_usa,800C3FF0,72
 build/src/main/image.o,RO_DBL_800C4038_usa,800C4038,8
 build/src/main/image.o,RO_DBL_800C4040_usa,800C4040,16
@@ -2495,7 +2495,7 @@ build/src/main/hvqm2util.o,RO_STR_800C4F54_usa,800C4F54,40
 build/src/main/hvqm2util.o,RO_STR_800C4F7C_usa,800C4F7C,40
 build/src/main/hvqm2util.o,RO_STR_800C4FA4_usa,800C4FA4,40
 build/src/main/hvqm2util.o,RO_STR_800C4FCC_usa,800C4FCC,44
-build/src/main/hvqm2util.o,RO_STR_800C4FF8_usa,800C4FF8,488
+build/src/main/hvqm2util.o,RO_STR_800C4FF8_usa,800C4FF8,56
 build/asm/usa/data/main/0C5C30.rodata.o,RO_STR_800C5030_usa,800C5030,56
 build/asm/usa/data/main/0C5C30.rodata.o,RO_STR_800C5068_usa,800C5068,60
 build/asm/usa/data/main/0C5C30.rodata.o,RO_STR_800C50A4_usa,800C50A4,12
@@ -2611,7 +2611,7 @@ build/src/main/text.o,RO_STR_800C5E68_usa,800C5E68,8
 build/src/main/text.o,RO_STR_800C5E70_usa,800C5E70,8
 build/src/main/text.o,RO_STR_800C5E78_usa,800C5E78,8
 build/src/main/text.o,jtbl_800C5E80_usa,800C5E80,392
-build/src/main/text.o,jtbl_800C6008_usa,800C6008,132
+build/src/main/text.o,jtbl_800C6008_usa,800C6008,24
 build/asm/usa/data/main/0C6C20.rodata.o,RO_800C6020_usa,800C6020,128
 build/asm/usa/data/main/0C6C20.rodata.o,RO_800C60A0_usa,800C60A0,128
 build/asm/usa/data/main/0C6C20.rodata.o,jtbl_800C6120_usa,800C6120,64

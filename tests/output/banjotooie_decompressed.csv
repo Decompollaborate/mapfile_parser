@@ -59,7 +59,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80006F60,build/us/libultra_rom_boot.a(pimgr.o),.bss,2,4680,4800,2400.00
 80008220,build/us/libultra_rom_boot.a(kdebugserver.o),.bss,1,432,432,432.00
 800083D0,build/us/libultra_rom_boot.a(seteventmesg.o),.bss,1,128,128,128.00
-80008450,build/us/libultra_rom_boot.a(piacs.o),.bss,1,32,32,32.00
+80008450,build/us/libultra_rom_boot.a(piacs.o),.bss,1,24,32,32.00
 00000000,build/us/asm/data/table_addr.data.s.o,.data,1,16,16,16.00
 00000010,build/us/assets/build_data.bin.o,.data,2,144,144,72.00
 000000A0,build/us/assets/assets.bin.o,.data,2,27325440,27325440,13662720.00
@@ -256,7 +256,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 800414A0,build/us/libultra_rom.a(siacs.o),.data,1,16,16,16.00
 800414B0,build/us/libultra_rom.a(piacs.o),.data,1,16,16,16.00
 800414C0,build/us/libultra_rom.a(exceptasm.o),.data,1,32,32,32.00
-800414E0,build/us/libultra_rom.a(vi.o),.data,2,108,112,56.00
+800414E0,build/us/libultra_rom.a(vi.o),.data,2,12,112,56.00
 80041550,build/us/libultra_rom.a(timerintr.o),.data,1,16,16,16.00
 80041560,build/us/libultra_rom.a(contramread.o),.data,1,16,16,16.00
 80041570,build/us/libultra_rom.a(contpfs.o),.data,2,12,16,8.00
@@ -281,8 +281,8 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 8007EAE0,build/us/libultra_rom.a(pimgr.o),.bss,2,4680,4800,2400.00
 8007FDE0,build/us/libultra_rom.a(seteventmesg.o),.bss,1,128,128,128.00
 80081080,build/us/libultra_rom.a(controller.o),.bss,6,64,144,24.00
-80081210,build/us/libultra_rom.a(siacs.o),.bss,1,32,32,32.00
-80081230,build/us/libultra_rom.a(piacs.o),.bss,1,32,32,32.00
+80081210,build/us/libultra_rom.a(siacs.o),.bss,1,24,32,32.00
+80081230,build/us/libultra_rom.a(piacs.o),.bss,1,24,32,32.00
 80081250,build/us/libultra_rom.a(conteepread.o),.bss,1,64,64,64.00
 80081290,build/us/libultra_rom.a(timerintr.o),.bss,5,32,64,12.80
 800812D0,build/us/libultra_rom.a(contpfs.o),.bss,1,256,256,256.00

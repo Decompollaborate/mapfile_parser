@@ -16261,7 +16261,7 @@
                         {
                             "name": "jtbl_800C30B8_usa",
                             "vram": "0x800C30B8",
-                            "size": "0x20",
+                            "size": "0x18",
                             "vrom": "0x0C3CB8"
                         }
                     ]
@@ -16318,7 +16318,7 @@
                         {
                             "name": "jtbl_800C3160_usa",
                             "vram": "0x800C3160",
-                            "size": "0xA8",
+                            "size": "0x60",
                             "vrom": "0x0C3D60"
                         }
                     ]
@@ -17062,7 +17062,7 @@
                         {
                             "name": "sFileBumpRodataAlignment",
                             "vram": "0x800C3FE8",
-                            "size": "0x40",
+                            "size": "0x8",
                             "vrom": "0x0C4BE8"
                         }
                     ]
@@ -17608,7 +17608,7 @@
                         {
                             "name": "RO_STR_800C4FF8_usa",
                             "vram": "0x800C4FF8",
-                            "size": "0x1E8",
+                            "size": "0x38",
                             "vrom": "0x0C5BF8"
                         }
                     ]
@@ -18376,7 +18376,7 @@
                         {
                             "name": "jtbl_800C6008_usa",
                             "vram": "0x800C6008",
-                            "size": "0x84",
+                            "size": "0x18",
                             "vrom": "0x0C6C08"
                         }
                     ]
