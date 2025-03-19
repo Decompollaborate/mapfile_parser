@@ -249,7 +249,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 800C8260,build/src/main_segment/dm_game_main.o,.rodata,75,296,1888,25.17
 800C89C0,build/src/main_segment/dm_manual_main.o,.rodata,78,180,2864,36.72
 800C94F0,build/src/main_segment/dm_title_main.o,.rodata,4,52,144,36.00
-800C9580,build/src/main_segment/main_story.o,.rodata,1,128,128,128.00
+800C9580,build/src/main_segment/main_story.o,.rodata,1,120,128,128.00
 800C9600,build/src/main_segment/calc.o,.rodata,8,16,80,10.00
 800C9650,build/src/main_segment/065080.o,.rodata,7,16,64,9.14
 800C9690,build/asm/cn/data/main_segment/072880.rodata.o,.rodata,15,16,128,8.53

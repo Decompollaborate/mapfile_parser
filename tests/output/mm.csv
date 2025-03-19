@@ -442,7 +442,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 801AD370,build/data/code/njpgdspMain.data.o,.data,1,2800,2800,2800.00
 801ADE60,build/src/code/z_en_a_keep.o,.data,1,96,96,96.00
 801ADEC0,build/src/code/z_en_item00.o,.data,6,272,896,149.33
-801AE240,build/src/code/z_eff_blure.o,.data,4,100,176,44.00
+801AE240,build/src/code/z_eff_blure.o,.data,4,68,176,44.00
 801AE2F0,build/src/code/z_eff_shield_particle.o,.data,1,64,64,64.00
 801AE330,build/src/code/z_effect.o,.data,1,112,112,112.00
 801AE3A0,build/src/code/z_effect_soft_sprite.o,.data,1,16,16,16.00
@@ -455,9 +455,9 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 801BA200,build/src/code/z_collision_check.o,.data,23,100,848,36.87
 801BA550,build/src/code/z_debug_display.o,.data,16,640,2880,180.00
 801BB090,build/src/code/z_debug_mode.o,.data,5,72,144,28.80
-801BB120,build/src/code/z_demo.o,.data,6,44,80,13.33
+801BB120,build/src/code/z_demo.o,.data,6,40,80,13.33
 801BC210,build/src/code/z_eff_footmark.o,.data,3,72,144,48.00
-801BC2A0,build/src/code/z_en_hy_code.o,.data,3,352,384,128.00
+801BC2A0,build/src/code/z_en_hy_code.o,.data,3,16,384,128.00
 801BD830,build/src/code/z_eventmgr.o,.data,2,128,160,80.00
 801BD8D0,build/src/code/z_fireobj.o,.data,3,44,64,21.33
 801BD910,build/src/code/z_game_dlftbls.o,.data,2,336,352,176.00
@@ -472,10 +472,10 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 801BF6C0,build/src/code/z_parameter.o,.data,118,452,1760,14.92
 801BFDA0,build/src/code/z_player_lib.o,.data,117,412,4384,37.47
 801C0EF0,build/src/code/z_rcp.o,.data,3,3504,3616,1205.33
-801C1D10,build/src/code/z_room.o,.data,1,32,32,32.00
+801C1D10,build/src/code/z_room.o,.data,1,20,32,32.00
 801C1D30,build/src/code/code_8012EC80.o,.data,14,740,1760,125.71
 801C2410,build/data/code/code_801C2410.data.o,.data,1,576,576,576.00
-801C2650,build/src/code/z_scene.o,.data,1,224,224,224.00
+801C2650,build/src/code/z_scene.o,.data,1,136,224,224.00
 801C2730,build/src/code/object_table.o,.data,3,5152,5168,1722.67
 801C3CA0,build/src/code/z_scene_table.o,.data,1,8112,8112,8112.00
 801C5CD0,build/src/code/z_skin_matrix.o,.data,1,64,64,64.00
@@ -489,7 +489,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 801D0B70,build/src/code/z_kaleido_manager.o,.data,3,56,64,21.33
 801D0BB0,build/src/code/z_fbdemo_dlftbls.o,.data,1,208,208,208.00
 801D0C80,build/src/code/z_fbdemo.o,.data,1,48,48,48.00
-801D0CB0,build/src/code/z_fbdemo_fade.o,.data,1,80,80,80.00
+801D0CB0,build/src/code/z_fbdemo_fade.o,.data,1,40,80,80.00
 801D0D00,build/src/code/z_fbdemo_circle.o,.data,2,40,80,40.00
 801D0D50,build/src/code/z_play.o,.data,6,28,48,8.00
 801D0D80,build/src/code/z_play_hireso.o,.data,16,1200,1904,119.00
@@ -516,7 +516,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 801DB470,build/src/audio/sfx.o,.data,10,28,80,8.00
 801DB4C0,build/src/audio/sequence.o,.data,7,8,32,4.57
 801DB4E0,build/src/audio/session_config.o,.data,18,1176,2320,128.89
-801DCDC0,build/src/code/z_camera.o,.rodata,76,1400,2048,26.95
+801DCDC0,build/src/code/z_camera.o,.rodata,76,1120,2048,26.95
 801DD880,build/src/code/z_kankyo.o,.rodata,33,124,512,15.52
 801DDAC0,build/src/code/z_map_disp.o,.rodata,8,4,32,4.00
 801DE5E0,build/src/code/z_sub_s.o,.rodata,1,688,688,688.00
@@ -525,12 +525,12 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 801DF150,build/src/code/z_message.o,.rodata,16,328,1504,94.00
 801DF730,build/src/code/z_message_nes.o,.rodata,3,136,304,101.33
 801DF860,build/src/code/z_message_staff.o,.rodata,3,128,160,53.33
-801DF900,build/src/code/cutscene_camera.o,.rodata,18,124,192,10.67
+801DF900,build/src/code/cutscene_camera.o,.rodata,18,12,192,10.67
 801DFA00,build/src/code/z_play.o,.rodata,2,520,592,296.00
 801DFC70,build/src/code/audio_stop_all_sfx.o,.rodata,1,16,16,16.00
 801E0130,build/src/code/sys_math3d.o,.rodata,42,12,176,4.19
 801E0200,build/src/code/c_keyframe.o,.rodata,11,8,48,4.36
-801E0300,build/src/audio/lib/load.o,.rodata,1,144,144,144.00
+801E0300,build/src/audio/lib/load.o,.rodata,1,132,144,144.00
 801E0BD0,build/src/audio/code_8019AF00.o,.rodata,22,300,752,34.18
 801E0EC0,build/src/audio/voice_internal.o,.rodata,9,132,400,44.44
 801E1100,build/src/audio/session_config.o,.rodata,2,12,16,8.00
@@ -625,7 +625,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 8082B600,build/src/overlays/kaleido_scope/ovl_kaleido_scope/z_kaleido_mask.o,.data,11,120,240,21.82
 8082B6F0,build/src/overlays/kaleido_scope/ovl_kaleido_scope/z_kaleido_prompt.o,.data,1,16,16,16.00
 8082B700,build/src/overlays/kaleido_scope/ovl_kaleido_scope/z_kaleido_scope_NES.o,.data,78,152,1984,25.44
-8082DA50,build/src/overlays/kaleido_scope/ovl_kaleido_scope/z_kaleido_scope_NES.o,.bss,3,40,64,21.33
+8082DA50,build/src/overlays/kaleido_scope/ovl_kaleido_scope/z_kaleido_scope_NES.o,.bss,3,32,64,21.33
 8082DA90,build/src/overlays/actors/ovl_player_actor/z_player.o,.text,642,4544,188256,293.23
 8085B9F0,build/src/overlays/actors/ovl_player_actor/z_player.o,.data,206,1120,10688,51.88
 80862AF0,build/src/overlays/actors/ovl_player_actor/z_player.o,.bss,23,28,128,5.57
@@ -657,7 +657,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 808796F0,build/src/overlays/actors/ovl_En_Firefly/z_en_firefly.o,.text,30,904,7520,250.67
 8087B450,build/src/overlays/actors/ovl_En_Firefly/z_en_firefly.o,.data,1,176,176,176.00
 8087B730,build/src/overlays/actors/ovl_En_Horse/z_en_horse.o,.text,157,3676,55184,351.49
-80888EC0,build/src/overlays/actors/ovl_En_Horse/z_en_horse.o,.data,1,864,864,864.00
+80888EC0,build/src/overlays/actors/ovl_En_Horse/z_en_horse.o,.data,1,716,864,864.00
 8088A240,build/src/overlays/actors/ovl_En_Arrow/z_en_arrow.o,.text,13,2384,8064,620.31
 8088C1C0,build/src/overlays/actors/ovl_En_Arrow/z_en_arrow.o,.data,1,480,480,480.00
 8088C510,build/src/overlays/actors/ovl_En_Elf/z_en_elf.o,.text,46,1736,17584,382.26
@@ -677,7 +677,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 8089ED90,build/src/overlays/actors/ovl_En_Zl1/z_en_zl1.o,.text,4,16,64,16.00
 8089EDD0,build/src/overlays/actors/ovl_En_Zl1/z_en_zl1.o,.data,1,32,32,32.00
 8089EE20,build/src/overlays/actors/ovl_En_Viewer/z_en_viewer.o,.text,10,452,1472,147.20
-8089F3E0,build/src/overlays/actors/ovl_En_Viewer/z_en_viewer.o,.data,1,48,48,48.00
+8089F3E0,build/src/overlays/actors/ovl_En_Viewer/z_en_viewer.o,.data,1,40,48,48.00
 8089F4D0,build/src/overlays/actors/ovl_En_Viewer/z_en_viewer.o,.bss,1,16,16,16.00
 8089F4E0,build/src/overlays/actors/ovl_En_Bubble/z_en_bubble.o,.text,21,1244,4608,219.43
 808A06E0,build/src/overlays/actors/ovl_En_Bubble/z_en_bubble.o,.data,1,160,160,160.00
@@ -745,7 +745,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 808CD740,build/src/overlays/actors/ovl_Demo_Effect/z_demo_effect.o,.text,13,536,2896,222.77
 808CE290,build/src/overlays/actors/ovl_Demo_Effect/z_demo_effect.o,.data,1,96,96,96.00
 808CE450,build/src/overlays/actors/ovl_Demo_Kankyo/z_demo_kankyo.o,.text,10,3088,8048,804.80
-808D03C0,build/src/overlays/actors/ovl_Demo_Kankyo/z_demo_kankyo.o,.data,1,48,48,48.00
+808D03C0,build/src/overlays/actors/ovl_Demo_Kankyo/z_demo_kankyo.o,.data,1,40,48,48.00
 808D0680,build/src/overlays/actors/ovl_En_Floormas/z_en_floormas.o,.text,58,824,12800,220.69
 808D3880,build/src/overlays/actors/ovl_En_Floormas/z_en_floormas.o,.data,1,224,224,224.00
 808D3E20,build/src/overlays/actors/ovl_En_Rd/z_en_rd.o,.text,49,904,12960,264.49
@@ -765,7 +765,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 808E0830,build/src/overlays/actors/ovl_En_Encount1/z_en_encount1.o,.text,3,1108,1440,480.00
 808E0DD0,build/src/overlays/actors/ovl_En_Encount1/z_en_encount1.o,.data,1,48,48,48.00
 808E0E40,build/src/overlays/actors/ovl_Demo_Tre_Lgt/z_demo_tre_lgt.o,.text,9,656,1616,179.56
-808E1490,build/src/overlays/actors/ovl_Demo_Tre_Lgt/z_demo_tre_lgt.o,.data,1,80,80,80.00
+808E1490,build/src/overlays/actors/ovl_Demo_Tre_Lgt/z_demo_tre_lgt.o,.data,1,48,80,80.00
 808E1560,build/src/overlays/actors/ovl_En_Encount2/z_en_encount2.o,.text,11,564,2416,219.64
 808E1ED0,build/src/overlays/actors/ovl_En_Encount2/z_en_encount2.o,.data,1,128,128,128.00
 808E1FE0,build/src/overlays/actors/ovl_En_Fire_Rock/z_en_fire_rock.o,.text,4,16,64,16.00
@@ -778,7 +778,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 808E3EF0,build/src/overlays/actors/ovl_En_Sb/z_en_sb.o,.text,20,336,3840,192.00
 808E4DF0,build/src/overlays/actors/ovl_En_Sb/z_en_sb.o,.data,1,176,176,176.00
 808E4FC0,build/src/overlays/actors/ovl_En_Bigslime/z_en_bigslime.o,.text,103,1420,34432,334.29
-808ED640,build/src/overlays/actors/ovl_En_Bigslime/z_en_bigslime.o,.data,1,11920,11920,11920.00
+808ED640,build/src/overlays/actors/ovl_En_Bigslime/z_en_bigslime.o,.data,1,592,11920,11920.00
 808F1200,build/src/overlays/actors/ovl_En_Karebaba/z_en_karebaba.o,.text,30,1160,7040,234.67
 808F2D80,build/src/overlays/actors/ovl_En_Karebaba/z_en_karebaba.o,.data,1,192,192,192.00
 808F30B0,build/src/overlays/actors/ovl_En_In/z_en_in.o,.text,44,4704,14736,334.91
@@ -803,9 +803,9 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 8091A8A0,build/src/overlays/actors/ovl_En_Insect/z_en_insect.o,.text,22,696,5312,241.45
 8091BD60,build/src/overlays/actors/ovl_En_Insect/z_en_insect.o,.data,4,84,128,32.00
 8091C0A0,build/src/overlays/actors/ovl_En_Butte/z_en_butte.o,.text,19,980,4656,245.05
-8091D2D0,build/src/overlays/actors/ovl_En_Butte/z_en_butte.o,.data,11,68,304,27.64
+8091D2D0,build/src/overlays/actors/ovl_En_Butte/z_en_butte.o,.data,11,60,304,27.64
 8091D630,build/src/overlays/actors/ovl_En_Fish/z_en_fish.o,.text,36,860,9264,257.33
-8091FA60,build/src/overlays/actors/ovl_En_Fish/z_en_fish.o,.data,1,160,160,160.00
+8091FA60,build/src/overlays/actors/ovl_En_Fish/z_en_fish.o,.data,1,96,160,160.00
 8091FEF0,build/src/overlays/actors/ovl_Item_Etcetera/z_item_etcetera.o,.text,9,312,800,88.89
 80920210,build/src/overlays/actors/ovl_Item_Etcetera/z_item_etcetera.o,.data,1,128,128,128.00
 80920340,build/src/overlays/actors/ovl_Arrow_Fire/z_arrow_fire.o,.text,10,972,2736,273.60
@@ -815,7 +815,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80924300,build/src/overlays/actors/ovl_Arrow_Light/z_arrow_light.o,.text,9,1012,2400,266.67
 80924C60,build/src/overlays/actors/ovl_Arrow_Light/z_arrow_light.o,.data,6,2048,5200,866.67
 809261B0,build/src/overlays/actors/ovl_Obj_Kibako/z_obj_kibako.o,.text,19,852,4560,240.00
-80927380,build/src/overlays/actors/ovl_Obj_Kibako/z_obj_kibako.o,.data,1,128,128,128.00
+80927380,build/src/overlays/actors/ovl_Obj_Kibako/z_obj_kibako.o,.data,1,112,128,128.00
 809275C0,build/src/overlays/actors/ovl_Obj_Tsubo/z_obj_tsubo.o,.text,28,904,8000,285.71
 80929500,build/src/overlays/actors/ovl_Obj_Tsubo/z_obj_tsubo.o,.data,6,192,240,40.00
 80929910,build/src/overlays/actors/ovl_En_Ik/z_en_ik.o,.text,41,816,9872,240.78
@@ -823,7 +823,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 8092C530,build/src/overlays/actors/ovl_Demo_Shd/z_demo_shd.o,.text,4,16,64,16.00
 8092C570,build/src/overlays/actors/ovl_Demo_Shd/z_demo_shd.o,.data,1,32,32,32.00
 8092C5C0,build/src/overlays/actors/ovl_En_Dns/z_en_dns.o,.text,27,560,5872,217.48
-8092DCB0,build/src/overlays/actors/ovl_En_Dns/z_en_dns.o,.data,1,384,384,384.00
+8092DCB0,build/src/overlays/actors/ovl_En_Dns/z_en_dns.o,.data,1,296,384,384.00
 8092DF90,build/src/overlays/actors/ovl_Elf_Msg/z_elf_msg.o,.text,8,312,1216,152.00
 8092E450,build/src/overlays/actors/ovl_Elf_Msg/z_elf_msg.o,.data,1,48,48,48.00
 8092E510,build/src/overlays/actors/ovl_En_Honotrap/z_en_honotrap.o,.text,41,1268,7904,192.78
@@ -831,7 +831,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80930510,build/src/overlays/actors/ovl_En_Honotrap/z_en_honotrap.o,.rodata,26,12,112,4.31
 80930580,build/data/ovl_En_Honotrap/ovl_En_Honotrap.reloc.o,.rodata,1,608,608,608.00
 809307E0,build/src/overlays/actors/ovl_En_Tubo_Trap/z_en_tubo_trap.o,.text,11,636,3120,283.64
-80931410,build/src/overlays/actors/ovl_En_Tubo_Trap/z_en_tubo_trap.o,.data,1,112,112,112.00
+80931410,build/src/overlays/actors/ovl_En_Tubo_Trap/z_en_tubo_trap.o,.data,1,68,112,112.00
 80931560,build/src/overlays/actors/ovl_Obj_Ice_Poly/z_obj_ice_poly.o,.text,8,1056,3488,436.00
 80932300,build/src/overlays/actors/ovl_Obj_Ice_Poly/z_obj_ice_poly.o,.data,1,160,160,160.00
 80932490,build/src/overlays/actors/ovl_En_Fz/z_en_fz.o,.text,39,892,8768,224.82
@@ -844,7 +844,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 809393B0,build/src/overlays/actors/ovl_Obj_Bombiwa/z_obj_bombiwa.o,.text,16,792,5488,343.00
 8093A920,build/src/overlays/actors/ovl_Obj_Bombiwa/z_obj_bombiwa.o,.data,1,208,208,208.00
 8093ABD0,build/src/overlays/actors/ovl_Obj_Switch/z_obj_switch.o,.text,57,1304,8336,146.25
-8093CC60,build/src/overlays/actors/ovl_Obj_Switch/z_obj_switch.o,.data,1,512,512,512.00
+8093CC60,build/src/overlays/actors/ovl_Obj_Switch/z_obj_switch.o,.data,1,476,512,512.00
 8093D3C0,build/src/overlays/actors/ovl_Obj_Lift/z_obj_lift.o,.text,14,616,2416,172.57
 8093DD30,build/src/overlays/actors/ovl_Obj_Lift/z_obj_lift.o,.data,2,80,128,64.00
 8093DEA0,build/src/overlays/actors/ovl_Obj_Hsblock/z_obj_hsblock.o,.text,11,272,1136,103.27
@@ -869,7 +869,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80947F60,build/src/overlays/actors/ovl_En_Clear_Tag/z_en_clear_tag.o,.text,15,4460,11744,782.93
 8094AD40,build/src/overlays/actors/ovl_En_Clear_Tag/z_en_clear_tag.o,.data,20,4096,12064,603.20
 8094DEE0,build/src/overlays/actors/ovl_En_Gm/z_en_gm.o,.text,51,920,14656,287.37
-80951820,build/src/overlays/actors/ovl_En_Gm/z_en_gm.o,.data,1,1584,1584,1584.00
+80951820,build/src/overlays/actors/ovl_En_Gm/z_en_gm.o,.data,1,532,1584,1584.00
 80952620,build/src/overlays/actors/ovl_En_Ms/z_en_ms.o,.text,8,436,1376,172.00
 80952B80,build/src/overlays/actors/ovl_En_Ms/z_en_ms.o,.data,1,96,96,96.00
 80952C50,build/src/overlays/actors/ovl_En_Hs/z_en_hs.o,.text,18,464,3232,179.56
@@ -885,7 +885,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 8095A510,build/src/overlays/actors/ovl_En_Owl/z_en_owl.o,.text,54,1696,11712,216.89
 8095D2D0,build/src/overlays/actors/ovl_En_Owl/z_en_owl.o,.data,1,112,112,112.00
 8095D6E0,build/src/overlays/actors/ovl_En_Ishi/z_en_ishi.o,.text,31,1156,8112,261.68
-8095F690,build/src/overlays/actors/ovl_En_Ishi/z_en_ishi.o,.data,1,304,304,304.00
+8095F690,build/src/overlays/actors/ovl_En_Ishi/z_en_ishi.o,.data,1,296,304,304.00
 8095FB10,build/src/overlays/actors/ovl_Obj_Hana/z_obj_hana.o,.text,4,56,128,32.00
 8095FB90,build/src/overlays/actors/ovl_Obj_Hana/z_obj_hana.o,.data,1,48,48,48.00
 8095FBF0,build/src/overlays/actors/ovl_Obj_Lightswitch/z_obj_lightswitch.o,.text,21,652,3968,188.95
@@ -908,11 +908,11 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 8096B0A0,build/src/overlays/actors/ovl_En_Okarina_Effect/z_en_okarina_effect.o,.text,7,136,496,70.86
 8096B290,build/src/overlays/actors/ovl_En_Okarina_Effect/z_en_okarina_effect.o,.data,1,32,32,32.00
 8096B310,build/src/overlays/actors/ovl_En_Mag/z_en_mag.o,.text,11,4380,13824,1256.73
-8096E910,build/src/overlays/actors/ovl_En_Mag/z_en_mag.o,.data,1,208,208,208.00
+8096E910,build/src/overlays/actors/ovl_En_Mag/z_en_mag.o,.data,1,188,208,208.00
 8096EC40,build/src/overlays/actors/ovl_Elf_Msg2/z_elf_msg2.o,.text,9,312,1104,122.67
 8096F090,build/src/overlays/actors/ovl_Elf_Msg2/z_elf_msg2.o,.data,1,48,48,48.00
 8096F160,build/src/overlays/actors/ovl_Bg_F40_Swlift/z_bg_f40_swlift.o,.text,4,636,944,236.00
-8096F510,build/src/overlays/actors/ovl_Bg_F40_Swlift/z_bg_f40_swlift.o,.data,1,64,64,64.00
+8096F510,build/src/overlays/actors/ovl_Bg_F40_Swlift/z_bg_f40_swlift.o,.data,1,48,64,64.00
 8096F5E0,build/src/overlays/actors/ovl_En_Kakasi/z_en_kakasi.o,.text,36,1400,10144,281.78
 80971D80,build/src/overlays/actors/ovl_En_Kakasi/z_en_kakasi.o,.data,8,180,768,96.00
 80972350,build/src/overlays/actors/ovl_Obj_Makeoshihiki/z_obj_makeoshihiki.o,.text,4,244,736,184.00
@@ -953,7 +953,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 8097A680,build/src/overlays/effects/ovl_Effect_Ss_Lightning/z_eff_ss_lightning.o,.text,4,608,1536,384.00
 8097AC80,build/src/overlays/effects/ovl_Effect_Ss_Lightning/z_eff_ss_lightning.o,.data,2,32,48,24.00
 8097AD60,build/src/overlays/effects/ovl_Effect_Ss_Dt_Bubble/z_eff_ss_dt_bubble.o,.text,3,528,1152,384.00
-8097B1E0,build/src/overlays/effects/ovl_Effect_Ss_Dt_Bubble/z_eff_ss_dt_bubble.o,.data,1,48,48,48.00
+8097B1E0,build/src/overlays/effects/ovl_Effect_Ss_Dt_Bubble/z_eff_ss_dt_bubble.o,.data,1,16,48,48.00
 8097B270,build/src/overlays/effects/ovl_Effect_Ss_Hahen/z_eff_ss_hahen.o,.text,6,320,1312,218.67
 8097B790,build/src/overlays/effects/ovl_Effect_Ss_Hahen/z_eff_ss_hahen.o,.data,1,16,16,16.00
 8097B810,build/src/overlays/effects/ovl_Effect_Ss_Stick/z_eff_ss_stick.o,.text,3,308,608,202.67
@@ -963,7 +963,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 8097C130,build/src/overlays/effects/ovl_Effect_Ss_Stone1/z_eff_ss_stone1.o,.text,3,472,672,224.00
 8097C3D0,build/src/overlays/effects/ovl_Effect_Ss_Stone1/z_eff_ss_stone1.o,.data,1,112,112,112.00
 8097C490,build/src/overlays/effects/ovl_Effect_Ss_Hitmark/z_eff_ss_hitmark.o,.text,3,492,1008,336.00
-8097C880,build/src/overlays/effects/ovl_Effect_Ss_Hitmark/z_eff_ss_hitmark.o,.data,1,192,192,192.00
+8097C880,build/src/overlays/effects/ovl_Effect_Ss_Hitmark/z_eff_ss_hitmark.o,.data,1,16,192,192.00
 8097C990,build/src/overlays/effects/ovl_Effect_Ss_Fhg_Flash/z_eff_ss_fhg_flash.o,.text,3,532,1328,442.67
 8097CEC0,build/src/overlays/effects/ovl_Effect_Ss_Fhg_Flash/z_eff_ss_fhg_flash.o,.data,4,1032,1248,312.00
 8097D410,build/src/overlays/effects/ovl_Effect_Ss_K_Fire/z_eff_ss_k_fire.o,.text,3,616,992,330.67
@@ -981,7 +981,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 8097FF60,build/src/overlays/effects/ovl_Effect_Ss_En_Fire/z_eff_ss_en_fire.o,.text,3,752,1552,517.33
 80980570,build/src/overlays/effects/ovl_Effect_Ss_En_Fire/z_eff_ss_en_fire.o,.data,1,16,16,16.00
 809805D0,build/src/overlays/effects/ovl_Effect_Ss_Extra/z_eff_ss_extra.o,.text,3,360,784,261.33
-809808E0,build/src/overlays/effects/ovl_Effect_Ss_Extra/z_eff_ss_extra.o,.data,1,32,32,32.00
+809808E0,build/src/overlays/effects/ovl_Effect_Ss_Extra/z_eff_ss_extra.o,.data,1,24,32,32.00
 80980940,build/src/overlays/effects/ovl_Effect_Ss_Dead_Db/z_eff_ss_dead_db.o,.text,3,432,912,304.00
 80980CD0,build/src/overlays/effects/ovl_Effect_Ss_Dead_Db/z_eff_ss_dead_db.o,.data,1,48,48,48.00
 80980D50,build/src/overlays/effects/ovl_Effect_Ss_Dead_Dd/z_eff_ss_dead_dd.o,.text,3,712,1312,437.33
@@ -1019,7 +1019,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80990310,build/src/overlays/actors/ovl_En_Wf/z_en_wf.o,.text,57,1140,15936,279.58
 80994150,build/src/overlays/actors/ovl_En_Wf/z_en_wf.o,.data,1,464,464,464.00
 809947B0,build/src/overlays/actors/ovl_En_Skb/z_en_skb.o,.text,54,932,11136,206.22
-80997330,build/src/overlays/actors/ovl_En_Skb/z_en_skb.o,.data,1,576,576,576.00
+80997330,build/src/overlays/actors/ovl_En_Skb/z_en_skb.o,.data,1,96,576,576.00
 80997A90,build/src/overlays/actors/ovl_En_Gs/z_en_gs.o,.text,31,1512,10480,338.06
 8099A380,build/src/overlays/actors/ovl_En_Gs/z_en_gs.o,.data,1,240,240,240.00
 8099A920,build/src/overlays/actors/ovl_Obj_Sound/z_obj_sound.o,.text,4,224,448,112.00
@@ -1065,7 +1065,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 809A61D0,build/src/overlays/actors/ovl_Obj_Boyo/z_obj_boyo.o,.rodata,7,8,32,4.57
 809A61F0,build/data/ovl_Obj_Boyo/ovl_Obj_Boyo.reloc.o,.rodata,1,144,144,144.00
 809A6280,build/src/overlays/actors/ovl_En_Grasshopper/z_en_grasshopper.o,.text,32,968,10752,336.00
-809A8C80,build/src/overlays/actors/ovl_En_Grasshopper/z_en_grasshopper.o,.data,1,448,448,448.00
+809A8C80,build/src/overlays/actors/ovl_En_Grasshopper/z_en_grasshopper.o,.data,1,324,448,448.00
 809A9110,build/src/overlays/actors/ovl_Obj_Grass/z_obj_grass.o,.text,14,1404,6368,454.86
 809AA9F0,build/src/overlays/actors/ovl_Obj_Grass/z_obj_grass.o,.data,6,120,432,72.00
 809AADA0,build/src/overlays/actors/ovl_Obj_Grass/z_obj_grass.o,.bss,4,80,192,48.00
@@ -1110,9 +1110,9 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 809C64C0,build/src/overlays/actors/ovl_En_Syateki_Man/z_en_syateki_man.o,.text,32,880,11424,357.00
 809C9160,build/src/overlays/actors/ovl_En_Syateki_Man/z_en_syateki_man.o,.data,1,880,880,880.00
 809C9A60,build/src/overlays/actors/ovl_Bg_Icicle/z_bg_icicle.o,.text,11,480,2128,193.45
-809CA2B0,build/src/overlays/actors/ovl_Bg_Icicle/z_bg_icicle.o,.data,1,112,112,112.00
+809CA2B0,build/src/overlays/actors/ovl_Bg_Icicle/z_bg_icicle.o,.data,1,68,112,112.00
 809CA3F0,build/src/overlays/actors/ovl_En_Syateki_Crow/z_en_syateki_crow.o,.text,14,532,3168,226.29
-809CB050,build/src/overlays/actors/ovl_En_Syateki_Crow/z_en_syateki_crow.o,.data,1,160,160,160.00
+809CB050,build/src/overlays/actors/ovl_En_Syateki_Crow/z_en_syateki_crow.o,.data,1,148,160,160.00
 809CB200,build/src/overlays/actors/ovl_En_Boj_04/z_en_boj_04.o,.text,4,16,64,16.00
 809CB240,build/src/overlays/actors/ovl_En_Boj_04/z_en_boj_04.o,.data,1,32,32,32.00
 809CB290,build/src/overlays/actors/ovl_En_Cne_01/z_en_cne_01.o,.text,14,680,3152,225.14
@@ -1137,7 +1137,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 809E8EA0,build/src/overlays/actors/ovl_Boss_03/z_boss_03.o,.data,11,316,832,75.64
 809E9840,build/src/overlays/actors/ovl_Boss_03/z_boss_03.o,.bss,6,10200,10240,1706.67
 809EC040,build/src/overlays/actors/ovl_Boss_04/z_boss_04.o,.text,17,1944,8464,497.88
-809EE150,build/src/overlays/actors/ovl_Boss_04/z_boss_04.o,.data,1,240,240,240.00
+809EE150,build/src/overlays/actors/ovl_Boss_04/z_boss_04.o,.data,1,208,240,240.00
 809EE4E0,build/src/overlays/actors/ovl_Boss_05/z_boss_05.o,.text,42,3028,13632,324.57
 809F1A20,build/data/ovl_Boss_05/ovl_Boss_05.data.o,.data,24,160,768,32.00
 809F1D20,build/src/overlays/actors/ovl_Boss_05/z_boss_05.o,.rodata,15,88,144,9.60
@@ -1145,7 +1145,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 809F2110,build/data/ovl_Boss_05/ovl_Boss_05.bss.o,.bss,1,16,16,16.00
 809F2120,build/src/overlays/actors/ovl_Boss_06/z_boss_06.o,.text,15,3380,8032,535.47
 809F4080,build/src/overlays/actors/ovl_Boss_06/z_boss_06.o,.data,4,44,144,36.00
-809F4110,build/src/overlays/actors/ovl_Boss_06/z_boss_06.o,.rodata,3,104,112,37.33
+809F4110,build/src/overlays/actors/ovl_Boss_06/z_boss_06.o,.rodata,3,84,112,37.33
 809F4180,build/data/ovl_Boss_06/ovl_Boss_06.reloc.o,.rodata,1,496,496,496.00
 809F4370,build/src/overlays/actors/ovl_Boss_06/z_boss_06.o,.bss,5,1536,1552,310.40
 809F4980,build/src/overlays/actors/ovl_Boss_07/z_boss_07.o,.text,136,4036,77776,571.88
@@ -1160,9 +1160,9 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80A0C780,build/src/overlays/actors/ovl_En_Boj_05/z_en_boj_05.o,.text,4,16,64,16.00
 80A0C7C0,build/src/overlays/actors/ovl_En_Boj_05/z_en_boj_05.o,.data,1,32,32,32.00
 80A0C810,build/src/overlays/actors/ovl_En_Sob1/z_en_sob1.o,.text,76,936,16464,216.63
-80A10860,build/src/overlays/actors/ovl_En_Sob1/z_en_sob1.o,.data,1,496,496,496.00
+80A10860,build/src/overlays/actors/ovl_En_Sob1/z_en_sob1.o,.data,1,448,496,496.00
 80A10FD0,build/src/overlays/actors/ovl_En_Go/z_en_go.o,.text,70,1076,20784,296.91
-80A16100,build/src/overlays/actors/ovl_En_Go/z_en_go.o,.data,1,1568,1568,1568.00
+80A16100,build/src/overlays/actors/ovl_En_Go/z_en_go.o,.data,1,780,1568,1568.00
 80A16D40,build/src/overlays/actors/ovl_En_Raf/z_en_raf.o,.text,27,1132,8576,317.63
 80A18EC0,build/src/overlays/actors/ovl_En_Raf/z_en_raf.o,.data,1,1584,1584,1584.00
 80A19740,build/src/overlays/actors/ovl_Obj_Funen/z_obj_funen.o,.text,2,312,368,184.00
@@ -1181,7 +1181,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80A1FDD0,build/src/overlays/actors/ovl_Dm_Hina/z_dm_hina.o,.rodata,4,4,16,4.00
 80A1FDE0,build/data/ovl_Dm_Hina/ovl_Dm_Hina.reloc.o,.rodata,1,112,112,112.00
 80A1FE50,build/src/overlays/actors/ovl_En_Syateki_Wf/z_en_syateki_wf.o,.text,21,676,4096,195.05
-80A20E50,build/src/overlays/actors/ovl_En_Syateki_Wf/z_en_syateki_wf.o,.data,1,416,416,416.00
+80A20E50,build/src/overlays/actors/ovl_En_Syateki_Wf/z_en_syateki_wf.o,.data,1,252,416,416.00
 80A21150,build/src/overlays/actors/ovl_Obj_Skateblock/z_obj_skateblock.o,.text,30,700,6304,210.13
 80A229F0,build/src/overlays/actors/ovl_Obj_Skateblock/z_obj_skateblock.o,.data,15,56,336,22.40
 80A22D40,build/src/overlays/effects/ovl_Effect_En_Ice_Block/z_eff_en_ice_block.o,.text,4,336,736,184.00
@@ -1251,7 +1251,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80A48FE0,build/src/overlays/actors/ovl_En_Wiz_Brock/z_en_wiz_brock.o,.text,6,680,1488,248.00
 80A495B0,build/src/overlays/actors/ovl_En_Wiz_Brock/z_en_wiz_brock.o,.data,2,44,48,24.00
 80A496A0,build/src/overlays/actors/ovl_En_Wiz_Fire/z_en_wiz_fire.o,.text,16,2608,11040,690.00
-80A4C1C0,build/src/overlays/actors/ovl_En_Wiz_Fire/z_en_wiz_fire.o,.data,1,160,160,160.00
+80A4C1C0,build/src/overlays/actors/ovl_En_Wiz_Fire/z_en_wiz_fire.o,.data,1,156,160,160.00
 80A4C490,build/src/overlays/actors/ovl_Eff_Change/z_eff_change.o,.text,6,448,1136,189.33
 80A4C900,build/src/overlays/actors/ovl_Eff_Change/z_eff_change.o,.data,1,80,80,80.00
 80A4C9B0,build/src/overlays/actors/ovl_Dm_Statue/z_dm_statue.o,.text,4,76,144,36.00
@@ -1269,9 +1269,9 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80A50D40,build/src/overlays/actors/ovl_En_Dnh/z_en_dnh.o,.text,11,292,1296,117.82
 80A51250,build/src/overlays/actors/ovl_En_Dnh/z_en_dnh.o,.data,4,308,512,128.00
 80A514F0,build/src/overlays/actors/ovl_En_Dnk/z_en_dnk.o,.text,17,584,3248,191.06
-80A521A0,build/src/overlays/actors/ovl_En_Dnk/z_en_dnk.o,.data,1,720,720,720.00
+80A521A0,build/src/overlays/actors/ovl_En_Dnk/z_en_dnk.o,.data,1,716,720,720.00
 80A52530,build/src/overlays/actors/ovl_En_Dnq/z_en_dnq.o,.text,18,588,3792,210.67
-80A53400,build/src/overlays/actors/ovl_En_Dnq/z_en_dnq.o,.data,1,544,544,544.00
+80A53400,build/src/overlays/actors/ovl_En_Dnq/z_en_dnq.o,.data,1,476,544,544.00
 80A537D0,build/src/overlays/actors/ovl_Bg_Keikoku_Saku/z_bg_keikoku_saku.o,.text,7,260,896,128.00
 80A53B50,build/src/overlays/actors/ovl_Bg_Keikoku_Saku/z_bg_keikoku_saku.o,.data,1,32,32,32.00
 80A53BE0,build/src/overlays/actors/ovl_Obj_Hugebombiwa/z_obj_hugebombiwa.o,.text,19,1036,8448,444.63
@@ -1310,9 +1310,9 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80A71080,build/src/overlays/actors/ovl_Bg_Crace_Movebg/z_bg_crace_movebg.o,.data,1,64,64,64.00
 80A711B0,build/src/overlays/actors/ovl_Bg_Crace_Movebg/z_bg_crace_movebg.o,.bss,1,32,32,32.00
 80A711D0,build/src/overlays/actors/ovl_En_Dno/z_en_dno.o,.text,36,1312,10192,283.11
-80A739A0,build/src/overlays/actors/ovl_En_Dno/z_en_dno.o,.data,1,432,432,432.00
+80A739A0,build/src/overlays/actors/ovl_En_Dno/z_en_dno.o,.data,1,112,432,432.00
 80A73FA0,build/src/overlays/actors/ovl_En_Pr2/z_en_pr2.o,.text,19,1284,7200,378.95
-80A75BC0,build/src/overlays/actors/ovl_En_Pr2/z_en_pr2.o,.data,3,112,160,53.33
+80A75BC0,build/src/overlays/actors/ovl_En_Pr2/z_en_pr2.o,.data,3,44,160,53.33
 80A75DC0,build/src/overlays/actors/ovl_En_Prz/z_en_prz.o,.text,18,628,5120,284.44
 80A771C0,build/src/overlays/actors/ovl_En_Prz/z_en_prz.o,.data,5,64,160,32.00
 80A773C0,build/src/overlays/actors/ovl_En_Jso2/z_en_jso2.o,.text,45,3216,16688,370.84
@@ -1322,7 +1322,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80A7BC70,build/src/overlays/actors/ovl_Obj_Etcetera/z_obj_etcetera.o,.text,11,740,2816,256.00
 80A7C770,build/src/overlays/actors/ovl_Obj_Etcetera/z_obj_etcetera.o,.data,1,176,176,176.00
 80A7C990,build/src/overlays/actors/ovl_En_Egol/z_en_egol.o,.text,42,2040,17072,406.48
-80A80C40,build/src/overlays/actors/ovl_En_Egol/z_en_egol.o,.data,1,592,592,592.00
+80A80C40,build/src/overlays/actors/ovl_En_Egol/z_en_egol.o,.data,1,164,592,592.00
 80A811D0,build/src/overlays/actors/ovl_Obj_Mine/z_obj_mine.o,.text,47,2220,13184,280.51
 80A84550,build/data/ovl_Obj_Mine/ovl_Obj_Mine.data.o,.data,7,36,176,25.14
 80A84600,build/src/overlays/actors/ovl_Obj_Mine/z_obj_mine.o,.rodata,41,16,176,4.29
@@ -1333,14 +1333,14 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80A85620,build/src/overlays/actors/ovl_En_Tru/z_en_tru.o,.text,35,1064,13040,372.57
 80A88910,build/src/overlays/actors/ovl_En_Tru/z_en_tru.o,.data,13,4096,11024,848.00
 80A8B770,build/src/overlays/actors/ovl_En_Trt/z_en_trt.o,.text,82,936,18080,220.49
-80A8FE10,build/src/overlays/actors/ovl_En_Trt/z_en_trt.o,.data,1,256,256,256.00
+80A8FE10,build/src/overlays/actors/ovl_En_Trt/z_en_trt.o,.data,1,96,256,256.00
 80A903B0,build/src/overlays/actors/ovl_En_Test5/z_en_test5.o,.text,5,316,816,163.20
 80A906E0,build/src/overlays/actors/ovl_En_Test5/z_en_test5.o,.data,1,32,32,32.00
 80A90730,build/src/overlays/actors/ovl_En_Test6/z_en_test6.o,.text,23,2408,14128,614.26
 80A93E60,build/src/overlays/actors/ovl_En_Test6/z_en_test6.o,.data,13,428,544,41.85
 80A94910,build/src/overlays/actors/ovl_En_Test6/z_en_test6.o,.bss,1,288,288,288.00
 80A94A30,build/src/overlays/actors/ovl_En_Az/z_en_az.o,.text,46,3992,17888,388.87
-80A99010,build/src/overlays/actors/ovl_En_Az/z_en_az.o,.data,1,1072,1072,1072.00
+80A99010,build/src/overlays/actors/ovl_En_Az/z_en_az.o,.data,1,848,1072,1072.00
 80A99E80,build/src/overlays/actors/ovl_En_Az/z_en_az.o,.bss,3,16,32,10.67
 80A99EA0,build/src/overlays/actors/ovl_En_Estone/z_en_estone.o,.text,9,784,3248,360.89
 80A9AB50,build/src/overlays/actors/ovl_En_Estone/z_en_estone.o,.data,1,80,80,80.00
@@ -1440,7 +1440,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80AD2B70,build/src/overlays/actors/ovl_Bg_Ctower_Gear/z_bg_ctower_gear.o,.text,7,788,1760,251.43
 80AD3250,build/src/overlays/actors/ovl_Bg_Ctower_Gear/z_bg_ctower_gear.o,.data,1,176,176,176.00
 80AD3380,build/src/overlays/actors/ovl_En_Trt2/z_en_trt2.o,.text,47,560,9312,198.13
-80AD57E0,build/src/overlays/actors/ovl_En_Trt2/z_en_trt2.o,.data,1,432,432,432.00
+80AD57E0,build/src/overlays/actors/ovl_En_Trt2/z_en_trt2.o,.data,1,272,432,432.00
 80AD5BB0,build/src/overlays/actors/ovl_Obj_Tokei_Step/z_obj_tokei_step.o,.text,20,572,2640,132.00
 80AD6600,build/src/overlays/actors/ovl_Obj_Tokei_Step/z_obj_tokei_step.o,.data,1,128,128,128.00
 80AD6760,build/src/overlays/actors/ovl_Bg_Lotus/z_bg_lotus.o,.text,8,428,1424,178.00
@@ -1457,7 +1457,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80ADAAF0,build/src/overlays/actors/ovl_Bg_Fu_Mizu/z_bg_fu_mizu.o,.text,5,228,656,131.20
 80ADAD80,build/src/overlays/actors/ovl_Bg_Fu_Mizu/z_bg_fu_mizu.o,.data,1,32,32,32.00
 80ADADD0,build/src/overlays/actors/ovl_En_Sellnuts/z_en_sellnuts.o,.text,38,992,11072,291.37
-80ADD910,build/src/overlays/actors/ovl_En_Sellnuts/z_en_sellnuts.o,.data,1,512,512,512.00
+80ADD910,build/src/overlays/actors/ovl_En_Sellnuts/z_en_sellnuts.o,.data,1,460,512,512.00
 80ADE230,build/src/overlays/actors/ovl_Bg_Dkjail_Ivy/z_bg_dkjail_ivy.o,.text,11,884,1792,162.91
 80ADE930,build/src/overlays/actors/ovl_Bg_Dkjail_Ivy/z_bg_dkjail_ivy.o,.data,1,112,112,112.00
 80ADEA70,build/src/overlays/actors/ovl_Obj_Visiblock/z_obj_visiblock.o,.text,3,80,192,64.00
@@ -1473,7 +1473,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80AE1B70,build/src/overlays/actors/ovl_En_Fsn/z_en_fsn.o,.text,63,936,16272,258.29
 80AE5B00,build/src/overlays/actors/ovl_En_Fsn/z_en_fsn.o,.data,1,352,352,352.00
 80AE6130,build/src/overlays/actors/ovl_En_Shn/z_en_shn.o,.text,20,380,3536,176.80
-80AE6F00,build/src/overlays/actors/ovl_En_Shn/z_en_shn.o,.data,2,776,896,448.00
+80AE6F00,build/src/overlays/actors/ovl_En_Shn/z_en_shn.o,.data,2,120,896,448.00
 80AE73A0,build/src/overlays/actors/ovl_En_Stop_heishi/z_en_stop_heishi.o,.text,15,1560,5360,357.33
 80AE8890,build/src/overlays/actors/ovl_En_Stop_heishi/z_en_stop_heishi.o,.data,1,432,432,432.00
 80AE8B70,build/src/overlays/actors/ovl_Obj_Bigicicle/z_obj_bigicicle.o,.text,10,564,3216,321.60
@@ -1481,7 +1481,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80AE9A20,build/src/overlays/actors/ovl_En_Lift_Nuts/z_en_lift_nuts.o,.text,46,1540,8976,195.13
 80AEBD30,build/src/overlays/actors/ovl_En_Lift_Nuts/z_en_lift_nuts.o,.data,2,488,608,304.00
 80AEC460,build/src/overlays/actors/ovl_En_Tk/z_en_tk.o,.text,57,1268,13216,231.86
-80AEF800,build/src/overlays/actors/ovl_En_Tk/z_en_tk.o,.data,1,672,672,672.00
+80AEF800,build/src/overlays/actors/ovl_En_Tk/z_en_tk.o,.data,1,656,672,672.00
 80AF0060,build/src/overlays/actors/ovl_Bg_Market_Step/z_bg_market_step.o,.text,2,104,144,72.00
 80AF00F0,build/src/overlays/actors/ovl_Bg_Market_Step/z_bg_market_step.o,.data,3,48,64,21.33
 80AF0170,build/src/overlays/actors/ovl_Obj_Lupygamelift/z_obj_lupygamelift.o,.text,9,496,1456,161.78
@@ -1505,7 +1505,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80AF7640,build/src/overlays/actors/ovl_En_Snowwd/z_en_snowwd.o,.text,5,668,1072,214.40
 80AF7A70,build/src/overlays/actors/ovl_En_Snowwd/z_en_snowwd.o,.data,5,76,112,22.40
 80AF7B40,build/src/overlays/actors/ovl_En_Pm/z_en_pm.o,.text,50,756,12864,257.28
-80AFAD80,build/src/overlays/actors/ovl_En_Pm/z_en_pm.o,.data,1,2976,2976,2976.00
+80AFAD80,build/src/overlays/actors/ovl_En_Pm/z_en_pm.o,.data,1,432,2976,2976.00
 80AFC960,build/src/overlays/actors/ovl_En_Gakufu/z_en_gakufu.o,.text,12,796,2128,177.33
 80AFD1B0,build/src/overlays/actors/ovl_En_Gakufu/z_en_gakufu.o,.data,8,64,256,32.00
 80AFD380,build/src/overlays/actors/ovl_Elf_Msg4/z_elf_msg4.o,.text,8,312,1360,170.00
@@ -1513,7 +1513,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80AFD990,build/src/overlays/actors/ovl_Elf_Msg5/z_elf_msg5.o,.text,5,312,544,108.80
 80AFDBB0,build/src/overlays/actors/ovl_Elf_Msg5/z_elf_msg5.o,.data,1,48,48,48.00
 80AFDC40,build/src/overlays/actors/ovl_En_Col_Man/z_en_col_man.o,.text,14,640,2800,200.00
-80AFE730,build/src/overlays/actors/ovl_En_Col_Man/z_en_col_man.o,.data,1,96,96,96.00
+80AFE730,build/src/overlays/actors/ovl_En_Col_Man/z_en_col_man.o,.data,1,52,96,96.00
 80AFE8A0,build/src/overlays/actors/ovl_En_Talk_Gibud/z_en_talk_gibud.o,.text,50,620,10560,211.20
 80B011E0,build/src/overlays/actors/ovl_En_Talk_Gibud/z_en_talk_gibud.o,.data,1,656,656,656.00
 80B01990,build/src/overlays/actors/ovl_En_Giant/z_en_giant.o,.text,17,836,4000,235.29
@@ -1531,7 +1531,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80B12430,build/src/overlays/actors/ovl_Bg_Tobira01/z_bg_tobira01.o,.text,5,604,976,195.20
 80B12800,build/src/overlays/actors/ovl_Bg_Tobira01/z_bg_tobira01.o,.data,1,32,32,32.00
 80B12870,build/src/overlays/actors/ovl_En_Tag_Obj/z_en_tag_obj.o,.text,3,112,144,48.00
-80B12900,build/src/overlays/actors/ovl_En_Tag_Obj/z_en_tag_obj.o,.data,1,80,80,80.00
+80B12900,build/src/overlays/actors/ovl_En_Tag_Obj/z_en_tag_obj.o,.data,1,36,80,80.00
 80B12980,build/src/overlays/actors/ovl_Obj_Dhouse/z_obj_dhouse.o,.text,20,772,5360,268.00
 80B13E70,build/src/overlays/actors/ovl_Obj_Dhouse/z_obj_dhouse.o,.data,4,280,352,88.00
 80B14180,build/src/overlays/actors/ovl_Obj_Hakaisi/z_obj_hakaisi.o,.text,24,864,5136,214.00
@@ -1544,9 +1544,9 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80B19F60,build/src/overlays/actors/ovl_TG_Sw/z_tg_sw.o,.text,6,368,960,160.00
 80B1A320,build/src/overlays/actors/ovl_TG_Sw/z_tg_sw.o,.data,1,32,32,32.00
 80B1A3B0,build/src/overlays/actors/ovl_En_Po_Sisters/z_en_po_sisters.o,.text,45,1872,13952,310.04
-80B1DA30,build/src/overlays/actors/ovl_En_Po_Sisters/z_en_po_sisters.o,.data,1,240,240,240.00
+80B1DA30,build/src/overlays/actors/ovl_En_Po_Sisters/z_en_po_sisters.o,.data,1,208,240,240.00
 80B1DEB0,build/src/overlays/actors/ovl_En_Pp/z_en_pp.o,.text,34,1240,14192,417.41
-80B21620,build/src/overlays/actors/ovl_En_Pp/z_en_pp.o,.data,1,464,464,464.00
+80B21620,build/src/overlays/actors/ovl_En_Pp/z_en_pp.o,.data,1,428,464,464.00
 80B21B00,build/src/overlays/actors/ovl_En_Hakurock/z_en_hakurock.o,.text,17,708,3936,231.53
 80B22A60,build/src/overlays/actors/ovl_En_Hakurock/z_en_hakurock.o,.data,1,96,96,96.00
 80B22C00,build/src/overlays/actors/ovl_En_Hanabi/z_en_hanabi.o,.text,17,880,3712,218.35
@@ -1562,9 +1562,9 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80B28080,build/src/overlays/actors/ovl_Bg_Botihasira/z_bg_botihasira.o,.text,5,212,592,118.40
 80B282D0,build/src/overlays/actors/ovl_Bg_Botihasira/z_bg_botihasira.o,.data,1,80,80,80.00
 80B28370,build/src/overlays/actors/ovl_En_Fish2/z_en_fish2.o,.text,34,1632,12144,357.18
-80B2B2E0,build/src/overlays/actors/ovl_En_Fish2/z_en_fish2.o,.data,1,224,224,224.00
+80B2B2E0,build/src/overlays/actors/ovl_En_Fish2/z_en_fish2.o,.data,1,200,224,224.00
 80B2B830,build/src/overlays/actors/ovl_En_Pst/z_en_pst.o,.text,16,344,2512,157.00
-80B2C200,build/src/overlays/actors/ovl_En_Pst/z_en_pst.o,.data,14,196,800,57.14
+80B2C200,build/src/overlays/actors/ovl_En_Pst/z_en_pst.o,.data,14,136,800,57.14
 80B2C6F0,build/src/overlays/actors/ovl_En_Poh/z_en_poh.o,.text,47,740,12144,258.38
 80B2F660,build/src/overlays/actors/ovl_En_Poh/z_en_poh.o,.data,1,256,256,256.00
 80B2FB10,build/src/overlays/actors/ovl_Obj_Spidertent/z_obj_spidertent.o,.text,16,1116,5424,339.00
@@ -1608,7 +1608,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80B5E380,build/src/overlays/actors/ovl_En_Ot/z_en_ot.o,.data,1,160,160,160.00
 80B5E880,build/src/overlays/actors/ovl_En_Ot/z_en_ot.o,.bss,3,8,16,5.33
 80B5E890,build/src/overlays/actors/ovl_En_Dragon/z_en_dragon.o,.text,21,1000,7488,356.57
-80B605D0,build/src/overlays/actors/ovl_En_Dragon/z_en_dragon.o,.data,1,704,704,704.00
+80B605D0,build/src/overlays/actors/ovl_En_Dragon/z_en_dragon.o,.data,1,700,704,704.00
 80B60AD0,build/src/overlays/actors/ovl_Obj_Dora/z_obj_dora.o,.text,10,568,2080,208.00
 80B612F0,build/src/overlays/actors/ovl_Obj_Dora/z_obj_dora.o,.data,1,464,464,464.00
 80B615E0,build/src/overlays/actors/ovl_En_Bigpo/z_en_bigpo.o,.text,69,808,14864,215.42
@@ -1728,7 +1728,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80BB8150,build/src/overlays/actors/ovl_En_Tanron2/z_en_tanron2.o,.data,3,152,160,53.33
 80BB8450,build/src/overlays/actors/ovl_En_Tanron2/z_en_tanron2.o,.bss,3,328,336,112.00
 80BB85A0,build/src/overlays/actors/ovl_En_Tanron3/z_en_tanron3.o,.text,12,1932,4480,373.33
-80BB9720,build/src/overlays/actors/ovl_En_Tanron3/z_en_tanron3.o,.data,1,144,144,144.00
+80BB9720,build/src/overlays/actors/ovl_En_Tanron3/z_en_tanron3.o,.data,1,128,144,144.00
 80BB98E0,build/src/overlays/actors/ovl_Obj_Chan/z_obj_chan.o,.text,13,984,4656,358.15
 80BBAB10,build/src/overlays/actors/ovl_Obj_Chan/z_obj_chan.o,.data,1,112,112,112.00
 80BBACA0,build/src/overlays/actors/ovl_En_Zos/z_en_zos.o,.text,29,728,6704,231.17
@@ -1736,9 +1736,9 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80BBCA80,build/src/overlays/actors/ovl_En_S_Goro/z_en_s_goro.o,.text,37,2248,11648,314.81
 80BBF800,build/src/overlays/actors/ovl_En_S_Goro/z_en_s_goro.o,.data,1,400,400,400.00
 80BBFDB0,build/src/overlays/actors/ovl_En_Nb/z_en_nb.o,.text,31,640,5696,183.74
-80BC13F0,build/src/overlays/actors/ovl_En_Nb/z_en_nb.o,.data,4,308,672,168.00
+80BC13F0,build/src/overlays/actors/ovl_En_Nb/z_en_nb.o,.data,4,272,672,168.00
 80BC1900,build/src/overlays/actors/ovl_En_Ja/z_en_ja.o,.text,30,1296,7408,246.93
-80BC35F0,build/src/overlays/actors/ovl_En_Ja/z_en_ja.o,.data,9,284,480,53.33
+80BC35F0,build/src/overlays/actors/ovl_En_Ja/z_en_ja.o,.data,9,256,480,53.33
 80BC3980,build/src/overlays/actors/ovl_Bg_F40_Block/z_bg_f40_block.o,.text,19,816,3200,168.42
 80BC4600,build/src/overlays/actors/ovl_Bg_F40_Block/z_bg_f40_block.o,.data,1,128,128,128.00
 80BC47B0,build/src/overlays/actors/ovl_Bg_F40_Switch/z_bg_f40_switch.o,.text,10,652,1568,156.80
@@ -1845,7 +1845,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80BF0D90,build/src/overlays/actors/ovl_Eff_Stk/z_eff_stk.o,.text,5,432,816,163.20
 80BF10C0,build/src/overlays/actors/ovl_Eff_Stk/z_eff_stk.o,.data,1,32,32,32.00
 80BF1150,build/src/overlays/actors/ovl_En_Ig/z_en_ig.o,.text,38,680,8464,222.74
-80BF3260,build/src/overlays/actors/ovl_En_Ig/z_en_ig.o,.data,1,752,752,752.00
+80BF3260,build/src/overlays/actors/ovl_En_Ig/z_en_ig.o,.data,1,344,752,752.00
 80BF3920,build/src/overlays/actors/ovl_En_Rg/z_en_rg.o,.text,31,836,7712,248.77
 80BF5740,build/src/overlays/actors/ovl_En_Rg/z_en_rg.o,.data,8,304,720,90.00
 80BF5C10,build/src/overlays/actors/ovl_En_Rg/z_en_rg.o,.bss,1,16,16,16.00
@@ -1860,7 +1860,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80BFCFA0,build/src/overlays/actors/ovl_En_Scopecoin/z_en_scopecoin.o,.text,6,312,704,117.33
 80BFD260,build/src/overlays/actors/ovl_En_Scopecoin/z_en_scopecoin.o,.data,1,64,64,64.00
 80BFD2E0,build/src/overlays/actors/ovl_En_Bjt/z_en_bjt.o,.text,15,564,3008,200.53
-80BFDEA0,build/src/overlays/actors/ovl_En_Bjt/z_en_bjt.o,.data,1,336,336,336.00
+80BFDEA0,build/src/overlays/actors/ovl_En_Bjt/z_en_bjt.o,.data,1,200,336,336.00
 80BFE170,build/src/overlays/actors/ovl_En_Bomjima/z_en_bomjima.o,.text,34,1164,10368,304.94
 80C009F0,build/src/overlays/actors/ovl_En_Bomjima/z_en_bomjima.o,.data,9,108,368,40.89
 80C00EA0,build/src/overlays/actors/ovl_En_Bomjimb/z_en_bomjimb.o,.text,32,1184,8912,278.50

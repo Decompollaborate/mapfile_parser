@@ -2308,7 +2308,7 @@ build/src/main_segment/game_etc.o,DBL_800AD180,800AD180,8
 build/src/main_segment/game_etc.o,DBL_800AD188,800AD188,8
 build/src/main_segment/screen_print/printf_impl.o,RO_800AD1C0,800AD1C0,8
 build/src/main_segment/screen_print/printf_impl.o,jtbl_800AD1C8,800AD1C8,72
-build/src/main_segment/screen_print/printf_impl.o,jtbl_800AD210,800AD210,256
+build/src/main_segment/screen_print/printf_impl.o,jtbl_800AD210,800AD210,208
 build/src/main_segment/tex_func.o,_modes_96,800ADB40,80
 build/src/main_segment/tex_func.o,DBL_800ADB90,800ADB90,16
 build/src/main_segment/tex_func.o,DBL_800ADBA0,800ADBA0,16
@@ -2534,7 +2534,7 @@ build/src/main_segment/main_menu.o,jtbl_800B13A8,800B13A8,40
 build/src/main_segment/main_menu.o,jtbl_800B13D0,800B13D0,40
 build/src/main_segment/main_menu.o,_lr_10544,800B13F8,56
 build/src/main_segment/main_menu.o,RO_800B1430,800B1430,8
-build/src/main_segment/main_menu.o,_dir_10660,800B1438,1368
+build/src/main_segment/main_menu.o,_dir_10660,800B1438,1304
 build/src/main_segment/font.o,init_dl_135,800B1950,64
 build/src/main_segment/msgwnd.o,sMessageColorTable,800B1990,196
 build/src/main_segment/msgwnd.o,STR_800B1A54,800B1A54,4
@@ -2621,7 +2621,7 @@ build/src/main_segment/dm_game_main.o,_panelTex_5797,800B2348,12
 build/src/main_segment/dm_game_main.o,tbl_5867,800B2354,112
 build/src/main_segment/dm_game_main.o,_x_6416,800B23C4,8
 build/src/main_segment/dm_game_main.o,dir_6435,800B23CC,8
-build/src/main_segment/dm_game_main.o,color2index_6470,800B23D4,72
+build/src/main_segment/dm_game_main.o,color2index_6470,800B23D4,44
 build/src/main_segment/dm_manual_main.o,RO_800B2408,800B2408,8
 build/src/main_segment/dm_manual_main.o,RO_800B2410,800B2410,8
 build/src/main_segment/dm_manual_main.o,RO_800B2418,800B2418,8
@@ -2697,7 +2697,7 @@ build/src/main_segment/dm_manual_main.o,_posFinger_925,800B31A0,32
 build/src/main_segment/dm_manual_main.o,map_x_table_1036,800B31C0,24
 build/src/main_segment/dm_manual_main.o,_seqTbl_1037,800B31D8,4
 build/src/main_segment/dm_manual_main.o,map_y_table_1038,800B31DC,4
-build/src/main_segment/dm_manual_main.o,size_table_1039,800B31E0,104
+build/src/main_segment/dm_manual_main.o,size_table_1039,800B31E0,96
 build/src/main_segment/dm_title_main.o,_stageTbl,800B3240,48
 build/src/main_segment/dm_title_main.o,STR_800B32A8,800B3270,56
 build/src/main_segment/dm_title_main.o,_mesBootContErr,800B32A8,112
@@ -2727,7 +2727,7 @@ build/src/main_segment/lws.o,DBL_800B3490,800B3490,8
 build/src/main_segment/lws.o,DBL_800B3498,800B3498,8
 build/src/main_segment/calc.o,DBL_800B34D8,800B34D8,8
 build/src/main_segment/calc.o,DBL_800B34E0,800B34E0,8
-build/src/main_segment/calc.o,DBL_800B34E8,800B34E8,64
+build/src/main_segment/calc.o,DBL_800B34E8,800B34E8,8
 build/src/main_segment/065080.o,DBL_800B34F0,800B34F0,8
 build/src/main_segment/065080.o,DBL_800B34F8,800B34F8,8
 build/src/main_segment/065080.o,DBL_800B3500,800B3500,8

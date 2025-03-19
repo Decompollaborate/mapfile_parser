@@ -123,7 +123,7 @@ build/us/libultra_rom_boot.a(pimgr.o),boot___Dom1SpeedParam,80006F60,120
 build/us/libultra_rom_boot.a(pimgr.o),boot___Dom2SpeedParam,80006FD8,4680
 build/us/libultra_rom_boot.a(kdebugserver.o),boot___osThreadSave,80008220,432
 build/us/libultra_rom_boot.a(seteventmesg.o),boot___osEventStateTab,800083D0,128
-build/us/libultra_rom_boot.a(piacs.o),boot___osPiAccessQueue,80008458,32
+build/us/libultra_rom_boot.a(piacs.o),boot___osPiAccessQueue,80008458,24
 build/us/asm/data/table_addr.data.s.o,D_00000000,00000000,16
 build/us/assets/build_data.bin.o,_binary_assets_build_data_bin_start,00000010,144
 build/us/assets/build_data.bin.o,_binary_assets_build_data_bin_end,000000A0,0
@@ -746,7 +746,7 @@ build/us/libultra_rom.a(mtxutil.o),guMtxIdentF,8002EEB4,136
 build/us/libultra_rom.a(mtxutil.o),guMtxIdent,8002EF3C,52
 build/us/libultra_rom.a(dpsetstat.o),osDpSetStatus,8002EF70,16
 build/us/libultra_rom.a(sptask.o),osSpTaskLoad,8002F08C,360
-build/us/libultra_rom.a(sptask.o),osSpTaskStartGo,8002F1F4,344
+build/us/libultra_rom.a(sptask.o),osSpTaskStartGo,8002F1F4,76
 build/us/libultra_rom.a(dpgetstat.o),osDpGetStatus,8002F240,16
 build/us/libultra_rom.a(vigetcurrframebuf.o),osViGetCurrentFramebuffer,8002F250,64
 build/us/libultra_rom.a(stoptimer.o),osStopTimer,8002F290,208
@@ -945,7 +945,7 @@ build/us/libultra_rom.a(siacs.o),__osSiAccessQueueEnabled,800414A0,16
 build/us/libultra_rom.a(piacs.o),__osPiAccessQueueEnabled,800414B0,16
 build/us/libultra_rom.a(exceptasm.o),__osHwIntTable,800414C0,32
 build/us/libultra_rom.a(vi.o),__osViCurr,80041540,4
-build/us/libultra_rom.a(vi.o),__osViNext,80041544,108
+build/us/libultra_rom.a(vi.o),__osViNext,80041544,12
 build/us/libultra_rom.a(timerintr.o),__osTimerList,80041550,16
 build/us/libultra_rom.a(contramread.o),__osPfsLastChannel,80041560,16
 build/us/libultra_rom.a(contpfs.o),__osPfsInodeCacheChannel,80041570,4
@@ -1313,8 +1313,8 @@ build/us/libultra_rom.a(controller.o),__osMaxControllers,800810C1,7
 build/us/libultra_rom.a(controller.o),__osEepromTimer,800810C8,32
 build/us/libultra_rom.a(controller.o),__osEepromTimerQ,800810E8,24
 build/us/libultra_rom.a(controller.o),__osEepromTimerMsg,80081100,16
-build/us/libultra_rom.a(siacs.o),__osSiAccessQueue,80081218,32
-build/us/libultra_rom.a(piacs.o),__osPiAccessQueue,80081238,32
+build/us/libultra_rom.a(siacs.o),__osSiAccessQueue,80081218,24
+build/us/libultra_rom.a(piacs.o),__osPiAccessQueue,80081238,24
 build/us/libultra_rom.a(conteepread.o),__osEepPifRam,80081250,64
 build/us/libultra_rom.a(timerintr.o),__osBaseTimer,80081290,32
 build/us/libultra_rom.a(timerintr.o),__osCurrentTime,800812B0,8

@@ -62,7 +62,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 80030720,build/lib/ultralib/src/io/sirawread.o,.text,1,80,80,80.00
 80030770,build/lib/ultralib/src/os/getthreadid.o,.text,1,32,32,32.00
 80030790,build/lib/ultralib/src/io/sptaskyield.o,.text,1,32,32,32.00
-800307B0,build/lib/ultralib/src/io/pfsreadwritefile.o,.text,1,1104,1104,1104.00
+800307B0,build/lib/ultralib/src/io/pfsreadwritefile.o,.text,1,892,1104,1104.00
 80030C00,build/lib/ultralib/src/io/pfsgetstatus.o,.text,3,208,560,186.67
 80030E30,build/asm/jp/boot/padding00C230.o,.text,1,16,16,16.00
 80030E40,build/lib/ultralib/src/mgu/mtxidentf.o,.text,1,80,80,80.00
@@ -214,7 +214,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 8003CF80,build/lib/ultralib/src/os/timerintr.o,.data,1,16,16,16.00
 8003CFB0,build/lib/ultralib/src/vimodes/vimodentsclan1.o,.data,1,80,80,80.00
 8003D000,build/lib/ultralib/src/vimodes/vimodempallan1.o,.data,1,80,80,80.00
-8003D050,build/lib/ultralib/src/io/vi.o,.data,2,108,112,56.00
+8003D050,build/lib/ultralib/src/io/vi.o,.data,2,12,112,56.00
 8003D0D0,build/lib/ultralib/src/vimodes/vimodefpallan1.o,.data,1,80,80,80.00
 8003D120,build/lib/ultralib/src/io/contramread.o,.data,1,16,16,16.00
 8003D160,build/lib/ultralib/src/io/vimgr.o,.data,2,28,32,16.00
@@ -237,12 +237,12 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 800419F0,build/src/boot/libc64/qrand.o,.bss,1,16,16,16.00
 80041A00,build/src/boot/libc64/__osMalloc.o,.bss,1,16,16,16.00
 80041A50,build/lib/ultralib/src/io/controller.o,.bss,6,64,144,24.00
-80041AE0,build/lib/ultralib/src/io/siacs.o,.bss,1,32,32,32.00
+80041AE0,build/lib/ultralib/src/io/siacs.o,.bss,1,24,32,32.00
 80041B00,build/lib/ultralib/src/os/initialize.o,.bss,1,16,16,16.00
 80041B10,build/lib/ultralib/src/debug/kdebugserver.o,.bss,1,432,432,432.00
 80041CC0,build/lib/ultralib/src/flash/flashinit.o,.bss,6,116,192,32.00
 80041E80,build/lib/ultralib/src/io/pimgr.o,.bss,2,4680,4800,2400.00
-80043140,build/lib/ultralib/src/io/piacs.o,.bss,1,32,32,32.00
+80043140,build/lib/ultralib/src/io/piacs.o,.bss,1,24,32,32.00
 80043160,build/lib/ultralib/src/io/contpfs.o,.bss,1,256,256,256.00
 80043260,build/lib/ultralib/src/os/seteventmesg.o,.bss,1,128,128,128.00
 800432E0,build/lib/ultralib/src/os/timerintr.o,.bss,5,32,64,12.80
@@ -406,7 +406,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 8010FD60,build/src/code/zurumode.o,.data,1,16,16,16.00
 8010FD70,build/asm/jp/data/code/733A10.data.o,.data,153,3440,25504,166.69
 80116160,build/asm/jp/data/code/739E00.rodata.o,.rodata,2,44,80,40.00
-801161B0,build/src/code/m_actor.o,.rodata,1,80,80,80.00
+801161B0,build/src/code/m_actor.o,.rodata,1,24,80,80.00
 80116250,build/asm/jp/data/code/739EF0.rodata.o,.rodata,10,12,48,4.80
 80116280,build/asm/jp/data/code/739F20.rodata.o,.rodata,9,20,80,8.89
 801162D0,build/asm/jp/data/code/739F70.rodata.o,.rodata,3,40,48,16.00

@@ -2967,7 +2967,7 @@ build/src/main_segment/dm_game_main.o,jtbl_800C8948,800C8948,60
 build/src/main_segment/dm_game_main.o,RO_800C8984_cn,800C8984,8
 build/src/main_segment/dm_game_main.o,RO_800C898C_cn,800C898C,8
 build/src/main_segment/dm_game_main.o,RO_800C8994_cn,800C8994,12
-build/src/main_segment/dm_game_main.o,jtbl_800C89A0,800C89A0,60
+build/src/main_segment/dm_game_main.o,jtbl_800C89A0,800C89A0,32
 build/src/main_segment/dm_manual_main.o,RO_800B2408,800C89C0,8
 build/src/main_segment/dm_manual_main.o,RO_800B2410,800C89C8,8
 build/src/main_segment/dm_manual_main.o,RO_800B2418,800C89D0,8
@@ -3050,7 +3050,7 @@ build/src/main_segment/dm_title_main.o,_stageTbl,800C94F0,48
 build/src/main_segment/dm_title_main.o,STR_800B32A8,800C9520,32
 build/src/main_segment/dm_title_main.o,_mesBootContErr,800C9540,12
 build/src/main_segment/dm_title_main.o,_mesBootCSumErr,800C954C,52
-build/src/main_segment/main_story.o,jtbl_800C9588,800C9588,128
+build/src/main_segment/main_story.o,jtbl_800C9588,800C9588,120
 build/src/main_segment/calc.o,RO_800C9600_cn,800C9600,8
 build/src/main_segment/calc.o,RO_800C9608_cn,800C9608,8
 build/src/main_segment/calc.o,RO_800C9610_cn,800C9610,8

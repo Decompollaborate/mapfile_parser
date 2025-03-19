@@ -285,6 +285,12 @@ impl MapFile {
                     // of the file.
                     if let Some(first_sym) = file.symbols.first() {
                         sym_vrom += first_sym.vram - file.vram;
+
+                        // Aditionally, if the first symbol is missing then calculation of the size
+                        // for the last symbol would be wrong, since we subtract the accumulated
+                        // size of each symbol from the section's total size to calculate it.
+                        // We need to adjust the total size by this difference too.
+                        acummulated_size += first_sym.vram - file.vram;
                     }
 
                     // Calculate size of each symbol

@@ -16261,7 +16261,7 @@
                         {
                             "name": "jtbl_800C30B8_usa",
                             "vram": 2148282552,
-                            "size": 32,
+                            "size": 24,
                             "vrom": 801976
                         }
                     ]
@@ -16318,7 +16318,7 @@
                         {
                             "name": "jtbl_800C3160_usa",
                             "vram": 2148282720,
-                            "size": 168,
+                            "size": 96,
                             "vrom": 802144
                         }
                     ]
@@ -17062,7 +17062,7 @@
                         {
                             "name": "sFileBumpRodataAlignment",
                             "vram": 2148286440,
-                            "size": 64,
+                            "size": 8,
                             "vrom": 805864
                         }
                     ]
@@ -17608,7 +17608,7 @@
                         {
                             "name": "RO_STR_800C4FF8_usa",
                             "vram": 2148290552,
-                            "size": 488,
+                            "size": 56,
                             "vrom": 809976
                         }
                     ]
@@ -18376,7 +18376,7 @@
                         {
                             "name": "jtbl_800C6008_usa",
                             "vram": 2148294664,
-                            "size": 132,
+                            "size": 24,
                             "vrom": 814088
                         }
                     ]
