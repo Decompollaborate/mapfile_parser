@@ -1,9 +1,9 @@
-# SPDX-FileCopyrightText: © 2023-2024 Decompollaborate
+# SPDX-FileCopyrightText: © 2023-2025 Decompollaborate
 # SPDX-License-Identifier: MIT
 
 [package]
 name = "mapfile_parser"
-version = "2.7.3"
+version = "2.7.5"
 edition = "2021"
 rust-version = "1.65.0"
 authors = ["Anghelo Carvajal <angheloalf95@gmail.com>"]
