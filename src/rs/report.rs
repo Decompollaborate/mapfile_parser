@@ -131,7 +131,8 @@ fn report_from_section(
     let mut report_item = report_item_from_section(section);
     let mut functions = Vec::new();
 
-    let is_text = matches!(section.section_type.as_str(), ".text" | ".start");
+    let is_text = section.section_type.starts_with(".text") | section.section_type.starts_with(".start") | section.section_type.starts_with(".init");
+    let track_data = false;
 
     for sym_state in section.symbol_match_state_iter(path_decomp_settings) {
         let mut fuzzy_match_percent = 0.0;
@@ -143,7 +144,11 @@ fn report_from_section(
                     measures.matched_functions += 1;
                     fuzzy_match_percent = 100.0;
                 } else {
-                    measures.matched_data += sym.size;
+                    measures.matched_data += if track_data {
+                        sym.size
+                    } else {
+                        0
+                    };
                 }
                 sym.clone()
             }
@@ -165,7 +170,11 @@ fn report_from_section(
                 address: Some(sym.vram),
             });
         } else {
-            measures.total_data += sym.size;
+            measures.total_data += if track_data {
+                sym.size
+            } else {
+                0
+            };
         }
     }
 
