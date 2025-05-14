@@ -1,4 +1,4 @@
-/* SPDX-FileCopyrightText: © 2023-2024 Decompollaborate */
+/* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
 // Required to call the `.hash` and `.finish` methods, which are defined on traits.
@@ -23,11 +23,6 @@ pub struct Symbol {
     pub vrom: Option<u64>,
 
     pub align: Option<u64>,
-
-    // idk if it is worth to continue maintaining this, given the complexity introduced by other features
-    #[cfg(feature = "python_bindings")]
-    #[cfg_attr(feature = "serde", serde(skip))]
-    chached_name: Option<PyObject>,
 }
 
 impl Symbol {
@@ -38,9 +33,6 @@ impl Symbol {
             size,
             vrom,
             align,
-
-            #[cfg(feature = "python_bindings")]
-            chached_name: None,
         }
     }
 
@@ -51,9 +43,6 @@ impl Symbol {
             size: 0,
             vrom: None,
             align: None,
-
-            #[cfg(feature = "python_bindings")]
-            chached_name: None,
         }
     }
 
@@ -115,8 +104,7 @@ impl Hash for Symbol {
 #[cfg(feature = "python_bindings")]
 #[allow(non_snake_case)]
 pub(crate) mod python_bindings {
-    use pyo3::prelude::*;
-    use pyo3::types::IntoPyDict;
+    use pyo3::{prelude::*, types::IntoPyDict, IntoPyObjectExt};
 
     use std::collections::hash_map::DefaultHasher;
 
@@ -140,14 +128,8 @@ pub(crate) mod python_bindings {
         /* Getters and setters */
 
         #[getter]
-        fn get_name(&mut self) -> PyObject {
-            Python::with_gil(|py| {
-                if self.chached_name.is_none() {
-                    self.chached_name = Some(self.name.to_object(py));
-                }
-
-                self.chached_name.as_ref().unwrap().to_object(py)
-            })
+        fn get_name(&self) -> PyResult<&str> {
+            Ok(&self.name)
         }
 
         #[setter]
@@ -203,55 +185,56 @@ pub(crate) mod python_bindings {
         /* Serializers */
 
         #[pyo3(signature=(_humanReadable=true))]
-        fn serializeName(&self, _humanReadable: bool) -> PyObject {
-            Python::with_gil(|py| self.name.to_object(py))
+        fn serializeName(&self, _humanReadable: bool) -> PyResult<PyObject> {
+            Python::with_gil(|py| self.name.clone().into_py_any(py))
         }
 
         #[pyo3(signature=(humanReadable=true))]
-        fn serializeVram(&self, humanReadable: bool) -> PyObject {
+        fn serializeVram(&self, humanReadable: bool) -> PyResult<PyObject> {
             Python::with_gil(|py| {
                 if humanReadable {
-                    return format!("0x{:08X}", self.vram).to_object(py);
+                    return format!("0x{:08X}", self.vram).into_py_any(py);
                 }
 
-                self.vram.to_object(py)
+                self.vram.into_py_any(py)
             })
         }
 
         #[pyo3(signature=(humanReadable=true))]
-        fn serializeSize(&self, humanReadable: bool) -> PyObject {
+        fn serializeSize(&self, humanReadable: bool) -> PyResult<PyObject> {
             Python::with_gil(|py| {
-                if humanReadable {
-                    return format!("0x{:X}", self.size).to_object(py);
+                    if humanReadable {
+                        return format!("0x{:X}", self.size).into_py_any(py);
+                    }
+                    self.size.into_py_any(py)
                 }
-                self.size.to_object(py)
-            })
+            )
         }
 
         #[pyo3(signature=(humanReadable=true))]
-        fn serializeVrom(&self, humanReadable: bool) -> PyObject {
+        fn serializeVrom(&self, humanReadable: bool) -> PyResult<PyObject> {
             Python::with_gil(|py| match self.vrom {
-                None => Python::None(py),
+                None => Ok(Python::None(py)),
                 Some(vrom) => {
                     if humanReadable {
-                        return format!("0x{:06X}", vrom).to_object(py);
+                        return format!("0x{:06X}", vrom).into_py_any(py);
                     }
-                    vrom.to_object(py)
+                    vrom.into_py_any(py)
                 }
             })
         }
 
         #[pyo3(signature=(humanReadable=true))]
-        fn toJson(&self, humanReadable: bool) -> PyObject {
+        fn toJson(&self, humanReadable: bool) -> PyResult<PyObject> {
             Python::with_gil(|py| {
                 [
-                    ("name", self.serializeName(humanReadable)),
-                    ("vram", self.serializeVram(humanReadable)),
-                    ("size", self.serializeSize(humanReadable)),
-                    ("vrom", self.serializeVrom(humanReadable)),
+                    ("name", self.serializeName(humanReadable)?),
+                    ("vram", self.serializeVram(humanReadable)?),
+                    ("size", self.serializeSize(humanReadable)?),
+                    ("vrom", self.serializeVrom(humanReadable)?),
                 ]
-                .into_py_dict(py)
-                .to_object(py)
+                .into_py_dict(py)?
+                .into_py_any(py)
             })
         }
 

@@ -267,9 +267,9 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 800ACF40,build/src/main_segment/record.o,.rodata,7,24,112,16.00
 800ACFB0,build/src/main_segment/020D10.o,.rodata,9,160,416,46.22
 800AD150,build/src/main_segment/game_etc.o,.rodata,6,24,64,10.67
-800AD190,build/src/main_segment/screen_print/printf_impl.o,.rodata,3,256,336,112.00
+800AD190,build/src/main_segment/screen_print/printf_impl.o,.rodata,3,208,336,112.00
 800ADB40,build/src/main_segment/tex_func.o,.rodata,6,80,208,34.67
-800ADC10,build/src/main_segment/main_menu.o,.rodata,220,1368,15680,71.27
+800ADC10,build/src/main_segment/main_menu.o,.rodata,220,1304,15680,71.27
 800B1950,build/src/main_segment/font.o,.rodata,1,64,64,64.00
 800B1990,build/src/main_segment/msgwnd.o,.rodata,3,196,208,69.33
 800B1A60,build/src/main_segment/char_anime.o,.rodata,3,160,320,106.67
@@ -279,7 +279,7 @@ VRAM,File,Section type,Num symbols,Max size,Total size,Average size
 800B3240,build/src/main_segment/dm_title_main.o,.rodata,4,112,288,72.00
 800B3360,build/src/main_segment/main_story.o,.rodata,13,120,240,18.46
 800B3450,build/src/main_segment/lws.o,.rodata,10,8,80,8.00
-800B34A0,build/src/main_segment/calc.o,.rodata,3,64,80,26.67
+800B34A0,build/src/main_segment/calc.o,.rodata,3,8,80,26.67
 800B34F0,build/src/main_segment/065080.o,.rodata,12,8,96,8.00
 800B3550,build/asm/us/data/libmus/player.rodata.o,.rodata,27,16,224,8.30
 800B3640,build/asm/us/data/main_segment/800B3640.bss.o,.bss,9,200704,204160,22684.44

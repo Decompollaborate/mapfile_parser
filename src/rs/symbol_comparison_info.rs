@@ -1,4 +1,4 @@
-/* SPDX-FileCopyrightText: © 2023-2024 Decompollaborate */
+/* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
 use crate::{file, symbol};
@@ -174,7 +174,7 @@ pub(crate) mod python_bindings {
         }
     }
 
-    impl<'a> From<super::SymbolComparisonInfo<'a>> for PySymbolComparisonInfo {
+    impl From<super::SymbolComparisonInfo<'_>> for PySymbolComparisonInfo {
         fn from(value: super::SymbolComparisonInfo) -> Self {
             Self::new(
                 value.symbol.clone(),

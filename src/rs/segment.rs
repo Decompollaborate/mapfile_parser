@@ -1,4 +1,4 @@
-/* SPDX-FileCopyrightText: © 2023-2024 Decompollaborate */
+/* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
 use crate::{file, found_symbol_info};
@@ -328,6 +328,7 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl super::Segment {
         #[new]
+        #[pyo3(signature = (name, vram, size, vrom, align=None))]
         fn py_new(name: String, vram: u64, size: u64, vrom: u64, align: Option<u64>) -> Self {
             Self::new(name, vram, size, vrom, align)
         }

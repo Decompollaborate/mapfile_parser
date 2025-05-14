@@ -245,7 +245,7 @@ build/lib/ultralib/src/gu/sinf.o,__sinf,8002E290,0
 build/lib/ultralib/src/gu/sinf.o,sinf,8002E290,448
 build/lib/ultralib/src/gu/sins.o,sins,8002E450,112
 build/lib/ultralib/src/io/sptask.o,osSpTaskLoad,8002E5CC,360
-build/lib/ultralib/src/io/sptask.o,osSpTaskStartGo,8002E734,344
+build/lib/ultralib/src/io/sptask.o,osSpTaskStartGo,8002E734,76
 build/lib/ultralib/src/os/destroythread.o,osDestroyThread,8002E780,272
 build/lib/ultralib/src/libc/ll.o,__ull_rshift,8002E890,44
 build/lib/ultralib/src/libc/ll.o,__ull_rem,8002E8BC,60
@@ -299,7 +299,7 @@ build/lib/ultralib/src/io/viblack.o,osViBlack,800306B0,112
 build/lib/ultralib/src/io/sirawread.o,__osSiRawReadIo,80030720,80
 build/lib/ultralib/src/os/getthreadid.o,osGetThreadId,80030770,32
 build/lib/ultralib/src/io/sptaskyield.o,osSpTaskYield,80030790,32
-build/lib/ultralib/src/io/pfsreadwritefile.o,osPfsReadWriteFile,80030884,1104
+build/lib/ultralib/src/io/pfsreadwritefile.o,osPfsReadWriteFile,80030884,892
 build/lib/ultralib/src/io/pfsgetstatus.o,__osPfsGetStatus,80030C00,208
 build/lib/ultralib/src/io/pfsgetstatus.o,__osPfsRequestOneChannel,80030CD0,196
 build/lib/ultralib/src/io/pfsgetstatus.o,__osPfsGetOneChannelData,80030D94,156
@@ -522,7 +522,7 @@ build/lib/ultralib/src/os/timerintr.o,__osTimerList,8003CF80,16
 build/lib/ultralib/src/vimodes/vimodentsclan1.o,osViModeNtscLan1,8003CFB0,80
 build/lib/ultralib/src/vimodes/vimodempallan1.o,osViModeMpalLan1,8003D000,80
 build/lib/ultralib/src/io/vi.o,__osViCurr,8003D0B0,4
-build/lib/ultralib/src/io/vi.o,__osViNext,8003D0B4,108
+build/lib/ultralib/src/io/vi.o,__osViNext,8003D0B4,12
 build/lib/ultralib/src/vimodes/vimodefpallan1.o,osViModeFpalLan1,8003D0D0,80
 build/lib/ultralib/src/io/contramread.o,__osPfsLastChannel,8003D120,16
 build/lib/ultralib/src/io/vimgr.o,__osViDevMgr,8003D160,28
@@ -719,7 +719,7 @@ build/lib/ultralib/src/io/controller.o,__osMaxControllers,80041A91,7
 build/lib/ultralib/src/io/controller.o,__osEepromTimer,80041A98,32
 build/lib/ultralib/src/io/controller.o,__osEepromTimerQ,80041AB8,24
 build/lib/ultralib/src/io/controller.o,__osEepromTimerMsg,80041AD0,16
-build/lib/ultralib/src/io/siacs.o,__osSiAccessQueue,80041AE8,32
+build/lib/ultralib/src/io/siacs.o,__osSiAccessQueue,80041AE8,24
 build/lib/ultralib/src/os/initialize.o,__osFinalrom,80041B00,16
 build/lib/ultralib/src/debug/kdebugserver.o,__osThreadSave,80041B10,432
 build/lib/ultralib/src/flash/flashinit.o,__osFlashID,80041CC0,16
@@ -730,7 +730,7 @@ build/lib/ultralib/src/flash/flashinit.o,__osFlashMsgBuf,80041D74,4
 build/lib/ultralib/src/flash/flashinit.o,__osFlashVersion,80041D78,8
 build/lib/ultralib/src/io/pimgr.o,__Dom1SpeedParam,80041E80,120
 build/lib/ultralib/src/io/pimgr.o,__Dom2SpeedParam,80041EF8,4680
-build/lib/ultralib/src/io/piacs.o,__osPiAccessQueue,80043148,32
+build/lib/ultralib/src/io/piacs.o,__osPiAccessQueue,80043148,24
 build/lib/ultralib/src/io/contpfs.o,__osPfsInodeCache,80043160,256
 build/lib/ultralib/src/os/seteventmesg.o,__osEventStateTab,80043260,128
 build/lib/ultralib/src/os/timerintr.o,__osBaseTimer,800432E0,32
@@ -5895,7 +5895,7 @@ build/asm/jp/data/code/733A10.data.o,D_80115D80_jp,80115D80,832
 build/asm/jp/data/code/733A10.data.o,D_801160C0_jp,801160C0,80
 build/asm/jp/data/code/739E00.rodata.o,RO_STR_80116160_jp,80116160,36
 build/asm/jp/data/code/739E00.rodata.o,RO_STR_80116184_jp,80116184,44
-build/src/code/m_actor.o,RO_801161E8_jp,801161E8,80
+build/src/code/m_actor.o,RO_801161E8_jp,801161E8,24
 build/asm/jp/data/code/739EF0.rodata.o,RO_FLT_80116250_jp,80116250,4
 build/asm/jp/data/code/739EF0.rodata.o,RO_FLT_80116254_jp,80116254,4
 build/asm/jp/data/code/739EF0.rodata.o,RO_FLT_80116258_jp,80116258,4

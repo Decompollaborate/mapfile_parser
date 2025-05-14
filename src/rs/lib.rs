@@ -1,4 +1,4 @@
-/* SPDX-FileCopyrightText: © 2023-2024 Decompollaborate */
+/* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
 mod file;
@@ -31,7 +31,7 @@ use pyo3::prelude::*;
 
 #[cfg(feature = "python_bindings")]
 #[pymodule]
-fn mapfile_parser(_py: Python<'_>, m: &PyModule) -> PyResult<()> {
+fn mapfile_parser(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<mapfile::MapFile>()?;
     m.add_class::<segment::Segment>()?;
     m.add_class::<file::File>()?;

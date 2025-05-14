@@ -1,4 +1,4 @@
-/* SPDX-FileCopyrightText: © 2023-2024 Decompollaborate */
+/* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
 use std::path::{Path, PathBuf};
@@ -489,7 +489,7 @@ impl<'sect> Iterator for SymbolDecompStateIter<'sect> {
 #[cfg(feature = "python_bindings")]
 #[allow(non_snake_case)]
 pub(crate) mod python_bindings {
-    use pyo3::{intern, prelude::*};
+    use pyo3::{intern, prelude::*, IntoPyObjectExt};
 
     use std::path::PathBuf;
 
@@ -500,9 +500,12 @@ pub(crate) mod python_bindings {
 
     use std::collections::hash_map::DefaultHasher;
 
+    use super::*;
+
     #[pymethods]
-    impl super::File {
+    impl File {
         #[new]
+        #[pyo3(signature = (filepath, vram, size, section_type, vrom=None, align=None))]
         fn py_new(
             filepath: PathBuf,
             vram: u64,
@@ -524,7 +527,7 @@ pub(crate) mod python_bindings {
                 let pathlib_path = pathlib.getattr(intern!(py, "Path"))?;
                 let args = (self.filepath.clone(),);
 
-                Ok(pathlib_path.call1(args)?.to_object(py))
+                pathlib_path.call1(args)?.into_py_any(py)
             })
         }
 
