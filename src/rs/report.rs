@@ -214,7 +214,7 @@ fn merge_measures(
 
 fn report_item_from_section(section: &file::File) -> report::ReportItem {
     report::ReportItem {
-        name: format!("{:?}({})", section.filepath, section.section_type),
+        name: section.section_type.clone(),
         size: section.size,
         fuzzy_match_percent: 0.0,
         metadata: Some(report::ReportItemMetadata {
