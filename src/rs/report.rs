@@ -61,7 +61,8 @@ fn do_report(
                     complete: None,
                     module_name: Some(segment.name.clone()),
                     module_id: Some(segment_index as u32),
-                    source_path: Some(section_path),
+                    // mapfile doesn't contain source paths
+                    source_path: None,
                     progress_categories: vec![cat.clone()],
                     auto_generated: None, // TODO: What?
                 });
