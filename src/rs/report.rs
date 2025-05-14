@@ -94,7 +94,10 @@ fn do_report(
         }
     }
 
-    let measures = units.iter().flat_map(|u| u.measures.into_iter()).collect();
+    let mut measures: report::Measures = units.iter().filter_map(|u| u.measures).collect();
+    // "the root measures.fuzzy_match_percent is only for code, so I would expect it to be the same as matched_code_percent"
+    // - Encounter
+    measures.fuzzy_match_percent = measures.matched_code_percent;
 
     let mut categories = Vec::new();
     for category in progress_categories {
