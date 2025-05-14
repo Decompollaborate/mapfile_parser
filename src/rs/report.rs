@@ -215,7 +215,7 @@ fn report_from_section(
                     demangled_name: None,
                     virtual_address: Some(sym.vram),
                 }),
-                address: Some(sym.vram),
+                address: Some(sym.vram - section.vram),
             });
         } else {
             measures.total_data += if track_data {
@@ -282,6 +282,6 @@ fn report_item_from_section(section: &file::File) -> report::ReportItem {
             demangled_name: None,
             virtual_address: Some(section.vram),
         }),
-        address: Some(section.vram)
+        address: None,
     }
 }
