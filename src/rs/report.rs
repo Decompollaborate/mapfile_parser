@@ -73,24 +73,28 @@ fn do_report(
 
     for unit in units.iter_mut() {
         if let Some(measures) = &mut unit.measures {
-            if measures.total_code > 0 {
-                measures.matched_code_percent =
-                    measures.matched_code as f32 / measures.total_code as f32 * 100.0;
-            }
-            if measures.total_data > 0 {
-                measures.matched_data_percent =
-                    measures.matched_data as f32 / measures.total_data as f32 * 100.0;
-            }
-            if measures.total_functions > 0 {
-                measures.matched_functions_percent =
-                    measures.matched_functions as f32 / measures.total_functions as f32 * 100.0;
-            }
+            measures.matched_code_percent = if measures.total_code > 0 {
+                measures.matched_code as f32 / measures.total_code as f32 * 100.0
+            } else {
+                100.0
+            };
+            measures.matched_data_percent = if measures.total_data > 0 {
+                measures.matched_data as f32 / measures.total_data as f32 * 100.0
+            } else {
+                100.0
+            };
+            measures.matched_functions_percent =if measures.total_functions > 0 {
+                measures.matched_functions as f32 / measures.total_functions as f32 * 100.0
+            } else {
+                100.0
+            };
 
             let total = measures.total_code + measures.total_data;
-            if total > 0 {
-                measures.fuzzy_match_percent =
-                    (measures.matched_code + measures.matched_data) as f32 / total as f32 * 100.0;
-            }
+            measures.fuzzy_match_percent = if total > 0 {
+                (measures.matched_code + measures.matched_data) as f32 / total as f32 * 100.0
+            } else {
+                100.0
+            };
         }
     }
 
