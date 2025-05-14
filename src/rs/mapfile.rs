@@ -865,7 +865,7 @@ impl Default for MapFile {
 pub(crate) mod python_bindings {
     use pyo3::prelude::*;
 
-    use std::{collections::HashMap, path::PathBuf};
+    use std::{collections::HashMap, fs, io::{self, BufWriter}, path::PathBuf};
 
     use crate::{file, found_symbol_info, maps_comparison_info, progress_stats, segment, symbol};
 
@@ -995,6 +995,38 @@ pub(crate) mod python_bindings {
             };
 
             self.get_progress(Some(&path_decomp_settings), &aliases)
+        }
+
+        #[pyo3(signature = (outpath, asm_path, nonmatchings, _aliases=HashMap::new(), path_index=2, check_function_files=false))]
+        fn writeObjdiffReportToFile(&self,
+            outpath: PathBuf,
+            asm_path: PathBuf,
+            nonmatchings: PathBuf,
+            _aliases: HashMap<String, String>,
+            path_index: usize,
+            check_function_files: bool,
+        ) -> Result<(), io::Error> {
+            let path_decomp_settings = file::PathDecompSettings {
+                asm_path: &asm_path,
+                nonmatchings: &nonmatchings,
+                path_index,
+                check_function_files,
+            };
+
+            let report = self.get_objdiff_report(Some(&path_decomp_settings));
+
+            // Stolen code from `objdiff` (objdiff-cli/src/util/output.rs)
+            let file = fs::File::options()
+                .read(true)
+                .write(true)
+                .create(true)
+                .truncate(true)
+                .open(outpath)?;
+
+            let mut buf = BufWriter::new(file);
+            serde_json::to_writer_pretty(&mut buf, &report)?;
+
+            Ok(())
         }
 
         #[pyo3(signature=(other_map_file, *, check_other_on_self=true))]

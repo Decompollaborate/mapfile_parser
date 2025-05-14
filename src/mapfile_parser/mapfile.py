@@ -14,6 +14,9 @@ from .progress_stats import ProgressStats
 from . import utils
 
 from .mapfile_rs import MapFile as MapFileRs
+from .mapfile_rs import Segment as SegmentRs
+from .mapfile_rs import File as FileRs
+from .mapfile_rs import Symbol as SymbolRs
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -615,6 +618,23 @@ class MapFile:
                 newSegment._filesList.append(newFile)
             self._segmentsList.append(newSegment)
 
+    def _transferContentsToNativeMapFile(self) -> MapFileRs:
+        nativeMapFile = MapFileRs()
+
+        for segment in self._segmentsList:
+            newSegment = SegmentRs(segment.name, segment.vram, segment.size, segment.vrom, segment.align)
+            for file in segment._filesList:
+                newFile = FileRs(file.filepath, file.vram, file.size, file.sectionType, file.vrom, file.align)
+                for symbol in file._symbols:
+                    size = symbol.size if symbol.size is not None else 0
+                    newSymbol = SymbolRs(symbol.name, symbol.vram, size, symbol.vrom, symbol.align)
+
+                    newFile.appendSymbol(newSymbol)
+                newSegment.appendFile(newFile)
+            nativeMapFile.appendSegment(newSegment)
+
+        return nativeMapFile
+
     def readMapFile(self, mapPath: Path):
         """
         Opens the mapfile pointed by the `mapPath` argument and parses it.
@@ -895,6 +915,10 @@ class MapFile:
                             utils.eprint(f" the function is matched! (the function file was not found)")
 
         return totalStats, progressPerFolder
+
+    def writeObjdiffReportToFile(self, outpath: Path, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2, checkFunctionFiles: bool=False):
+        nativeMapFile = self._transferContentsToNativeMapFile()
+        nativeMapFile.writeObjdiffReportToFile(outpath, asmPath, nonmatchings, aliases, pathIndex, checkFunctionFiles)
 
     # Useful for finding bss reorders
     def compareFilesAndSymbols(self, otherMapFile: MapFile, *, checkOtherOnSelf: bool=True) -> MapsComparisonInfo:

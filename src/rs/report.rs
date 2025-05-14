@@ -10,6 +10,7 @@ use crate::{
 use objdiff_core::bindings::report;
 
 impl mapfile::MapFile {
+    #[must_use]
     pub fn get_objdiff_report(
         &self,
         path_decomp_settings: Option<&PathDecompSettings>,
@@ -154,6 +155,7 @@ fn report_from_section(
                     demangled_name: None,
                     virtual_address: Some(sym.vram),
                 }),
+                address: Some(sym.vram),
             });
         } else {
             measures.total_data += sym.size;
@@ -216,5 +218,6 @@ fn report_item_from_section(section: &file::File) -> report::ReportItem {
             demangled_name: None,
             virtual_address: Some(section.vram),
         }),
+        address: Some(section.vram)
     }
 }
