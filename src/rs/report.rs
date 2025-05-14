@@ -34,7 +34,9 @@ fn do_report(
     for (segment_index, segment) in mapfile.segments_list.iter().enumerate() {
         for section in &segment.files_list {
             let section_path = section.filepath.to_string_lossy().to_string();
-            let mut new_report_unit = report_from_section(section, path_decomp_settings);
+            let Some(mut new_report_unit) = report_from_section(section, path_decomp_settings) else {
+                continue;
+            };
 
             if let Some(report_unit) = units.iter_mut().find(|x| x.name == section_path) {
                 report_unit.measures =
@@ -123,10 +125,55 @@ fn do_report(
     report
 }
 
+lazy_static! {
+    static ref BANNED_SECTIONS: HashSet<&'static str> = {
+        let mut section_names = HashSet::new();
+        section_names.insert(".note");
+        section_names.insert(".comment");
+        section_names.insert(".pdr");
+        section_names.insert(".mdebug");
+        section_names.insert(".mdebug.abi32");
+        section_names.insert(".debug");
+        section_names.insert(".line");
+        section_names.insert(".debug_srcinfo");
+        section_names.insert(".debug_sfnames");
+        section_names.insert(".debug_aranges");
+        section_names.insert(".debug_pubnames");
+        section_names.insert(".debug_info");
+        section_names.insert(".debug_abbrev");
+        section_names.insert(".debug_line");
+        section_names.insert(".debug_line_end");
+        section_names.insert(".debug_frame");
+        section_names.insert(".debug_str");
+        section_names.insert(".debug_loc");
+        section_names.insert(".debug_macinfo");
+        section_names.insert(".debug_weaknames");
+        section_names.insert(".debug_funcnames");
+        section_names.insert(".debug_typenames");
+        section_names.insert(".debug_varnames");
+        section_names.insert(".debug_pubtypes");
+        section_names.insert(".debug_ranges");
+        section_names.insert(".debug_addr");
+        section_names.insert(".debug_line_str");
+        section_names.insert(".debug_loclists");
+        section_names.insert(".debug_macro");
+        section_names.insert(".debug_names");
+        section_names.insert(".debug_rnglists");
+        section_names.insert(".debug_str_offsets");
+        section_names.insert(".debug_sup");
+        section_names.insert(".gnu.attributes");
+        section_names
+    };
+}
+
 fn report_from_section(
     section: &file::File,
     path_decomp_settings: Option<&PathDecompSettings>,
-) -> report::ReportUnit {
+) -> Option<report::ReportUnit> {
+    if BANNED_SECTIONS.contains(section.section_type.as_str()) {
+        return None;
+    }
+
     let mut measures = report::Measures::default();
     let mut report_item = report_item_from_section(section);
     let mut functions = Vec::new();
@@ -187,13 +234,13 @@ fn report_from_section(
     // An unit always contains a singular unit, no more, no less. Right?
     measures.total_units = 1;
 
-    report::ReportUnit {
+    Some(report::ReportUnit {
         name: section.filepath.to_string_lossy().to_string(),
         measures: Some(measures),
         sections: vec![report_item],
         functions,
         metadata: None,
-    }
+    })
 }
 
 fn merge_measures(
