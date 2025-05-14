@@ -31,6 +31,8 @@ pub struct File {
 
     pub align: Option<u64>,
 
+    pub is_fill: bool,
+
     pub symbols: Vec<symbol::Symbol>,
 }
 
@@ -42,6 +44,7 @@ impl File {
         section_type: &str,
         vrom: Option<u64>,
         align: Option<u64>,
+        is_fill: bool,
     ) -> Self {
         Self {
             filepath,
@@ -50,6 +53,7 @@ impl File {
             section_type: section_type.into(),
             vrom,
             align,
+            is_fill,
             symbols: Vec::new(),
         }
     }
@@ -314,18 +318,31 @@ impl File {
             section_type: section_type.into(),
             vrom: None,
             align: None,
+            is_fill: false,
             symbols: Vec::new(),
         }
     }
 
     pub fn clone_no_symbollist(&self) -> Self {
+        let File {
+            filepath,
+            vram,
+            size,
+            section_type,
+            vrom,
+            align,
+            is_fill,
+            symbols: _,
+        } = self;
+
         File {
-            filepath: self.filepath.clone(),
-            vram: self.vram,
-            size: self.size,
-            section_type: self.section_type.clone(),
-            vrom: self.vrom,
-            align: self.align,
+            filepath: filepath.clone(),
+            vram: *vram,
+            size: *size,
+            section_type: section_type.clone(),
+            vrom: *vrom,
+            align: *align,
+            is_fill: *is_fill,
             symbols: Vec::new(),
         }
     }
@@ -338,6 +355,25 @@ impl File {
             section_type: "".into(),
             vrom: None,
             align: None,
+            is_fill: false,
+            symbols: Vec::new(),
+        }
+    }
+
+    pub fn new_fill(
+        filepath: std::path::PathBuf,
+        vram: u64,
+        size: u64,
+        section_type: &str,
+    ) -> Self {
+        File {
+            filepath,
+            vram,
+            size,
+            section_type: section_type.into(),
+            vrom: None,
+            align: None,
+            is_fill: true,
             symbols: Vec::new(),
         }
     }
@@ -514,7 +550,7 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl File {
         #[new]
-        #[pyo3(signature = (filepath, vram, size, section_type, vrom=None, align=None))]
+        #[pyo3(signature = (filepath, vram, size, section_type, vrom=None, align=None, is_fill=false))]
         fn py_new(
             filepath: PathBuf,
             vram: u64,
@@ -522,8 +558,9 @@ pub(crate) mod python_bindings {
             section_type: &str,
             vrom: Option<u64>,
             align: Option<u64>,
+            is_fill: bool,
         ) -> Self {
-            Self::new(filepath, vram, size, section_type, vrom, align)
+            Self::new(filepath, vram, size, section_type, vrom, align, is_fill)
         }
 
         /* Getters and setters */
@@ -598,6 +635,17 @@ pub(crate) mod python_bindings {
         #[setter]
         fn set_align(&mut self, value: Option<u64>) -> PyResult<()> {
             self.align = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_isFill(&self) -> PyResult<bool> {
+            Ok(self.is_fill)
+        }
+
+        #[setter]
+        fn set_isFill(&mut self, value: bool) -> PyResult<()> {
+            self.is_fill = value;
             Ok(())
         }
 

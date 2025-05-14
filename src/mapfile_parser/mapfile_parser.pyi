@@ -116,9 +116,10 @@ class File:
     sectionType: str
     vrom: int|None
     align: int|None
+    isFill: bool
     # _symbols: list[Symbol]
 
-    def __init__(self, filepath: Path, vram: int, size: int, section_type: str, vrom: int|None=None, align: int|None=None) -> None: ...
+    def __init__(self, filepath: Path, vram: int, size: int, section_type: str, vrom: int|None=None, align: int|None=None, isFill: bool=False) -> None: ...
 
     @property
     def isNoloadSection(self) -> bool: ...

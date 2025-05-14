@@ -184,7 +184,7 @@ impl Segment {
             }
 
             let mut temp_file =
-                file::File::new(folder_path.clone(), vram, size, section_type, vrom, align);
+                file::File::new(folder_path.clone(), vram, size, section_type, vrom, align, false);
             temp_file.symbols = symbols;
             new_segment.files_list.push(temp_file);
         }

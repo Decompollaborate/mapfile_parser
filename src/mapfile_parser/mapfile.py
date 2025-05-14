@@ -171,6 +171,7 @@ class File:
     sectionType: str
     vrom: int|None = None
     align: int|None = None
+    isFill: bool = False
     _symbols: list[Symbol] = dataclasses.field(default_factory=list)
 
     @property
@@ -610,7 +611,7 @@ class MapFile:
         for segment in nativeMapFile:
             newSegment = Segment(segment.name, segment.vram, segment.size, segment.vrom, segment.align)
             for file in segment:
-                newFile = File(file.filepath, file.vram, file.size, file.sectionType, file.vrom, file.align)
+                newFile = File(file.filepath, file.vram, file.size, file.sectionType, file.vrom, file.align, file.isFill)
                 for symbol in file:
                     newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align)
 
@@ -624,7 +625,7 @@ class MapFile:
         for segment in self._segmentsList:
             newSegment = SegmentRs(segment.name, segment.vram, segment.size, segment.vrom, segment.align)
             for file in segment._filesList:
-                newFile = FileRs(file.filepath, file.vram, file.size, file.sectionType, file.vrom, file.align)
+                newFile = FileRs(file.filepath, file.vram, file.size, file.sectionType, file.vrom, file.align, file.isFill)
                 for symbol in file._symbols:
                     size = symbol.size if symbol.size is not None else 0
                     newSymbol = SymbolRs(symbol.name, symbol.vram, size, symbol.vrom, symbol.align)

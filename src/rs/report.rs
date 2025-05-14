@@ -180,7 +180,7 @@ fn report_from_section(
     section_name: String,
     path_decomp_settings: Option<&PathDecompSettings>,
 ) -> Option<report::ReportUnit> {
-    if BANNED_SECTIONS.contains(section.section_type.as_str()) {
+    if section.is_fill || BANNED_SECTIONS.contains(section.section_type.as_str()) {
         return None;
     }
 

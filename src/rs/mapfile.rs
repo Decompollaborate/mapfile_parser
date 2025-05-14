@@ -225,7 +225,7 @@ impl MapFile {
                         section_type.clone_from(&prev_file.section_type);
                     }
 
-                    current_segment.files_list.push(file::File::new_default(
+                    current_segment.files_list.push(file::File::new_fill(
                         filepath,
                         vram,
                         size,
@@ -321,6 +321,10 @@ impl MapFile {
                     vrom_offset += file.size;
                 }
 
+                if file.filepath.ends_with("__fill__") {
+                    assert!(file.is_fill, "{:?}", file);
+                }
+
                 new_segment.files_list.push(file);
             }
 
@@ -385,7 +389,7 @@ impl MapFile {
                         section_type.clone_from(&prev_file.section_type);
                     }
 
-                    let mut new_file = file::File::new_default(filepath, vram, size, &section_type);
+                    let mut new_file = file::File::new_fill(filepath, vram, size, &section_type);
                     if !utils::is_noload_section(&section_type) {
                         new_file.vrom = Some(vrom);
                     }
