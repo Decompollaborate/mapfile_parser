@@ -419,7 +419,8 @@ pub struct PathDecompSettings<'ap, 'np> {
 
 pub enum SymbolDecompState<'sect> {
     Decomped(&'sect symbol::Symbol),
-    Undecomped(&'sect symbol::Symbol),
+    // Returns a new symbol because it may need the size patched
+    Undecomped(symbol::Symbol),
 }
 
 pub struct SymbolDecompStateIter<'sect> {
@@ -467,17 +468,24 @@ impl<'sect> Iterator for SymbolDecompStateIter<'sect> {
         let sym = &self.section.symbols[self.index];
         self.index += 1;
 
+        // TODO: move `.NON_MATCHING` handling to the parsing itself instead.
+        if let Some(non_matching_sym) = self
+            .section
+            .find_symbol_by_name(&format!("{}.NON_MATCHING", sym.name)) {
+            let mut undecomped_sym = sym.clone();
+            if undecomped_sym.size == 0 {
+                undecomped_sym.size = non_matching_sym.size;
+            }
+            return Some(SymbolDecompState::Undecomped(undecomped_sym));
+        }
+
         if self.whole_file_is_undecomped
-            || self
-                .section
-                .find_symbol_by_name(&format!("{}.NON_MATCHING", sym.name))
-                .is_some()
         {
-            return Some(SymbolDecompState::Undecomped(sym));
+            return Some(SymbolDecompState::Undecomped(sym.clone()));
         } else if self.check_function_files {
             if let Some(functions_path) = &self.functions_path {
                 if functions_path.join(sym.name.clone() + ".s").exists() {
-                    return Some(SymbolDecompState::Undecomped(sym));
+                    return Some(SymbolDecompState::Undecomped(sym.clone()));
                 }
             }
         }

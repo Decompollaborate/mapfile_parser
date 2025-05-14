@@ -138,7 +138,7 @@ fn report_from_section(
                 } else {
                     measures.matched_data += sym.size;
                 }
-                sym
+                sym.clone()
             }
             file::SymbolDecompState::Undecomped(sym) => sym,
         };
