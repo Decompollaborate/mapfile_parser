@@ -993,7 +993,7 @@ pub(crate) mod python_bindings {
         ) {
             let path_decomp_settings = file::PathDecompSettings {
                 asm_path: &asm_path,
-                nonmatchings: &nonmatchings,
+                nonmatchings: Some(&nonmatchings),
                 path_index,
                 check_function_files,
                 prefixes_to_trim: Vec::new(),
@@ -1002,26 +1002,24 @@ pub(crate) mod python_bindings {
             self.get_progress(Some(&path_decomp_settings), &aliases)
         }
 
-        #[pyo3(signature = (outpath, prefixes_to_trim, asm_path, nonmatchings, _aliases=HashMap::new(), path_index=2, check_function_files=false))]
+        #[pyo3(signature = (outpath, prefixes_to_trim, asm_path, aliases=HashMap::new(), path_index=2))]
         fn writeObjdiffReportToFile(
             &self,
             outpath: PathBuf,
             prefixes_to_trim: Vec<String>,
             asm_path: PathBuf,
-            nonmatchings: PathBuf,
-            _aliases: HashMap<String, String>,
+            aliases: HashMap<String, String>,
             path_index: usize,
-            check_function_files: bool,
         ) -> Result<(), io::Error> {
             let path_decomp_settings = file::PathDecompSettings {
                 asm_path: &asm_path,
-                nonmatchings: &nonmatchings,
+                nonmatchings: None,
                 path_index,
-                check_function_files,
+                check_function_files: false,
                 prefixes_to_trim,
             };
 
-            let report = self.get_objdiff_report(Some(&path_decomp_settings));
+            let report = self.get_objdiff_report(Some(&path_decomp_settings), &aliases);
 
             // Stolen code from `objdiff` (objdiff-cli/src/util/output.rs)
             let file = fs::File::options()

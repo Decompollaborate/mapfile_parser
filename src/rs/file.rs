@@ -414,9 +414,9 @@ impl File {
                 .asm_path
                 .join(extensionless_file_path.with_extension("s"));
             whole_file_is_undecomped = full_asm_file.exists();
-            functions_path = Some(
-                path_decomp_settings
-                    .nonmatchings
+            functions_path = path_decomp_settings
+            .nonmatchings.map(|x| 
+                x
                     .join(extensionless_file_path.clone()),
             );
         }
@@ -448,7 +448,7 @@ impl Hash for File {
 
 pub struct PathDecompSettings<'ap, 'np> {
     pub asm_path: &'ap Path,
-    pub nonmatchings: &'np Path,
+    pub nonmatchings: Option<&'np Path>,
     pub path_index: usize,
     pub check_function_files: bool,
     pub prefixes_to_trim: Vec<String>,

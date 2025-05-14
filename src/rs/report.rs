@@ -1,7 +1,7 @@
 /* SPDX-FileCopyrightText: © 2024 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::collections::HashSet;
+use std::collections::{HashMap, HashSet};
 
 use crate::{
     file::{self, PathDecompSettings},
@@ -14,35 +14,63 @@ impl mapfile::MapFile {
     pub fn get_objdiff_report(
         &self,
         path_decomp_settings: Option<&PathDecompSettings>,
+        aliases: &HashMap<String, String>,
     ) -> report::Report {
-        do_report(self, path_decomp_settings)
+        do_report(self, path_decomp_settings, aliases)
     }
 }
 
 fn do_report(
     mapfile: &mapfile::MapFile,
     path_decomp_settings: Option<&PathDecompSettings>,
+    aliases: &HashMap<String, String>,
 ) -> report::Report {
     let mut units: Vec<report::ReportUnit> = Vec::new();
     let mut progress_categories = HashSet::new();
 
     for (segment_index, segment) in mapfile.segments_list.iter().enumerate() {
         for section in &segment.files_list {
-            let mut section_name = section.filepath.to_string_lossy().to_string();
-            if let Some(path_decomp_settings) = path_decomp_settings {
-                for x in &path_decomp_settings.prefixes_to_trim {
-                    if section_name.starts_with(x) {
-                        section_name = section_name.trim_start_matches(x).to_string();
+            let section_name = {
+                let mut section_name = section.filepath.to_string_lossy().to_string();
+                if let Some(path_decomp_settings) = path_decomp_settings {
+                    for x in &path_decomp_settings.prefixes_to_trim {
+                        if section_name.starts_with(x) {
+                            section_name = section_name.trim_start_matches(x).to_string();
+                            break;
+                        }
+                    }
+                    // Trim extensions
+                    for x in [".s.o", ".c.o", ".cpp.o", ".o"] {
+                        if section_name.ends_with(x) {
+                            section_name = section_name.trim_end_matches(x).to_string();
+                            break;
+                        }
+                    }
+                }
+                for (from, to) in aliases {
+                    if section_name.contains(from) {
+                        let mut replaced = false;
+                        section_name = section_name.split("/").map(|x| {
+                            if !replaced && x == from {
+                                replaced = true;
+                                to
+                            } else {
+                                x
+                            }
+                        }).fold(String::new(), |a, b| {
+                            if a.is_empty() {
+                                b.to_string()
+                            } else {
+                                a + "/" + b
+                            }
+                        });
+
                         break;
                     }
                 }
-                for x in [".s.o", ".c.o", ".cpp.o", ".o"] {
-                    if section_name.ends_with(x) {
-                        section_name = section_name.trim_end_matches(x).to_string();
-                        break;
-                    }
-                }
-            }
+                section_name
+            };
+
             let Some(mut new_report_unit) = report_from_section(section, section_name.clone(), path_decomp_settings) else {
                 continue;
             };
