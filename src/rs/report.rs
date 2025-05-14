@@ -25,46 +25,54 @@ fn do_report(
 ) -> report::Report {
     let mut units: Vec<report::ReportUnit> = Vec::new();
     let mut progress_categories = HashSet::new();
+    /*
     let path_index = if let Some(path_decomp_settings) = path_decomp_settings {
         path_decomp_settings.path_index
     } else {
         0
     };
+    */
 
     for (segment_index, segment) in mapfile.segments_list.iter().enumerate() {
         for section in &segment.files_list {
-            let section_path = section.filepath.to_string_lossy().to_string();
-            let Some(mut new_report_unit) = report_from_section(section, path_decomp_settings) else {
+            let mut section_name = section.filepath.to_string_lossy().to_string();
+            if let Some(path_decomp_settings) = path_decomp_settings {
+                for x in &path_decomp_settings.prefixes_to_trim {
+                    if section_name.starts_with(x) {
+                        section_name = section_name.trim_start_matches(x).to_string();
+                        break;
+                    }
+                }
+                for x in [".s.o", ".c.o", ".cpp.o", ".o"] {
+                    if section_name.ends_with(x) {
+                        section_name = section_name.trim_end_matches(x).to_string();
+                        break;
+                    }
+                }
+            }
+            let Some(mut new_report_unit) = report_from_section(section, section_name.clone(), path_decomp_settings) else {
                 continue;
             };
 
-            if let Some(report_unit) = units.iter_mut().find(|x| x.name == section_path) {
+            if let Some(report_unit) = units.iter_mut().find(|x| &x.name == &section_name) {
                 report_unit.measures =
                     merge_measures(report_unit.measures, new_report_unit.measures);
                 report_unit.sections.extend(new_report_unit.sections);
                 report_unit.functions.extend(new_report_unit.functions);
             } else {
-                let cat = match section.filepath.components().nth(path_index) {
-                    Some(x) if path_index > 0 => x,
-                    _ => section
-                        .filepath
-                        .components()
-                        .nth(section.filepath.components().count().saturating_sub(1))
-                        .unwrap(),
-                }
-                .as_os_str()
-                .to_str()
-                .unwrap()
-                .to_string();
+                let cat = if let Some(x) = section_name.split('/').next() {
+                    x
+                } else {
+                    &segment.name
+                }.to_string();
 
                 new_report_unit.metadata = Some(report::ReportUnitMetadata {
                     complete: None,
                     module_name: Some(segment.name.clone()),
                     module_id: Some(segment_index as u32),
-                    // mapfile doesn't contain source paths
-                    source_path: None,
+                    source_path: None, // mapfile doesn't contain source paths
                     progress_categories: vec![cat.clone()],
-                    auto_generated: None, // TODO: What?
+                    auto_generated: None,
                 });
 
                 progress_categories.insert(cat);
@@ -169,6 +177,7 @@ lazy_static! {
 
 fn report_from_section(
     section: &file::File,
+    section_name: String,
     path_decomp_settings: Option<&PathDecompSettings>,
 ) -> Option<report::ReportUnit> {
     if BANNED_SECTIONS.contains(section.section_type.as_str()) {
@@ -236,7 +245,7 @@ fn report_from_section(
     measures.total_units = 1;
 
     Some(report::ReportUnit {
-        name: section.filepath.to_string_lossy().to_string(),
+        name: section_name,
         measures: Some(measures),
         sections: vec![report_item],
         functions,

@@ -992,14 +992,17 @@ pub(crate) mod python_bindings {
                 nonmatchings: &nonmatchings,
                 path_index,
                 check_function_files,
+                prefixes_to_trim: Vec::new(),
             };
 
             self.get_progress(Some(&path_decomp_settings), &aliases)
         }
 
-        #[pyo3(signature = (outpath, asm_path, nonmatchings, _aliases=HashMap::new(), path_index=2, check_function_files=false))]
-        fn writeObjdiffReportToFile(&self,
+        #[pyo3(signature = (outpath, prefixes_to_trim, asm_path, nonmatchings, _aliases=HashMap::new(), path_index=2, check_function_files=false))]
+        fn writeObjdiffReportToFile(
+            &self,
             outpath: PathBuf,
+            prefixes_to_trim: Vec<String>,
             asm_path: PathBuf,
             nonmatchings: PathBuf,
             _aliases: HashMap<String, String>,
@@ -1011,6 +1014,7 @@ pub(crate) mod python_bindings {
                 nonmatchings: &nonmatchings,
                 path_index,
                 check_function_files,
+                prefixes_to_trim,
             };
 
             let report = self.get_objdiff_report(Some(&path_decomp_settings));
