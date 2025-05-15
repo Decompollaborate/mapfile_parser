@@ -1019,9 +1019,8 @@ pub(crate) mod python_bindings {
         ) {
             let path_decomp_settings = section::PathDecompSettings {
                 asm_path: &asm_path,
-                nonmatchings: &nonmatchings,
                 path_index,
-                check_function_files,
+                nonmatchings: check_function_files.then_some(nonmatchings.as_path()),
             };
 
             self.get_progress(Some(&path_decomp_settings), &aliases)

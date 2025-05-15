@@ -379,13 +379,10 @@ impl Section {
         &self,
         path_decomp_settings: Option<&PathDecompSettings>,
     ) -> SymbolDecompStateIter {
-        let mut check_function_files = false;
         let mut whole_file_is_undecomped = false;
         let mut functions_path = None;
 
         if let Some(path_decomp_settings) = path_decomp_settings {
-            check_function_files = path_decomp_settings.check_function_files;
-
             let original_file_path: PathBuf = self
                 .filepath
                 .components()
@@ -401,27 +398,19 @@ impl Section {
                 .asm_path
                 .join(extensionless_file_path.with_extension("s"));
             whole_file_is_undecomped = full_asm_file.exists();
-            functions_path = Some(
-                path_decomp_settings
-                    .nonmatchings
-                    .join(extensionless_file_path.clone()),
-            );
+            functions_path = path_decomp_settings
+                .nonmatchings
+                .map(|x| x.join(extensionless_file_path.clone()));
         }
 
-        SymbolDecompStateIter::new(
-            self,
-            whole_file_is_undecomped,
-            check_function_files,
-            functions_path,
-        )
+        SymbolDecompStateIter::new(self, whole_file_is_undecomped, functions_path)
     }
 }
 
 pub struct PathDecompSettings<'ap, 'np> {
     pub asm_path: &'ap Path,
-    pub nonmatchings: &'np Path,
     pub path_index: usize,
-    pub check_function_files: bool,
+    pub nonmatchings: Option<&'np Path>,
 }
 
 // https://doc.rust-lang.org/std/cmp/trait.Eq.html

@@ -13,7 +13,6 @@ pub enum SymbolDecompState<'sect> {
 pub struct SymbolDecompStateIter<'sect> {
     section: &'sect section::Section,
     whole_file_is_undecomped: bool,
-    check_function_files: bool,
     functions_path: Option<PathBuf>,
 
     index: usize,
@@ -23,13 +22,11 @@ impl<'sect> SymbolDecompStateIter<'sect> {
     pub(crate) fn new(
         section: &'sect section::Section,
         whole_file_is_undecomped: bool,
-        check_function_files: bool,
         functions_path: Option<PathBuf>,
     ) -> Self {
         Self {
             section,
             whole_file_is_undecomped,
-            check_function_files,
             functions_path,
 
             index: 0,
@@ -63,11 +60,9 @@ impl<'sect> Iterator for SymbolDecompStateIter<'sect> {
                 .is_some()
         {
             return Some(SymbolDecompState::Undecomped(sym));
-        } else if self.check_function_files {
-            if let Some(functions_path) = &self.functions_path {
-                if functions_path.join(sym.name.clone() + ".s").exists() {
-                    return Some(SymbolDecompState::Undecomped(sym));
-                }
+        } else if let Some(functions_path) = &self.functions_path {
+            if functions_path.join(sym.name.clone() + ".s").exists() {
+                return Some(SymbolDecompState::Undecomped(sym));
             }
         }
 
