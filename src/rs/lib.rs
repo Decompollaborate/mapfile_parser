@@ -1,6 +1,8 @@
 /* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
+#![warn(clippy::manual_let_else)]
+
 mod file;
 mod found_symbol_info;
 mod mapfile;

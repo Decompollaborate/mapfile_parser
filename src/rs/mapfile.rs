@@ -1025,24 +1025,25 @@ pub(crate) mod python_bindings {
                 check_function_files: false,
             };
 
-            let report = self.get_objdiff_report(report_categories, Some(&path_decomp_settings), |file| {
-                let mut section_name = file.filepath.to_string_lossy().to_string();
-                // Trim the first prefix found.
-                for x in &prefixes_to_trim {
-                    if section_name.starts_with(x) {
-                        section_name = section_name.trim_start_matches(x).to_string();
-                        break;
+            let report =
+                self.get_objdiff_report(report_categories, Some(&path_decomp_settings), |file| {
+                    let mut section_name = file.filepath.to_string_lossy().to_string();
+                    // Trim the first prefix found.
+                    for x in &prefixes_to_trim {
+                        if section_name.starts_with(x) {
+                            section_name = section_name.trim_start_matches(x).to_string();
+                            break;
+                        }
                     }
-                }
-                // Trim extensions
-                for x in [".s.o", ".c.o", ".cpp.o", ".o"] {
-                    if section_name.ends_with(x) {
-                        section_name = section_name.trim_end_matches(x).to_string();
-                        break;
+                    // Trim extensions
+                    for x in [".s.o", ".c.o", ".cpp.o", ".o"] {
+                        if section_name.ends_with(x) {
+                            section_name = section_name.trim_end_matches(x).to_string();
+                            break;
+                        }
                     }
-                }
-                section_name
-            });
+                    section_name
+                });
 
             // Stolen code from `objdiff` (objdiff-cli/src/util/output.rs)
             let file = fs::File::options()

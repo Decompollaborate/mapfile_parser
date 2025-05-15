@@ -20,9 +20,15 @@ impl mapfile::MapFile {
         path_decomp_settings: Option<&PathDecompSettings>,
         object_to_unit_name: F,
     ) -> report::Report
-    where F: Fn(&file::File) -> String,
+    where
+        F: Fn(&file::File) -> String,
     {
-        do_report(self, report_categories, path_decomp_settings, object_to_unit_name)
+        do_report(
+            self,
+            report_categories,
+            path_decomp_settings,
+            object_to_unit_name,
+        )
     }
 }
 
@@ -33,7 +39,37 @@ fn do_report<F>(
     path_decomp_settings: Option<&PathDecompSettings>,
     object_to_unit_name: F,
 ) -> report::Report
-where F: Fn(&file::File) -> String,
+where
+    F: Fn(&file::File) -> String,
+{
+    let units = process_units(
+        mapfile,
+        &mut report_categories,
+        path_decomp_settings,
+        object_to_unit_name,
+    );
+    let measures = process_root_measures(&units);
+    let categories = process_categories(report_categories);
+
+    let mut report = report::Report {
+        measures: Some(measures),
+        units,
+        version: report::REPORT_VERSION,
+        categories,
+    };
+    report.calculate_progress_categories();
+
+    report
+}
+
+fn process_units<F>(
+    mapfile: &mapfile::MapFile,
+    report_categories: &mut ReportCategories,
+    path_decomp_settings: Option<&PathDecompSettings>,
+    object_to_unit_name: F,
+) -> Vec<report::ReportUnit>
+where
+    F: Fn(&file::File) -> String,
 {
     let mut units: Vec<report::ReportUnit> = Vec::new();
 
@@ -96,29 +132,28 @@ where F: Fn(&file::File) -> String,
         }
     }
 
+    units
+}
+
+fn process_root_measures(units: &[report::ReportUnit]) -> report::Measures {
     let mut measures: report::Measures = units.iter().filter_map(|u| u.measures).collect();
     // "the root measures.fuzzy_match_percent is only for code, so I would expect it to be the same as matched_code_percent"
     // - Encounter
     measures.fuzzy_match_percent = measures.matched_code_percent;
 
-    let mut categories = Vec::new();
-    for category in report_categories.categories {
-        categories.push(report::ReportCategory {
+    measures
+}
+
+fn process_categories(report_categories: ReportCategories) -> Vec<report::ReportCategory> {
+    report_categories
+        .categories
+        .into_iter()
+        .map(|category| report::ReportCategory {
             id: category.id,
             name: category.name,
             measures: Some(Default::default()),
-        });
-    }
-
-    let mut report = report::Report {
-        measures: Some(measures),
-        units,
-        version: report::REPORT_VERSION,
-        categories,
-    };
-    report.calculate_progress_categories();
-
-    report
+        })
+        .collect()
 }
 
 lazy_static! {
