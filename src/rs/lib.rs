@@ -4,6 +4,7 @@
 mod found_symbol_info;
 mod mapfile;
 mod maps_comparison_info;
+mod parser;
 mod progress_stats;
 mod section;
 mod segment;
