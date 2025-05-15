@@ -233,7 +233,7 @@ impl MapFile {
 
                     current_segment
                         .sections_list
-                        .push(section::Section::new_default(
+                        .push(section::Section::new_fill(
                             filepath,
                             vram,
                             size,
@@ -394,7 +394,7 @@ impl MapFile {
                     }
 
                     let mut new_section =
-                        section::Section::new_default(filepath, vram, size, &section_type);
+                        section::Section::new_fill(filepath, vram, size, &section_type);
                     if !utils::is_noload_section(&section_type) {
                         new_section.vrom = Some(vrom);
                     }

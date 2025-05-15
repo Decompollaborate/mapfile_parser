@@ -14,6 +14,9 @@ from .progress_stats import ProgressStats
 from . import utils
 
 from .mapfile_rs import MapFile as MapFileRs
+from .mapfile_rs import Segment as SegmentRs
+from .mapfile_rs import Section as SectionRs
+from .mapfile_rs import Symbol as SymbolRs
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -168,6 +171,7 @@ class Section:
     sectionType: str
     vrom: int|None = None
     align: int|None = None
+    isFill: bool = False
     _symbols: list[Symbol] = dataclasses.field(default_factory=list)
 
     @property
@@ -627,13 +631,30 @@ class MapFile:
         for segment in nativeMapFile:
             newSegment = Segment(segment.name, segment.vram, segment.size, segment.vrom, segment.align)
             for section in segment:
-                newFile = Section(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align)
+                newSection = Section(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align, section.isFill)
                 for symbol in section:
                     newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align)
 
-                    newFile._symbols.append(newSymbol)
-                newSegment._sectionsList.append(newFile)
+                    newSection._symbols.append(newSymbol)
+                newSegment._sectionsList.append(newSection)
             self._segmentsList.append(newSegment)
+
+    def _transferContentsToNativeMapFile(self) -> MapFileRs:
+        nativeMapFile = MapFileRs()
+
+        for segment in self._segmentsList:
+            newSegment = SegmentRs(segment.name, segment.vram, segment.size, segment.vrom, segment.align)
+            for section in segment._sectionsList:
+                newSection = SectionRs(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align, section.isFill)
+                for symbol in section._symbols:
+                    size = symbol.size if symbol.size is not None else 0
+                    newSymbol = SymbolRs(symbol.name, symbol.vram, size, symbol.vrom, symbol.align)
+
+                    newSection.appendSymbol(newSymbol)
+                newSegment.appendFile(newSection)
+            nativeMapFile.appendSegment(newSegment)
+
+        return nativeMapFile
 
     def readMapFile(self, mapPath: Path):
         """

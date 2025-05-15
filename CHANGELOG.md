@@ -12,6 +12,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `File::symbol_match_state_iter()` function. Returns an iterator over
   `SymbolDecompState`, which allows to know if a symbol is considered decompiled
   or not decompiled yet.
+- `Section::is_fill`. `true` if the section is a `*fill*` entry.
 - `MapFile::get_every_section_except_section_type`. Provides the same
   functionallity as the old `MapFile::get_every_file_except_section_type`
   function.
