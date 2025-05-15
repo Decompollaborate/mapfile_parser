@@ -1002,14 +1002,13 @@ pub(crate) mod python_bindings {
             self.get_progress(Some(&path_decomp_settings), &aliases)
         }
 
-        #[pyo3(signature = (outpath, prefixes_to_trim, report_categories, asm_path, aliases=HashMap::new(), path_index=2))]
+        #[pyo3(signature = (outpath, prefixes_to_trim, report_categories, asm_path, path_index=2))]
         fn writeObjdiffReportToFile(
             &self,
             outpath: PathBuf,
             prefixes_to_trim: Vec<String>,
             report_categories: ReportCategories,
             asm_path: PathBuf,
-            aliases: HashMap<String, String>,
             path_index: usize,
         ) -> Result<(), io::Error> {
             let path_decomp_settings = file::PathDecompSettings {
@@ -1020,7 +1019,7 @@ pub(crate) mod python_bindings {
                 prefixes_to_trim,
             };
 
-            let report = self.get_objdiff_report(report_categories, Some(&path_decomp_settings), &aliases);
+            let report = self.get_objdiff_report(report_categories, Some(&path_decomp_settings));
 
             // Stolen code from `objdiff` (objdiff-cli/src/util/output.rs)
             let file = fs::File::options()

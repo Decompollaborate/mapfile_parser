@@ -1,7 +1,7 @@
 /* SPDX-FileCopyrightText: © 2024 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::collections::{HashMap, HashSet};
+use std::collections::HashSet;
 use objdiff_core::bindings::report;
 
 #[cfg(feature = "python_bindings")]
@@ -18,9 +18,8 @@ impl mapfile::MapFile {
         &self,
         report_categories: ReportCategories,
         path_decomp_settings: Option<&PathDecompSettings>,
-        aliases: &HashMap<String, String>,
     ) -> report::Report {
-        do_report(self, report_categories, path_decomp_settings, aliases)
+        do_report(self, report_categories, path_decomp_settings)
     }
 }
 
@@ -28,7 +27,6 @@ fn do_report(
     mapfile: &mapfile::MapFile,
     mut report_categories: ReportCategories,
     path_decomp_settings: Option<&PathDecompSettings>,
-    aliases: &HashMap<String, String>,
 ) -> report::Report {
     let mut units: Vec<report::ReportUnit> = Vec::new();
 
@@ -49,27 +47,6 @@ fn do_report(
                             section_name = section_name.trim_end_matches(x).to_string();
                             break;
                         }
-                    }
-                }
-                for (from, to) in aliases {
-                    if section_name.contains(from) {
-                        let mut replaced = false;
-                        section_name = section_name.split("/").map(|x| {
-                            if !replaced && x == from {
-                                replaced = true;
-                                to
-                            } else {
-                                x
-                            }
-                        }).fold(String::new(), |a, b| {
-                            if a.is_empty() {
-                                b.to_string()
-                            } else {
-                                a + "/" + b
-                            }
-                        });
-
-                        break;
                     }
                 }
                 section_name
