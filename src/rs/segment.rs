@@ -14,7 +14,7 @@ use pyo3::prelude::*;
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
-use crate::{file, found_symbol_info};
+use crate::{found_symbol_info, section};
 
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
@@ -30,7 +30,7 @@ pub struct Segment {
 
     pub align: Option<u64>,
 
-    pub files_list: Vec<file::File>,
+    pub sections_list: Vec<section::Section>,
 }
 
 impl Segment {
@@ -41,41 +41,51 @@ impl Segment {
             size,
             vrom,
             align,
-            files_list: Vec::new(),
+            sections_list: Vec::new(),
         }
     }
 
     pub fn filter_by_section_type(&self, section_type: &str) -> Self {
-        let mut new_segment = self.clone_no_filelist();
+        let mut new_segment = self.clone_no_sectionlist();
 
-        for file in &self.files_list {
-            if file.section_type == section_type {
-                new_segment.files_list.push(file.clone());
+        for section in &self.sections_list {
+            if section.section_type == section_type {
+                new_segment.sections_list.push(section.clone());
             }
         }
 
         new_segment
     }
 
-    pub fn get_every_file_except_section_type(&self, section_type: &str) -> Self {
-        let mut new_segment = self.clone_no_filelist();
+    pub fn get_every_section_except_section_type(&self, section_type: &str) -> Self {
+        let mut new_segment = self.clone_no_sectionlist();
 
-        for file in &self.files_list {
-            if file.section_type != section_type {
-                new_segment.files_list.push(file.clone());
+        for section in &self.sections_list {
+            if section.section_type != section_type {
+                new_segment.sections_list.push(section.clone());
             }
         }
 
         new_segment
+    }
+
+    #[deprecated(
+        since = "2.8.0",
+        note = "Use `get_every_section_except_section_type` instead"
+    )]
+    pub fn get_every_file_except_section_type(&self, section_type: &str) -> Self {
+        self.get_every_section_except_section_type(section_type)
     }
 
     pub fn find_symbol_by_name(
         &self,
         sym_name: &str,
     ) -> Option<found_symbol_info::FoundSymbolInfo> {
-        for file in &self.files_list {
-            if let Some(sym) = file.find_symbol_by_name(sym_name) {
-                return Some(found_symbol_info::FoundSymbolInfo::new_default(file, sym));
+        for section in &self.sections_list {
+            if let Some(sym) = section.find_symbol_by_name(sym_name) {
+                return Some(found_symbol_info::FoundSymbolInfo::new_default(
+                    section, sym,
+                ));
             }
         }
         None
@@ -89,10 +99,12 @@ impl Segment {
         &self,
         address: u64,
     ) -> Option<found_symbol_info::FoundSymbolInfo> {
-        for file in &self.files_list {
+        for section in &self.sections_list {
             #[allow(deprecated)]
-            if let Some((sym, offset)) = file.find_symbol_by_vram_or_vrom(address) {
-                return Some(found_symbol_info::FoundSymbolInfo::new(file, sym, offset));
+            if let Some((sym, offset)) = section.find_symbol_by_vram_or_vrom(address) {
+                return Some(found_symbol_info::FoundSymbolInfo::new(
+                    section, sym, offset,
+                ));
             }
         }
         None
@@ -101,50 +113,60 @@ impl Segment {
     pub fn find_symbol_by_vram(
         &self,
         address: u64,
-    ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<&file::File>) {
-        let mut possible_files = Vec::new();
-        for file in &self.files_list {
-            if let Some((sym, offset)) = file.find_symbol_by_vram(address) {
+    ) -> (
+        Option<found_symbol_info::FoundSymbolInfo>,
+        Vec<&section::Section>,
+    ) {
+        let mut possible_sections = Vec::new();
+        for section in &self.sections_list {
+            if let Some((sym, offset)) = section.find_symbol_by_vram(address) {
                 return (
-                    Some(found_symbol_info::FoundSymbolInfo::new(file, sym, offset)),
+                    Some(found_symbol_info::FoundSymbolInfo::new(
+                        section, sym, offset,
+                    )),
                     Vec::new(),
                 );
             }
-            if address >= file.vram && address < file.vram + file.size {
-                possible_files.push(file);
+            if address >= section.vram && address < section.vram + section.size {
+                possible_sections.push(section);
             }
         }
-        (None, possible_files)
+        (None, possible_sections)
     }
 
     pub fn find_symbol_by_vrom(
         &self,
         address: u64,
-    ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<&file::File>) {
-        let mut possible_files = Vec::new();
-        for file in &self.files_list {
-            if let Some((sym, offset)) = file.find_symbol_by_vrom(address) {
+    ) -> (
+        Option<found_symbol_info::FoundSymbolInfo>,
+        Vec<&section::Section>,
+    ) {
+        let mut possible_sections = Vec::new();
+        for section in &self.sections_list {
+            if let Some((sym, offset)) = section.find_symbol_by_vrom(address) {
                 return (
-                    Some(found_symbol_info::FoundSymbolInfo::new(file, sym, offset)),
+                    Some(found_symbol_info::FoundSymbolInfo::new(
+                        section, sym, offset,
+                    )),
                     Vec::new(),
                 );
             }
-            if address >= file.vram && address < file.vram + file.size {
-                possible_files.push(file);
+            if address >= section.vram && address < section.vram + section.size {
+                possible_sections.push(section);
             }
         }
-        (None, possible_files)
+        (None, possible_sections)
     }
 
     pub fn mix_folders(&self) -> Self {
-        let mut new_segment = self.clone_no_filelist();
+        let mut new_segment = self.clone_no_sectionlist();
 
         let mut aux_dict = HashMap::new();
 
-        // Put files in the same folder together
-        for file in &self.files_list {
+        // Put sections in the same folder together
+        for section in &self.sections_list {
             // TODO: this is terrible
-            let mut path: PathBuf = file
+            let mut path: PathBuf = section
                 .filepath
                 .with_extension("")
                 .components()
@@ -152,48 +174,48 @@ impl Segment {
                 .collect();
             path = path
                 .components()
-                .take(file.filepath.components().count() - 1)
+                .take(section.filepath.components().count() - 1)
                 .collect();
 
             match aux_dict.entry(path) {
                 Entry::Vacant(e) => {
-                    e.insert(vec![file]);
+                    e.insert(vec![section]);
                 }
                 Entry::Occupied(e) => {
-                    e.into_mut().push(file);
+                    e.into_mut().push(section);
                 }
             }
         }
 
-        // Pretend files in the same folder are one huge file
-        for (folder_path, files_in_folder) in aux_dict.iter() {
-            let first_file = files_in_folder[0];
+        // Pretend sections in the same folder are one huge section
+        for (folder_path, sections_in_folder) in aux_dict.iter() {
+            let first_section = sections_in_folder[0];
 
-            let vram = first_file.vram;
+            let vram = first_section.vram;
             let mut size = 0;
-            let vrom = first_file.vrom;
-            let section_type = &first_file.section_type;
-            let align = first_file.align;
+            let vrom = first_section.vrom;
+            let section_type = &first_section.section_type;
+            let align = first_section.align;
 
             let mut symbols = Vec::new();
-            for file in files_in_folder {
-                size += file.size;
-                for sym in &file.symbols {
+            for section in sections_in_folder {
+                size += section.size;
+                for sym in &section.symbols {
                     symbols.push(sym.clone());
                 }
             }
 
-            let mut temp_file =
-                file::File::new(folder_path.clone(), vram, size, section_type, vrom, align);
-            temp_file.symbols = symbols;
-            new_segment.files_list.push(temp_file);
+            let mut temp_section =
+                section::Section::new(folder_path.clone(), vram, size, section_type, vrom, align);
+            temp_section.symbols = symbols;
+            new_segment.sections_list.push(temp_section);
         }
 
         new_segment
     }
 
     pub fn fixup_non_matching_symbols(&mut self) {
-        self.files_list
+        self.sections_list
             .iter_mut()
             .for_each(|x| x.fixup_non_matching_symbols())
     }
@@ -201,12 +223,12 @@ impl Segment {
     pub fn to_csv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
         let mut ret = String::new();
 
-        for file in &self.files_list {
-            if skip_without_symbols && file.symbols.is_empty() {
+        for section in &self.sections_list {
+            if skip_without_symbols && section.symbols.is_empty() {
                 continue;
             }
 
-            writeln!(ret, "{}", file.to_csv(print_vram)).unwrap();
+            writeln!(ret, "{}", section.to_csv(print_vram)).unwrap();
         }
 
         ret
@@ -215,13 +237,13 @@ impl Segment {
     pub fn to_csv_symbols(&self) -> String {
         let mut ret = String::new();
 
-        for file in &self.files_list {
-            if file.symbols.is_empty() {
+        for section in &self.sections_list {
+            if section.symbols.is_empty() {
                 continue;
             }
 
-            for sym in &file.symbols {
-                writeln!(ret, "{},{}", file.filepath.display(), sym.to_csv()).unwrap();
+            for sym in &section.symbols {
+                writeln!(ret, "{},{}", section.filepath.display(), sym.to_csv()).unwrap();
             }
         }
 
@@ -243,18 +265,18 @@ impl Segment {
             size,
             vrom,
             align: None,
-            files_list: Vec::new(),
+            sections_list: Vec::new(),
         }
     }
 
-    pub fn clone_no_filelist(&self) -> Self {
+    pub fn clone_no_sectionlist(&self) -> Self {
         Segment {
             name: self.name.clone(),
             vram: self.vram,
             size: self.size,
             vrom: self.vrom,
             align: self.align,
-            files_list: Vec::new(),
+            sections_list: Vec::new(),
         }
     }
 
@@ -265,7 +287,7 @@ impl Segment {
             size: 0,
             vrom: 0,
             align: None,
-            files_list: vec![file::File::new_placeholder()],
+            sections_list: vec![section::Section::new_placeholder()],
         }
     }
 
@@ -276,12 +298,12 @@ impl Segment {
             && self.vrom == 0
             && self.align.is_none()
         {
-            if self.files_list.is_empty() {
+            if self.sections_list.is_empty() {
                 return true;
             }
 
-            if self.files_list.len() == 1 {
-                let first = self.files_list.first().unwrap();
+            if self.sections_list.len() == 1 {
+                let first = self.sections_list.first().unwrap();
                 if first.is_placeholder() {
                     return true;
                 }
@@ -323,7 +345,7 @@ pub(crate) mod python_bindings {
     // Required to call the `.hash` and `.finish` methods, which are defined on traits.
     use std::hash::{Hash, Hasher};
 
-    use crate::{file, found_symbol_info};
+    use crate::{found_symbol_info, section};
 
     #[pymethods]
     impl super::Segment {
@@ -390,27 +412,18 @@ pub(crate) mod python_bindings {
             Ok(())
         }
 
-        /*
-        #[getter]
-        fn get_files_list(&self) -> PyResult<Vec<file::File>> {
-            Ok(self.files_list)
-        }
-
-        #[setter]
-        fn set_files_list(&mut self, value: Vec<file::File>) -> PyResult<()> {
-            self.files_list = value;
-            Ok(())
-        }
-        */
-
         /* Methods */
 
         fn filterBySectionType(&self, section_type: &str) -> Self {
             self.filter_by_section_type(section_type)
         }
 
+        fn getEverySectionExceptSectionType(&self, section_type: &str) -> Self {
+            self.get_every_section_except_section_type(section_type)
+        }
+
         fn getEveryFileExceptSectionType(&self, section_type: &str) -> Self {
-            self.get_every_file_except_section_type(section_type)
+            self.getEverySectionExceptSectionType(section_type)
         }
 
         fn findSymbolByName(
@@ -435,12 +448,12 @@ pub(crate) mod python_bindings {
             address: u64,
         ) -> (
             Option<found_symbol_info::python_bindings::PyFoundSymbolInfo>,
-            Vec<file::File>,
+            Vec<section::Section>,
         ) {
-            let (info, possible_files) = self.find_symbol_by_vram(address);
+            let (info, possible_sections) = self.find_symbol_by_vram(address);
             (
                 info.map(found_symbol_info::python_bindings::PyFoundSymbolInfo::from),
-                possible_files.into_iter().cloned().collect(),
+                possible_sections.into_iter().cloned().collect(),
             )
         }
 
@@ -449,12 +462,12 @@ pub(crate) mod python_bindings {
             address: u64,
         ) -> (
             Option<found_symbol_info::python_bindings::PyFoundSymbolInfo>,
-            Vec<file::File>,
+            Vec<section::Section>,
         ) {
-            let (info, possible_files) = self.find_symbol_by_vrom(address);
+            let (info, possible_sections) = self.find_symbol_by_vrom(address);
             (
                 info.map(found_symbol_info::python_bindings::PyFoundSymbolInfo::from),
-                possible_files.into_iter().cloned().collect(),
+                possible_sections.into_iter().cloned().collect(),
             )
         }
 
@@ -484,35 +497,43 @@ pub(crate) mod python_bindings {
             self.print_symbols_csv()
         }
 
-        fn copyFileList(&self) -> Vec<file::File> {
-            self.files_list.clone()
+        fn copySectionList(&self) -> Vec<section::Section> {
+            self.sections_list.clone()
+        }
+        fn setSectionList(&mut self, new_list: Vec<section::Section>) {
+            self.sections_list = new_list;
+        }
+        fn appendSection(&mut self, section: section::Section) {
+            self.sections_list.push(section);
         }
 
-        fn setFileList(&mut self, new_list: Vec<file::File>) {
-            self.files_list = new_list;
+        fn copyFileList(&self) -> Vec<section::Section> {
+            self.copySectionList()
+        }
+        fn setFileList(&mut self, new_list: Vec<section::Section>) {
+            self.setSectionList(new_list)
+        }
+        fn appendFile(&mut self, section: section::Section) {
+            self.appendSection(section)
         }
 
-        fn appendFile(&mut self, file: file::File) {
-            self.files_list.push(file);
-        }
-
-        fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<FileVecIter>> {
-            let iter = FileVecIter {
-                inner: slf.files_list.clone().into_iter(),
+        fn __iter__(slf: PyRef<'_, Self>) -> PyResult<Py<SectionVecIter>> {
+            let iter = SectionVecIter {
+                inner: slf.sections_list.clone().into_iter(),
             };
             Py::new(slf.py(), iter)
         }
 
-        fn __getitem__(&self, index: usize) -> file::File {
-            self.files_list[index].clone()
+        fn __getitem__(&self, index: usize) -> section::Section {
+            self.sections_list[index].clone()
         }
 
-        fn __setitem__(&mut self, index: usize, element: file::File) {
-            self.files_list[index] = element;
+        fn __setitem__(&mut self, index: usize, element: section::Section) {
+            self.sections_list[index] = element;
         }
 
         fn __len__(&self) -> usize {
-            self.files_list.len()
+            self.sections_list.len()
         }
 
         fn __eq__(&self, other: &Self) -> bool {
@@ -529,17 +550,17 @@ pub(crate) mod python_bindings {
     }
 
     #[pyclass]
-    struct FileVecIter {
-        inner: std::vec::IntoIter<file::File>,
+    struct SectionVecIter {
+        inner: std::vec::IntoIter<section::Section>,
     }
 
     #[pymethods]
-    impl FileVecIter {
+    impl SectionVecIter {
         fn __iter__(slf: PyRef<'_, Self>) -> PyRef<'_, Self> {
             slf
         }
 
-        fn __next__(mut slf: PyRefMut<'_, Self>) -> Option<file::File> {
+        fn __next__(mut slf: PyRefMut<'_, Self>) -> Option<section::Section> {
             slf.inner.next()
         }
     }

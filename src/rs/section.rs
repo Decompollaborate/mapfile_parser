@@ -18,7 +18,7 @@ use crate::{symbol, utils, SymbolDecompStateIter};
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
-pub struct File {
+pub struct Section {
     pub filepath: PathBuf,
 
     pub vram: u64,
@@ -34,7 +34,7 @@ pub struct File {
     pub symbols: Vec<symbol::Symbol>,
 }
 
-impl File {
+impl Section {
     pub fn new(
         filepath: PathBuf,
         vram: u64,
@@ -300,14 +300,14 @@ impl File {
     }
 }
 
-impl File {
+impl Section {
     pub fn new_default(
         filepath: std::path::PathBuf,
         vram: u64,
         size: u64,
         section_type: &str,
     ) -> Self {
-        File {
+        Section {
             filepath,
             vram,
             size,
@@ -319,7 +319,7 @@ impl File {
     }
 
     pub fn clone_no_symbollist(&self) -> Self {
-        File {
+        Section {
             filepath: self.filepath.clone(),
             vram: self.vram,
             size: self.size,
@@ -402,15 +402,15 @@ pub struct PathDecompSettings<'ap, 'np> {
 }
 
 // https://doc.rust-lang.org/std/cmp/trait.Eq.html
-impl PartialEq for File {
+impl PartialEq for Section {
     fn eq(&self, other: &Self) -> bool {
         self.filepath == other.filepath && self.section_type == other.section_type
     }
 }
-impl Eq for File {}
+impl Eq for Section {}
 
 // https://doc.rust-lang.org/std/hash/trait.Hash.html
-impl Hash for File {
+impl Hash for Section {
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.filepath.hash(state);
         self.section_type.hash(state);
@@ -434,7 +434,7 @@ pub(crate) mod python_bindings {
     use super::*;
 
     #[pymethods]
-    impl File {
+    impl Section {
         #[new]
         #[pyo3(signature = (filepath, vram, size, section_type, vrom=None, align=None))]
         fn py_new(

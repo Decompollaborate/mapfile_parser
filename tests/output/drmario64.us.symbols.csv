@@ -1,4 +1,4 @@
-File,Symbol name,VRAM,Size in bytes
+Section,Symbol name,VRAM,Size in bytes
 build/src/rom_header/rom_header.o,gRomHeader,80000000,64
 build/src/entry/entry.o,entrypoint,80000400,96
 build/src/boot/boot_main.o,Idle_Nop,80000460,8

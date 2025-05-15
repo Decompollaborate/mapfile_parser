@@ -12,10 +12,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `File::symbol_match_state_iter()` function. Returns an iterator over
   `SymbolDecompState`, which allows to know if a symbol is considered decompiled
   or not decompiled yet.
+- `MapFile::get_every_section_except_section_type`. Provides the same
+  functionallity as the old `MapFile::get_every_file_except_section_type`
+  function.
+- `Segment::get_every_section_except_section_type`. Provides the same
+  functionallity as the old `Segment::get_every_file_except_section_type`
+  function.
 
 ### Changed
 
 - Change `Symbol.size` to `u64` from `Option<u64>`.
+- Rename `File` to `Section`.
+  - `File` is still available as an alias to `Section`, but it is recommended to
+    use the new name instead.
+
+### Deprecated
+
+- `File`. Use `Section` instead.
+- `MapFile::get_every_file_except_section_type`. Use
+  `MapFile::get_every_section_except_section_type` instead.
+- `Segment::get_every_file_except_section_type`. Use
+  `Segment::get_every_section_except_section_type` instead.
 
 ## [2.7.5] - 2025-05-08
 

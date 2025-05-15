@@ -20,7 +20,7 @@ def doSymInfo(mapPath: Path, symName: str, *, as_vram: bool=False, as_vrom: bool
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(mapPath)
 
-    possibleFiles: list[mapfile.File] = []
+    possibleFiles: list[mapfile.Section] = []
 
     if as_vram:
         address = int(symName, 0)

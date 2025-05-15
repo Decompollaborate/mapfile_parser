@@ -1,4 +1,4 @@
-File,Symbol name,VRAM,Size in bytes
+Section,Symbol name,VRAM,Size in bytes
 build/us/asm/us/st/cen/data/0.data.s.o,D_80180000,80180000,64
 build/us/asm/us/st/cen/data/0.data.s.o,g_SpriteBanks,80180040,96
 build/us/asm/us/st/cen/data/0.data.s.o,D_801800A0,801800A0,56

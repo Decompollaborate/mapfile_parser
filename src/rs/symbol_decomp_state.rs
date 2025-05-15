@@ -3,7 +3,7 @@
 
 use std::path::PathBuf;
 
-use crate::{file, symbol};
+use crate::{section, symbol};
 
 pub enum SymbolDecompState<'sect> {
     Decomped(&'sect symbol::Symbol),
@@ -11,7 +11,7 @@ pub enum SymbolDecompState<'sect> {
 }
 
 pub struct SymbolDecompStateIter<'sect> {
-    section: &'sect file::File,
+    section: &'sect section::Section,
     whole_file_is_undecomped: bool,
     check_function_files: bool,
     functions_path: Option<PathBuf>,
@@ -21,7 +21,7 @@ pub struct SymbolDecompStateIter<'sect> {
 
 impl<'sect> SymbolDecompStateIter<'sect> {
     pub(crate) fn new(
-        section: &'sect file::File,
+        section: &'sect section::Section,
         whole_file_is_undecomped: bool,
         check_function_files: bool,
         functions_path: Option<PathBuf>,

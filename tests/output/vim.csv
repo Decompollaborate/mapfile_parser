@@ -1,4 +1,4 @@
-VRAM,File,Section type,Num symbols,Max size,Total size,Average size
+VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
 00401000,/usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o,.init,1,22,22,22.00
 00401300,/tmp/ccM54glB.ltrans0.ltrans.o,.text.unlikely,1,683,853,853.00
 004060C5,/tmp/ccM54glB.ltrans14.ltrans.o,.text.unlikely,1,878,1154,1154.00

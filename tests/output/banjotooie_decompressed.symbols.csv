@@ -1,4 +1,4 @@
-File,Symbol name,VRAM,Size in bytes
+Section,Symbol name,VRAM,Size in bytes
 build/us/assets/ipl3.bin.o,_binary_assets_ipl3_bin_start,00000040,4032
 build/us/assets/ipl3.bin.o,_binary_assets_ipl3_bin_end,00001000,0
 build/us/asm/boot/1000.s.o,boot_entrypoint,80000400,80

@@ -1,4 +1,4 @@
-File,Symbol name,VRAM,Size in bytes
+Section,Symbol name,VRAM,Size in bytes
 /usr/lib/gcc/x86_64-linux-gnu/11/../../../x86_64-linux-gnu/crti.o,_init,00401000,22
 /tmp/ccM54glB.ltrans0.ltrans.o,do_outofmem_msg.part.0,004013AA,683
 /tmp/ccM54glB.ltrans14.ltrans.o,ex_equal.lto_priv.0,004061D9,878

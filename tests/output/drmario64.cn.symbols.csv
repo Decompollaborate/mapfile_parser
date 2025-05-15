@@ -1,4 +1,4 @@
-File,Symbol name,VRAM,Size in bytes
+Section,Symbol name,VRAM,Size in bytes
 build/src/rom_header/rom_header.o,gRomHeader,80000000,64
 build/bin/cn/ipl3.o,_binary_bin_cn_ipl3_bin_start,80000040,4032
 build/bin/cn/ipl3.o,_binary_bin_cn_ipl3_bin_end,80001000,0
