@@ -1,20 +1,20 @@
 /* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use crate::{file, found_symbol_info};
-use std::collections::HashMap;
-use std::fmt::Write;
-use std::path::PathBuf;
-
-// Required to call the `.hash` and `.finish` methods, which are defined on traits.
-use std::collections::hash_map::Entry;
-use std::hash::{Hash, Hasher};
+use std::{
+    collections::hash_map::{Entry, HashMap},
+    fmt::Write,
+    hash::{Hash, Hasher},
+    path::PathBuf,
+};
 
 #[cfg(feature = "python_bindings")]
 use pyo3::prelude::*;
 
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
+
+use crate::{file, found_symbol_info};
 
 #[derive(Debug, Clone)]
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]

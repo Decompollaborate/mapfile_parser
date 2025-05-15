@@ -1,8 +1,9 @@
 /* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use crate::{file, symbol};
 use std::fmt::Write;
+
+use crate::{file, symbol};
 
 #[derive(Debug, Clone)]
 pub struct FoundSymbolInfo<'a> {

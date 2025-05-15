@@ -1,11 +1,11 @@
 /* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::collections::HashMap;
-use std::collections::HashSet;
-use std::fmt::Write;
-use std::path::Path;
-use std::path::PathBuf;
+use std::{
+    collections::{HashMap, HashSet},
+    fmt::Write,
+    path::{Path, PathBuf},
+};
 
 use regex::*;
 

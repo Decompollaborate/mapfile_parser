@@ -21,12 +21,15 @@ name = "mapfile_parser"
 path = "src/rs/lib.rs"
 crate-type = ["cdylib", "staticlib", "rlib"]
 
+[features]
+default = []
+
+serde = ["dep:serde"]
+
+python_bindings = ["dep:pyo3"]
+
 [dependencies]
 regex = "1.10.2"
-pyo3 = { version = "0.23.5", optional = true, features = ["extension-module"]}
 lazy_static = "1.4.0"
 serde = { version = "1.0", features = ["derive"], optional = true }
-
-[features]
-python_bindings = ["dep:pyo3"]
-serde = ["dep:serde"]
+pyo3 = { version = "0.23.5", optional = true, features = ["extension-module"]}
