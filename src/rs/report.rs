@@ -1,8 +1,8 @@
 /* SPDX-FileCopyrightText: © 2024 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::collections::HashSet;
 use objdiff_core::bindings::report;
+use std::collections::HashSet;
 
 #[cfg(feature = "python_bindings")]
 use pyo3::prelude::*;
@@ -52,11 +52,13 @@ fn do_report(
                 section_name
             };
 
-            let Some(mut new_report_unit) = report_from_section(section, section_name.clone(), path_decomp_settings) else {
+            let Some(mut new_report_unit) =
+                report_from_section(section, section_name.clone(), path_decomp_settings)
+            else {
                 continue;
             };
 
-            if let Some(report_unit) = units.iter_mut().find(|x| &x.name == &section_name) {
+            if let Some(report_unit) = units.iter_mut().find(|x| x.name == section_name) {
                 report_unit.measures =
                     merge_measures(report_unit.measures, new_report_unit.measures);
                 report_unit.sections.extend(new_report_unit.sections);
@@ -90,7 +92,7 @@ fn do_report(
             } else {
                 100.0
             };
-            measures.matched_functions_percent =if measures.total_functions > 0 {
+            measures.matched_functions_percent = if measures.total_functions > 0 {
                 measures.matched_functions as f32 / measures.total_functions as f32 * 100.0
             } else {
                 100.0
@@ -184,10 +186,15 @@ fn report_from_section(
     let mut report_item = report_item_from_section(section);
     let mut functions = Vec::new();
 
-    let is_text = section.section_type.starts_with(".text") | section.section_type.starts_with(".start") | section.section_type.starts_with(".init");
+    let is_text = section.section_type.starts_with(".text")
+        | section.section_type.starts_with(".start")
+        | section.section_type.starts_with(".init");
     let track_data = false;
 
-    for (i, sym_state) in section.symbol_match_state_iter(path_decomp_settings).enumerate() {
+    for (i, sym_state) in section
+        .symbol_match_state_iter(path_decomp_settings)
+        .enumerate()
+    {
         let mut fuzzy_match_percent = 0.0;
 
         let sym = match sym_state {
@@ -205,18 +212,10 @@ fn report_from_section(
                         fuzzy_match_percent = 100.0;
                     }
                 } else {
-                    measures.matched_data += if track_data {
-                        sym.size
-                    } else {
-                        0
-                    };
+                    measures.matched_data += if track_data { sym.size } else { 0 };
 
                     if i == 0 && sym.vram != section.vram {
-                        measures.matched_data += if track_data {
-                            static_size
-                        } else {
-                            0
-                        };
+                        measures.matched_data += if track_data { static_size } else { 0 };
                     }
                 }
                 sym.clone()
@@ -248,7 +247,11 @@ fn report_from_section(
                 measures.total_functions += 1;
 
                 functions.push(report::ReportItem {
-                    name: format!("$_static_symbol_{:08X}_{}", static_vram, section.filepath.display()),
+                    name: format!(
+                        "$_static_symbol_{:08X}_{}",
+                        static_vram,
+                        section.filepath.display()
+                    ),
                     size: static_size,
                     fuzzy_match_percent,
                     metadata: Some(report::ReportItemMetadata {
@@ -259,20 +262,12 @@ fn report_from_section(
                 });
             }
         } else {
-            measures.total_data += if track_data {
-                sym.size
-            } else {
-                0
-            };
+            measures.total_data += if track_data { sym.size } else { 0 };
 
             if i == 0 && sym.vram != section.vram {
                 // First symbol is a static symbol, so fake a placeholder
                 let static_size = sym.vram - section.vram;
-                measures.total_data += if track_data {
-                    static_size
-                } else {
-                    0
-                };
+                measures.total_data += if track_data { static_size } else { 0 };
             }
         }
     }
@@ -351,13 +346,19 @@ impl ReportCategories {
         }
     }
 
-    pub fn push(&mut self, id: String, name: String, mut paths: Vec<String>) -> &ReportCategoryEntry {
+    pub fn push(
+        &mut self,
+        id: String,
+        name: String,
+        mut paths: Vec<String>,
+    ) -> &ReportCategoryEntry {
         if let Some(index) = self.categories.iter().position(|entry| entry.id == id) {
             let entry = &mut self.categories[index];
             entry.paths.append(&mut paths);
             entry
         } else {
-            self.categories.push(ReportCategoryEntry { id, name, paths });
+            self.categories
+                .push(ReportCategoryEntry { id, name, paths });
             self.categories.last_mut().expect("Just added an element")
         }
     }
@@ -384,6 +385,12 @@ impl ReportCategories {
         }
 
         ids
+    }
+}
+
+impl Default for ReportCategories {
+    fn default() -> Self {
+        Self::new()
     }
 }
 
@@ -426,7 +433,7 @@ pub(crate) mod python_bindings {
             Self::new()
         }
 
-        #[pyo3(name="push")]
+        #[pyo3(name = "push")]
         fn py_push(&mut self, id: String, name: String, paths: Vec<String>) {
             self.push(id, name, paths);
         }

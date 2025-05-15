@@ -415,10 +415,8 @@ impl File {
                 .join(extensionless_file_path.with_extension("s"));
             whole_file_is_undecomped = full_asm_file.exists();
             functions_path = path_decomp_settings
-            .nonmatchings.map(|x| 
-                x
-                    .join(extensionless_file_path.clone()),
-            );
+                .nonmatchings
+                .map(|x| x.join(extensionless_file_path.clone()));
         }
 
         SymbolDecompStateIter::new(
@@ -508,7 +506,8 @@ impl<'sect> Iterator for SymbolDecompStateIter<'sect> {
         // TODO: move `.NON_MATCHING` handling to the parsing itself instead.
         if let Some(non_matching_sym) = self
             .section
-            .find_symbol_by_name(&format!("{}.NON_MATCHING", sym.name)) {
+            .find_symbol_by_name(&format!("{}.NON_MATCHING", sym.name))
+        {
             let mut undecomped_sym = sym.clone();
             if undecomped_sym.size == 0 {
                 undecomped_sym.size = non_matching_sym.size;
@@ -516,8 +515,7 @@ impl<'sect> Iterator for SymbolDecompStateIter<'sect> {
             return Some(SymbolDecompState::Undecomped(undecomped_sym));
         }
 
-        if self.whole_file_is_undecomped
-        {
+        if self.whole_file_is_undecomped {
             return Some(SymbolDecompState::Undecomped(sym.clone()));
         } else if self.check_function_files {
             if let Some(functions_path) = &self.functions_path {

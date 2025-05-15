@@ -869,9 +869,17 @@ impl Default for MapFile {
 pub(crate) mod python_bindings {
     use pyo3::prelude::*;
 
-    use std::{collections::HashMap, fs, io::{self, BufWriter}, path::PathBuf};
+    use std::{
+        collections::HashMap,
+        fs,
+        io::{self, BufWriter},
+        path::PathBuf,
+    };
 
-    use crate::{file, found_symbol_info, maps_comparison_info, progress_stats, report::ReportCategories, segment, symbol};
+    use crate::{
+        file, found_symbol_info, maps_comparison_info, progress_stats, report::ReportCategories,
+        segment, symbol,
+    };
 
     #[pymethods]
     impl super::MapFile {

@@ -203,12 +203,11 @@ pub(crate) mod python_bindings {
         #[pyo3(signature=(humanReadable=true))]
         fn serializeSize(&self, humanReadable: bool) -> PyResult<PyObject> {
             Python::with_gil(|py| {
-                    if humanReadable {
-                        return format!("0x{:X}", self.size).into_py_any(py);
-                    }
-                    self.size.into_py_any(py)
+                if humanReadable {
+                    return format!("0x{:X}", self.size).into_py_any(py);
                 }
-            )
+                self.size.into_py_any(py)
+            })
         }
 
         #[pyo3(signature=(humanReadable=true))]
