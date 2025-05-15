@@ -19,6 +19,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `Segment::get_every_section_except_section_type`. Provides the same
   functionallity as the old `Segment::get_every_file_except_section_type`
   function.
+- `MapFile::new_from_map_file`, `MapFile::new_from_map_str`,
+  `MapFile::new_from_gnu_map_str` and `MapFile::new_from_lld_map_str`.
 
 ### Changed
 
@@ -34,6 +36,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   `MapFile::get_every_section_except_section_type` instead.
 - `Segment::get_every_file_except_section_type`. Use
   `Segment::get_every_section_except_section_type` instead.
+- `MapFile::new`. Use either `MapFile::new_from_map_file` or
+  `MapFile::new_from_map_str` instead.
+- `MapFile::read_map_file`. Use either `MapFile::new_from_map_file` instead.
+- `MapFile::parse_map_contents`. Use either `MapFile::new_from_map_str` instead.
+- `MapFile::parse_map_contents_gnu`. Use either `MapFile::new_from_gnu_map_str`
+  instead.
+- `MapFile::parse_map_contents_lld`. Use either `MapFile::new_from_lld_map_str`
+  instead.
 
 ## [2.7.5] - 2025-05-08
 

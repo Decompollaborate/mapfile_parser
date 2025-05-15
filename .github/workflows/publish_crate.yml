@@ -62,7 +62,7 @@ jobs:
       run: cargo clippy --all-targets --features serde -- -D warnings
 
   check_clippy_all_features:
-    name: Check clippy - features- all
+    name: Check clippy - features - all
     runs-on: ubuntu-latest
 
     steps:

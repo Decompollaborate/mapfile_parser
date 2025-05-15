@@ -15,8 +15,63 @@ lazy_static! {
     };
 }
 
+// TODO: Change all the deprecated functions to private and undeprecate them in a future version.
+
 impl MapFile {
-    pub fn new() -> Self {
+    /// Creates a new `MapFile` with the contents from the file pointed by the
+    /// `map_path` argument.
+    ///
+    /// The format of the map will be guessed based on its contents.
+    ///
+    /// Currently supported map formats:
+    /// - GNU ld
+    /// - clang ld.lld
+    #[must_use]
+    pub fn new_from_map_file(map_path: &Path) -> Self {
+        let mut m = Self::new_impl();
+        #[expect(deprecated)]
+        m.read_map_file(map_path);
+        m
+    }
+
+    /// Creates a new `MapFile` by parsing the contents of the map.
+    ///
+    /// The format of the map will be guessed based on its contents.
+    ///
+    /// Currently supported map formats:
+    /// - GNU ld
+    /// - clang ld.lld
+    #[must_use]
+    pub fn new_from_map_str(map_contents: &str) -> Self {
+        let mut m = Self::new_impl();
+        #[expect(deprecated)]
+        m.parse_map_contents(map_contents);
+        m
+    }
+
+    /// Parses the contents of a GNU ld map.
+    ///
+    /// The `map_contents` argument must contain the contents of a GNU ld mapfile.
+    #[must_use]
+    pub fn new_from_gnu_map_str(map_contents: &str) -> Self {
+        let mut m = Self::new_impl();
+        #[expect(deprecated)]
+        m.parse_map_contents_gnu(map_contents);
+        m
+    }
+
+    /// Parses the contents of a clang ld.lld map.
+    ///
+    /// The `map_contents` argument must contain the contents of a clang ld.lld mapfile.
+    #[must_use]
+    pub fn new_from_lld_map_str(map_contents: &str) -> Self {
+        let mut m = Self::new_impl();
+        #[expect(deprecated)]
+        m.parse_map_contents_lld(map_contents);
+        m
+    }
+
+    pub(crate) fn new_impl() -> Self {
         Self {
             segments_list: Vec::new(),
 
@@ -25,18 +80,12 @@ impl MapFile {
         }
     }
 
-    /// Creates a new `MapFile` object and fills it with the contents from the
-    /// file pointed by the `map_path` argument.
-    ///
-    /// The format of the map will be guessed based on its contents.
-    ///
-    /// Currently supported map formats:
-    /// - GNU ld
-    /// - clang ld.lld
-    pub fn new_from_map_file(map_path: &Path) -> Self {
-        let mut m = Self::new();
-        m.read_map_file(map_path);
-        m
+    #[deprecated(
+        since = "2.8.0",
+        note = "Use either `new_from_map_file` or `new_from_map_str` instead."
+    )]
+    pub fn new() -> Self {
+        Self::new_impl()
     }
 
     /**
@@ -48,9 +97,11 @@ impl MapFile {
     - GNU ld
     - clang ld.lld
      */
+    #[deprecated(since = "2.8.0", note = "Prefer `MapFile::new_from_map_file` instead")]
     pub fn read_map_file(&mut self, map_path: &Path) {
         let map_contents = utils::read_file_contents(map_path);
 
+        #[expect(deprecated)]
         self.parse_map_contents(&map_contents);
     }
 
@@ -65,14 +116,17 @@ impl MapFile {
     - GNU ld
     - clang ld.lld
     */
+    #[deprecated(since = "2.8.0", note = "Prefer `MapFile::new_from_map_str` instead")]
     pub fn parse_map_contents(&mut self, map_contents: &str) {
         let regex_lld_header =
             Regex::new(r"\s+VMA\s+LMA\s+Size\s+Align\s+Out\s+In\s+Symbol").unwrap();
 
         if regex_lld_header.is_match(map_contents) {
+            #[expect(deprecated)]
             self.parse_map_contents_lld(map_contents);
         } else {
             // GNU is the fallback
+            #[expect(deprecated)]
             self.parse_map_contents_gnu(map_contents);
         }
     }
@@ -82,6 +136,10 @@ impl MapFile {
 
     The `map_contents` argument must contain the contents of a GNU ld mapfile.
      */
+    #[deprecated(
+        since = "2.8.0",
+        note = "Prefer `MapFile::new_from_gnu_map_str` instead"
+    )]
     pub fn parse_map_contents_gnu(&mut self, map_contents: &str) {
         // TODO: maybe move somewhere else?
         let regex_section_alone_entry = Regex::new(r"^\s+(?P<section>[^*][^\s]+)\s*$").unwrap();
@@ -319,6 +377,10 @@ impl MapFile {
 
     The `map_contents` argument must contain the contents of a clang ld.lld mapfile.
      */
+    #[deprecated(
+        since = "2.8.0",
+        note = "Prefer `MapFile::new_from_lld_map_str` instead"
+    )]
     pub fn parse_map_contents_lld(&mut self, map_contents: &str) {
         let map_data = map_contents;
 

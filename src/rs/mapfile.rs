@@ -28,7 +28,7 @@ pub struct MapFile {
 
 impl MapFile {
     pub fn filter_by_section_type(&self, section_type: &str) -> Self {
-        let mut new_map_file = MapFile::new();
+        let mut new_map_file = MapFile::new_impl();
 
         for segment in &self.segments_list {
             let new_segment = segment.filter_by_section_type(section_type);
@@ -42,7 +42,7 @@ impl MapFile {
     }
 
     pub fn get_every_section_except_section_type(&self, section_type: &str) -> Self {
-        let mut new_map_file = MapFile::new();
+        let mut new_map_file = MapFile::new_impl();
 
         for segment in &self.segments_list {
             let new_segment = segment.get_every_section_except_section_type(section_type);
@@ -208,7 +208,7 @@ impl MapFile {
     }
 
     pub fn mix_folders(&self) -> Self {
-        let mut new_map_file = MapFile::new();
+        let mut new_map_file = MapFile::new_impl();
 
         for segment in &self.segments_list {
             new_map_file.segments_list.push(segment.mix_folders());
@@ -389,12 +389,6 @@ impl MapFile {
     }
 }
 
-impl Default for MapFile {
-    fn default() -> Self {
-        Self::new()
-    }
-}
-
 #[cfg(feature = "python_bindings")]
 #[allow(non_snake_case)]
 pub(crate) mod python_bindings {
@@ -410,7 +404,7 @@ pub(crate) mod python_bindings {
     impl super::MapFile {
         #[new]
         fn py_new() -> Self {
-            Self::new()
+            Self::new_impl()
         }
 
         #[staticmethod]
@@ -418,15 +412,33 @@ pub(crate) mod python_bindings {
             Self::new_from_map_file(&map_path)
         }
 
+        #[staticmethod]
+        fn newFromMapStr(map_contents: &str) -> Self {
+            Self::new_from_map_str(map_contents)
+        }
+
+        #[staticmethod]
+        fn newFromGnuMapStr(map_contents: &str) -> Self {
+            Self::new_from_gnu_map_str(map_contents)
+        }
+
+        #[staticmethod]
+        fn newFromLldMapStr(map_contents: &str) -> Self {
+            Self::new_from_lld_map_str(map_contents)
+        }
+
         fn readMapFile(&mut self, map_path: PathBuf) {
+            #[expect(deprecated)]
             self.read_map_file(&map_path)
         }
 
         fn parseMapContents(&mut self, map_contents: &str) {
+            #[expect(deprecated)]
             self.parse_map_contents(map_contents)
         }
 
         fn parseMapContentsGNU(&mut self, map_contents: &str) {
+            #[expect(deprecated)]
             self.parse_map_contents_gnu(map_contents)
         }
 
@@ -437,6 +449,7 @@ pub(crate) mod python_bindings {
         */
         #[pyo3(name = "parseMapContentsLLD")]
         fn parseMapContentsLLD(&mut self, map_contents: &str) {
+            #[expect(deprecated)]
             self.parse_map_contents_lld(map_contents)
         }
 

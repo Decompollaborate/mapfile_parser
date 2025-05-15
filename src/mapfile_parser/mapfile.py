@@ -621,11 +621,37 @@ class Segment:
 
 
 class MapFile:
+    #! @deprecated: Use either `newFromMapFile` or `newFromMapStr` instead.
     def __init__(self):
         self._segmentsList: list[Segment] = list()
 
         #! @deprecated
         self.debugging: bool = False
+
+    @staticmethod
+    def newFromMapFile(mapPath: Path) -> MapFile:
+        mapfile = MapFile()
+        mapfile.readMapFile(mapPath)
+        return mapfile
+
+    @staticmethod
+    def newFromMapStr(mapContents: str) -> MapFile:
+        mapfile = MapFile()
+        mapfile.parseMapContents(mapContents)
+        return mapfile
+
+    @staticmethod
+    def newFromGnuMapStr(mapContents: str) -> MapFile:
+        mapfile = MapFile()
+        mapfile.parseMapContentsGNU(mapContents)
+        return mapfile
+
+    @staticmethod
+    def newFromLldMapStr(mapContents: str) -> MapFile:
+        mapfile = MapFile()
+        mapfile.parseMapContentsLLD(mapContents)
+        return mapfile
+
 
     def _transferContentsFromNativeMapFile(self, nativeMapFile: MapFileRs):
         for segment in nativeMapFile:
@@ -656,6 +682,7 @@ class MapFile:
 
         return nativeMapFile
 
+    #! @deprecated: Use either `newFromMapFile` instead.
     def readMapFile(self, mapPath: Path):
         """
         Opens the mapfile pointed by the `mapPath` argument and parses it.
@@ -672,6 +699,7 @@ class MapFile:
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
+    #! @deprecated: Use either `newFromMapStr` instead.
     def parseMapContents(self, mapContents: str):
         """
         Parses the contents of the map.
@@ -690,6 +718,7 @@ class MapFile:
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
+    #! @deprecated: Use either `newFromGnuMapStr` instead.
     def parseMapContentsGNU(self, mapContents: str):
         """
         Parses the contents of a GNU ld map.
@@ -702,6 +731,7 @@ class MapFile:
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
+    #! @deprecated: Use either `newFromLldMapStr` instead.
     def parseMapContentsLLD(self, mapContents: str):
         """
         Parses the contents of a clang ld.lld map.
