@@ -449,7 +449,6 @@ pub struct PathDecompSettings<'ap, 'np> {
     pub nonmatchings: Option<&'np Path>,
     pub path_index: usize,
     pub check_function_files: bool,
-    pub prefixes_to_trim: Vec<String>,
 }
 
 pub enum SymbolDecompState<'sect> {

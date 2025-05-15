@@ -14,43 +14,32 @@ use crate::{
 
 impl mapfile::MapFile {
     #[must_use]
-    pub fn get_objdiff_report(
+    pub fn get_objdiff_report<F>(
         &self,
         report_categories: ReportCategories,
         path_decomp_settings: Option<&PathDecompSettings>,
-    ) -> report::Report {
-        do_report(self, report_categories, path_decomp_settings)
+        object_to_unit_name: F,
+    ) -> report::Report
+    where F: Fn(&file::File) -> String,
+    {
+        do_report(self, report_categories, path_decomp_settings, object_to_unit_name)
     }
 }
 
-fn do_report(
+#[must_use]
+fn do_report<F>(
     mapfile: &mapfile::MapFile,
     mut report_categories: ReportCategories,
     path_decomp_settings: Option<&PathDecompSettings>,
-) -> report::Report {
+    object_to_unit_name: F,
+) -> report::Report
+where F: Fn(&file::File) -> String,
+{
     let mut units: Vec<report::ReportUnit> = Vec::new();
 
     for (segment_index, segment) in mapfile.segments_list.iter().enumerate() {
         for section in &segment.files_list {
-            let section_name = {
-                let mut section_name = section.filepath.to_string_lossy().to_string();
-                if let Some(path_decomp_settings) = path_decomp_settings {
-                    for x in &path_decomp_settings.prefixes_to_trim {
-                        if section_name.starts_with(x) {
-                            section_name = section_name.trim_start_matches(x).to_string();
-                            break;
-                        }
-                    }
-                    // Trim extensions
-                    for x in [".s.o", ".c.o", ".cpp.o", ".o"] {
-                        if section_name.ends_with(x) {
-                            section_name = section_name.trim_end_matches(x).to_string();
-                            break;
-                        }
-                    }
-                }
-                section_name
-            };
+            let section_name = object_to_unit_name(section);
 
             let Some(mut new_report_unit) =
                 report_from_section(section, section_name.clone(), path_decomp_settings)
