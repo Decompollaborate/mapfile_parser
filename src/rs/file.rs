@@ -532,7 +532,7 @@ impl<'sect> Iterator for SymbolDecompStateIter<'sect> {
 #[cfg(feature = "python_bindings")]
 #[allow(non_snake_case)]
 pub(crate) mod python_bindings {
-    use pyo3::{intern, prelude::*, IntoPyObjectExt};
+    use pyo3::{IntoPyObjectExt, intern, prelude::*};
 
     use std::path::PathBuf;
 

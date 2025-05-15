@@ -104,7 +104,7 @@ impl Hash for Symbol {
 #[cfg(feature = "python_bindings")]
 #[allow(non_snake_case)]
 pub(crate) mod python_bindings {
-    use pyo3::{prelude::*, types::IntoPyDict, IntoPyObjectExt};
+    use pyo3::{IntoPyObjectExt, prelude::*, types::IntoPyDict};
 
     use std::collections::hash_map::DefaultHasher;
 

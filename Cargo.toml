@@ -4,8 +4,8 @@
 [package]
 name = "mapfile_parser"
 version = "2.7.5"
-edition = "2021"
-rust-version = "1.74.0"
+edition = "2024"
+rust-version = "1.85.0"
 authors = ["Anghelo Carvajal <angheloalf95@gmail.com>"]
 description = "Map file parser library focusing decompilation projects"
 readme = "README.md"

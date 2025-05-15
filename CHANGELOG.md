@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## Changed
+
+- Bump MSRV from `1.74.0` to `1.85.0`.
+- Change Rust edition from `2021` to `2024`.
+
 ## [2.7.5] - 2025-05-08
 
 ### Fixed
