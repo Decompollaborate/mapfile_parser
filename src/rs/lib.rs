@@ -9,9 +9,10 @@ mod progress_stats;
 mod segment;
 mod symbol;
 mod symbol_comparison_info;
+mod symbol_decomp_state;
 pub mod utils;
 
-pub use file::File;
+pub use file::{File, PathDecompSettings};
 pub use found_symbol_info::FoundSymbolInfo;
 pub use mapfile::MapFile;
 pub use maps_comparison_info::MapsComparisonInfo;
@@ -19,6 +20,7 @@ pub use progress_stats::ProgressStats;
 pub use segment::Segment;
 pub use symbol::Symbol;
 pub use symbol_comparison_info::SymbolComparisonInfo;
+pub use symbol_decomp_state::{SymbolDecompState, SymbolDecompStateIter};
 
 #[macro_use]
 extern crate lazy_static;

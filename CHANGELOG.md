@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `File::symbol_match_state_iter()` function. Returns an iterator over
+  `SymbolDecompState`, which allows to know if a symbol is considered decompiled
+  or not decompiled yet.
+
 ### Changed
 
 - Change `Symbol.size` to `u64` from `Option<u64>`.
