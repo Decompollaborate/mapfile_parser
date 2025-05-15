@@ -1,9 +1,11 @@
 /* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::collections::{HashMap, HashSet};
-use std::fmt::Write;
-use std::path::Path;
+use std::{
+    collections::{HashMap, HashSet},
+    fmt::Write,
+    path::Path,
+};
 
 use regex::*;
 
@@ -14,8 +16,8 @@ use pyo3::prelude::*;
 use serde::{Deserialize, Serialize};
 
 use crate::{
-    file, found_symbol_info, maps_comparison_info, progress_stats, segment, symbol,
-    symbol_comparison_info, utils,
+    found_symbol_info, maps_comparison_info, progress_stats, section, segment, symbol,
+    symbol_comparison_info, symbol_decomp_state, utils,
 };
 
 lazy_static! {
@@ -108,7 +110,7 @@ impl MapFile {
     pub fn parse_map_contents_gnu(&mut self, map_contents: &str) {
         // TODO: maybe move somewhere else?
         let regex_section_alone_entry = Regex::new(r"^\s+(?P<section>[^*][^\s]+)\s*$").unwrap();
-        let regex_file_data_entry = Regex::new(r"^\s+(?P<section>([^*][^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
+        let regex_section_data_entry = Regex::new(r"^\s+(?P<section>([^*][^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
         let regex_function_entry =
             Regex::new(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$").unwrap();
         // regex_function_entry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)((\s*=\s*(?P<expression>.+))?)$")
@@ -122,13 +124,13 @@ impl MapFile {
 
         let mut temp_segment_list = vec![segment::Segment::new_placeholder()];
 
-        let mut in_file = false;
+        let mut in_section = false;
 
         let mut prev_line = "";
         for line in map_data.split('\n') {
-            if in_file {
+            if in_section {
                 if !line.starts_with("        ") {
-                    in_file = false;
+                    in_section = false;
                 } else if !regex_label.is_match(line) {
                     // Filter out jump table's labels
 
@@ -141,9 +143,9 @@ impl MapFile {
                             let sym_vram = utils::parse_hex(&entry_match["vram"]);
 
                             let current_segment = temp_segment_list.last_mut().unwrap();
-                            let current_file = current_segment.files_list.last_mut().unwrap();
+                            let current_section = current_segment.sections_list.last_mut().unwrap();
 
-                            current_file
+                            current_section
                                 .symbols
                                 .push(symbol::Symbol::new_default(sym_name.into(), sym_vram));
                         }
@@ -151,26 +153,28 @@ impl MapFile {
                 }
             }
 
-            if !in_file {
-                if let Some(file_entry_match) = regex_file_data_entry.captures(line) {
-                    let filepath = std::path::PathBuf::from(&file_entry_match["name"]);
-                    let vram = utils::parse_hex(&file_entry_match["vram"]);
-                    let size = utils::parse_hex(&file_entry_match["size"]);
-                    let section_type = &file_entry_match["section"];
+            if !in_section {
+                if let Some(section_entry_match) = regex_section_data_entry.captures(line) {
+                    let filepath = std::path::PathBuf::from(&section_entry_match["name"]);
+                    let vram = utils::parse_hex(&section_entry_match["vram"]);
+                    let size = utils::parse_hex(&section_entry_match["size"]);
+                    let section_type = &section_entry_match["section"];
 
                     if size > 0 {
                         // TODO: de-duplicate the following code:
 
                         if !section_type.is_empty() {
-                            in_file = true;
+                            in_section = true;
                             let current_segment = temp_segment_list.last_mut().unwrap();
 
-                            current_segment.files_list.push(file::File::new_default(
-                                filepath,
-                                vram,
-                                size,
-                                section_type,
-                            ));
+                            current_segment
+                                .sections_list
+                                .push(section::Section::new_default(
+                                    filepath,
+                                    vram,
+                                    size,
+                                    section_type,
+                                ));
                         } else if let Some(section_alone_match) =
                             regex_section_alone_entry.captures(prev_line)
                         {
@@ -178,15 +182,17 @@ impl MapFile {
 
                             let section_type = &section_alone_match["section"];
 
-                            in_file = true;
+                            in_section = true;
                             let current_segment = temp_segment_list.last_mut().unwrap();
 
-                            current_segment.files_list.push(file::File::new_default(
-                                filepath,
-                                vram,
-                                size,
-                                section_type,
-                            ));
+                            current_segment
+                                .sections_list
+                                .push(section::Section::new_default(
+                                    filepath,
+                                    vram,
+                                    size,
+                                    section_type,
+                                ));
                         }
                     }
                 } else if let Some(segment_entry_match) = regex_segment_entry.captures(line) {
@@ -215,22 +221,24 @@ impl MapFile {
 
                     let current_segment = temp_segment_list.last_mut().unwrap();
 
-                    if !current_segment.files_list.is_empty() {
-                        let prev_file = current_segment.files_list.last().unwrap();
-                        let mut name = prev_file.filepath.file_name().unwrap().to_owned();
+                    if !current_segment.sections_list.is_empty() {
+                        let prev_section = current_segment.sections_list.last().unwrap();
+                        let mut name = prev_section.filepath.file_name().unwrap().to_owned();
 
                         name.push("__fill__");
-                        filepath = prev_file.filepath.with_file_name(name);
-                        vram = prev_file.vram + prev_file.size;
-                        section_type.clone_from(&prev_file.section_type);
+                        filepath = prev_section.filepath.with_file_name(name);
+                        vram = prev_section.vram + prev_section.size;
+                        section_type.clone_from(&prev_section.section_type);
                     }
 
-                    current_segment.files_list.push(file::File::new_fill(
-                        filepath,
-                        vram,
-                        size,
-                        &section_type,
-                    ));
+                    current_segment
+                        .sections_list
+                        .push(section::Section::new_fill(
+                            filepath,
+                            vram,
+                            size,
+                            &section_type,
+                        ));
                 }
             }
 
@@ -247,54 +255,54 @@ impl MapFile {
 
         for (i, segment) in temp_segment_list.into_iter().enumerate() {
             if i == 0 && segment.is_placeholder() {
-                // skip the dummy segment if it has no size, files or symbols
+                // skip the dummy segment if it has no size, sections or symbols
                 continue;
             }
 
-            let mut new_segment = segment.clone_no_filelist();
+            let mut new_segment = segment.clone_no_sectionlist();
 
             let mut vrom_offset = segment.vrom;
-            for mut file in segment.files_list.into_iter() {
+            for mut section in segment.sections_list.into_iter() {
                 let mut acummulated_size = 0;
-                let symbols_count = file.symbols.len();
-                let is_noload_section = file.is_noload_section();
+                let symbols_count = section.symbols.len();
+                let is_noload_section = section.is_noload_section();
 
-                if file.is_placeholder() {
+                if section.is_placeholder() {
                     // drop placeholders
                     continue;
                 }
 
-                if file.vrom.is_some() {
-                    vrom_offset = file.vrom.unwrap();
+                if section.vrom.is_some() {
+                    vrom_offset = section.vrom.unwrap();
                 }
 
                 if !is_noload_section {
-                    file.vrom = Some(vrom_offset);
+                    section.vrom = Some(vrom_offset);
                 }
 
                 if symbols_count > 0 {
                     let mut sym_vrom = vrom_offset;
 
-                    // The first symbol of the file on the mapfile may not be the actual first
+                    // The first symbol of the section on the mapfile may not be the actual first
                     // symbol if it is marked `static`, be a jumptable, etc, producing a mismatch
                     // on the vrom address of each symbol of this section.
                     // A way to adjust this difference is by increasing the start of the vrom
                     // by the difference in vram address between the first symbol and the vram
-                    // of the file.
-                    if let Some(first_sym) = file.symbols.first() {
-                        sym_vrom += first_sym.vram - file.vram;
+                    // of the section.
+                    if let Some(first_sym) = section.symbols.first() {
+                        sym_vrom += first_sym.vram - section.vram;
 
                         // Aditionally, if the first symbol is missing then calculation of the size
                         // for the last symbol would be wrong, since we subtract the accumulated
                         // size of each symbol from the section's total size to calculate it.
                         // We need to adjust the total size by this difference too.
-                        acummulated_size += first_sym.vram - file.vram;
+                        acummulated_size += first_sym.vram - section.vram;
                     }
 
                     // Calculate size of each symbol
                     for index in 0..symbols_count - 1 {
-                        let next_sym_vram = file.symbols[index + 1].vram;
-                        let sym = &mut file.symbols[index];
+                        let next_sym_vram = section.symbols[index + 1].vram;
+                        let sym = &mut section.symbols[index];
                         let sym_size = next_sym_vram - sym.vram;
                         acummulated_size += sym_size;
 
@@ -307,9 +315,9 @@ impl MapFile {
                         }
                     }
 
-                    // Calculate size of last symbol of the file
-                    let sym = &mut file.symbols[symbols_count - 1];
-                    let sym_size = file.size - acummulated_size;
+                    // Calculate size of last symbol of the section
+                    let sym = &mut section.symbols[symbols_count - 1];
+                    let sym_size = section.size - acummulated_size;
                     sym.size = sym_size;
                     if !is_noload_section {
                         sym.vrom = Some(sym_vrom);
@@ -318,14 +326,10 @@ impl MapFile {
                 }
 
                 if !is_noload_section {
-                    vrom_offset += file.size;
+                    vrom_offset += section.size;
                 }
 
-                if file.filepath.ends_with("__fill__") {
-                    assert!(file.is_fill, "{:?}", file);
-                }
-
-                new_segment.files_list.push(file);
+                new_segment.sections_list.push(section);
             }
 
             segments_list.push(new_segment);
@@ -348,7 +352,7 @@ impl MapFile {
 
         let regex_segment_entry = Regex::new(r"^(?P<name>[^\s]+)$").unwrap();
         let regex_fill = Regex::new(r"^\s+(?P<expr>\.\s*\+=\s*.+)$").unwrap();
-        let regex_file_data_entry =
+        let regex_section_data_entry =
             Regex::new(r"^\s+(?P<name>[^\s]+):\((?P<section>[^\s()]+)\)$$").unwrap();
         let regex_label = Regex::new(r"^\s+(?P<name>\.?L[0-9A-F]{8})$").unwrap();
         let regex_symbol_entry = Regex::new(r"^\s+(?P<name>[^\s]+)$").unwrap();
@@ -373,42 +377,44 @@ impl MapFile {
 
                     temp_segment_list.push(new_segment);
                 } else if regex_fill.is_match(subline) {
-                    // Make a dummy file to handle pads (. += XX)
+                    // Make a dummy section to handle pads (. += XX)
 
                     let mut filepath = std::path::PathBuf::new();
                     let mut section_type = "".to_owned();
 
                     let current_segment = temp_segment_list.last_mut().unwrap();
 
-                    if !current_segment.files_list.is_empty() {
-                        let prev_file = current_segment.files_list.last().unwrap();
-                        let mut name = prev_file.filepath.file_name().unwrap().to_owned();
+                    if !current_segment.sections_list.is_empty() {
+                        let prev_section = current_segment.sections_list.last().unwrap();
+                        let mut name = prev_section.filepath.file_name().unwrap().to_owned();
 
                         name.push("__fill__");
-                        filepath = prev_file.filepath.with_file_name(name);
-                        section_type.clone_from(&prev_file.section_type);
+                        filepath = prev_section.filepath.with_file_name(name);
+                        section_type.clone_from(&prev_section.section_type);
                     }
 
-                    let mut new_file = file::File::new_fill(filepath, vram, size, &section_type);
+                    let mut new_section =
+                        section::Section::new_fill(filepath, vram, size, &section_type);
                     if !utils::is_noload_section(&section_type) {
-                        new_file.vrom = Some(vrom);
+                        new_section.vrom = Some(vrom);
                     }
-                    current_segment.files_list.push(new_file);
-                } else if let Some(file_entry_match) = regex_file_data_entry.captures(subline) {
-                    let filepath = std::path::PathBuf::from(&file_entry_match["name"]);
-                    let section_type = &file_entry_match["section"];
+                    current_segment.sections_list.push(new_section);
+                } else if let Some(section_entry_match) = regex_section_data_entry.captures(subline)
+                {
+                    let filepath = std::path::PathBuf::from(&section_entry_match["name"]);
+                    let section_type = &section_entry_match["section"];
 
                     if size > 0 {
                         let current_segment = temp_segment_list.last_mut().unwrap();
 
-                        let mut new_file =
-                            file::File::new_default(filepath, vram, size, section_type);
+                        let mut new_section =
+                            section::Section::new_default(filepath, vram, size, section_type);
                         if !utils::is_noload_section(section_type) {
-                            new_file.vrom = Some(vrom);
+                            new_section.vrom = Some(vrom);
                         }
-                        new_file.align = Some(align);
+                        new_section.align = Some(align);
 
-                        current_segment.files_list.push(new_file);
+                        current_segment.sections_list.push(new_section);
                     }
                 } else if regex_label.is_match(subline) {
                     // pass
@@ -417,18 +423,18 @@ impl MapFile {
 
                     if !BANNED_SYMBOL_NAMES.contains(&name) {
                         let current_segment = temp_segment_list.last_mut().unwrap();
-                        let current_file = current_segment.files_list.last_mut().unwrap();
+                        let current_section = current_segment.sections_list.last_mut().unwrap();
 
                         let mut new_symbol = symbol::Symbol::new_default(name.into(), vram);
                         if size > 0 {
                             new_symbol.size = size;
                         }
-                        if !current_file.is_noload_section() {
+                        if !current_section.is_noload_section() {
                             new_symbol.vrom = Some(vrom)
                         }
                         new_symbol.align = Some(align);
 
-                        current_file.symbols.push(new_symbol);
+                        current_section.symbols.push(new_symbol);
                     }
                 }
             }
@@ -444,28 +450,28 @@ impl MapFile {
 
         for (i, segment) in temp_segment_list.into_iter().enumerate() {
             if i == 0 && segment.is_placeholder() {
-                // skip the dummy segment if it has no size, files or symbols
+                // skip the dummy segment if it has no size, sections or symbols
                 continue;
             }
 
-            let mut new_segment = segment.clone_no_filelist();
+            let mut new_segment = segment.clone_no_sectionlist();
 
-            for mut file in segment.files_list.into_iter() {
-                if file.is_placeholder() {
+            for mut section in segment.sections_list.into_iter() {
+                if section.is_placeholder() {
                     // drop placeholders
                     continue;
                 }
 
                 let mut acummulated_size = 0;
-                let symbols_count = file.symbols.len();
+                let symbols_count = section.symbols.len();
 
                 if symbols_count > 0 {
-                    // Calculate the size of symbols that the map file did not report.
+                    // Calculate the size of symbols that the map section did not report.
                     // usually asm symbols and not C ones
 
                     for index in 0..symbols_count - 1 {
-                        let next_sym_vram = file.symbols[index + 1].vram;
-                        let sym = &mut file.symbols[index];
+                        let next_sym_vram = section.symbols[index + 1].vram;
+                        let sym = &mut section.symbols[index];
 
                         let sym_size = next_sym_vram - sym.vram;
                         acummulated_size += sym_size;
@@ -475,15 +481,15 @@ impl MapFile {
                         }
                     }
 
-                    // Calculate size of last symbol of the file
-                    let sym = &mut file.symbols[symbols_count - 1];
+                    // Calculate size of last symbol of the section
+                    let sym = &mut section.symbols[symbols_count - 1];
                     if sym.size == 0 {
-                        let sym_size = file.size - acummulated_size;
+                        let sym_size = section.size - acummulated_size;
                         sym.size = sym_size;
                     }
                 }
 
-                new_segment.files_list.push(file);
+                new_segment.sections_list.push(section);
             }
 
             segments_list.push(new_segment);
@@ -499,7 +505,7 @@ impl MapFile {
         for segment in &self.segments_list {
             let new_segment = segment.filter_by_section_type(section_type);
 
-            if !new_segment.files_list.is_empty() {
+            if !new_segment.sections_list.is_empty() {
                 new_map_file.segments_list.push(new_segment);
             }
         }
@@ -507,18 +513,26 @@ impl MapFile {
         new_map_file
     }
 
-    pub fn get_every_file_except_section_type(&self, section_type: &str) -> Self {
+    pub fn get_every_section_except_section_type(&self, section_type: &str) -> Self {
         let mut new_map_file = MapFile::new();
 
         for segment in &self.segments_list {
-            let new_segment = segment.get_every_file_except_section_type(section_type);
+            let new_segment = segment.get_every_section_except_section_type(section_type);
 
-            if !new_segment.files_list.is_empty() {
+            if !new_segment.sections_list.is_empty() {
                 new_map_file.segments_list.push(new_segment);
             }
         }
 
         new_map_file
+    }
+
+    #[deprecated(
+        since = "2.8.0",
+        note = "Use `get_every_section_except_section_type` instead"
+    )]
+    pub fn get_every_file_except_section_type(&self, section_type: &str) -> Self {
+        self.get_every_section_except_section_type(section_type)
     }
 
     pub fn find_symbol_by_name(
@@ -555,47 +569,53 @@ impl MapFile {
     pub fn find_symbol_by_vram(
         &self,
         address: u64,
-    ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<&file::File>) {
-        let mut possible_files = Vec::new();
+    ) -> (
+        Option<found_symbol_info::FoundSymbolInfo>,
+        Vec<&section::Section>,
+    ) {
+        let mut possible_sections = Vec::new();
 
         for segment in &self.segments_list {
-            let (maybe_info, possible_files_aux) = segment.find_symbol_by_vram(address);
+            let (maybe_info, possible_sections_aux) = segment.find_symbol_by_vram(address);
             if let Some(info) = maybe_info {
                 return (Some(info), Vec::new());
             }
-            possible_files.extend(possible_files_aux);
+            possible_sections.extend(possible_sections_aux);
         }
 
-        (None, possible_files)
+        (None, possible_sections)
     }
 
     pub fn find_symbol_by_vrom(
         &self,
         address: u64,
-    ) -> (Option<found_symbol_info::FoundSymbolInfo>, Vec<&file::File>) {
-        let mut possible_files = Vec::new();
+    ) -> (
+        Option<found_symbol_info::FoundSymbolInfo>,
+        Vec<&section::Section>,
+    ) {
+        let mut possible_sections = Vec::new();
 
         for segment in &self.segments_list {
-            let (maybe_info, possible_files_aux) = segment.find_symbol_by_vrom(address);
+            let (maybe_info, possible_sections_aux) = segment.find_symbol_by_vrom(address);
             if let Some(info) = maybe_info {
                 return (Some(info), Vec::new());
             }
-            possible_files.extend(possible_files_aux);
+            possible_sections.extend(possible_sections_aux);
         }
 
-        (None, possible_files)
+        (None, possible_sections)
     }
 
     pub fn find_lowest_differing_symbol(
         &self,
         other_map_file: &Self,
-    ) -> Option<(&symbol::Symbol, &file::File, Option<&symbol::Symbol>)> {
+    ) -> Option<(&symbol::Symbol, &section::Section, Option<&symbol::Symbol>)> {
         let mut min_vram = u64::MAX;
         let mut found = None;
         let mut found_indices = (0, 0);
 
         for (i, built_segment) in self.segments_list.iter().enumerate() {
-            for (j, built_file) in built_segment.files_list.iter().enumerate() {
+            for (j, built_file) in built_segment.sections_list.iter().enumerate() {
                 for (k, built_sym) in built_file.symbols.iter().enumerate() {
                     if let Some(expected_sym_info) =
                         other_map_file.find_symbol_by_name(&built_sym.name)
@@ -621,11 +641,11 @@ impl MapFile {
         if let Some((found_built_sym, found_built_file, prev_sym)) = found {
             if prev_sym.is_none() {
                 // Previous symbol was not in the same section of the given
-                // file, so we try to backtrack until we find any symbol.
+                // section, so we try to backtrack until we find any symbol.
 
                 let (mut i, mut j) = found_indices;
 
-                // We want to check the previous file, not the current one,
+                // We want to check the previous section, not the current one,
                 // since we already know the current one doesn't have a symbol
                 // preceding the one we found.
                 j -= 1;
@@ -634,7 +654,7 @@ impl MapFile {
                     let built_segment = &self.segments_list[i as usize];
 
                     while j >= 0 {
-                        let built_file = &built_segment.files_list[j as usize];
+                        let built_file = &built_segment.sections_list[j as usize];
 
                         if !built_file.symbols.is_empty() {
                             found = Some((
@@ -650,7 +670,7 @@ impl MapFile {
 
                     i -= 1;
                     if i >= 0 {
-                        j = self.segments_list[i as usize].files_list.len() as isize - 1;
+                        j = self.segments_list[i as usize].sections_list.len() as isize - 1;
                     }
                 }
             }
@@ -682,7 +702,7 @@ impl MapFile {
 
     pub fn get_progress(
         &self,
-        path_decomp_settings: Option<&file::PathDecompSettings>,
+        path_decomp_settings: Option<&section::PathDecompSettings>,
         aliases: &HashMap<String, String>,
     ) -> (
         progress_stats::ProgressStats,
@@ -693,8 +713,8 @@ impl MapFile {
             HashMap::new();
 
         for segment in &self.segments_list {
-            for file in &segment.files_list {
-                if file.symbols.is_empty() {
+            for section in &segment.sections_list {
+                if section.symbols.is_empty() {
                     continue;
                 }
 
@@ -702,10 +722,10 @@ impl MapFile {
                     let path_index = if let Some(path_decomp_settings) = path_decomp_settings {
                         path_decomp_settings.path_index
                     } else {
-                        file.filepath.components().count().saturating_sub(1)
+                        section.filepath.components().count().saturating_sub(1)
                     };
 
-                    let temp = file
+                    let temp = section
                         .filepath
                         .components()
                         .nth(path_index)
@@ -722,15 +742,15 @@ impl MapFile {
 
                 let folder_progress = progress_per_folder.entry(folder.to_string()).or_default();
 
-                for sym_state in file.symbol_match_state_iter(path_decomp_settings) {
+                for sym_state in section.symbol_match_state_iter(path_decomp_settings) {
                     match sym_state {
-                        file::SymbolDecompState::Decomped(sym) => {
+                        symbol_decomp_state::SymbolDecompState::Decomped(sym) => {
                             let sym_size = sym.size as usize;
 
                             total_stats.decomped_size += sym_size;
                             folder_progress.decomped_size += sym_size;
                         }
-                        file::SymbolDecompState::Undecomped(sym) => {
+                        symbol_decomp_state::SymbolDecompState::Undecomped(sym) => {
                             let sym_size = sym.size as usize;
 
                             total_stats.undecomped_size += sym_size;
@@ -753,28 +773,28 @@ impl MapFile {
         let mut comp_info = maps_comparison_info::MapsComparisonInfo::new();
 
         for segment in &self.segments_list {
-            for file in &segment.files_list {
-                for symbol in &file.symbols {
+            for section in &segment.sections_list {
+                for symbol in &section.symbols {
                     if let Some(found_sym_info) = other_map_file.find_symbol_by_name(&symbol.name) {
                         let comp = symbol_comparison_info::SymbolComparisonInfo::new(
                             symbol,
                             symbol.vram,
-                            Some(file),
+                            Some(section),
                             symbol.vram,
-                            Some(found_sym_info.file),
+                            Some(found_sym_info.section),
                         );
 
                         if comp.diff() != Some(0) {
-                            comp_info.bad_files.insert(file);
+                            comp_info.bad_sections.insert(section);
                         }
                         comp_info.compared_list.push(comp);
                     } else {
-                        comp_info.missing_files.insert(file);
+                        comp_info.missing_sections.insert(section);
                         comp_info.compared_list.push(
                             symbol_comparison_info::SymbolComparisonInfo::new(
                                 symbol,
                                 symbol.vram,
-                                Some(file),
+                                Some(section),
                                 u64::MAX,
                                 None,
                             ),
@@ -786,19 +806,19 @@ impl MapFile {
 
         if check_other_on_self {
             for segment in &other_map_file.segments_list {
-                for file in &segment.files_list {
-                    for symbol in &file.symbols {
+                for section in &segment.sections_list {
+                    for symbol in &section.symbols {
                         let found_sym_info = self.find_symbol_by_name(&symbol.name);
 
                         if found_sym_info.is_none() {
-                            comp_info.missing_files.insert(file);
+                            comp_info.missing_sections.insert(section);
                             comp_info.compared_list.push(
                                 symbol_comparison_info::SymbolComparisonInfo::new(
                                     symbol,
                                     u64::MAX,
                                     None,
                                     symbol.vram,
-                                    Some(file),
+                                    Some(section),
                                 ),
                             );
                         }
@@ -811,7 +831,7 @@ impl MapFile {
     }
 
     pub fn to_csv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
-        let mut ret = file::File::to_csv_header(print_vram) + "\n";
+        let mut ret = section::Section::to_csv_header(print_vram) + "\n";
 
         for segment in &self.segments_list {
             ret += &segment.to_csv(print_vram, skip_without_symbols);
@@ -823,7 +843,7 @@ impl MapFile {
     pub fn to_csv_symbols(&self) -> String {
         let mut ret = String::new();
 
-        writeln!(ret, "File,{}", symbol::Symbol::to_csv_header()).unwrap();
+        writeln!(ret, "Section,{}", symbol::Symbol::to_csv_header()).unwrap();
 
         for segment in &self.segments_list {
             ret += &segment.to_csv_symbols();
@@ -877,7 +897,7 @@ pub(crate) mod python_bindings {
     };
 
     use crate::{
-        file, found_symbol_info, maps_comparison_info, progress_stats, report::ReportCategories,
+        found_symbol_info, maps_comparison_info, progress_stats, report::ReportCategories, section,
         segment, symbol,
     };
 
@@ -919,8 +939,12 @@ pub(crate) mod python_bindings {
             self.filter_by_section_type(section_type)
         }
 
+        fn getEverySectionExceptSectionType(&self, section_type: &str) -> Self {
+            self.get_every_section_except_section_type(section_type)
+        }
+
         fn getEveryFileExceptSectionType(&self, section_type: &str) -> Self {
-            self.get_every_file_except_section_type(section_type)
+            self.getEverySectionExceptSectionType(section_type)
         }
 
         fn findSymbolByName(
@@ -945,7 +969,7 @@ pub(crate) mod python_bindings {
             address: u64,
         ) -> (
             Option<found_symbol_info::python_bindings::PyFoundSymbolInfo>,
-            Vec<file::File>,
+            Vec<section::Section>,
         ) {
             let (info, possible_files) = self.find_symbol_by_vram(address);
             (
@@ -959,7 +983,7 @@ pub(crate) mod python_bindings {
             address: u64,
         ) -> (
             Option<found_symbol_info::python_bindings::PyFoundSymbolInfo>,
-            Vec<file::File>,
+            Vec<section::Section>,
         ) {
             let (info, possible_files) = self.find_symbol_by_vrom(address);
             (
@@ -971,7 +995,7 @@ pub(crate) mod python_bindings {
         fn findLowestDifferingSymbol(
             &self,
             other_map_file: &Self,
-        ) -> Option<(symbol::Symbol, file::File, Option<symbol::Symbol>)> {
+        ) -> Option<(symbol::Symbol, section::Section, Option<symbol::Symbol>)> {
             if let Some((s, f, os)) = self.find_lowest_differing_symbol(other_map_file) {
                 Some((s.clone(), f.clone(), os.cloned()))
             } else {
@@ -999,11 +1023,10 @@ pub(crate) mod python_bindings {
             progress_stats::ProgressStats,
             HashMap<String, progress_stats::ProgressStats>,
         ) {
-            let path_decomp_settings = file::PathDecompSettings {
+            let path_decomp_settings = section::PathDecompSettings {
                 asm_path: &asm_path,
-                nonmatchings: Some(&nonmatchings),
                 path_index,
-                check_function_files,
+                nonmatchings: check_function_files.then_some(nonmatchings.as_path()),
             };
 
             self.get_progress(Some(&path_decomp_settings), &aliases)
@@ -1018,16 +1041,17 @@ pub(crate) mod python_bindings {
             asm_path: PathBuf,
             path_index: usize,
         ) -> Result<(), io::Error> {
-            let path_decomp_settings = file::PathDecompSettings {
+            let path_decomp_settings = section::PathDecompSettings {
                 asm_path: &asm_path,
-                nonmatchings: None,
                 path_index,
-                check_function_files: false,
+                nonmatchings: None,
             };
 
-            let report =
-                self.get_objdiff_report(report_categories, Some(&path_decomp_settings), |file| {
-                    let mut section_name = file.filepath.to_string_lossy().to_string();
+            let report = self.get_objdiff_report(
+                report_categories,
+                Some(&path_decomp_settings),
+                |section| {
+                    let mut section_name = section.filepath.to_string_lossy().to_string();
                     // Trim the first prefix found.
                     for x in &prefixes_to_trim {
                         if section_name.starts_with(x) {
@@ -1043,7 +1067,8 @@ pub(crate) mod python_bindings {
                         }
                     }
                     section_name
-                });
+                },
+            );
 
             // Stolen code from `objdiff` (objdiff-cli/src/util/output.rs)
             let file = fs::File::options()

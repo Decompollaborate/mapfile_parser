@@ -1,4 +1,4 @@
-VRAM,File,Section type,Num symbols,Max size,Total size,Average size
+VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
 80000000,build/src/rom_header/rom_header.o,.data,1,64,64,64.00
 80000040,build/bin/usa/boot.o,.data,2,4032,4032,2016.00
 80000400,build/src/entry/entry.o,.text,1,80,80,80.00

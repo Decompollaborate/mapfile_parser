@@ -1,12 +1,13 @@
 /* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use crate::{file, symbol};
 use std::fmt::Write;
+
+use crate::{section, symbol};
 
 #[derive(Debug, Clone)]
 pub struct FoundSymbolInfo<'a> {
-    pub file: &'a file::File,
+    pub section: &'a section::Section,
 
     pub symbol: &'a symbol::Symbol,
 
@@ -14,17 +15,17 @@ pub struct FoundSymbolInfo<'a> {
 }
 
 impl<'a> FoundSymbolInfo<'a> {
-    pub fn new(file: &'a file::File, symbol: &'a symbol::Symbol, offset: i64) -> Self {
+    pub fn new(section: &'a section::Section, symbol: &'a symbol::Symbol, offset: i64) -> Self {
         Self {
-            file,
+            section,
             symbol,
             offset,
         }
     }
 
-    pub fn new_default(file: &'a file::File, symbol: &'a symbol::Symbol) -> Self {
+    pub fn new_default(section: &'a section::Section, symbol: &'a symbol::Symbol) -> Self {
         Self {
-            file,
+            section,
             symbol,
             offset: 0,
         }
@@ -37,7 +38,7 @@ impl<'a> FoundSymbolInfo<'a> {
             self.symbol.get_vram_str(),
             self.symbol.get_vrom_str(),
             self.symbol.get_size_str(),
-            self.file.filepath.to_string_lossy()
+            self.section.filepath.to_string_lossy()
         )
     }
 
@@ -64,12 +65,12 @@ impl<'a> FoundSymbolInfo<'a> {
 pub(crate) mod python_bindings {
     use pyo3::prelude::*;
 
-    use crate::{file, symbol};
+    use crate::{section, symbol};
 
     #[derive(Debug, Clone)]
     #[pyclass(module = "mapfile_parser", name = "FoundSymbolInfo")]
     pub struct PyFoundSymbolInfo {
-        pub file: file::File,
+        pub section: section::Section,
 
         pub symbol: symbol::Symbol,
 
@@ -79,10 +80,10 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl PyFoundSymbolInfo {
         #[new]
-        #[pyo3(signature=(file, symbol, offset=0))]
-        fn new(file: file::File, symbol: symbol::Symbol, offset: i64) -> Self {
+        #[pyo3(signature=(section, symbol, offset=0))]
+        fn new(section: section::Section, symbol: symbol::Symbol, offset: i64) -> Self {
             Self {
-                file,
+                section,
                 symbol,
                 offset,
             }
@@ -91,13 +92,13 @@ pub(crate) mod python_bindings {
         /* Getters and setters */
 
         #[getter]
-        fn get_file(&self) -> PyResult<file::File> {
-            Ok(self.file.clone())
+        fn get_section(&self) -> PyResult<section::Section> {
+            Ok(self.section.clone())
         }
 
         #[setter]
-        fn set_file(&mut self, value: file::File) -> PyResult<()> {
-            self.file = value;
+        fn set_section(&mut self, value: section::Section) -> PyResult<()> {
+            self.section = value;
             Ok(())
         }
 
@@ -141,13 +142,13 @@ pub(crate) mod python_bindings {
 
     impl<'a> From<&'a PyFoundSymbolInfo> for super::FoundSymbolInfo<'a> {
         fn from(value: &'a PyFoundSymbolInfo) -> Self {
-            Self::new(&value.file, &value.symbol, value.offset)
+            Self::new(&value.section, &value.symbol, value.offset)
         }
     }
 
     impl From<super::FoundSymbolInfo<'_>> for PyFoundSymbolInfo {
         fn from(value: super::FoundSymbolInfo) -> Self {
-            Self::new(value.file.clone(), value.symbol.clone(), value.offset)
+            Self::new(value.section.clone(), value.symbol.clone(), value.offset)
         }
     }
 }

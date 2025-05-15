@@ -8,8 +8,9 @@ use std::collections::HashSet;
 use pyo3::prelude::*;
 
 use crate::{
-    file::{self, PathDecompSettings},
     mapfile,
+    section::{self, PathDecompSettings},
+    symbol_decomp_state,
 };
 
 impl mapfile::MapFile {
@@ -21,7 +22,7 @@ impl mapfile::MapFile {
         object_to_unit_name: F,
     ) -> report::Report
     where
-        F: Fn(&file::File) -> String,
+        F: Fn(&section::Section) -> String,
     {
         do_report(
             self,
@@ -40,7 +41,7 @@ fn do_report<F>(
     object_to_unit_name: F,
 ) -> report::Report
 where
-    F: Fn(&file::File) -> String,
+    F: Fn(&section::Section) -> String,
 {
     let units = process_units(
         mapfile,
@@ -69,12 +70,12 @@ fn process_units<F>(
     object_to_unit_name: F,
 ) -> Vec<report::ReportUnit>
 where
-    F: Fn(&file::File) -> String,
+    F: Fn(&section::Section) -> String,
 {
     let mut units: Vec<report::ReportUnit> = Vec::new();
 
     for (segment_index, segment) in mapfile.segments_list.iter().enumerate() {
-        for section in &segment.files_list {
+        for section in &segment.sections_list {
             let section_name = object_to_unit_name(section);
 
             let Some(mut new_report_unit) =
@@ -198,7 +199,7 @@ lazy_static! {
 }
 
 fn report_from_section(
-    section: &file::File,
+    section: &section::Section,
     section_name: String,
     path_decomp_settings: Option<&PathDecompSettings>,
 ) -> Option<report::ReportUnit> {
@@ -222,7 +223,7 @@ fn report_from_section(
         let mut fuzzy_match_percent = 0.0;
 
         let sym = match sym_state {
-            file::SymbolDecompState::Decomped(sym) => {
+            symbol_decomp_state::SymbolDecompState::Decomped(sym) => {
                 let static_size = sym.vram - section.vram;
 
                 if is_text {
@@ -244,7 +245,7 @@ fn report_from_section(
                 }
                 sym.clone()
             }
-            file::SymbolDecompState::Undecomped(sym) => sym,
+            symbol_decomp_state::SymbolDecompState::Undecomped(sym) => sym,
         };
 
         if is_text {
@@ -343,7 +344,7 @@ fn merge_measures(
     }
 }
 
-fn report_item_from_section(section: &file::File) -> report::ReportItem {
+fn report_item_from_section(section: &section::Section) -> report::ReportItem {
     report::ReportItem {
         name: section.section_type.clone(),
         size: section.size,

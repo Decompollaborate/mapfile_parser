@@ -1,7 +1,7 @@
 /* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use crate::{file, symbol};
+use crate::{section, symbol};
 
 #[derive(Debug, Clone)]
 pub struct SymbolComparisonInfo<'a> {
@@ -9,20 +9,20 @@ pub struct SymbolComparisonInfo<'a> {
 
     pub build_address: u64,
 
-    pub build_file: Option<&'a file::File>,
+    pub build_file: Option<&'a section::Section>,
 
     pub expected_address: u64,
 
-    pub expected_file: Option<&'a file::File>,
+    pub expected_file: Option<&'a section::Section>,
 }
 
 impl<'a> SymbolComparisonInfo<'a> {
     pub fn new(
         symbol: &'a symbol::Symbol,
         build_address: u64,
-        build_file: Option<&'a file::File>,
+        build_file: Option<&'a section::Section>,
         expected_address: u64,
-        expected_file: Option<&'a file::File>,
+        expected_file: Option<&'a section::Section>,
     ) -> Self {
         Self {
             symbol,
@@ -66,7 +66,7 @@ impl<'a> SymbolComparisonInfo<'a> {
 pub(crate) mod python_bindings {
     use pyo3::prelude::*;
 
-    use crate::{file, symbol};
+    use crate::{section, symbol};
 
     #[derive(Debug, Clone)]
     #[pyclass(module = "mapfile_parser", name = "SymbolComparisonInfo")]
@@ -75,11 +75,11 @@ pub(crate) mod python_bindings {
 
         pub build_address: u64,
 
-        pub build_file: Option<file::File>,
+        pub build_file: Option<section::Section>,
 
         pub expected_address: u64,
 
-        pub expected_file: Option<file::File>,
+        pub expected_file: Option<section::Section>,
     }
 
     #[pymethods]
@@ -89,9 +89,9 @@ pub(crate) mod python_bindings {
         fn new(
             symbol: symbol::Symbol,
             build_address: u64,
-            build_file: Option<file::File>,
+            build_file: Option<section::Section>,
             expected_address: u64,
-            expected_file: Option<file::File>,
+            expected_file: Option<section::Section>,
         ) -> Self {
             Self {
                 symbol,
@@ -125,11 +125,11 @@ pub(crate) mod python_bindings {
         }
 
         #[getter]
-        fn get_buildFile(&self) -> PyResult<Option<file::File>> {
+        fn get_buildFile(&self) -> PyResult<Option<section::Section>> {
             Ok(self.build_file.clone())
         }
         #[setter]
-        fn set_buildFile(&mut self, value: Option<file::File>) -> PyResult<()> {
+        fn set_buildFile(&mut self, value: Option<section::Section>) -> PyResult<()> {
             self.build_file = value;
             Ok(())
         }
@@ -145,12 +145,12 @@ pub(crate) mod python_bindings {
         }
 
         #[getter]
-        fn get_expectedFile(&self) -> PyResult<Option<file::File>> {
+        fn get_expectedFile(&self) -> PyResult<Option<section::Section>> {
             Ok(self.expected_file.clone())
         }
 
         #[setter]
-        fn set_expectedFile(&mut self, value: Option<file::File>) -> PyResult<()> {
+        fn set_expectedFile(&mut self, value: Option<section::Section>) -> PyResult<()> {
             self.expected_file = value;
             Ok(())
         }

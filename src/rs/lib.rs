@@ -3,27 +3,33 @@
 
 #![warn(clippy::manual_let_else)]
 
-mod file;
 mod found_symbol_info;
 mod mapfile;
 mod maps_comparison_info;
 mod progress_stats;
+mod section;
 mod segment;
 mod symbol;
 mod symbol_comparison_info;
+mod symbol_decomp_state;
 pub mod utils;
 
 #[cfg(feature = "objdiff_report")]
 pub mod report;
 
-pub use file::File;
 pub use found_symbol_info::FoundSymbolInfo;
 pub use mapfile::MapFile;
 pub use maps_comparison_info::MapsComparisonInfo;
 pub use progress_stats::ProgressStats;
+pub use section::{PathDecompSettings, Section};
 pub use segment::Segment;
 pub use symbol::Symbol;
 pub use symbol_comparison_info::SymbolComparisonInfo;
+pub use symbol_decomp_state::{SymbolDecompState, SymbolDecompStateIter};
+
+// Renamed types
+#[deprecated(since = "2.8.0", note = "Use `Section` instead")]
+pub use Section as File;
 
 #[macro_use]
 extern crate lazy_static;
@@ -36,7 +42,7 @@ use pyo3::prelude::*;
 fn mapfile_parser(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<mapfile::MapFile>()?;
     m.add_class::<segment::Segment>()?;
-    m.add_class::<file::File>()?;
+    m.add_class::<section::Section>()?;
     m.add_class::<symbol::Symbol>()?;
     m.add_class::<found_symbol_info::python_bindings::PyFoundSymbolInfo>()?;
     m.add_class::<symbol_comparison_info::python_bindings::PySymbolComparisonInfo>()?;

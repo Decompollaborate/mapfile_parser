@@ -1,4 +1,4 @@
-VRAM,File,Section type,Num symbols,Max size,Total size,Average size
+VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
 00000040,build/us/assets/ipl3.bin.o,.data,2,4032,4032,2016.00
 80000400,build/us/asm/boot/1000.s.o,.text,1,80,80,80.00
 80000450,build/us/src/boot/1050.c.o,.text,1,240,240,240.00

@@ -7,10 +7,35 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-## Changed
+### Added
 
+- `File::symbol_match_state_iter()` function. Returns an iterator over
+  `SymbolDecompState`, which allows to know if a symbol is considered decompiled
+  or not decompiled yet.
+- `Section::is_fill`. `true` if the section is a `*fill*` entry.
+- `MapFile::get_every_section_except_section_type`. Provides the same
+  functionallity as the old `MapFile::get_every_file_except_section_type`
+  function.
+- `Segment::get_every_section_except_section_type`. Provides the same
+  functionallity as the old `Segment::get_every_file_except_section_type`
+  function.
+
+### Changed
+
+- Change `Symbol.size` to `u64` from `Option<u64>`.
+- Rename `File` to `Section`.
+  - `File` is still available as an alias to `Section`, but it is recommended to
+    use the new name instead.
 - Bump MSRV from `1.74.0` to `1.85.0`.
 - Change Rust edition from `2021` to `2024`.
+
+### Deprecated
+
+- `File`. Use `Section` instead.
+- `MapFile::get_every_file_except_section_type`. Use
+  `MapFile::get_every_section_except_section_type` instead.
+- `Segment::get_every_file_except_section_type`. Use
+  `Segment::get_every_section_except_section_type` instead.
 
 ## [2.7.5] - 2025-05-08
 
