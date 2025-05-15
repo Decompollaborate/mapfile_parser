@@ -6,6 +6,7 @@
 mod found_symbol_info;
 mod mapfile;
 mod maps_comparison_info;
+mod parser;
 mod progress_stats;
 mod section;
 mod segment;
@@ -62,7 +63,6 @@ mod tests {
 
     #[test]
     fn w0_000_map() {
-        let mut map = MapFile::new();
-        map.read_map_file(&PathBuf::from("tests/maps/w0_000.map"));
+        let _ = MapFile::new_from_map_file(&PathBuf::from("tests/maps/w0_000.map"));
     }
 }
