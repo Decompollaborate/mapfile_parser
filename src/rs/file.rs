@@ -122,24 +122,22 @@ impl File {
         }
 
         if let Some(prev_sym_temp) = prev_sym {
-            if let Some(prev_sym_temp_size) = prev_sym_temp.size {
-                if let Some(prev_sym_temp_vrom) = prev_sym_temp.vrom {
-                    if prev_sym_temp_vrom + prev_sym_temp_size > address {
-                        let offset = address as i64 - prev_sym_temp_vrom as i64;
-                        if offset < 0 {
-                            return None;
-                        }
-                        return Some((prev_sym_temp, offset));
-                    }
-                }
-
-                if is_vram && prev_sym_temp.vram + prev_sym_temp_size > address {
-                    let offset = address as i64 - prev_sym_temp.vram as i64;
+            if let Some(prev_sym_temp_vrom) = prev_sym_temp.vrom {
+                if prev_sym_temp_vrom + prev_sym_temp.size > address {
+                    let offset = address as i64 - prev_sym_temp_vrom as i64;
                     if offset < 0 {
                         return None;
                     }
                     return Some((prev_sym_temp, offset));
                 }
+            }
+
+            if is_vram && prev_sym_temp.vram + prev_sym_temp.size > address {
+                let offset = address as i64 - prev_sym_temp.vram as i64;
+                if offset < 0 {
+                    return None;
+                }
+                return Some((prev_sym_temp, offset));
             }
         }
 
@@ -168,14 +166,12 @@ impl File {
         }
 
         if let Some(prev_sym_temp) = prev_sym {
-            if let Some(prev_sym_temp_size) = prev_sym_temp.size {
-                if prev_sym_temp.vram + prev_sym_temp_size > address {
-                    let offset = address as i64 - prev_sym_temp.vram as i64;
-                    if offset < 0 {
-                        return None;
-                    }
-                    return Some((prev_sym_temp, offset));
+            if prev_sym_temp.vram + prev_sym_temp.size > address {
+                let offset = address as i64 - prev_sym_temp.vram as i64;
+                if offset < 0 {
+                    return None;
                 }
+                return Some((prev_sym_temp, offset));
             }
         }
 
@@ -210,15 +206,13 @@ impl File {
         }
 
         if let Some(prev_sym_temp) = prev_sym {
-            if let Some(prev_sym_temp_size) = prev_sym_temp.size {
-                if let Some(prev_sym_temp_vrom) = prev_sym_temp.vrom {
-                    if prev_sym_temp_vrom + prev_sym_temp_size > address {
-                        let offset = address as i64 - prev_sym_temp_vrom as i64;
-                        if offset < 0 {
-                            return None;
-                        }
-                        return Some((prev_sym_temp, offset));
+            if let Some(prev_sym_temp_vrom) = prev_sym_temp.vrom {
+                if prev_sym_temp_vrom + prev_sym_temp.size > address {
+                    let offset = address as i64 - prev_sym_temp_vrom as i64;
+                    if offset < 0 {
+                        return None;
                     }
+                    return Some((prev_sym_temp, offset));
                 }
             }
         }
@@ -230,14 +224,14 @@ impl File {
         let mut symbols_to_fix = Vec::new();
 
         for (index, sym) in self.symbols.iter().enumerate() {
-            if sym.name.ends_with(".NON_MATCHING") && sym.size.is_some() && sym.size == Some(0) {
+            if sym.name.ends_with(".NON_MATCHING") && sym.size == 0 {
                 let real_name = sym.name.replace(".NON_MATCHING", "");
 
                 if let Some((_real_sym, real_index)) =
                     self.find_symbol_and_index_by_name(&real_name)
                 {
                     symbols_to_fix.push((real_index, sym.size));
-                    symbols_to_fix.push((index, Some(0)));
+                    symbols_to_fix.push((index, 0));
                 }
             }
         }
@@ -272,10 +266,8 @@ impl File {
         };
 
         for sym in &self.symbols {
-            if let Some(sym_size) = sym.size {
-                if sym_size > max_size {
-                    max_size = sym_size;
-                }
+            if sym.size > max_size {
+                max_size = sym.size;
             }
         }
 
@@ -364,7 +356,7 @@ impl File {
 // https://doc.rust-lang.org/std/cmp/trait.Eq.html
 impl PartialEq for File {
     fn eq(&self, other: &Self) -> bool {
-        self.filepath == other.filepath
+        self.filepath == other.filepath && self.section_type == other.section_type
     }
 }
 impl Eq for File {}
@@ -373,6 +365,7 @@ impl Eq for File {}
 impl Hash for File {
     fn hash<H: Hasher>(&self, state: &mut H) {
         self.filepath.hash(state);
+        self.section_type.hash(state);
     }
 }
 

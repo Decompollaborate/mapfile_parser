@@ -300,7 +300,7 @@ impl MapFile {
                         let sym_size = next_sym_vram - sym.vram;
                         acummulated_size += sym_size;
 
-                        sym.size = Some(sym_size);
+                        sym.size = sym_size;
 
                         if !is_noload_section {
                             // Only set vrom of non bss variables
@@ -312,7 +312,7 @@ impl MapFile {
                     // Calculate size of last symbol of the file
                     let sym = &mut file.symbols[symbols_count - 1];
                     let sym_size = file.size - acummulated_size;
-                    sym.size = Some(sym_size);
+                    sym.size = sym_size;
                     if !is_noload_section {
                         sym.vrom = Some(sym_vrom);
                         //sym_vrom += sym_size;
@@ -419,7 +419,7 @@ impl MapFile {
 
                         let mut new_symbol = symbol::Symbol::new_default(name.into(), vram);
                         if size > 0 {
-                            new_symbol.size = Some(size);
+                            new_symbol.size = size;
                         }
                         if !current_file.is_noload_section() {
                             new_symbol.vrom = Some(vrom)
@@ -468,16 +468,16 @@ impl MapFile {
                         let sym_size = next_sym_vram - sym.vram;
                         acummulated_size += sym_size;
 
-                        if sym.size.is_none() {
-                            sym.size = Some(sym_size);
+                        if sym.size == 0 {
+                            sym.size = sym_size;
                         }
                     }
 
                     // Calculate size of last symbol of the file
                     let sym = &mut file.symbols[symbols_count - 1];
-                    if sym.size.is_none() {
+                    if sym.size == 0 {
                         let sym_size = file.size - acummulated_size;
-                        sym.size = Some(sym_size);
+                        sym.size = sym_size;
                     }
                 }
 
@@ -738,7 +738,7 @@ impl MapFile {
                         .join(extensionless_file_path.clone())
                         .join(func.name.clone() + ".s");
 
-                    let sym_size = func.size.unwrap_or(0) as usize;
+                    let sym_size = func.size as usize;
 
                     if whole_file_is_undecomped
                         || self

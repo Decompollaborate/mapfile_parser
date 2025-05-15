@@ -7,6 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Change `Symbol.size` to `u64` from `Option<u64>`.
+
 ## [2.7.5] - 2025-05-08
 
 ### Fixed

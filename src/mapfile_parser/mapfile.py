@@ -84,7 +84,7 @@ class MapsComparisonInfo:
 class Symbol:
     name: str
     vram: int
-    size: int|None = None # in bytes
+    size: int = 0 # in bytes
     vrom: int|None = None
     align: int|None = None
 
