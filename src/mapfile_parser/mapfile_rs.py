@@ -15,6 +15,7 @@ from .mapfile_parser import Symbol as Symbol
 from .mapfile_parser import File as File
 from .mapfile_parser import Segment as Segment
 from .mapfile_parser import MapFile as MapFile
+from .mapfile_parser import ReportCategories as ReportCategories
 
 
 def __filers_serializeVram(self: File, humanReadable: bool=True) -> str|int|None:

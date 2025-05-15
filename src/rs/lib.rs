@@ -12,7 +12,7 @@ mod symbol_comparison_info;
 pub mod utils;
 
 #[cfg(feature = "objdiff_report")]
-mod report;
+pub mod report;
 
 pub use file::File;
 pub use found_symbol_info::FoundSymbolInfo;
@@ -40,6 +40,7 @@ fn mapfile_parser(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<symbol_comparison_info::python_bindings::PySymbolComparisonInfo>()?;
     m.add_class::<maps_comparison_info::python_bindings::PyMapsComparisonInfo>()?;
     m.add_class::<progress_stats::ProgressStats>()?;
+    m.add_class::<report::ReportCategories>()?;
     Ok(())
 }
 

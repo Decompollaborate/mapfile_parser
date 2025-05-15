@@ -17,6 +17,7 @@ from .mapfile_rs import MapFile as MapFileRs
 from .mapfile_rs import Segment as SegmentRs
 from .mapfile_rs import File as FileRs
 from .mapfile_rs import Symbol as SymbolRs
+from .mapfile_rs import ReportCategories as ReportCategories
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -917,9 +918,9 @@ class MapFile:
 
         return totalStats, progressPerFolder
 
-    def writeObjdiffReportToFile(self, outpath: Path, prefixesToTrim: list[str], asmPath: Path, aliases: dict[str, str]=dict(), pathIndex: int=2):
+    def writeObjdiffReportToFile(self, outpath: Path, prefixesToTrim: list[str], report_categories: ReportCategories, asmPath: Path, aliases: dict[str, str]=dict(), pathIndex: int=2):
         nativeMapFile = self._transferContentsToNativeMapFile()
-        nativeMapFile.writeObjdiffReportToFile(outpath, prefixesToTrim, asmPath, aliases, pathIndex)
+        nativeMapFile.writeObjdiffReportToFile(outpath, prefixesToTrim, report_categories, asmPath, aliases, pathIndex)
 
     # Useful for finding bss reorders
     def compareFilesAndSymbols(self, otherMapFile: MapFile, *, checkOtherOnSelf: bool=True) -> MapsComparisonInfo:

@@ -871,7 +871,7 @@ pub(crate) mod python_bindings {
 
     use std::{collections::HashMap, fs, io::{self, BufWriter}, path::PathBuf};
 
-    use crate::{file, found_symbol_info, maps_comparison_info, progress_stats, segment, symbol};
+    use crate::{file, found_symbol_info, maps_comparison_info, progress_stats, report::ReportCategories, segment, symbol};
 
     #[pymethods]
     impl super::MapFile {
@@ -1002,11 +1002,12 @@ pub(crate) mod python_bindings {
             self.get_progress(Some(&path_decomp_settings), &aliases)
         }
 
-        #[pyo3(signature = (outpath, prefixes_to_trim, asm_path, aliases=HashMap::new(), path_index=2))]
+        #[pyo3(signature = (outpath, prefixes_to_trim, report_categories, asm_path, aliases=HashMap::new(), path_index=2))]
         fn writeObjdiffReportToFile(
             &self,
             outpath: PathBuf,
             prefixes_to_trim: Vec<String>,
+            report_categories: ReportCategories,
             asm_path: PathBuf,
             aliases: HashMap<String, String>,
             path_index: usize,
@@ -1019,7 +1020,7 @@ pub(crate) mod python_bindings {
                 prefixes_to_trim,
             };
 
-            let report = self.get_objdiff_report(Some(&path_decomp_settings), &aliases);
+            let report = self.get_objdiff_report(report_categories, Some(&path_decomp_settings), &aliases);
 
             // Stolen code from `objdiff` (objdiff-cli/src/util/output.rs)
             let file = fs::File::options()

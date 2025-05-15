@@ -2,31 +2,35 @@
 /* SPDX-License-Identifier: MIT */
 
 use std::collections::{HashMap, HashSet};
+use objdiff_core::bindings::report;
+
+#[cfg(feature = "python_bindings")]
+use pyo3::prelude::*;
 
 use crate::{
     file::{self, PathDecompSettings},
     mapfile,
 };
-use objdiff_core::bindings::report;
 
 impl mapfile::MapFile {
     #[must_use]
     pub fn get_objdiff_report(
         &self,
+        report_categories: ReportCategories,
         path_decomp_settings: Option<&PathDecompSettings>,
         aliases: &HashMap<String, String>,
     ) -> report::Report {
-        do_report(self, path_decomp_settings, aliases)
+        do_report(self, report_categories, path_decomp_settings, aliases)
     }
 }
 
 fn do_report(
     mapfile: &mapfile::MapFile,
+    mut report_categories: ReportCategories,
     path_decomp_settings: Option<&PathDecompSettings>,
     aliases: &HashMap<String, String>,
 ) -> report::Report {
     let mut units: Vec<report::ReportUnit> = Vec::new();
-    let mut progress_categories = HashSet::new();
 
     for (segment_index, segment) in mapfile.segments_list.iter().enumerate() {
         for section in &segment.files_list {
@@ -81,22 +85,16 @@ fn do_report(
                 report_unit.sections.extend(new_report_unit.sections);
                 report_unit.functions.extend(new_report_unit.functions);
             } else {
-                let cat = if let Some(x) = section_name.split('/').next() {
-                    x
-                } else {
-                    &segment.name
-                }.to_string();
+                let cats = report_categories.get_categories(&section_name, &segment.name);
 
                 new_report_unit.metadata = Some(report::ReportUnitMetadata {
                     complete: None,
                     module_name: Some(segment.name.clone()),
                     module_id: Some(segment_index as u32),
                     source_path: None, // mapfile doesn't contain source paths
-                    progress_categories: vec![cat.clone()],
+                    progress_categories: cats,
                     auto_generated: None,
                 });
-
-                progress_categories.insert(cat);
 
                 units.push(new_report_unit);
             }
@@ -136,10 +134,10 @@ fn do_report(
     measures.fuzzy_match_percent = measures.matched_code_percent;
 
     let mut categories = Vec::new();
-    for category in progress_categories {
+    for category in report_categories.categories {
         categories.push(report::ReportCategory {
-            id: category.clone(),
-            name: category,
+            id: category.id,
+            name: category.name,
             measures: Some(Default::default()),
         });
     }
@@ -359,5 +357,101 @@ fn report_item_from_section(section: &file::File) -> report::ReportItem {
             virtual_address: Some(section.vram),
         }),
         address: None,
+    }
+}
+
+#[derive(Debug, Clone, Hash, PartialEq, Eq, PartialOrd, Ord)]
+#[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
+pub struct ReportCategories {
+    categories: Vec<ReportCategoryEntry>,
+}
+
+impl ReportCategories {
+    #[must_use]
+    pub fn new() -> Self {
+        Self {
+            categories: Vec::new(),
+        }
+    }
+
+    pub fn push(&mut self, id: String, name: String, mut paths: Vec<String>) -> &ReportCategoryEntry {
+        if let Some(index) = self.categories.iter().position(|entry| entry.id == id) {
+            let entry = &mut self.categories[index];
+            entry.paths.append(&mut paths);
+            entry
+        } else {
+            self.categories.push(ReportCategoryEntry { id, name, paths });
+            self.categories.last_mut().expect("Just added an element")
+        }
+    }
+
+    fn get_categories(&mut self, section_name: &str, segment_name: &str) -> Vec<String> {
+        let mut ids = Vec::new();
+
+        for x in self.categories.iter() {
+            if x.check_path(section_name) {
+                ids.push(x.id.clone());
+            }
+        }
+
+        if ids.is_empty() {
+            // Fallback to our own generated categories if we can't find the path in the user categories.
+            let (cat, p) = if let Some(x) = section_name.split('/').next() {
+                (x, x)
+            } else {
+                (segment_name, section_name)
+            };
+
+            let entry = self.push(cat.to_string(), cat.to_string(), vec![p.to_string()]);
+            ids.push(entry.id.clone());
+        }
+
+        ids
+    }
+}
+
+#[derive(Debug, Clone, Hash, PartialEq, Eq, PartialOrd, Ord)]
+pub struct ReportCategoryEntry {
+    id: String,
+    name: String,
+    paths: Vec<String>,
+}
+
+impl ReportCategoryEntry {
+    #[must_use]
+    pub fn id(&self) -> &str {
+        &self.id
+    }
+    #[must_use]
+    pub fn name(&self) -> &str {
+        &self.name
+    }
+    #[must_use]
+    pub fn paths(&self) -> &[String] {
+        &self.paths
+    }
+
+    #[must_use]
+    fn check_path(&self, section_name: &str) -> bool {
+        self.paths.iter().any(|x| section_name.starts_with(x))
+    }
+}
+
+#[cfg(feature = "python_bindings")]
+#[allow(non_snake_case)]
+pub(crate) mod python_bindings {
+    use pyo3::prelude::*;
+
+    #[pymethods]
+    impl super::ReportCategories {
+        #[new]
+        fn py_new() -> Self {
+            Self::new()
+        }
+
+        #[pyo3(name="push")]
+        fn py_push(&mut self, id: String, name: String, paths: Vec<String>) {
+            self.push(id, name, paths);
+        }
     }
 }
