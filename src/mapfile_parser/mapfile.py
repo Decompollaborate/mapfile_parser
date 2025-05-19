@@ -90,6 +90,14 @@ class Symbol:
     size: int = 0 # in bytes
     vrom: int|None = None
     align: int|None = None
+    nonmatchingSymExists: bool = False
+    """
+    `true` if a symbol with the same name, but with a `.NON_MATCHING`
+    suffix is found in this symbol's section. `false` otherwise.
+
+    Note the symbol with the actual `.NON_MATCHING` will have this member
+    set to `false`.
+    """
 
     def getVramStr(self) -> str:
         return f"0x{self.vram:08X}"
@@ -659,7 +667,7 @@ class MapFile:
             for section in segment:
                 newSection = Section(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align, section.isFill)
                 for symbol in section:
-                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align)
+                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align, symbol.nonmatchingSymExists)
 
                     newSection._symbols.append(newSymbol)
                 newSegment._sectionsList.append(newSection)
@@ -674,7 +682,7 @@ class MapFile:
                 newSection = SectionRs(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align, section.isFill)
                 for symbol in section._symbols:
                     size = symbol.size if symbol.size is not None else 0
-                    newSymbol = SymbolRs(symbol.name, symbol.vram, size, symbol.vrom, symbol.align)
+                    newSymbol = SymbolRs(symbol.name, symbol.vram, size, symbol.vrom, symbol.align, symbol.nonmatchingSymExists)
 
                     newSection.appendSymbol(newSymbol)
                 newSegment.appendFile(newSection)

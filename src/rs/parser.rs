@@ -568,7 +568,7 @@ impl MapFile {
         let mut nonmatchings_syms_original = Vec::new();
         let mut nonmatchings_syms_suffix = Vec::new();
         for (index, sym) in section.symbols.iter().enumerate() {
-            if sym.name.ends_with(".NON_MATCHING") /*&& sym.size == 0*/ {
+            if sym.name.ends_with(".NON_MATCHING") {
                 let real_name = sym.name.replace(".NON_MATCHING", "");
 
                 if let Some((real_sym, real_index)) =
@@ -584,6 +584,7 @@ impl MapFile {
         for (index, new_size) in nonmatchings_syms_original {
             if let Some(sym) = section.symbols.get_mut(index) {
                 sym.size = new_size;
+                sym.nonmatching_sym_exists = true;
             }
         }
         for index in nonmatchings_syms_suffix {

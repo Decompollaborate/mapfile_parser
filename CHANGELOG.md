@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   function.
 - `MapFile::new_from_map_file`, `MapFile::new_from_map_str`,
   `MapFile::new_from_gnu_map_str` and `MapFile::new_from_lld_map_str`.
+- `Symbol::nonmatching_sym_exists`. This will be set to `true` if a symbol with
+  the same name but with a `.NON_MATCHING` suffix is found on the same section.
+  - The other suffixed symbol (`.NON_MATCHING`) is still retained in the section.
+  - The suffixed symbol will have this member set to `false`.
 
 ### Changed
 

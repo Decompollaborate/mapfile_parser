@@ -19,8 +19,6 @@ def doJsonify(mapPath: Path, outputPath: Path|None, humanReadable: bool=True, ap
 
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(mapPath)
-    if applyFixes:
-        mapFile = mapFile.fixupNonMatchingSymbols()
 
     jsonStr = json.dumps(mapFile.toJson(humanReadable=humanReadable), indent=4)
 

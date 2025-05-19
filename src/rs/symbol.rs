@@ -24,27 +24,47 @@ pub struct Symbol {
     pub vrom: Option<u64>,
 
     pub align: Option<u64>,
+
+    /// `true` if a symbol with the same name, but with a `.NON_MATCHING`
+    /// suffix is found in this symbol's section. `false` otherwise.
+    ///
+    /// Note the symbol with the actual `.NON_MATCHING` will have this member
+    /// set to `false`.
+    pub nonmatching_sym_exists: bool,
 }
 
 impl Symbol {
-    pub fn new(name: String, vram: u64, size: u64, vrom: Option<u64>, align: Option<u64>) -> Self {
+    fn new_impl(name: String, vram: u64, size: u64, vrom: Option<u64>, align: Option<u64>, nonmatching_sym_exists: bool) -> Self {
         Self {
             name,
             vram,
             size,
             vrom,
             align,
+            nonmatching_sym_exists,
         }
     }
 
-    pub fn new_default(name: String, vram: u64) -> Self {
-        Self {
+    pub fn new(name: String, vram: u64, size: u64, vrom: Option<u64>, align: Option<u64>) -> Self {
+        Self::new_impl(
             name,
             vram,
-            size: 0,
-            vrom: None,
-            align: None,
-        }
+            size,
+            vrom,
+            align,
+            false,
+        )
+    }
+
+    pub fn new_default(name: String, vram: u64) -> Self {
+        Self::new_impl(
+            name,
+            vram,
+            0,
+            None,
+            None,
+            false,
+        )
     }
 
     pub fn get_vram_str(&self) -> String {
@@ -115,15 +135,16 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl super::Symbol {
         #[new]
-        #[pyo3(signature=(name,vram,size=0,vrom=None,align=None))]
+        #[pyo3(signature=(name,vram,size=0,vrom=None,align=None, nonmatchingSymExists=false))]
         fn py_new(
             name: String,
             vram: u64,
             size: u64,
             vrom: Option<u64>,
             align: Option<u64>,
+            nonmatchingSymExists: bool,
         ) -> Self {
-            Self::new(name, vram, size, vrom, align)
+            Self::new_impl(name, vram, size, vrom, align, nonmatchingSymExists)
         }
 
         /* Getters and setters */
@@ -180,6 +201,17 @@ pub(crate) mod python_bindings {
         #[setter]
         fn set_align(&mut self, value: Option<u64>) -> PyResult<()> {
             self.align = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_nonmatchingSymExists(&self) -> PyResult<bool> {
+            Ok(self.nonmatching_sym_exists)
+        }
+
+        #[setter]
+        fn set_nonmatchingSymExists(&mut self, value: bool) -> PyResult<()> {
+            self.nonmatching_sym_exists = value;
             Ok(())
         }
 
