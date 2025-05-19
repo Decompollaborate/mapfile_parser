@@ -60,15 +60,6 @@ source = "registry+https://github.com/rust-lang/crates.io-index"
 checksum = "48c757948c5ede0e46177b7add2e67155f70e33c07fea8284df6576da70b3719"
 
 [[package]]
-name = "encoding_rs"
-version = "0.8.35"
-source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "75030f3c4f45dafd7586dd6780965a8c7e8e285a5ecb86713e63a79c5b2766f3"
-dependencies = [
- "cfg-if",
-]
-
-[[package]]
 name = "equivalent"
 version = "1.0.2"
 source = "registry+https://github.com/rust-lang/crates.io-index"
@@ -277,10 +268,9 @@ dependencies = [
 [[package]]
 name = "objdiff-core"
 version = "3.0.0-beta.8"
-source = "git+https://github.com/encounter/objdiff.git?rev=f7c3501eaed6f29ea1d5317f673bfdfa5a2d7414#f7c3501eaed6f29ea1d5317f673bfdfa5a2d7414"
+source = "git+https://github.com/encounter/objdiff.git?rev=a367af612b8b30b5bdf40e5c1d0e45df46a5e3e9#a367af612b8b30b5bdf40e5c1d0e45df46a5e3e9"
 dependencies = [
  "anyhow",
- "encoding_rs",
  "filetime",
  "flagset",
  "itertools 0.14.0",
