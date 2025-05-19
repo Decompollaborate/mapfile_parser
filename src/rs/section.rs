@@ -16,6 +16,7 @@ use serde::{Deserialize, Serialize};
 use crate::{symbol, utils, SymbolDecompStateIter};
 
 #[derive(Debug, Clone)]
+#[non_exhaustive]
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Section {
@@ -235,27 +236,12 @@ impl Section {
         None
     }
 
+    #[deprecated(
+        since = "2.8.0",
+        note = "This functionality is perform automatically during parsing now."
+    )]
     pub fn fixup_non_matching_symbols(&mut self) {
-        let mut symbols_to_fix = Vec::new();
-
-        for (index, sym) in self.symbols.iter().enumerate() {
-            if sym.name.ends_with(".NON_MATCHING") && sym.size == 0 {
-                let real_name = sym.name.replace(".NON_MATCHING", "");
-
-                if let Some((_real_sym, real_index)) =
-                    self.find_symbol_and_index_by_name(&real_name)
-                {
-                    symbols_to_fix.push((real_index, sym.size));
-                    symbols_to_fix.push((index, 0));
-                }
-            }
-        }
-
-        for (index, new_size) in symbols_to_fix {
-            if let Some(sym) = self.symbols.get_mut(index) {
-                sym.size = new_size;
-            }
-        }
+        // This is a no-op now
     }
 
     pub fn to_csv_header(print_vram: bool) -> String {
@@ -606,6 +592,7 @@ pub(crate) mod python_bindings {
         }
 
         fn fixupNonMatchingSymbols(&mut self) {
+            #[expect(deprecated)]
             self.fixup_non_matching_symbols()
         }
 

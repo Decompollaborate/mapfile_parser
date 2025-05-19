@@ -28,6 +28,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rename `File` to `Section`.
   - `File` is still available as an alias to `Section`, but it is recommended to
     use the new name instead.
+- Detect `.NON_MATCHING` symbols and fix the size of both the real symbol and
+  the `.NON_MATCHING` one during parsing.
 
 ### Deprecated
 
@@ -44,6 +46,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   instead.
 - `MapFile::parse_map_contents_lld`. Use either `MapFile::new_from_lld_map_str`
   instead.
+- Deprecate `MapFile::fixup_non_matching_symbols` and family. This functionality
+  is perform automatically during parsing now.
+  - Calling this function is effectively a no-op now.
 
 ### Fixed
 

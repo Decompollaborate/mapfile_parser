@@ -11,6 +11,7 @@ use pyo3::prelude::*;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone)]
+#[non_exhaustive]
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Symbol {

@@ -880,19 +880,9 @@ class MapFile:
 
         return newMapFile
 
+    #! @deprecated. This functionality is perform automatically during parsing now.
     def fixupNonMatchingSymbols(self) -> MapFile:
-        newMapFile = self.clone()
-
-        for segment in newMapFile._segmentsList:
-            for section in segment._sectionsList:
-                for sym in section._symbols:
-                    if sym.name.endswith(".NON_MATCHING") and sym.size != 0:
-                        realSym = section.findSymbolByName(sym.name.replace(".NON_MATCHING", ""))
-                        if realSym is not None and realSym.size == 0:
-                            realSym.size = sym.size
-                            sym.size = 0
-
-        return newMapFile
+        return self.clone()
 
     def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2, checkFunctionFiles: bool=True) -> tuple[ProgressStats, dict[str, ProgressStats]]:
         totalStats = ProgressStats()
