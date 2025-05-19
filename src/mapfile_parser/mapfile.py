@@ -91,6 +91,14 @@ class Symbol:
     size: int = 0 # in bytes
     vrom: int|None = None
     align: int|None = None
+    nonmatchingSymExists: bool = False
+    """
+    `true` if a symbol with the same name, but with a `.NON_MATCHING`
+    suffix is found in this symbol's section. `false` otherwise.
+
+    Note the symbol with the actual `.NON_MATCHING` will have this member
+    set to `false`.
+    """
 
     def getVramStr(self) -> str:
         return f"0x{self.vram:08X}"
@@ -660,7 +668,7 @@ class MapFile:
             for section in segment:
                 newSection = Section(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align, section.isFill)
                 for symbol in section:
-                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align)
+                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align, symbol.nonmatchingSymExists)
 
                     newSection._symbols.append(newSymbol)
                 newSegment._sectionsList.append(newSection)
@@ -675,7 +683,7 @@ class MapFile:
                 newSection = SectionRs(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align, section.isFill)
                 for symbol in section._symbols:
                     size = symbol.size if symbol.size is not None else 0
-                    newSymbol = SymbolRs(symbol.name, symbol.vram, size, symbol.vrom, symbol.align)
+                    newSymbol = SymbolRs(symbol.name, symbol.vram, size, symbol.vrom, symbol.align, symbol.nonmatchingSymExists)
 
                     newSection.appendSymbol(newSymbol)
                 newSegment.appendFile(newSection)
@@ -881,19 +889,9 @@ class MapFile:
 
         return newMapFile
 
+    #! @deprecated. This functionality is perform automatically during parsing now.
     def fixupNonMatchingSymbols(self) -> MapFile:
-        newMapFile = self.clone()
-
-        for segment in newMapFile._segmentsList:
-            for section in segment._sectionsList:
-                for sym in section._symbols:
-                    if sym.name.endswith(".NON_MATCHING") and sym.size != 0:
-                        realSym = section.findSymbolByName(sym.name.replace(".NON_MATCHING", ""))
-                        if realSym is not None and realSym.size == 0:
-                            realSym.size = sym.size
-                            sym.size = 0
-
-        return newMapFile
+        return self.clone()
 
     def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2, checkFunctionFiles: bool=True) -> tuple[ProgressStats, dict[str, ProgressStats]]:
         totalStats = ProgressStats()

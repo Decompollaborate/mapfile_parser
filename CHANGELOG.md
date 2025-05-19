@@ -21,6 +21,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   function.
 - `MapFile::new_from_map_file`, `MapFile::new_from_map_str`,
   `MapFile::new_from_gnu_map_str` and `MapFile::new_from_lld_map_str`.
+- `Symbol::nonmatching_sym_exists`. This will be set to `true` if a symbol with
+  the same name but with a `.NON_MATCHING` suffix is found on the same section.
+  - The other suffixed symbol (`.NON_MATCHING`) is still retained in the section.
+  - The suffixed symbol will have this member set to `false`.
 
 ### Changed
 
@@ -28,6 +32,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Rename `File` to `Section`.
   - `File` is still available as an alias to `Section`, but it is recommended to
     use the new name instead.
+- Detect `.NON_MATCHING` symbols and fix the size of both the real symbol and
+  the `.NON_MATCHING` one during parsing.
 - Bump MSRV from `1.74.0` to `1.85.0`.
 - Change Rust edition from `2021` to `2024`.
 
@@ -46,6 +52,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   instead.
 - `MapFile::parse_map_contents_lld`. Use either `MapFile::new_from_lld_map_str`
   instead.
+- Deprecate `MapFile::fixup_non_matching_symbols` and family. This functionality
+  is perform automatically during parsing now.
+  - Calling this function is effectively a no-op now.
+
+### Fixed
+
+- Avoid pointless internal copy during the parsing of GNU mapfiles.
 
 ## [2.7.5] - 2025-05-08
 

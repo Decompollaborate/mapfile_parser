@@ -15,6 +15,7 @@ use crate::{
 };
 
 #[derive(Debug, Clone)]
+#[non_exhaustive]
 // TODO: sequence?
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
@@ -217,15 +218,13 @@ impl MapFile {
         new_map_file
     }
 
+    #[deprecated(
+        since = "2.8.0",
+        note = "This functionality is perform automatically during parsing now."
+    )]
     pub fn fixup_non_matching_symbols(&self) -> Self {
-        let mut new_map_file = self.clone();
-
-        new_map_file
-            .segments_list
-            .iter_mut()
-            .for_each(|x| x.fixup_non_matching_symbols());
-
-        new_map_file
+        // This is a no-op now
+        self.clone()
     }
 
     pub fn get_progress(
@@ -532,6 +531,7 @@ pub(crate) mod python_bindings {
         }
 
         fn fixupNonMatchingSymbols(&self) -> Self {
+            #[expect(deprecated)]
             self.fixup_non_matching_symbols()
         }
 

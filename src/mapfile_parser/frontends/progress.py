@@ -19,7 +19,7 @@ def getProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, pathIndex:
     mapFile.debugging = debugging
     mapFile.readMapFile(mapPath)
 
-    return mapFile.filterBySectionType(".text").fixupNonMatchingSymbols().getProgress(asmPath, nonmatchingsPath, pathIndex=pathIndex, checkFunctionFiles=checkFunctionFiles)
+    return mapFile.filterBySectionType(".text").getProgress(asmPath, nonmatchingsPath, pathIndex=pathIndex, checkFunctionFiles=checkFunctionFiles)
 
 def doProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, pathIndex: int=2, checkFunctionFiles: bool=True, print_json: bool=False, debugging: bool=False) -> int:
     if not mapPath.exists():

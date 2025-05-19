@@ -17,6 +17,7 @@ use serde::{Deserialize, Serialize};
 use crate::{found_symbol_info, section};
 
 #[derive(Debug, Clone)]
+#[non_exhaustive]
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Segment {
@@ -214,10 +215,12 @@ impl Segment {
         new_segment
     }
 
+    #[deprecated(
+        since = "2.8.0",
+        note = "This functionality is perform automatically during parsing now."
+    )]
     pub fn fixup_non_matching_symbols(&mut self) {
-        self.sections_list
-            .iter_mut()
-            .for_each(|x| x.fixup_non_matching_symbols())
+        // This is a no-op now
     }
 
     pub fn to_csv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
@@ -476,6 +479,7 @@ pub(crate) mod python_bindings {
         }
 
         fn fixupNonMatchingSymbols(&mut self) {
+            #[expect(deprecated)]
             self.fixup_non_matching_symbols()
         }
 

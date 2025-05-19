@@ -5,7 +5,7 @@ use std::{collections::HashSet, path::Path};
 
 use regex::*;
 
-use crate::{mapfile::MapFile, section, segment, symbol, utils};
+use crate::{mapfile::MapFile, section, segment, symbol, utils, Section};
 
 lazy_static! {
     static ref BANNED_SYMBOL_NAMES: HashSet<&'static str> = {
@@ -130,7 +130,9 @@ impl MapFile {
             self.parse_map_contents_gnu(map_contents);
         }
     }
+}
 
+impl MapFile {
     /**
     Parses the contents of a GNU ld map.
 
@@ -296,14 +298,15 @@ impl MapFile {
 
             let mut vrom_offset = segment.vrom;
             for mut section in segment.sections_list.into_iter() {
-                let mut acummulated_size = 0;
-                let symbols_count = section.symbols.len();
-                let is_noload_section = section.is_noload_section();
-
                 if section.is_placeholder() {
                     // drop placeholders
                     continue;
                 }
+
+                // The size of the section
+                let mut acummulated_size = 0;
+                let symbols_count = section.symbols.len();
+                let is_noload_section = section.is_noload_section();
 
                 if section.vrom.is_some() {
                     vrom_offset = section.vrom.unwrap();
@@ -356,6 +359,8 @@ impl MapFile {
                         sym.vrom = Some(sym_vrom);
                         //sym_vrom += sym_size;
                     }
+
+                    Self::fixup_non_matching_symbols_for_section(&mut section);
                 }
 
                 if !is_noload_section {
@@ -524,6 +529,8 @@ impl MapFile {
                         let sym_size = section.size - acummulated_size;
                         sym.size = sym_size;
                     }
+
+                    Self::fixup_non_matching_symbols_for_section(&mut section);
                 }
 
                 new_segment.sections_list.push(section);
@@ -538,18 +545,52 @@ impl MapFile {
 }
 
 impl MapFile {
-    // TODO: figure out if this is doing unnecessary copies or something
-    fn preprocess_map_data_gnu(map_data: &str) -> String {
+    fn preprocess_map_data_gnu(map_data: &str) -> &str {
         // Skip the stuff we don't care about
         // Looking for this string will only work on English machines (or C locales)
         // but it doesn't matter much, because if this string is not found then the
         // parsing should still work, but just a bit slower because of the extra crap
         if let Some(aux_var) = map_data.find("\nLinker script and memory map") {
             if let Some(start_index) = map_data[aux_var + 1..].find('\n') {
-                return map_data[aux_var + 1 + start_index + 1..].to_string();
+                return &map_data[aux_var + 1 + start_index + 1..];
             }
         }
 
-        map_data.to_string()
+        map_data
+    }
+
+    fn fixup_non_matching_symbols_for_section(section: &mut Section) {
+        // Fixup `.NON_MATCHING` symbols.
+        // These kind of symbols have the same address as their
+        // real counterpart, but their order is not guaranteed,
+        // meaning we may have set the symbol size's to the
+        // non_matching placeholder instead of the actual symbol.
+        let mut nonmatchings_syms_original = Vec::new();
+        let mut nonmatchings_syms_suffix = Vec::new();
+        for (index, sym) in section.symbols.iter().enumerate() {
+            if sym.name.ends_with(".NON_MATCHING") {
+                let real_name = sym.name.replace(".NON_MATCHING", "");
+
+                if let Some((real_sym, real_index)) =
+                    section.find_symbol_and_index_by_name(&real_name)
+                {
+                    // One of the sizes should be zero, while the
+                    // other non-zero, so we take the largest.
+                    nonmatchings_syms_original.push((real_index, sym.size.max(real_sym.size)));
+                    nonmatchings_syms_suffix.push(index);
+                }
+            }
+        }
+        for (index, new_size) in nonmatchings_syms_original {
+            if let Some(sym) = section.symbols.get_mut(index) {
+                sym.size = new_size;
+                sym.nonmatching_sym_exists = true;
+            }
+        }
+        for index in nonmatchings_syms_suffix {
+            if let Some(sym) = section.symbols.get_mut(index) {
+                sym.size = 0;
+            }
+        }
     }
 }
