@@ -53,8 +53,7 @@ impl<'sect> Iterator for SymbolDecompStateIter<'sect> {
         let sym = &self.section.symbols[self.index];
         self.index += 1;
 
-        if self.whole_file_is_undecomped || sym.nonmatching_sym_exists
-        {
+        if self.whole_file_is_undecomped || sym.nonmatching_sym_exists {
             return Some(SymbolDecompState::Undecomped(sym));
         } else if let Some(functions_path) = &self.functions_path {
             if functions_path.join(sym.name.clone() + ".s").exists() {

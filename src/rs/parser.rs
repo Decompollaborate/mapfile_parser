@@ -29,7 +29,7 @@ impl MapFile {
     #[must_use]
     pub fn new_from_map_file(map_path: &Path) -> Self {
         let mut m = Self::new_impl();
-        #[expect(deprecated)]
+        #[allow(deprecated)]
         m.read_map_file(map_path);
         m
     }
@@ -44,7 +44,7 @@ impl MapFile {
     #[must_use]
     pub fn new_from_map_str(map_contents: &str) -> Self {
         let mut m = Self::new_impl();
-        #[expect(deprecated)]
+        #[allow(deprecated)]
         m.parse_map_contents(map_contents);
         m
     }
@@ -55,7 +55,7 @@ impl MapFile {
     #[must_use]
     pub fn new_from_gnu_map_str(map_contents: &str) -> Self {
         let mut m = Self::new_impl();
-        #[expect(deprecated)]
+        #[allow(deprecated)]
         m.parse_map_contents_gnu(map_contents);
         m
     }
@@ -66,7 +66,7 @@ impl MapFile {
     #[must_use]
     pub fn new_from_lld_map_str(map_contents: &str) -> Self {
         let mut m = Self::new_impl();
-        #[expect(deprecated)]
+        #[allow(deprecated)]
         m.parse_map_contents_lld(map_contents);
         m
     }
@@ -101,7 +101,7 @@ impl MapFile {
     pub fn read_map_file(&mut self, map_path: &Path) {
         let map_contents = utils::read_file_contents(map_path);
 
-        #[expect(deprecated)]
+        #[allow(deprecated)]
         self.parse_map_contents(&map_contents);
     }
 
@@ -122,11 +122,11 @@ impl MapFile {
             Regex::new(r"\s+VMA\s+LMA\s+Size\s+Align\s+Out\s+In\s+Symbol").unwrap();
 
         if regex_lld_header.is_match(map_contents) {
-            #[expect(deprecated)]
+            #[allow(deprecated)]
             self.parse_map_contents_lld(map_contents);
         } else {
             // GNU is the fallback
-            #[expect(deprecated)]
+            #[allow(deprecated)]
             self.parse_map_contents_gnu(map_contents);
         }
     }

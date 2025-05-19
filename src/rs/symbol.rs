@@ -34,7 +34,14 @@ pub struct Symbol {
 }
 
 impl Symbol {
-    fn new_impl(name: String, vram: u64, size: u64, vrom: Option<u64>, align: Option<u64>, nonmatching_sym_exists: bool) -> Self {
+    fn new_impl(
+        name: String,
+        vram: u64,
+        size: u64,
+        vrom: Option<u64>,
+        align: Option<u64>,
+        nonmatching_sym_exists: bool,
+    ) -> Self {
         Self {
             name,
             vram,
@@ -46,25 +53,11 @@ impl Symbol {
     }
 
     pub fn new(name: String, vram: u64, size: u64, vrom: Option<u64>, align: Option<u64>) -> Self {
-        Self::new_impl(
-            name,
-            vram,
-            size,
-            vrom,
-            align,
-            false,
-        )
+        Self::new_impl(name, vram, size, vrom, align, false)
     }
 
     pub fn new_default(name: String, vram: u64) -> Self {
-        Self::new_impl(
-            name,
-            vram,
-            0,
-            None,
-            None,
-            false,
-        )
+        Self::new_impl(name, vram, 0, None, None, false)
     }
 
     pub fn get_vram_str(&self) -> String {
