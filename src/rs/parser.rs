@@ -5,7 +5,7 @@ use std::{collections::HashSet, path::Path};
 
 use regex::*;
 
-use crate::{mapfile::MapFile, section, segment, symbol, utils, Section};
+use crate::{Section, mapfile::MapFile, section, segment, symbol, utils};
 
 lazy_static! {
     static ref BANNED_SYMBOL_NAMES: HashSet<&'static str> = {

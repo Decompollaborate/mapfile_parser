@@ -243,7 +243,7 @@ fn report_from_section(
                         measures.matched_data += if track_data { static_size } else { 0 };
                     }
                 }
-                sym.clone()
+                sym
             }
             symbol_decomp_state::SymbolDecompState::Undecomped(sym) => sym,
         };

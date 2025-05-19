@@ -7,8 +7,7 @@ use crate::{section, symbol};
 
 pub enum SymbolDecompState<'sect> {
     Decomped(&'sect symbol::Symbol),
-    // Returns a new symbol because it may need the size patched
-    Undecomped(symbol::Symbol),
+    Undecomped(&'sect symbol::Symbol),
 }
 
 pub struct SymbolDecompStateIter<'sect> {
@@ -55,10 +54,10 @@ impl<'sect> Iterator for SymbolDecompStateIter<'sect> {
         self.index += 1;
 
         if self.whole_file_is_undecomped || sym.nonmatching_sym_exists {
-            return Some(SymbolDecompState::Undecomped(sym.clone()));
+            return Some(SymbolDecompState::Undecomped(sym));
         } else if let Some(functions_path) = &self.functions_path {
             if functions_path.join(sym.name.clone() + ".s").exists() {
-                return Some(SymbolDecompState::Undecomped(sym.clone()));
+                return Some(SymbolDecompState::Undecomped(sym));
             }
         }
 
