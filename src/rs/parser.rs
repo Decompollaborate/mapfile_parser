@@ -538,18 +538,17 @@ impl MapFile {
 }
 
 impl MapFile {
-    // TODO: figure out if this is doing unnecessary copies or something
-    fn preprocess_map_data_gnu(map_data: &str) -> String {
+    fn preprocess_map_data_gnu(map_data: &str) -> &str {
         // Skip the stuff we don't care about
         // Looking for this string will only work on English machines (or C locales)
         // but it doesn't matter much, because if this string is not found then the
         // parsing should still work, but just a bit slower because of the extra crap
         if let Some(aux_var) = map_data.find("\nLinker script and memory map") {
             if let Some(start_index) = map_data[aux_var + 1..].find('\n') {
-                return map_data[aux_var + 1 + start_index + 1..].to_string();
+                return &map_data[aux_var + 1 + start_index + 1..];
             }
         }
 
-        map_data.to_string()
+        map_data
     }
 }

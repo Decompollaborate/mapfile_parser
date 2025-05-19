@@ -45,6 +45,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - `MapFile::parse_map_contents_lld`. Use either `MapFile::new_from_lld_map_str`
   instead.
 
+### Fixed
+
+- Avoid pointless internal copy during the parsing of GNU mapfiles.
+
 ## [2.7.5] - 2025-05-08
 
 ### Fixed
