@@ -39,9 +39,9 @@ def doPj64Syms(mapPath: Path, outputPath: Path|None) -> int:
 def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        mapPath: Path = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
+        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
     else:
-        mapPath: Path = args.mapfile
+        mapPath = args.mapfile
 
     outputPath: Path = args.output
 

@@ -13,7 +13,7 @@ from .. import mapfile
 from .. import utils
 
 
-def doFirstDiff(mapPath: Path, expectedMapPath: Path, romPath: Path, expectedRomPath: Path, diffCount: int=5, mismatchSize: bool=False, addColons: bool=True, bytesConverterCallback:Callable[[bytes, mapfile.MapFile],str|None]|None=None, endian: Literal["big", "little"] ="big") -> int:
+def doFirstDiff(mapPath, expectedMapPath, romPath, expectedRomPath, diffCount: int=5, mismatchSize: bool=False, addColons: bool=True, bytesConverterCallback:Callable[[bytes, mapfile.MapFile],str|None]|None=None, endian: Literal["big", "little"] ="big") -> int:
     if not mapPath.exists():
         print(f"{mapPath} must exist")
         return 1
@@ -143,15 +143,15 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
         expectedDir = Path(version.paths["expected_dir"])
-        mapPath: Path = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
-        expectedMapPath: Path = args.expectedmap if args.expectedmap is not None else expectedDir / mapPath
-        romPath: Path = Path(args.rompath if args.rompath is not None else version.paths.get("build"))
-        expectedRomPath: Path = args.expectedrom if args.expectedrom is not None else expectedDir / romPath
+        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
+        expectedMapPath = args.expectedmap if args.expectedmap is not None else expectedDir / mapPath
+        romPath = Path(args.rompath if args.rompath is not None else version.paths.get("build"))
+        expectedRomPath = args.expectedrom if args.expectedrom is not None else expectedDir / romPath
     else:
-        mapPath: Path = args.mapfile
-        expectedMapPath: Path = args.expectedmap
-        romPath: Path = args.rompath
-        expectedRomPath: Path = args.expectedrom
+        mapPath = args.mapfile
+        expectedMapPath = args.expectedmap
+        romPath = args.rompath
+        expectedRomPath = args.expectedrom
 
     diffCount: int = args.count
     mismatchSize: bool = args.mismatch_size

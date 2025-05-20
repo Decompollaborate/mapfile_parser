@@ -68,13 +68,13 @@ def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, proje
 def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         decomp_version = decompConfig.get_version_by_name(args.version)
-        mapPath: Path = Path(args.mapfile if args.mapfile is not None else decomp_version.get("map"))
-        asmPath: Path = Path(args.asmpath if args.asmpath is not None else decomp_version.get("asm"))
-        nonmatchingsPath: Path = Path(args.nonmatchingspath if args.nonmatchingspath is not None else decomp_version.get("nonmatchings"))
+        mapPath = Path(args.mapfile if args.mapfile is not None else decomp_version.get("map"))
+        asmPath = Path(args.asmpath if args.asmpath is not None else decomp_version.get("asm"))
+        nonmatchingsPath = Path(args.nonmatchingspath if args.nonmatchingspath is not None else decomp_version.get("nonmatchings"))
     else:
-        mapPath: Path = args.mapfile
-        asmPath: Path = args.asmpath
-        nonmatchingsPath: Path = args.nonmatchingspath
+        mapPath = args.mapfile
+        asmPath = args.asmpath
+        nonmatchingsPath = args.nonmatchingspath
 
     project: str = args.project
     version: str = args.version

@@ -41,9 +41,9 @@ def doSymbolSizesCsv(mapPath: Path, outputPath: Path|None, filterSection: str|No
 def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        mapPath: Path = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
+        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
     else:
-        mapPath: Path = args.mapfile
+        mapPath = args.mapfile
 
     outputPath: Path|None = Path(args.output) if args.output is not None else None
     filterSection: str|None = args.filter_section

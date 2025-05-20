@@ -13,7 +13,7 @@ from .. import mapfile
 from .. import utils
 
 
-def getComparison(mapPath: Path, expectedMapPath: Path, *, reverseCheck: bool=True) -> mapfile.MapsComparisonInfo:
+def getComparison(mapPath, expectedMapPath, *, reverseCheck: bool=True) -> mapfile.MapsComparisonInfo:
     buildMap = mapfile.MapFile()
     buildMap.readMapFile(mapPath)
     buildMap = buildMap.filterBySectionType(".bss")
@@ -126,7 +126,7 @@ def printFileComparison(comparisonInfo: mapfile.MapsComparisonInfo):
         utils.eprint("Some files appear to be missing symbols. Have they been renamed or declared as static? You may need to remake 'expected'")
 
 
-def doBssCheck(mapPath: Path, expectedMapPath: Path, *, printAll: bool=False, reverseCheck: bool=True) -> int:
+def doBssCheck(mapPath, expectedMapPath, *, printAll: bool=False, reverseCheck: bool=True) -> int:
     if not mapPath.exists():
         utils.eprint(f"{mapPath} must exist")
         return 1
@@ -151,11 +151,11 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
         expectedDir = Path(version.paths["expected_dir"])
-        mapPath: Path = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
-        expectedMapPath: Path = args.expectedmap if args.expectedmap is not None else expectedDir / mapPath
+        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
+        expectedMapPath = args.expectedmap if args.expectedmap is not None else expectedDir / mapPath
     else:
-        mapPath: Path = args.mapfile
-        expectedMapPath: Path = args.expectedmap
+        mapPath = args.mapfile
+        expectedMapPath = args.expectedmap
 
     printAll: bool = args.print_all
     reverseCheck: bool = not args.no_reverse_check

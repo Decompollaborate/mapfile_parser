@@ -43,13 +43,13 @@ def doProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, pathIndex: 
 def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        mapPath: Path = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
-        asmPath: Path = Path(args.asmpath if args.asmpath is not None else version.paths.get("asm"))
-        nonmatchingsPath: Path = Path(args.nonmatchingspath if args.nonmatchingspath is not None else version.paths.get("nonmatchings"))
+        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
+        asmPath = Path(args.asmpath if args.asmpath is not None else version.paths.get("asm"))
+        nonmatchingsPath = Path(args.nonmatchingspath if args.nonmatchingspath is not None else version.paths.get("nonmatchings"))
     else:
-        mapPath: Path = args.mapfile
-        asmPath: Path = args.asmpath
-        nonmatchingsPath: Path = args.nonmatchingspath
+        mapPath = args.mapfile
+        asmPath = args.asmpath
+        nonmatchingsPath = args.nonmatchingspath
 
     pathIndex: int = args.path_index
     checkFunctionFiles: bool = not args.avoid_function_files

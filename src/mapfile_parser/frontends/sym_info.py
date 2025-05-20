@@ -55,9 +55,9 @@ def doSymInfo(mapPath: Path, symName: str, *, as_vram: bool=False, as_vrom: bool
 def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        mapPath: Path = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
+        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
     else:
-        mapPath: Path = args.mapfile
+        mapPath = args.mapfile
 
     symName: str = args.symname
     as_vram: bool = args.vram

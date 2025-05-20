@@ -34,11 +34,10 @@ def doJsonify(mapPath: Path, outputPath: Path|None, humanReadable: bool=True, ap
 def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        mapPath: Path = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
+        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
     else:
-        mapPath: Path = args.mapfile
+        mapPath = args.mapfile
 
-    mapPath: Path = args.mapfile
     outputPath: Path|None = Path(args.output) if args.output is not None else None
     machine: bool = args.machine
     applyFixes: bool = args.apply_fixes

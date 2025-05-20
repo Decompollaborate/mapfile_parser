@@ -6,7 +6,7 @@
 from __future__ import annotations
 
 import argparse
-import decomp_settings
+import decomp_settings # type:ignore
 
 import mapfile_parser
 
