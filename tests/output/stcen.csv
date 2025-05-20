@@ -1,4 +1,4 @@
-VRAM,File,Section type,Num symbols,Max size,Total size,Average size
+VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
 80180000,build/us/asm/us/st/cen/data/0.data.s.o,.data,128,800,4820,37.66
 801812D4,build/us/assets/st/cen/g_Rooms.o,.data,2,44,44,22.00
 80181300,build/us/asm/us/st/cen/data/1300.data.s.o,.data,98,8356,49452,504.61

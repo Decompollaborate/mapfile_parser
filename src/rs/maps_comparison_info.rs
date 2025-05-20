@@ -3,13 +3,13 @@
 
 use std::collections::HashSet;
 
-use crate::{file, symbol_comparison_info};
+use crate::{section, symbol_comparison_info};
 
 #[derive(Debug, Clone)]
 pub struct MapsComparisonInfo<'a> {
-    pub bad_files: HashSet<&'a file::File>,
+    pub bad_sections: HashSet<&'a section::Section>,
 
-    pub missing_files: HashSet<&'a file::File>,
+    pub missing_sections: HashSet<&'a section::Section>,
 
     pub compared_list: Vec<symbol_comparison_info::SymbolComparisonInfo<'a>>,
 }
@@ -17,8 +17,8 @@ pub struct MapsComparisonInfo<'a> {
 impl MapsComparisonInfo<'_> {
     pub fn new() -> Self {
         Self {
-            bad_files: HashSet::new(),
-            missing_files: HashSet::new(),
+            bad_sections: HashSet::new(),
+            missing_sections: HashSet::new(),
             compared_list: Vec::new(),
         }
     }
@@ -37,14 +37,14 @@ pub(crate) mod python_bindings {
 
     use std::collections::HashSet;
 
-    use crate::{file, symbol_comparison_info};
+    use crate::{section, symbol_comparison_info};
 
     #[derive(Debug, Clone)]
-    #[pyclass(module = "mapfile_parser", name = "MapsComparisonInfo")]
+    #[pyclass(module = "mapsection_parser", name = "MapsComparisonInfo")]
     pub struct PyMapsComparisonInfo {
-        pub bad_files: HashSet<file::File>,
+        pub bad_sections: HashSet<section::Section>,
 
-        pub missing_files: HashSet<file::File>,
+        pub missing_sections: HashSet<section::Section>,
 
         pub compared_list: Vec<symbol_comparison_info::python_bindings::PySymbolComparisonInfo>,
     }
@@ -54,8 +54,8 @@ pub(crate) mod python_bindings {
         #[new]
         fn py_new() -> Self {
             Self {
-                bad_files: HashSet::new(),
-                missing_files: HashSet::new(),
+                bad_sections: HashSet::new(),
+                missing_sections: HashSet::new(),
                 compared_list: Vec::new(),
             }
         }
@@ -63,24 +63,24 @@ pub(crate) mod python_bindings {
         /* Getters and setters */
 
         #[getter]
-        fn get_badFiles(&self) -> PyResult<HashSet<file::File>> {
-            Ok(self.bad_files.clone())
+        fn get_badFiles(&self) -> PyResult<HashSet<section::Section>> {
+            Ok(self.bad_sections.clone())
         }
 
         #[setter]
-        fn set_badFiles(&mut self, value: HashSet<file::File>) -> PyResult<()> {
-            self.bad_files = value;
+        fn set_badFiles(&mut self, value: HashSet<section::Section>) -> PyResult<()> {
+            self.bad_sections = value;
             Ok(())
         }
 
         #[getter]
-        fn get_missingFiles(&self) -> PyResult<HashSet<file::File>> {
-            Ok(self.missing_files.clone())
+        fn get_missingFiles(&self) -> PyResult<HashSet<section::Section>> {
+            Ok(self.missing_sections.clone())
         }
 
         #[setter]
-        fn set_missingFiles(&mut self, value: HashSet<file::File>) -> PyResult<()> {
-            self.missing_files = value;
+        fn set_missingFiles(&mut self, value: HashSet<section::Section>) -> PyResult<()> {
+            self.missing_sections = value;
             Ok(())
         }
 
@@ -105,8 +105,8 @@ pub(crate) mod python_bindings {
     impl<'a> From<&'a PyMapsComparisonInfo> for super::MapsComparisonInfo<'a> {
         fn from(value: &'a PyMapsComparisonInfo) -> Self {
             Self {
-                bad_files: value.bad_files.iter().collect(),
-                missing_files: value.missing_files.iter().collect(),
+                bad_sections: value.bad_sections.iter().collect(),
+                missing_sections: value.missing_sections.iter().collect(),
                 compared_list: value
                     .compared_list
                     .iter()
@@ -119,8 +119,8 @@ pub(crate) mod python_bindings {
     impl From<super::MapsComparisonInfo<'_>> for PyMapsComparisonInfo {
         fn from(value: super::MapsComparisonInfo) -> Self {
             Self {
-                bad_files: value.bad_files.into_iter().cloned().collect(),
-                missing_files: value.missing_files.into_iter().cloned().collect(),
+                bad_sections: value.bad_sections.into_iter().cloned().collect(),
+                missing_sections: value.missing_sections.into_iter().cloned().collect(),
                 compared_list: value
                     .compared_list
                     .into_iter()

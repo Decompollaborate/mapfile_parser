@@ -20,7 +20,7 @@ def doSymInfo(mapPath: Path, symName: str, *, as_vram: bool=False, as_vrom: bool
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(mapPath)
 
-    possibleFiles: list[mapfile.File] = []
+    possibleFiles: list[mapfile.Section] = []
 
     if as_vram:
         address = int(symName, 0)
@@ -52,8 +52,13 @@ def doSymInfo(mapPath: Path, symName: str, *, as_vram: bool=False, as_vrom: bool
     return 1
 
 
-def processArguments(args: argparse.Namespace):
-    mapPath: Path = args.mapfile
+def processArguments(args: argparse.Namespace, decompConfig=None):
+    if decompConfig is not None:
+        version = decompConfig.get_version_by_name(args.version)
+        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
+    else:
+        mapPath = args.mapfile
+
     symName: str = args.symname
     as_vram: bool = args.vram
     as_vrom: bool = args.vrom
@@ -61,10 +66,18 @@ def processArguments(args: argparse.Namespace):
 
     exit(doSymInfo(mapPath, symName, as_vram=as_vram, as_vrom=as_vrom, as_name=as_name))
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser]):
+def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
     parser = subparser.add_parser("sym_info", help="Display various information about a symbol or address.")
 
-    parser.add_argument("mapfile", help="Path to a map file.", type=Path)
+    nargs: str|int = 1
+    if decompConfig is not None:
+        nargs = "?"
+        versions = []
+        for version in decompConfig.versions:
+            versions.append(version.name)
+        parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
+
+    parser.add_argument("mapfile", help="Path to a map file. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
     parser.add_argument("symname", help="Symbol name or VROM/VRAM address to lookup. How to treat this argument will be guessed.")
 
     vram_vrom_group = parser.add_mutually_exclusive_group()

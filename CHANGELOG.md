@@ -7,6 +7,67 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.0] - 2025-05-20
+
+### Added
+
+- `File::symbol_match_state_iter()` function. Returns an iterator over
+  `SymbolDecompState`, which allows to know if a symbol is considered decompiled
+  or not decompiled yet.
+- `Section::is_fill`. `true` if the section is a `*fill*` entry.
+- `MapFile::get_every_section_except_section_type`. Provides the same
+  functionallity as the old `MapFile::get_every_file_except_section_type`
+  function.
+- `Segment::get_every_section_except_section_type`. Provides the same
+  functionallity as the old `Segment::get_every_file_except_section_type`
+  function.
+- `MapFile::new_from_map_file`, `MapFile::new_from_map_str`,
+  `MapFile::new_from_gnu_map_str` and `MapFile::new_from_lld_map_str`.
+- `Symbol::nonmatching_sym_exists`. This will be set to `true` if a symbol with
+  the same name but with a `.NON_MATCHING` suffix is found on the same section.
+  - The other suffixed symbol (`.NON_MATCHING`) is still retained in the section.
+  - The suffixed symbol will have this member set to `false`.
+- Add support for the `decomp.yaml` specification from the
+  [`decomp_settings`](https://github.com/ethteck/decomp_settings) project on all
+  the provided CLI utilities.
+  - If a `decomp.yaml` file is detected, then every CLI argument that can be
+    inferred from that file will be be considered optional instead.
+  - Most CLI utilites will also add a new optional "version" argument to allow
+    picking the version to process from the `decomp.yaml` file. It defaults to
+    the first listed version.
+
+### Changed
+
+- Change `Symbol.size` to `u64` from `Option<u64>`.
+- Rename `File` to `Section`.
+  - `File` is still available as an alias to `Section`, but it is recommended to
+    use the new name instead.
+- Detect `.NON_MATCHING` symbols and fix the size of both the real symbol and
+  the `.NON_MATCHING` one during parsing.
+
+### Deprecated
+
+- `File`. Use `Section` instead.
+- `MapFile::get_every_file_except_section_type`. Use
+  `MapFile::get_every_section_except_section_type` instead.
+- `Segment::get_every_file_except_section_type`. Use
+  `Segment::get_every_section_except_section_type` instead.
+- `MapFile::new`. Use either `MapFile::new_from_map_file` or
+  `MapFile::new_from_map_str` instead.
+- `MapFile::read_map_file`. Use either `MapFile::new_from_map_file` instead.
+- `MapFile::parse_map_contents`. Use either `MapFile::new_from_map_str` instead.
+- `MapFile::parse_map_contents_gnu`. Use either `MapFile::new_from_gnu_map_str`
+  instead.
+- `MapFile::parse_map_contents_lld`. Use either `MapFile::new_from_lld_map_str`
+  instead.
+- Deprecate `MapFile::fixup_non_matching_symbols` and family. This functionality
+  is perform automatically during parsing now.
+  - Calling this function is effectively a no-op now.
+
+### Fixed
+
+- Avoid pointless internal copy during the parsing of GNU mapfiles.
+
 ## [2.7.5] - 2025-05-08
 
 ### Fixed
@@ -468,6 +529,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.8.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.5...2.8.0
 [2.7.5]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.4...2.7.5
 [2.7.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.3...2.7.4
 [2.7.3]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.2...2.7.3

@@ -289,13 +289,13 @@
                         {
                             "name": "LoadSFXBank",
                             "vram": 2147492680,
-                            "size": 0,
+                            "size": 728,
                             "vrom": 12104
                         },
                         {
                             "name": "LoadSFXBank.NON_MATCHING",
                             "vram": 2147492680,
-                            "size": 728,
+                            "size": 0,
                             "vrom": 12104
                         },
                         {
@@ -337,37 +337,37 @@
                         {
                             "name": "func_800026A0_usa",
                             "vram": 2147493536,
-                            "size": 0,
+                            "size": 32,
                             "vrom": 12960
                         },
                         {
                             "name": "func_800026A0_usa.NON_MATCHING",
                             "vram": 2147493536,
-                            "size": 32,
+                            "size": 0,
                             "vrom": 12960
                         },
                         {
                             "name": "func_800026C0_usa",
                             "vram": 2147493568,
-                            "size": 0,
+                            "size": 108,
                             "vrom": 12992
                         },
                         {
                             "name": "func_800026C0_usa.NON_MATCHING",
                             "vram": 2147493568,
-                            "size": 108,
+                            "size": 0,
                             "vrom": 12992
                         },
                         {
                             "name": "func_8000272C_usa",
                             "vram": 2147493676,
-                            "size": 0,
+                            "size": 32,
                             "vrom": 13100
                         },
                         {
                             "name": "func_8000272C_usa.NON_MATCHING",
                             "vram": 2147493676,
-                            "size": 32,
+                            "size": 0,
                             "vrom": 13100
                         },
                         {
@@ -511,13 +511,13 @@
                         {
                             "name": "func_80002EB8_usa",
                             "vram": 2147495608,
-                            "size": 0,
+                            "size": 144,
                             "vrom": 15032
                         },
                         {
                             "name": "func_80002EB8_usa.NON_MATCHING",
                             "vram": 2147495608,
-                            "size": 144,
+                            "size": 0,
                             "vrom": 15032
                         },
                         {
@@ -535,13 +535,13 @@
                         {
                             "name": "func_80002F88_usa",
                             "vram": 2147495816,
-                            "size": 0,
+                            "size": 16,
                             "vrom": 15240
                         },
                         {
                             "name": "func_80002F88_usa.NON_MATCHING",
                             "vram": 2147495816,
-                            "size": 16,
+                            "size": 0,
                             "vrom": 15240
                         },
                         {
@@ -553,13 +553,13 @@
                         {
                             "name": "func_80002FD0_usa",
                             "vram": 2147495888,
-                            "size": 0,
+                            "size": 132,
                             "vrom": 15312
                         },
                         {
                             "name": "func_80002FD0_usa.NON_MATCHING",
                             "vram": 2147495888,
-                            "size": 132,
+                            "size": 0,
                             "vrom": 15312
                         },
                         {
@@ -583,13 +583,13 @@
                         {
                             "name": "func_800030F0_usa",
                             "vram": 2147496176,
-                            "size": 0,
+                            "size": 436,
                             "vrom": 15600
                         },
                         {
                             "name": "func_800030F0_usa.NON_MATCHING",
                             "vram": 2147496176,
-                            "size": 436,
+                            "size": 0,
                             "vrom": 15600
                         },
                         {
@@ -601,13 +601,13 @@
                         {
                             "name": "func_8000337C_usa",
                             "vram": 2147496828,
-                            "size": 0,
+                            "size": 32,
                             "vrom": 16252
                         },
                         {
                             "name": "func_8000337C_usa.NON_MATCHING",
                             "vram": 2147496828,
-                            "size": 32,
+                            "size": 0,
                             "vrom": 16252
                         },
                         {
@@ -649,13 +649,13 @@
                         {
                             "name": "func_80003458_usa",
                             "vram": 2147497048,
-                            "size": 0,
+                            "size": 44,
                             "vrom": 16472
                         },
                         {
                             "name": "func_80003458_usa.NON_MATCHING",
                             "vram": 2147497048,
-                            "size": 44,
+                            "size": 0,
                             "vrom": 16472
                         },
                         {
@@ -673,25 +673,25 @@
                         {
                             "name": "func_800034B4_usa",
                             "vram": 2147497140,
-                            "size": 0,
+                            "size": 56,
                             "vrom": 16564
                         },
                         {
                             "name": "func_800034B4_usa.NON_MATCHING",
                             "vram": 2147497140,
-                            "size": 56,
+                            "size": 0,
                             "vrom": 16564
                         },
                         {
                             "name": "func_800034EC_usa",
                             "vram": 2147497196,
-                            "size": 0,
+                            "size": 80,
                             "vrom": 16620
                         },
                         {
                             "name": "func_800034EC_usa.NON_MATCHING",
                             "vram": 2147497196,
-                            "size": 80,
+                            "size": 0,
                             "vrom": 16620
                         },
                         {
@@ -721,13 +721,13 @@
                         {
                             "name": "func_800036F0_usa",
                             "vram": 2147497712,
-                            "size": 0,
+                            "size": 112,
                             "vrom": 17136
                         },
                         {
                             "name": "func_800036F0_usa.NON_MATCHING",
                             "vram": 2147497712,
-                            "size": 112,
+                            "size": 0,
                             "vrom": 17136
                         },
                         {
@@ -757,13 +757,13 @@
                         {
                             "name": "func_800037E8_usa",
                             "vram": 2147497960,
-                            "size": 0,
+                            "size": 252,
                             "vrom": 17384
                         },
                         {
                             "name": "func_800037E8_usa.NON_MATCHING",
                             "vram": 2147497960,
-                            "size": 252,
+                            "size": 0,
                             "vrom": 17384
                         },
                         {
@@ -799,13 +799,13 @@
                         {
                             "name": "func_80003E00_usa",
                             "vram": 2147499520,
-                            "size": 0,
+                            "size": 144,
                             "vrom": 18944
                         },
                         {
                             "name": "func_80003E00_usa.NON_MATCHING",
                             "vram": 2147499520,
-                            "size": 144,
+                            "size": 0,
                             "vrom": 18944
                         }
                     ]
@@ -832,13 +832,13 @@
                         {
                             "name": "func_800040D8_usa",
                             "vram": 2147500248,
-                            "size": 0,
+                            "size": 1280,
                             "vrom": 19672
                         },
                         {
                             "name": "func_800040D8_usa.NON_MATCHING",
                             "vram": 2147500248,
-                            "size": 1280,
+                            "size": 0,
                             "vrom": 19672
                         },
                         {
@@ -886,13 +886,13 @@
                         {
                             "name": "func_80004B9C_usa",
                             "vram": 2147503004,
-                            "size": 0,
+                            "size": 628,
                             "vrom": 22428
                         },
                         {
                             "name": "func_80004B9C_usa.NON_MATCHING",
                             "vram": 2147503004,
-                            "size": 628,
+                            "size": 0,
                             "vrom": 22428
                         },
                         {
@@ -910,25 +910,25 @@
                         {
                             "name": "func_80005018_usa",
                             "vram": 2147504152,
-                            "size": 0,
+                            "size": 168,
                             "vrom": 23576
                         },
                         {
                             "name": "func_80005018_usa.NON_MATCHING",
                             "vram": 2147504152,
-                            "size": 168,
+                            "size": 0,
                             "vrom": 23576
                         },
                         {
                             "name": "func_800050C0_usa",
                             "vram": 2147504320,
-                            "size": 0,
+                            "size": 112,
                             "vrom": 23744
                         },
                         {
                             "name": "func_800050C0_usa.NON_MATCHING",
                             "vram": 2147504320,
-                            "size": 112,
+                            "size": 0,
                             "vrom": 23744
                         }
                     ]
@@ -955,25 +955,25 @@
                         {
                             "name": "func_80005270_usa",
                             "vram": 2147504752,
-                            "size": 0,
+                            "size": 428,
                             "vrom": 24176
                         },
                         {
                             "name": "func_80005270_usa.NON_MATCHING",
                             "vram": 2147504752,
-                            "size": 428,
+                            "size": 0,
                             "vrom": 24176
                         },
                         {
                             "name": "func_8000541C_usa",
                             "vram": 2147505180,
-                            "size": 0,
+                            "size": 492,
                             "vrom": 24604
                         },
                         {
                             "name": "func_8000541C_usa.NON_MATCHING",
                             "vram": 2147505180,
-                            "size": 492,
+                            "size": 0,
                             "vrom": 24604
                         },
                         {
@@ -991,13 +991,13 @@
                         {
                             "name": "func_80005780_usa",
                             "vram": 2147506048,
-                            "size": 0,
+                            "size": 264,
                             "vrom": 25472
                         },
                         {
                             "name": "func_80005780_usa.NON_MATCHING",
                             "vram": 2147506048,
-                            "size": 264,
+                            "size": 0,
                             "vrom": 25472
                         },
                         {
@@ -1048,25 +1048,25 @@
                         {
                             "name": "func_80005EC0_usa",
                             "vram": 2147507904,
-                            "size": 0,
+                            "size": 844,
                             "vrom": 27328
                         },
                         {
                             "name": "func_80005EC0_usa.NON_MATCHING",
                             "vram": 2147507904,
-                            "size": 844,
+                            "size": 0,
                             "vrom": 27328
                         },
                         {
                             "name": "DrawTitle",
                             "vram": 2147508748,
-                            "size": 0,
+                            "size": 128,
                             "vrom": 28172
                         },
                         {
                             "name": "DrawTitle.NON_MATCHING",
                             "vram": 2147508748,
-                            "size": 128,
+                            "size": 0,
                             "vrom": 28172
                         },
                         {
@@ -1117,25 +1117,25 @@
                         {
                             "name": "func_800072A0_usa",
                             "vram": 2147512992,
-                            "size": 0,
+                            "size": 664,
                             "vrom": 32416
                         },
                         {
                             "name": "func_800072A0_usa.NON_MATCHING",
                             "vram": 2147512992,
-                            "size": 664,
+                            "size": 0,
                             "vrom": 32416
                         },
                         {
                             "name": "func_80007538_usa",
                             "vram": 2147513656,
-                            "size": 0,
+                            "size": 628,
                             "vrom": 33080
                         },
                         {
                             "name": "func_80007538_usa.NON_MATCHING",
                             "vram": 2147513656,
-                            "size": 628,
+                            "size": 0,
                             "vrom": 33080
                         },
                         {
@@ -1165,13 +1165,13 @@
                         {
                             "name": "func_80007F64_usa",
                             "vram": 2147516260,
-                            "size": 0,
+                            "size": 536,
                             "vrom": 35684
                         },
                         {
                             "name": "func_80007F64_usa.NON_MATCHING",
                             "vram": 2147516260,
-                            "size": 536,
+                            "size": 0,
                             "vrom": 35684
                         },
                         {
@@ -1189,13 +1189,13 @@
                         {
                             "name": "func_800081F0_usa",
                             "vram": 2147516912,
-                            "size": 0,
+                            "size": 568,
                             "vrom": 36336
                         },
                         {
                             "name": "func_800081F0_usa.NON_MATCHING",
                             "vram": 2147516912,
-                            "size": 568,
+                            "size": 0,
                             "vrom": 36336
                         },
                         {
@@ -1225,37 +1225,37 @@
                         {
                             "name": "func_80008818_usa",
                             "vram": 2147518488,
-                            "size": 0,
+                            "size": 136,
                             "vrom": 37912
                         },
                         {
                             "name": "func_80008818_usa.NON_MATCHING",
                             "vram": 2147518488,
-                            "size": 136,
+                            "size": 0,
                             "vrom": 37912
                         },
                         {
                             "name": "func_800088A0_usa",
                             "vram": 2147518624,
-                            "size": 0,
+                            "size": 792,
                             "vrom": 38048
                         },
                         {
                             "name": "func_800088A0_usa.NON_MATCHING",
                             "vram": 2147518624,
-                            "size": 792,
+                            "size": 0,
                             "vrom": 38048
                         },
                         {
                             "name": "func_80008BB8_usa",
                             "vram": 2147519416,
-                            "size": 0,
+                            "size": 748,
                             "vrom": 38840
                         },
                         {
                             "name": "func_80008BB8_usa.NON_MATCHING",
                             "vram": 2147519416,
-                            "size": 748,
+                            "size": 0,
                             "vrom": 38840
                         },
                         {
@@ -1273,25 +1273,25 @@
                         {
                             "name": "func_8000901C_usa",
                             "vram": 2147520540,
-                            "size": 0,
+                            "size": 524,
                             "vrom": 39964
                         },
                         {
                             "name": "func_8000901C_usa.NON_MATCHING",
                             "vram": 2147520540,
-                            "size": 524,
+                            "size": 0,
                             "vrom": 39964
                         },
                         {
                             "name": "func_80009228_usa",
                             "vram": 2147521064,
-                            "size": 0,
+                            "size": 536,
                             "vrom": 40488
                         },
                         {
                             "name": "func_80009228_usa.NON_MATCHING",
                             "vram": 2147521064,
-                            "size": 536,
+                            "size": 0,
                             "vrom": 40488
                         },
                         {
@@ -1321,13 +1321,13 @@
                         {
                             "name": "func_80009A78_usa",
                             "vram": 2147523192,
-                            "size": 0,
+                            "size": 560,
                             "vrom": 42616
                         },
                         {
                             "name": "func_80009A78_usa.NON_MATCHING",
                             "vram": 2147523192,
-                            "size": 560,
+                            "size": 0,
                             "vrom": 42616
                         },
                         {
@@ -1345,13 +1345,13 @@
                         {
                             "name": "func_80009D30_usa",
                             "vram": 2147523888,
-                            "size": 0,
+                            "size": 140,
                             "vrom": 43312
                         },
                         {
                             "name": "func_80009D30_usa.NON_MATCHING",
                             "vram": 2147523888,
-                            "size": 140,
+                            "size": 0,
                             "vrom": 43312
                         },
                         {
@@ -1393,25 +1393,25 @@
                         {
                             "name": "func_8000AABC_usa",
                             "vram": 2147527356,
-                            "size": 0,
+                            "size": 452,
                             "vrom": 46780
                         },
                         {
                             "name": "func_8000AABC_usa.NON_MATCHING",
                             "vram": 2147527356,
-                            "size": 452,
+                            "size": 0,
                             "vrom": 46780
                         },
                         {
                             "name": "func_8000AC80_usa",
                             "vram": 2147527808,
-                            "size": 0,
+                            "size": 516,
                             "vrom": 47232
                         },
                         {
                             "name": "func_8000AC80_usa.NON_MATCHING",
                             "vram": 2147527808,
-                            "size": 516,
+                            "size": 0,
                             "vrom": 47232
                         },
                         {
@@ -1429,13 +1429,13 @@
                         {
                             "name": "func_8000B25C_usa",
                             "vram": 2147529308,
-                            "size": 0,
+                            "size": 560,
                             "vrom": 48732
                         },
                         {
                             "name": "func_8000B25C_usa.NON_MATCHING",
                             "vram": 2147529308,
-                            "size": 560,
+                            "size": 0,
                             "vrom": 48732
                         },
                         {
@@ -1477,13 +1477,13 @@
                         {
                             "name": "func_8000BD34_usa",
                             "vram": 2147532084,
-                            "size": 0,
+                            "size": 1540,
                             "vrom": 51508
                         },
                         {
                             "name": "func_8000BD34_usa.NON_MATCHING",
                             "vram": 2147532084,
-                            "size": 1540,
+                            "size": 0,
                             "vrom": 51508
                         },
                         {
@@ -1501,13 +1501,13 @@
                         {
                             "name": "func_8000C8C0_usa",
                             "vram": 2147535040,
-                            "size": 0,
+                            "size": 1324,
                             "vrom": 54464
                         },
                         {
                             "name": "func_8000C8C0_usa.NON_MATCHING",
                             "vram": 2147535040,
-                            "size": 1324,
+                            "size": 0,
                             "vrom": 54464
                         },
                         {
@@ -1525,13 +1525,13 @@
                         {
                             "name": "func_8000D7D8_usa",
                             "vram": 2147538904,
-                            "size": 0,
+                            "size": 440,
                             "vrom": 58328
                         },
                         {
                             "name": "func_8000D7D8_usa.NON_MATCHING",
                             "vram": 2147538904,
-                            "size": 440,
+                            "size": 0,
                             "vrom": 58328
                         },
                         {
@@ -1549,13 +1549,13 @@
                         {
                             "name": "func_8000DBEC_usa",
                             "vram": 2147539948,
-                            "size": 0,
+                            "size": 316,
                             "vrom": 59372
                         },
                         {
                             "name": "func_8000DBEC_usa.NON_MATCHING",
                             "vram": 2147539948,
-                            "size": 316,
+                            "size": 0,
                             "vrom": 59372
                         },
                         {
@@ -1585,13 +1585,13 @@
                         {
                             "name": "func_8000EF04_usa",
                             "vram": 2147544836,
-                            "size": 0,
+                            "size": 512,
                             "vrom": 64260
                         },
                         {
                             "name": "func_8000EF04_usa.NON_MATCHING",
                             "vram": 2147544836,
-                            "size": 512,
+                            "size": 0,
                             "vrom": 64260
                         },
                         {
@@ -1645,25 +1645,25 @@
                         {
                             "name": "func_8000FA44_usa",
                             "vram": 2147547716,
-                            "size": 0,
+                            "size": 1548,
                             "vrom": 67140
                         },
                         {
                             "name": "func_8000FA44_usa.NON_MATCHING",
                             "vram": 2147547716,
-                            "size": 1548,
+                            "size": 0,
                             "vrom": 67140
                         },
                         {
                             "name": "func_80010050_usa",
                             "vram": 2147549264,
-                            "size": 0,
+                            "size": 488,
                             "vrom": 68688
                         },
                         {
                             "name": "func_80010050_usa.NON_MATCHING",
                             "vram": 2147549264,
-                            "size": 488,
+                            "size": 0,
                             "vrom": 68688
                         },
                         {
@@ -1705,25 +1705,25 @@
                         {
                             "name": "func_80011F30_usa",
                             "vram": 2147557168,
-                            "size": 0,
+                            "size": 812,
                             "vrom": 76592
                         },
                         {
                             "name": "func_80011F30_usa.NON_MATCHING",
                             "vram": 2147557168,
-                            "size": 812,
+                            "size": 0,
                             "vrom": 76592
                         },
                         {
                             "name": "func_8001225C_usa",
                             "vram": 2147557980,
-                            "size": 0,
+                            "size": 472,
                             "vrom": 77404
                         },
                         {
                             "name": "func_8001225C_usa.NON_MATCHING",
                             "vram": 2147557980,
-                            "size": 472,
+                            "size": 0,
                             "vrom": 77404
                         },
                         {
@@ -1741,13 +1741,13 @@
                         {
                             "name": "func_80012738_usa",
                             "vram": 2147559224,
-                            "size": 0,
+                            "size": 812,
                             "vrom": 78648
                         },
                         {
                             "name": "func_80012738_usa.NON_MATCHING",
                             "vram": 2147559224,
-                            "size": 812,
+                            "size": 0,
                             "vrom": 78648
                         },
                         {
@@ -1765,49 +1765,49 @@
                         {
                             "name": "func_80012EF4_usa",
                             "vram": 2147561204,
-                            "size": 0,
+                            "size": 360,
                             "vrom": 80628
                         },
                         {
                             "name": "func_80012EF4_usa.NON_MATCHING",
                             "vram": 2147561204,
-                            "size": 360,
+                            "size": 0,
                             "vrom": 80628
                         },
                         {
                             "name": "func_8001305C_usa",
                             "vram": 2147561564,
-                            "size": 0,
+                            "size": 164,
                             "vrom": 80988
                         },
                         {
                             "name": "func_8001305C_usa.NON_MATCHING",
                             "vram": 2147561564,
-                            "size": 164,
+                            "size": 0,
                             "vrom": 80988
                         },
                         {
                             "name": "func_80013100_usa",
                             "vram": 2147561728,
-                            "size": 0,
+                            "size": 908,
                             "vrom": 81152
                         },
                         {
                             "name": "func_80013100_usa.NON_MATCHING",
                             "vram": 2147561728,
-                            "size": 908,
+                            "size": 0,
                             "vrom": 81152
                         },
                         {
                             "name": "func_8001348C_usa",
                             "vram": 2147562636,
-                            "size": 0,
+                            "size": 604,
                             "vrom": 82060
                         },
                         {
                             "name": "func_8001348C_usa.NON_MATCHING",
                             "vram": 2147562636,
-                            "size": 604,
+                            "size": 0,
                             "vrom": 82060
                         },
                         {
@@ -1825,37 +1825,37 @@
                         {
                             "name": "func_80013948_usa",
                             "vram": 2147563848,
-                            "size": 0,
+                            "size": 1092,
                             "vrom": 83272
                         },
                         {
                             "name": "func_80013948_usa.NON_MATCHING",
                             "vram": 2147563848,
-                            "size": 1092,
+                            "size": 0,
                             "vrom": 83272
                         },
                         {
                             "name": "func_80013D8C_usa",
                             "vram": 2147564940,
-                            "size": 0,
+                            "size": 552,
                             "vrom": 84364
                         },
                         {
                             "name": "func_80013D8C_usa.NON_MATCHING",
                             "vram": 2147564940,
-                            "size": 552,
+                            "size": 0,
                             "vrom": 84364
                         },
                         {
                             "name": "func_80013FB4_usa",
                             "vram": 2147565492,
-                            "size": 0,
+                            "size": 808,
                             "vrom": 84916
                         },
                         {
                             "name": "func_80013FB4_usa.NON_MATCHING",
                             "vram": 2147565492,
-                            "size": 808,
+                            "size": 0,
                             "vrom": 84916
                         },
                         {
@@ -1873,13 +1873,13 @@
                         {
                             "name": "func_80014970_usa",
                             "vram": 2147567984,
-                            "size": 0,
+                            "size": 764,
                             "vrom": 87408
                         },
                         {
                             "name": "func_80014970_usa.NON_MATCHING",
                             "vram": 2147567984,
-                            "size": 764,
+                            "size": 0,
                             "vrom": 87408
                         },
                         {
@@ -1909,25 +1909,25 @@
                         {
                             "name": "func_800150B4_usa",
                             "vram": 2147569844,
-                            "size": 0,
+                            "size": 5596,
                             "vrom": 89268
                         },
                         {
                             "name": "func_800150B4_usa.NON_MATCHING",
                             "vram": 2147569844,
-                            "size": 5596,
+                            "size": 0,
                             "vrom": 89268
                         },
                         {
                             "name": "func_80016690_usa",
                             "vram": 2147575440,
-                            "size": 0,
+                            "size": 852,
                             "vrom": 94864
                         },
                         {
                             "name": "func_80016690_usa.NON_MATCHING",
                             "vram": 2147575440,
-                            "size": 852,
+                            "size": 0,
                             "vrom": 94864
                         },
                         {
@@ -1945,13 +1945,13 @@
                         {
                             "name": "func_80016C34_usa",
                             "vram": 2147576884,
-                            "size": 0,
+                            "size": 824,
                             "vrom": 96308
                         },
                         {
                             "name": "func_80016C34_usa.NON_MATCHING",
                             "vram": 2147576884,
-                            "size": 824,
+                            "size": 0,
                             "vrom": 96308
                         },
                         {
@@ -1969,25 +1969,25 @@
                         {
                             "name": "func_80017134_usa",
                             "vram": 2147578164,
-                            "size": 0,
+                            "size": 828,
                             "vrom": 97588
                         },
                         {
                             "name": "func_80017134_usa.NON_MATCHING",
                             "vram": 2147578164,
-                            "size": 828,
+                            "size": 0,
                             "vrom": 97588
                         },
                         {
                             "name": "func_80017470_usa",
                             "vram": 2147578992,
-                            "size": 0,
+                            "size": 392,
                             "vrom": 98416
                         },
                         {
                             "name": "func_80017470_usa.NON_MATCHING",
                             "vram": 2147578992,
-                            "size": 392,
+                            "size": 0,
                             "vrom": 98416
                         },
                         {
@@ -2005,13 +2005,13 @@
                         {
                             "name": "func_80017A48_usa",
                             "vram": 2147580488,
-                            "size": 0,
+                            "size": 284,
                             "vrom": 99912
                         },
                         {
                             "name": "func_80017A48_usa.NON_MATCHING",
                             "vram": 2147580488,
-                            "size": 284,
+                            "size": 0,
                             "vrom": 99912
                         },
                         {
@@ -2053,25 +2053,25 @@
                         {
                             "name": "func_80018EF8_usa",
                             "vram": 2147585784,
-                            "size": 0,
+                            "size": 1020,
                             "vrom": 105208
                         },
                         {
                             "name": "func_80018EF8_usa.NON_MATCHING",
                             "vram": 2147585784,
-                            "size": 1020,
+                            "size": 0,
                             "vrom": 105208
                         },
                         {
                             "name": "menuSaveData",
                             "vram": 2147586804,
-                            "size": 0,
+                            "size": 488,
                             "vrom": 106228
                         },
                         {
                             "name": "menuSaveData.NON_MATCHING",
                             "vram": 2147586804,
-                            "size": 488,
+                            "size": 0,
                             "vrom": 106228
                         },
                         {
@@ -2089,37 +2089,37 @@
                         {
                             "name": "func_80019A24_usa",
                             "vram": 2147588644,
-                            "size": 0,
+                            "size": 904,
                             "vrom": 108068
                         },
                         {
                             "name": "func_80019A24_usa.NON_MATCHING",
                             "vram": 2147588644,
-                            "size": 904,
+                            "size": 0,
                             "vrom": 108068
                         },
                         {
                             "name": "func_80019DAC_usa",
                             "vram": 2147589548,
-                            "size": 0,
+                            "size": 408,
                             "vrom": 108972
                         },
                         {
                             "name": "func_80019DAC_usa.NON_MATCHING",
                             "vram": 2147589548,
-                            "size": 408,
+                            "size": 0,
                             "vrom": 108972
                         },
                         {
                             "name": "func_80019F44_usa",
                             "vram": 2147589956,
-                            "size": 0,
+                            "size": 532,
                             "vrom": 109380
                         },
                         {
                             "name": "func_80019F44_usa.NON_MATCHING",
                             "vram": 2147589956,
-                            "size": 532,
+                            "size": 0,
                             "vrom": 109380
                         },
                         {
@@ -2155,13 +2155,13 @@
                         {
                             "name": "func_8001A7D0_usa",
                             "vram": 2147592144,
-                            "size": 0,
+                            "size": 132,
                             "vrom": 111568
                         },
                         {
                             "name": "func_8001A7D0_usa.NON_MATCHING",
                             "vram": 2147592144,
-                            "size": 132,
+                            "size": 0,
                             "vrom": 111568
                         },
                         {
@@ -2179,13 +2179,13 @@
                         {
                             "name": "func_8001AB0C_usa",
                             "vram": 2147592972,
-                            "size": 0,
+                            "size": 412,
                             "vrom": 112396
                         },
                         {
                             "name": "func_8001AB0C_usa.NON_MATCHING",
                             "vram": 2147592972,
-                            "size": 412,
+                            "size": 0,
                             "vrom": 112396
                         },
                         {
@@ -2203,13 +2203,13 @@
                         {
                             "name": "DrawMenu",
                             "vram": 2147593516,
-                            "size": 0,
+                            "size": 388,
                             "vrom": 112940
                         },
                         {
                             "name": "DrawMenu.NON_MATCHING",
                             "vram": 2147593516,
-                            "size": 388,
+                            "size": 0,
                             "vrom": 112940
                         },
                         {
@@ -2239,13 +2239,13 @@
                         {
                             "name": "func_8001BFF0_usa",
                             "vram": 2147598320,
-                            "size": 0,
+                            "size": 68,
                             "vrom": 117744
                         },
                         {
                             "name": "func_8001BFF0_usa.NON_MATCHING",
                             "vram": 2147598320,
-                            "size": 68,
+                            "size": 0,
                             "vrom": 117744
                         },
                         {
@@ -2263,49 +2263,49 @@
                         {
                             "name": "func_8001C070_usa",
                             "vram": 2147598448,
-                            "size": 0,
+                            "size": 108,
                             "vrom": 117872
                         },
                         {
                             "name": "func_8001C070_usa.NON_MATCHING",
                             "vram": 2147598448,
-                            "size": 108,
+                            "size": 0,
                             "vrom": 117872
                         },
                         {
                             "name": "func_8001C0DC_usa",
                             "vram": 2147598556,
-                            "size": 0,
+                            "size": 92,
                             "vrom": 117980
                         },
                         {
                             "name": "func_8001C0DC_usa.NON_MATCHING",
                             "vram": 2147598556,
-                            "size": 92,
+                            "size": 0,
                             "vrom": 117980
                         },
                         {
                             "name": "func_8001C138_usa",
                             "vram": 2147598648,
-                            "size": 0,
+                            "size": 76,
                             "vrom": 118072
                         },
                         {
                             "name": "func_8001C138_usa.NON_MATCHING",
                             "vram": 2147598648,
-                            "size": 76,
+                            "size": 0,
                             "vrom": 118072
                         },
                         {
                             "name": "func_8001C184_usa",
                             "vram": 2147598724,
-                            "size": 0,
+                            "size": 136,
                             "vrom": 118148
                         },
                         {
                             "name": "func_8001C184_usa.NON_MATCHING",
                             "vram": 2147598724,
-                            "size": 136,
+                            "size": 0,
                             "vrom": 118148
                         },
                         {
@@ -2323,25 +2323,25 @@
                         {
                             "name": "func_8001C270_usa",
                             "vram": 2147598960,
-                            "size": 0,
+                            "size": 212,
                             "vrom": 118384
                         },
                         {
                             "name": "func_8001C270_usa.NON_MATCHING",
                             "vram": 2147598960,
-                            "size": 212,
+                            "size": 0,
                             "vrom": 118384
                         },
                         {
                             "name": "func_8001C344_usa",
                             "vram": 2147599172,
-                            "size": 0,
+                            "size": 76,
                             "vrom": 118596
                         },
                         {
                             "name": "func_8001C344_usa.NON_MATCHING",
                             "vram": 2147599172,
-                            "size": 76,
+                            "size": 0,
                             "vrom": 118596
                         },
                         {
@@ -2383,49 +2383,49 @@
                         {
                             "name": "func_8001C648_usa",
                             "vram": 2147599944,
-                            "size": 0,
+                            "size": 20,
                             "vrom": 119368
                         },
                         {
                             "name": "func_8001C648_usa.NON_MATCHING",
                             "vram": 2147599944,
-                            "size": 20,
+                            "size": 0,
                             "vrom": 119368
                         },
                         {
                             "name": "func_8001C65C_usa",
                             "vram": 2147599964,
-                            "size": 0,
+                            "size": 32,
                             "vrom": 119388
                         },
                         {
                             "name": "func_8001C65C_usa.NON_MATCHING",
                             "vram": 2147599964,
-                            "size": 32,
+                            "size": 0,
                             "vrom": 119388
                         },
                         {
                             "name": "func_8001C67C_usa",
                             "vram": 2147599996,
-                            "size": 0,
+                            "size": 200,
                             "vrom": 119420
                         },
                         {
                             "name": "func_8001C67C_usa.NON_MATCHING",
                             "vram": 2147599996,
-                            "size": 200,
+                            "size": 0,
                             "vrom": 119420
                         },
                         {
                             "name": "func_8001C744_usa",
                             "vram": 2147600196,
-                            "size": 0,
+                            "size": 88,
                             "vrom": 119620
                         },
                         {
                             "name": "func_8001C744_usa.NON_MATCHING",
                             "vram": 2147600196,
-                            "size": 88,
+                            "size": 0,
                             "vrom": 119620
                         },
                         {
@@ -2443,25 +2443,25 @@
                         {
                             "name": "func_8001C804_usa",
                             "vram": 2147600388,
-                            "size": 0,
+                            "size": 36,
                             "vrom": 119812
                         },
                         {
                             "name": "func_8001C804_usa.NON_MATCHING",
                             "vram": 2147600388,
-                            "size": 36,
+                            "size": 0,
                             "vrom": 119812
                         },
                         {
                             "name": "func_8001C828_usa",
                             "vram": 2147600424,
-                            "size": 0,
+                            "size": 136,
                             "vrom": 119848
                         },
                         {
                             "name": "func_8001C828_usa.NON_MATCHING",
                             "vram": 2147600424,
-                            "size": 136,
+                            "size": 0,
                             "vrom": 119848
                         }
                     ]
@@ -2545,49 +2545,49 @@
                         {
                             "name": "bitmapLoadRLE",
                             "vram": 2147603216,
-                            "size": 0,
+                            "size": 532,
                             "vrom": 122640
                         },
                         {
                             "name": "bitmapLoadRLE.NON_MATCHING",
                             "vram": 2147603216,
-                            "size": 532,
+                            "size": 0,
                             "vrom": 122640
                         },
                         {
                             "name": "bitmapLoad",
                             "vram": 2147603748,
-                            "size": 0,
+                            "size": 1952,
                             "vrom": 123172
                         },
                         {
                             "name": "bitmapLoad.NON_MATCHING",
                             "vram": 2147603748,
-                            "size": 1952,
+                            "size": 0,
                             "vrom": 123172
                         },
                         {
                             "name": "func_8001DCC4_usa",
                             "vram": 2147605700,
-                            "size": 0,
+                            "size": 852,
                             "vrom": 125124
                         },
                         {
                             "name": "func_8001DCC4_usa.NON_MATCHING",
                             "vram": 2147605700,
-                            "size": 852,
+                            "size": 0,
                             "vrom": 125124
                         },
                         {
                             "name": "func_8001E018_usa",
                             "vram": 2147606552,
-                            "size": 0,
+                            "size": 224,
                             "vrom": 125976
                         },
                         {
                             "name": "func_8001E018_usa.NON_MATCHING",
                             "vram": 2147606552,
-                            "size": 224,
+                            "size": 0,
                             "vrom": 125976
                         },
                         {
@@ -2605,25 +2605,25 @@
                         {
                             "name": "func_8001E110_usa",
                             "vram": 2147606800,
-                            "size": 0,
+                            "size": 116,
                             "vrom": 126224
                         },
                         {
                             "name": "func_8001E110_usa.NON_MATCHING",
                             "vram": 2147606800,
-                            "size": 116,
+                            "size": 0,
                             "vrom": 126224
                         },
                         {
                             "name": "func_8001E184_usa",
                             "vram": 2147606916,
-                            "size": 0,
+                            "size": 96,
                             "vrom": 126340
                         },
                         {
                             "name": "func_8001E184_usa.NON_MATCHING",
                             "vram": 2147606916,
-                            "size": 96,
+                            "size": 0,
                             "vrom": 126340
                         },
                         {
@@ -2668,13 +2668,13 @@
                         {
                             "name": "func_8001EDE0_usa",
                             "vram": 2147610080,
-                            "size": 0,
+                            "size": 2264,
                             "vrom": 129504
                         },
                         {
                             "name": "func_8001EDE0_usa.NON_MATCHING",
                             "vram": 2147610080,
-                            "size": 2264,
+                            "size": 0,
                             "vrom": 129504
                         },
                         {
@@ -2686,13 +2686,13 @@
                         {
                             "name": "func_8001FC08_usa",
                             "vram": 2147613704,
-                            "size": 0,
+                            "size": 260,
                             "vrom": 133128
                         },
                         {
                             "name": "func_8001FC08_usa.NON_MATCHING",
                             "vram": 2147613704,
-                            "size": 260,
+                            "size": 0,
                             "vrom": 133128
                         },
                         {
@@ -2746,13 +2746,13 @@
                         {
                             "name": "func_800200B4_usa",
                             "vram": 2147614900,
-                            "size": 0,
+                            "size": 340,
                             "vrom": 134324
                         },
                         {
                             "name": "func_800200B4_usa.NON_MATCHING",
                             "vram": 2147614900,
-                            "size": 340,
+                            "size": 0,
                             "vrom": 134324
                         },
                         {
@@ -2782,25 +2782,25 @@
                         {
                             "name": "func_800205AC_usa",
                             "vram": 2147616172,
-                            "size": 0,
+                            "size": 144,
                             "vrom": 135596
                         },
                         {
                             "name": "func_800205AC_usa.NON_MATCHING",
                             "vram": 2147616172,
-                            "size": 144,
+                            "size": 0,
                             "vrom": 135596
                         },
                         {
                             "name": "func_8002063C_usa",
                             "vram": 2147616316,
-                            "size": 0,
+                            "size": 160,
                             "vrom": 135740
                         },
                         {
                             "name": "func_8002063C_usa.NON_MATCHING",
                             "vram": 2147616316,
-                            "size": 160,
+                            "size": 0,
                             "vrom": 135740
                         },
                         {
@@ -2866,13 +2866,13 @@
                         {
                             "name": "func_8002156C_usa",
                             "vram": 2147620204,
-                            "size": 0,
+                            "size": 3096,
                             "vrom": 139628
                         },
                         {
                             "name": "func_8002156C_usa.NON_MATCHING",
                             "vram": 2147620204,
-                            "size": 3096,
+                            "size": 0,
                             "vrom": 139628
                         },
                         {
@@ -2923,13 +2923,13 @@
                         {
                             "name": "screenGetTextData",
                             "vram": 2147623664,
-                            "size": 0,
+                            "size": 1380,
                             "vrom": 143088
                         },
                         {
                             "name": "screenGetTextData.NON_MATCHING",
                             "vram": 2147623664,
-                            "size": 1380,
+                            "size": 0,
                             "vrom": 143088
                         },
                         {
@@ -2947,13 +2947,13 @@
                         {
                             "name": "func_80022AF4_usa",
                             "vram": 2147625716,
-                            "size": 0,
+                            "size": 3444,
                             "vrom": 145140
                         },
                         {
                             "name": "func_80022AF4_usa.NON_MATCHING",
                             "vram": 2147625716,
-                            "size": 3444,
+                            "size": 0,
                             "vrom": 145140
                         },
                         {
@@ -2977,13 +2977,13 @@
                         {
                             "name": "func_8002400C_usa",
                             "vram": 2147631116,
-                            "size": 0,
+                            "size": 1320,
                             "vrom": 150540
                         },
                         {
                             "name": "func_8002400C_usa.NON_MATCHING",
                             "vram": 2147631116,
-                            "size": 1320,
+                            "size": 0,
                             "vrom": 150540
                         },
                         {
@@ -3013,13 +3013,13 @@
                         {
                             "name": "func_80024BF4_usa",
                             "vram": 2147634164,
-                            "size": 0,
+                            "size": 32,
                             "vrom": 153588
                         },
                         {
                             "name": "func_80024BF4_usa.NON_MATCHING",
                             "vram": 2147634164,
-                            "size": 32,
+                            "size": 0,
                             "vrom": 153588
                         },
                         {
@@ -3073,13 +3073,13 @@
                         {
                             "name": "func_80025850_usa",
                             "vram": 2147637328,
-                            "size": 0,
+                            "size": 1140,
                             "vrom": 156752
                         },
                         {
                             "name": "func_80025850_usa.NON_MATCHING",
                             "vram": 2147637328,
-                            "size": 1140,
+                            "size": 0,
                             "vrom": 156752
                         },
                         {
@@ -3133,25 +3133,25 @@
                         {
                             "name": "func_800275AC_usa",
                             "vram": 2147644844,
-                            "size": 0,
+                            "size": 108,
                             "vrom": 164268
                         },
                         {
                             "name": "func_800275AC_usa.NON_MATCHING",
                             "vram": 2147644844,
-                            "size": 108,
+                            "size": 0,
                             "vrom": 164268
                         },
                         {
                             "name": "func_80027618_usa",
                             "vram": 2147644952,
-                            "size": 0,
+                            "size": 180,
                             "vrom": 164376
                         },
                         {
                             "name": "func_80027618_usa.NON_MATCHING",
                             "vram": 2147644952,
-                            "size": 180,
+                            "size": 0,
                             "vrom": 164376
                         },
                         {
@@ -3163,25 +3163,25 @@
                         {
                             "name": "func_8002776C_usa",
                             "vram": 2147645292,
-                            "size": 0,
+                            "size": 204,
                             "vrom": 164716
                         },
                         {
                             "name": "func_8002776C_usa.NON_MATCHING",
                             "vram": 2147645292,
-                            "size": 204,
+                            "size": 0,
                             "vrom": 164716
                         },
                         {
                             "name": "func_80027838_usa",
                             "vram": 2147645496,
-                            "size": 0,
+                            "size": 220,
                             "vrom": 164920
                         },
                         {
                             "name": "func_80027838_usa.NON_MATCHING",
                             "vram": 2147645496,
-                            "size": 220,
+                            "size": 0,
                             "vrom": 164920
                         },
                         {
@@ -3247,13 +3247,13 @@
                         {
                             "name": "func_80027C04_usa",
                             "vram": 2147646468,
-                            "size": 0,
+                            "size": 264,
                             "vrom": 165892
                         },
                         {
                             "name": "func_80027C04_usa.NON_MATCHING",
                             "vram": 2147646468,
-                            "size": 264,
+                            "size": 0,
                             "vrom": 165892
                         },
                         {
@@ -3319,13 +3319,13 @@
                         {
                             "name": "func_800284E4_usa",
                             "vram": 2147648740,
-                            "size": 0,
+                            "size": 360,
                             "vrom": 168164
                         },
                         {
                             "name": "func_800284E4_usa.NON_MATCHING",
                             "vram": 2147648740,
-                            "size": 360,
+                            "size": 0,
                             "vrom": 168164
                         },
                         {
@@ -3343,25 +3343,25 @@
                         {
                             "name": "func_80028718_usa",
                             "vram": 2147649304,
-                            "size": 0,
+                            "size": 244,
                             "vrom": 168728
                         },
                         {
                             "name": "func_80028718_usa.NON_MATCHING",
                             "vram": 2147649304,
-                            "size": 244,
+                            "size": 0,
                             "vrom": 168728
                         },
                         {
                             "name": "func_8002880C_usa",
                             "vram": 2147649548,
-                            "size": 0,
+                            "size": 204,
                             "vrom": 168972
                         },
                         {
                             "name": "func_8002880C_usa.NON_MATCHING",
                             "vram": 2147649548,
-                            "size": 204,
+                            "size": 0,
                             "vrom": 168972
                         },
                         {
@@ -3391,13 +3391,13 @@
                         {
                             "name": "func_80028A98_usa",
                             "vram": 2147650200,
-                            "size": 0,
+                            "size": 276,
                             "vrom": 169624
                         },
                         {
                             "name": "func_80028A98_usa.NON_MATCHING",
                             "vram": 2147650200,
-                            "size": 276,
+                            "size": 0,
                             "vrom": 169624
                         },
                         {
@@ -3415,13 +3415,13 @@
                         {
                             "name": "func_80028CBC_usa",
                             "vram": 2147650748,
-                            "size": 0,
+                            "size": 260,
                             "vrom": 170172
                         },
                         {
                             "name": "func_80028CBC_usa.NON_MATCHING",
                             "vram": 2147650748,
-                            "size": 260,
+                            "size": 0,
                             "vrom": 170172
                         },
                         {
@@ -3457,61 +3457,61 @@
                         {
                             "name": "func_80029130_usa",
                             "vram": 2147651888,
-                            "size": 0,
+                            "size": 276,
                             "vrom": 171312
                         },
                         {
                             "name": "func_80029130_usa.NON_MATCHING",
                             "vram": 2147651888,
-                            "size": 276,
+                            "size": 0,
                             "vrom": 171312
                         },
                         {
                             "name": "func_80029244_usa",
                             "vram": 2147652164,
-                            "size": 0,
+                            "size": 216,
                             "vrom": 171588
                         },
                         {
                             "name": "func_80029244_usa.NON_MATCHING",
                             "vram": 2147652164,
-                            "size": 216,
+                            "size": 0,
                             "vrom": 171588
                         },
                         {
                             "name": "func_8002931C_usa",
                             "vram": 2147652380,
-                            "size": 0,
+                            "size": 224,
                             "vrom": 171804
                         },
                         {
                             "name": "func_8002931C_usa.NON_MATCHING",
                             "vram": 2147652380,
-                            "size": 224,
+                            "size": 0,
                             "vrom": 171804
                         },
                         {
                             "name": "func_800293FC_usa",
                             "vram": 2147652604,
-                            "size": 0,
+                            "size": 204,
                             "vrom": 172028
                         },
                         {
                             "name": "func_800293FC_usa.NON_MATCHING",
                             "vram": 2147652604,
-                            "size": 204,
+                            "size": 0,
                             "vrom": 172028
                         },
                         {
                             "name": "func_800294C8_usa",
                             "vram": 2147652808,
-                            "size": 0,
+                            "size": 204,
                             "vrom": 172232
                         },
                         {
                             "name": "func_800294C8_usa.NON_MATCHING",
                             "vram": 2147652808,
-                            "size": 204,
+                            "size": 0,
                             "vrom": 172232
                         },
                         {
@@ -3547,25 +3547,25 @@
                         {
                             "name": "func_80029980_usa",
                             "vram": 2147654016,
-                            "size": 0,
+                            "size": 196,
                             "vrom": 173440
                         },
                         {
                             "name": "func_80029980_usa.NON_MATCHING",
                             "vram": 2147654016,
-                            "size": 196,
+                            "size": 0,
                             "vrom": 173440
                         },
                         {
                             "name": "func_80029A44_usa",
                             "vram": 2147654212,
-                            "size": 0,
+                            "size": 204,
                             "vrom": 173636
                         },
                         {
                             "name": "func_80029A44_usa.NON_MATCHING",
                             "vram": 2147654212,
-                            "size": 204,
+                            "size": 0,
                             "vrom": 173636
                         },
                         {
@@ -3607,13 +3607,13 @@
                         {
                             "name": "func_80029EC4_usa",
                             "vram": 2147655364,
-                            "size": 0,
+                            "size": 432,
                             "vrom": 174788
                         },
                         {
                             "name": "func_80029EC4_usa.NON_MATCHING",
                             "vram": 2147655364,
-                            "size": 432,
+                            "size": 0,
                             "vrom": 174788
                         },
                         {
@@ -3631,25 +3631,25 @@
                         {
                             "name": "func_8002A1F4_usa",
                             "vram": 2147656180,
-                            "size": 0,
+                            "size": 244,
                             "vrom": 175604
                         },
                         {
                             "name": "func_8002A1F4_usa.NON_MATCHING",
                             "vram": 2147656180,
-                            "size": 244,
+                            "size": 0,
                             "vrom": 175604
                         },
                         {
                             "name": "func_8002A2E8_usa",
                             "vram": 2147656424,
-                            "size": 0,
+                            "size": 208,
                             "vrom": 175848
                         },
                         {
                             "name": "func_8002A2E8_usa.NON_MATCHING",
                             "vram": 2147656424,
-                            "size": 208,
+                            "size": 0,
                             "vrom": 175848
                         },
                         {
@@ -3667,37 +3667,37 @@
                         {
                             "name": "func_8002A488_usa",
                             "vram": 2147656840,
-                            "size": 0,
+                            "size": 116,
                             "vrom": 176264
                         },
                         {
                             "name": "func_8002A488_usa.NON_MATCHING",
                             "vram": 2147656840,
-                            "size": 116,
+                            "size": 0,
                             "vrom": 176264
                         },
                         {
                             "name": "func_8002A4FC_usa",
                             "vram": 2147656956,
-                            "size": 0,
+                            "size": 120,
                             "vrom": 176380
                         },
                         {
                             "name": "func_8002A4FC_usa.NON_MATCHING",
                             "vram": 2147656956,
-                            "size": 120,
+                            "size": 0,
                             "vrom": 176380
                         },
                         {
                             "name": "func_8002A574_usa",
                             "vram": 2147657076,
-                            "size": 0,
+                            "size": 196,
                             "vrom": 176500
                         },
                         {
                             "name": "func_8002A574_usa.NON_MATCHING",
                             "vram": 2147657076,
-                            "size": 196,
+                            "size": 0,
                             "vrom": 176500
                         },
                         {
@@ -3754,37 +3754,37 @@
                         {
                             "name": "func_8002B5D8_usa",
                             "vram": 2147661272,
-                            "size": 0,
+                            "size": 40,
                             "vrom": 180696
                         },
                         {
                             "name": "func_8002B5D8_usa.NON_MATCHING",
                             "vram": 2147661272,
-                            "size": 40,
+                            "size": 0,
                             "vrom": 180696
                         },
                         {
                             "name": "func_8002B600_usa",
                             "vram": 2147661312,
-                            "size": 0,
+                            "size": 364,
                             "vrom": 180736
                         },
                         {
                             "name": "func_8002B600_usa.NON_MATCHING",
                             "vram": 2147661312,
-                            "size": 364,
+                            "size": 0,
                             "vrom": 180736
                         },
                         {
                             "name": "func_8002B76C_usa",
                             "vram": 2147661676,
-                            "size": 0,
+                            "size": 92,
                             "vrom": 181100
                         },
                         {
                             "name": "func_8002B76C_usa.NON_MATCHING",
                             "vram": 2147661676,
-                            "size": 92,
+                            "size": 0,
                             "vrom": 181100
                         },
                         {
@@ -3802,13 +3802,13 @@
                         {
                             "name": "func_8002B85C_usa",
                             "vram": 2147661916,
-                            "size": 0,
+                            "size": 84,
                             "vrom": 181340
                         },
                         {
                             "name": "func_8002B85C_usa.NON_MATCHING",
                             "vram": 2147661916,
-                            "size": 84,
+                            "size": 0,
                             "vrom": 181340
                         },
                         {
@@ -3826,13 +3826,13 @@
                         {
                             "name": "DoStory",
                             "vram": 2147662056,
-                            "size": 0,
+                            "size": 1096,
                             "vrom": 181480
                         },
                         {
                             "name": "DoStory.NON_MATCHING",
                             "vram": 2147662056,
-                            "size": 1096,
+                            "size": 0,
                             "vrom": 181480
                         },
                         {
@@ -3850,13 +3850,13 @@
                         {
                             "name": "InitStory",
                             "vram": 2147663512,
-                            "size": 0,
+                            "size": 1064,
                             "vrom": 182936
                         },
                         {
                             "name": "InitStory.NON_MATCHING",
                             "vram": 2147663512,
-                            "size": 1064,
+                            "size": 0,
                             "vrom": 182936
                         }
                     ]
@@ -3871,13 +3871,13 @@
                         {
                             "name": "func_8002C2C0_usa",
                             "vram": 2147664576,
-                            "size": 0,
+                            "size": 2392,
                             "vrom": 184000
                         },
                         {
                             "name": "func_8002C2C0_usa.NON_MATCHING",
                             "vram": 2147664576,
-                            "size": 2392,
+                            "size": 0,
                             "vrom": 184000
                         },
                         {
@@ -3919,13 +3919,13 @@
                         {
                             "name": "peelSetup",
                             "vram": 2147670728,
-                            "size": 0,
+                            "size": 296,
                             "vrom": 190152
                         },
                         {
                             "name": "peelSetup.NON_MATCHING",
                             "vram": 2147670728,
-                            "size": 296,
+                            "size": 0,
                             "vrom": 190152
                         },
                         {
@@ -4006,13 +4006,13 @@
                         {
                             "name": "func_8002F464_usa",
                             "vram": 2147677284,
-                            "size": 0,
+                            "size": 728,
                             "vrom": 196708
                         },
                         {
                             "name": "func_8002F464_usa.NON_MATCHING",
                             "vram": 2147677284,
-                            "size": 728,
+                            "size": 0,
                             "vrom": 196708
                         },
                         {
@@ -4030,13 +4030,13 @@
                         {
                             "name": "func_8002F984_usa",
                             "vram": 2147678596,
-                            "size": 0,
+                            "size": 876,
                             "vrom": 198020
                         },
                         {
                             "name": "func_8002F984_usa.NON_MATCHING",
                             "vram": 2147678596,
-                            "size": 876,
+                            "size": 0,
                             "vrom": 198020
                         },
                         {
@@ -4138,13 +4138,13 @@
                         {
                             "name": "func_80030DC8_usa",
                             "vram": 2147683784,
-                            "size": 0,
+                            "size": 64,
                             "vrom": 203208
                         },
                         {
                             "name": "func_80030DC8_usa.NON_MATCHING",
                             "vram": 2147683784,
-                            "size": 64,
+                            "size": 0,
                             "vrom": 203208
                         },
                         {
@@ -4207,25 +4207,25 @@
                         {
                             "name": "func_800322D0_usa",
                             "vram": 2147689168,
-                            "size": 0,
+                            "size": 72,
                             "vrom": 208592
                         },
                         {
                             "name": "func_800322D0_usa.NON_MATCHING",
                             "vram": 2147689168,
-                            "size": 72,
+                            "size": 0,
                             "vrom": 208592
                         },
                         {
                             "name": "func_80032318_usa",
                             "vram": 2147689240,
-                            "size": 0,
+                            "size": 380,
                             "vrom": 208664
                         },
                         {
                             "name": "func_80032318_usa.NON_MATCHING",
                             "vram": 2147689240,
-                            "size": 380,
+                            "size": 0,
                             "vrom": 208664
                         },
                         {
@@ -4243,13 +4243,13 @@
                         {
                             "name": "func_800325F8_usa",
                             "vram": 2147689976,
-                            "size": 0,
+                            "size": 168,
                             "vrom": 209400
                         },
                         {
                             "name": "func_800325F8_usa.NON_MATCHING",
                             "vram": 2147689976,
-                            "size": 168,
+                            "size": 0,
                             "vrom": 209400
                         },
                         {
@@ -4267,25 +4267,25 @@
                         {
                             "name": "DrawCountDown",
                             "vram": 2147692548,
-                            "size": 0,
+                            "size": 1604,
                             "vrom": 211972
                         },
                         {
                             "name": "DrawCountDown.NON_MATCHING",
                             "vram": 2147692548,
-                            "size": 1604,
+                            "size": 0,
                             "vrom": 211972
                         },
                         {
                             "name": "InitStageClearIntro",
                             "vram": 2147694152,
-                            "size": 0,
+                            "size": 1224,
                             "vrom": 213576
                         },
                         {
                             "name": "InitStageClearIntro.NON_MATCHING",
                             "vram": 2147694152,
-                            "size": 1224,
+                            "size": 0,
                             "vrom": 213576
                         },
                         {
@@ -4303,25 +4303,25 @@
                         {
                             "name": "func_80034140_usa",
                             "vram": 2147696960,
-                            "size": 0,
+                            "size": 524,
                             "vrom": 216384
                         },
                         {
                             "name": "func_80034140_usa.NON_MATCHING",
                             "vram": 2147696960,
-                            "size": 524,
+                            "size": 0,
                             "vrom": 216384
                         },
                         {
                             "name": "DrawStageClearIntro",
                             "vram": 2147697484,
-                            "size": 0,
+                            "size": 84,
                             "vrom": 216908
                         },
                         {
                             "name": "DrawStageClearIntro.NON_MATCHING",
                             "vram": 2147697484,
-                            "size": 84,
+                            "size": 0,
                             "vrom": 216908
                         }
                     ]
@@ -4522,37 +4522,37 @@
                         {
                             "name": "func_80037724_usa",
                             "vram": 2147710756,
-                            "size": 0,
+                            "size": 476,
                             "vrom": 230180
                         },
                         {
                             "name": "func_80037724_usa.NON_MATCHING",
                             "vram": 2147710756,
-                            "size": 476,
+                            "size": 0,
                             "vrom": 230180
                         },
                         {
                             "name": "func_80037900_usa",
                             "vram": 2147711232,
-                            "size": 0,
+                            "size": 212,
                             "vrom": 230656
                         },
                         {
                             "name": "func_80037900_usa.NON_MATCHING",
                             "vram": 2147711232,
-                            "size": 212,
+                            "size": 0,
                             "vrom": 230656
                         },
                         {
                             "name": "func_800379D4_usa",
                             "vram": 2147711444,
-                            "size": 0,
+                            "size": 312,
                             "vrom": 230868
                         },
                         {
                             "name": "func_800379D4_usa.NON_MATCHING",
                             "vram": 2147711444,
-                            "size": 312,
+                            "size": 0,
                             "vrom": 230868
                         },
                         {
@@ -4570,25 +4570,25 @@
                         {
                             "name": "func_80037CBC_usa",
                             "vram": 2147712188,
-                            "size": 0,
+                            "size": 860,
                             "vrom": 231612
                         },
                         {
                             "name": "func_80037CBC_usa.NON_MATCHING",
                             "vram": 2147712188,
-                            "size": 860,
+                            "size": 0,
                             "vrom": 231612
                         },
                         {
                             "name": "func_80038018_usa",
                             "vram": 2147713048,
-                            "size": 0,
+                            "size": 292,
                             "vrom": 232472
                         },
                         {
                             "name": "func_80038018_usa.NON_MATCHING",
                             "vram": 2147713048,
-                            "size": 292,
+                            "size": 0,
                             "vrom": 232472
                         },
                         {
@@ -4606,25 +4606,25 @@
                         {
                             "name": "func_80038228_usa",
                             "vram": 2147713576,
-                            "size": 0,
+                            "size": 340,
                             "vrom": 233000
                         },
                         {
                             "name": "func_80038228_usa.NON_MATCHING",
                             "vram": 2147713576,
-                            "size": 340,
+                            "size": 0,
                             "vrom": 233000
                         },
                         {
                             "name": "func_8003837C_usa",
                             "vram": 2147713916,
-                            "size": 0,
+                            "size": 448,
                             "vrom": 233340
                         },
                         {
                             "name": "func_8003837C_usa.NON_MATCHING",
                             "vram": 2147713916,
-                            "size": 448,
+                            "size": 0,
                             "vrom": 233340
                         },
                         {
@@ -4642,61 +4642,61 @@
                         {
                             "name": "func_800386D4_usa",
                             "vram": 2147714772,
-                            "size": 0,
+                            "size": 216,
                             "vrom": 234196
                         },
                         {
                             "name": "func_800386D4_usa.NON_MATCHING",
                             "vram": 2147714772,
-                            "size": 216,
+                            "size": 0,
                             "vrom": 234196
                         },
                         {
                             "name": "func_800387AC_usa",
                             "vram": 2147714988,
-                            "size": 0,
+                            "size": 96,
                             "vrom": 234412
                         },
                         {
                             "name": "func_800387AC_usa.NON_MATCHING",
                             "vram": 2147714988,
-                            "size": 96,
+                            "size": 0,
                             "vrom": 234412
                         },
                         {
                             "name": "func_8003880C_usa",
                             "vram": 2147715084,
-                            "size": 0,
+                            "size": 312,
                             "vrom": 234508
                         },
                         {
                             "name": "func_8003880C_usa.NON_MATCHING",
                             "vram": 2147715084,
-                            "size": 312,
+                            "size": 0,
                             "vrom": 234508
                         },
                         {
                             "name": "func_80038944_usa",
                             "vram": 2147715396,
-                            "size": 0,
+                            "size": 596,
                             "vrom": 234820
                         },
                         {
                             "name": "func_80038944_usa.NON_MATCHING",
                             "vram": 2147715396,
-                            "size": 596,
+                            "size": 0,
                             "vrom": 234820
                         },
                         {
                             "name": "func_80038B98_usa",
                             "vram": 2147715992,
-                            "size": 0,
+                            "size": 188,
                             "vrom": 235416
                         },
                         {
                             "name": "func_80038B98_usa.NON_MATCHING",
                             "vram": 2147715992,
-                            "size": 188,
+                            "size": 0,
                             "vrom": 235416
                         },
                         {
@@ -4714,13 +4714,13 @@
                         {
                             "name": "func_80038F84_usa",
                             "vram": 2147716996,
-                            "size": 0,
+                            "size": 152,
                             "vrom": 236420
                         },
                         {
                             "name": "func_80038F84_usa.NON_MATCHING",
                             "vram": 2147716996,
-                            "size": 152,
+                            "size": 0,
                             "vrom": 236420
                         },
                         {
@@ -4750,13 +4750,13 @@
                         {
                             "name": "func_80039A54_usa",
                             "vram": 2147719764,
-                            "size": 0,
+                            "size": 292,
                             "vrom": 239188
                         },
                         {
                             "name": "func_80039A54_usa.NON_MATCHING",
                             "vram": 2147719764,
-                            "size": 292,
+                            "size": 0,
                             "vrom": 239188
                         },
                         {
@@ -4798,25 +4798,25 @@
                         {
                             "name": "func_8003AD18_usa",
                             "vram": 2147724568,
-                            "size": 0,
+                            "size": 2168,
                             "vrom": 243992
                         },
                         {
                             "name": "func_8003AD18_usa.NON_MATCHING",
                             "vram": 2147724568,
-                            "size": 2168,
+                            "size": 0,
                             "vrom": 243992
                         },
                         {
                             "name": "func_8003B590_usa",
                             "vram": 2147726736,
-                            "size": 0,
+                            "size": 2420,
                             "vrom": 246160
                         },
                         {
                             "name": "func_8003B590_usa.NON_MATCHING",
                             "vram": 2147726736,
-                            "size": 2420,
+                            "size": 0,
                             "vrom": 246160
                         },
                         {
@@ -4834,13 +4834,13 @@
                         {
                             "name": "DoGameOver2D",
                             "vram": 2147729220,
-                            "size": 0,
+                            "size": 4824,
                             "vrom": 248644
                         },
                         {
                             "name": "DoGameOver2D.NON_MATCHING",
                             "vram": 2147729220,
-                            "size": 4824,
+                            "size": 0,
                             "vrom": 248644
                         },
                         {
@@ -5245,13 +5245,13 @@
                         {
                             "name": "UpdateController",
                             "vram": 2147774544,
-                            "size": 0,
+                            "size": 440,
                             "vrom": 293968
                         },
                         {
                             "name": "UpdateController.NON_MATCHING",
                             "vram": 2147774544,
-                            "size": 440,
+                            "size": 0,
                             "vrom": 293968
                         },
                         {
@@ -5428,25 +5428,25 @@
                         {
                             "name": "SetText",
                             "vram": 2147795384,
-                            "size": 0,
+                            "size": 200,
                             "vrom": 314808
                         },
                         {
                             "name": "SetText.NON_MATCHING",
                             "vram": 2147795384,
-                            "size": 200,
+                            "size": 0,
                             "vrom": 314808
                         },
                         {
                             "name": "func_8004C280_usa",
                             "vram": 2147795584,
-                            "size": 0,
+                            "size": 6076,
                             "vrom": 315008
                         },
                         {
                             "name": "func_8004C280_usa.NON_MATCHING",
                             "vram": 2147795584,
-                            "size": 6076,
+                            "size": 0,
                             "vrom": 315008
                         },
                         {
@@ -5464,13 +5464,13 @@
                         {
                             "name": "func_8004DF64_usa",
                             "vram": 2147802980,
-                            "size": 0,
+                            "size": 1260,
                             "vrom": 322404
                         },
                         {
                             "name": "func_8004DF64_usa.NON_MATCHING",
                             "vram": 2147802980,
-                            "size": 1260,
+                            "size": 0,
                             "vrom": 322404
                         }
                     ]
@@ -5713,13 +5713,13 @@
                         {
                             "name": "func_80054020_usa",
                             "vram": 2147827744,
-                            "size": 0,
+                            "size": 60,
                             "vrom": 347168
                         },
                         {
                             "name": "func_80054020_usa.NON_MATCHING",
                             "vram": 2147827744,
-                            "size": 60,
+                            "size": 0,
                             "vrom": 347168
                         },
                         {
@@ -5743,25 +5743,25 @@
                         {
                             "name": "func_800540AC_usa",
                             "vram": 2147827884,
-                            "size": 0,
+                            "size": 344,
                             "vrom": 347308
                         },
                         {
                             "name": "func_800540AC_usa.NON_MATCHING",
                             "vram": 2147827884,
-                            "size": 344,
+                            "size": 0,
                             "vrom": 347308
                         },
                         {
                             "name": "Draw2DGameFade",
                             "vram": 2147828228,
-                            "size": 0,
+                            "size": 284,
                             "vrom": 347652
                         },
                         {
                             "name": "Draw2DGameFade.NON_MATCHING",
                             "vram": 2147828228,
-                            "size": 284,
+                            "size": 0,
                             "vrom": 347652
                         },
                         {
@@ -5791,73 +5791,73 @@
                         {
                             "name": "DoFlashDraw",
                             "vram": 2147828820,
-                            "size": 0,
+                            "size": 128,
                             "vrom": 348244
                         },
                         {
                             "name": "DoFlashDraw.NON_MATCHING",
                             "vram": 2147828820,
-                            "size": 128,
+                            "size": 0,
                             "vrom": 348244
                         },
                         {
                             "name": "func_800544D4_usa",
                             "vram": 2147828948,
-                            "size": 0,
+                            "size": 44,
                             "vrom": 348372
                         },
                         {
                             "name": "func_800544D4_usa.NON_MATCHING",
                             "vram": 2147828948,
-                            "size": 44,
+                            "size": 0,
                             "vrom": 348372
                         },
                         {
                             "name": "func_80054500_usa",
                             "vram": 2147828992,
-                            "size": 0,
+                            "size": 228,
                             "vrom": 348416
                         },
                         {
                             "name": "func_80054500_usa.NON_MATCHING",
                             "vram": 2147828992,
-                            "size": 228,
+                            "size": 0,
                             "vrom": 348416
                         },
                         {
                             "name": "func_800545E4_usa",
                             "vram": 2147829220,
-                            "size": 0,
+                            "size": 64,
                             "vrom": 348644
                         },
                         {
                             "name": "func_800545E4_usa.NON_MATCHING",
                             "vram": 2147829220,
-                            "size": 64,
+                            "size": 0,
                             "vrom": 348644
                         },
                         {
                             "name": "func_80054624_usa",
                             "vram": 2147829284,
-                            "size": 0,
+                            "size": 444,
                             "vrom": 348708
                         },
                         {
                             "name": "func_80054624_usa.NON_MATCHING",
                             "vram": 2147829284,
-                            "size": 444,
+                            "size": 0,
                             "vrom": 348708
                         },
                         {
                             "name": "InitTetrisState",
                             "vram": 2147829728,
-                            "size": 0,
+                            "size": 36,
                             "vrom": 349152
                         },
                         {
                             "name": "InitTetrisState.NON_MATCHING",
                             "vram": 2147829728,
-                            "size": 36,
+                            "size": 0,
                             "vrom": 349152
                         },
                         {
@@ -6034,13 +6034,13 @@
                         {
                             "name": "func_80057650_usa",
                             "vram": 2147841616,
-                            "size": 0,
+                            "size": 260,
                             "vrom": 361040
                         },
                         {
                             "name": "func_80057650_usa.NON_MATCHING",
                             "vram": 2147841616,
-                            "size": 260,
+                            "size": 0,
                             "vrom": 361040
                         },
                         {
@@ -6058,73 +6058,73 @@
                         {
                             "name": "func_80057950_usa",
                             "vram": 2147842384,
-                            "size": 0,
+                            "size": 972,
                             "vrom": 361808
                         },
                         {
                             "name": "func_80057950_usa.NON_MATCHING",
                             "vram": 2147842384,
-                            "size": 972,
+                            "size": 0,
                             "vrom": 361808
                         },
                         {
                             "name": "func_80057D1C_usa",
                             "vram": 2147843356,
-                            "size": 0,
+                            "size": 76,
                             "vrom": 362780
                         },
                         {
                             "name": "func_80057D1C_usa.NON_MATCHING",
                             "vram": 2147843356,
-                            "size": 76,
+                            "size": 0,
                             "vrom": 362780
                         },
                         {
                             "name": "func_80057D68_usa",
                             "vram": 2147843432,
-                            "size": 0,
+                            "size": 168,
                             "vrom": 362856
                         },
                         {
                             "name": "func_80057D68_usa.NON_MATCHING",
                             "vram": 2147843432,
-                            "size": 168,
+                            "size": 0,
                             "vrom": 362856
                         },
                         {
                             "name": "func_80057E10_usa",
                             "vram": 2147843600,
-                            "size": 0,
+                            "size": 168,
                             "vrom": 363024
                         },
                         {
                             "name": "func_80057E10_usa.NON_MATCHING",
                             "vram": 2147843600,
-                            "size": 168,
+                            "size": 0,
                             "vrom": 363024
                         },
                         {
                             "name": "func_80057EB8_usa",
                             "vram": 2147843768,
-                            "size": 0,
+                            "size": 204,
                             "vrom": 363192
                         },
                         {
                             "name": "func_80057EB8_usa.NON_MATCHING",
                             "vram": 2147843768,
-                            "size": 204,
+                            "size": 0,
                             "vrom": 363192
                         },
                         {
                             "name": "func_80057F84_usa",
                             "vram": 2147843972,
-                            "size": 0,
+                            "size": 232,
                             "vrom": 363396
                         },
                         {
                             "name": "func_80057F84_usa.NON_MATCHING",
                             "vram": 2147843972,
-                            "size": 232,
+                            "size": 0,
                             "vrom": 363396
                         },
                         {
@@ -6166,25 +6166,25 @@
                         {
                             "name": "func_8005834C_usa",
                             "vram": 2147844940,
-                            "size": 0,
+                            "size": 268,
                             "vrom": 364364
                         },
                         {
                             "name": "func_8005834C_usa.NON_MATCHING",
                             "vram": 2147844940,
-                            "size": 268,
+                            "size": 0,
                             "vrom": 364364
                         },
                         {
                             "name": "func_80058458_usa",
                             "vram": 2147845208,
-                            "size": 0,
+                            "size": 532,
                             "vrom": 364632
                         },
                         {
                             "name": "func_80058458_usa.NON_MATCHING",
                             "vram": 2147845208,
-                            "size": 532,
+                            "size": 0,
                             "vrom": 364632
                         },
                         {
@@ -6274,13 +6274,13 @@
                         {
                             "name": "func_80059038_usa",
                             "vram": 2147848248,
-                            "size": 0,
+                            "size": 2444,
                             "vrom": 367672
                         },
                         {
                             "name": "func_80059038_usa.NON_MATCHING",
                             "vram": 2147848248,
-                            "size": 2444,
+                            "size": 0,
                             "vrom": 367672
                         },
                         {
@@ -6310,25 +6310,25 @@
                         {
                             "name": "func_80059A58_usa",
                             "vram": 2147850840,
-                            "size": 0,
+                            "size": 64,
                             "vrom": 370264
                         },
                         {
                             "name": "func_80059A58_usa.NON_MATCHING",
                             "vram": 2147850840,
-                            "size": 64,
+                            "size": 0,
                             "vrom": 370264
                         },
                         {
                             "name": "func_80059A98_usa",
                             "vram": 2147850904,
-                            "size": 0,
+                            "size": 1260,
                             "vrom": 370328
                         },
                         {
                             "name": "func_80059A98_usa.NON_MATCHING",
                             "vram": 2147850904,
-                            "size": 1260,
+                            "size": 0,
                             "vrom": 370328
                         },
                         {
@@ -6346,13 +6346,13 @@
                         {
                             "name": "Update3DBuffer",
                             "vram": 2147853032,
-                            "size": 0,
+                            "size": 1512,
                             "vrom": 372456
                         },
                         {
                             "name": "Update3DBuffer.NON_MATCHING",
                             "vram": 2147853032,
-                            "size": 1512,
+                            "size": 0,
                             "vrom": 372456
                         }
                     ]
@@ -7129,13 +7129,13 @@
                         {
                             "name": "Draw2DTetrisWell",
                             "vram": 2147929760,
-                            "size": 0,
+                            "size": 2296,
                             "vrom": 449184
                         },
                         {
                             "name": "Draw2DTetrisWell.NON_MATCHING",
                             "vram": 2147929760,
-                            "size": 2296,
+                            "size": 0,
                             "vrom": 449184
                         },
                         {
@@ -7147,73 +7147,73 @@
                         {
                             "name": "Draw2DIcon",
                             "vram": 2147932284,
-                            "size": 0,
+                            "size": 1628,
                             "vrom": 451708
                         },
                         {
                             "name": "Draw2DIcon.NON_MATCHING",
                             "vram": 2147932284,
-                            "size": 1628,
+                            "size": 0,
                             "vrom": 451708
                         },
                         {
                             "name": "Draw2DAttackBrick",
                             "vram": 2147933912,
-                            "size": 0,
+                            "size": 892,
                             "vrom": 453336
                         },
                         {
                             "name": "Draw2DAttackBrick.NON_MATCHING",
                             "vram": 2147933912,
-                            "size": 892,
+                            "size": 0,
                             "vrom": 453336
                         },
                         {
                             "name": "Draw2DAttackBlock",
                             "vram": 2147934804,
-                            "size": 0,
+                            "size": 2256,
                             "vrom": 454228
                         },
                         {
                             "name": "Draw2DAttackBlock.NON_MATCHING",
                             "vram": 2147934804,
-                            "size": 2256,
+                            "size": 0,
                             "vrom": 454228
                         },
                         {
                             "name": "Draw2DExplosion",
                             "vram": 2147937060,
-                            "size": 0,
+                            "size": 804,
                             "vrom": 456484
                         },
                         {
                             "name": "Draw2DExplosion.NON_MATCHING",
                             "vram": 2147937060,
-                            "size": 804,
+                            "size": 0,
                             "vrom": 456484
                         },
                         {
                             "name": "Draw2DClearLine",
                             "vram": 2147937864,
-                            "size": 0,
+                            "size": 596,
                             "vrom": 457288
                         },
                         {
                             "name": "Draw2DClearLine.NON_MATCHING",
                             "vram": 2147937864,
-                            "size": 596,
+                            "size": 0,
                             "vrom": 457288
                         },
                         {
                             "name": "func_8006F09C_usa",
                             "vram": 2147938460,
-                            "size": 0,
+                            "size": 608,
                             "vrom": 457884
                         },
                         {
                             "name": "func_8006F09C_usa.NON_MATCHING",
                             "vram": 2147938460,
-                            "size": 608,
+                            "size": 0,
                             "vrom": 457884
                         },
                         {
@@ -8290,13 +8290,13 @@
                         {
                             "name": "func_80088940_usa",
                             "vram": 2148043072,
-                            "size": 0,
+                            "size": 264,
                             "vrom": 562496
                         },
                         {
                             "name": "func_80088940_usa.NON_MATCHING",
                             "vram": 2148043072,
-                            "size": 264,
+                            "size": 0,
                             "vrom": 562496
                         },
                         {
@@ -8314,13 +8314,13 @@
                         {
                             "name": "func_80088AB4_usa",
                             "vram": 2148043444,
-                            "size": 0,
+                            "size": 340,
                             "vrom": 562868
                         },
                         {
                             "name": "func_80088AB4_usa.NON_MATCHING",
                             "vram": 2148043444,
-                            "size": 340,
+                            "size": 0,
                             "vrom": 562868
                         },
                         {
@@ -8350,49 +8350,49 @@
                         {
                             "name": "func_80088E38_usa",
                             "vram": 2148044344,
-                            "size": 0,
+                            "size": 348,
                             "vrom": 563768
                         },
                         {
                             "name": "func_80088E38_usa.NON_MATCHING",
                             "vram": 2148044344,
-                            "size": 348,
+                            "size": 0,
                             "vrom": 563768
                         },
                         {
                             "name": "func_80088F94_usa",
                             "vram": 2148044692,
-                            "size": 0,
+                            "size": 372,
                             "vrom": 564116
                         },
                         {
                             "name": "func_80088F94_usa.NON_MATCHING",
                             "vram": 2148044692,
-                            "size": 372,
+                            "size": 0,
                             "vrom": 564116
                         },
                         {
                             "name": "func_80089108_usa",
                             "vram": 2148045064,
-                            "size": 0,
+                            "size": 52,
                             "vrom": 564488
                         },
                         {
                             "name": "func_80089108_usa.NON_MATCHING",
                             "vram": 2148045064,
-                            "size": 52,
+                            "size": 0,
                             "vrom": 564488
                         },
                         {
                             "name": "func_8008913C_usa",
                             "vram": 2148045116,
-                            "size": 0,
+                            "size": 196,
                             "vrom": 564540
                         },
                         {
                             "name": "func_8008913C_usa.NON_MATCHING",
                             "vram": 2148045116,
-                            "size": 196,
+                            "size": 0,
                             "vrom": 564540
                         },
                         {
@@ -8410,13 +8410,13 @@
                         {
                             "name": "func_8008928C_usa",
                             "vram": 2148045452,
-                            "size": 0,
+                            "size": 140,
                             "vrom": 564876
                         },
                         {
                             "name": "func_8008928C_usa.NON_MATCHING",
                             "vram": 2148045452,
-                            "size": 140,
+                            "size": 0,
                             "vrom": 564876
                         },
                         {
@@ -8449,13 +8449,13 @@
                         {
                             "name": "RandomBlock",
                             "vram": 2148046528,
-                            "size": 0,
+                            "size": 184,
                             "vrom": 565952
                         },
                         {
                             "name": "RandomBlock.NON_MATCHING",
                             "vram": 2148046528,
-                            "size": 184,
+                            "size": 0,
                             "vrom": 565952
                         },
                         {
@@ -8473,25 +8473,25 @@
                         {
                             "name": "func_80089828_usa",
                             "vram": 2148046888,
-                            "size": 0,
+                            "size": 340,
                             "vrom": 566312
                         },
                         {
                             "name": "func_80089828_usa.NON_MATCHING",
                             "vram": 2148046888,
-                            "size": 340,
+                            "size": 0,
                             "vrom": 566312
                         },
                         {
                             "name": "func_8008997C_usa",
                             "vram": 2148047228,
-                            "size": 0,
+                            "size": 368,
                             "vrom": 566652
                         },
                         {
                             "name": "func_8008997C_usa.NON_MATCHING",
                             "vram": 2148047228,
-                            "size": 368,
+                            "size": 0,
                             "vrom": 566652
                         },
                         {
@@ -8503,25 +8503,25 @@
                         {
                             "name": "func_80089BE0_usa",
                             "vram": 2148047840,
-                            "size": 0,
+                            "size": 652,
                             "vrom": 567264
                         },
                         {
                             "name": "func_80089BE0_usa.NON_MATCHING",
                             "vram": 2148047840,
-                            "size": 652,
+                            "size": 0,
                             "vrom": 567264
                         },
                         {
                             "name": "InitTetrisWell",
                             "vram": 2148048492,
-                            "size": 0,
+                            "size": 2376,
                             "vrom": 567916
                         },
                         {
                             "name": "InitTetrisWell.NON_MATCHING",
                             "vram": 2148048492,
-                            "size": 2376,
+                            "size": 0,
                             "vrom": 567916
                         },
                         {

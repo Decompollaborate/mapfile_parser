@@ -14,6 +14,9 @@ from .progress_stats import ProgressStats
 from . import utils
 
 from .mapfile_rs import MapFile as MapFileRs
+from .mapfile_rs import Segment as SegmentRs
+from .mapfile_rs import Section as SectionRs
+from .mapfile_rs import Symbol as SymbolRs
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -25,12 +28,12 @@ regex_segmentEntry = re.compile(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P
 
 @dataclasses.dataclass
 class FoundSymbolInfo:
-    file: File
+    section: Section
     symbol: Symbol
     offset: int = 0
 
     def getAsStr(self) -> str:
-        return f"'{self.symbol.name}' (VRAM: {self.symbol.getVramStr()}, VROM: {self.symbol.getVromStr()}, SIZE: {self.symbol.getSizeStr()}, {self.file.filepath})"
+        return f"'{self.symbol.name}' (VRAM: {self.symbol.getVramStr()}, VROM: {self.symbol.getVromStr()}, SIZE: {self.symbol.getSizeStr()}, {self.section.filepath})"
 
     def getAsStrPlusOffset(self, symName: str|None=None) -> str:
         if self.offset != 0:
@@ -47,9 +50,9 @@ class FoundSymbolInfo:
 class SymbolComparisonInfo:
     symbol: Symbol
     buildAddress: int
-    buildFile: File|None
+    buildFile: Section|None
     expectedAddress: int
-    expectedFile: File|None
+    expectedFile: Section|None
 
     @property
     def diff(self) -> int|None:
@@ -61,9 +64,9 @@ class SymbolComparisonInfo:
         buildAddress = self.buildAddress
         expectedAddress = self.expectedAddress
 
-        # If both symbols are present in the same file then we do a diff
-        # between their offsets into their respectives file.
-        # This is done as a way to avoid too much noise in case an earlier file
+        # If both symbols are present in the same section then we do a diff
+        # between their offsets into their respectives section.
+        # This is done as a way to avoid too much noise in case an earlier section
         # did shift.
         if self.buildFile is not None and self.expectedFile is not None:
             if self.buildFile.filepath == self.expectedFile.filepath:
@@ -75,8 +78,8 @@ class SymbolComparisonInfo:
 
 class MapsComparisonInfo:
     def __init__(self):
-        self.badFiles: set[File] = set()
-        self.missingFiles: set[File] = set()
+        self.badFiles: set[Section] = set()
+        self.missingFiles: set[Section] = set()
         self.comparedList: list[SymbolComparisonInfo] = []
 
 
@@ -84,9 +87,17 @@ class MapsComparisonInfo:
 class Symbol:
     name: str
     vram: int
-    size: int|None = None # in bytes
+    size: int = 0 # in bytes
     vrom: int|None = None
     align: int|None = None
+    nonmatchingSymExists: bool = False
+    """
+    `true` if a symbol with the same name, but with a `.NON_MATCHING`
+    suffix is found in this symbol's section. `false` otherwise.
+
+    Note the symbol with the actual `.NON_MATCHING` will have this member
+    set to `false`.
+    """
 
     def getVramStr(self) -> str:
         return f"0x{self.vram:08X}"
@@ -161,13 +172,14 @@ class Symbol:
 
 
 @dataclasses.dataclass
-class File:
+class Section:
     filepath: Path
     vram: int
     size: int # in bytes
     sectionType: str
     vrom: int|None = None
     align: int|None = None
+    isFill: bool = False
     _symbols: list[Symbol] = dataclasses.field(default_factory=list)
 
     @property
@@ -301,7 +313,7 @@ class File:
 
     @staticmethod
     def printCsvHeader(printVram: bool=True):
-        print(File.toCsvHeader(printVram=printVram))
+        print(Section.toCsvHeader(printVram=printVram))
 
     def printAsCsv(self, printVram: bool=True):
         print(self.toCsv(printVram=printVram))
@@ -312,7 +324,7 @@ class File:
         ret = ""
         if printVram:
             ret += "VRAM,"
-        ret += "File,Section type,Num symbols,Max size,Total size,Average size"
+        ret += "Section,Section type,Num symbols,Max size,Total size,Average size"
         return ret
 
     def toCsv(self, printVram: bool=True) -> str:
@@ -363,8 +375,8 @@ class File:
         self._symbols.append(sym)
 
 
-    def clone(self) -> File:
-        f = File(self.filepath, self.vram, self.size, self.sectionType, self.vrom, self.align)
+    def clone(self) -> Section:
+        f = Section(self.filepath, self.vram, self.size, self.sectionType, self.vrom, self.align)
         for sym in self._symbols:
             f._symbols.append(sym.clone())
         return f
@@ -384,7 +396,7 @@ class File:
         return len(self._symbols)
 
     def __eq__(self, other: object) -> bool:
-        if not isinstance(other, File):
+        if not isinstance(other, Section):
             return False
         return self.filepath == other.filepath
 
@@ -400,7 +412,7 @@ class Segment:
     size: int
     vrom: int
     align: int|None = None
-    _filesList: list[File] = dataclasses.field(default_factory=list)
+    _sectionsList: list[Section] = dataclasses.field(default_factory=list)
 
     def serializeVram(self, humanReadable: bool=True) -> str|int|None:
         if humanReadable:
@@ -421,74 +433,78 @@ class Segment:
     def filterBySectionType(self, sectionType: str) -> Segment:
         newSegment = Segment(self.name, self.vram, self.size, self.vrom)
 
-        for file in self._filesList:
-            if file.sectionType == sectionType:
-                newSegment._filesList.append(file)
+        for section in self._sectionsList:
+            if section.sectionType == sectionType:
+                newSegment._sectionsList.append(section)
         return newSegment
 
-    def getEveryFileExceptSectionType(self, sectionType: str) -> Segment:
+    def getEverySectionExceptSectionType(self, sectionType: str) -> Segment:
         newSegment = Segment(self.name, self.vram, self.size, self.vrom)
 
-        for file in self._filesList:
-            if file.sectionType != sectionType:
-                newSegment._filesList.append(file)
+        for section in self._sectionsList:
+            if section.sectionType != sectionType:
+                newSegment._sectionsList.append(section)
         return newSegment
+
+    #! @deprecated: Use either `getEverySectionExceptSectionType` instead.
+    def getEveryFileExceptSectionType(self, sectionType: str) -> Segment:
+        return self.getEverySectionExceptSectionType(sectionType)
 
 
     def findSymbolByName(self, symName: str) -> FoundSymbolInfo|None:
-        for file in self._filesList:
-            sym = file.findSymbolByName(symName)
+        for section in self._sectionsList:
+            sym = section.findSymbolByName(symName)
             if sym is not None:
-                return FoundSymbolInfo(file, sym)
+                return FoundSymbolInfo(section, sym)
         return None
 
     #! @deprecated: Use either `findSymbolByVram` or `findSymbolByVrom` instead.
     def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo|None:
-        for file in self._filesList:
-            pair = file.findSymbolByVramOrVrom(address)
+        for section in self._sectionsList:
+            pair = section.findSymbolByVramOrVrom(address)
             if pair is not None:
                 sym, offset = pair
-                return FoundSymbolInfo(file, sym, offset)
+                return FoundSymbolInfo(section, sym, offset)
         return None
 
-    def findSymbolByVram(self, address: int) -> tuple[FoundSymbolInfo|None, list[File]]:
-        possibleFiles: list[File] = []
-        for file in self._filesList:
-            pair = file.findSymbolByVram(address)
+    def findSymbolByVram(self, address: int) -> tuple[FoundSymbolInfo|None, list[Section]]:
+        possibleFiles: list[Section] = []
+        for section in self._sectionsList:
+            pair = section.findSymbolByVram(address)
             if pair is not None:
                 sym, offset = pair
-                return FoundSymbolInfo(file, sym, offset), []
-            if address >= file.vram and address < file.vram + file.size:
-                possibleFiles.append(file)
+                return FoundSymbolInfo(section, sym, offset), []
+            if address >= section.vram and address < section.vram + section.size:
+                possibleFiles.append(section)
         return None, possibleFiles
 
-    def findSymbolByVrom(self, address: int) -> tuple[FoundSymbolInfo|None, list[File]]:
-        possibleFiles: list[File] = []
-        for file in self._filesList:
-            if file.vrom is None:
+    def findSymbolByVrom(self, address: int) -> tuple[FoundSymbolInfo|None, list[Section]]:
+        possibleFiles: list[Section] = []
+        for section in self._sectionsList:
+            if section.vrom is None:
                 continue
-            pair = file.findSymbolByVrom(address)
+            pair = section.findSymbolByVrom(address)
             if pair is not None:
                 sym, offset = pair
-                return FoundSymbolInfo(file, sym, offset), []
-            if address >= file.vrom and address < file.vrom + file.size:
-                possibleFiles.append(file)
+                return FoundSymbolInfo(section, sym, offset), []
+            if address >= section.vrom and address < section.vrom + section.size:
+                possibleFiles.append(section)
         return None, possibleFiles
 
 
     def mixFolders(self) -> Segment:
         newSegment = Segment(self.name, self.vram, self.size, self.vrom)
 
-        auxDict: dict[Path, list[File]] = dict()
+        auxDict: dict[Path, list[Section]] = dict()
 
         # Put files in the same folder together
-        for file in self._filesList:
-            path = Path(*file.getName().parts[:-1])
+        for section in self._sectionsList:
+            path = Path(*section.getName().parts[:-1])
             if path not in auxDict:
                 auxDict[path] = list()
-            auxDict[path].append(file)
+            auxDict[path].append(section)
 
-        # Pretend files in the same folder are one huge file
+        # Pretend files in the same folder are one huge section
         for folderPath, filesInFolder in auxDict.items():
             firstFile = filesInFolder[0]
 
@@ -498,14 +514,14 @@ class Segment:
             sectionType = firstFile.sectionType
 
             symbols = list()
-            for file in filesInFolder:
-                size += file.size
-                for sym in file:
+            for section in filesInFolder:
+                size += section.size
+                for sym in section:
                     symbols.append(sym)
 
-            tempFile = File(folderPath, vram, size, sectionType, vrom)
+            tempFile = Section(folderPath, vram, size, sectionType, vrom)
             tempFile.setSymbolList(symbols)
-            newSegment._filesList.append(tempFile)
+            newSegment._sectionsList.append(tempFile)
 
         return newSegment
 
@@ -519,22 +535,22 @@ class Segment:
 
     def toCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True) -> str:
         ret = ""
-        for file in self._filesList:
-            if skipWithoutSymbols and len(file) == 0:
+        for section in self._sectionsList:
+            if skipWithoutSymbols and len(section) == 0:
                 continue
 
-            ret += file.toCsv(printVram=printVram) + "\n"
+            ret += section.toCsv(printVram=printVram) + "\n"
         return ret
 
     def toCsvSymbols(self) -> str:
         ret = ""
 
-        for file in self._filesList:
-            if len(file) == 0:
+        for section in self._sectionsList:
+            if len(section) == 0:
                 continue
 
-            for sym in file:
-                ret += f"{file.filepath},"
+            for sym in section:
+                ret += f"{section.filepath},"
                 ret += sym.toCsv()
                 ret += "\n"
         return ret
@@ -548,43 +564,59 @@ class Segment:
         }
 
         filesList = []
-        for file in self._filesList:
-            filesList.append(file.toJson(humanReadable=humanReadable))
+        for section in self._sectionsList:
+            filesList.append(section.toJson(humanReadable=humanReadable))
 
         segmentDict["files"] = filesList
 
         return segmentDict
 
 
-    def copyFileList(self) -> list[File]:
-        """Returns a copy (not a reference) of the internal file list"""
-        return list(self._filesList)
+    def copySectionList(self) -> list[Section]:
+        """Returns a copy (not a reference) of the internal section list"""
+        return list(self._sectionsList)
 
-    def setFileList(self, newList: list[File]) -> None:
-        """Replaces the internal file list with a copy of `newList`"""
-        self._filesList = list(newList)
+    def setSectionList(self, newList: list[Section]) -> None:
+        """Replaces the internal section list with a copy of `newList`"""
+        self._sectionsList = list(newList)
 
-    def appendFile(self, file: File) -> None:
-        """Appends a copy of `file` into the internal file list"""
-        self._filesList.append(file)
+    def appendSection(self, section: Section) -> None:
+        """Appends a copy of `section` into the internal section list"""
+        self._sectionsList.append(section)
+
+
+    #! @deprecated: Use either `copySectionList` instead.
+    def copyFileList(self) -> list[Section]:
+        """Returns a copy (not a reference) of the internal section list"""
+        return self.copySectionList()
+
+    #! @deprecated: Use either `setSectionList` instead.
+    def setFileList(self, newList: list[Section]) -> None:
+        """Replaces the internal section list with a copy of `newList`"""
+        return self.setSectionList(newList)
+
+    #! @deprecated: Use either `appendSection` instead.
+    def appendFile(self, section: Section) -> None:
+        """Appends a copy of `section` into the internal section list"""
+        return self.appendSection(section)
 
 
     def clone(self) -> Segment:
         s = Segment(self.name, self.vram, self.size, self.vrom, self.align)
-        for f in self._filesList:
-            s._filesList.append(f.clone())
+        for f in self._sectionsList:
+            s._sectionsList.append(f.clone())
         return s
 
 
-    def __iter__(self) -> Generator[File, None, None]:
-        for file in self._filesList:
-            yield file
+    def __iter__(self) -> Generator[Section, None, None]:
+        for section in self._sectionsList:
+            yield section
 
-    def __getitem__(self, index) -> File:
-        return self._filesList[index]
+    def __getitem__(self, index) -> Section:
+        return self._sectionsList[index]
 
     def __len__(self) -> int:
-        return len(self._filesList)
+        return len(self._sectionsList)
 
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Segment):
@@ -597,24 +629,68 @@ class Segment:
 
 
 class MapFile:
+    #! @deprecated: Use either `newFromMapFile` or `newFromMapStr` instead.
     def __init__(self):
         self._segmentsList: list[Segment] = list()
 
         #! @deprecated
         self.debugging: bool = False
 
+    @staticmethod
+    def newFromMapFile(mapPath: Path) -> MapFile:
+        mapfile = MapFile()
+        mapfile.readMapFile(mapPath)
+        return mapfile
+
+    @staticmethod
+    def newFromMapStr(mapContents: str) -> MapFile:
+        mapfile = MapFile()
+        mapfile.parseMapContents(mapContents)
+        return mapfile
+
+    @staticmethod
+    def newFromGnuMapStr(mapContents: str) -> MapFile:
+        mapfile = MapFile()
+        mapfile.parseMapContentsGNU(mapContents)
+        return mapfile
+
+    @staticmethod
+    def newFromLldMapStr(mapContents: str) -> MapFile:
+        mapfile = MapFile()
+        mapfile.parseMapContentsLLD(mapContents)
+        return mapfile
+
+
     def _transferContentsFromNativeMapFile(self, nativeMapFile: MapFileRs):
         for segment in nativeMapFile:
             newSegment = Segment(segment.name, segment.vram, segment.size, segment.vrom, segment.align)
-            for file in segment:
-                newFile = File(file.filepath, file.vram, file.size, file.sectionType, file.vrom, file.align)
-                for symbol in file:
-                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align)
+            for section in segment:
+                newSection = Section(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align, section.isFill)
+                for symbol in section:
+                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align, symbol.nonmatchingSymExists)
 
-                    newFile._symbols.append(newSymbol)
-                newSegment._filesList.append(newFile)
+                    newSection._symbols.append(newSymbol)
+                newSegment._sectionsList.append(newSection)
             self._segmentsList.append(newSegment)
 
+    def _transferContentsToNativeMapFile(self) -> MapFileRs:
+        nativeMapFile = MapFileRs()
+
+        for segment in self._segmentsList:
+            newSegment = SegmentRs(segment.name, segment.vram, segment.size, segment.vrom, segment.align)
+            for section in segment._sectionsList:
+                newSection = SectionRs(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align, section.isFill)
+                for symbol in section._symbols:
+                    size = symbol.size if symbol.size is not None else 0
+                    newSymbol = SymbolRs(symbol.name, symbol.vram, size, symbol.vrom, symbol.align, symbol.nonmatchingSymExists)
+
+                    newSection.appendSymbol(newSymbol)
+                newSegment.appendFile(newSection)
+            nativeMapFile.appendSegment(newSegment)
+
+        return nativeMapFile
+
+    #! @deprecated: Use either `newFromMapFile` instead.
     def readMapFile(self, mapPath: Path):
         """
         Opens the mapfile pointed by the `mapPath` argument and parses it.
@@ -631,6 +707,7 @@ class MapFile:
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
+    #! @deprecated: Use either `newFromMapStr` instead.
     def parseMapContents(self, mapContents: str):
         """
         Parses the contents of the map.
@@ -649,6 +726,7 @@ class MapFile:
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
+    #! @deprecated: Use either `newFromGnuMapStr` instead.
     def parseMapContentsGNU(self, mapContents: str):
         """
         Parses the contents of a GNU ld map.
@@ -661,6 +739,7 @@ class MapFile:
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
+    #! @deprecated: Use either `newFromLldMapStr` instead.
     def parseMapContentsLLD(self, mapContents: str):
         """
         Parses the contents of a clang ld.lld map.
@@ -712,7 +791,7 @@ class MapFile:
                 return info
         return None
 
-    def findSymbolByVram(self, address: int) -> tuple[FoundSymbolInfo|None, list[File]]:
+    def findSymbolByVram(self, address: int) -> tuple[FoundSymbolInfo|None, list[Section]]:
         """
         Returns a symbol with the specified VRAM address (or with an addend) if
         it exists on the mapfile.
@@ -722,7 +801,7 @@ class MapFile:
         globally visible.
         """
 
-        possibleFiles: list[File] = []
+        possibleFiles: list[Section] = []
         for segment in self._segmentsList:
             info, possibleFilesAux = segment.findSymbolByVram(address)
             if info is not None:
@@ -730,7 +809,7 @@ class MapFile:
             possibleFiles.extend(possibleFilesAux)
         return None, possibleFiles
 
-    def findSymbolByVrom(self, address: int) -> tuple[FoundSymbolInfo|None, list[File]]:
+    def findSymbolByVrom(self, address: int) -> tuple[FoundSymbolInfo|None, list[Section]]:
         """
         Returns a symbol with the specified VRAM address (or with an addend) if
         it exists on the mapfile.
@@ -740,7 +819,7 @@ class MapFile:
         globally visible.
         """
 
-        possibleFiles: list[File] = []
+        possibleFiles: list[Section] = []
         for segment in self._segmentsList:
             info, possibleFilesAux = segment.findSymbolByVrom(address)
             if info is not None:
@@ -748,7 +827,7 @@ class MapFile:
             possibleFiles.extend(possibleFilesAux)
         return None, possibleFiles
 
-    def findLowestDifferingSymbol(self, otherMapFile: MapFile) -> tuple[Symbol, File, Symbol|None]|None:
+    def findLowestDifferingSymbol(self, otherMapFile: MapFile) -> tuple[Symbol, Section, Symbol|None]|None:
         minVram = None
         found = None
         foundIndices = (0, 0)
@@ -771,12 +850,12 @@ class MapFile:
 
         if found is not None and found[2] is None:
             # Previous symbol was not in the same section of the given
-            # file, so we try to backtrack until we find any symbol.
+            # section, so we try to backtrack until we find any symbol.
 
             foundBuiltSym, foundBuiltFile, _ = found
             i, j = foundIndices
 
-            # We want to check the previous file, not the current one,
+            # We want to check the previous section, not the current one,
             # since we already know the current one doesn't have a symbol
             # preceding the one we found.
             j -= 1;
@@ -809,19 +888,9 @@ class MapFile:
 
         return newMapFile
 
+    #! @deprecated. This functionality is perform automatically during parsing now.
     def fixupNonMatchingSymbols(self) -> MapFile:
-        newMapFile = self.clone()
-
-        for segment in newMapFile._segmentsList:
-            for file in segment._filesList:
-                for sym in file._symbols:
-                    if sym.name.endswith(".NON_MATCHING") and sym.size != 0:
-                        realSym = file.findSymbolByName(sym.name.replace(".NON_MATCHING", ""))
-                        if realSym is not None and realSym.size == 0:
-                            realSym.size = sym.size
-                            sym.size = 0
-
-        return newMapFile
+        return self.clone()
 
     def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2, checkFunctionFiles: bool=True) -> tuple[ProgressStats, dict[str, ProgressStats]]:
         totalStats = ProgressStats()
@@ -831,11 +900,11 @@ class MapFile:
             utils.eprint(f"getProgress():")
 
         for segment in self._segmentsList:
-            for file in segment:
-                if len(file) == 0:
+            for section in segment:
+                if len(section) == 0:
                     continue
 
-                folder = file.filepath.parts[pathIndex]
+                folder = section.filepath.parts[pathIndex]
                 if folder in aliases:
                     folder = aliases[folder]
 
@@ -845,7 +914,7 @@ class MapFile:
                 if self.debugging:
                     utils.eprint(f"  folder path: {folder}")
 
-                originalFilePath = Path(*file.filepath.parts[pathIndex:])
+                originalFilePath = Path(*section.filepath.parts[pathIndex:])
 
                 extensionlessFilePath = originalFilePath
                 while extensionlessFilePath.suffix:
@@ -855,12 +924,12 @@ class MapFile:
                 wholeFileIsUndecomped = fullAsmFile.exists()
 
                 if self.debugging:
-                    utils.eprint(f"  original file path: {originalFilePath}")
-                    utils.eprint(f"  extensionless file path: {extensionlessFilePath}")
-                    utils.eprint(f"  full asm file: {fullAsmFile}")
-                    utils.eprint(f"  whole file is undecomped: {wholeFileIsUndecomped}")
+                    utils.eprint(f"  original section path: {originalFilePath}")
+                    utils.eprint(f"  extensionless section path: {extensionlessFilePath}")
+                    utils.eprint(f"  full asm section: {fullAsmFile}")
+                    utils.eprint(f"  whole section is undecomped: {wholeFileIsUndecomped}")
 
-                for func in file:
+                for func in section:
                     if func.name.endswith(".NON_MATCHING"):
                         continue
 
@@ -877,7 +946,7 @@ class MapFile:
                         totalStats.undecompedSize += symSize
                         progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
-                            utils.eprint(f" the whole file is undecomped (no individual function files exist yet)")
+                            utils.eprint(f" the whole section is undecomped (no individual function files exist yet)")
                     elif self.findSymbolByName(f"{func.name}.NON_MATCHING") is not None:
                         totalStats.undecompedSize += symSize
                         progressPerFolder[folder].undecompedSize += symSize
@@ -887,12 +956,12 @@ class MapFile:
                         totalStats.undecompedSize += symSize
                         progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
-                            utils.eprint(f" the function hasn't been matched yet (the function file still exists)")
+                            utils.eprint(f" the function hasn't been matched yet (the function section still exists)")
                     else:
                         totalStats.decompedSize += symSize
                         progressPerFolder[folder].decompedSize += symSize
                         if self.debugging:
-                            utils.eprint(f" the function is matched! (the function file was not found)")
+                            utils.eprint(f" the function is matched! (the function section was not found)")
 
         return totalStats, progressPerFolder
 
@@ -901,26 +970,26 @@ class MapFile:
         compInfo = MapsComparisonInfo()
 
         for segment in self:
-            for file in segment:
-                for symbol in file:
+            for section in segment:
+                for symbol in section:
                     foundSymInfo = otherMapFile.findSymbolByName(symbol.name)
                     if foundSymInfo is not None:
-                        comp = SymbolComparisonInfo(symbol, symbol.vram, file, foundSymInfo.symbol.vram, foundSymInfo.file)
+                        comp = SymbolComparisonInfo(symbol, symbol.vram, section, foundSymInfo.symbol.vram, foundSymInfo.section)
                         compInfo.comparedList.append(comp)
                         if comp.diff != 0:
-                            compInfo.badFiles.add(file)
+                            compInfo.badFiles.add(section)
                     else:
-                        compInfo.missingFiles.add(file)
-                        compInfo.comparedList.append(SymbolComparisonInfo(symbol, symbol.vram, file, -1, None))
+                        compInfo.missingFiles.add(section)
+                        compInfo.comparedList.append(SymbolComparisonInfo(symbol, symbol.vram, section, -1, None))
 
         if checkOtherOnSelf:
             for segment in otherMapFile:
-                for file in segment:
-                    for symbol in file:
+                for section in segment:
+                    for symbol in section:
                         foundSymInfo = self.findSymbolByName(symbol.name)
                         if foundSymInfo is None:
-                            compInfo.missingFiles.add(file)
-                            compInfo.comparedList.append(SymbolComparisonInfo(symbol, -1, None, symbol.vram, file))
+                            compInfo.missingFiles.add(section)
+                            compInfo.comparedList.append(SymbolComparisonInfo(symbol, -1, None, symbol.vram, section))
 
         return compInfo
 
@@ -933,13 +1002,13 @@ class MapFile:
 
 
     def toCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True) -> str:
-        ret = File.toCsvHeader(printVram=printVram) + "\n"
+        ret = Section.toCsvHeader(printVram=printVram) + "\n"
         for segment in self._segmentsList:
             ret += segment.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols)
         return ret
 
     def toCsvSymbols(self) -> str:
-        ret = f"File," + Symbol.toCsvHeader() + "\n"
+        ret = f"Section," + Symbol.toCsvHeader() + "\n"
 
         for segment in self._segmentsList:
             ret += segment.toCsvSymbols()
@@ -978,8 +1047,8 @@ class MapFile:
 
 
     def __iter__(self) -> Generator[Segment, None, None]:
-        for file in self._segmentsList:
-            yield file
+        for section in self._segmentsList:
+            yield section
 
     def __getitem__(self, index) -> Segment:
         return self._segmentsList[index]

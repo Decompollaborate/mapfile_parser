@@ -1,4 +1,4 @@
-File,Symbol name,VRAM,Size in bytes
+Section,Symbol name,VRAM,Size in bytes
 build/bin/jp/makerom/ipl3.o,_binary_bin_jp_makerom_ipl3_bin_start,80024C40,4032
 build/bin/jp/makerom/ipl3.o,_binary_bin_jp_makerom_ipl3_bin_end,80025C00,0
 build/asm/jp/makerom/entry.o,entrypoint,80025C00,96

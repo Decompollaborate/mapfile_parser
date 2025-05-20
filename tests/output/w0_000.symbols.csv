@@ -1,4 +1,4 @@
-File,Symbol name,VRAM,Size in bytes
+Section,Symbol name,VRAM,Size in bytes
 build/us/src/weapon/header.c.o,g_Weapon,8017A000,64
 build/us/asm/us/weapon/data/w_000.data.s.o,D_4000_8017A040,8017A040,324
 build/us/asm/us/weapon/data/w_000.data.s.o,D_4000_8017A184,8017A184,28

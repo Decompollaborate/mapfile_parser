@@ -1,4 +1,4 @@
-VRAM,File,Section type,Num symbols,Max size,Total size,Average size
+VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
 80024C40,build/bin/jp/makerom/ipl3.o,.data,2,4032,4032,2016.00
 80025C00,build/asm/jp/makerom/entry.o,.text,1,96,96,96.00
 80025C60,build/src/boot/boot_main.o,.text,2,304,400,200.00

@@ -11,6 +11,7 @@ use pyo3::prelude::*;
 use serde::{Deserialize, Serialize};
 
 #[derive(Debug, Clone)]
+#[non_exhaustive]
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 #[cfg_attr(feature = "serde", derive(Serialize, Deserialize))]
 pub struct Symbol {
@@ -18,20 +19,28 @@ pub struct Symbol {
 
     pub vram: u64,
 
-    pub size: Option<u64>,
+    pub size: u64,
 
     pub vrom: Option<u64>,
 
     pub align: Option<u64>,
+
+    /// `true` if a symbol with the same name, but with a `.NON_MATCHING`
+    /// suffix is found in this symbol's section. `false` otherwise.
+    ///
+    /// Note the symbol with the actual `.NON_MATCHING` will have this member
+    /// set to `false`.
+    pub nonmatching_sym_exists: bool,
 }
 
 impl Symbol {
-    pub fn new(
+    fn new_impl(
         name: String,
         vram: u64,
-        size: Option<u64>,
+        size: u64,
         vrom: Option<u64>,
         align: Option<u64>,
+        nonmatching_sym_exists: bool,
     ) -> Self {
         Self {
             name,
@@ -39,17 +48,16 @@ impl Symbol {
             size,
             vrom,
             align,
+            nonmatching_sym_exists,
         }
     }
 
+    pub fn new(name: String, vram: u64, size: u64, vrom: Option<u64>, align: Option<u64>) -> Self {
+        Self::new_impl(name, vram, size, vrom, align, false)
+    }
+
     pub fn new_default(name: String, vram: u64) -> Self {
-        Self {
-            name,
-            vram,
-            size: None,
-            vrom: None,
-            align: None,
-        }
+        Self::new_impl(name, vram, 0, None, None, false)
     }
 
     pub fn get_vram_str(&self) -> String {
@@ -57,11 +65,7 @@ impl Symbol {
     }
 
     pub fn get_size_str(&self) -> String {
-        if let Some(size) = self.size {
-            //return format!("0x{0:X}", size);
-            return format!("{}", size);
-        }
-        "None".into()
+        format!("{}", self.size)
     }
 
     pub fn get_vrom_str(&self) -> String {
@@ -124,15 +128,16 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl super::Symbol {
         #[new]
-        #[pyo3(signature=(name,vram,size=None,vrom=None,align=None))]
+        #[pyo3(signature=(name,vram,size=0,vrom=None,align=None, nonmatchingSymExists=false))]
         fn py_new(
             name: String,
             vram: u64,
-            size: Option<u64>,
+            size: u64,
             vrom: Option<u64>,
             align: Option<u64>,
+            nonmatchingSymExists: bool,
         ) -> Self {
-            Self::new(name, vram, size, vrom, align)
+            Self::new_impl(name, vram, size, vrom, align, nonmatchingSymExists)
         }
 
         /* Getters and setters */
@@ -160,12 +165,12 @@ pub(crate) mod python_bindings {
         }
 
         #[getter]
-        fn get_size(&self) -> PyResult<Option<u64>> {
+        fn get_size(&self) -> PyResult<u64> {
             Ok(self.size)
         }
 
         #[setter]
-        fn set_size(&mut self, value: Option<u64>) -> PyResult<()> {
+        fn set_size(&mut self, value: u64) -> PyResult<()> {
             self.size = value;
             Ok(())
         }
@@ -192,6 +197,17 @@ pub(crate) mod python_bindings {
             Ok(())
         }
 
+        #[getter]
+        fn get_nonmatchingSymExists(&self) -> PyResult<bool> {
+            Ok(self.nonmatching_sym_exists)
+        }
+
+        #[setter]
+        fn set_nonmatchingSymExists(&mut self, value: bool) -> PyResult<()> {
+            self.nonmatching_sym_exists = value;
+            Ok(())
+        }
+
         /* Serializers */
 
         #[pyo3(signature=(_humanReadable=true))]
@@ -212,14 +228,11 @@ pub(crate) mod python_bindings {
 
         #[pyo3(signature=(humanReadable=true))]
         fn serializeSize(&self, humanReadable: bool) -> PyResult<PyObject> {
-            Python::with_gil(|py| match self.size {
-                None => Ok(Python::None(py)),
-                Some(size) => {
-                    if humanReadable {
-                        return format!("0x{:X}", size).into_py_any(py);
-                    }
-                    size.into_py_any(py)
+            Python::with_gil(|py| {
+                if humanReadable {
+                    return format!("0x{:X}", self.size).into_py_any(py);
                 }
+                self.size.into_py_any(py)
             })
         }
 

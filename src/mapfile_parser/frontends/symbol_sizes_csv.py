@@ -38,8 +38,13 @@ def doSymbolSizesCsv(mapPath: Path, outputPath: Path|None, filterSection: str|No
 
     return 0
 
-def processArguments(args: argparse.Namespace):
-    mapPath: Path = args.mapfile
+def processArguments(args: argparse.Namespace, decompConfig=None):
+    if decompConfig is not None:
+        version = decompConfig.get_version_by_name(args.version)
+        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
+    else:
+        mapPath = args.mapfile
+
     outputPath: Path|None = Path(args.output) if args.output is not None else None
     filterSection: str|None = args.filter_section
     sameFolder: bool = args.same_folder
@@ -48,10 +53,18 @@ def processArguments(args: argparse.Namespace):
 
     exit(doSymbolSizesCsv(mapPath, outputPath, filterSection, sameFolder, symbolsSummary, allFiles))
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser]):
+def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
     parser = subparser.add_parser("symbol_sizes_csv", help="Produces a csv summarizing the files sizes by parsing a map file.")
 
-    parser.add_argument("mapfile", help="Path to a map file", type=Path)
+    nargs: str|int = 1
+    if decompConfig is not None:
+        nargs = "?"
+        versions = []
+        for version in decompConfig.versions:
+            versions.append(version.name)
+        parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
+
+    parser.add_argument("mapfile", help="Path to a map file. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
     parser.add_argument("-o", "--output", help="Output path of for the generated csv. If omitted then stdout is used instead.")
     parser.add_argument("--same-folder", help="Mix files in the same folder.", action="store_true")
     parser.add_argument("--symbols", help="Prints the size of every symbol instead of a summary.", action="store_true")
