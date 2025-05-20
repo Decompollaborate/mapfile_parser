@@ -37,38 +37,41 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
         assert version is not None
-        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths["map"])
-        asmPath = Path(args.asmpath if args.asmpath is not None else version.paths["asm"])
-
+        mapPath = Path(version.paths["map"])
+        asmPath = Path(version.paths["asm"])
     else:
         mapPath = args.mapfile
         asmPath = args.asmpath
 
     settings = SpecificSettings.fromDecompConfig(decompConfig)
     if settings is not None:
-        if args.output is not None:
-            outputPath = args.output
-        else:
-            assert settings.output is not None
+        if settings.output is not None:
             outputPath = settings.output
+        else:
+            outputPath = args.output
 
-        if args.prefixes_to_trim is not None:
+        if len(settings.prefixesToTrim) > 0:
+            prefixesToTrim = settings.prefixesToTrim
+        elif args.prefixes_to_trim is not None:
             prefixesToTrim = list(args.prefixes_to_trim)
         else:
-            prefixesToTrim = settings.prefixesToTrim
+            prefixesToTrim = []
 
         for cat in settings.categories:
             reportCategories.push(cat.ide, cat.name, cat.paths)
 
-        if args.path_index is not None:
+        if settings.pathIndex is not None:
+            pathIndex = settings.pathIndex
+        elif args.path_index is not None:
             pathIndex = int(args.path_index)
-        elif settings.pathId is not None:
-            pathIndex = settings.pathId
         else:
             pathIndex = pathIndexDefault
     else:
         outputPath: Path = args.output
-        prefixesToTrim = args.prefixes_to_trim
+        if args.prefixes_to_trim is not None:
+            prefixesToTrim = list(args.prefixes_to_trim)
+        else:
+            prefixesToTrim = []
         pathIndex = int(args.path_index) if args.path_index is not None else pathIndexDefault
 
     exit(doObjdiffReport(mapPath, asmPath, outputPath, prefixesToTrim, reportCategories, pathIndex=pathIndex))
@@ -76,9 +79,11 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
     parser = subparser.add_parser("objdiff_report", help="Computes current progress of the matched functions. Expects `.NON_MATCHING` marker symbols on the mapfile to know which symbols are not matched yet.")
 
-    nargs_mapfile: str|int = 1
-    nargs_asmpath: str|int = 1
-    nargs_output: str|int = 1
+    emitMapfile = True
+    emitAsmpath = True
+    emitOutput = True
+    emitPrefixesToTrim = True
+    emitPathIndex = True
     settings = SpecificSettings.fromDecompConfig(decompConfig)
     if settings is not None:
         assert decompConfig is not None
@@ -88,16 +93,27 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
 
         if len(versions) > 0:
             parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
-            nargs_mapfile = "?"
-            nargs_asmpath = "?"
+            emitMapfile = False
+            emitAsmpath = False
         if settings.output is not None:
-            nargs_output = "?"
+            emitOutput = False
+        if len(settings.prefixesToTrim) > 0:
+            emitPrefixesToTrim = False
+        if settings.pathIndex is not None:
+            emitPathIndex = False
 
-    parser.add_argument("mapfile", help="Path to a map file. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs_mapfile)
-    parser.add_argument("asmpath", help="Path to asm folder. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs_asmpath)
-    parser.add_argument("output", help="Path to output file.", type=Path, nargs=nargs_output)
-    parser.add_argument("-t", "--prefixes-to-trim", help="", action="append")
-    parser.add_argument("-i", "--path-index", help="Specify the index to start reading the file paths. Defaults to 2", type=int)
+    # CLI options exists only if they are not present on the decomp.yaml file
+    if emitMapfile:
+        parser.add_argument("mapfile", help="Path to a map file.", type=Path)
+    if emitAsmpath:
+        parser.add_argument("asmpath", help="Path to asm folder.", type=Path)
+    if emitOutput:
+        parser.add_argument("output", help="Path to output file.", type=Path)
+
+    if emitPrefixesToTrim:
+        parser.add_argument("-t", "--prefixes-to-trim", help="", action="append")
+    if emitPathIndex:
+        parser.add_argument("-i", "--path-index", help="Specify the index to start reading the file paths. Defaults to 2", type=int)
 
     parser.set_defaults(func=processArguments)
 
@@ -107,7 +123,7 @@ class SpecificSettings:
     output: Path|None
     prefixesToTrim: list[str]
     categories: list[Category]
-    pathId: int|None
+    pathIndex: int|None
 
     @staticmethod
     def fromDecompConfig(decompConfig) -> SpecificSettings|None:
@@ -117,7 +133,7 @@ class SpecificSettings:
         output = None
         prefixesToTrim = []
         categories = []
-        pathId = None
+        pathIndex = None
         if decompConfig.tools is not None:
             mapfileParserConfig = decompConfig.tools.get("mapfile_parser")
             if mapfileParserConfig is not None:
@@ -137,13 +153,13 @@ class SpecificSettings:
                                 categories.append(Category.from_dict(x))
                         var = raw.get("path_index")
                         if var is not None:
-                            pathId = var
+                            pathIndex = var
 
         return SpecificSettings(
             output,
             prefixesToTrim,
             categories,
-            pathId,
+            pathIndex,
         )
 
 @dataclasses.dataclass
