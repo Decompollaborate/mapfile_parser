@@ -65,10 +65,17 @@ def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, proje
     return uploadEntriesToFrogress(entries, category, url, apikey=apikey, verbose=verbose)
 
 
-def processArguments(args: argparse.Namespace):
-    mapPath: Path = args.mapfile
-    asmPath: Path = args.asmpath
-    nonmatchingsPath: Path = args.nonmatchingspath
+def processArguments(args: argparse.Namespace, decompConfig=None):
+    if decompConfig is not None:
+        decomp_version = decompConfig.get_version_by_name(args.version)
+        mapPath: Path = Path(args.mapfile if args.mapfile is not None else decomp_version.get("map"))
+        asmPath: Path = Path(args.asmpath if args.asmpath is not None else decomp_version.get("asm"))
+        nonmatchingsPath: Path = Path(args.nonmatchingspath if args.nonmatchingspath is not None else decomp_version.get("nonmatchings"))
+    else:
+        mapPath: Path = args.mapfile
+        asmPath: Path = args.asmpath
+        nonmatchingsPath: Path = args.nonmatchingspath
+
     project: str = args.project
     version: str = args.version
     category: str = args.category
@@ -79,14 +86,26 @@ def processArguments(args: argparse.Namespace):
 
     exit(doUploadFrogress(mapPath, asmPath, nonmatchingsPath, project, version, category, baseurl, apikey, verbose, checkFunctionFiles))
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser]):
+def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
     parser = subparser.add_parser("upload_frogress", help="Uploads current progress of the matched functions to frogress (https://github.com/decompals/frogress).")
 
-    parser.add_argument("mapfile", help="Path to a map file", type=Path)
-    parser.add_argument("asmpath", help="Path to asm folder", type=Path)
-    parser.add_argument("nonmatchingspath", help="Path to nonmatchings folder", type=Path)
+    nargs: str|int = 1
+    if decompConfig is not None:
+        nargs = "?"
+
+    parser.add_argument("mapfile", help="Path to a map file. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
+    parser.add_argument("asmpath", help="Path to asm folder. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
+    parser.add_argument("nonmatchingspath", help="Path to nonmatchings folder. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
     parser.add_argument("project", help="Project slug")
-    parser.add_argument("version", help="Version slug")
+
+    if decompConfig is not None:
+        versions = []
+        for version in decompConfig.versions:
+            versions.append(version.name)
+        parser.add_argument("version", help="Version slug", type=str, choices=versions)
+    else:
+        parser.add_argument("version", help="Version slug")
+
     parser.add_argument("category", help="Category slug")
     parser.add_argument("--baseurl", help="API base URL", default="https://progress.deco.mp")
     parser.add_argument("--apikey", help="API key. Dry run is performed if this option is omitted")

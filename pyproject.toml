@@ -8,7 +8,8 @@ description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
-    "requests"
+    "requests",
+    "decomp-settings==0.0.7",
 ]
 classifiers = [
     "Programming Language :: Rust",
