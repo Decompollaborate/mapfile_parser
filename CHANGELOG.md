@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.0] - 2025-05-20
+
 ### Added
 
 - `File::symbol_match_state_iter()` function. Returns an iterator over
@@ -25,6 +27,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   the same name but with a `.NON_MATCHING` suffix is found on the same section.
   - The other suffixed symbol (`.NON_MATCHING`) is still retained in the section.
   - The suffixed symbol will have this member set to `false`.
+- Add support for the `decomp.yaml` specification from the
+  [`decomp_settings`](https://github.com/ethteck/decomp_settings) project on all
+  the provided CLI utilities.
+  - If a `decomp.yaml` file is detected, then every CLI argument that can be
+    inferred from that file will be be considered optional instead.
+  - Most CLI utilites will also add a new optional "version" argument to allow
+    picking the version to process from the `decomp.yaml` file. It defaults to
+    the first listed version.
 
 ### Changed
 
@@ -521,6 +531,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.8.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.5...2.8.0
 [2.7.5]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.4...2.7.5
 [2.7.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.3...2.7.4
 [2.7.3]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.2...2.7.3

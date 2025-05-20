@@ -13,7 +13,7 @@ from .. import mapfile
 from .. import utils
 
 
-def getComparison(mapPath: Path, expectedMapPath: Path, *, reverseCheck: bool=True) -> mapfile.MapsComparisonInfo:
+def getComparison(mapPath, expectedMapPath, *, reverseCheck: bool=True) -> mapfile.MapsComparisonInfo:
     buildMap = mapfile.MapFile()
     buildMap.readMapFile(mapPath)
     buildMap = buildMap.filterBySectionType(".bss")
@@ -126,7 +126,7 @@ def printFileComparison(comparisonInfo: mapfile.MapsComparisonInfo):
         utils.eprint("Some files appear to be missing symbols. Have they been renamed or declared as static? You may need to remake 'expected'")
 
 
-def doBssCheck(mapPath: Path, expectedMapPath: Path, *, printAll: bool=False, reverseCheck: bool=True) -> int:
+def doBssCheck(mapPath, expectedMapPath, *, printAll: bool=False, reverseCheck: bool=True) -> int:
     if not mapPath.exists():
         utils.eprint(f"{mapPath} must exist")
         return 1
@@ -147,9 +147,15 @@ def doBssCheck(mapPath: Path, expectedMapPath: Path, *, printAll: bool=False, re
     return 0
 
 
-def processArguments(args: argparse.Namespace):
-    mapPath: Path = args.mapfile
-    expectedMapPath: Path = args.expectedmap
+def processArguments(args: argparse.Namespace, decompConfig=None):
+    if decompConfig is not None:
+        version = decompConfig.get_version_by_name(args.version)
+        expectedDir = Path(version.paths["expected_dir"])
+        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
+        expectedMapPath = args.expectedmap if args.expectedmap is not None else expectedDir / mapPath
+    else:
+        mapPath = args.mapfile
+        expectedMapPath = args.expectedmap
 
     printAll: bool = args.print_all
     reverseCheck: bool = not args.no_reverse_check
@@ -157,11 +163,19 @@ def processArguments(args: argparse.Namespace):
     exit(doBssCheck(mapPath, expectedMapPath, printAll=printAll, reverseCheck=reverseCheck))
 
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser]):
+def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
     parser = subparser.add_parser("bss_check", help="Check that globally visible bss has not been reordered.")
 
-    parser.add_argument("mapfile", help="Path to a map file", type=Path)
-    parser.add_argument("expectedmap", help="Path to the map file in the expected dir", type=Path)
+    nargs: str|int = 1
+    if decompConfig is not None:
+        nargs = "?"
+        versions = []
+        for version in decompConfig.versions:
+            versions.append(version.name)
+        parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
+
+    parser.add_argument("mapfile", help="Path to a map file. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
+    parser.add_argument("expectedmap", help="Path to the map file in the expected dir. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
 
     parser.add_argument("-a", "--print-all", help="Print all bss, not just non-matching.", action="store_true")
     parser.add_argument("--no-reverse-check", help="Disable looking for symbols on the expected map that are missing on the built map file.", action="store_true")
