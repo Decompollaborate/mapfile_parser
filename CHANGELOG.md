@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.8.0] - 2025-05-20
+
 ### Added
 
 - `File::symbol_match_state_iter()` function. Returns an iterator over
@@ -527,6 +529,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.8.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.5...2.8.0
 [2.7.5]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.4...2.7.5
 [2.7.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.3...2.7.4
 [2.7.3]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.2...2.7.3
