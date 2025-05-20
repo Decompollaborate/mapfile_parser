@@ -43,6 +43,7 @@ first listed version.
     mapfile_parser.frontends.bss_check.addSubparser(subparsers, decompConfig)
     mapfile_parser.frontends.first_diff.addSubparser(subparsers, decompConfig)
     mapfile_parser.frontends.jsonify.addSubparser(subparsers, decompConfig)
+    mapfile_parser.frontends.objdiff_report.addSubparser(subparsers, decompConfig)
     mapfile_parser.frontends.pj64_syms.addSubparser(subparsers, decompConfig)
     mapfile_parser.frontends.progress.addSubparser(subparsers, decompConfig)
     mapfile_parser.frontends.sym_info.addSubparser(subparsers, decompConfig)

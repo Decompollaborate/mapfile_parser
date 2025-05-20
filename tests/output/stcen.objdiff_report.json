@@ -1,0 +1,1586 @@
+{
+  "measures": {
+    "fuzzy_match_percent": 100.0,
+    "total_code": "61700",
+    "matched_code": "61700",
+    "matched_code_percent": 100.0,
+    "matched_data_percent": 100.0,
+    "total_functions": 128,
+    "matched_functions": 128,
+    "matched_functions_percent": 100.0,
+    "complete_data_percent": 100.0,
+    "total_units": 13
+  },
+  "units": [
+    {
+      "name": "us/st/cen/data/0.data",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".data",
+          "size": "4820",
+          "metadata": {
+            "virtual_address": "2149056512"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "us"
+        ]
+      }
+    },
+    {
+      "name": "assets/st/cen/g_Rooms",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".data",
+          "size": "44",
+          "metadata": {
+            "virtual_address": "2149061332"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "assets"
+        ]
+      }
+    },
+    {
+      "name": "us/st/cen/data/1300.data",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".data",
+          "size": "49452",
+          "metadata": {
+            "virtual_address": "2149061376"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "us"
+        ]
+      }
+    },
+    {
+      "name": "us/st/cen/data/D42C.rodata",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "132",
+          "metadata": {
+            "virtual_address": "2149110828"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "us"
+        ]
+      }
+    },
+    {
+      "name": "st/cen/D600",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "14412",
+        "matched_code": "14412",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 23,
+        "matched_functions": 23,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "40",
+          "metadata": {
+            "virtual_address": "2149110960"
+          }
+        },
+        {
+          "name": ".text",
+          "size": "14412",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149111296"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "EntityBackgroundBlock",
+          "size": "224",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149111296"
+          },
+          "address": "0"
+        },
+        {
+          "name": "EntityUnkId12",
+          "size": "444",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149111520"
+          },
+          "address": "224"
+        },
+        {
+          "name": "EntityUnkId01",
+          "size": "636",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149111964"
+          },
+          "address": "668"
+        },
+        {
+          "name": "func_8018DB18",
+          "size": "1012",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149112600"
+          },
+          "address": "1304"
+        },
+        {
+          "name": "func_8018DF0C",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149113612"
+          },
+          "address": "2316"
+        },
+        {
+          "name": "func_8018DF60",
+          "size": "452",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149113696"
+          },
+          "address": "2400"
+        },
+        {
+          "name": "func_8018E124",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149114148"
+          },
+          "address": "2852"
+        },
+        {
+          "name": "func_8018E180",
+          "size": "184",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149114240"
+          },
+          "address": "2944"
+        },
+        {
+          "name": "func_8018E238",
+          "size": "388",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149114424"
+          },
+          "address": "3128"
+        },
+        {
+          "name": "func_8018E3BC",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149114812"
+          },
+          "address": "3516"
+        },
+        {
+          "name": "func_8018E3E8",
+          "size": "732",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149114856"
+          },
+          "address": "3560"
+        },
+        {
+          "name": "func_8018E6C4",
+          "size": "260",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149115588"
+          },
+          "address": "4292"
+        },
+        {
+          "name": "EntityUnkId16",
+          "size": "4296",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149115848"
+          },
+          "address": "4552"
+        },
+        {
+          "name": "func_8018F890",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149120144"
+          },
+          "address": "8848"
+        },
+        {
+          "name": "func_8018F8EC",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149120236"
+          },
+          "address": "8940"
+        },
+        {
+          "name": "EntityPlatform",
+          "size": "1824",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149120348"
+          },
+          "address": "9052"
+        },
+        {
+          "name": "EntityRoomDarkness",
+          "size": "760",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149122172"
+          },
+          "address": "10876"
+        },
+        {
+          "name": "EntityMaria",
+          "size": "152",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149122932"
+          },
+          "address": "11636"
+        },
+        {
+          "name": "func_8019040C",
+          "size": "172",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149123084"
+          },
+          "address": "11788"
+        },
+        {
+          "name": "func_801904B8",
+          "size": "136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149123256"
+          },
+          "address": "11960"
+        },
+        {
+          "name": "EntityElevatorStationary",
+          "size": "1336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149123392"
+          },
+          "address": "12096"
+        },
+        {
+          "name": "EntityUnkId1B",
+          "size": "236",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149124728"
+          },
+          "address": "13432"
+        },
+        {
+          "name": "EntityMovingElevator",
+          "size": "744",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149124964"
+          },
+          "address": "13668"
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "st"
+        ]
+      }
+    },
+    {
+      "name": "us/st/cen/data/D4D8.rodata",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "296",
+          "metadata": {
+            "virtual_address": "2149111000"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "us"
+        ]
+      }
+    },
+    {
+      "name": "st/cen/10E4C",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "1076",
+        "matched_code": "1076",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 3,
+        "matched_functions": 3,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "1076",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149125708"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "Random",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149125708"
+          },
+          "address": "0"
+        },
+        {
+          "name": "Update",
+          "size": "764",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149125756"
+          },
+          "address": "48"
+        },
+        {
+          "name": "UpdateStageEntities",
+          "size": "264",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149126520"
+          },
+          "address": "812"
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "st"
+        ]
+      }
+    },
+    {
+      "name": "st/cen/11280",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "40948",
+        "matched_code": "40948",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 89,
+        "matched_functions": 89,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "40948",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149126784"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "TestCollisions",
+          "size": "4376",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149126784"
+          },
+          "address": "0"
+        },
+        {
+          "name": "EntityNumericDamage",
+          "size": "1700",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149131160"
+          },
+          "address": "4376"
+        },
+        {
+          "name": "CreateEntityFromLayout",
+          "size": "196",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149132860"
+          },
+          "address": "6076"
+        },
+        {
+          "name": "CreateEntityWhenInVerticalRange",
+          "size": "280",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149133056"
+          },
+          "address": "6272"
+        },
+        {
+          "name": "CreateEntityWhenInHorizontalRange",
+          "size": "280",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149133336"
+          },
+          "address": "6552"
+        },
+        {
+          "name": "func_80192D30",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149133616"
+          },
+          "address": "6832"
+        },
+        {
+          "name": "func_80192D7C",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149133692"
+          },
+          "address": "6908"
+        },
+        {
+          "name": "func_80192DD4",
+          "size": "252",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149133780"
+          },
+          "address": "6996"
+        },
+        {
+          "name": "func_80192ED0",
+          "size": "276",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149134032"
+          },
+          "address": "7248"
+        },
+        {
+          "name": "func_80192FE4",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149134308"
+          },
+          "address": "7524"
+        },
+        {
+          "name": "func_80193030",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149134384"
+          },
+          "address": "7600"
+        },
+        {
+          "name": "func_80193088",
+          "size": "252",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149134472"
+          },
+          "address": "7688"
+        },
+        {
+          "name": "func_80193184",
+          "size": "276",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149134724"
+          },
+          "address": "7940"
+        },
+        {
+          "name": "InitRoomEntities",
+          "size": "376",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149135000"
+          },
+          "address": "8216"
+        },
+        {
+          "name": "func_80193410",
+          "size": "180",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149135376"
+          },
+          "address": "8592"
+        },
+        {
+          "name": "CreateEntityFromCurrentEntity",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149135556"
+          },
+          "address": "8772"
+        },
+        {
+          "name": "CreateEntityFromEntity",
+          "size": "124",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149135672"
+          },
+          "address": "8888"
+        },
+        {
+          "name": "func_801935B4",
+          "size": "120",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149135796"
+          },
+          "address": "9012"
+        },
+        {
+          "name": "EntityRedDoor",
+          "size": "3128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149135916"
+          },
+          "address": "9132"
+        },
+        {
+          "name": "DestroyEntity",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149139044"
+          },
+          "address": "12260"
+        },
+        {
+          "name": "func_801942D0",
+          "size": "124",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149139152"
+          },
+          "address": "12368"
+        },
+        {
+          "name": "func_8019434C",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149139276"
+          },
+          "address": "12492"
+        },
+        {
+          "name": "func_80194394",
+          "size": "184",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149139348"
+          },
+          "address": "12564"
+        },
+        {
+          "name": "func_8019444C",
+          "size": "280",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149139532"
+          },
+          "address": "12748"
+        },
+        {
+          "name": "GetDistanceToPlayerX",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149139812"
+          },
+          "address": "13028"
+        },
+        {
+          "name": "GetDistanceToPlayerY",
+          "size": "52",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149139872"
+          },
+          "address": "13088"
+        },
+        {
+          "name": "GetSideToPlayer",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149139924"
+          },
+          "address": "13140"
+        },
+        {
+          "name": "MoveEntity",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149139992"
+          },
+          "address": "13208"
+        },
+        {
+          "name": "FallEntity",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149140040"
+          },
+          "address": "13256"
+        },
+        {
+          "name": "func_80194674",
+          "size": "632",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149140084"
+          },
+          "address": "13300"
+        },
+        {
+          "name": "func_801948EC",
+          "size": "488",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149140716"
+          },
+          "address": "13932"
+        },
+        {
+          "name": "AllocEntity",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149141204"
+          },
+          "address": "14420"
+        },
+        {
+          "name": "func_80194B34",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149141300"
+          },
+          "address": "14516"
+        },
+        {
+          "name": "func_80194B60",
+          "size": "28",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149141344"
+          },
+          "address": "14560"
+        },
+        {
+          "name": "func_80194B7C",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149141372"
+          },
+          "address": "14588"
+        },
+        {
+          "name": "func_80194BE8",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149141480"
+          },
+          "address": "14696"
+        },
+        {
+          "name": "func_80194C20",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149141536"
+          },
+          "address": "14752"
+        },
+        {
+          "name": "func_80194C68",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149141608"
+          },
+          "address": "14824"
+        },
+        {
+          "name": "func_80194CB0",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149141680"
+          },
+          "address": "14896"
+        },
+        {
+          "name": "func_80194D08",
+          "size": "140",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149141768"
+          },
+          "address": "14984"
+        },
+        {
+          "name": "func_80194D94",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149141908"
+          },
+          "address": "15124"
+        },
+        {
+          "name": "func_80194DC4",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149141956"
+          },
+          "address": "15172"
+        },
+        {
+          "name": "func_80194DFC",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149142012"
+          },
+          "address": "15228"
+        },
+        {
+          "name": "func_80194E44",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149142084"
+          },
+          "address": "15300"
+        },
+        {
+          "name": "SetStep",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149142180"
+          },
+          "address": "15396"
+        },
+        {
+          "name": "func_80194EC4",
+          "size": "28",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149142212"
+          },
+          "address": "15428"
+        },
+        {
+          "name": "func_80194EE0",
+          "size": "148",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149142240"
+          },
+          "address": "15456"
+        },
+        {
+          "name": "InitializeEntity",
+          "size": "252",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149142388"
+          },
+          "address": "15604"
+        },
+        {
+          "name": "func_80195070",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149142640"
+          },
+          "address": "15856"
+        },
+        {
+          "name": "func_80195098",
+          "size": "296",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149142680"
+          },
+          "address": "15896"
+        },
+        {
+          "name": "func_801951C0",
+          "size": "344",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149142976"
+          },
+          "address": "16192"
+        },
+        {
+          "name": "func_80195318",
+          "size": "836",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149143320"
+          },
+          "address": "16536"
+        },
+        {
+          "name": "func_8019565C",
+          "size": "184",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149144156"
+          },
+          "address": "17372"
+        },
+        {
+          "name": "func_80195714",
+          "size": "132",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149144340"
+          },
+          "address": "17556"
+        },
+        {
+          "name": "func_80195798",
+          "size": "348",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149144472"
+          },
+          "address": "17688"
+        },
+        {
+          "name": "CollectHeart",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149144820"
+          },
+          "address": "18036"
+        },
+        {
+          "name": "func_80195974",
+          "size": "220",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149144948"
+          },
+          "address": "18164"
+        },
+        {
+          "name": "CollectSubweapon",
+          "size": "280",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149145168"
+          },
+          "address": "18384"
+        },
+        {
+          "name": "func_80195B68",
+          "size": "164",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149145448"
+          },
+          "address": "18664"
+        },
+        {
+          "name": "func_80195C0C",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149145612"
+          },
+          "address": "18828"
+        },
+        {
+          "name": "func_80195C5C",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149145692"
+          },
+          "address": "18908"
+        },
+        {
+          "name": "EntityPrizeDrop",
+          "size": "2164",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149145732"
+          },
+          "address": "18948"
+        },
+        {
+          "name": "EntityExplosion",
+          "size": "252",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149147896"
+          },
+          "address": "21112"
+        },
+        {
+          "name": "func_801965F4",
+          "size": "164",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149148148"
+          },
+          "address": "21364"
+        },
+        {
+          "name": "EntityEquipItemDrop",
+          "size": "1512",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149148312"
+          },
+          "address": "21528"
+        },
+        {
+          "name": "func_80196C80",
+          "size": "688",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149149824"
+          },
+          "address": "23040"
+        },
+        {
+          "name": "EntityRelicOrb",
+          "size": "2768",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149150512"
+          },
+          "address": "23728"
+        },
+        {
+          "name": "EntityHeartDrop",
+          "size": "296",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149153280"
+          },
+          "address": "26496"
+        },
+        {
+          "name": "EntityUnkId0E",
+          "size": "1372",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149153576"
+          },
+          "address": "26792"
+        },
+        {
+          "name": "func_80198084",
+          "size": "240",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149154948"
+          },
+          "address": "28164"
+        },
+        {
+          "name": "EntityUnkId13",
+          "size": "272",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149155188"
+          },
+          "address": "28404"
+        },
+        {
+          "name": "func_80198284",
+          "size": "304",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149155460"
+          },
+          "address": "28676"
+        },
+        {
+          "name": "func_801983B4",
+          "size": "232",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149155764"
+          },
+          "address": "28980"
+        },
+        {
+          "name": "EntityExplosion14",
+          "size": "240",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149155996"
+          },
+          "address": "29212"
+        },
+        {
+          "name": "EntityUnkId15",
+          "size": "244",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149156236"
+          },
+          "address": "29452"
+        },
+        {
+          "name": "func_80198680",
+          "size": "560",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149156480"
+          },
+          "address": "29696"
+        },
+        {
+          "name": "func_801988B0",
+          "size": "252",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149157040"
+          },
+          "address": "30256"
+        },
+        {
+          "name": "func_801989AC",
+          "size": "1408",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149157292"
+          },
+          "address": "30508"
+        },
+        {
+          "name": "EntityIntenseExplosion",
+          "size": "256",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149158700"
+          },
+          "address": "31916"
+        },
+        {
+          "name": "func_8019902C",
+          "size": "204",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149158956"
+          },
+          "address": "32172"
+        },
+        {
+          "name": "func_801990F8",
+          "size": "200",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149159160"
+          },
+          "address": "32376"
+        },
+        {
+          "name": "func_801991C0",
+          "size": "184",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149159360"
+          },
+          "address": "32576"
+        },
+        {
+          "name": "func_80199278",
+          "size": "472",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149159544"
+          },
+          "address": "32760"
+        },
+        {
+          "name": "func_80199450",
+          "size": "1504",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149160016"
+          },
+          "address": "33232"
+        },
+        {
+          "name": "func_80199A30",
+          "size": "1792",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149161520"
+          },
+          "address": "34736"
+        },
+        {
+          "name": "ClutLerp",
+          "size": "504",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149163312"
+          },
+          "address": "36528"
+        },
+        {
+          "name": "func_8019A328",
+          "size": "248",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149163816"
+          },
+          "address": "37032"
+        },
+        {
+          "name": "func_8019A420",
+          "size": "464",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149164064"
+          },
+          "address": "37280"
+        },
+        {
+          "name": "EntityStageNamePopup",
+          "size": "3204",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149164528"
+          },
+          "address": "37744"
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "st"
+        ]
+      }
+    },
+    {
+      "name": "st/cen/1B274",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "5264",
+        "matched_code": "5264",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 13,
+        "matched_functions": 13,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "5264",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149167732"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "EntitySoulStealOrb",
+          "size": "916",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149167732"
+          },
+          "address": "0"
+        },
+        {
+          "name": "EntityEnemyBlood",
+          "size": "1200",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149168648"
+          },
+          "address": "916"
+        },
+        {
+          "name": "EntityUnkId08",
+          "size": "236",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149169848"
+          },
+          "address": "2116"
+        },
+        {
+          "name": "func_8019BBA4",
+          "size": "816",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149170084"
+          },
+          "address": "2352"
+        },
+        {
+          "name": "func_8019BED4",
+          "size": "1000",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149170900"
+          },
+          "address": "3168"
+        },
+        {
+          "name": "func_8019C2BC",
+          "size": "336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149171900"
+          },
+          "address": "4168"
+        },
+        {
+          "name": "func_8019C40C",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149172236"
+          },
+          "address": "4504"
+        },
+        {
+          "name": "func_8019C43C",
+          "size": "124",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149172284"
+          },
+          "address": "4552"
+        },
+        {
+          "name": "func_8019C4B8",
+          "size": "136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149172408"
+          },
+          "address": "4676"
+        },
+        {
+          "name": "func_8019C540",
+          "size": "224",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149172544"
+          },
+          "address": "4812"
+        },
+        {
+          "name": "func_8019C620",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149172768"
+          },
+          "address": "5036"
+        },
+        {
+          "name": "func_8019C674",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149172852"
+          },
+          "address": "5120"
+        },
+        {
+          "name": "func_8019C6A0",
+          "size": "100",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149172896"
+          },
+          "address": "5164"
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "st"
+        ]
+      }
+    },
+    {
+      "name": "us/st/cen/data/1C704.rodata",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "96",
+          "metadata": {
+            "virtual_address": "2149172996"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "us"
+        ]
+      }
+    },
+    {
+      "name": "us/st/cen/data/1C764.rodata",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "3088",
+          "metadata": {
+            "virtual_address": "2149173092"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "us"
+        ]
+      }
+    },
+    {
+      "name": "us/st/cen/data/1D374.rodata",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "176",
+          "metadata": {
+            "virtual_address": "2149176180"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "us"
+        ]
+      }
+    },
+    {
+      "name": "us/st/cen/data/1D424.rodata",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "72",
+          "metadata": {
+            "virtual_address": "2149176356"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".stcen",
+        "module_id": 0,
+        "progress_categories": [
+          "us"
+        ]
+      }
+    }
+  ],
+  "version": 2,
+  "categories": [
+    {
+      "id": "us",
+      "name": "us",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 8
+      }
+    },
+    {
+      "id": "assets",
+      "name": "assets",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1
+      }
+    },
+    {
+      "id": "st",
+      "name": "st",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "61700",
+        "matched_code": "61700",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 128,
+        "matched_functions": 128,
+        "matched_functions_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 4
+      }
+    }
+  ]
+}

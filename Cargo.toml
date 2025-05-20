@@ -24,16 +24,27 @@ crate-type = ["cdylib", "staticlib", "rlib"]
 [features]
 default = []
 
-serde = ["dep:serde"]
-objdiff_report = ["dep:objdiff-core"]
+serde = [
+    "dep:serde",
+    "objdiff-core?/serde"
+]
+objdiff_report = [
+    "dep:objdiff-core",
+]
 
-python_bindings = ["dep:pyo3", "objdiff_report", "serde", "dep:serde_json"]
+python_bindings = [
+    "dep:pyo3",
+    "objdiff_report",
+    "serde",
+    "dep:serde_json",
+]
 
 [dependencies]
 regex = "1.10.2"
 lazy_static = "1.4.0"
+
 serde = { version = "1.0", default-features = false, features = ["derive"], optional = true }
 # objdiff-core = { version = "2.3.3", default-features = false, features = ["bindings"], optional = true }
-objdiff-core = { git = "https://github.com/encounter/objdiff.git", rev="a367af612b8b30b5bdf40e5c1d0e45df46a5e3e9", default-features = false, features = ["bindings", "serde", "std"], optional = true }
+objdiff-core = { git = "https://github.com/encounter/objdiff.git", rev="a367af612b8b30b5bdf40e5c1d0e45df46a5e3e9", default-features = false, features = ["bindings", "std"], optional = true }
 serde_json = { version = "1", optional = true }
 pyo3 = { version = "0.23.5", optional = true, features = ["extension-module"]}

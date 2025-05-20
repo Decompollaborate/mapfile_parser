@@ -7,6 +7,27 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Support emitting progress reports using `objdiff`'s format.
+  - Relies mainly on `.NON_MATCHING`-suffixed marker symbols being present on
+    the mapfile for each non-matched symbol.
+  - Rust:
+    - Disabled by default, it is gated by the `objdiff_report` feature.
+    - Use `MapFile::get_objdiff_report()` to generate the report.
+    - It is recommended to mix with the `serde` feature to make serialization of
+      the report easier.
+  - Python:
+    - Use `MapFile::writeObjdiffReportToFile()` to write an objdiff report as a
+      `json` file.
+- Add `objdiff_report` as a new CLI utility to the Python library.
+  - Generate a simple `objdiff` progress report from your terminal!
+
+### Changed
+
+- Bump MSRV from `1.74.0` to `1.85.0`.
+- Change Rust edition from `2021` to `2024`.
+
 ## [2.8.0] - 2025-05-20
 
 ### Added
@@ -44,8 +65,6 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     use the new name instead.
 - Detect `.NON_MATCHING` symbols and fix the size of both the real symbol and
   the `.NON_MATCHING` one during parsing.
-- Bump MSRV from `1.74.0` to `1.85.0`.
-- Change Rust edition from `2021` to `2024`.
 
 ### Deprecated
 

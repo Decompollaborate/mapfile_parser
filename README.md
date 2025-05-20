@@ -103,7 +103,10 @@ for example `python3 -m mapfile_parser pj64_syms`.
 - `first_diff`: Find the first difference(s) between the built ROM and the base
   ROM.
 - `jsonify`: Converts a mapfile into a json format.
-- `pj64_syms`: Produce a PJ64 compatible symbol map.
+- `pj64_syms`: Produce a PJ64-compatible symbol map.
+- `objdiff_report`: Computes current progress of the matched functions. Expects
+  `.NON_MATCHING` marker symbols on the mapfile to know which symbols are not
+  matched yet.
 - `progress`: Computes current progress of the matched functions. Relies on a
   [splat](https://github.com/ethteck/splat) folder structure and each matched
   functions no longer having an `.s` file (i.e: delete the file after matching it).
