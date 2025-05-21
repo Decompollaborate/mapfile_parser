@@ -260,7 +260,7 @@ fn report_from_section(
                     demangled_name: None,
                     virtual_address: Some(sym.vram),
                 }),
-                address: Some(sym.vram - section.vram),
+                // address: Some(sym.vram - section.vram),
             });
 
             if i == 0 && sym.vram != section.vram {
@@ -283,7 +283,7 @@ fn report_from_section(
                         demangled_name: None,
                         virtual_address: Some(static_vram),
                     }),
-                    address: Some(0),
+                    // address: Some(0),
                 });
             }
         } else {
@@ -353,7 +353,7 @@ fn report_item_from_section(section: &section::Section) -> report::ReportItem {
             demangled_name: None,
             virtual_address: Some(section.vram),
         }),
-        address: None,
+        // address: None,
     }
 }
 

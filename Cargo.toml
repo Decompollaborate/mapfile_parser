@@ -4,8 +4,8 @@
 [package]
 name = "mapfile_parser"
 version = "2.9.0-dev0"
-edition = "2024"
-rust-version = "1.85.0"
+edition = "2021"
+rust-version = "1.74.0"
 authors = ["Anghelo Carvajal <angheloalf95@gmail.com>"]
 description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
@@ -26,7 +26,7 @@ default = []
 
 serde = [
     "dep:serde",
-    "objdiff-core?/serde"
+    # "objdiff-core?/serde"
 ]
 objdiff_report = [
     "dep:objdiff-core",
@@ -44,7 +44,7 @@ regex = "1.10.2"
 lazy_static = "1.4.0"
 
 serde = { version = "1.0", default-features = false, features = ["derive"], optional = true }
-# objdiff-core = { version = "2.3.3", default-features = false, features = ["bindings"], optional = true }
-objdiff-core = { git = "https://github.com/encounter/objdiff.git", rev="a367af612b8b30b5bdf40e5c1d0e45df46a5e3e9", default-features = false, features = ["bindings", "std"], optional = true }
+objdiff-core = { version = "2.3.3", default-features = false, features = ["bindings"], optional = true }
+# objdiff-core = { git = "https://github.com/encounter/objdiff.git", rev="a367af612b8b30b5bdf40e5c1d0e45df46a5e3e9", default-features = false, features = ["bindings", "std"], optional = true }
 serde_json = { version = "1", optional = true }
 pyo3 = { version = "0.23.5", optional = true, features = ["extension-module"]}

@@ -130,10 +130,10 @@ class SpecificSettings:
         if decompConfig is None:
             return None
 
-        output = None
-        prefixesToTrim = []
-        categories = []
-        pathIndex = None
+        output: Path|None = None
+        prefixesToTrim: list[str] = []
+        categories: list[Category] = []
+        pathIndex: int|None = None
         if decompConfig.tools is not None:
             mapfileParserConfig = decompConfig.tools.get("mapfile_parser")
             if mapfileParserConfig is not None:
@@ -150,7 +150,9 @@ class SpecificSettings:
                         var = raw.get("categories")
                         if var is not None:
                             for x in var:
-                                categories.append(Category.from_dict(x))
+                                cat = Category.from_dict(x)
+                                assert cat is not None, f"Invalid category {x}"
+                                categories.append(cat)
                         var = raw.get("path_index")
                         if var is not None:
                             pathIndex = var

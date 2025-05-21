@@ -479,7 +479,7 @@ pub(crate) mod python_bindings {
         }
 
         fn fixupNonMatchingSymbols(&mut self) {
-            #[expect(deprecated)]
+            #[allow(deprecated)]
             self.fixup_non_matching_symbols()
         }
 
