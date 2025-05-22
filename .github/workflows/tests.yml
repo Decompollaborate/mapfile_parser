@@ -33,7 +33,7 @@ jobs:
       id: tests_changes
       uses: tj-actions/verify-changed-files@v14
 
-    - name: tables changes
+    - name: Check there are no changes in the outputs
       if: steps.tests_changes.outputs.files_changed == 'true'
       run: |
         echo "Changed files: ${{ steps.tests_changes.outputs.changed_files }}"
@@ -109,4 +109,4 @@ jobs:
       run: python3 -m mapfile_parser symbol_sizes_csv tests/maps/drmario64.us.map
 
     - name: upload_frogress
-      run: python3 -m mapfile_parser upload_frogress tests/maps/drmario64.us.map asm asm/nonmatchings drmario64 us code --verbose
+      run: python3 -m mapfile_parser upload_frogress tests/maps/drmario64.us.map asm asm/nonmatchings drmario64 us code --verbose --dry-run

@@ -32,15 +32,17 @@ def getFrogressEntriesFromStats(totalStats: progress_stats.ProgressStats, progre
         print()
     return entries
 
-def uploadEntriesToFrogress(entries: dict[str, int], category: str, url: str, apikey: str|None=None, verbose: bool=False):
+def uploadEntriesToFrogress(entries: dict[str, int], category: str, url: str, apikey: str|None=None, verbose: bool=False, dryRun: bool=False):
     if verbose:
         print(f"Publishing entries to {url}")
         for key, value in entries.items():
             print(f"\t{key}: {value}")
 
-    if not apikey:
+    if not apikey or dryRun:
         if verbose:
             print("Missing apikey, exiting without uploading")
+        if dryRun:
+            return 0
         return 1
 
     data = utils.getFrogressDataDict(apikey, utils.getFrogressCategoriesDict({category: entries}))
@@ -52,7 +54,7 @@ def uploadEntriesToFrogress(entries: dict[str, int], category: str, url: str, ap
     return 0
 
 
-def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, project: str, version: str, category: str, baseurl: str, apikey: str|None=None, verbose: bool=False, checkFunctionFiles: bool=True) -> int:
+def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, project: str, version: str, category: str, baseurl: str, apikey: str|None=None, verbose: bool=False, checkFunctionFiles: bool=True, dryRun: bool=False) -> int:
     if not mapPath.exists():
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
@@ -62,7 +64,7 @@ def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, proje
     entries: dict[str, int] = getFrogressEntriesFromStats(totalStats, progressPerFolder, verbose)
 
     url = utils.generateFrogressEndpointUrl(baseurl, project, version)
-    return uploadEntriesToFrogress(entries, category, url, apikey=apikey, verbose=verbose)
+    return uploadEntriesToFrogress(entries, category, url, apikey=apikey, verbose=verbose, dryRun=dryRun)
 
 
 def processArguments(args: argparse.Namespace, decompConfig=None):
@@ -83,8 +85,9 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
     apikey: str|None = args.apikey
     verbose: bool = args.verbose
     checkFunctionFiles: bool = not args.avoid_function_files
+    dryRun: bool = args.dry_run
 
-    exit(doUploadFrogress(mapPath, asmPath, nonmatchingsPath, project, version, category, baseurl, apikey, verbose, checkFunctionFiles))
+    exit(doUploadFrogress(mapPath, asmPath, nonmatchingsPath, project, version, category, baseurl, apikey, verbose, checkFunctionFiles, dryRun=dryRun))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
     parser = subparser.add_parser("upload_frogress", help="Uploads current progress of the matched functions to frogress (https://github.com/decompals/frogress).")
@@ -122,5 +125,6 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
     parser.add_argument("--apikey", help="API key. Dry run is performed if this option is omitted")
     parser.add_argument("-v", "--verbose", action="store_true")
     parser.add_argument("-f", "--avoid-function-files", help="Avoid checking if the assembly file for a function exists as a way to determine if the function has been matched or not", action="store_true")
+    parser.add_argument("-d", "--dry-run", help="Stop before uploading the progress.", action="store_true")
 
     parser.set_defaults(func=processArguments)
