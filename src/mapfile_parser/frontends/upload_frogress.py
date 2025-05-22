@@ -68,9 +68,9 @@ def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, proje
 def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         decomp_version = decompConfig.get_version_by_name(args.version)
-        mapPath = Path(args.mapfile if args.mapfile is not None else decomp_version.get("map"))
-        asmPath = Path(args.asmpath if args.asmpath is not None else decomp_version.get("asm"))
-        nonmatchingsPath = Path(args.nonmatchingspath if args.nonmatchingspath is not None else decomp_version.get("nonmatchings"))
+        mapPath = Path(decomp_version.get("map"))
+        asmPath = Path(decomp_version.get("asm"))
+        nonmatchingsPath = Path(decomp_version.get("nonmatchings"))
     else:
         mapPath = args.mapfile
         asmPath = args.asmpath
@@ -89,20 +89,31 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
     parser = subparser.add_parser("upload_frogress", help="Uploads current progress of the matched functions to frogress (https://github.com/decompals/frogress).")
 
-    nargs: str|int = 1
+    emitMapfile = True
+    emitAsmpath = True
+    emitNonmatchingsPath = True
+    versionChoices: list[str]|None = None
     if decompConfig is not None:
-        nargs = "?"
+        versionChoices = []
+        for version in decompConfig.versions:
+            versionChoices.append(version.name)
 
-    parser.add_argument("mapfile", help="Path to a map file. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
-    parser.add_argument("asmpath", help="Path to asm folder. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
-    parser.add_argument("nonmatchingspath", help="Path to nonmatchings folder. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
+        if len(versionChoices) > 0:
+            emitMapfile = False
+            emitAsmpath = False
+            emitNonmatchingsPath = False
+
+    if emitMapfile:
+        parser.add_argument("mapfile", help="Path to a map file.", type=Path)
+    if emitAsmpath:
+        parser.add_argument("asmpath", help="Path to asm folder.", type=Path)
+    if emitNonmatchingsPath:
+        parser.add_argument("nonmatchingspath", help="Path to nonmatchings folder.", type=Path)
+
     parser.add_argument("project", help="Project slug")
 
-    if decompConfig is not None:
-        versions = []
-        for version in decompConfig.versions:
-            versions.append(version.name)
-        parser.add_argument("version", help="Version slug", type=str, choices=versions)
+    if versionChoices is not None:
+        parser.add_argument("version", help="Version slug", type=str, choices=versionChoices)
     else:
         parser.add_argument("version", help="Version slug")
 

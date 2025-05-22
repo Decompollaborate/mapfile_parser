@@ -39,7 +39,7 @@ def doPj64Syms(mapPath: Path, outputPath: Path|None) -> int:
 def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
+        mapPath = Path(version.paths.get("map"))
     else:
         mapPath = args.mapfile
 
@@ -50,15 +50,19 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
     parser = subparser.add_parser("pj64_syms", help="Produce a PJ64 compatible symbol map.")
 
-    nargs: str|int = 1
+    emitMapfile = True
     if decompConfig is not None:
-        nargs = "?"
         versions = []
         for version in decompConfig.versions:
             versions.append(version.name)
-        parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
 
-    parser.add_argument("mapfile", help="Path to a map file. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
+        if len(versions) > 0:
+            parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
+            emitMapfile = False
+
+    if emitMapfile:
+        parser.add_argument("mapfile", help="Path to a map file.", type=Path)
+
     parser.add_argument("output", help="Path to output file. If omitted then output will be written to stdout", type=Path, nargs="?")
 
     parser.set_defaults(func=processArguments)
