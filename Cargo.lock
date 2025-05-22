@@ -49,7 +49,7 @@ checksum = "97b3888a4aecf77e811145cadf6eef5901f4782c53886191b2f693f24761847c"
 
 [[package]]
 name = "mapfile_parser"
-version = "2.9.0-dev0"
+version = "2.8.1"
 dependencies = [
  "lazy_static",
  "pyo3",
