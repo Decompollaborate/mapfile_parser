@@ -427,17 +427,17 @@ pub(crate) mod python_bindings {
         }
 
         fn readMapFile(&mut self, map_path: PathBuf) {
-            #[expect(deprecated)]
+            #[allow(deprecated)]
             self.read_map_file(&map_path)
         }
 
         fn parseMapContents(&mut self, map_contents: &str) {
-            #[expect(deprecated)]
+            #[allow(deprecated)]
             self.parse_map_contents(map_contents)
         }
 
         fn parseMapContentsGNU(&mut self, map_contents: &str) {
-            #[expect(deprecated)]
+            #[allow(deprecated)]
             self.parse_map_contents_gnu(map_contents)
         }
 
@@ -448,7 +448,7 @@ pub(crate) mod python_bindings {
         */
         #[pyo3(name = "parseMapContentsLLD")]
         fn parseMapContentsLLD(&mut self, map_contents: &str) {
-            #[expect(deprecated)]
+            #[allow(deprecated)]
             self.parse_map_contents_lld(map_contents)
         }
 
@@ -525,7 +525,7 @@ pub(crate) mod python_bindings {
         }
 
         fn fixupNonMatchingSymbols(&self) -> Self {
-            #[expect(deprecated)]
+            #[allow(deprecated)]
             self.fixup_non_matching_symbols()
         }
 

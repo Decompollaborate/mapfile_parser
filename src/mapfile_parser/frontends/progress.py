@@ -43,9 +43,9 @@ def doProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, pathIndex: 
 def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
-        asmPath = Path(args.asmpath if args.asmpath is not None else version.paths.get("asm"))
-        nonmatchingsPath = Path(args.nonmatchingspath if args.nonmatchingspath is not None else version.paths.get("nonmatchings"))
+        mapPath = Path(version.paths.get("map"))
+        asmPath = Path(version.paths.get("asm"))
+        nonmatchingsPath = Path(version.paths.get("nonmatchings"))
     else:
         mapPath = args.mapfile
         asmPath = args.asmpath
@@ -61,17 +61,27 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
     parser = subparser.add_parser("progress", help="Computes current progress of the matched functions. Relies on a splat (https://github.com/ethteck/splat) folder structure and matched functions not longer having a file.")
 
-    nargs: str|int = 1
+    emitMapfile = True
+    emitAsmpath = True
+    emitNonmatchingsPath = True
     if decompConfig is not None:
-        nargs = "?"
         versions = []
         for version in decompConfig.versions:
             versions.append(version.name)
-        parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
 
-    parser.add_argument("mapfile", help="Path to a map file. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
-    parser.add_argument("asmpath", help="Path to asm folder. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
-    parser.add_argument("nonmatchingspath", help="Path to nonmatchings folder. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
+        if len(versions) > 0:
+            parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
+            emitMapfile = False
+            emitAsmpath = False
+            emitNonmatchingsPath = False
+
+    if emitMapfile:
+        parser.add_argument("mapfile", help="Path to a map file.", type=Path)
+    if emitAsmpath:
+        parser.add_argument("asmpath", help="Path to asm folder.", type=Path)
+    if emitNonmatchingsPath:
+        parser.add_argument("nonmatchingspath", help="Path to nonmatchings folder.", type=Path)
+
     parser.add_argument("-i", "--path-index", help="Specify the index to start reading the file paths. Defaults to 2", type=int, default=2)
     parser.add_argument("-f", "--avoid-function-files", help="Avoid checking if the assembly file for a function exists as a way to determine if the function has been matched or not", action="store_true")
     parser.add_argument("-d", "--debugging", help="Enable debugging prints. This option is deprecated", action="store_true")
