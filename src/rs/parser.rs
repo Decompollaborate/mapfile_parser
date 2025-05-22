@@ -141,7 +141,9 @@ impl MapFile {
         if regex_lld_header.is_match(map_contents) {
             #[allow(deprecated)]
             self.parse_map_contents_lld(map_contents);
-        } else if map_contents.starts_with("Link map of ") {
+        } else if map_contents.starts_with("Link map of ")
+            || map_contents.contains(" section layout")
+        {
             self.parse_map_contents_mw(map_contents);
         } else {
             // GNU is the fallback
@@ -671,42 +673,16 @@ impl MapFile {
 
             let mut new_segment = segment.clone_no_sectionlist();
 
-            for section in segment.sections_list.into_iter() {
+            for mut section in segment.sections_list.into_iter() {
                 if section.is_placeholder() {
                     // drop placeholders
                     continue;
                 }
 
-                /*
-                let mut acummulated_size = 0;
                 let symbols_count = section.symbols.len();
-
                 if symbols_count > 0 {
-                    // Calculate the size of symbols that the map section did not report.
-                    // usually asm symbols and not C ones
-
-                    for index in 0..symbols_count - 1 {
-                        let next_sym_vram = section.symbols[index + 1].vram;
-                        let sym = &mut section.symbols[index];
-
-                        let sym_size = next_sym_vram - sym.vram;
-                        acummulated_size += sym_size;
-
-                        if sym.size == 0 {
-                            sym.size = sym_size;
-                        }
-                    }
-
-                    // Calculate size of last symbol of the section
-                    let sym = &mut section.symbols[symbols_count - 1];
-                    if sym.size == 0 {
-                        let sym_size = section.size - acummulated_size;
-                        sym.size = sym_size;
-                    }
-
                     Self::fixup_non_matching_symbols_for_section(&mut section);
                 }
-                */
 
                 new_segment.sections_list.push(section);
             }
