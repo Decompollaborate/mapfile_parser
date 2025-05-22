@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add support for Metrowerks ld mapfiles.
+  - Existing catch-all functions will try to guess if the given mapfile
+    correspond to this kind of map by default.
+- New functions:
+  - `MapFile::new_from_mw_map_str()` (Rust) and `MapFile::newFromMwMapStr()`
+    (Python): Parses specifically a Metrowerks ld mapfile without guessing.
+
 ## [2.8.1] - 2025-05-22
 
 ### Fixed
