@@ -1,7 +1,10 @@
 /* SPDX-FileCopyrightText: © 2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::{collections::HashSet, path::Path};
+use std::{
+    collections::{HashMap, HashSet},
+    path::{Path, PathBuf},
+};
 
 use regex::*;
 
@@ -26,6 +29,7 @@ impl MapFile {
     /// Currently supported map formats:
     /// - GNU ld
     /// - clang ld.lld
+    /// - Metrowerks ld
     #[must_use]
     pub fn new_from_map_file(map_path: &Path) -> Self {
         let mut m = Self::new_impl();
@@ -41,6 +45,7 @@ impl MapFile {
     /// Currently supported map formats:
     /// - GNU ld
     /// - clang ld.lld
+    /// - Metrowerks ld
     #[must_use]
     pub fn new_from_map_str(map_contents: &str) -> Self {
         let mut m = Self::new_impl();
@@ -71,6 +76,16 @@ impl MapFile {
         m
     }
 
+    /// Parses the contents of a Metrowerks ld (mwld) map.
+    ///
+    /// The `map_contents` argument must contain the contents of a Metrowerks ld mapfile.
+    #[must_use]
+    pub fn new_from_mw_map_str(map_contents: &str) -> Self {
+        let mut m = Self::new_impl();
+        m.parse_map_contents_mw(map_contents);
+        m
+    }
+
     pub(crate) fn new_impl() -> Self {
         Self {
             segments_list: Vec::new(),
@@ -96,6 +111,7 @@ impl MapFile {
     Currently supported map formats:
     - GNU ld
     - clang ld.lld
+    - Metrowerks ld
      */
     #[deprecated(since = "2.8.0", note = "Prefer `MapFile::new_from_map_file` instead")]
     pub fn read_map_file(&mut self, map_path: &Path) {
@@ -115,6 +131,7 @@ impl MapFile {
     Currently supported mapfile formats:
     - GNU ld
     - clang ld.lld
+    - Metrowerks ld
     */
     #[deprecated(since = "2.8.0", note = "Prefer `MapFile::new_from_map_str` instead")]
     pub fn parse_map_contents(&mut self, map_contents: &str) {
@@ -124,6 +141,8 @@ impl MapFile {
         if regex_lld_header.is_match(map_contents) {
             #[allow(deprecated)]
             self.parse_map_contents_lld(map_contents);
+        } else if map_contents.starts_with("Link map of ") {
+            self.parse_map_contents_mw(map_contents);
         } else {
             // GNU is the fallback
             #[allow(deprecated)]
@@ -190,7 +209,7 @@ impl MapFile {
 
             if !in_section {
                 if let Some(section_entry_match) = regex_section_data_entry.captures(line) {
-                    let filepath = std::path::PathBuf::from(&section_entry_match["name"]);
+                    let filepath = PathBuf::from(&section_entry_match["name"]);
                     let vram = utils::parse_hex(&section_entry_match["vram"]);
                     let size = utils::parse_hex(&section_entry_match["size"]);
                     let section_type = &section_entry_match["section"];
@@ -249,7 +268,7 @@ impl MapFile {
                     ));
                 } else if let Some(fill_match) = regex_fill.captures(line) {
                     // Make a dummy file to handle *fill*
-                    let mut filepath = std::path::PathBuf::new();
+                    let mut filepath = PathBuf::new();
                     let mut vram = 0;
                     let size = utils::parse_hex(&fill_match["size"]);
                     let mut section_type = "".to_owned();
@@ -421,7 +440,7 @@ impl MapFile {
                 } else if regex_fill.is_match(subline) {
                     // Make a dummy section to handle pads (. += XX)
 
-                    let mut filepath = std::path::PathBuf::new();
+                    let mut filepath = PathBuf::new();
                     let mut section_type = "".to_owned();
 
                     let current_segment = temp_segment_list.last_mut().unwrap();
@@ -443,7 +462,7 @@ impl MapFile {
                     current_segment.sections_list.push(new_section);
                 } else if let Some(section_entry_match) = regex_section_data_entry.captures(subline)
                 {
-                    let filepath = std::path::PathBuf::from(&section_entry_match["name"]);
+                    let filepath = PathBuf::from(&section_entry_match["name"]);
                     let section_type = &section_entry_match["section"];
 
                     if size > 0 {
@@ -542,6 +561,218 @@ impl MapFile {
         segments_list.shrink_to_fit();
         segments_list
     }
+
+    fn parse_map_contents_mw(&mut self, map_contents: &str) {
+        let map_data = preprocess_map_data_mw(map_contents);
+
+        let memory_map = parse_memory_map_mw(map_data);
+
+        // Almost every line starts with this information, so instead of duplicating it we put them on one single regex
+        let regex_row_entry = Regex::new(r"^\s*(?P<starting>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<vram>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+)\s+(?P<subline>.+)").unwrap();
+
+        let regex_segment_entry = Regex::new(r"^(?P<name>.+) section layout$").unwrap();
+        let regex_label_entry =
+            Regex::new(r"^(?P<label>lbl_[0-9A-F]{8})\s+(?P<filename>.+?)\s*$").unwrap();
+        let regex_symbol_entry =
+            Regex::new(r"^\s*(?P<name>[^ ]+)\s+(?P<filename>.+?)\s*$").unwrap();
+
+        let mut temp_segment_list = vec![segment::Segment::new_placeholder()];
+
+        // Use a bunch of characters that shouldn't be valid in any os as a marker that we haven't found a file yet.
+        let mut current_filename = "invalid file <>:\"/\\|?*".to_string();
+
+        for line in map_data.lines() {
+            // Check for regex_row_entry since it is more likely to match
+            if let Some(row_entry_match) = regex_row_entry.captures(line) {
+                let starting = utils::parse_hex(&row_entry_match["starting"]);
+                let size = utils::parse_hex(&row_entry_match["size"]);
+                let vram = utils::parse_hex(&row_entry_match["vram"]);
+                // TODO: confirm if this is actually the alignment of the symbol or not
+                let _align = utils::parse_hex(&row_entry_match["align"]);
+
+                let subline = &row_entry_match["subline"];
+
+                if regex_label_entry.is_match(subline) {
+                    // pass
+                } else if let Some(symbol_entry_match) = regex_symbol_entry.captures(subline) {
+                    let filename = &symbol_entry_match["filename"];
+
+                    if filename == current_filename {
+                        // We are still in the same file
+                        let symbol = &symbol_entry_match["name"];
+
+                        if !BANNED_SYMBOL_NAMES.contains(&symbol) {
+                            let current_segment = temp_segment_list.last_mut().unwrap();
+                            let current_section = current_segment.sections_list.last_mut().unwrap();
+
+                            let mut new_symbol =
+                                symbol::Symbol::new_default(symbol.to_string(), vram);
+                            if size > 0 {
+                                new_symbol.size = size;
+                            }
+                            if !current_section.is_noload_section() {
+                                new_symbol.vrom = Some(current_segment.vrom + starting)
+                            }
+
+                            current_section.symbols.push(new_symbol);
+                        }
+                    } else {
+                        // New file!
+                        current_filename = filename.to_string();
+
+                        if size > 0 {
+                            let section_type = &symbol_entry_match["name"];
+                            let filepath = PathBuf::from(filename);
+
+                            let current_segment = temp_segment_list.last_mut().unwrap();
+
+                            let mut new_section =
+                                section::Section::new_default(filepath, vram, size, section_type);
+                            if !utils::is_noload_section(section_type) {
+                                new_section.vrom = Some(current_segment.vrom + starting);
+                            }
+
+                            current_segment.sections_list.push(new_section);
+                        }
+                    }
+                } else {
+                    println!("{}", subline);
+                }
+            } else if let Some(segment_entry_match) = regex_segment_entry.captures(line) {
+                let name = &segment_entry_match["name"];
+
+                let new_segment = if let Some(segment_entry) = memory_map.get(name) {
+                    let vram = segment_entry.starting_address;
+                    let size = segment_entry.size;
+                    let vrom = segment_entry.file_offset;
+                    segment::Segment::new_default(name.to_string(), vram, size, vrom)
+                } else {
+                    let mut temp = segment::Segment::new_placeholder();
+                    temp.name = name.to_string();
+                    temp
+                };
+
+                temp_segment_list.push(new_segment);
+            }
+        }
+
+        self.segments_list = Self::post_process_segments_mw(temp_segment_list);
+    }
+
+    fn post_process_segments_mw(temp_segment_list: Vec<segment::Segment>) -> Vec<segment::Segment> {
+        // TODO: actually implement
+        let mut segments_list = Vec::with_capacity(temp_segment_list.len());
+
+        for (i, segment) in temp_segment_list.into_iter().enumerate() {
+            if i == 0 && (segment.sections_list.is_empty() || segment.is_placeholder()) {
+                // skip the dummy segment if it has no size, sections or symbols
+                continue;
+            }
+
+            let mut new_segment = segment.clone_no_sectionlist();
+
+            for section in segment.sections_list.into_iter() {
+                if section.is_placeholder() {
+                    // drop placeholders
+                    continue;
+                }
+
+                /*
+                let mut acummulated_size = 0;
+                let symbols_count = section.symbols.len();
+
+                if symbols_count > 0 {
+                    // Calculate the size of symbols that the map section did not report.
+                    // usually asm symbols and not C ones
+
+                    for index in 0..symbols_count - 1 {
+                        let next_sym_vram = section.symbols[index + 1].vram;
+                        let sym = &mut section.symbols[index];
+
+                        let sym_size = next_sym_vram - sym.vram;
+                        acummulated_size += sym_size;
+
+                        if sym.size == 0 {
+                            sym.size = sym_size;
+                        }
+                    }
+
+                    // Calculate size of last symbol of the section
+                    let sym = &mut section.symbols[symbols_count - 1];
+                    if sym.size == 0 {
+                        let sym_size = section.size - acummulated_size;
+                        sym.size = sym_size;
+                    }
+
+                    Self::fixup_non_matching_symbols_for_section(&mut section);
+                }
+                */
+
+                new_segment.sections_list.push(section);
+            }
+
+            segments_list.push(new_segment);
+        }
+
+        segments_list.shrink_to_fit();
+        segments_list
+    }
+}
+
+fn preprocess_map_data_mw(map_data: &str) -> &str {
+    // Skip the stuff we don't care about.
+    if let Some(aux_var) = map_data.find(" section layout") {
+        // We want to preserve the name of the first layout, so we need to
+        // backtrack a bit to find the start of the line
+        if let Some(start_index) = map_data[..=aux_var].rfind("\n") {
+            return &map_data[start_index + 1..];
+        }
+    }
+
+    map_data
+}
+
+struct MwMemoryMapEntry {
+    starting_address: u64,
+    size: u64,
+    file_offset: u64,
+}
+
+fn parse_memory_map_mw(map_data: &str) -> HashMap<String, MwMemoryMapEntry> {
+    let map_data = {
+        if let Some(start_index) = map_data.find("Memory map:") {
+            if let Some(end_index) = map_data[start_index..].find("Linker generated symbols:") {
+                &map_data[start_index..start_index + end_index]
+            } else {
+                &map_data[start_index..]
+            }
+        } else {
+            map_data
+        }
+    };
+
+    let mut memory_map = HashMap::new();
+    let entry = Regex::new(r"^\s*(?P<name>[^ ]+)\s+(?P<address>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<offset>[0-9a-fA-F]+)$").unwrap();
+
+    for line in map_data.lines() {
+        if let Some(entry_match) = entry.captures(line) {
+            let name = &entry_match["name"];
+            let starting_address = utils::parse_hex(&entry_match["address"]);
+            let size = utils::parse_hex(&entry_match["size"]);
+            let file_offset = utils::parse_hex(&entry_match["offset"]);
+
+            memory_map.insert(
+                name.to_string(),
+                MwMemoryMapEntry {
+                    starting_address,
+                    size,
+                    file_offset,
+                },
+            );
+        }
+    }
+
+    memory_map
 }
 
 impl MapFile {
