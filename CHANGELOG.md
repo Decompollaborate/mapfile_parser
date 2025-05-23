@@ -26,7 +26,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Bump MSRV from `1.74.0` to `1.85.0`.
-- Change Rust edition from `2021` to `2024`.
+- Bump Rust edition from `2021` to `2024`.
+
+## [2.8.1] - 2025-05-22
+
+### Fixed
+
+- Fix broken CLI utilities when a decomp.yaml file is not detected.
 
 ## [2.8.0] - 2025-05-20
 
@@ -550,6 +556,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.8.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.8.0...2.8.1
 [2.8.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.5...2.8.0
 [2.7.5]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.4...2.7.5
 [2.7.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.3...2.7.4

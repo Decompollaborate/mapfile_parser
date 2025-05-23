@@ -47,15 +47,19 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
     parser = subparser.add_parser("jsonify", help="Converts a mapfile into a json format.")
 
-    nargs: str|int = 1
+    emitMapfile = True
     if decompConfig is not None:
-        nargs = "?"
         versions = []
         for version in decompConfig.versions:
             versions.append(version.name)
-        parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
 
-    parser.add_argument("mapfile", help="Path to a map file. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
+        if len(versions) > 0:
+            parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
+            emitMapfile = False
+
+    if emitMapfile:
+        parser.add_argument("mapfile", help="Path to a map file.", type=Path)
+
     parser.add_argument("-o", "--output", help="Output path of for the generated json. If omitted then stdout is used instead.")
     parser.add_argument("-m", "--machine", help="Emit numbers as numbers instead of outputting them as pretty strings.", action="store_true")
     parser.add_argument("-f", "--apply-fixes", help="DEPRECATED, this is applied automatically now. Apply certain fixups, like fixing size calculation of because of the existence of fake `.NON_MATCHING` symbols.", action="store_true")

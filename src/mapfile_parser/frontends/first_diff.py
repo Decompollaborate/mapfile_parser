@@ -143,10 +143,10 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
         expectedDir = Path(version.paths["expected_dir"])
-        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
-        expectedMapPath = args.expectedmap if args.expectedmap is not None else expectedDir / mapPath
-        romPath = Path(args.rompath if args.rompath is not None else version.paths.get("build"))
-        expectedRomPath = args.expectedrom if args.expectedrom is not None else expectedDir / romPath
+        mapPath = Path(version.paths.get("map"))
+        expectedMapPath = expectedDir / mapPath
+        romPath = Path(version.paths.get("build"))
+        expectedRomPath = expectedDir / romPath
     else:
         mapPath = args.mapfile
         expectedMapPath = args.expectedmap
@@ -164,18 +164,28 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
     parser = subparser.add_parser("first_diff", help="Find the first difference(s) between the built ROM and the base ROM.")
 
-    nargs: str|int = 1
+    emitMapfile = True
+    emitExpected = True
+    emitRompath = True
     if decompConfig is not None:
-        nargs = "?"
         versions = []
         for version in decompConfig.versions:
             versions.append(version.name)
-        parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
 
-    parser.add_argument("mapfile", help="Path to a map file. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
-    parser.add_argument("expectedmap", help="Path to the map file in the expected dir. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
-    parser.add_argument("rompath", help="Path to built ROM. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
-    parser.add_argument("expectedrom", help="Path to the expected ROM. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
+        if len(versions) > 0:
+            parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
+            emitMapfile = False
+            emitExpected = False
+            emitRompath = False
+
+    if emitMapfile:
+        parser.add_argument("mapfile", help="Path to a map file.", type=Path)
+    if emitExpected:
+        parser.add_argument("expectedmap", help="Path to the map file in the expected dir.", type=Path)
+    if emitRompath:
+        parser.add_argument("rompath", help="Path to built ROM.", type=Path)
+    if emitExpected:
+        parser.add_argument("expectedrom", help="Path to the expected ROM.", type=Path)
 
     parser.add_argument("-c", "--count", type=int, default=5, help="find up to this many instruction difference(s)")
     parser.add_argument("-m", "--mismatch-size", help="Do not exit early if the ROM sizes does not match", action="store_true")

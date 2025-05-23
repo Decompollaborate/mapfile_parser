@@ -151,8 +151,8 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
         expectedDir = Path(version.paths["expected_dir"])
-        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
-        expectedMapPath = args.expectedmap if args.expectedmap is not None else expectedDir / mapPath
+        mapPath = Path(version.paths.get("map"))
+        expectedMapPath = expectedDir / mapPath
     else:
         mapPath = args.mapfile
         expectedMapPath = args.expectedmap
@@ -166,16 +166,22 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
     parser = subparser.add_parser("bss_check", help="Check that globally visible bss has not been reordered.")
 
-    nargs: str|int = 1
+    emitMapfile = True
+    emitAsmpath = True
     if decompConfig is not None:
-        nargs = "?"
         versions = []
         for version in decompConfig.versions:
             versions.append(version.name)
-        parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
 
-    parser.add_argument("mapfile", help="Path to a map file. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
-    parser.add_argument("expectedmap", help="Path to the map file in the expected dir. This argument is optional if an `decomp.yaml` file is detected on the current project.", type=Path, nargs=nargs)
+        if len(versions) > 0:
+            parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
+            emitMapfile = False
+            emitAsmpath = False
+
+    if emitMapfile:
+        parser.add_argument("mapfile", help="Path to a map file.", type=Path)
+    if emitAsmpath:
+        parser.add_argument("expectedmap", help="Path to the map file in the expected dir.", type=Path)
 
     parser.add_argument("-a", "--print-all", help="Print all bss, not just non-matching.", action="store_true")
     parser.add_argument("--no-reverse-check", help="Disable looking for symbols on the expected map that are missing on the built map file.", action="store_true")
