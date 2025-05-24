@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+import decomp_settings
 from pathlib import Path
 import requests # type: ignore
 
@@ -67,12 +68,14 @@ def doUploadFrogress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, proje
     return uploadEntriesToFrogress(entries, category, url, apikey=apikey, verbose=verbose, dryRun=dryRun)
 
 
-def processArguments(args: argparse.Namespace, decompConfig=None):
+def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
     if decompConfig is not None:
-        decomp_version = decompConfig.get_version_by_name(args.version)
-        mapPath = Path(decomp_version.get("map"))
-        asmPath = Path(decomp_version.get("asm"))
-        nonmatchingsPath = Path(decomp_version.get("nonmatchings"))
+        decompVersion = decompConfig.get_version_by_name(args.version)
+        assert decompVersion is not None, f"Invalid version '{args.version}' selected"
+
+        mapPath = Path(decompVersion.paths.map)
+        asmPath = Path(decompVersion.paths.asm if decompVersion.paths.asm is not None else args.asmpath)
+        nonmatchingsPath = Path(decompVersion.paths.nonmatchings if decompVersion.paths.nonmatchings is not None else args.nonmatchingspath)
     else:
         mapPath = args.mapfile
         asmPath = args.asmpath
@@ -89,7 +92,7 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 
     exit(doUploadFrogress(mapPath, asmPath, nonmatchingsPath, project, version, category, baseurl, apikey, verbose, checkFunctionFiles, dryRun=dryRun))
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
+def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     parser = subparser.add_parser("upload_frogress", help="Uploads current progress of the matched functions to frogress (https://github.com/decompals/frogress).")
 
     emitMapfile = True
@@ -103,8 +106,10 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
 
         if len(versionChoices) > 0:
             emitMapfile = False
-            emitAsmpath = False
-            emitNonmatchingsPath = False
+            if decompConfig.versions[0].paths.asm is not None:
+                emitAsmpath = False
+            if decompConfig.versions[0].paths.nonmatchings is not None:
+                emitNonmatchingsPath = False
 
     if emitMapfile:
         parser.add_argument("mapfile", help="Path to a map file.", type=Path)

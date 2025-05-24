@@ -6,12 +6,13 @@
 from __future__ import annotations
 
 import argparse
-import decomp_settings # type:ignore
+import decomp_settings
 
 import mapfile_parser
 
 
 def mapfileParserMain():
+    decompConfig: decomp_settings.Config|None
     try:
         decompConfig = decomp_settings.scan_for_config()
     except:

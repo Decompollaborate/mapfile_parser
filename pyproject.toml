@@ -9,7 +9,7 @@ readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "requests",
-    "decomp-settings==0.0.7",
+    "decomp-settings==0.0.9",
 ]
 classifiers = [
     "Programming Language :: Rust",

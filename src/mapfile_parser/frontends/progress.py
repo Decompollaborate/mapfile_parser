@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+import decomp_settings
 import json
 from pathlib import Path
 
@@ -40,12 +41,14 @@ def doProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, pathIndex: 
     return 0
 
 
-def processArguments(args: argparse.Namespace, decompConfig=None):
+def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        mapPath = Path(version.paths.get("map"))
-        asmPath = Path(version.paths.get("asm"))
-        nonmatchingsPath = Path(version.paths.get("nonmatchings"))
+        assert version is not None, f"Invalid version '{args.version}' selected"
+
+        mapPath = Path(version.paths.map)
+        asmPath = Path(version.paths.asm if version.paths.asm is not None else args.asmpath)
+        nonmatchingsPath = Path(version.paths.nonmatchings if version.paths.nonmatchings is not None else args.nonmatchingspath)
     else:
         mapPath = args.mapfile
         asmPath = args.asmpath
@@ -58,7 +61,7 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 
     exit(doProgress(mapPath, asmPath, nonmatchingsPath, pathIndex=pathIndex, checkFunctionFiles=checkFunctionFiles, print_json=print_json, debugging=debugging))
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
+def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     parser = subparser.add_parser("progress", help="Computes current progress of the matched functions. Relies on a splat (https://github.com/ethteck/splat) folder structure and matched functions not longer having a file.")
 
     emitMapfile = True
@@ -72,8 +75,10 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
         if len(versions) > 0:
             parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
             emitMapfile = False
-            emitAsmpath = False
-            emitNonmatchingsPath = False
+            if decompConfig.versions[0].paths.asm is not None:
+                emitAsmpath = False
+            if decompConfig.versions[0].paths.nonmatchings is not None:
+                emitNonmatchingsPath = False
 
     if emitMapfile:
         parser.add_argument("mapfile", help="Path to a map file.", type=Path)

@@ -25,6 +25,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Changed
 
+- Update `decomp_settings` to version 0.0.9.
 - Bump MSRV from `1.74.0` to `1.85.0`.
 - Bump Rust edition from `2021` to `2024`.
 
