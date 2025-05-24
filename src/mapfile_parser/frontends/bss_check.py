@@ -6,8 +6,8 @@
 from __future__ import annotations
 
 import argparse
+import decomp_settings
 from pathlib import Path
-import sys
 
 from .. import mapfile
 from .. import utils
@@ -147,12 +147,18 @@ def doBssCheck(mapPath, expectedMapPath, *, printAll: bool=False, reverseCheck: 
     return 0
 
 
-def processArguments(args: argparse.Namespace, decompConfig=None):
+def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        expectedDir = Path(version.paths["expected_dir"])
-        mapPath = Path(version.paths.get("map"))
-        expectedMapPath = expectedDir / mapPath
+        assert version is not None, f"Invalid version '{args.version}' selected"
+
+        mapPath = Path(version.paths.map)
+
+        expectedDir = version.paths.expected_dir
+        if expectedDir is not None:
+            expectedMapPath = expectedDir / mapPath
+        else:
+            expectedMapPath = args.expectedmap
     else:
         mapPath = args.mapfile
         expectedMapPath = args.expectedmap
@@ -163,11 +169,11 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
     exit(doBssCheck(mapPath, expectedMapPath, printAll=printAll, reverseCheck=reverseCheck))
 
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
+def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     parser = subparser.add_parser("bss_check", help="Check that globally visible bss has not been reordered.")
 
     emitMapfile = True
-    emitAsmpath = True
+    emitExpected = True
     if decompConfig is not None:
         versions = []
         for version in decompConfig.versions:
@@ -176,11 +182,12 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
         if len(versions) > 0:
             parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
             emitMapfile = False
-            emitAsmpath = False
+            if decompConfig.versions[0].paths.expected_dir is not None:
+                emitExpected = False
 
     if emitMapfile:
         parser.add_argument("mapfile", help="Path to a map file.", type=Path)
-    if emitAsmpath:
+    if emitExpected:
         parser.add_argument("expectedmap", help="Path to the map file in the expected dir.", type=Path)
 
     parser.add_argument("-a", "--print-all", help="Print all bss, not just non-matching.", action="store_true")
