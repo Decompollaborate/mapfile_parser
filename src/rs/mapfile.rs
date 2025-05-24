@@ -556,30 +556,33 @@ pub(crate) mod python_bindings {
             self.get_progress(Some(&path_decomp_settings), &aliases)
         }
 
-        #[pyo3(signature = (outpath, prefixes_to_trim, report_categories, asm_path, path_index=2))]
+        #[pyo3(signature = (outpath, prefixes_to_trim, report_categories, asm_path=None, path_index=2))]
         fn writeObjdiffReportToFile(
             &self,
             outpath: PathBuf,
             prefixes_to_trim: Vec<String>,
             report_categories: ReportCategories,
-            asm_path: PathBuf,
+            asm_path: Option<PathBuf>,
             path_index: usize,
         ) -> Result<(), io::Error> {
-            let path_decomp_settings = section::PathDecompSettings {
-                asm_path: &asm_path,
+            let path_decomp_settings = asm_path.as_ref().map(|x| section::PathDecompSettings {
+                asm_path: x,
                 path_index,
                 nonmatchings: None,
-            };
+            });
 
             let report = self.get_objdiff_report(
                 report_categories,
-                Some(&path_decomp_settings),
+                path_decomp_settings.as_ref(),
                 |section| {
                     let mut section_name = section.filepath.to_string_lossy().to_string();
                     // Trim the first prefix found.
                     for x in &prefixes_to_trim {
                         if section_name.starts_with(x) {
-                            section_name = section_name.trim_start_matches(x).to_string();
+                            section_name = section_name
+                                .trim_start_matches(x)
+                                .trim_matches('/')
+                                .to_string();
                             break;
                         }
                     }

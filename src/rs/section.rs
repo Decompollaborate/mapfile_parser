@@ -13,7 +13,7 @@ use pyo3::prelude::*;
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
-use crate::{SymbolDecompStateIter, symbol, utils};
+use crate::{symbol, utils, SymbolDecompStateIter};
 
 #[derive(Debug, Clone)]
 #[non_exhaustive]
@@ -418,7 +418,7 @@ impl Hash for Section {
 #[cfg(feature = "python_bindings")]
 #[allow(non_snake_case)]
 pub(crate) mod python_bindings {
-    use pyo3::{IntoPyObjectExt, intern, prelude::*};
+    use pyo3::{intern, prelude::*, IntoPyObjectExt};
 
     use std::path::PathBuf;
 

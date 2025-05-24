@@ -966,7 +966,7 @@ class MapFile:
 
         return totalStats, progressPerFolder
 
-    def writeObjdiffReportToFile(self, outpath: Path, prefixesToTrim: list[str], reportCategories: ReportCategories, asmPath: Path, pathIndex: int=2):
+    def writeObjdiffReportToFile(self, outpath: Path, prefixesToTrim: list[str], reportCategories: ReportCategories, asmPath: Path|None=None, pathIndex: int=2):
         nativeMapFile = self._transferContentsToNativeMapFile()
         nativeMapFile.writeObjdiffReportToFile(outpath, prefixesToTrim, reportCategories, asmPath, pathIndex)
 
