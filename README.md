@@ -116,8 +116,9 @@ for example `python3 -m mapfile_parser pj64_syms`.
 - `upload_frogress`: Uploads current progress (calculated by the `progress`
   utility) of the matched functions to [frogress](https://github.com/decompals/frogress).
 
-None of the provided cli utilities are meant to be used directly on a command
-line, because they need a large number of long parameters to them and every repo
-has their own quirks which would need them to be adapted. Those have been
-written mostly to facilitate people to write those utilities in a way which
-accomodates their own repo.
+All these utilities support automatic scanning for a `decomp.yaml` file from
+the [`decomp_settings`](https://github.com/ethteck/decomp_settings/) project.
+This is the recommended way to use these utilities, because otherwise they need
+a large number of long parameters to work. They are not meant to be used
+directly, instead it is recommended to write a small script around them if a
+project does not desire to adopt the `decomp.yaml` format.

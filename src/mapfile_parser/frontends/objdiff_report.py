@@ -94,7 +94,53 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
     exit(doObjdiffReport(mapPath, outputPath, prefixesToTrim, reportCategories, asmPath=asmPath, pathIndex=pathIndex, nonmatchingsPath=nonmatchingsPath))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
-    parser = subparser.add_parser("objdiff_report", help="Computes current progress of the matched functions. Expects `.NON_MATCHING` marker symbols on the mapfile to know which symbols are not matched yet.")
+    epilog = """\
+This utility has support for a special section on the `decomp.yaml` file, which
+allows to avoid passing many arguments to utility.
+
+Here's an example for this entry:
+
+```
+tools:
+  mapfile_parser:
+    progress_report:
+      # output: report.json # Optional
+      check_asm_paths: True
+      # path_index: 2
+      # List of build prefixes to trim from each object file
+      prefixes_to_trim:
+        - build/lib/
+        - build/src/
+        - build/asm/data/
+        - build/asm/
+        - build/
+      # List of categories. `id`s must be unique, but each path may be
+      # duplicated across categories.
+      categories:
+        - id: rom_header
+          name: rom_header
+          paths:
+            - rom_header/
+
+        - id: game_cod
+          name: Game code
+          paths:
+            - main_segment/
+
+        - id: libultra
+          name: libultra
+          paths:
+            - libultra/
+            - ultralib/
+```
+"""
+
+    parser = subparser.add_parser(
+        "objdiff_report",
+        help="Computes current progress of the matched functions. Expects `.NON_MATCHING` marker symbols on the mapfile to know which symbols are not matched yet.",
+        epilog=epilog,
+        formatter_class=argparse.RawDescriptionHelpFormatter,
+    )
 
     emitMapfile = True
     emitOutput = True
