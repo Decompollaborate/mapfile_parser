@@ -661,6 +661,19 @@ class MapFile:
         mapfile.parseMapContentsLLD(mapContents)
         return mapfile
 
+    @staticmethod
+    def newFromMwMapStr(mapContents: str) -> MapFile:
+        """
+        Parses the contents of a Metrowerks ld (mwld) map.
+
+        The `map_contents` argument must contain the contents of a Metrowerks ld mapfile.
+        """
+
+        nativeMapFile = MapFileRs.newFromMwMapStr(mapContents)
+
+        mapfile = MapFile()
+        mapfile._transferContentsFromNativeMapFile(nativeMapFile)
+        return mapfile
 
     def _transferContentsFromNativeMapFile(self, nativeMapFile: MapFileRs):
         for segment in nativeMapFile:
@@ -701,6 +714,7 @@ class MapFile:
         Currently supported map formats:
         - GNU ld
         - clang ld.lld
+        - Metrowerks ld
         """
 
         nativeMapFile = MapFileRs()
@@ -720,6 +734,7 @@ class MapFile:
         Currently supported mapfile formats:
         - GNU ld
         - clang ld.lld
+        - Metrowerks ld
         """
 
         nativeMapFile = MapFileRs()

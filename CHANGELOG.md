@@ -26,6 +26,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - This utility supports the `decomp.yaml` format. This format is the preferred
     way of invoking the tool, given the long list of arguments needed for the
     tool to properly work.
+- Add support for Metrowerks ld mapfiles.
+  - Existing catch-all functions will try to guess if the given mapfile
+    correspond to this kind of map by default.
+  - New functions:
+    - `MapFile::new_from_mw_map_str()` (Rust) and `MapFile::newFromMwMapStr()`
+      (Python): Parses specifically a Metrowerks ld mapfile without guessing.
 
 ### Changed
 

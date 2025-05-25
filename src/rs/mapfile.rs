@@ -432,6 +432,11 @@ pub(crate) mod python_bindings {
             Self::new_from_lld_map_str(map_contents)
         }
 
+        #[staticmethod]
+        fn newFromMwMapStr(map_contents: &str) -> Self {
+            Self::new_from_mw_map_str(map_contents)
+        }
+
         fn readMapFile(&mut self, map_path: PathBuf) {
             #[allow(deprecated)]
             self.read_map_file(&map_path)
