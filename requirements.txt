@@ -1,2 +1,2 @@
 requests
-decomp-settings==0.0.7
+decomp-settings==0.0.9

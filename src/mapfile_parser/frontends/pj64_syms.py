@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+import decomp_settings
 from pathlib import Path
 from typing import TextIO
 import sys
@@ -36,10 +37,12 @@ def doPj64Syms(mapPath: Path, outputPath: Path|None) -> int:
 
     return 0
 
-def processArguments(args: argparse.Namespace, decompConfig=None):
+def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        mapPath = Path(version.paths.get("map"))
+        assert version is not None, f"Invalid version '{args.version}' selected"
+
+        mapPath = Path(version.paths.map)
     else:
         mapPath = args.mapfile
 
@@ -47,7 +50,7 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 
     exit(doPj64Syms(mapPath, outputPath))
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
+def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     parser = subparser.add_parser("pj64_syms", help="Produce a PJ64 compatible symbol map.")
 
     emitMapfile = True

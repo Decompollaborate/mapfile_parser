@@ -393,10 +393,16 @@ impl MapFile {
 pub(crate) mod python_bindings {
     use pyo3::prelude::*;
 
-    use std::{collections::HashMap, path::PathBuf};
+    use std::{
+        collections::HashMap,
+        fs,
+        io::{self, BufWriter},
+        path::PathBuf,
+    };
 
     use crate::{
-        found_symbol_info, maps_comparison_info, progress_stats, section, segment, symbol,
+        found_symbol_info, maps_comparison_info, progress_stats, report::ReportCategories, section,
+        segment, symbol,
     };
 
     #[pymethods]
@@ -553,6 +559,62 @@ pub(crate) mod python_bindings {
             };
 
             self.get_progress(Some(&path_decomp_settings), &aliases)
+        }
+
+        #[pyo3(signature = (outpath, prefixes_to_trim, report_categories, pathIndex=2, asmPath=None, nonmatchingsPath=None))]
+        fn writeObjdiffReportToFile(
+            &self,
+            outpath: PathBuf,
+            prefixes_to_trim: Vec<String>,
+            report_categories: ReportCategories,
+            pathIndex: usize,
+            asmPath: Option<PathBuf>,
+            nonmatchingsPath: Option<PathBuf>,
+        ) -> Result<(), io::Error> {
+            let path_decomp_settings = asmPath.as_ref().map(|x| section::PathDecompSettings {
+                asm_path: x,
+                path_index: pathIndex,
+                nonmatchings: nonmatchingsPath.as_deref(),
+            });
+
+            let report = self.get_objdiff_report(
+                report_categories,
+                path_decomp_settings.as_ref(),
+                |section| {
+                    let mut section_name = section.filepath.to_string_lossy().to_string();
+                    // Trim the first prefix found.
+                    for x in &prefixes_to_trim {
+                        if section_name.starts_with(x) {
+                            section_name = section_name
+                                .trim_start_matches(x)
+                                .trim_matches('/')
+                                .to_string();
+                            break;
+                        }
+                    }
+                    // Trim extensions
+                    for x in [".s.o", ".c.o", ".cpp.o", ".o"] {
+                        if section_name.ends_with(x) {
+                            section_name = section_name.trim_end_matches(x).to_string();
+                            break;
+                        }
+                    }
+                    section_name
+                },
+            );
+
+            // Stolen code from `objdiff` (objdiff-cli/src/util/output.rs)
+            let file = fs::File::options()
+                .read(true)
+                .write(true)
+                .create(true)
+                .truncate(true)
+                .open(outpath)?;
+
+            let mut buf = BufWriter::new(file);
+            serde_json::to_writer_pretty(&mut buf, &report)?;
+
+            Ok(())
         }
 
         #[pyo3(signature=(other_map_file, *, check_other_on_self=true))]

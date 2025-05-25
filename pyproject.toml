@@ -3,13 +3,13 @@
 
 [project]
 name = "mapfile_parser"
-version = "2.8.1"
+version = "2.9.0-dev0"
 description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
 requires-python = ">=3.9"
 dependencies = [
     "requests",
-    "decomp-settings==0.0.7",
+    "decomp-settings==0.0.9",
 ]
 classifiers = [
     "Programming Language :: Rust",

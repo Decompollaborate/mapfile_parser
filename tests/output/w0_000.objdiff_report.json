@@ -1,0 +1,373 @@
+{
+  "measures": {
+    "fuzzy_match_percent": 100.0,
+    "total_code": "1580",
+    "matched_code": "1580",
+    "matched_code_percent": 100.0,
+    "matched_data_percent": 100.0,
+    "total_functions": 25,
+    "matched_functions": 25,
+    "matched_functions_percent": 100.0,
+    "complete_data_percent": 100.0,
+    "total_units": 4
+  },
+  "units": [
+    {
+      "name": "weapon/header",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".reginfo",
+          "size": "24",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": ".MIPS.abiflags",
+          "size": "24",
+          "metadata": {
+            "virtual_address": "24"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "2149031936"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": "$nosegment",
+        "module_id": 0,
+        "progress_categories": [
+          "weapon"
+        ]
+      }
+    },
+    {
+      "name": "us/weapon/data/w_000.data",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".data",
+          "size": "4244",
+          "metadata": {
+            "virtual_address": "2149032000"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".WEAPON_OVL",
+        "module_id": 1,
+        "progress_categories": [
+          "us"
+        ]
+      }
+    },
+    {
+      "name": "weapon/w_000",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "1580",
+        "matched_code": "1580",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 25,
+        "matched_functions": 25,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "1580",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149036244"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "DestroyEntity",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149036244"
+          }
+        },
+        {
+          "name": "LoadWeaponPalette",
+          "size": "152",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149036352"
+          }
+        },
+        {
+          "name": "SetSpriteBank1",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149036504"
+          }
+        },
+        {
+          "name": "SetSpriteBank2",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149036544"
+          }
+        },
+        {
+          "name": "ResetAnimation",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149036584"
+          }
+        },
+        {
+          "name": "DecelerateX",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149036624"
+          }
+        },
+        {
+          "name": "DecelerateY",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149036696"
+          }
+        },
+        {
+          "name": "SetSpeedX",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149036768"
+          }
+        },
+        {
+          "name": "DestroyEntityWeapon",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149036808"
+          }
+        },
+        {
+          "name": "SetWeaponProperties",
+          "size": "252",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149036920"
+          }
+        },
+        {
+          "name": "EntityWeaponAttack",
+          "size": "540",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037172"
+          }
+        },
+        {
+          "name": "func_ptr_80170004",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037712"
+          }
+        },
+        {
+          "name": "func_ptr_80170008",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037720"
+          }
+        },
+        {
+          "name": "func_ptr_8017000C",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037728"
+          }
+        },
+        {
+          "name": "func_ptr_80170010",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037736"
+          }
+        },
+        {
+          "name": "func_ptr_80170014",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037744"
+          }
+        },
+        {
+          "name": "GetWeaponId",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037752"
+          }
+        },
+        {
+          "name": "func_ptr_80170020",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037760"
+          }
+        },
+        {
+          "name": "func_ptr_80170024",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037768"
+          }
+        },
+        {
+          "name": "func_ptr_80170028",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037776"
+          }
+        },
+        {
+          "name": "WeaponUnused2C",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037784"
+          }
+        },
+        {
+          "name": "WeaponUnused30",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037792"
+          }
+        },
+        {
+          "name": "WeaponUnused34",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037800"
+          }
+        },
+        {
+          "name": "WeaponUnused38",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037808"
+          }
+        },
+        {
+          "name": "WeaponUnused3C",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2149037816"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".WEAPON_OVL",
+        "module_id": 1,
+        "progress_categories": [
+          "weapon"
+        ]
+      }
+    },
+    {
+      "name": "us/weapon/data/w_000.sbss",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".sbss",
+          "size": "6400",
+          "metadata": {
+            "virtual_address": "2149037824"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".sbss",
+        "module_id": 3,
+        "progress_categories": [
+          "us"
+        ]
+      }
+    }
+  ],
+  "version": 2,
+  "categories": [
+    {
+      "id": "weapon",
+      "name": "weapon",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "1580",
+        "matched_code": "1580",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 25,
+        "matched_functions": 25,
+        "matched_functions_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 2
+      }
+    },
+    {
+      "id": "us",
+      "name": "us",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "complete_code_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 2
+      }
+    }
+  ]
+}

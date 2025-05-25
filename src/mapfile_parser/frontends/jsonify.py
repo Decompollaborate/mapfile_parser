@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+import decomp_settings
 import json
 from pathlib import Path
 
@@ -31,10 +32,12 @@ def doJsonify(mapPath: Path, outputPath: Path|None, humanReadable: bool=True, ap
     return 0
 
 
-def processArguments(args: argparse.Namespace, decompConfig=None):
+def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        mapPath = Path(args.mapfile if args.mapfile is not None else version.paths.get("map"))
+        assert version is not None, f"Invalid version '{args.version}' selected"
+
+        mapPath = Path(version.paths.map)
     else:
         mapPath = args.mapfile
 
@@ -44,7 +47,7 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 
     exit(doJsonify(mapPath, outputPath, humanReadable=not machine, applyFixes=applyFixes))
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
+def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     parser = subparser.add_parser("jsonify", help="Converts a mapfile into a json format.")
 
     emitMapfile = True
