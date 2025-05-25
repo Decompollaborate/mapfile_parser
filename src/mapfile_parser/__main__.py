@@ -6,12 +6,13 @@
 from __future__ import annotations
 
 import argparse
-import decomp_settings # type:ignore
+import decomp_settings
 
 import mapfile_parser
 
 
 def mapfileParserMain():
+    decompConfig: decomp_settings.Config|None
     try:
         decompConfig = decomp_settings.scan_for_config()
     except:
@@ -43,6 +44,7 @@ first listed version.
     mapfile_parser.frontends.bss_check.addSubparser(subparsers, decompConfig)
     mapfile_parser.frontends.first_diff.addSubparser(subparsers, decompConfig)
     mapfile_parser.frontends.jsonify.addSubparser(subparsers, decompConfig)
+    mapfile_parser.frontends.objdiff_report.addSubparser(subparsers, decompConfig)
     mapfile_parser.frontends.pj64_syms.addSubparser(subparsers, decompConfig)
     mapfile_parser.frontends.progress.addSubparser(subparsers, decompConfig)
     mapfile_parser.frontends.sym_info.addSubparser(subparsers, decompConfig)

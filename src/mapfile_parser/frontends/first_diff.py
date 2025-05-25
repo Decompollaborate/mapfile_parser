@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+import decomp_settings
 from pathlib import Path
 from typing import Callable, Literal
 
@@ -139,14 +140,21 @@ def doFirstDiff(mapPath, expectedMapPath, romPath, expectedRomPath, diffCount: i
     return 0
 
 
-def processArguments(args: argparse.Namespace, decompConfig=None):
+def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        expectedDir = Path(version.paths["expected_dir"])
-        mapPath = Path(version.paths.get("map"))
-        expectedMapPath = expectedDir / mapPath
-        romPath = Path(version.paths.get("build"))
-        expectedRomPath = expectedDir / romPath
+        assert version is not None, f"Invalid version '{args.version}' selected"
+
+        mapPath = Path(version.paths.map)
+        romPath = Path(version.paths.compiled_target)
+
+        expectedDir = version.paths.expected_dir
+        if expectedDir is not None:
+            expectedMapPath = expectedDir / mapPath
+            expectedRomPath = expectedDir / romPath
+        else:
+            expectedMapPath = args.expectedmap
+            expectedRomPath = args.expectedrom
     else:
         mapPath = args.mapfile
         expectedMapPath = args.expectedmap
@@ -161,7 +169,7 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
     exit(doFirstDiff(mapPath, expectedMapPath, romPath, expectedRomPath, diffCount, mismatchSize, endian=endian))
 
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
+def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     parser = subparser.add_parser("first_diff", help="Find the first difference(s) between the built ROM and the base ROM.")
 
     emitMapfile = True
@@ -175,8 +183,9 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
         if len(versions) > 0:
             parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
             emitMapfile = False
-            emitExpected = False
             emitRompath = False
+            if decompConfig.versions[0].paths.expected_dir is not None:
+                emitExpected = False
 
     if emitMapfile:
         parser.add_argument("mapfile", help="Path to a map file.", type=Path)

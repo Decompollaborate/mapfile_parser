@@ -153,20 +153,17 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Checkout reposistory
-      uses: actions/checkout@v4
+      - name: Checkout reposistory
+        uses: actions/checkout@v4
 
-    - name: Setup Rust toolchain
-      uses: actions-rs/toolchain@v1
-      with:
-        toolchain: stable
-        override: true
+      - name: Setup Rust toolchain
+        uses: dtolnay/rust-toolchain@stable
 
-    - name: Setup clippy
-      run: rustup component add clippy
+      - name: Setup clippy
+        run: rustup component add clippy
 
-    - name: Run clippy
-      run: cargo clippy --all-targets --features python_bindings -- -D warnings
+      - name: Run clippy
+        run: cargo clippy --all-targets --features python_bindings -- -D warnings
 
   release:
     name: Release

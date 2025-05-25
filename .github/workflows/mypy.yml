@@ -4,22 +4,23 @@ name: Check mypy
 on: [push, pull_request]
 
 jobs:
-  checks:
-    runs-on: ubuntu-latest
+  src_checks:
     name: mypy
+    runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v4
+      - name: Checkout reposistory
+        uses: actions/checkout@v4
 
-    - name: Set up Python 3.9
-      uses: actions/setup-python@v4
-      with:
-        python-version: 3.9
+      - name: Set up Python 3.9
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.9
 
-    - name: Install Dependencies
-      run: |
-        python3 -m pip install -r requirements.txt
-        python3 -m pip install -U maturin
-        python3 -m pip install -U mypy
+      - name: Install Dependencies
+        run: |
+          python3 -m pip install -r requirements.txt
+          python3 -m pip install -U maturin
+          python3 -m pip install -U mypy
 
-    - name: mypy
-      run: mypy --show-column-numbers --hide-error-context .
+      - name: mypy
+        run: mypy --show-column-numbers --hide-error-context .

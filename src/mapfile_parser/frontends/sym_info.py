@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+import decomp_settings
 from pathlib import Path
 
 from .. import mapfile
@@ -52,10 +53,12 @@ def doSymInfo(mapPath: Path, symName: str, *, as_vram: bool=False, as_vrom: bool
     return 1
 
 
-def processArguments(args: argparse.Namespace, decompConfig=None):
+def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        mapPath = Path(version.paths.get("map"))
+        assert version is not None, f"Invalid version '{args.version}' selected"
+
+        mapPath = Path(version.paths.map)
     else:
         mapPath = args.mapfile
 
@@ -66,7 +69,7 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 
     exit(doSymInfo(mapPath, symName, as_vram=as_vram, as_vrom=as_vrom, as_name=as_name))
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
+def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     parser = subparser.add_parser("sym_info", help="Display various information about a symbol or address.")
 
     emitMapfile = True

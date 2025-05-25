@@ -17,6 +17,7 @@ from .mapfile_rs import MapFile as MapFileRs
 from .mapfile_rs import Segment as SegmentRs
 from .mapfile_rs import Section as SectionRs
 from .mapfile_rs import Symbol as SymbolRs
+from .mapfile_rs import ReportCategories as ReportCategories
 
 regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
@@ -660,6 +661,19 @@ class MapFile:
         mapfile.parseMapContentsLLD(mapContents)
         return mapfile
 
+    @staticmethod
+    def newFromMwMapStr(mapContents: str) -> MapFile:
+        """
+        Parses the contents of a Metrowerks ld (mwld) map.
+
+        The `map_contents` argument must contain the contents of a Metrowerks ld mapfile.
+        """
+
+        nativeMapFile = MapFileRs.newFromMwMapStr(mapContents)
+
+        mapfile = MapFile()
+        mapfile._transferContentsFromNativeMapFile(nativeMapFile)
+        return mapfile
 
     def _transferContentsFromNativeMapFile(self, nativeMapFile: MapFileRs):
         for segment in nativeMapFile:
@@ -700,6 +714,7 @@ class MapFile:
         Currently supported map formats:
         - GNU ld
         - clang ld.lld
+        - Metrowerks ld
         """
 
         nativeMapFile = MapFileRs()
@@ -719,6 +734,7 @@ class MapFile:
         Currently supported mapfile formats:
         - GNU ld
         - clang ld.lld
+        - Metrowerks ld
         """
 
         nativeMapFile = MapFileRs()
@@ -964,6 +980,10 @@ class MapFile:
                             utils.eprint(f" the function is matched! (the function section was not found)")
 
         return totalStats, progressPerFolder
+
+    def writeObjdiffReportToFile(self, outpath: Path, prefixesToTrim: list[str], reportCategories: ReportCategories, *, pathIndex: int=2, asmPath: Path|None=None, nonmatchingsPath: Path|None=None):
+        nativeMapFile = self._transferContentsToNativeMapFile()
+        nativeMapFile.writeObjdiffReportToFile(outpath, prefixesToTrim, reportCategories, pathIndex=pathIndex, asmPath=asmPath, nonmatchingsPath=nonmatchingsPath)
 
     # Useful for finding bss reorders
     def compareFilesAndSymbols(self, otherMapFile: MapFile, *, checkOtherOnSelf: bool=True) -> MapsComparisonInfo:

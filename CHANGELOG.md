@@ -7,6 +7,39 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.9.0] - 2025-05-25
+
+### Added
+
+- Support emitting progress reports using
+  [`objdiff`](https://github.com/encounter/objdiff)'s format.
+  - Relies mainly on `.NON_MATCHING`-suffixed marker symbols being present on
+    the mapfile for each non-matched symbol.
+  - Rust:
+    - Disabled by default, it is gated by the `objdiff_report` feature.
+    - Use `MapFile::get_objdiff_report()` to generate the report.
+    - It is recommended to mix with the `serde` feature to make serialization of
+      the report easier.
+  - Python:
+    - Use `MapFile::writeObjdiffReportToFile()` to write an objdiff report as a
+      `json` file.
+- Add `objdiff_report` as a new CLI utility to the Python library.
+  - Generate a simple `objdiff` progress report from your terminal!
+  - This utility supports the `decomp.yaml` format. This format is the preferred
+    way of invoking the tool, given the long list of arguments needed for the
+    tool to properly work.
+- Add support for Metrowerks ld mapfiles.
+  - Existing catch-all functions will try to guess if the given mapfile
+    correspond to this kind of map by default.
+  - New functions:
+    - `MapFile::new_from_mw_map_str()` (Rust) and `MapFile::newFromMwMapStr()`
+      (Python): Parses specifically a Metrowerks ld mapfile without guessing.
+
+### Changed
+
+- Update `decomp_settings` to version 0.0.9.
+- Bump MSRV from `1.65.0` to `1.74.0`.
+
 ## [2.8.1] - 2025-05-22
 
 ### Fixed
@@ -535,6 +568,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.9.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.8.1...2.9.0
 [2.8.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.8.0...2.8.1
 [2.8.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.5...2.8.0
 [2.7.5]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.4...2.7.5

@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+import decomp_settings
 from pathlib import Path
 
 from .. import mapfile
@@ -38,10 +39,12 @@ def doSymbolSizesCsv(mapPath: Path, outputPath: Path|None, filterSection: str|No
 
     return 0
 
-def processArguments(args: argparse.Namespace, decompConfig=None):
+def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
-        mapPath = Path(version.paths.get("map"))
+        assert version is not None, f"Invalid version '{args.version}' selected"
+
+        mapPath = Path(version.paths.map)
     else:
         mapPath = args.mapfile
 
@@ -53,7 +56,7 @@ def processArguments(args: argparse.Namespace, decompConfig=None):
 
     exit(doSymbolSizesCsv(mapPath, outputPath, filterSection, sameFolder, symbolsSummary, allFiles))
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig=None):
+def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     parser = subparser.add_parser("symbol_sizes_csv", help="Produces a csv summarizing the files sizes by parsing a map file.")
 
     emitMapfile = True
