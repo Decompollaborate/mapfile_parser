@@ -95,6 +95,9 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     epilog = """\
+Visit https://decomp.dev/ and https://wiki.decomp.dev/tools/decomp-dev for more
+information about uploading the generated progress report.
+
 This utility has support for a special section on the `decomp.yaml` file, which
 allows to avoid passing many arguments to utility.
 
@@ -137,9 +140,9 @@ tools:
 
     parser = subparser.add_parser(
         "objdiff_report",
-        help="Computes current progress of the matched functions. Expects `.NON_MATCHING` marker symbols on the mapfile to know which symbols are not matched yet.",
+        help="Computes current progress of the matched functions and generates a report suitable for uploading to https://decomp.dev/. Expects `.NON_MATCHING` marker symbols on the mapfile to know which symbols are not matched yet.",
         epilog=epilog,
-        formatter_class=argparse.RawDescriptionHelpFormatter,
+        formatter_class=argparse.RawTextHelpFormatter,
     )
 
     emitMapfile = True
