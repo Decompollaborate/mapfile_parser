@@ -153,8 +153,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149111296"
-          },
-          "address": "0"
+          }
         },
         {
           "name": "EntityUnkId12",
@@ -162,8 +161,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149111520"
-          },
-          "address": "224"
+          }
         },
         {
           "name": "EntityUnkId01",
@@ -171,8 +169,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149111964"
-          },
-          "address": "668"
+          }
         },
         {
           "name": "func_8018DB18",
@@ -180,8 +177,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149112600"
-          },
-          "address": "1304"
+          }
         },
         {
           "name": "func_8018DF0C",
@@ -189,8 +185,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149113612"
-          },
-          "address": "2316"
+          }
         },
         {
           "name": "func_8018DF60",
@@ -198,8 +193,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149113696"
-          },
-          "address": "2400"
+          }
         },
         {
           "name": "func_8018E124",
@@ -207,8 +201,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149114148"
-          },
-          "address": "2852"
+          }
         },
         {
           "name": "func_8018E180",
@@ -216,8 +209,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149114240"
-          },
-          "address": "2944"
+          }
         },
         {
           "name": "func_8018E238",
@@ -225,8 +217,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149114424"
-          },
-          "address": "3128"
+          }
         },
         {
           "name": "func_8018E3BC",
@@ -234,8 +225,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149114812"
-          },
-          "address": "3516"
+          }
         },
         {
           "name": "func_8018E3E8",
@@ -243,8 +233,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149114856"
-          },
-          "address": "3560"
+          }
         },
         {
           "name": "func_8018E6C4",
@@ -252,8 +241,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149115588"
-          },
-          "address": "4292"
+          }
         },
         {
           "name": "EntityUnkId16",
@@ -261,8 +249,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149115848"
-          },
-          "address": "4552"
+          }
         },
         {
           "name": "func_8018F890",
@@ -270,8 +257,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149120144"
-          },
-          "address": "8848"
+          }
         },
         {
           "name": "func_8018F8EC",
@@ -279,8 +265,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149120236"
-          },
-          "address": "8940"
+          }
         },
         {
           "name": "EntityPlatform",
@@ -288,8 +273,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149120348"
-          },
-          "address": "9052"
+          }
         },
         {
           "name": "EntityRoomDarkness",
@@ -297,8 +281,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149122172"
-          },
-          "address": "10876"
+          }
         },
         {
           "name": "EntityMaria",
@@ -306,8 +289,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149122932"
-          },
-          "address": "11636"
+          }
         },
         {
           "name": "func_8019040C",
@@ -315,8 +297,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149123084"
-          },
-          "address": "11788"
+          }
         },
         {
           "name": "func_801904B8",
@@ -324,8 +305,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149123256"
-          },
-          "address": "11960"
+          }
         },
         {
           "name": "EntityElevatorStationary",
@@ -333,8 +313,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149123392"
-          },
-          "address": "12096"
+          }
         },
         {
           "name": "EntityUnkId1B",
@@ -342,8 +321,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149124728"
-          },
-          "address": "13432"
+          }
         },
         {
           "name": "EntityMovingElevator",
@@ -351,8 +329,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149124964"
-          },
-          "address": "13668"
+          }
         }
       ],
       "metadata": {
@@ -419,8 +396,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149125708"
-          },
-          "address": "0"
+          }
         },
         {
           "name": "Update",
@@ -428,8 +404,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149125756"
-          },
-          "address": "48"
+          }
         },
         {
           "name": "UpdateStageEntities",
@@ -437,8 +412,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149126520"
-          },
-          "address": "812"
+          }
         }
       ],
       "metadata": {
@@ -479,8 +453,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149126784"
-          },
-          "address": "0"
+          }
         },
         {
           "name": "EntityNumericDamage",
@@ -488,8 +461,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149131160"
-          },
-          "address": "4376"
+          }
         },
         {
           "name": "CreateEntityFromLayout",
@@ -497,8 +469,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149132860"
-          },
-          "address": "6076"
+          }
         },
         {
           "name": "CreateEntityWhenInVerticalRange",
@@ -506,8 +477,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149133056"
-          },
-          "address": "6272"
+          }
         },
         {
           "name": "CreateEntityWhenInHorizontalRange",
@@ -515,8 +485,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149133336"
-          },
-          "address": "6552"
+          }
         },
         {
           "name": "func_80192D30",
@@ -524,8 +493,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149133616"
-          },
-          "address": "6832"
+          }
         },
         {
           "name": "func_80192D7C",
@@ -533,8 +501,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149133692"
-          },
-          "address": "6908"
+          }
         },
         {
           "name": "func_80192DD4",
@@ -542,8 +509,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149133780"
-          },
-          "address": "6996"
+          }
         },
         {
           "name": "func_80192ED0",
@@ -551,8 +517,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149134032"
-          },
-          "address": "7248"
+          }
         },
         {
           "name": "func_80192FE4",
@@ -560,8 +525,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149134308"
-          },
-          "address": "7524"
+          }
         },
         {
           "name": "func_80193030",
@@ -569,8 +533,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149134384"
-          },
-          "address": "7600"
+          }
         },
         {
           "name": "func_80193088",
@@ -578,8 +541,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149134472"
-          },
-          "address": "7688"
+          }
         },
         {
           "name": "func_80193184",
@@ -587,8 +549,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149134724"
-          },
-          "address": "7940"
+          }
         },
         {
           "name": "InitRoomEntities",
@@ -596,8 +557,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149135000"
-          },
-          "address": "8216"
+          }
         },
         {
           "name": "func_80193410",
@@ -605,8 +565,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149135376"
-          },
-          "address": "8592"
+          }
         },
         {
           "name": "CreateEntityFromCurrentEntity",
@@ -614,8 +573,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149135556"
-          },
-          "address": "8772"
+          }
         },
         {
           "name": "CreateEntityFromEntity",
@@ -623,8 +581,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149135672"
-          },
-          "address": "8888"
+          }
         },
         {
           "name": "func_801935B4",
@@ -632,8 +589,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149135796"
-          },
-          "address": "9012"
+          }
         },
         {
           "name": "EntityRedDoor",
@@ -641,8 +597,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149135916"
-          },
-          "address": "9132"
+          }
         },
         {
           "name": "DestroyEntity",
@@ -650,8 +605,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149139044"
-          },
-          "address": "12260"
+          }
         },
         {
           "name": "func_801942D0",
@@ -659,8 +613,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149139152"
-          },
-          "address": "12368"
+          }
         },
         {
           "name": "func_8019434C",
@@ -668,8 +621,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149139276"
-          },
-          "address": "12492"
+          }
         },
         {
           "name": "func_80194394",
@@ -677,8 +629,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149139348"
-          },
-          "address": "12564"
+          }
         },
         {
           "name": "func_8019444C",
@@ -686,8 +637,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149139532"
-          },
-          "address": "12748"
+          }
         },
         {
           "name": "GetDistanceToPlayerX",
@@ -695,8 +645,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149139812"
-          },
-          "address": "13028"
+          }
         },
         {
           "name": "GetDistanceToPlayerY",
@@ -704,8 +653,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149139872"
-          },
-          "address": "13088"
+          }
         },
         {
           "name": "GetSideToPlayer",
@@ -713,8 +661,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149139924"
-          },
-          "address": "13140"
+          }
         },
         {
           "name": "MoveEntity",
@@ -722,8 +669,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149139992"
-          },
-          "address": "13208"
+          }
         },
         {
           "name": "FallEntity",
@@ -731,8 +677,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149140040"
-          },
-          "address": "13256"
+          }
         },
         {
           "name": "func_80194674",
@@ -740,8 +685,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149140084"
-          },
-          "address": "13300"
+          }
         },
         {
           "name": "func_801948EC",
@@ -749,8 +693,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149140716"
-          },
-          "address": "13932"
+          }
         },
         {
           "name": "AllocEntity",
@@ -758,8 +701,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149141204"
-          },
-          "address": "14420"
+          }
         },
         {
           "name": "func_80194B34",
@@ -767,8 +709,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149141300"
-          },
-          "address": "14516"
+          }
         },
         {
           "name": "func_80194B60",
@@ -776,8 +717,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149141344"
-          },
-          "address": "14560"
+          }
         },
         {
           "name": "func_80194B7C",
@@ -785,8 +725,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149141372"
-          },
-          "address": "14588"
+          }
         },
         {
           "name": "func_80194BE8",
@@ -794,8 +733,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149141480"
-          },
-          "address": "14696"
+          }
         },
         {
           "name": "func_80194C20",
@@ -803,8 +741,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149141536"
-          },
-          "address": "14752"
+          }
         },
         {
           "name": "func_80194C68",
@@ -812,8 +749,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149141608"
-          },
-          "address": "14824"
+          }
         },
         {
           "name": "func_80194CB0",
@@ -821,8 +757,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149141680"
-          },
-          "address": "14896"
+          }
         },
         {
           "name": "func_80194D08",
@@ -830,8 +765,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149141768"
-          },
-          "address": "14984"
+          }
         },
         {
           "name": "func_80194D94",
@@ -839,8 +773,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149141908"
-          },
-          "address": "15124"
+          }
         },
         {
           "name": "func_80194DC4",
@@ -848,8 +781,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149141956"
-          },
-          "address": "15172"
+          }
         },
         {
           "name": "func_80194DFC",
@@ -857,8 +789,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149142012"
-          },
-          "address": "15228"
+          }
         },
         {
           "name": "func_80194E44",
@@ -866,8 +797,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149142084"
-          },
-          "address": "15300"
+          }
         },
         {
           "name": "SetStep",
@@ -875,8 +805,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149142180"
-          },
-          "address": "15396"
+          }
         },
         {
           "name": "func_80194EC4",
@@ -884,8 +813,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149142212"
-          },
-          "address": "15428"
+          }
         },
         {
           "name": "func_80194EE0",
@@ -893,8 +821,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149142240"
-          },
-          "address": "15456"
+          }
         },
         {
           "name": "InitializeEntity",
@@ -902,8 +829,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149142388"
-          },
-          "address": "15604"
+          }
         },
         {
           "name": "func_80195070",
@@ -911,8 +837,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149142640"
-          },
-          "address": "15856"
+          }
         },
         {
           "name": "func_80195098",
@@ -920,8 +845,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149142680"
-          },
-          "address": "15896"
+          }
         },
         {
           "name": "func_801951C0",
@@ -929,8 +853,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149142976"
-          },
-          "address": "16192"
+          }
         },
         {
           "name": "func_80195318",
@@ -938,8 +861,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149143320"
-          },
-          "address": "16536"
+          }
         },
         {
           "name": "func_8019565C",
@@ -947,8 +869,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149144156"
-          },
-          "address": "17372"
+          }
         },
         {
           "name": "func_80195714",
@@ -956,8 +877,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149144340"
-          },
-          "address": "17556"
+          }
         },
         {
           "name": "func_80195798",
@@ -965,8 +885,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149144472"
-          },
-          "address": "17688"
+          }
         },
         {
           "name": "CollectHeart",
@@ -974,8 +893,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149144820"
-          },
-          "address": "18036"
+          }
         },
         {
           "name": "func_80195974",
@@ -983,8 +901,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149144948"
-          },
-          "address": "18164"
+          }
         },
         {
           "name": "CollectSubweapon",
@@ -992,8 +909,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149145168"
-          },
-          "address": "18384"
+          }
         },
         {
           "name": "func_80195B68",
@@ -1001,8 +917,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149145448"
-          },
-          "address": "18664"
+          }
         },
         {
           "name": "func_80195C0C",
@@ -1010,8 +925,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149145612"
-          },
-          "address": "18828"
+          }
         },
         {
           "name": "func_80195C5C",
@@ -1019,8 +933,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149145692"
-          },
-          "address": "18908"
+          }
         },
         {
           "name": "EntityPrizeDrop",
@@ -1028,8 +941,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149145732"
-          },
-          "address": "18948"
+          }
         },
         {
           "name": "EntityExplosion",
@@ -1037,8 +949,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149147896"
-          },
-          "address": "21112"
+          }
         },
         {
           "name": "func_801965F4",
@@ -1046,8 +957,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149148148"
-          },
-          "address": "21364"
+          }
         },
         {
           "name": "EntityEquipItemDrop",
@@ -1055,8 +965,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149148312"
-          },
-          "address": "21528"
+          }
         },
         {
           "name": "func_80196C80",
@@ -1064,8 +973,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149149824"
-          },
-          "address": "23040"
+          }
         },
         {
           "name": "EntityRelicOrb",
@@ -1073,8 +981,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149150512"
-          },
-          "address": "23728"
+          }
         },
         {
           "name": "EntityHeartDrop",
@@ -1082,8 +989,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149153280"
-          },
-          "address": "26496"
+          }
         },
         {
           "name": "EntityUnkId0E",
@@ -1091,8 +997,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149153576"
-          },
-          "address": "26792"
+          }
         },
         {
           "name": "func_80198084",
@@ -1100,8 +1005,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149154948"
-          },
-          "address": "28164"
+          }
         },
         {
           "name": "EntityUnkId13",
@@ -1109,8 +1013,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149155188"
-          },
-          "address": "28404"
+          }
         },
         {
           "name": "func_80198284",
@@ -1118,8 +1021,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149155460"
-          },
-          "address": "28676"
+          }
         },
         {
           "name": "func_801983B4",
@@ -1127,8 +1029,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149155764"
-          },
-          "address": "28980"
+          }
         },
         {
           "name": "EntityExplosion14",
@@ -1136,8 +1037,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149155996"
-          },
-          "address": "29212"
+          }
         },
         {
           "name": "EntityUnkId15",
@@ -1145,8 +1045,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149156236"
-          },
-          "address": "29452"
+          }
         },
         {
           "name": "func_80198680",
@@ -1154,8 +1053,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149156480"
-          },
-          "address": "29696"
+          }
         },
         {
           "name": "func_801988B0",
@@ -1163,8 +1061,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149157040"
-          },
-          "address": "30256"
+          }
         },
         {
           "name": "func_801989AC",
@@ -1172,8 +1069,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149157292"
-          },
-          "address": "30508"
+          }
         },
         {
           "name": "EntityIntenseExplosion",
@@ -1181,8 +1077,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149158700"
-          },
-          "address": "31916"
+          }
         },
         {
           "name": "func_8019902C",
@@ -1190,8 +1085,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149158956"
-          },
-          "address": "32172"
+          }
         },
         {
           "name": "func_801990F8",
@@ -1199,8 +1093,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149159160"
-          },
-          "address": "32376"
+          }
         },
         {
           "name": "func_801991C0",
@@ -1208,8 +1101,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149159360"
-          },
-          "address": "32576"
+          }
         },
         {
           "name": "func_80199278",
@@ -1217,8 +1109,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149159544"
-          },
-          "address": "32760"
+          }
         },
         {
           "name": "func_80199450",
@@ -1226,8 +1117,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149160016"
-          },
-          "address": "33232"
+          }
         },
         {
           "name": "func_80199A30",
@@ -1235,8 +1125,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149161520"
-          },
-          "address": "34736"
+          }
         },
         {
           "name": "ClutLerp",
@@ -1244,8 +1133,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149163312"
-          },
-          "address": "36528"
+          }
         },
         {
           "name": "func_8019A328",
@@ -1253,8 +1141,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149163816"
-          },
-          "address": "37032"
+          }
         },
         {
           "name": "func_8019A420",
@@ -1262,8 +1149,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149164064"
-          },
-          "address": "37280"
+          }
         },
         {
           "name": "EntityStageNamePopup",
@@ -1271,8 +1157,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149164528"
-          },
-          "address": "37744"
+          }
         }
       ],
       "metadata": {
@@ -1313,8 +1198,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149167732"
-          },
-          "address": "0"
+          }
         },
         {
           "name": "EntityEnemyBlood",
@@ -1322,8 +1206,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149168648"
-          },
-          "address": "916"
+          }
         },
         {
           "name": "EntityUnkId08",
@@ -1331,8 +1214,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149169848"
-          },
-          "address": "2116"
+          }
         },
         {
           "name": "func_8019BBA4",
@@ -1340,8 +1222,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149170084"
-          },
-          "address": "2352"
+          }
         },
         {
           "name": "func_8019BED4",
@@ -1349,8 +1230,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149170900"
-          },
-          "address": "3168"
+          }
         },
         {
           "name": "func_8019C2BC",
@@ -1358,8 +1238,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149171900"
-          },
-          "address": "4168"
+          }
         },
         {
           "name": "func_8019C40C",
@@ -1367,8 +1246,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149172236"
-          },
-          "address": "4504"
+          }
         },
         {
           "name": "func_8019C43C",
@@ -1376,8 +1254,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149172284"
-          },
-          "address": "4552"
+          }
         },
         {
           "name": "func_8019C4B8",
@@ -1385,8 +1262,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149172408"
-          },
-          "address": "4676"
+          }
         },
         {
           "name": "func_8019C540",
@@ -1394,8 +1270,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149172544"
-          },
-          "address": "4812"
+          }
         },
         {
           "name": "func_8019C620",
@@ -1403,8 +1278,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149172768"
-          },
-          "address": "5036"
+          }
         },
         {
           "name": "func_8019C674",
@@ -1412,8 +1286,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149172852"
-          },
-          "address": "5120"
+          }
         },
         {
           "name": "func_8019C6A0",
@@ -1421,8 +1294,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149172896"
-          },
-          "address": "5164"
+          }
         }
       ],
       "metadata": {

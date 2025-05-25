@@ -108,8 +108,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149036244"
-          },
-          "address": "0"
+          }
         },
         {
           "name": "LoadWeaponPalette",
@@ -117,8 +116,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149036352"
-          },
-          "address": "108"
+          }
         },
         {
           "name": "SetSpriteBank1",
@@ -126,8 +124,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149036504"
-          },
-          "address": "260"
+          }
         },
         {
           "name": "SetSpriteBank2",
@@ -135,8 +132,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149036544"
-          },
-          "address": "300"
+          }
         },
         {
           "name": "ResetAnimation",
@@ -144,8 +140,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149036584"
-          },
-          "address": "340"
+          }
         },
         {
           "name": "DecelerateX",
@@ -153,8 +148,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149036624"
-          },
-          "address": "380"
+          }
         },
         {
           "name": "DecelerateY",
@@ -162,8 +156,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149036696"
-          },
-          "address": "452"
+          }
         },
         {
           "name": "SetSpeedX",
@@ -171,8 +164,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149036768"
-          },
-          "address": "524"
+          }
         },
         {
           "name": "DestroyEntityWeapon",
@@ -180,8 +172,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149036808"
-          },
-          "address": "564"
+          }
         },
         {
           "name": "SetWeaponProperties",
@@ -189,8 +180,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149036920"
-          },
-          "address": "676"
+          }
         },
         {
           "name": "EntityWeaponAttack",
@@ -198,8 +188,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037172"
-          },
-          "address": "928"
+          }
         },
         {
           "name": "func_ptr_80170004",
@@ -207,8 +196,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037712"
-          },
-          "address": "1468"
+          }
         },
         {
           "name": "func_ptr_80170008",
@@ -216,8 +204,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037720"
-          },
-          "address": "1476"
+          }
         },
         {
           "name": "func_ptr_8017000C",
@@ -225,8 +212,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037728"
-          },
-          "address": "1484"
+          }
         },
         {
           "name": "func_ptr_80170010",
@@ -234,8 +220,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037736"
-          },
-          "address": "1492"
+          }
         },
         {
           "name": "func_ptr_80170014",
@@ -243,8 +228,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037744"
-          },
-          "address": "1500"
+          }
         },
         {
           "name": "GetWeaponId",
@@ -252,8 +236,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037752"
-          },
-          "address": "1508"
+          }
         },
         {
           "name": "func_ptr_80170020",
@@ -261,8 +244,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037760"
-          },
-          "address": "1516"
+          }
         },
         {
           "name": "func_ptr_80170024",
@@ -270,8 +252,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037768"
-          },
-          "address": "1524"
+          }
         },
         {
           "name": "func_ptr_80170028",
@@ -279,8 +260,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037776"
-          },
-          "address": "1532"
+          }
         },
         {
           "name": "WeaponUnused2C",
@@ -288,8 +268,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037784"
-          },
-          "address": "1540"
+          }
         },
         {
           "name": "WeaponUnused30",
@@ -297,8 +276,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037792"
-          },
-          "address": "1548"
+          }
         },
         {
           "name": "WeaponUnused34",
@@ -306,8 +284,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037800"
-          },
-          "address": "1556"
+          }
         },
         {
           "name": "WeaponUnused38",
@@ -315,8 +292,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037808"
-          },
-          "address": "1564"
+          }
         },
         {
           "name": "WeaponUnused3C",
@@ -324,8 +300,7 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037816"
-          },
-          "address": "1572"
+          }
         }
       ],
       "metadata": {
