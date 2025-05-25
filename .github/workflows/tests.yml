@@ -97,7 +97,7 @@ jobs:
       run: python3 -m mapfile_parser jsonify tests/maps/drmario64.us.map
 
     - name: objdiff_report
-      run: python3 -m mapfile_parser objdiff_report tests/maps/drmario64.us.map asm objdiff_report.json
+      run: python3 -m mapfile_parser objdiff_report tests/maps/drmario64.us.map objdiff_report.json
 
     - name: pj64_syms
       run: python3 -m mapfile_parser pj64_syms tests/maps/drmario64.us.map

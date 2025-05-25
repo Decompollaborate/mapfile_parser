@@ -9,7 +9,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ### Added
 
-- Support emitting progress reports using `objdiff`'s format.
+- Support emitting progress reports using
+  [`objdiff`](https://github.com/encounter/objdiff)'s format.
   - Relies mainly on `.NON_MATCHING`-suffixed marker symbols being present on
     the mapfile for each non-matched symbol.
   - Rust:
@@ -26,8 +27,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 ### Changed
 
 - Update `decomp_settings` to version 0.0.9.
-- Bump MSRV from `1.74.0` to `1.85.0`.
-- Bump Rust edition from `2021` to `2024`.
+- Bump MSRV from `1.65.0` to `1.74.0`.
 
 ## [2.8.1] - 2025-05-22
 
