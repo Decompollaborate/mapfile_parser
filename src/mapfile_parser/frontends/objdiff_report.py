@@ -13,7 +13,7 @@ from pathlib import Path
 from .. import mapfile
 
 
-def doObjdiffReport(mapPath: Path, outputPath: Path, prefixesToTrim: list[str], reportCategories: mapfile.ReportCategories, *, asmPath: Path|None=None, pathIndex: int=2) -> int:
+def doObjdiffReport(mapPath: Path, outputPath: Path, prefixesToTrim: list[str], reportCategories: mapfile.ReportCategories, *, pathIndex: int=2, asmPath: Path|None=None, nonmatchingsPath: Path|None=None) -> int:
     if not mapPath.exists():
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
@@ -25,8 +25,9 @@ def doObjdiffReport(mapPath: Path, outputPath: Path, prefixesToTrim: list[str], 
         outputPath,
         prefixesToTrim,
         reportCategories,
-        asmPath,
         pathIndex=pathIndex,
+        asmPath=asmPath,
+        nonmatchingsPath=nonmatchingsPath,
     )
 
     return 0
@@ -34,15 +35,6 @@ def doObjdiffReport(mapPath: Path, outputPath: Path, prefixesToTrim: list[str], 
 def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
     reportCategories = mapfile.ReportCategories()
     pathIndexDefault = 2
-
-    if decompConfig is not None:
-        version = decompConfig.get_version_by_name(args.version)
-        assert version is not None
-        mapPath = Path(version.paths.map)
-        asmPath = Path(version.paths.asm) if version.paths.asm is not None else args.asmpath
-    else:
-        mapPath = args.mapfile
-        asmPath = args.asmpath
 
     settings = SpecificSettings.fromDecompConfig(decompConfig)
     if settings is not None:
@@ -75,14 +67,38 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
             prefixesToTrim = []
         pathIndex = int(args.path_index) if args.path_index is not None else pathIndexDefault
 
-    exit(doObjdiffReport(mapPath, outputPath, prefixesToTrim, reportCategories, asmPath=asmPath, pathIndex=pathIndex))
+    if decompConfig is not None:
+        version = decompConfig.get_version_by_name(args.version)
+        assert version is not None
+        mapPath = Path(version.paths.map)
+
+        if version.paths.asm is None:
+            asmPath = args.asmpath
+        elif settings is not None and settings.checkAsmPaths:
+            asmPath = Path(version.paths.asm)
+        else:
+            asmPath = None
+
+        if version.paths.nonmatchings is None:
+            nonmatchingsPath = args.nonmatchingspath
+        elif settings is not None and settings.checkAsmPaths:
+            nonmatchingsPath = Path(version.paths.nonmatchings)
+        else:
+            nonmatchingsPath = None
+    else:
+        mapPath = args.mapfile
+        asmPath = args.asmpath
+        nonmatchingsPath = args.nonmatchingspath
+
+    exit(doObjdiffReport(mapPath, outputPath, prefixesToTrim, reportCategories, asmPath=asmPath, pathIndex=pathIndex, nonmatchingsPath=nonmatchingsPath))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     parser = subparser.add_parser("objdiff_report", help="Computes current progress of the matched functions. Expects `.NON_MATCHING` marker symbols on the mapfile to know which symbols are not matched yet.")
 
     emitMapfile = True
-    emitAsmpath = True
     emitOutput = True
+    emitAsmpath = True
+    emitNonmatchings = True
     emitPrefixesToTrim = True
     emitPathIndex = True
     settings = SpecificSettings.fromDecompConfig(decompConfig)
@@ -97,6 +113,8 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
             emitMapfile = False
             if decompConfig.versions[0].paths.asm is not None:
                 emitAsmpath = False
+            if decompConfig.versions[0].paths.nonmatchings is not None:
+                emitNonmatchings = False
         if settings.output is not None:
             emitOutput = False
         if len(settings.prefixesToTrim) > 0:
@@ -112,6 +130,8 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
 
     if emitAsmpath:
         parser.add_argument("-a", "--asmpath", help="Path to asm folder.", type=Path)
+    if emitNonmatchings:
+        parser.add_argument("-n", "--nonmatchingspath", help="Path to nonmatchings folder.", type=Path)
     if emitPrefixesToTrim:
         parser.add_argument("-t", "--prefixes-to-trim", help="List of path prefixes to try to trim from each object path from the mapfile. For each object they will be tried in order and it will stop at the first prefix found.", action="append")
     if emitPathIndex:
@@ -126,6 +146,7 @@ class SpecificSettings:
     prefixesToTrim: list[str]
     categories: list[Category]
     pathIndex: int|None
+    checkAsmPaths: bool
 
     @staticmethod
     def fromDecompConfig(decompConfig) -> SpecificSettings|None:
@@ -136,6 +157,7 @@ class SpecificSettings:
         prefixesToTrim: list[str] = []
         categories: list[Category] = []
         pathIndex: int|None = None
+        checkAsmPaths: bool = False
         if decompConfig.tools is not None:
             mapfileParserConfig = decompConfig.tools.get("mapfile_parser")
             if mapfileParserConfig is not None:
@@ -158,12 +180,14 @@ class SpecificSettings:
                         var = raw.get("path_index")
                         if var is not None:
                             pathIndex = var
+                        checkAsmPaths = bool(raw.get("check_asm_paths", False))
 
         return SpecificSettings(
             output,
             prefixesToTrim,
             categories,
             pathIndex,
+            checkAsmPaths,
         )
 
 @dataclasses.dataclass

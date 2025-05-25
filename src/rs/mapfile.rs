@@ -556,19 +556,20 @@ pub(crate) mod python_bindings {
             self.get_progress(Some(&path_decomp_settings), &aliases)
         }
 
-        #[pyo3(signature = (outpath, prefixes_to_trim, report_categories, asm_path=None, path_index=2))]
+        #[pyo3(signature = (outpath, prefixes_to_trim, report_categories, pathIndex=2, asmPath=None, nonmatchingsPath=None))]
         fn writeObjdiffReportToFile(
             &self,
             outpath: PathBuf,
             prefixes_to_trim: Vec<String>,
             report_categories: ReportCategories,
-            asm_path: Option<PathBuf>,
-            path_index: usize,
+            pathIndex: usize,
+            asmPath: Option<PathBuf>,
+            nonmatchingsPath: Option<PathBuf>,
         ) -> Result<(), io::Error> {
-            let path_decomp_settings = asm_path.as_ref().map(|x| section::PathDecompSettings {
+            let path_decomp_settings = asmPath.as_ref().map(|x| section::PathDecompSettings {
                 asm_path: x,
-                path_index,
-                nonmatchings: None,
+                path_index: pathIndex,
+                nonmatchings: nonmatchingsPath.as_ref().map(|v| v.as_path()),
             });
 
             let report = self.get_objdiff_report(

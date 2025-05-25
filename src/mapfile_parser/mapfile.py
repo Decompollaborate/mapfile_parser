@@ -966,9 +966,9 @@ class MapFile:
 
         return totalStats, progressPerFolder
 
-    def writeObjdiffReportToFile(self, outpath: Path, prefixesToTrim: list[str], reportCategories: ReportCategories, asmPath: Path|None=None, pathIndex: int=2):
+    def writeObjdiffReportToFile(self, outpath: Path, prefixesToTrim: list[str], reportCategories: ReportCategories, *, pathIndex: int=2, asmPath: Path|None=None, nonmatchingsPath: Path|None=None):
         nativeMapFile = self._transferContentsToNativeMapFile()
-        nativeMapFile.writeObjdiffReportToFile(outpath, prefixesToTrim, reportCategories, asmPath, pathIndex)
+        nativeMapFile.writeObjdiffReportToFile(outpath, prefixesToTrim, reportCategories, pathIndex=pathIndex, asmPath=asmPath, nonmatchingsPath=nonmatchingsPath)
 
     # Useful for finding bss reorders
     def compareFilesAndSymbols(self, otherMapFile: MapFile, *, checkOtherOnSelf: bool=True) -> MapsComparisonInfo:
