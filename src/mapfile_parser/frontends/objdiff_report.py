@@ -34,6 +34,7 @@ def doObjdiffReport(mapPath: Path, outputPath: Path, prefixesToTrim: list[str], 
 
 def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
     reportCategories = mapfile.ReportCategories()
+    outputPath: Path
     pathIndexDefault = 2
 
     settings = SpecificSettings.fromDecompConfig(decompConfig)
@@ -60,7 +61,7 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
         else:
             pathIndex = pathIndexDefault
     else:
-        outputPath: Path = args.output
+        outputPath = args.output
         if args.prefixes_to_trim is not None:
             prefixesToTrim = list(args.prefixes_to_trim)
         else:

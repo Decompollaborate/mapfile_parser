@@ -23,6 +23,9 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
       `json` file.
 - Add `objdiff_report` as a new CLI utility to the Python library.
   - Generate a simple `objdiff` progress report from your terminal!
+  - This utility supports the `decomp.yaml` format. This format is the preferred
+    way of invoking the tool, given the long list of arguments needed for the
+    tool to properly work.
 
 ### Changed
 

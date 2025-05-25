@@ -21,7 +21,7 @@ patterns = [
     "build/{version}/asm/",
     "build/{version}/",
 ]
-prefixesToTrim = []
+prefixesToTrim: list[str] = []
 for v in versions:
     prefixesToTrim += [pattern.format(version=v) for pattern in patterns]
 prefixesToTrim.append("build/")
@@ -43,7 +43,6 @@ for mapPath in sorted(Path("tests/maps").iterdir()):
     print("    .objdiff_report.json")
     mapfile_parser.frontends.objdiff_report.doObjdiffReport(
         mapPath,
-        Path(),
         outputFolder/mapPath.with_suffix(".objdiff_report.json").name,
         prefixesToTrim,
         reportCategories,

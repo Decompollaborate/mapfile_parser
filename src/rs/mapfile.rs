@@ -569,7 +569,7 @@ pub(crate) mod python_bindings {
             let path_decomp_settings = asmPath.as_ref().map(|x| section::PathDecompSettings {
                 asm_path: x,
                 path_index: pathIndex,
-                nonmatchings: nonmatchingsPath.as_ref().map(|v| v.as_path()),
+                nonmatchings: nonmatchingsPath.as_deref(),
             });
 
             let report = self.get_objdiff_report(
