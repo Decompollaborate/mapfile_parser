@@ -18,6 +18,7 @@ from .mapfile import Segment as Segment
 from .mapfile import FoundSymbolInfo as FoundSymbolInfo
 from .mapfile import SymbolComparisonInfo as SymbolComparisonInfo
 from .mapfile import MapsComparisonInfo as MapsComparisonInfo
+from .mapfile import ReportCategories as ReportCategories
 
 from .progress_stats import ProgressStats as ProgressStats
 

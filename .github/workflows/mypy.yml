@@ -4,9 +4,9 @@ name: Check mypy
 on: [push, pull_request]
 
 jobs:
-  checks:
-    runs-on: ubuntu-latest
+  src_checks:
     name: mypy
+    runs-on: ubuntu-latest
     steps:
     - uses: actions/checkout@v4
 

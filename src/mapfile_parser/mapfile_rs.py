@@ -15,6 +15,7 @@ from .mapfile_parser import Symbol as Symbol
 from .mapfile_parser import Section as Section
 from .mapfile_parser import Segment as Segment
 from .mapfile_parser import MapFile as MapFile
+from .mapfile_parser import ReportCategories as ReportCategories
 
 # Renamed types
 from .mapfile_parser import Section as File
