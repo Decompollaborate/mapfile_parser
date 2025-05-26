@@ -20,6 +20,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 - Metroweks ld: Parse alignment column.
 
+### Fixed
+
+- GNU maps:
+  - Fix parsing the segment's metadata (name, address, etc) when the
+    segment does not have a rom address.
+  - Properly drop empty segments from the parsed output.
+
 ## [2.9.0] - 2025-05-25
 
 ### Added

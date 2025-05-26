@@ -26170,13 +26170,6 @@
             ]
         },
         {
-            "name": ".buffer1",
-            "vram": "0x80220F50",
-            "size": "0x0",
-            "vrom": "0x0CA4A0",
-            "files": []
-        },
-        {
             "name": ".buffer1_bss",
             "vram": "0x80220F50",
             "size": "0x10",
@@ -26200,13 +26193,6 @@
             ]
         },
         {
-            "name": ".buffer2",
-            "vram": "0x803B0500",
-            "size": "0x0",
-            "vrom": "0x0CA4A0",
-            "files": []
-        },
-        {
             "name": ".buffer2_bss",
             "vram": "0x803B0500",
             "size": "0x4B00",
@@ -26228,13 +26214,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "name": ".framebuffer",
-            "vram": "0x803B5000",
-            "size": "0x0",
-            "vrom": "0x0CA4A0",
-            "files": []
         },
         {
             "name": ".framebuffer_bss",
