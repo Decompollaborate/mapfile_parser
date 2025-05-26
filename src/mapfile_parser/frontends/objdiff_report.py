@@ -199,7 +199,7 @@ class SpecificSettings:
     checkAsmPaths: bool
 
     @staticmethod
-    def fromDecompConfig(decompConfig) -> SpecificSettings|None:
+    def fromDecompConfig(decompConfig: decomp_settings.Config|None=None) -> SpecificSettings|None:
         if decompConfig is None:
             return None
 

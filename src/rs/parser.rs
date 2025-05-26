@@ -589,8 +589,7 @@ impl MapFile {
                 let starting = utils::parse_hex(&row_entry_match["starting"]);
                 let size = utils::parse_hex(&row_entry_match["size"]);
                 let vram = utils::parse_hex(&row_entry_match["vram"]);
-                // TODO: confirm if this is actually the alignment of the symbol or not
-                let _align = utils::parse_hex(&row_entry_match["align"]);
+                let align = utils::parse_hex(&row_entry_match["align"]);
 
                 let subline = &row_entry_match["subline"];
 
@@ -614,6 +613,9 @@ impl MapFile {
                             }
                             if !current_section.is_noload_section() {
                                 new_symbol.vrom = Some(current_segment.vrom + starting)
+                            }
+                            if align > 0 {
+                                new_symbol.align = Some(align);
                             }
 
                             current_section.symbols.push(new_symbol);
