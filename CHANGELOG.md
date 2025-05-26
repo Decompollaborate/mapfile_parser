@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Add `--emit-categories` flag to `objdiff_report`.
+  - Prints to stdout automatically-generated categories from the mapfile.
+    Categories will use the `decomp.yaml` format.
+  - Intended to facilitate to integrate this progress reporting method.
+  - The generated categories are expected to be modified by the user and not
+    used as is.
+
 ### Changed
 
 - Metroweks ld: Parse alignment column.

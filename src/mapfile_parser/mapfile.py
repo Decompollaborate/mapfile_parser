@@ -185,7 +185,7 @@ class Section:
 
     @property
     def isNoloadSection(self) -> bool:
-        return self.sectionType == ".bss"
+        return self.sectionType in {".bss", ".sbss", "COMMON", ".scommon"}
 
 
     def serializeVram(self, humanReadable: bool=True) -> str|int|None:

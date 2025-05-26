@@ -13,13 +13,26 @@ from pathlib import Path
 from .. import mapfile
 
 
-def doObjdiffReport(mapPath: Path, outputPath: Path, prefixesToTrim: list[str], reportCategories: mapfile.ReportCategories, *, pathIndex: int=2, asmPath: Path|None=None, nonmatchingsPath: Path|None=None) -> int:
+def doObjdiffReport(
+        mapPath: Path,
+        outputPath: Path,
+        prefixesToTrim: list[str],
+        reportCategories: mapfile.ReportCategories,
+        *,
+        pathIndex: int=2,
+        asmPath: Path|None=None,
+        nonmatchingsPath: Path|None=None,
+        emitCategories: bool=False,
+    ) -> int:
     if not mapPath.exists():
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
 
     mapFile = mapfile.MapFile()
     mapFile.readMapFile(mapPath)
+
+    if emitCategories:
+        printDefaultCategories(mapFile, prefixesToTrim)
 
     mapFile.writeObjdiffReportToFile(
         outputPath,
@@ -31,6 +44,110 @@ def doObjdiffReport(mapPath: Path, outputPath: Path, prefixesToTrim: list[str], 
     )
 
     return 0
+
+def printDefaultCategories(
+        mapFile: mapfile.MapFile,
+        prefixesToTrim: list[str],
+    ):
+    if len(prefixesToTrim) == 0:
+        # Manage a list of defaults
+        prefixesToTrim = [
+            "build/lib/",
+            "build/src/",
+            "build/asm/data/",
+            "build/asm/",
+            "build/",
+        ]
+
+    def removeSuffixes(path: Path) -> Path:
+        while path.suffix != "":
+            path = path.with_suffix("")
+        return path
+
+    def removePrefix(path: Path) -> Path:
+        current = str(path)
+        # Trim the first prefix found in the list
+        for x in prefixesToTrim:
+            if current.startswith(x):
+                current = current.removeprefix(x)
+                break
+        current = current.removeprefix("/")
+        return Path(current)
+
+    categoriesByPath: list[Category] = []
+    categoriesBySegment: list[Category] = []
+
+    def addCategoryPath(categoriesByPath: list[Category], cat_path: str):
+        for x in categoriesByPath:
+            if x.ide == cat_path:
+                return
+        cat = Category(cat_path, cat_path, [cat_path])
+        categoriesByPath.append(cat)
+
+    def addCategorySegment(categoriesByPath: list[Category], segmentName: str, cat_path: str):
+        for x in categoriesByPath:
+            if x.ide == segmentName:
+                if cat_path not in x.paths:
+                    x.paths.append(cat_path)
+                return
+        cat = Category(segmentName, f"Segment {segmentName}", [cat_path])
+        categoriesByPath.append(cat)
+
+    for segment in mapFile:
+        for section in segment:
+            if section.isNoloadSection:
+                continue
+            suffixless = removeSuffixes(section.filepath)
+            prefixless = removePrefix(suffixless)
+
+            parts = prefixless.parts
+            if len(parts) > 1:
+                # Folder
+                cat_path = str(parts[0]) + "/"
+            elif len(parts) > 0:
+                # Top-level file
+                cat_path = str(parts[0])
+            else:
+                # Huh?
+                cat_path = "root"
+
+            addCategoryPath(categoriesByPath, cat_path)
+            addCategorySegment(categoriesBySegment, segment.name, str(prefixless))
+
+    print("""\
+tools:
+  mapfile_parser:
+    progress_report:
+      # output: report.json # Optional
+      check_asm_paths: True
+      # Change if the asm path in the build folder is deeper than two subfolders.
+      # i.e.: "build/us/asm/header.o" -> `path_index: 3`.
+      # i.e.: "build/us/asm/us/header.o" -> `path_index: 4`.
+      # path_index: 2
+      prefixes_to_trim:
+""", end="")
+    for trim in prefixesToTrim:
+        print(f"        - {trim}")
+
+    def printCategories(categories: list[Category]):
+        for cat in categories:
+            print(f"""\
+        - id: {cat.ide}
+          name: {cat.name}
+          paths:
+""", end="")
+            for p in cat.paths:
+                print(f"""\
+            - {p}
+""", end="")
+
+    print("      categories:")
+    print("        # Categories by path")
+    printCategories(categoriesByPath)
+    print()
+    print("        # Categories by segment")
+    printCategories(categoriesBySegment)
+
 
 def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
     reportCategories = mapfile.ReportCategories()
@@ -91,7 +208,9 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
         asmPath = args.asmpath
         nonmatchingsPath = args.nonmatchingspath
 
-    exit(doObjdiffReport(mapPath, outputPath, prefixesToTrim, reportCategories, asmPath=asmPath, pathIndex=pathIndex, nonmatchingsPath=nonmatchingsPath))
+    emitCategories: bool = args.emit_categories
+
+    exit(doObjdiffReport(mapPath, outputPath, prefixesToTrim, reportCategories, asmPath=asmPath, pathIndex=pathIndex, nonmatchingsPath=nonmatchingsPath, emitCategories=emitCategories))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     epilog = """\
@@ -100,6 +219,13 @@ information about uploading the generated progress report.
 
 This utility has support for a special section on the `decomp.yaml` file, which
 allows to avoid passing many arguments to utility.
+
+Use the `--emit-categories` flag to print categories generated automatically
+from your mapfile, using the `decomp.yaml` format.
+You are expected to tweak the generated categories to accomodate to your liking
+instead of using them as-is.
+You may also want to set `prefixes_to_trim` before using this flag, to improve
+the generation of these categories.
 
 Here's an example for this entry:
 
@@ -186,6 +312,8 @@ tools:
         parser.add_argument("-t", "--prefixes-to-trim", help="List of path prefixes to try to trim from each object path from the mapfile. For each object they will be tried in order and it will stop at the first prefix found.", action="append")
     if emitPathIndex:
         parser.add_argument("-i", "--path-index", help="Specify the index to start reading the file paths. Defaults to 2", type=int)
+
+    parser.add_argument("--emit-categories", help="Print automatically-generated categories from your mapfile, using the decomp.yaml format. These categories are expected to be tweaked and not used as-is.", action="store_true")
 
     parser.set_defaults(func=processArguments)
 
