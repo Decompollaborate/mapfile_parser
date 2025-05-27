@@ -17,6 +17,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Intended to facilitate to integrate this progress reporting method.
   - The generated categories are expected to be modified by the user and not
     used as is.
+- Print a summary from the generated progress report in `objdiff_report`.
+  - Printed to stdout by default.
+  - This will be printed as a summary step if the script detects it is being run
+    in a Github Action.
 
 ### Changed
 

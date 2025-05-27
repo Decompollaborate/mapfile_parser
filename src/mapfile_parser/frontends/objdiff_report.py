@@ -9,8 +9,11 @@ import argparse
 import dataclasses
 import decomp_settings
 from pathlib import Path
+import os
 
 from .. import mapfile
+from .. import utils
+from ..internals import objdiff_report as report_internal
 
 
 def doObjdiffReport(
@@ -23,6 +26,7 @@ def doObjdiffReport(
         asmPath: Path|None=None,
         nonmatchingsPath: Path|None=None,
         emitCategories: bool=False,
+        quiet: bool=False,
     ) -> int:
     if not mapPath.exists():
         print(f"Could not find mapfile at '{mapPath}'")
@@ -42,6 +46,22 @@ def doObjdiffReport(
         asmPath=asmPath,
         nonmatchingsPath=nonmatchingsPath,
     )
+
+    if not quiet:
+        report = report_internal.Report.readFile(outputPath)
+        if report is None:
+            utils.eprint(f"Unable to read back the generated report at {outputPath}")
+            return 1
+        table = report.asTableStr(sort=True)
+        print(table, end="")
+
+        # Output to GitHub Actions job summary, if available
+        summary_path = os.getenv("GITHUB_STEP_SUMMARY")
+        if summary_path is not None:
+            with open(summary_path, "a", encoding="UTF-8") as summary_file:
+                summary_file.write("```\n")
+                summary_file.write(table)
+                summary_file.write("```\n")
 
     return 0
 
@@ -303,13 +323,29 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
         nonmatchingsPath = args.nonmatchingspath
 
     emitCategories: bool = args.emit_categories
+    quiet: bool= args.quiet
 
-    exit(doObjdiffReport(mapPath, outputPath, prefixesToTrim, reportCategories, asmPath=asmPath, pathIndex=pathIndex, nonmatchingsPath=nonmatchingsPath, emitCategories=emitCategories))
+    exit(doObjdiffReport(
+        mapPath,
+        outputPath,
+        prefixesToTrim,
+        reportCategories,
+        asmPath=asmPath,
+        pathIndex=pathIndex,
+        nonmatchingsPath=nonmatchingsPath,
+        emitCategories=emitCategories,
+        quiet=quiet
+    ))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     epilog = """\
 Visit https://decomp.dev/ and https://wiki.decomp.dev/tools/decomp-dev for more
 information about uploading the generated progress report.
+
+A summary of the generated progress report will be printed to stdout by
+default. Also this script will try to detect if it is running on a Github
+Action and print the same summary as a step summary. Use the `--quiet` flag to
+avoid this behaviour.
 
 This utility has support for a special section on the `decomp.yaml` file, which
 allows to avoid passing many arguments to utility.
@@ -408,6 +444,7 @@ tools:
         parser.add_argument("-i", "--path-index", help="Specify the index to start reading the file paths. Defaults to 2", type=int)
 
     parser.add_argument("--emit-categories", help="Print automatically-generated categories from your mapfile, using the decomp.yaml format. These categories are expected to be tweaked and not used as-is.", action="store_true")
+    parser.add_argument("--quiet", help="Avoid printing the progress report to the stdout and to the Github action summary.", action="store_true")
 
     parser.set_defaults(func=processArguments)
 
