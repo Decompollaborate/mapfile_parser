@@ -78,22 +78,115 @@ def printDefaultCategories(
     categoriesBySegment: list[Category] = []
 
     def addCategoryPath(categoriesByPath: list[Category], cat_path: str):
+        ide = cat_path.strip("/")
         for x in categoriesByPath:
-            if x.ide == cat_path:
+            if x.ide == ide:
                 return
-        cat = Category(cat_path, cat_path, [cat_path])
+        cat = Category(ide, ide, [cat_path])
         categoriesByPath.append(cat)
 
     def addCategorySegment(categoriesByPath: list[Category], segmentName: str, cat_path: str):
+        ide = f"segment_{segmentName}"
         for x in categoriesByPath:
-            if x.ide == segmentName:
+            if x.ide == ide:
                 if cat_path not in x.paths:
                     x.paths.append(cat_path)
                 return
-        cat = Category(segmentName, f"Segment {segmentName}", [cat_path])
+        cat = Category(ide, f"Segment {segmentName}", [cat_path])
         categoriesByPath.append(cat)
 
+    def reduceCategorySegmentPaths(categoriesByPath: list[Category]):
+        """
+        We want to reduce the list of paths as much as possible by reducing
+        them to their prefixes.
+        We want to convert a list of paths like this:
+        ```
+        - main/audio/sound
+        - sys/gtl
+        - sys/ml
+        - main/sfxlimit
+        - main/file
+        - sys/vi
+        - sys/rdp_reset
+        - main/title
+        - main/menu
+        - sys/om
+        - ultralib/src/audio/cspsetbank
+        - ultralib/src/audio/cspsetpriority
+        - ultralib/src/audio/sndpstop
+        - ultralib/src/audio/cseq
+        - game
+        ```
+        To a reduced list like this:
+        ```
+        - main
+        - sys
+        - ultralib
+        - game
+        ```
+
+        But the reduced list must not overlap paths from other segments.
+        """
+
+        # Ensure the given shortest path is not present in any other segment
+        def isUnique(categoriesByPath: list[Category], shortest: Path, currentIde: str) -> bool:
+            for cat2 in categoriesByPath:
+                if currentIde == cat2.ide:
+                    continue
+                for path2 in cat2.paths:
+                    if shortest in Path(path2).parents:
+                        return False
+            return True
+
+        # Build the list of reduced prefixes per segment
+        uniques: dict[str, list[Path]] = {}
+        for cat in categoriesByPath:
+            if len(cat.paths) <= 1:
+                continue
+            currentList: list[Path] = []
+            # Check each path for its reduced value
+            for p in cat.paths:
+                parents = list(Path(p).parents)
+                # Omit the `.` element in parents and iterate from the smaller
+                # prefix until the largest.
+                for shortest in parents[:-1][::-1]:
+                    if shortest in currentList:
+                        break
+                    if isUnique(categoriesByPath, shortest, cat.ide):
+                        currentList.append(shortest)
+                        break
+            if len(currentList) != 0:
+                uniques[cat.ide] = currentList
+
+        # Decide if we want to keep the current path or if we want to replace
+        # it with a prefix
+        def decide(old: str, prefixes: list[Path]) -> str:
+            parents = Path(old).parents
+            for prefix in prefixes:
+                if prefix in parents:
+                    return str(prefix)
+            return old
+
+        # Update paths with their prefixes for each segment
+        for ide, prefixes in uniques.items():
+            for cat in categoriesByPath:
+                if cat.ide == ide:
+                    newPaths = []
+                    for path in cat.paths:
+                        p = decide(path, prefixes)
+                        # Avoid duplication
+                        if p not in newPaths:
+                            newPaths.append(p)
+                    cat.paths = newPaths
+                    break
+
+    realSegmentsSeen = False
     for segment in mapFile:
+        if segment.vrom is None and realSegmentsSeen:
+            # Usually debug sections
+            continue
+        if segment.vrom is not None:
+            realSegmentsSeen = True
         for section in segment:
             if section.isNoloadSection:
                 continue
@@ -113,6 +206,7 @@ def printDefaultCategories(
 
             addCategoryPath(categoriesByPath, cat_path)
             addCategorySegment(categoriesBySegment, segment.name, str(prefixless))
+    reduceCategorySegmentPaths(categoriesBySegment)
 
     print("""\
 tools:
@@ -127,18 +221,18 @@ tools:
       prefixes_to_trim:
 """, end="")
     for trim in prefixesToTrim:
-        print(f"        - {trim}")
+        print(f"        - \"{trim}\"")
 
     def printCategories(categories: list[Category]):
         for cat in categories:
             print(f"""\
-        - id: {cat.ide}
-          name: {cat.name}
+        - id: "{cat.ide}"
+          name: "{cat.name}"
           paths:
 """, end="")
             for p in cat.paths:
                 print(f"""\
-            - {p}
+            - "{p}"
 """, end="")
 
     print("      categories:")
@@ -382,19 +476,19 @@ class Category:
         ide = data.get("id")
         if ide is None:
             return None
-        assert isinstance(ide, str)
+        assert isinstance(ide, str), f"{type(ide)} {ide}"
 
         name = data.get("name")
         if name is None:
             return None
-        assert isinstance(name, str)
+        assert isinstance(name, str), f"{type(name)} {name}"
 
         paths = data.get("paths")
         if paths is None:
             return None
-        assert isinstance(paths, list)
+        assert isinstance(paths, list), f"{type(paths)} {paths}"
         for x in paths:
-            assert isinstance(x, str)
+            assert isinstance(x, str), f"{type(x)} {x}"
 
         return Category(
             ide,
