@@ -27,7 +27,7 @@ pub struct Segment {
 
     pub size: u64,
 
-    pub vrom: u64,
+    pub vrom: Option<u64>,
 
     pub align: Option<u64>,
 
@@ -35,7 +35,7 @@ pub struct Segment {
 }
 
 impl Segment {
-    pub fn new(name: String, vram: u64, size: u64, vrom: u64, align: Option<u64>) -> Self {
+    pub fn new(name: String, vram: u64, size: u64, vrom: Option<u64>, align: Option<u64>) -> Self {
         Segment {
             name,
             vram,
@@ -261,7 +261,7 @@ impl Segment {
         print!("{}", self.to_csv_symbols());
     }
 
-    pub fn new_default(name: String, vram: u64, size: u64, vrom: u64) -> Self {
+    pub(crate) fn new_default(name: String, vram: u64, size: u64, vrom: Option<u64>) -> Self {
         Segment {
             name,
             vram,
@@ -272,7 +272,7 @@ impl Segment {
         }
     }
 
-    pub fn clone_no_sectionlist(&self) -> Self {
+    pub(crate) fn clone_no_sectionlist(&self) -> Self {
         Segment {
             name: self.name.clone(),
             vram: self.vram,
@@ -288,17 +288,17 @@ impl Segment {
             name: "$nosegment".into(),
             vram: 0,
             size: 0,
-            vrom: 0,
+            vrom: None,
             align: None,
             sections_list: vec![section::Section::new_placeholder()],
         }
     }
 
-    pub fn is_placeholder(&self) -> bool {
+    pub(crate) fn is_placeholder(&self) -> bool {
         if self.name == "$nosegment"
             && self.vram == 0
             && self.size == 0
-            && self.vrom == 0
+            && self.vrom.is_none()
             && self.align.is_none()
         {
             if self.sections_list.is_empty() {
@@ -354,7 +354,13 @@ pub(crate) mod python_bindings {
     impl super::Segment {
         #[new]
         #[pyo3(signature = (name, vram, size, vrom, align=None))]
-        fn py_new(name: String, vram: u64, size: u64, vrom: u64, align: Option<u64>) -> Self {
+        fn py_new(
+            name: String,
+            vram: u64,
+            size: u64,
+            vrom: Option<u64>,
+            align: Option<u64>,
+        ) -> Self {
             Self::new(name, vram, size, vrom, align)
         }
 
@@ -394,12 +400,12 @@ pub(crate) mod python_bindings {
         }
 
         #[getter]
-        fn get_vrom(&self) -> PyResult<u64> {
+        fn get_vrom(&self) -> PyResult<Option<u64>> {
             Ok(self.vrom)
         }
 
         #[setter]
-        fn set_vrom(&mut self, value: u64) -> PyResult<()> {
+        fn set_vrom(&mut self, value: Option<u64>) -> PyResult<()> {
             self.vrom = value;
             Ok(())
         }

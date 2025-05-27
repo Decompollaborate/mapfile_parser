@@ -45,7 +45,7 @@
         }
       ],
       "metadata": {
-        "module_name": "$nosegment",
+        "module_name": ".reginfo",
         "module_id": 0,
         "progress_categories": [
           "weapon"
@@ -72,7 +72,7 @@
       ],
       "metadata": {
         "module_name": ".WEAPON_OVL",
-        "module_id": 1,
+        "module_id": 2,
         "progress_categories": [
           "us"
         ]
@@ -305,7 +305,7 @@
       ],
       "metadata": {
         "module_name": ".WEAPON_OVL",
-        "module_id": 1,
+        "module_id": 2,
         "progress_categories": [
           "weapon"
         ]

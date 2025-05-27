@@ -170,11 +170,11 @@ class Segment:
     name: str
     vram: int
     size: int
-    vrom: int
+    vrom: int|None
     align: int|None
     # _filesList: list[Section] = dataclasses.field(default_factory=list)
 
-    def __init__(self, name: str, vram: int, size: int, vrom: int, align: int|None=None): ...
+    def __init__(self, name: str, vram: int, size: int, vrom: int|None, align: int|None=None): ...
 
     def serializeVram(self, humanReadable: bool=True) -> str|int|None: ...
     def serializeSize(self, humanReadable: bool=True) -> str|int|None: ...

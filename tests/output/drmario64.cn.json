@@ -24,13 +24,6 @@
             ]
         },
         {
-            "name": ".header_bss",
-            "vram": "0x80000040",
-            "size": "0x0",
-            "vrom": "0x000040",
-            "files": []
-        },
-        {
             "name": ".ipl3",
             "vram": "0x80000040",
             "size": "0xFC0",
@@ -81,13 +74,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "name": ".entry_bss",
-            "vram": "0x80000460",
-            "size": "0x0",
-            "vrom": "0x001060",
-            "files": []
         },
         {
             "name": ".boot",
@@ -22648,13 +22634,6 @@
             ]
         },
         {
-            "name": ".buffer1",
-            "vram": "0x8013B870",
-            "size": "0x0",
-            "vrom": "0x0B1EF0",
-            "files": []
-        },
-        {
             "name": ".buffer1_bss",
             "vram": "0x8013B870",
             "size": "0x10",
@@ -22676,20 +22655,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "name": ".buffer1",
-            "vram": "0x8013B870",
-            "size": "0x0",
-            "vrom": "0x0B1EF0",
-            "files": []
-        },
-        {
-            "name": ".buffer2",
-            "vram": "0x80205000",
-            "size": "0x0",
-            "vrom": "0x0B1EF0",
-            "files": []
         },
         {
             "name": ".buffer2_bss",
@@ -22715,20 +22680,6 @@
             ]
         },
         {
-            "name": ".buffer2",
-            "vram": "0x80205000",
-            "size": "0x0",
-            "vrom": "0x0B1EF0",
-            "files": []
-        },
-        {
-            "name": ".framebuffer",
-            "vram": "0x803B5000",
-            "size": "0x0",
-            "vrom": "0x0B1EF0",
-            "files": []
-        },
-        {
             "name": ".framebuffer_bss",
             "vram": "0x803B5000",
             "size": "0x4B000",
@@ -22750,13 +22701,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "name": ".framebuffer",
-            "vram": "0x803B5000",
-            "size": "0x0",
-            "vrom": "0x0B1EF0",
-            "files": []
         },
         {
             "name": ".n64_wave_tables",

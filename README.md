@@ -17,6 +17,7 @@ This library is available for Python3 and Rust
 - Support map formats:
   - GNU ld
   - clang lld
+  - Metrowerks ld
 - Built-in cli utilities to process the parsed map file (see [Examples](#examples)).
 
 ## Installing
@@ -35,7 +36,7 @@ If you use a `requirements.txt` file in your repository, then you can add
 this library with the following line:
 
 ```txt
-mapfile_parser>=2.9.0,<3.0.0
+mapfile_parser>=2.9.1,<3.0.0
 ```
 
 #### Development version
@@ -74,7 +75,7 @@ cargo add mapfile_parser
 Or add the following line manually to your `Cargo.toml` file:
 
 ```toml
-mapfile_parser = "2.9.0"
+mapfile_parser = "2.9.1"
 ```
 
 ## Versioning and changelog

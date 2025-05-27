@@ -3,6 +3,7 @@
 
 use std::{
     collections::{HashMap, HashSet},
+    ffi::OsStr,
     path::{Path, PathBuf},
 };
 
@@ -175,6 +176,8 @@ impl MapFile {
             Regex::new(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<fillValue>[0-9a-zA-Z]*)$")
                 .unwrap();
         let regex_segment_entry = Regex::new(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$").unwrap();
+        let regex_romless_segment_entry =
+            Regex::new(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)$").unwrap();
 
         let map_data = MapFile::preprocess_map_data_gnu(map_contents);
 
@@ -183,7 +186,7 @@ impl MapFile {
         let mut in_section = false;
 
         let mut prev_line = "";
-        for line in map_data.split('\n') {
+        for line in map_data.lines() {
             if in_section {
                 if !line.starts_with("        ") {
                     in_section = false;
@@ -255,7 +258,26 @@ impl MapFile {
                     let mut name = &segment_entry_match["name"];
                     let vram = utils::parse_hex(&segment_entry_match["vram"]);
                     let size = utils::parse_hex(&segment_entry_match["size"]);
-                    let vrom = utils::parse_hex(&segment_entry_match["vrom"]);
+                    let vrom = Some(utils::parse_hex(&segment_entry_match["vrom"]));
+
+                    if name.is_empty() {
+                        // If the segment name is too long then this line gets break in two lines
+                        name = prev_line;
+                    }
+
+                    temp_segment_list.push(segment::Segment::new_default(
+                        name.into(),
+                        vram,
+                        size,
+                        vrom,
+                    ));
+                } else if let Some(segment_entry_match) = regex_romless_segment_entry.captures(line)
+                {
+                    // Some segments do not have a rom address
+                    let mut name = &segment_entry_match["name"];
+                    let vram = utils::parse_hex(&segment_entry_match["vram"]);
+                    let size = utils::parse_hex(&segment_entry_match["size"]);
+                    let vrom = None;
 
                     if name.is_empty() {
                         // If the segment name is too long then this line gets break in two lines
@@ -279,7 +301,11 @@ impl MapFile {
 
                     if !current_segment.sections_list.is_empty() {
                         let prev_section = current_segment.sections_list.last().unwrap();
-                        let mut name = prev_section.filepath.file_name().unwrap().to_owned();
+                        let mut name = prev_section
+                            .filepath
+                            .file_name()
+                            .unwrap_or_else(|| OsStr::new(""))
+                            .to_owned();
 
                         name.push("__fill__");
                         filepath = prev_section.filepath.with_file_name(name);
@@ -314,6 +340,10 @@ impl MapFile {
                 // skip the dummy segment if it has no size, sections or symbols
                 continue;
             }
+            if segment.size == 0 && segment.sections_list.is_empty() {
+                // Drop empty segments
+                continue;
+            }
 
             let mut new_segment = segment.clone_no_sectionlist();
 
@@ -330,11 +360,11 @@ impl MapFile {
                 let is_noload_section = section.is_noload_section();
 
                 if section.vrom.is_some() {
-                    vrom_offset = section.vrom.unwrap();
+                    vrom_offset = section.vrom;
                 }
 
                 if !is_noload_section {
-                    section.vrom = Some(vrom_offset);
+                    section.vrom = vrom_offset;
                 }
 
                 if symbols_count > 0 {
@@ -347,7 +377,7 @@ impl MapFile {
                     // by the difference in vram address between the first symbol and the vram
                     // of the section.
                     if let Some(first_sym) = section.symbols.first() {
-                        sym_vrom += first_sym.vram - section.vram;
+                        sym_vrom = sym_vrom.map(|x| x + first_sym.vram - section.vram);
 
                         // Aditionally, if the first symbol is missing then calculation of the size
                         // for the last symbol would be wrong, since we subtract the accumulated
@@ -367,8 +397,8 @@ impl MapFile {
 
                         if !is_noload_section {
                             // Only set vrom of non bss variables
-                            sym.vrom = Some(sym_vrom);
-                            sym_vrom += sym_size;
+                            sym.vrom = sym_vrom;
+                            sym_vrom = sym_vrom.map(|x| x + sym_size);
                         }
                     }
 
@@ -377,7 +407,7 @@ impl MapFile {
                     let sym_size = section.size - acummulated_size;
                     sym.size = sym_size;
                     if !is_noload_section {
-                        sym.vrom = Some(sym_vrom);
+                        sym.vrom = sym_vrom;
                         //sym_vrom += sym_size;
                     }
 
@@ -385,7 +415,7 @@ impl MapFile {
                 }
 
                 if !is_noload_section {
-                    vrom_offset += section.size;
+                    vrom_offset = vrom_offset.map(|x| x + section.size);
                 }
 
                 new_segment.sections_list.push(section);
@@ -422,10 +452,10 @@ impl MapFile {
 
         let mut temp_segment_list = vec![segment::Segment::new_placeholder()];
 
-        for line in map_data.split('\n') {
+        for line in map_data.lines() {
             if let Some(row_entry_match) = regex_row_entry.captures(line) {
                 let vram = utils::parse_hex(&row_entry_match["vram"]);
-                let vrom = utils::parse_hex(&row_entry_match["vrom"]);
+                let vrom = Some(utils::parse_hex(&row_entry_match["vrom"]));
                 let size = utils::parse_hex(&row_entry_match["size"]);
                 let align = utils::parse_hex(&row_entry_match["align"]);
 
@@ -459,7 +489,7 @@ impl MapFile {
                     let mut new_section =
                         section::Section::new_fill(filepath, vram, size, &section_type);
                     if !utils::is_noload_section(&section_type) {
-                        new_section.vrom = Some(vrom);
+                        new_section.vrom = vrom;
                     }
                     current_segment.sections_list.push(new_section);
                 } else if let Some(section_entry_match) = regex_section_data_entry.captures(subline)
@@ -473,7 +503,7 @@ impl MapFile {
                         let mut new_section =
                             section::Section::new_default(filepath, vram, size, section_type);
                         if !utils::is_noload_section(section_type) {
-                            new_section.vrom = Some(vrom);
+                            new_section.vrom = vrom;
                         }
                         new_section.align = Some(align);
 
@@ -493,7 +523,7 @@ impl MapFile {
                             new_symbol.size = size;
                         }
                         if !current_section.is_noload_section() {
-                            new_symbol.vrom = Some(vrom)
+                            new_symbol.vrom = vrom
                         }
                         new_symbol.align = Some(align);
 
@@ -589,8 +619,7 @@ impl MapFile {
                 let starting = utils::parse_hex(&row_entry_match["starting"]);
                 let size = utils::parse_hex(&row_entry_match["size"]);
                 let vram = utils::parse_hex(&row_entry_match["vram"]);
-                // TODO: confirm if this is actually the alignment of the symbol or not
-                let _align = utils::parse_hex(&row_entry_match["align"]);
+                let align = utils::parse_hex(&row_entry_match["align"]);
 
                 let subline = &row_entry_match["subline"];
 
@@ -613,7 +642,10 @@ impl MapFile {
                                 new_symbol.size = size;
                             }
                             if !current_section.is_noload_section() {
-                                new_symbol.vrom = Some(current_segment.vrom + starting)
+                                new_symbol.vrom = current_segment.vrom.map(|x| x + starting)
+                            }
+                            if align > 0 {
+                                new_symbol.align = Some(align);
                             }
 
                             current_section.symbols.push(new_symbol);
@@ -631,7 +663,7 @@ impl MapFile {
                             let mut new_section =
                                 section::Section::new_default(filepath, vram, size, section_type);
                             if !utils::is_noload_section(section_type) {
-                                new_section.vrom = Some(current_segment.vrom + starting);
+                                new_section.vrom = current_segment.vrom.map(|x| x + starting)
                             }
 
                             current_segment.sections_list.push(new_section);
@@ -646,7 +678,7 @@ impl MapFile {
                 let new_segment = if let Some(segment_entry) = memory_map.get(name) {
                     let vram = segment_entry.starting_address;
                     let size = segment_entry.size;
-                    let vrom = segment_entry.file_offset;
+                    let vrom = Some(segment_entry.file_offset);
                     segment::Segment::new_default(name.to_string(), vram, size, vrom)
                 } else {
                     let mut temp = segment::Segment::new_placeholder();

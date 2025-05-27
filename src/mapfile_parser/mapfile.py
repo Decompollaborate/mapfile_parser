@@ -185,7 +185,7 @@ class Section:
 
     @property
     def isNoloadSection(self) -> bool:
-        return self.sectionType == ".bss"
+        return self.sectionType in {".bss", ".sbss", "COMMON", ".scommon"}
 
 
     def serializeVram(self, humanReadable: bool=True) -> str|int|None:
@@ -411,7 +411,7 @@ class Segment:
     name: str
     vram: int
     size: int
-    vrom: int
+    vrom: int|None
     align: int|None = None
     _sectionsList: list[Section] = dataclasses.field(default_factory=list)
 
@@ -426,6 +426,8 @@ class Segment:
         return self.size
 
     def serializeVrom(self, humanReadable: bool=True) -> str|int|None:
+        if self.vrom is None:
+            return None
         if humanReadable:
             return f"0x{self.vrom:06X}"
         return self.vrom

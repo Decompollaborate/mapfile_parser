@@ -7,6 +7,33 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.9.1] - 2025-05-27
+
+### Added
+
+- Add `--emit-categories` flag to `objdiff_report`.
+  - Prints to stdout automatically-generated categories from the mapfile.
+    Categories will use the `decomp.yaml` format.
+  - Intended to facilitate to integrate this progress reporting method.
+  - The generated categories are expected to be modified by the user and not
+    used as is.
+- Print a summary from the generated progress report in `objdiff_report`.
+  - Printed to stdout by default.
+  - This will be printed as a summary step if the script detects it is being run
+    in a Github Action.
+
+### Changed
+
+- Metroweks ld: Parse alignment column.
+
+### Fixed
+
+- GNU maps:
+  - Fix parsing the segment's metadata (name, address, etc) when the
+    segment does not have a rom address.
+  - Properly drop empty segments from the parsed output.
+- Fix parsing if the mapfile contains Carriage Returns characters (`\r`).
+
 ## [2.9.0] - 2025-05-25
 
 ### Added
@@ -568,6 +595,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.9.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.0...2.9.1
 [2.9.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.8.1...2.9.0
 [2.8.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.8.0...2.8.1
 [2.8.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.7.5...2.8.0

@@ -46,6 +46,7 @@ for mapPath in sorted(Path("tests/maps").iterdir()):
         outputFolder/mapPath.with_suffix(".objdiff_report.json").name,
         prefixesToTrim,
         reportCategories,
+        quiet=True,
     )
 
     print("    .csv")

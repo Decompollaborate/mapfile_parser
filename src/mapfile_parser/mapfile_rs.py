@@ -71,6 +71,8 @@ def __segmentrs_serializeSize(self: Segment, humanReadable: bool=True) -> str|in
     return self.size
 
 def __segmentrs_serializeVrom(self: Segment, humanReadable: bool=True) -> str|int|None:
+    if self.vrom is None:
+        return None
     if humanReadable:
         return f"0x{self.vrom:06X}"
     return self.vrom

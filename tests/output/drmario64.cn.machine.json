@@ -24,13 +24,6 @@
             ]
         },
         {
-            "name": ".header_bss",
-            "vram": 2147483712,
-            "size": 0,
-            "vrom": 64,
-            "files": []
-        },
-        {
             "name": ".ipl3",
             "vram": 2147483712,
             "size": 4032,
@@ -81,13 +74,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "name": ".entry_bss",
-            "vram": 2147484768,
-            "size": 0,
-            "vrom": 4192,
-            "files": []
         },
         {
             "name": ".boot",
@@ -22648,13 +22634,6 @@
             ]
         },
         {
-            "name": ".buffer1",
-            "vram": 2148776048,
-            "size": 0,
-            "vrom": 728816,
-            "files": []
-        },
-        {
             "name": ".buffer1_bss",
             "vram": 2148776048,
             "size": 16,
@@ -22676,20 +22655,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "name": ".buffer1",
-            "vram": 2148776048,
-            "size": 0,
-            "vrom": 728816,
-            "files": []
-        },
-        {
-            "name": ".buffer2",
-            "vram": 2149601280,
-            "size": 0,
-            "vrom": 728816,
-            "files": []
         },
         {
             "name": ".buffer2_bss",
@@ -22715,20 +22680,6 @@
             ]
         },
         {
-            "name": ".buffer2",
-            "vram": 2149601280,
-            "size": 0,
-            "vrom": 728816,
-            "files": []
-        },
-        {
-            "name": ".framebuffer",
-            "vram": 2151370752,
-            "size": 0,
-            "vrom": 728816,
-            "files": []
-        },
-        {
             "name": ".framebuffer_bss",
             "vram": 2151370752,
             "size": 307200,
@@ -22750,13 +22701,6 @@
                     ]
                 }
             ]
-        },
-        {
-            "name": ".framebuffer",
-            "vram": 2151370752,
-            "size": 0,
-            "vrom": 728816,
-            "files": []
         },
         {
             "name": ".n64_wave_tables",
