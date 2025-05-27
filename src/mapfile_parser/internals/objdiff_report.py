@@ -86,14 +86,14 @@ class Report:
         if measures is None:
             return None
 
-        for cat in info["categories"]:
-            x = ReportCategory.fromDict(cat)
-            if x is not None:
-                categories.append(x)
-        for unit in info["units"]:
-            x = ReportUnit.fromDict(unit)
-            if x is not None:
-                units.append(x)
+        for c in info["categories"]:
+            cat = ReportCategory.fromDict(c)
+            if cat is not None:
+                categories.append(cat)
+        for u in info["units"]:
+            unit = ReportUnit.fromDict(u)
+            if unit is not None:
+                units.append(unit)
 
         return Report(
             measures = measures,
