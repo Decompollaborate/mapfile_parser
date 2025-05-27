@@ -121,8 +121,8 @@ class ReportCategory:
         if measures is None:
             return None
         return ReportCategory(
-            id = info["id"],
-            name = info["name"],
+            id = info.get("id", ""),
+            name = info.get("name", ""),
             measures = measures,
         )
 
