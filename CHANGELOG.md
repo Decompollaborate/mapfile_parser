@@ -26,6 +26,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Fix parsing the segment's metadata (name, address, etc) when the
     segment does not have a rom address.
   - Properly drop empty segments from the parsed output.
+- Fix parsing if the mapfile contains Carriage Returns characters (`\r`).
 
 ## [2.9.0] - 2025-05-25
 

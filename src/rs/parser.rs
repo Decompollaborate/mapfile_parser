@@ -3,6 +3,7 @@
 
 use std::{
     collections::{HashMap, HashSet},
+    ffi::OsStr,
     path::{Path, PathBuf},
 };
 
@@ -185,7 +186,7 @@ impl MapFile {
         let mut in_section = false;
 
         let mut prev_line = "";
-        for line in map_data.split('\n') {
+        for line in map_data.lines() {
             if in_section {
                 if !line.starts_with("        ") {
                     in_section = false;
@@ -300,7 +301,11 @@ impl MapFile {
 
                     if !current_segment.sections_list.is_empty() {
                         let prev_section = current_segment.sections_list.last().unwrap();
-                        let mut name = prev_section.filepath.file_name().unwrap().to_owned();
+                        let mut name = prev_section
+                            .filepath
+                            .file_name()
+                            .unwrap_or_else(|| OsStr::new(""))
+                            .to_owned();
 
                         name.push("__fill__");
                         filepath = prev_section.filepath.with_file_name(name);
@@ -447,7 +452,7 @@ impl MapFile {
 
         let mut temp_segment_list = vec![segment::Segment::new_placeholder()];
 
-        for line in map_data.split('\n') {
+        for line in map_data.lines() {
             if let Some(row_entry_match) = regex_row_entry.captures(line) {
                 let vram = utils::parse_hex(&row_entry_match["vram"]);
                 let vrom = Some(utils::parse_hex(&row_entry_match["vrom"]));
