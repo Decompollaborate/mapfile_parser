@@ -7,6 +7,17 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.9.2] - 2025-05-28
+
+### Changed
+
+- `objdiff_report`:
+  - Simplify emitted entries by avoiding using quotes as much as possible when
+    using the `--emit-categories` flag.
+  - Avoid printing the summary table when using the `--emit-categories`.
+  - Allow customizing the output of the summary table a little bit via the
+    Python API.
+
 ## [2.9.1] - 2025-05-27
 
 ### Added
@@ -595,6 +606,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.9.2]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.0...2.9.2
 [2.9.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.0...2.9.1
 [2.9.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.8.1...2.9.0
 [2.8.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.8.0...2.8.1
