@@ -13,6 +13,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - Simplify emitted entries by avoiding using quotes as much as possible when
     using the `--emit-categories` flag.
   - Avoid printing the summary table when using the `--emit-categories`.
+  - Allow customizing the output of the summary table a little bit via the
+    Python API.
 
 ## [2.9.1] - 2025-05-27
 

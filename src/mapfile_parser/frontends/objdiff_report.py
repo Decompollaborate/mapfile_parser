@@ -16,6 +16,12 @@ from .. import utils
 from ..internals import objdiff_report as report_internal
 
 
+@dataclasses.dataclass
+class SummaryTableConfig:
+    doUnits: bool = False
+    sort: bool = True
+    remaining: bool = False
+
 def doObjdiffReport(
         mapPath: Path,
         outputPath: Path,
@@ -27,6 +33,7 @@ def doObjdiffReport(
         nonmatchingsPath: Path|None=None,
         emitCategories: bool=False,
         quiet: bool=False,
+        summaryTableConfig: SummaryTableConfig|None=SummaryTableConfig(),
     ) -> int:
     if not mapPath.exists():
         print(f"Could not find mapfile at '{mapPath}'")
@@ -47,12 +54,16 @@ def doObjdiffReport(
         nonmatchingsPath=nonmatchingsPath,
     )
 
-    if not quiet and not emitCategories:
+    if not quiet and summaryTableConfig is not None and not emitCategories:
         report = report_internal.Report.readFile(outputPath)
         if report is None:
             utils.eprint(f"Unable to read back the generated report at {outputPath}")
             return 1
-        table = report.asTableStr(sort=True)
+        table = report.asTableStr(
+            do_units=summaryTableConfig.doUnits,
+            sort=summaryTableConfig.sort,
+            remaining=summaryTableConfig.remaining,
+        )
         print(table, end="")
 
         # Output to GitHub Actions job summary, if available
@@ -331,7 +342,10 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
         nonmatchingsPath = args.nonmatchingspath
 
     emitCategories: bool = args.emit_categories
-    quiet: bool= args.quiet
+    if not args.quiet:
+        summaryTableConfig = SummaryTableConfig()
+    else:
+        summaryTableConfig = None
 
     exit(doObjdiffReport(
         mapPath,
@@ -342,7 +356,7 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
         pathIndex=pathIndex,
         nonmatchingsPath=nonmatchingsPath,
         emitCategories=emitCategories,
-        quiet=quiet
+        summaryTableConfig=summaryTableConfig,
     ))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
