@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- `objdiff_report`:
+  - Simplify emitted entries by avoiding using quotes as much as possible when
+    using the `--emit-categories` flag.
+  - Avoid printing the summary table when using the `--emit-categories`.
+
 ## [2.9.1] - 2025-05-27
 
 ### Added

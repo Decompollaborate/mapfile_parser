@@ -47,7 +47,7 @@ def doObjdiffReport(
         nonmatchingsPath=nonmatchingsPath,
     )
 
-    if not quiet:
+    if not quiet and not emitCategories:
         report = report_internal.Report.readFile(outputPath)
         if report is None:
             utils.eprint(f"Unable to read back the generated report at {outputPath}")
@@ -241,18 +241,26 @@ tools:
       prefixes_to_trim:
 """, end="")
     for trim in prefixesToTrim:
-        print(f"        - \"{trim}\"")
+        print(f"        - {trim}")
 
     def printCategories(categories: list[Category]):
         for cat in categories:
+            ide = cat.ide
+            name = cat.name
+            if ide[0] in "0123456789":
+                ide = f'"{ide}"'
+            if name[0] in "0123456789":
+                name = f'"{name}"'
             print(f"""\
-        - id: "{cat.ide}"
-          name: "{cat.name}"
+        - id: {ide}
+          name: {name}
           paths:
 """, end="")
             for p in cat.paths:
+                if p[0] in "0123456789":
+                    p = f'"{p}"'
                 print(f"""\
-            - "{p}"
+            - {p}
 """, end="")
 
     print("      categories:")
