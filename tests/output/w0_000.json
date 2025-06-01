@@ -4,14 +4,14 @@
             "name": ".reginfo",
             "vram": "0x00000000",
             "size": "0x18",
-            "vrom": null,
+            "vrom": "0x000000",
             "files": [
                 {
                     "filepath": "build/us/src/weapon/header.c.o",
                     "sectionType": ".reginfo",
                     "vram": "0x00000000",
                     "size": "0x18",
-                    "vrom": null,
+                    "vrom": "0x000000",
                     "symbols": []
                 }
             ]
@@ -20,14 +20,14 @@
             "name": ".MIPS.abiflags",
             "vram": "0x00000018",
             "size": "0x18",
-            "vrom": null,
+            "vrom": "0x000018",
             "files": [
                 {
                     "filepath": "build/us/src/weapon/header.c.o",
                     "sectionType": ".MIPS.abiflags",
                     "vram": "0x00000018",
                     "size": "0x18",
-                    "vrom": null,
+                    "vrom": "0x000018",
                     "symbols": []
                 }
             ]
@@ -874,14 +874,14 @@
             "name": ".pdr",
             "vram": "0x00000000",
             "size": "0x320",
-            "vrom": null,
+            "vrom": "0x001700",
             "files": [
                 {
                     "filepath": "build/us/src/weapon/w_000.c.o",
                     "sectionType": ".pdr",
                     "vram": "0x00000000",
                     "size": "0x320",
-                    "vrom": null,
+                    "vrom": "0x001700",
                     "symbols": []
                 }
             ]
@@ -890,14 +890,14 @@
             "name": ".gnu.attributes",
             "vram": "0x00000000",
             "size": "0x10",
-            "vrom": null,
+            "vrom": "0x001A20",
             "files": [
                 {
                     "filepath": "build/us/src/weapon/header.c.o",
                     "sectionType": ".gnu.attributes",
                     "vram": "0x00000000",
                     "size": "0x10",
-                    "vrom": null,
+                    "vrom": "0x001A20",
                     "symbols": []
                 },
                 {
@@ -905,7 +905,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": "0x00000010",
                     "size": "0x10",
-                    "vrom": null,
+                    "vrom": "0x001A30",
                     "symbols": []
                 },
                 {
@@ -913,7 +913,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": "0x00000020",
                     "size": "0x10",
-                    "vrom": null,
+                    "vrom": "0x001A40",
                     "symbols": []
                 },
                 {
@@ -921,7 +921,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": "0x00000030",
                     "size": "0x10",
-                    "vrom": null,
+                    "vrom": "0x001A50",
                     "symbols": []
                 }
             ]
@@ -930,14 +930,14 @@
             "name": ".debug_line",
             "vram": "0x00000000",
             "size": "0xED",
-            "vrom": null,
+            "vrom": "0x001A60",
             "files": [
                 {
                     "filepath": "build/us/src/weapon/w_000.c.o",
                     "sectionType": ".debug_line",
                     "vram": "0x00000000",
                     "size": "0xED",
-                    "vrom": null,
+                    "vrom": "0x001A60",
                     "symbols": []
                 }
             ]
@@ -946,14 +946,14 @@
             "name": ".debug_info",
             "vram": "0x00000000",
             "size": "0x185",
-            "vrom": null,
+            "vrom": "0x001B4D",
             "files": [
                 {
                     "filepath": "build/us/src/weapon/w_000.c.o",
                     "sectionType": ".debug_info",
                     "vram": "0x00000000",
                     "size": "0x185",
-                    "vrom": null,
+                    "vrom": "0x001B4D",
                     "symbols": []
                 }
             ]
@@ -962,14 +962,14 @@
             "name": ".debug_abbrev",
             "vram": "0x00000000",
             "size": "0x21",
-            "vrom": null,
+            "vrom": "0x001CD2",
             "files": [
                 {
                     "filepath": "build/us/src/weapon/w_000.c.o",
                     "sectionType": ".debug_abbrev",
                     "vram": "0x00000000",
                     "size": "0x21",
-                    "vrom": null,
+                    "vrom": "0x001CD2",
                     "symbols": []
                 }
             ]
@@ -978,14 +978,14 @@
             "name": ".debug_aranges",
             "vram": "0x00000000",
             "size": "0x20",
-            "vrom": null,
+            "vrom": "0x001CF3",
             "files": [
                 {
                     "filepath": "build/us/src/weapon/w_000.c.o",
                     "sectionType": ".debug_aranges",
                     "vram": "0x00000000",
                     "size": "0x20",
-                    "vrom": null,
+                    "vrom": "0x001CF3",
                     "symbols": []
                 }
             ]
@@ -994,14 +994,14 @@
             "name": ".debug_str",
             "vram": "0x00000000",
             "size": "0x1D0",
-            "vrom": null,
+            "vrom": "0x001D13",
             "files": [
                 {
                     "filepath": "build/us/src/weapon/w_000.c.o",
                     "sectionType": ".debug_str",
                     "vram": "0x00000000",
                     "size": "0x1D0",
-                    "vrom": null,
+                    "vrom": "0x001D13",
                     "symbols": []
                 }
             ]

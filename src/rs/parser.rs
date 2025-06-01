@@ -335,6 +335,9 @@ impl MapFile {
     ) -> Vec<segment::Segment> {
         let mut segments_list = Vec::with_capacity(temp_segment_list.len());
 
+        // We need to keep a calculated rom in case the segment doesn't specify it explicitly
+        let mut current_calculated_section_rom = 0;
+
         for (i, segment) in temp_segment_list.into_iter().enumerate() {
             if i == 0 && segment.is_placeholder() {
                 // skip the dummy segment if it has no size, sections or symbols
@@ -347,7 +350,13 @@ impl MapFile {
 
             let mut new_segment = segment.clone_no_sectionlist();
 
-            let mut vrom_offset = segment.vrom;
+            let mut vrom_offset = if let Some(vrom) = segment.vrom {
+                current_calculated_section_rom = vrom;
+                vrom
+            } else {
+                new_segment.vrom = Some(current_calculated_section_rom);
+                current_calculated_section_rom
+            };
             for mut section in segment.sections_list.into_iter() {
                 if section.is_placeholder() {
                     // drop placeholders
@@ -359,12 +368,12 @@ impl MapFile {
                 let symbols_count = section.symbols.len();
                 let is_noload_section = section.is_noload_section();
 
-                if section.vrom.is_some() {
-                    vrom_offset = section.vrom;
+                if let Some(vrom) = section.vrom {
+                    vrom_offset = vrom;
                 }
 
                 if !is_noload_section {
-                    section.vrom = vrom_offset;
+                    section.vrom = Some(vrom_offset);
                 }
 
                 if symbols_count > 0 {
@@ -377,7 +386,7 @@ impl MapFile {
                     // by the difference in vram address between the first symbol and the vram
                     // of the section.
                     if let Some(first_sym) = section.symbols.first() {
-                        sym_vrom = sym_vrom.map(|x| x + first_sym.vram - section.vram);
+                        sym_vrom = sym_vrom + first_sym.vram - section.vram;
 
                         // Aditionally, if the first symbol is missing then calculation of the size
                         // for the last symbol would be wrong, since we subtract the accumulated
@@ -397,8 +406,8 @@ impl MapFile {
 
                         if !is_noload_section {
                             // Only set vrom of non bss variables
-                            sym.vrom = sym_vrom;
-                            sym_vrom = sym_vrom.map(|x| x + sym_size);
+                            sym.vrom = Some(sym_vrom);
+                            sym_vrom += sym_size;
                         }
                     }
 
@@ -407,7 +416,7 @@ impl MapFile {
                     let sym_size = section.size - acummulated_size;
                     sym.size = sym_size;
                     if !is_noload_section {
-                        sym.vrom = sym_vrom;
+                        sym.vrom = Some(sym_vrom);
                         //sym_vrom += sym_size;
                     }
 
@@ -415,7 +424,8 @@ impl MapFile {
                 }
 
                 if !is_noload_section {
-                    vrom_offset = vrom_offset.map(|x| x + section.size);
+                    vrom_offset += section.size;
+                    current_calculated_section_rom += section.size;
                 }
 
                 new_segment.sections_list.push(section);

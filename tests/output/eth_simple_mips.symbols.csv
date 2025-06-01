@@ -1,0 +1,8 @@
+Section,Symbol name,VRAM,Size in bytes
+simple_mips.o,test_1,00000000,184
+simple_mips.o,test_2,000000B8,184
+simple_mips.o,math_op_1,00000170,88
+simple_mips.o,math_op_2,000001C8,8
+simple_mips.o,math_op_1_dup,000001D0,96
+simple_mips.o,cat,00000280,4
+simple_mips.o,dog,00000284,12

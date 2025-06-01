@@ -22599,14 +22599,14 @@
             "name": ".pdr",
             "vram": 0,
             "size": 256,
-            "vrom": null,
+            "vrom": 6581864,
             "files": [
                 {
                     "filepath": "build/src/entry/entry.o",
                     "sectionType": ".pdr",
                     "vram": 0,
                     "size": 32,
-                    "vrom": null,
+                    "vrom": 6581864,
                     "symbols": []
                 },
                 {
@@ -22614,7 +22614,7 @@
                     "sectionType": ".pdr",
                     "vram": 32,
                     "size": 224,
-                    "vrom": null,
+                    "vrom": 6581896,
                     "symbols": []
                 }
             ]
@@ -22623,14 +22623,14 @@
             "name": ".gnu.attributes",
             "vram": 0,
             "size": 16,
-            "vrom": null,
+            "vrom": 6582120,
             "files": [
                 {
                     "filepath": "build/asm/us/data/ipl3.o",
                     "sectionType": ".gnu.attributes",
                     "vram": 0,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582120,
                     "symbols": []
                 },
                 {
@@ -22638,7 +22638,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 16,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582136,
                     "symbols": []
                 },
                 {
@@ -22646,7 +22646,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 32,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582152,
                     "symbols": []
                 },
                 {
@@ -22654,7 +22654,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 48,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582168,
                     "symbols": []
                 },
                 {
@@ -22662,7 +22662,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 64,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582184,
                     "symbols": []
                 },
                 {
@@ -22670,7 +22670,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 80,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582200,
                     "symbols": []
                 },
                 {
@@ -22678,7 +22678,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 96,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582216,
                     "symbols": []
                 },
                 {
@@ -22686,7 +22686,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 112,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582232,
                     "symbols": []
                 },
                 {
@@ -22694,7 +22694,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 128,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582248,
                     "symbols": []
                 },
                 {
@@ -22702,7 +22702,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 144,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582264,
                     "symbols": []
                 },
                 {
@@ -22710,7 +22710,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 160,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582280,
                     "symbols": []
                 },
                 {
@@ -22718,7 +22718,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 176,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582296,
                     "symbols": []
                 },
                 {
@@ -22726,7 +22726,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 192,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582312,
                     "symbols": []
                 },
                 {
@@ -22734,7 +22734,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 208,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582328,
                     "symbols": []
                 },
                 {
@@ -22742,7 +22742,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 224,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582344,
                     "symbols": []
                 },
                 {
@@ -22750,7 +22750,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 240,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582360,
                     "symbols": []
                 },
                 {
@@ -22758,7 +22758,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 256,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582376,
                     "symbols": []
                 },
                 {
@@ -22766,7 +22766,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 272,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582392,
                     "symbols": []
                 },
                 {
@@ -22774,7 +22774,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 288,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582408,
                     "symbols": []
                 },
                 {
@@ -22782,7 +22782,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 304,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582424,
                     "symbols": []
                 },
                 {
@@ -22790,7 +22790,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 320,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582440,
                     "symbols": []
                 },
                 {
@@ -22798,7 +22798,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 336,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582456,
                     "symbols": []
                 },
                 {
@@ -22806,7 +22806,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 352,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582472,
                     "symbols": []
                 },
                 {
@@ -22814,7 +22814,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 368,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582488,
                     "symbols": []
                 },
                 {
@@ -22822,7 +22822,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 384,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582504,
                     "symbols": []
                 },
                 {
@@ -22830,7 +22830,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 400,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582520,
                     "symbols": []
                 },
                 {
@@ -22838,7 +22838,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 416,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582536,
                     "symbols": []
                 },
                 {
@@ -22846,7 +22846,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 432,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582552,
                     "symbols": []
                 },
                 {
@@ -22854,7 +22854,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 448,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582568,
                     "symbols": []
                 },
                 {
@@ -22862,7 +22862,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 464,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582584,
                     "symbols": []
                 },
                 {
@@ -22870,7 +22870,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 480,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582600,
                     "symbols": []
                 },
                 {
@@ -22878,7 +22878,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 496,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582616,
                     "symbols": []
                 },
                 {
@@ -22886,7 +22886,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 512,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582632,
                     "symbols": []
                 },
                 {
@@ -22894,7 +22894,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 528,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582648,
                     "symbols": []
                 },
                 {
@@ -22902,7 +22902,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 544,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582664,
                     "symbols": []
                 },
                 {
@@ -22910,7 +22910,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 560,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582680,
                     "symbols": []
                 },
                 {
@@ -22918,7 +22918,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 576,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582696,
                     "symbols": []
                 },
                 {
@@ -22926,7 +22926,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 592,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582712,
                     "symbols": []
                 },
                 {
@@ -22934,7 +22934,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 608,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582728,
                     "symbols": []
                 },
                 {
@@ -22942,7 +22942,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 624,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582744,
                     "symbols": []
                 },
                 {
@@ -22950,7 +22950,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 640,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582760,
                     "symbols": []
                 },
                 {
@@ -22958,7 +22958,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 656,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582776,
                     "symbols": []
                 },
                 {
@@ -22966,7 +22966,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 672,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582792,
                     "symbols": []
                 },
                 {
@@ -22974,7 +22974,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 688,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582808,
                     "symbols": []
                 },
                 {
@@ -22982,7 +22982,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 704,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582824,
                     "symbols": []
                 },
                 {
@@ -22990,7 +22990,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 720,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582840,
                     "symbols": []
                 },
                 {
@@ -22998,7 +22998,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 736,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582856,
                     "symbols": []
                 },
                 {
@@ -23006,7 +23006,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 752,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582872,
                     "symbols": []
                 },
                 {
@@ -23014,7 +23014,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 768,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582888,
                     "symbols": []
                 },
                 {
@@ -23022,7 +23022,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 784,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582904,
                     "symbols": []
                 },
                 {
@@ -23030,7 +23030,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 800,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582920,
                     "symbols": []
                 },
                 {
@@ -23038,7 +23038,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 816,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582936,
                     "symbols": []
                 },
                 {
@@ -23046,7 +23046,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 832,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582952,
                     "symbols": []
                 },
                 {
@@ -23054,7 +23054,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 848,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582968,
                     "symbols": []
                 },
                 {
@@ -23062,7 +23062,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 864,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6582984,
                     "symbols": []
                 },
                 {
@@ -23070,7 +23070,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 880,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583000,
                     "symbols": []
                 },
                 {
@@ -23078,7 +23078,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 896,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583016,
                     "symbols": []
                 },
                 {
@@ -23086,7 +23086,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 912,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583032,
                     "symbols": []
                 },
                 {
@@ -23094,7 +23094,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 928,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583048,
                     "symbols": []
                 },
                 {
@@ -23102,7 +23102,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 944,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583064,
                     "symbols": []
                 },
                 {
@@ -23110,7 +23110,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 960,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583080,
                     "symbols": []
                 },
                 {
@@ -23118,7 +23118,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 976,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583096,
                     "symbols": []
                 },
                 {
@@ -23126,7 +23126,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 992,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583112,
                     "symbols": []
                 },
                 {
@@ -23134,7 +23134,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1008,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583128,
                     "symbols": []
                 },
                 {
@@ -23142,7 +23142,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1024,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583144,
                     "symbols": []
                 },
                 {
@@ -23150,7 +23150,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1040,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583160,
                     "symbols": []
                 },
                 {
@@ -23158,7 +23158,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1056,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583176,
                     "symbols": []
                 },
                 {
@@ -23166,7 +23166,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1072,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583192,
                     "symbols": []
                 },
                 {
@@ -23174,7 +23174,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1088,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583208,
                     "symbols": []
                 },
                 {
@@ -23182,7 +23182,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1104,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583224,
                     "symbols": []
                 },
                 {
@@ -23190,7 +23190,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1120,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583240,
                     "symbols": []
                 },
                 {
@@ -23198,7 +23198,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1136,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583256,
                     "symbols": []
                 },
                 {
@@ -23206,7 +23206,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1152,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583272,
                     "symbols": []
                 },
                 {
@@ -23214,7 +23214,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1168,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583288,
                     "symbols": []
                 },
                 {
@@ -23222,7 +23222,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1184,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583304,
                     "symbols": []
                 },
                 {
@@ -23230,7 +23230,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1200,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583320,
                     "symbols": []
                 },
                 {
@@ -23238,7 +23238,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1216,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583336,
                     "symbols": []
                 },
                 {
@@ -23246,7 +23246,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1232,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583352,
                     "symbols": []
                 },
                 {
@@ -23254,7 +23254,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1248,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583368,
                     "symbols": []
                 },
                 {
@@ -23262,7 +23262,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1264,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583384,
                     "symbols": []
                 },
                 {
@@ -23270,7 +23270,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1280,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583400,
                     "symbols": []
                 },
                 {
@@ -23278,7 +23278,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1296,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583416,
                     "symbols": []
                 },
                 {
@@ -23286,7 +23286,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1312,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583432,
                     "symbols": []
                 },
                 {
@@ -23294,7 +23294,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1328,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583448,
                     "symbols": []
                 },
                 {
@@ -23302,7 +23302,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1344,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583464,
                     "symbols": []
                 },
                 {
@@ -23310,7 +23310,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1360,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583480,
                     "symbols": []
                 },
                 {
@@ -23318,7 +23318,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1376,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583496,
                     "symbols": []
                 },
                 {
@@ -23326,7 +23326,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1392,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583512,
                     "symbols": []
                 },
                 {
@@ -23334,7 +23334,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1408,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583528,
                     "symbols": []
                 },
                 {
@@ -23342,7 +23342,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1424,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583544,
                     "symbols": []
                 },
                 {
@@ -23350,7 +23350,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1440,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583560,
                     "symbols": []
                 },
                 {
@@ -23358,7 +23358,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1456,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583576,
                     "symbols": []
                 },
                 {
@@ -23366,7 +23366,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1472,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583592,
                     "symbols": []
                 },
                 {
@@ -23374,7 +23374,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1488,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583608,
                     "symbols": []
                 },
                 {
@@ -23382,7 +23382,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1504,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583624,
                     "symbols": []
                 },
                 {
@@ -23390,7 +23390,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1520,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583640,
                     "symbols": []
                 },
                 {
@@ -23398,7 +23398,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1536,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583656,
                     "symbols": []
                 },
                 {
@@ -23406,7 +23406,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1552,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583672,
                     "symbols": []
                 },
                 {
@@ -23414,7 +23414,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1568,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583688,
                     "symbols": []
                 },
                 {
@@ -23422,7 +23422,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1584,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583704,
                     "symbols": []
                 },
                 {
@@ -23430,7 +23430,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1600,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583720,
                     "symbols": []
                 },
                 {
@@ -23438,7 +23438,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1616,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583736,
                     "symbols": []
                 },
                 {
@@ -23446,7 +23446,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1632,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583752,
                     "symbols": []
                 },
                 {
@@ -23454,7 +23454,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1648,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583768,
                     "symbols": []
                 },
                 {
@@ -23462,7 +23462,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1664,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583784,
                     "symbols": []
                 },
                 {
@@ -23470,7 +23470,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1680,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583800,
                     "symbols": []
                 },
                 {
@@ -23478,7 +23478,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1696,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583816,
                     "symbols": []
                 },
                 {
@@ -23486,7 +23486,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1712,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583832,
                     "symbols": []
                 },
                 {
@@ -23494,7 +23494,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1728,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583848,
                     "symbols": []
                 },
                 {
@@ -23502,7 +23502,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1744,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583864,
                     "symbols": []
                 },
                 {
@@ -23510,7 +23510,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1760,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583880,
                     "symbols": []
                 },
                 {
@@ -23518,7 +23518,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1776,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583896,
                     "symbols": []
                 },
                 {
@@ -23526,7 +23526,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1792,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583912,
                     "symbols": []
                 },
                 {
@@ -23534,7 +23534,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1808,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583928,
                     "symbols": []
                 },
                 {
@@ -23542,7 +23542,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1824,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583944,
                     "symbols": []
                 },
                 {
@@ -23550,7 +23550,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1840,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583960,
                     "symbols": []
                 },
                 {
@@ -23558,7 +23558,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1856,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583976,
                     "symbols": []
                 },
                 {
@@ -23566,7 +23566,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1872,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6583992,
                     "symbols": []
                 },
                 {
@@ -23574,7 +23574,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1888,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584008,
                     "symbols": []
                 },
                 {
@@ -23582,7 +23582,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1904,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584024,
                     "symbols": []
                 },
                 {
@@ -23590,7 +23590,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1920,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584040,
                     "symbols": []
                 },
                 {
@@ -23598,7 +23598,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1936,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584056,
                     "symbols": []
                 },
                 {
@@ -23606,7 +23606,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1952,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584072,
                     "symbols": []
                 },
                 {
@@ -23614,7 +23614,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1968,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584088,
                     "symbols": []
                 },
                 {
@@ -23622,7 +23622,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 1984,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584104,
                     "symbols": []
                 },
                 {
@@ -23630,7 +23630,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2000,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584120,
                     "symbols": []
                 },
                 {
@@ -23638,7 +23638,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2016,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584136,
                     "symbols": []
                 },
                 {
@@ -23646,7 +23646,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2032,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584152,
                     "symbols": []
                 },
                 {
@@ -23654,7 +23654,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2048,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584168,
                     "symbols": []
                 },
                 {
@@ -23662,7 +23662,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2064,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584184,
                     "symbols": []
                 },
                 {
@@ -23670,7 +23670,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2080,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584200,
                     "symbols": []
                 },
                 {
@@ -23678,7 +23678,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2096,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584216,
                     "symbols": []
                 },
                 {
@@ -23686,7 +23686,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2112,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584232,
                     "symbols": []
                 },
                 {
@@ -23694,7 +23694,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2128,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584248,
                     "symbols": []
                 },
                 {
@@ -23702,7 +23702,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2144,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584264,
                     "symbols": []
                 },
                 {
@@ -23710,7 +23710,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2160,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584280,
                     "symbols": []
                 },
                 {
@@ -23718,7 +23718,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2176,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584296,
                     "symbols": []
                 },
                 {
@@ -23726,7 +23726,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2192,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584312,
                     "symbols": []
                 },
                 {
@@ -23734,7 +23734,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2208,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584328,
                     "symbols": []
                 },
                 {
@@ -23742,7 +23742,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2224,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584344,
                     "symbols": []
                 },
                 {
@@ -23750,7 +23750,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2240,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584360,
                     "symbols": []
                 },
                 {
@@ -23758,7 +23758,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2256,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584376,
                     "symbols": []
                 },
                 {
@@ -23766,7 +23766,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2272,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584392,
                     "symbols": []
                 },
                 {
@@ -23774,7 +23774,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2288,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584408,
                     "symbols": []
                 },
                 {
@@ -23782,7 +23782,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2304,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584424,
                     "symbols": []
                 },
                 {
@@ -23790,7 +23790,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2320,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584440,
                     "symbols": []
                 },
                 {
@@ -23798,7 +23798,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2336,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584456,
                     "symbols": []
                 },
                 {
@@ -23806,7 +23806,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2352,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584472,
                     "symbols": []
                 },
                 {
@@ -23814,7 +23814,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2368,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584488,
                     "symbols": []
                 },
                 {
@@ -23822,7 +23822,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2384,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584504,
                     "symbols": []
                 },
                 {
@@ -23830,7 +23830,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2400,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584520,
                     "symbols": []
                 },
                 {
@@ -23838,7 +23838,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2416,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584536,
                     "symbols": []
                 },
                 {
@@ -23846,7 +23846,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2432,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584552,
                     "symbols": []
                 },
                 {
@@ -23854,7 +23854,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2448,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584568,
                     "symbols": []
                 },
                 {
@@ -23862,7 +23862,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2464,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584584,
                     "symbols": []
                 },
                 {
@@ -23870,7 +23870,7 @@
                     "sectionType": ".gnu.attributes",
                     "vram": 2480,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 6584600,
                     "symbols": []
                 }
             ]
@@ -23879,14 +23879,14 @@
             "name": ".note",
             "vram": 0,
             "size": 3000,
-            "vrom": null,
+            "vrom": 6584616,
             "files": [
                 {
                     "filepath": "build/src/rom_header/rom_header.o",
                     "sectionType": ".note",
                     "vram": 0,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584616,
                     "symbols": []
                 },
                 {
@@ -23894,7 +23894,7 @@
                     "sectionType": ".note",
                     "vram": 20,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584636,
                     "symbols": []
                 },
                 {
@@ -23902,7 +23902,7 @@
                     "sectionType": ".note",
                     "vram": 40,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584656,
                     "symbols": []
                 },
                 {
@@ -23910,7 +23910,7 @@
                     "sectionType": ".note",
                     "vram": 60,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584676,
                     "symbols": []
                 },
                 {
@@ -23918,7 +23918,7 @@
                     "sectionType": ".note",
                     "vram": 80,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584696,
                     "symbols": []
                 },
                 {
@@ -23926,7 +23926,7 @@
                     "sectionType": ".note",
                     "vram": 100,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584716,
                     "symbols": []
                 },
                 {
@@ -23934,7 +23934,7 @@
                     "sectionType": ".note",
                     "vram": 120,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584736,
                     "symbols": []
                 },
                 {
@@ -23942,7 +23942,7 @@
                     "sectionType": ".note",
                     "vram": 140,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584756,
                     "symbols": []
                 },
                 {
@@ -23950,7 +23950,7 @@
                     "sectionType": ".note",
                     "vram": 160,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584776,
                     "symbols": []
                 },
                 {
@@ -23958,7 +23958,7 @@
                     "sectionType": ".note",
                     "vram": 180,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584796,
                     "symbols": []
                 },
                 {
@@ -23966,7 +23966,7 @@
                     "sectionType": ".note",
                     "vram": 200,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584816,
                     "symbols": []
                 },
                 {
@@ -23974,7 +23974,7 @@
                     "sectionType": ".note",
                     "vram": 220,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584836,
                     "symbols": []
                 },
                 {
@@ -23982,7 +23982,7 @@
                     "sectionType": ".note",
                     "vram": 240,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584856,
                     "symbols": []
                 },
                 {
@@ -23990,7 +23990,7 @@
                     "sectionType": ".note",
                     "vram": 260,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584876,
                     "symbols": []
                 },
                 {
@@ -23998,7 +23998,7 @@
                     "sectionType": ".note",
                     "vram": 280,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584896,
                     "symbols": []
                 },
                 {
@@ -24006,7 +24006,7 @@
                     "sectionType": ".note",
                     "vram": 300,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584916,
                     "symbols": []
                 },
                 {
@@ -24014,7 +24014,7 @@
                     "sectionType": ".note",
                     "vram": 320,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584936,
                     "symbols": []
                 },
                 {
@@ -24022,7 +24022,7 @@
                     "sectionType": ".note",
                     "vram": 340,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584956,
                     "symbols": []
                 },
                 {
@@ -24030,7 +24030,7 @@
                     "sectionType": ".note",
                     "vram": 360,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584976,
                     "symbols": []
                 },
                 {
@@ -24038,7 +24038,7 @@
                     "sectionType": ".note",
                     "vram": 380,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6584996,
                     "symbols": []
                 },
                 {
@@ -24046,7 +24046,7 @@
                     "sectionType": ".note",
                     "vram": 400,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585016,
                     "symbols": []
                 },
                 {
@@ -24054,7 +24054,7 @@
                     "sectionType": ".note",
                     "vram": 420,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585036,
                     "symbols": []
                 },
                 {
@@ -24062,7 +24062,7 @@
                     "sectionType": ".note",
                     "vram": 440,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585056,
                     "symbols": []
                 },
                 {
@@ -24070,7 +24070,7 @@
                     "sectionType": ".note",
                     "vram": 460,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585076,
                     "symbols": []
                 },
                 {
@@ -24078,7 +24078,7 @@
                     "sectionType": ".note",
                     "vram": 480,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585096,
                     "symbols": []
                 },
                 {
@@ -24086,7 +24086,7 @@
                     "sectionType": ".note",
                     "vram": 500,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585116,
                     "symbols": []
                 },
                 {
@@ -24094,7 +24094,7 @@
                     "sectionType": ".note",
                     "vram": 520,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585136,
                     "symbols": []
                 },
                 {
@@ -24102,7 +24102,7 @@
                     "sectionType": ".note",
                     "vram": 540,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585156,
                     "symbols": []
                 },
                 {
@@ -24110,7 +24110,7 @@
                     "sectionType": ".note",
                     "vram": 560,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585176,
                     "symbols": []
                 },
                 {
@@ -24118,7 +24118,7 @@
                     "sectionType": ".note",
                     "vram": 580,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585196,
                     "symbols": []
                 },
                 {
@@ -24126,7 +24126,7 @@
                     "sectionType": ".note",
                     "vram": 600,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585216,
                     "symbols": []
                 },
                 {
@@ -24134,7 +24134,7 @@
                     "sectionType": ".note",
                     "vram": 620,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585236,
                     "symbols": []
                 },
                 {
@@ -24142,7 +24142,7 @@
                     "sectionType": ".note",
                     "vram": 640,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585256,
                     "symbols": []
                 },
                 {
@@ -24150,7 +24150,7 @@
                     "sectionType": ".note",
                     "vram": 660,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585276,
                     "symbols": []
                 },
                 {
@@ -24158,7 +24158,7 @@
                     "sectionType": ".note",
                     "vram": 680,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585296,
                     "symbols": []
                 },
                 {
@@ -24166,7 +24166,7 @@
                     "sectionType": ".note",
                     "vram": 700,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585316,
                     "symbols": []
                 },
                 {
@@ -24174,7 +24174,7 @@
                     "sectionType": ".note",
                     "vram": 720,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585336,
                     "symbols": []
                 },
                 {
@@ -24182,7 +24182,7 @@
                     "sectionType": ".note",
                     "vram": 740,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585356,
                     "symbols": []
                 },
                 {
@@ -24190,7 +24190,7 @@
                     "sectionType": ".note",
                     "vram": 760,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585376,
                     "symbols": []
                 },
                 {
@@ -24198,7 +24198,7 @@
                     "sectionType": ".note",
                     "vram": 780,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585396,
                     "symbols": []
                 },
                 {
@@ -24206,7 +24206,7 @@
                     "sectionType": ".note",
                     "vram": 800,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585416,
                     "symbols": []
                 },
                 {
@@ -24214,7 +24214,7 @@
                     "sectionType": ".note",
                     "vram": 820,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585436,
                     "symbols": []
                 },
                 {
@@ -24222,7 +24222,7 @@
                     "sectionType": ".note",
                     "vram": 840,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585456,
                     "symbols": []
                 },
                 {
@@ -24230,7 +24230,7 @@
                     "sectionType": ".note",
                     "vram": 860,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585476,
                     "symbols": []
                 },
                 {
@@ -24238,7 +24238,7 @@
                     "sectionType": ".note",
                     "vram": 880,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585496,
                     "symbols": []
                 },
                 {
@@ -24246,7 +24246,7 @@
                     "sectionType": ".note",
                     "vram": 900,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585516,
                     "symbols": []
                 },
                 {
@@ -24254,7 +24254,7 @@
                     "sectionType": ".note",
                     "vram": 920,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585536,
                     "symbols": []
                 },
                 {
@@ -24262,7 +24262,7 @@
                     "sectionType": ".note",
                     "vram": 940,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585556,
                     "symbols": []
                 },
                 {
@@ -24270,7 +24270,7 @@
                     "sectionType": ".note",
                     "vram": 960,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585576,
                     "symbols": []
                 },
                 {
@@ -24278,7 +24278,7 @@
                     "sectionType": ".note",
                     "vram": 980,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585596,
                     "symbols": []
                 },
                 {
@@ -24286,7 +24286,7 @@
                     "sectionType": ".note",
                     "vram": 1000,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585616,
                     "symbols": []
                 },
                 {
@@ -24294,7 +24294,7 @@
                     "sectionType": ".note",
                     "vram": 1020,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585636,
                     "symbols": []
                 },
                 {
@@ -24302,7 +24302,7 @@
                     "sectionType": ".note",
                     "vram": 1040,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585656,
                     "symbols": []
                 },
                 {
@@ -24310,7 +24310,7 @@
                     "sectionType": ".note",
                     "vram": 1060,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585676,
                     "symbols": []
                 },
                 {
@@ -24318,7 +24318,7 @@
                     "sectionType": ".note",
                     "vram": 1080,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585696,
                     "symbols": []
                 },
                 {
@@ -24326,7 +24326,7 @@
                     "sectionType": ".note",
                     "vram": 1100,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585716,
                     "symbols": []
                 },
                 {
@@ -24334,7 +24334,7 @@
                     "sectionType": ".note",
                     "vram": 1120,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585736,
                     "symbols": []
                 },
                 {
@@ -24342,7 +24342,7 @@
                     "sectionType": ".note",
                     "vram": 1140,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585756,
                     "symbols": []
                 },
                 {
@@ -24350,7 +24350,7 @@
                     "sectionType": ".note",
                     "vram": 1160,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585776,
                     "symbols": []
                 },
                 {
@@ -24358,7 +24358,7 @@
                     "sectionType": ".note",
                     "vram": 1180,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585796,
                     "symbols": []
                 },
                 {
@@ -24366,7 +24366,7 @@
                     "sectionType": ".note",
                     "vram": 1200,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585816,
                     "symbols": []
                 },
                 {
@@ -24374,7 +24374,7 @@
                     "sectionType": ".note",
                     "vram": 1220,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585836,
                     "symbols": []
                 },
                 {
@@ -24382,7 +24382,7 @@
                     "sectionType": ".note",
                     "vram": 1240,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585856,
                     "symbols": []
                 },
                 {
@@ -24390,7 +24390,7 @@
                     "sectionType": ".note",
                     "vram": 1260,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585876,
                     "symbols": []
                 },
                 {
@@ -24398,7 +24398,7 @@
                     "sectionType": ".note",
                     "vram": 1280,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585896,
                     "symbols": []
                 },
                 {
@@ -24406,7 +24406,7 @@
                     "sectionType": ".note",
                     "vram": 1300,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585916,
                     "symbols": []
                 },
                 {
@@ -24414,7 +24414,7 @@
                     "sectionType": ".note",
                     "vram": 1320,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585936,
                     "symbols": []
                 },
                 {
@@ -24422,7 +24422,7 @@
                     "sectionType": ".note",
                     "vram": 1340,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585956,
                     "symbols": []
                 },
                 {
@@ -24430,7 +24430,7 @@
                     "sectionType": ".note",
                     "vram": 1360,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585976,
                     "symbols": []
                 },
                 {
@@ -24438,7 +24438,7 @@
                     "sectionType": ".note",
                     "vram": 1380,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6585996,
                     "symbols": []
                 },
                 {
@@ -24446,7 +24446,7 @@
                     "sectionType": ".note",
                     "vram": 1400,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586016,
                     "symbols": []
                 },
                 {
@@ -24454,7 +24454,7 @@
                     "sectionType": ".note",
                     "vram": 1420,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586036,
                     "symbols": []
                 },
                 {
@@ -24462,7 +24462,7 @@
                     "sectionType": ".note",
                     "vram": 1440,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586056,
                     "symbols": []
                 },
                 {
@@ -24470,7 +24470,7 @@
                     "sectionType": ".note",
                     "vram": 1460,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586076,
                     "symbols": []
                 },
                 {
@@ -24478,7 +24478,7 @@
                     "sectionType": ".note",
                     "vram": 1480,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586096,
                     "symbols": []
                 },
                 {
@@ -24486,7 +24486,7 @@
                     "sectionType": ".note",
                     "vram": 1500,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586116,
                     "symbols": []
                 },
                 {
@@ -24494,7 +24494,7 @@
                     "sectionType": ".note",
                     "vram": 1520,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586136,
                     "symbols": []
                 },
                 {
@@ -24502,7 +24502,7 @@
                     "sectionType": ".note",
                     "vram": 1540,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586156,
                     "symbols": []
                 },
                 {
@@ -24510,7 +24510,7 @@
                     "sectionType": ".note",
                     "vram": 1560,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586176,
                     "symbols": []
                 },
                 {
@@ -24518,7 +24518,7 @@
                     "sectionType": ".note",
                     "vram": 1580,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586196,
                     "symbols": []
                 },
                 {
@@ -24526,7 +24526,7 @@
                     "sectionType": ".note",
                     "vram": 1600,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586216,
                     "symbols": []
                 },
                 {
@@ -24534,7 +24534,7 @@
                     "sectionType": ".note",
                     "vram": 1620,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586236,
                     "symbols": []
                 },
                 {
@@ -24542,7 +24542,7 @@
                     "sectionType": ".note",
                     "vram": 1640,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586256,
                     "symbols": []
                 },
                 {
@@ -24550,7 +24550,7 @@
                     "sectionType": ".note",
                     "vram": 1660,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586276,
                     "symbols": []
                 },
                 {
@@ -24558,7 +24558,7 @@
                     "sectionType": ".note",
                     "vram": 1680,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586296,
                     "symbols": []
                 },
                 {
@@ -24566,7 +24566,7 @@
                     "sectionType": ".note",
                     "vram": 1700,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586316,
                     "symbols": []
                 },
                 {
@@ -24574,7 +24574,7 @@
                     "sectionType": ".note",
                     "vram": 1720,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586336,
                     "symbols": []
                 },
                 {
@@ -24582,7 +24582,7 @@
                     "sectionType": ".note",
                     "vram": 1740,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586356,
                     "symbols": []
                 },
                 {
@@ -24590,7 +24590,7 @@
                     "sectionType": ".note",
                     "vram": 1760,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586376,
                     "symbols": []
                 },
                 {
@@ -24598,7 +24598,7 @@
                     "sectionType": ".note",
                     "vram": 1780,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586396,
                     "symbols": []
                 },
                 {
@@ -24606,7 +24606,7 @@
                     "sectionType": ".note",
                     "vram": 1800,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586416,
                     "symbols": []
                 },
                 {
@@ -24614,7 +24614,7 @@
                     "sectionType": ".note",
                     "vram": 1820,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586436,
                     "symbols": []
                 },
                 {
@@ -24622,7 +24622,7 @@
                     "sectionType": ".note",
                     "vram": 1840,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586456,
                     "symbols": []
                 },
                 {
@@ -24630,7 +24630,7 @@
                     "sectionType": ".note",
                     "vram": 1860,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586476,
                     "symbols": []
                 },
                 {
@@ -24638,7 +24638,7 @@
                     "sectionType": ".note",
                     "vram": 1880,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586496,
                     "symbols": []
                 },
                 {
@@ -24646,7 +24646,7 @@
                     "sectionType": ".note",
                     "vram": 1900,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586516,
                     "symbols": []
                 },
                 {
@@ -24654,7 +24654,7 @@
                     "sectionType": ".note",
                     "vram": 1920,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586536,
                     "symbols": []
                 },
                 {
@@ -24662,7 +24662,7 @@
                     "sectionType": ".note",
                     "vram": 1940,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586556,
                     "symbols": []
                 },
                 {
@@ -24670,7 +24670,7 @@
                     "sectionType": ".note",
                     "vram": 1960,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586576,
                     "symbols": []
                 },
                 {
@@ -24678,7 +24678,7 @@
                     "sectionType": ".note",
                     "vram": 1980,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586596,
                     "symbols": []
                 },
                 {
@@ -24686,7 +24686,7 @@
                     "sectionType": ".note",
                     "vram": 2000,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586616,
                     "symbols": []
                 },
                 {
@@ -24694,7 +24694,7 @@
                     "sectionType": ".note",
                     "vram": 2020,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586636,
                     "symbols": []
                 },
                 {
@@ -24702,7 +24702,7 @@
                     "sectionType": ".note",
                     "vram": 2040,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586656,
                     "symbols": []
                 },
                 {
@@ -24710,7 +24710,7 @@
                     "sectionType": ".note",
                     "vram": 2060,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586676,
                     "symbols": []
                 },
                 {
@@ -24718,7 +24718,7 @@
                     "sectionType": ".note",
                     "vram": 2080,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586696,
                     "symbols": []
                 },
                 {
@@ -24726,7 +24726,7 @@
                     "sectionType": ".note",
                     "vram": 2100,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586716,
                     "symbols": []
                 },
                 {
@@ -24734,7 +24734,7 @@
                     "sectionType": ".note",
                     "vram": 2120,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586736,
                     "symbols": []
                 },
                 {
@@ -24742,7 +24742,7 @@
                     "sectionType": ".note",
                     "vram": 2140,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586756,
                     "symbols": []
                 },
                 {
@@ -24750,7 +24750,7 @@
                     "sectionType": ".note",
                     "vram": 2160,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586776,
                     "symbols": []
                 },
                 {
@@ -24758,7 +24758,7 @@
                     "sectionType": ".note",
                     "vram": 2180,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586796,
                     "symbols": []
                 },
                 {
@@ -24766,7 +24766,7 @@
                     "sectionType": ".note",
                     "vram": 2200,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586816,
                     "symbols": []
                 },
                 {
@@ -24774,7 +24774,7 @@
                     "sectionType": ".note",
                     "vram": 2220,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586836,
                     "symbols": []
                 },
                 {
@@ -24782,7 +24782,7 @@
                     "sectionType": ".note",
                     "vram": 2240,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586856,
                     "symbols": []
                 },
                 {
@@ -24790,7 +24790,7 @@
                     "sectionType": ".note",
                     "vram": 2260,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586876,
                     "symbols": []
                 },
                 {
@@ -24798,7 +24798,7 @@
                     "sectionType": ".note",
                     "vram": 2280,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586896,
                     "symbols": []
                 },
                 {
@@ -24806,7 +24806,7 @@
                     "sectionType": ".note",
                     "vram": 2300,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586916,
                     "symbols": []
                 },
                 {
@@ -24814,7 +24814,7 @@
                     "sectionType": ".note",
                     "vram": 2320,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586936,
                     "symbols": []
                 },
                 {
@@ -24822,7 +24822,7 @@
                     "sectionType": ".note",
                     "vram": 2340,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586956,
                     "symbols": []
                 },
                 {
@@ -24830,7 +24830,7 @@
                     "sectionType": ".note",
                     "vram": 2360,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586976,
                     "symbols": []
                 },
                 {
@@ -24838,7 +24838,7 @@
                     "sectionType": ".note",
                     "vram": 2380,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6586996,
                     "symbols": []
                 },
                 {
@@ -24846,7 +24846,7 @@
                     "sectionType": ".note",
                     "vram": 2400,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587016,
                     "symbols": []
                 },
                 {
@@ -24854,7 +24854,7 @@
                     "sectionType": ".note",
                     "vram": 2420,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587036,
                     "symbols": []
                 },
                 {
@@ -24862,7 +24862,7 @@
                     "sectionType": ".note",
                     "vram": 2440,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587056,
                     "symbols": []
                 },
                 {
@@ -24870,7 +24870,7 @@
                     "sectionType": ".note",
                     "vram": 2460,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587076,
                     "symbols": []
                 },
                 {
@@ -24878,7 +24878,7 @@
                     "sectionType": ".note",
                     "vram": 2480,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587096,
                     "symbols": []
                 },
                 {
@@ -24886,7 +24886,7 @@
                     "sectionType": ".note",
                     "vram": 2500,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587116,
                     "symbols": []
                 },
                 {
@@ -24894,7 +24894,7 @@
                     "sectionType": ".note",
                     "vram": 2520,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587136,
                     "symbols": []
                 },
                 {
@@ -24902,7 +24902,7 @@
                     "sectionType": ".note",
                     "vram": 2540,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587156,
                     "symbols": []
                 },
                 {
@@ -24910,7 +24910,7 @@
                     "sectionType": ".note",
                     "vram": 2560,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587176,
                     "symbols": []
                 },
                 {
@@ -24918,7 +24918,7 @@
                     "sectionType": ".note",
                     "vram": 2580,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587196,
                     "symbols": []
                 },
                 {
@@ -24926,7 +24926,7 @@
                     "sectionType": ".note",
                     "vram": 2600,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587216,
                     "symbols": []
                 },
                 {
@@ -24934,7 +24934,7 @@
                     "sectionType": ".note",
                     "vram": 2620,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587236,
                     "symbols": []
                 },
                 {
@@ -24942,7 +24942,7 @@
                     "sectionType": ".note",
                     "vram": 2640,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587256,
                     "symbols": []
                 },
                 {
@@ -24950,7 +24950,7 @@
                     "sectionType": ".note",
                     "vram": 2660,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587276,
                     "symbols": []
                 },
                 {
@@ -24958,7 +24958,7 @@
                     "sectionType": ".note",
                     "vram": 2680,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587296,
                     "symbols": []
                 },
                 {
@@ -24966,7 +24966,7 @@
                     "sectionType": ".note",
                     "vram": 2700,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587316,
                     "symbols": []
                 },
                 {
@@ -24974,7 +24974,7 @@
                     "sectionType": ".note",
                     "vram": 2720,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587336,
                     "symbols": []
                 },
                 {
@@ -24982,7 +24982,7 @@
                     "sectionType": ".note",
                     "vram": 2740,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587356,
                     "symbols": []
                 },
                 {
@@ -24990,7 +24990,7 @@
                     "sectionType": ".note",
                     "vram": 2760,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587376,
                     "symbols": []
                 },
                 {
@@ -24998,7 +24998,7 @@
                     "sectionType": ".note",
                     "vram": 2780,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587396,
                     "symbols": []
                 },
                 {
@@ -25006,7 +25006,7 @@
                     "sectionType": ".note",
                     "vram": 2800,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587416,
                     "symbols": []
                 },
                 {
@@ -25014,7 +25014,7 @@
                     "sectionType": ".note",
                     "vram": 2820,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587436,
                     "symbols": []
                 },
                 {
@@ -25022,7 +25022,7 @@
                     "sectionType": ".note",
                     "vram": 2840,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587456,
                     "symbols": []
                 },
                 {
@@ -25030,7 +25030,7 @@
                     "sectionType": ".note",
                     "vram": 2860,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587476,
                     "symbols": []
                 },
                 {
@@ -25038,7 +25038,7 @@
                     "sectionType": ".note",
                     "vram": 2880,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587496,
                     "symbols": []
                 },
                 {
@@ -25046,7 +25046,7 @@
                     "sectionType": ".note",
                     "vram": 2900,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587516,
                     "symbols": []
                 },
                 {
@@ -25054,7 +25054,7 @@
                     "sectionType": ".note",
                     "vram": 2920,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587536,
                     "symbols": []
                 },
                 {
@@ -25062,7 +25062,7 @@
                     "sectionType": ".note",
                     "vram": 2940,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587556,
                     "symbols": []
                 },
                 {
@@ -25070,7 +25070,7 @@
                     "sectionType": ".note",
                     "vram": 2960,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587576,
                     "symbols": []
                 },
                 {
@@ -25078,7 +25078,7 @@
                     "sectionType": ".note",
                     "vram": 2980,
                     "size": 20,
-                    "vrom": null,
+                    "vrom": 6587596,
                     "symbols": []
                 }
             ]
@@ -25087,14 +25087,14 @@
             "name": ".comment",
             "vram": 0,
             "size": 3384,
-            "vrom": null,
+            "vrom": 6587616,
             "files": [
                 {
                     "filepath": "build/src/rom_header/rom_header.o",
                     "sectionType": ".comment",
                     "vram": 0,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6587616,
                     "symbols": []
                 },
                 {
@@ -25102,7 +25102,7 @@
                     "sectionType": ".comment",
                     "vram": 18,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6587634,
                     "symbols": []
                 },
                 {
@@ -25110,7 +25110,7 @@
                     "sectionType": ".comment",
                     "vram": 36,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6587652,
                     "symbols": []
                 },
                 {
@@ -25118,7 +25118,7 @@
                     "sectionType": ".comment",
                     "vram": 54,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6587670,
                     "symbols": []
                 },
                 {
@@ -25126,7 +25126,7 @@
                     "sectionType": ".comment",
                     "vram": 72,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6587688,
                     "symbols": []
                 },
                 {
@@ -25134,7 +25134,7 @@
                     "sectionType": ".comment",
                     "vram": 90,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6587706,
                     "symbols": []
                 },
                 {
@@ -25142,7 +25142,7 @@
                     "sectionType": ".comment",
                     "vram": 108,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6587724,
                     "symbols": []
                 },
                 {
@@ -25150,7 +25150,7 @@
                     "sectionType": ".comment",
                     "vram": 126,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6587742,
                     "symbols": []
                 },
                 {
@@ -25158,7 +25158,7 @@
                     "sectionType": ".comment",
                     "vram": 144,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6587760,
                     "symbols": []
                 },
                 {
@@ -25166,7 +25166,7 @@
                     "sectionType": ".comment",
                     "vram": 162,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6587778,
                     "symbols": []
                 },
                 {
@@ -25174,7 +25174,7 @@
                     "sectionType": ".comment",
                     "vram": 198,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6587814,
                     "symbols": []
                 },
                 {
@@ -25182,7 +25182,7 @@
                     "sectionType": ".comment",
                     "vram": 216,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6587832,
                     "symbols": []
                 },
                 {
@@ -25190,7 +25190,7 @@
                     "sectionType": ".comment",
                     "vram": 234,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6587850,
                     "symbols": []
                 },
                 {
@@ -25198,7 +25198,7 @@
                     "sectionType": ".comment",
                     "vram": 252,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6587868,
                     "symbols": []
                 },
                 {
@@ -25206,7 +25206,7 @@
                     "sectionType": ".comment",
                     "vram": 288,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6587904,
                     "symbols": []
                 },
                 {
@@ -25214,7 +25214,7 @@
                     "sectionType": ".comment",
                     "vram": 324,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6587940,
                     "symbols": []
                 },
                 {
@@ -25222,7 +25222,7 @@
                     "sectionType": ".comment",
                     "vram": 360,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6587976,
                     "symbols": []
                 },
                 {
@@ -25230,7 +25230,7 @@
                     "sectionType": ".comment",
                     "vram": 396,
                     "size": 54,
-                    "vrom": null,
+                    "vrom": 6588012,
                     "symbols": []
                 },
                 {
@@ -25238,7 +25238,7 @@
                     "sectionType": ".comment",
                     "vram": 450,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588066,
                     "symbols": []
                 },
                 {
@@ -25246,7 +25246,7 @@
                     "sectionType": ".comment",
                     "vram": 468,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588084,
                     "symbols": []
                 },
                 {
@@ -25254,7 +25254,7 @@
                     "sectionType": ".comment",
                     "vram": 486,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6588102,
                     "symbols": []
                 },
                 {
@@ -25262,7 +25262,7 @@
                     "sectionType": ".comment",
                     "vram": 522,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588138,
                     "symbols": []
                 },
                 {
@@ -25270,7 +25270,7 @@
                     "sectionType": ".comment",
                     "vram": 540,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588156,
                     "symbols": []
                 },
                 {
@@ -25278,7 +25278,7 @@
                     "sectionType": ".comment",
                     "vram": 558,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588174,
                     "symbols": []
                 },
                 {
@@ -25286,7 +25286,7 @@
                     "sectionType": ".comment",
                     "vram": 576,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588192,
                     "symbols": []
                 },
                 {
@@ -25294,7 +25294,7 @@
                     "sectionType": ".comment",
                     "vram": 594,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588210,
                     "symbols": []
                 },
                 {
@@ -25302,7 +25302,7 @@
                     "sectionType": ".comment",
                     "vram": 612,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588228,
                     "symbols": []
                 },
                 {
@@ -25310,7 +25310,7 @@
                     "sectionType": ".comment",
                     "vram": 630,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588246,
                     "symbols": []
                 },
                 {
@@ -25318,7 +25318,7 @@
                     "sectionType": ".comment",
                     "vram": 648,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588264,
                     "symbols": []
                 },
                 {
@@ -25326,7 +25326,7 @@
                     "sectionType": ".comment",
                     "vram": 666,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588282,
                     "symbols": []
                 },
                 {
@@ -25334,7 +25334,7 @@
                     "sectionType": ".comment",
                     "vram": 684,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588300,
                     "symbols": []
                 },
                 {
@@ -25342,7 +25342,7 @@
                     "sectionType": ".comment",
                     "vram": 702,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588318,
                     "symbols": []
                 },
                 {
@@ -25350,7 +25350,7 @@
                     "sectionType": ".comment",
                     "vram": 720,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588336,
                     "symbols": []
                 },
                 {
@@ -25358,7 +25358,7 @@
                     "sectionType": ".comment",
                     "vram": 738,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588354,
                     "symbols": []
                 },
                 {
@@ -25366,7 +25366,7 @@
                     "sectionType": ".comment",
                     "vram": 756,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588372,
                     "symbols": []
                 },
                 {
@@ -25374,7 +25374,7 @@
                     "sectionType": ".comment",
                     "vram": 774,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588390,
                     "symbols": []
                 },
                 {
@@ -25382,7 +25382,7 @@
                     "sectionType": ".comment",
                     "vram": 792,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588408,
                     "symbols": []
                 },
                 {
@@ -25390,7 +25390,7 @@
                     "sectionType": ".comment",
                     "vram": 810,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588426,
                     "symbols": []
                 },
                 {
@@ -25398,7 +25398,7 @@
                     "sectionType": ".comment",
                     "vram": 828,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588444,
                     "symbols": []
                 },
                 {
@@ -25406,7 +25406,7 @@
                     "sectionType": ".comment",
                     "vram": 846,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588462,
                     "symbols": []
                 },
                 {
@@ -25414,7 +25414,7 @@
                     "sectionType": ".comment",
                     "vram": 864,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588480,
                     "symbols": []
                 },
                 {
@@ -25422,7 +25422,7 @@
                     "sectionType": ".comment",
                     "vram": 882,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6588498,
                     "symbols": []
                 },
                 {
@@ -25430,7 +25430,7 @@
                     "sectionType": ".comment",
                     "vram": 918,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588534,
                     "symbols": []
                 },
                 {
@@ -25438,7 +25438,7 @@
                     "sectionType": ".comment",
                     "vram": 936,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588552,
                     "symbols": []
                 },
                 {
@@ -25446,7 +25446,7 @@
                     "sectionType": ".comment",
                     "vram": 954,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588570,
                     "symbols": []
                 },
                 {
@@ -25454,7 +25454,7 @@
                     "sectionType": ".comment",
                     "vram": 972,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588588,
                     "symbols": []
                 },
                 {
@@ -25462,7 +25462,7 @@
                     "sectionType": ".comment",
                     "vram": 990,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588606,
                     "symbols": []
                 },
                 {
@@ -25470,7 +25470,7 @@
                     "sectionType": ".comment",
                     "vram": 1008,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588624,
                     "symbols": []
                 },
                 {
@@ -25478,7 +25478,7 @@
                     "sectionType": ".comment",
                     "vram": 1026,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6588642,
                     "symbols": []
                 },
                 {
@@ -25486,7 +25486,7 @@
                     "sectionType": ".comment",
                     "vram": 1062,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6588678,
                     "symbols": []
                 },
                 {
@@ -25494,7 +25494,7 @@
                     "sectionType": ".comment",
                     "vram": 1098,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588714,
                     "symbols": []
                 },
                 {
@@ -25502,7 +25502,7 @@
                     "sectionType": ".comment",
                     "vram": 1116,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588732,
                     "symbols": []
                 },
                 {
@@ -25510,7 +25510,7 @@
                     "sectionType": ".comment",
                     "vram": 1134,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588750,
                     "symbols": []
                 },
                 {
@@ -25518,7 +25518,7 @@
                     "sectionType": ".comment",
                     "vram": 1152,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588768,
                     "symbols": []
                 },
                 {
@@ -25526,7 +25526,7 @@
                     "sectionType": ".comment",
                     "vram": 1170,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588786,
                     "symbols": []
                 },
                 {
@@ -25534,7 +25534,7 @@
                     "sectionType": ".comment",
                     "vram": 1188,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588804,
                     "symbols": []
                 },
                 {
@@ -25542,7 +25542,7 @@
                     "sectionType": ".comment",
                     "vram": 1206,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588822,
                     "symbols": []
                 },
                 {
@@ -25550,7 +25550,7 @@
                     "sectionType": ".comment",
                     "vram": 1224,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588840,
                     "symbols": []
                 },
                 {
@@ -25558,7 +25558,7 @@
                     "sectionType": ".comment",
                     "vram": 1242,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588858,
                     "symbols": []
                 },
                 {
@@ -25566,7 +25566,7 @@
                     "sectionType": ".comment",
                     "vram": 1260,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588876,
                     "symbols": []
                 },
                 {
@@ -25574,7 +25574,7 @@
                     "sectionType": ".comment",
                     "vram": 1278,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588894,
                     "symbols": []
                 },
                 {
@@ -25582,7 +25582,7 @@
                     "sectionType": ".comment",
                     "vram": 1296,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6588912,
                     "symbols": []
                 },
                 {
@@ -25590,7 +25590,7 @@
                     "sectionType": ".comment",
                     "vram": 1314,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6588930,
                     "symbols": []
                 },
                 {
@@ -25598,7 +25598,7 @@
                     "sectionType": ".comment",
                     "vram": 1350,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6588966,
                     "symbols": []
                 },
                 {
@@ -25606,7 +25606,7 @@
                     "sectionType": ".comment",
                     "vram": 1386,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589002,
                     "symbols": []
                 },
                 {
@@ -25614,7 +25614,7 @@
                     "sectionType": ".comment",
                     "vram": 1422,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589038,
                     "symbols": []
                 },
                 {
@@ -25622,7 +25622,7 @@
                     "sectionType": ".comment",
                     "vram": 1458,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589074,
                     "symbols": []
                 },
                 {
@@ -25630,7 +25630,7 @@
                     "sectionType": ".comment",
                     "vram": 1494,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589110,
                     "symbols": []
                 },
                 {
@@ -25638,7 +25638,7 @@
                     "sectionType": ".comment",
                     "vram": 1530,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589146,
                     "symbols": []
                 },
                 {
@@ -25646,7 +25646,7 @@
                     "sectionType": ".comment",
                     "vram": 1566,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6589182,
                     "symbols": []
                 },
                 {
@@ -25654,7 +25654,7 @@
                     "sectionType": ".comment",
                     "vram": 1584,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6589200,
                     "symbols": []
                 },
                 {
@@ -25662,7 +25662,7 @@
                     "sectionType": ".comment",
                     "vram": 1602,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589218,
                     "symbols": []
                 },
                 {
@@ -25670,7 +25670,7 @@
                     "sectionType": ".comment",
                     "vram": 1638,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6589254,
                     "symbols": []
                 },
                 {
@@ -25678,7 +25678,7 @@
                     "sectionType": ".comment",
                     "vram": 1656,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589272,
                     "symbols": []
                 },
                 {
@@ -25686,7 +25686,7 @@
                     "sectionType": ".comment",
                     "vram": 1692,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589308,
                     "symbols": []
                 },
                 {
@@ -25694,7 +25694,7 @@
                     "sectionType": ".comment",
                     "vram": 1728,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589344,
                     "symbols": []
                 },
                 {
@@ -25702,7 +25702,7 @@
                     "sectionType": ".comment",
                     "vram": 1764,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589380,
                     "symbols": []
                 },
                 {
@@ -25710,7 +25710,7 @@
                     "sectionType": ".comment",
                     "vram": 1800,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6589416,
                     "symbols": []
                 },
                 {
@@ -25718,7 +25718,7 @@
                     "sectionType": ".comment",
                     "vram": 1818,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6589434,
                     "symbols": []
                 },
                 {
@@ -25726,7 +25726,7 @@
                     "sectionType": ".comment",
                     "vram": 1836,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6589452,
                     "symbols": []
                 },
                 {
@@ -25734,7 +25734,7 @@
                     "sectionType": ".comment",
                     "vram": 1854,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6589470,
                     "symbols": []
                 },
                 {
@@ -25742,7 +25742,7 @@
                     "sectionType": ".comment",
                     "vram": 1872,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589488,
                     "symbols": []
                 },
                 {
@@ -25750,7 +25750,7 @@
                     "sectionType": ".comment",
                     "vram": 1908,
                     "size": 54,
-                    "vrom": null,
+                    "vrom": 6589524,
                     "symbols": []
                 },
                 {
@@ -25758,7 +25758,7 @@
                     "sectionType": ".comment",
                     "vram": 1962,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589578,
                     "symbols": []
                 },
                 {
@@ -25766,7 +25766,7 @@
                     "sectionType": ".comment",
                     "vram": 1998,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6589614,
                     "symbols": []
                 },
                 {
@@ -25774,7 +25774,7 @@
                     "sectionType": ".comment",
                     "vram": 2016,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6589632,
                     "symbols": []
                 },
                 {
@@ -25782,7 +25782,7 @@
                     "sectionType": ".comment",
                     "vram": 2034,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589650,
                     "symbols": []
                 },
                 {
@@ -25790,7 +25790,7 @@
                     "sectionType": ".comment",
                     "vram": 2070,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589686,
                     "symbols": []
                 },
                 {
@@ -25798,7 +25798,7 @@
                     "sectionType": ".comment",
                     "vram": 2106,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589722,
                     "symbols": []
                 },
                 {
@@ -25806,7 +25806,7 @@
                     "sectionType": ".comment",
                     "vram": 2142,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589758,
                     "symbols": []
                 },
                 {
@@ -25814,7 +25814,7 @@
                     "sectionType": ".comment",
                     "vram": 2178,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589794,
                     "symbols": []
                 },
                 {
@@ -25822,7 +25822,7 @@
                     "sectionType": ".comment",
                     "vram": 2214,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589830,
                     "symbols": []
                 },
                 {
@@ -25830,7 +25830,7 @@
                     "sectionType": ".comment",
                     "vram": 2250,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589866,
                     "symbols": []
                 },
                 {
@@ -25838,7 +25838,7 @@
                     "sectionType": ".comment",
                     "vram": 2286,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589902,
                     "symbols": []
                 },
                 {
@@ -25846,7 +25846,7 @@
                     "sectionType": ".comment",
                     "vram": 2322,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6589938,
                     "symbols": []
                 },
                 {
@@ -25854,7 +25854,7 @@
                     "sectionType": ".comment",
                     "vram": 2340,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589956,
                     "symbols": []
                 },
                 {
@@ -25862,7 +25862,7 @@
                     "sectionType": ".comment",
                     "vram": 2376,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6589992,
                     "symbols": []
                 },
                 {
@@ -25870,7 +25870,7 @@
                     "sectionType": ".comment",
                     "vram": 2412,
                     "size": 36,
-                    "vrom": null,
+                    "vrom": 6590028,
                     "symbols": []
                 },
                 {
@@ -25878,7 +25878,7 @@
                     "sectionType": ".comment",
                     "vram": 2448,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590064,
                     "symbols": []
                 },
                 {
@@ -25886,7 +25886,7 @@
                     "sectionType": ".comment",
                     "vram": 2466,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590082,
                     "symbols": []
                 },
                 {
@@ -25894,7 +25894,7 @@
                     "sectionType": ".comment",
                     "vram": 2484,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590100,
                     "symbols": []
                 },
                 {
@@ -25902,7 +25902,7 @@
                     "sectionType": ".comment",
                     "vram": 2502,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590118,
                     "symbols": []
                 },
                 {
@@ -25910,7 +25910,7 @@
                     "sectionType": ".comment",
                     "vram": 2520,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590136,
                     "symbols": []
                 },
                 {
@@ -25918,7 +25918,7 @@
                     "sectionType": ".comment",
                     "vram": 2538,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590154,
                     "symbols": []
                 },
                 {
@@ -25926,7 +25926,7 @@
                     "sectionType": ".comment",
                     "vram": 2556,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590172,
                     "symbols": []
                 },
                 {
@@ -25934,7 +25934,7 @@
                     "sectionType": ".comment",
                     "vram": 2574,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590190,
                     "symbols": []
                 },
                 {
@@ -25942,7 +25942,7 @@
                     "sectionType": ".comment",
                     "vram": 2592,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590208,
                     "symbols": []
                 },
                 {
@@ -25950,7 +25950,7 @@
                     "sectionType": ".comment",
                     "vram": 2610,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590226,
                     "symbols": []
                 },
                 {
@@ -25958,7 +25958,7 @@
                     "sectionType": ".comment",
                     "vram": 2628,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590244,
                     "symbols": []
                 },
                 {
@@ -25966,7 +25966,7 @@
                     "sectionType": ".comment",
                     "vram": 2646,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590262,
                     "symbols": []
                 },
                 {
@@ -25974,7 +25974,7 @@
                     "sectionType": ".comment",
                     "vram": 2664,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590280,
                     "symbols": []
                 },
                 {
@@ -25982,7 +25982,7 @@
                     "sectionType": ".comment",
                     "vram": 2682,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590298,
                     "symbols": []
                 },
                 {
@@ -25990,7 +25990,7 @@
                     "sectionType": ".comment",
                     "vram": 2700,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590316,
                     "symbols": []
                 },
                 {
@@ -25998,7 +25998,7 @@
                     "sectionType": ".comment",
                     "vram": 2718,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590334,
                     "symbols": []
                 },
                 {
@@ -26006,7 +26006,7 @@
                     "sectionType": ".comment",
                     "vram": 2736,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590352,
                     "symbols": []
                 },
                 {
@@ -26014,7 +26014,7 @@
                     "sectionType": ".comment",
                     "vram": 2754,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590370,
                     "symbols": []
                 },
                 {
@@ -26022,7 +26022,7 @@
                     "sectionType": ".comment",
                     "vram": 2772,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590388,
                     "symbols": []
                 },
                 {
@@ -26030,7 +26030,7 @@
                     "sectionType": ".comment",
                     "vram": 2790,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590406,
                     "symbols": []
                 },
                 {
@@ -26038,7 +26038,7 @@
                     "sectionType": ".comment",
                     "vram": 2808,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590424,
                     "symbols": []
                 },
                 {
@@ -26046,7 +26046,7 @@
                     "sectionType": ".comment",
                     "vram": 2826,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590442,
                     "symbols": []
                 },
                 {
@@ -26054,7 +26054,7 @@
                     "sectionType": ".comment",
                     "vram": 2844,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590460,
                     "symbols": []
                 },
                 {
@@ -26062,7 +26062,7 @@
                     "sectionType": ".comment",
                     "vram": 2862,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590478,
                     "symbols": []
                 },
                 {
@@ -26070,7 +26070,7 @@
                     "sectionType": ".comment",
                     "vram": 2880,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590496,
                     "symbols": []
                 },
                 {
@@ -26078,7 +26078,7 @@
                     "sectionType": ".comment",
                     "vram": 2898,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590514,
                     "symbols": []
                 },
                 {
@@ -26086,7 +26086,7 @@
                     "sectionType": ".comment",
                     "vram": 2916,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590532,
                     "symbols": []
                 },
                 {
@@ -26094,7 +26094,7 @@
                     "sectionType": ".comment",
                     "vram": 2934,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590550,
                     "symbols": []
                 },
                 {
@@ -26102,7 +26102,7 @@
                     "sectionType": ".comment",
                     "vram": 2952,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590568,
                     "symbols": []
                 },
                 {
@@ -26110,7 +26110,7 @@
                     "sectionType": ".comment",
                     "vram": 2970,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590586,
                     "symbols": []
                 },
                 {
@@ -26118,7 +26118,7 @@
                     "sectionType": ".comment",
                     "vram": 2988,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590604,
                     "symbols": []
                 },
                 {
@@ -26126,7 +26126,7 @@
                     "sectionType": ".comment",
                     "vram": 3006,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590622,
                     "symbols": []
                 },
                 {
@@ -26134,7 +26134,7 @@
                     "sectionType": ".comment",
                     "vram": 3024,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590640,
                     "symbols": []
                 },
                 {
@@ -26142,7 +26142,7 @@
                     "sectionType": ".comment",
                     "vram": 3042,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590658,
                     "symbols": []
                 },
                 {
@@ -26150,7 +26150,7 @@
                     "sectionType": ".comment",
                     "vram": 3060,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590676,
                     "symbols": []
                 },
                 {
@@ -26158,7 +26158,7 @@
                     "sectionType": ".comment",
                     "vram": 3078,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590694,
                     "symbols": []
                 },
                 {
@@ -26166,7 +26166,7 @@
                     "sectionType": ".comment",
                     "vram": 3096,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590712,
                     "symbols": []
                 },
                 {
@@ -26174,7 +26174,7 @@
                     "sectionType": ".comment",
                     "vram": 3114,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590730,
                     "symbols": []
                 },
                 {
@@ -26182,7 +26182,7 @@
                     "sectionType": ".comment",
                     "vram": 3132,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590748,
                     "symbols": []
                 },
                 {
@@ -26190,7 +26190,7 @@
                     "sectionType": ".comment",
                     "vram": 3150,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590766,
                     "symbols": []
                 },
                 {
@@ -26198,7 +26198,7 @@
                     "sectionType": ".comment",
                     "vram": 3168,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590784,
                     "symbols": []
                 },
                 {
@@ -26206,7 +26206,7 @@
                     "sectionType": ".comment",
                     "vram": 3186,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590802,
                     "symbols": []
                 },
                 {
@@ -26214,7 +26214,7 @@
                     "sectionType": ".comment",
                     "vram": 3204,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590820,
                     "symbols": []
                 },
                 {
@@ -26222,7 +26222,7 @@
                     "sectionType": ".comment",
                     "vram": 3222,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590838,
                     "symbols": []
                 },
                 {
@@ -26230,7 +26230,7 @@
                     "sectionType": ".comment",
                     "vram": 3240,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590856,
                     "symbols": []
                 },
                 {
@@ -26238,7 +26238,7 @@
                     "sectionType": ".comment",
                     "vram": 3258,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590874,
                     "symbols": []
                 },
                 {
@@ -26246,7 +26246,7 @@
                     "sectionType": ".comment",
                     "vram": 3276,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590892,
                     "symbols": []
                 },
                 {
@@ -26254,7 +26254,7 @@
                     "sectionType": ".comment",
                     "vram": 3294,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590910,
                     "symbols": []
                 },
                 {
@@ -26262,7 +26262,7 @@
                     "sectionType": ".comment",
                     "vram": 3312,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590928,
                     "symbols": []
                 },
                 {
@@ -26270,7 +26270,7 @@
                     "sectionType": ".comment",
                     "vram": 3330,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590946,
                     "symbols": []
                 },
                 {
@@ -26278,7 +26278,7 @@
                     "sectionType": ".comment",
                     "vram": 3348,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590964,
                     "symbols": []
                 },
                 {
@@ -26286,7 +26286,7 @@
                     "sectionType": ".comment",
                     "vram": 3366,
                     "size": 18,
-                    "vrom": null,
+                    "vrom": 6590982,
                     "symbols": []
                 }
             ]
