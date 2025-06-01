@@ -1,0 +1,160 @@
+{
+    "segments": [
+        {
+            "name": ".text",
+            "vram": "0x00000000",
+            "size": "0x230",
+            "vrom": null,
+            "files": [
+                {
+                    "filepath": "simple_mips.o",
+                    "sectionType": ".text",
+                    "vram": "0x00000000",
+                    "size": "0x230",
+                    "vrom": null,
+                    "symbols": [
+                        {
+                            "name": "test_1",
+                            "vram": "0x00000000",
+                            "size": "0xB8",
+                            "vrom": null
+                        },
+                        {
+                            "name": "test_2",
+                            "vram": "0x000000B8",
+                            "size": "0xB8",
+                            "vrom": null
+                        },
+                        {
+                            "name": "math_op_1",
+                            "vram": "0x00000170",
+                            "size": "0x58",
+                            "vrom": null
+                        },
+                        {
+                            "name": "math_op_2",
+                            "vram": "0x000001C8",
+                            "size": "0x8",
+                            "vrom": null
+                        },
+                        {
+                            "name": "math_op_1_dup",
+                            "vram": "0x000001D0",
+                            "size": "0x60",
+                            "vrom": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".rodata",
+            "vram": "0x00000230",
+            "size": "0x30",
+            "vrom": null,
+            "files": [
+                {
+                    "filepath": "simple_mips.o",
+                    "sectionType": ".rodata",
+                    "vram": "0x00000230",
+                    "size": "0x30",
+                    "vrom": null,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".reginfo",
+            "vram": "0x00000260",
+            "size": "0x18",
+            "vrom": null,
+            "files": [
+                {
+                    "filepath": "simple_mips.o",
+                    "sectionType": ".reginfo",
+                    "vram": "0x00000260",
+                    "size": "0x18",
+                    "vrom": null,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".data",
+            "vram": "0x00000280",
+            "size": "0x10",
+            "vrom": null,
+            "files": [
+                {
+                    "filepath": "simple_mips.o",
+                    "sectionType": ".data",
+                    "vram": "0x00000280",
+                    "size": "0x10",
+                    "vrom": null,
+                    "symbols": [
+                        {
+                            "name": "cat",
+                            "vram": "0x00000280",
+                            "size": "0x4",
+                            "vrom": null
+                        },
+                        {
+                            "name": "dog",
+                            "vram": "0x00000284",
+                            "size": "0xC",
+                            "vrom": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".options",
+            "vram": "0x00000000",
+            "size": "0x40",
+            "vrom": null,
+            "files": [
+                {
+                    "filepath": "simple_mips.o",
+                    "sectionType": ".options",
+                    "vram": "0x00000000",
+                    "size": "0x40",
+                    "vrom": null,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".gptab.data",
+            "vram": "0x00000000",
+            "size": "0x18",
+            "vrom": null,
+            "files": [
+                {
+                    "filepath": "simple_mips.o",
+                    "sectionType": ".gptab.data",
+                    "vram": "0x00000000",
+                    "size": "0x18",
+                    "vrom": null,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".mdebug",
+            "vram": "0x00000000",
+            "size": "0x488",
+            "vrom": null,
+            "files": [
+                {
+                    "filepath": "simple_mips.o",
+                    "sectionType": ".mdebug",
+                    "vram": "0x00000000",
+                    "size": "0x450",
+                    "vrom": null,
+                    "symbols": []
+                }
+            ]
+        }
+    ]
+}
