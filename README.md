@@ -36,7 +36,7 @@ If you use a `requirements.txt` file in your repository, then you can add
 this library with the following line:
 
 ```txt
-mapfile_parser>=2.9.2,<3.0.0
+mapfile_parser>=2.9.3,<3.0.0
 ```
 
 #### Development version
@@ -75,7 +75,7 @@ cargo add mapfile_parser
 Or add the following line manually to your `Cargo.toml` file:
 
 ```toml
-mapfile_parser = "2.9.2"
+mapfile_parser = "2.9.3"
 ```
 
 ## Versioning and changelog
