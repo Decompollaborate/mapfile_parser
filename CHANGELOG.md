@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Fixed
+
+- Try to infer the rom address of sections and segments even when the mapfile
+  does not have it explictly on GNU mapfiles.
+
 ## [2.9.2] - 2025-05-28
 
 ### Changed

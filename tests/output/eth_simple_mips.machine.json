@@ -4,44 +4,44 @@
             "name": ".text",
             "vram": 0,
             "size": 560,
-            "vrom": null,
+            "vrom": 0,
             "files": [
                 {
                     "filepath": "simple_mips.o",
                     "sectionType": ".text",
                     "vram": 0,
                     "size": 560,
-                    "vrom": null,
+                    "vrom": 0,
                     "symbols": [
                         {
                             "name": "test_1",
                             "vram": 0,
                             "size": 184,
-                            "vrom": null
+                            "vrom": 0
                         },
                         {
                             "name": "test_2",
                             "vram": 184,
                             "size": 184,
-                            "vrom": null
+                            "vrom": 184
                         },
                         {
                             "name": "math_op_1",
                             "vram": 368,
                             "size": 88,
-                            "vrom": null
+                            "vrom": 368
                         },
                         {
                             "name": "math_op_2",
                             "vram": 456,
                             "size": 8,
-                            "vrom": null
+                            "vrom": 456
                         },
                         {
                             "name": "math_op_1_dup",
                             "vram": 464,
                             "size": 96,
-                            "vrom": null
+                            "vrom": 464
                         }
                     ]
                 }
@@ -51,14 +51,14 @@
             "name": ".rodata",
             "vram": 560,
             "size": 48,
-            "vrom": null,
+            "vrom": 560,
             "files": [
                 {
                     "filepath": "simple_mips.o",
                     "sectionType": ".rodata",
                     "vram": 560,
                     "size": 48,
-                    "vrom": null,
+                    "vrom": 560,
                     "symbols": []
                 }
             ]
@@ -67,14 +67,14 @@
             "name": ".reginfo",
             "vram": 608,
             "size": 24,
-            "vrom": null,
+            "vrom": 608,
             "files": [
                 {
                     "filepath": "simple_mips.o",
                     "sectionType": ".reginfo",
                     "vram": 608,
                     "size": 24,
-                    "vrom": null,
+                    "vrom": 608,
                     "symbols": []
                 }
             ]
@@ -83,26 +83,26 @@
             "name": ".data",
             "vram": 640,
             "size": 16,
-            "vrom": null,
+            "vrom": 632,
             "files": [
                 {
                     "filepath": "simple_mips.o",
                     "sectionType": ".data",
                     "vram": 640,
                     "size": 16,
-                    "vrom": null,
+                    "vrom": 632,
                     "symbols": [
                         {
                             "name": "cat",
                             "vram": 640,
                             "size": 4,
-                            "vrom": null
+                            "vrom": 632
                         },
                         {
                             "name": "dog",
                             "vram": 644,
                             "size": 12,
-                            "vrom": null
+                            "vrom": 636
                         }
                     ]
                 }
@@ -112,14 +112,14 @@
             "name": ".options",
             "vram": 0,
             "size": 64,
-            "vrom": null,
+            "vrom": 648,
             "files": [
                 {
                     "filepath": "simple_mips.o",
                     "sectionType": ".options",
                     "vram": 0,
                     "size": 64,
-                    "vrom": null,
+                    "vrom": 648,
                     "symbols": []
                 }
             ]
@@ -128,14 +128,14 @@
             "name": ".gptab.data",
             "vram": 0,
             "size": 24,
-            "vrom": null,
+            "vrom": 712,
             "files": [
                 {
                     "filepath": "simple_mips.o",
                     "sectionType": ".gptab.data",
                     "vram": 0,
                     "size": 24,
-                    "vrom": null,
+                    "vrom": 712,
                     "symbols": []
                 }
             ]
@@ -144,14 +144,14 @@
             "name": ".mdebug",
             "vram": 0,
             "size": 1160,
-            "vrom": null,
+            "vrom": 736,
             "files": [
                 {
                     "filepath": "simple_mips.o",
                     "sectionType": ".mdebug",
                     "vram": 0,
                     "size": 1104,
-                    "vrom": null,
+                    "vrom": 736,
                     "symbols": []
                 }
             ]
