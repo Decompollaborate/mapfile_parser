@@ -388,8 +388,6 @@ impl Hash for Section {
 pub(crate) mod python_bindings {
     use pyo3::{intern, prelude::*, IntoPyObjectExt};
 
-    use PathBuf;
-
     // Required to call the `.hash` and `.finish` methods, which are defined on traits.
     use std::hash::{Hash, Hasher};
 
