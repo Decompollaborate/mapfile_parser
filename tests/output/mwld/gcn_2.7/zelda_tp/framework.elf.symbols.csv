@@ -21404,7 +21404,6 @@ dolphin_trk_glue.o,_MetroTRK_Has_Framing,8044F824,4
 target_options.o,useSerialIO,8044F828,1
 main.o,gRecvBuf,8044F830,2048
 main.o,gRecvCB,80450030,28
-main.o,.bss,80450050,1308
 main.o,gRecvBuf,80450050,1280
 main.o,gRecvCB,80450550,28
 m_Do_main.o,developmentMode__7mDoMain,80450580,1
@@ -22555,7 +22554,6 @@ errno.o,errno,804519A8,4
 uart_console_io_gcn.o,initialized$9,804519B0,4
 serpoll.o,gTRKInputPendingPtr,804519B8,4
 main.o,gIsInitialized,804519C0,4
-main.o,.sbss,804519C8,4
 main.o,gIsInitialized,804519C8,4
 DebuggerDriver.o,MTRCallback,804519D0,4
 DebuggerDriver.o,DBGCallback,804519D4,4

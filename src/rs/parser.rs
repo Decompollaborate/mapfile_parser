@@ -678,8 +678,33 @@ impl MapFile {
                             };
                         }
                     }
+                } else if regex_entries.fill.is_match(subline) {
+                    // Make a dummy section to handle pads
+                    let current_segment = temp_segment_list.last_mut().unwrap();
+
+                    let mut filepath = PathBuf::new();
+                    let mut section_type = "".to_owned();
+
+                    if let Some(prev_section) = current_segment.sections_list.last() {
+                        let mut name = prev_section.filepath.file_name().unwrap().to_owned();
+
+                        name.push("__fill__");
+                        filepath = prev_section.filepath.with_file_name(name);
+                        section_type.clone_from(&prev_section.section_type);
+                    }
+
+                    let mut new_section =
+                        section::Section::new_fill(filepath, vram, size, &section_type);
+                    new_section.align = Some(align);
+                    if !utils::is_noload_section(&section_type) {
+                        new_section.vrom = current_segment.vrom.map(|x| x + starting);
+                    }
+                    current_segment.sections_list.push(new_section);
+
+                    // Don't count this as a valid file.
+                    current_filename = invalid_file_name.to_string();
                 } else {
-                    println!("{}", subline);
+                    // println!("'{}'", subline);
                 }
             } else if let Some(segment_entry_match) = regex_entries.segment.captures(line) {
                 let name = &segment_entry_match["name"];
@@ -800,6 +825,7 @@ struct MwRegexEntries {
     segment: Regex,
     label: Regex,
     symbol: Regex,
+    fill: Regex,
 }
 
 impl MwRegexEntries {
@@ -816,12 +842,14 @@ impl MwRegexEntries {
         let segment = Regex::new(r"^(?P<name>.+) section layout$").unwrap();
         let label = Regex::new(r"^(?P<label>lbl_[0-9A-F]{8})\s+(?P<filename>.+?)\s*$").unwrap();
         let symbol = Regex::new(r"^\s*(?P<name>[^ ]+)\s+(?P<filename>.+?)\s*$").unwrap();
+        let fill = Regex::new(r"^\s*\*fill\*\s*$").unwrap();
 
         Self {
             common_row,
             segment,
             label,
             symbol,
+            fill,
         }
     }
 }

@@ -1462,7 +1462,8 @@ VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
 8044F818,main_TRK.o,.bss,1,4,4,4.00
 8044F820,dolphin_trk_glue.o,.bss,2,4,8,4.00
 8044F828,target_options.o,.bss,1,1,1,1.00
-8044F830,main.o,.bss,5,2048,2076,415.20
+8044F830,main.o,.bss,2,2048,2076,1038.00
+80450050,main.o,.bss,2,1280,1308,654.00
 80450580,m_Do_main.o,.sdata,3,4,9,3.00
 80450590,m_Do_graphic.o,.sdata,3,8,16,5.33
 804505A0,m_Do_machine.o,.sdata,2,4,8,4.00
@@ -1742,7 +1743,8 @@ VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
 804519A8,errno.o,.sbss,1,4,4,4.00
 804519B0,uart_console_io_gcn.o,.sbss,1,4,4,4.00
 804519B8,serpoll.o,.sbss,1,4,4,4.00
-804519C0,main.o,.sbss,3,4,4,1.33
+804519C0,main.o,.sbss,1,4,4,4.00
+804519C8,main.o,.sbss,1,4,4,4.00
 804519D0,DebuggerDriver.o,.sbss,6,4,21,3.50
 80451A00,m_Do_main.o,.sdata2,6,8,32,5.33
 80451A20,m_Do_controller_pad.o,.sdata2,4,8,24,6.00

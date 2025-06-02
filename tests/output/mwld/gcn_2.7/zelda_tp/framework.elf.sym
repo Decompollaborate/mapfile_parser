@@ -21403,7 +21403,6 @@
 8044F828,data,useSerialIO
 8044F830,data,gRecvBuf
 80450030,data,gRecvCB
-80450050,data,.bss
 80450050,data,gRecvBuf
 80450550,data,gRecvCB
 80450580,data,developmentMode__7mDoMain
@@ -22554,7 +22553,6 @@
 804519B0,data,initialized$9
 804519B8,data,gTRKInputPendingPtr
 804519C0,data,gIsInitialized
-804519C8,data,.sbss
 804519C8,data,gIsInitialized
 804519D0,data,MTRCallback
 804519D4,data,DBGCallback

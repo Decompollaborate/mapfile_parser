@@ -7,9 +7,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
-### Fixed
+### Added
 
-- Fix parsing for mwld 2.7+ generated mapfiles.
+- Implement parsing for `mwld` 2.7+ generated mapfiles.
+- Handle `*fill*`s in `mwld`.
 
 ## [2.9.3] - 2025-06-01
 
