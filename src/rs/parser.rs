@@ -232,7 +232,7 @@ impl MapFile {
                                     filepath,
                                     vram,
                                     size,
-                                    section_type,
+                                    section_type.into(),
                                 ));
                         } else if let Some(section_alone_match) =
                             regex_section_alone_entry.captures(prev_line)
@@ -250,7 +250,7 @@ impl MapFile {
                                     filepath,
                                     vram,
                                     size,
-                                    section_type,
+                                    section_type.into(),
                                 ));
                         }
                     }
@@ -319,7 +319,7 @@ impl MapFile {
                             filepath,
                             vram,
                             size,
-                            &section_type,
+                            section_type,
                         ));
                 }
             }
@@ -497,8 +497,8 @@ impl MapFile {
                     }
 
                     let mut new_section =
-                        section::Section::new_fill(filepath, vram, size, &section_type);
-                    if !utils::is_noload_section(&section_type) {
+                        section::Section::new_fill(filepath, vram, size, section_type);
+                    if !utils::is_noload_section(&new_section.section_type) {
                         new_section.vrom = vrom;
                     }
                     current_segment.sections_list.push(new_section);
@@ -510,9 +510,13 @@ impl MapFile {
                     if size > 0 {
                         let current_segment = temp_segment_list.last_mut().unwrap();
 
-                        let mut new_section =
-                            section::Section::new_default(filepath, vram, size, section_type);
-                        if !utils::is_noload_section(section_type) {
+                        let mut new_section = section::Section::new_default(
+                            filepath,
+                            vram,
+                            size,
+                            section_type.into(),
+                        );
+                        if !utils::is_noload_section(&new_section.section_type) {
                             new_section.vrom = vrom;
                         }
                         new_section.align = Some(align);
@@ -675,9 +679,13 @@ impl MapFile {
 
                             let current_segment = temp_segment_list.last_mut().unwrap();
 
-                            let mut new_section =
-                                section::Section::new_default(filepath, vram, size, section_type);
-                            if !utils::is_noload_section(section_type) {
+                            let mut new_section = section::Section::new_default(
+                                filepath,
+                                vram,
+                                size,
+                                section_type.into(),
+                            );
+                            if !utils::is_noload_section(&new_section.section_type) {
                                 new_section.vrom = rom
                             }
 
@@ -708,9 +716,9 @@ impl MapFile {
                     }
 
                     let mut new_section =
-                        section::Section::new_fill(filepath, vram, size, &section_type);
+                        section::Section::new_fill(filepath, vram, size, section_type);
                     new_section.align = Some(align);
-                    if !utils::is_noload_section(&section_type) {
+                    if !utils::is_noload_section(&new_section.section_type) {
                         new_section.vrom = rom;
                     }
                     current_segment.sections_list.push(new_section);

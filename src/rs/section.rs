@@ -42,7 +42,7 @@ impl Section {
         filepath: PathBuf,
         vram: u64,
         size: u64,
-        section_type: &str,
+        section_type: String,
         vrom: Option<u64>,
         align: Option<u64>,
     ) -> Self {
@@ -53,7 +53,7 @@ impl Section {
         filepath: PathBuf,
         vram: u64,
         size: u64,
-        section_type: &str,
+        section_type: String,
         vrom: Option<u64>,
         align: Option<u64>,
         is_fill: bool,
@@ -62,7 +62,7 @@ impl Section {
             filepath,
             vram,
             size,
-            section_type: section_type.into(),
+            section_type,
             vrom,
             align,
             is_fill,
@@ -303,52 +303,20 @@ impl Section {
 
 impl Section {
     pub(crate) fn new_default(
-        filepath: std::path::PathBuf,
+        filepath: PathBuf,
         vram: u64,
         size: u64,
-        section_type: &str,
+        section_type: String,
     ) -> Self {
-        Section {
-            filepath,
-            vram,
-            size,
-            section_type: section_type.into(),
-            vrom: None,
-            align: None,
-            is_fill: false,
-            symbols: Vec::new(),
-        }
+        Self::new_impl(filepath, vram, size, section_type, None, None, false)
     }
 
     pub(crate) fn new_placeholder() -> Self {
-        Self {
-            filepath: "".into(),
-            vram: 0,
-            size: 0,
-            section_type: "".into(),
-            vrom: None,
-            align: None,
-            is_fill: false,
-            symbols: Vec::new(),
-        }
+        Self::new_impl("".into(), 0, 0, "".into(), None, None, false)
     }
 
-    pub(crate) fn new_fill(
-        filepath: std::path::PathBuf,
-        vram: u64,
-        size: u64,
-        section_type: &str,
-    ) -> Self {
-        Self {
-            filepath,
-            vram,
-            size,
-            section_type: section_type.into(),
-            vrom: None,
-            align: None,
-            is_fill: true,
-            symbols: Vec::new(),
-        }
+    pub(crate) fn new_fill(filepath: PathBuf, vram: u64, size: u64, section_type: String) -> Self {
+        Self::new_impl(filepath, vram, size, section_type, None, None, true)
     }
 
     pub fn is_placeholder(&self) -> bool {
@@ -420,7 +388,7 @@ impl Hash for Section {
 pub(crate) mod python_bindings {
     use pyo3::{intern, prelude::*, IntoPyObjectExt};
 
-    use std::path::PathBuf;
+    use PathBuf;
 
     // Required to call the `.hash` and `.finish` methods, which are defined on traits.
     use std::hash::{Hash, Hasher};
@@ -439,7 +407,7 @@ pub(crate) mod python_bindings {
             filepath: PathBuf,
             vram: u64,
             size: u64,
-            section_type: &str,
+            section_type: String,
             vrom: Option<u64>,
             align: Option<u64>,
             is_fill: bool,
