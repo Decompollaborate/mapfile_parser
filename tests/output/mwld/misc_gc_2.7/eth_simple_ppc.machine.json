@@ -1,0 +1,291 @@
+{
+    "segments": [
+        {
+            "name": ".compress.init",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".init",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".compress.text",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".text",
+            "vram": 0,
+            "size": 712,
+            "vrom": 64,
+            "files": [
+                {
+                    "filepath": "simple_ppc.o",
+                    "sectionType": ".text",
+                    "vram": 0,
+                    "size": 712,
+                    "vrom": 64,
+                    "symbols": [
+                        {
+                            "name": "test_1",
+                            "vram": 0,
+                            "size": 200,
+                            "vrom": 64
+                        },
+                        {
+                            "name": "test_2",
+                            "vram": 200,
+                            "size": 200,
+                            "vrom": 264
+                        },
+                        {
+                            "name": "math_op_1",
+                            "vram": 400,
+                            "size": 152,
+                            "vrom": 464
+                        },
+                        {
+                            "name": "math_op_2",
+                            "vram": 552,
+                            "size": 8,
+                            "vrom": 616
+                        },
+                        {
+                            "name": "math_op_1_dup",
+                            "vram": 560,
+                            "size": 152,
+                            "vrom": 624
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".compress.fini",
+            "vram": 0,
+            "size": 0,
+            "vrom": 776,
+            "files": []
+        },
+        {
+            "name": ".fini",
+            "vram": 0,
+            "size": 0,
+            "vrom": 776,
+            "files": []
+        },
+        {
+            "name": ".rodata",
+            "vram": 0,
+            "size": 0,
+            "vrom": 776,
+            "files": []
+        },
+        {
+            "name": ".ctors",
+            "vram": 0,
+            "size": 0,
+            "vrom": 776,
+            "files": []
+        },
+        {
+            "name": ".dtors",
+            "vram": 0,
+            "size": 0,
+            "vrom": 776,
+            "files": []
+        },
+        {
+            "name": "extab",
+            "vram": 0,
+            "size": 32,
+            "vrom": 776,
+            "files": [
+                {
+                    "filepath": "simple_ppc.o",
+                    "sectionType": "extab",
+                    "vram": 0,
+                    "size": 32,
+                    "vrom": 776,
+                    "symbols": [
+                        {
+                            "name": "@16",
+                            "vram": 0,
+                            "size": 8,
+                            "vrom": 776
+                        },
+                        {
+                            "name": "@32",
+                            "vram": 8,
+                            "size": 8,
+                            "vrom": 784
+                        },
+                        {
+                            "name": "@42",
+                            "vram": 16,
+                            "size": 8,
+                            "vrom": 792
+                        },
+                        {
+                            "name": "@56",
+                            "vram": 24,
+                            "size": 8,
+                            "vrom": 800
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "extabindex",
+            "vram": 0,
+            "size": 48,
+            "vrom": 808,
+            "files": []
+        },
+        {
+            "name": ".BINARY",
+            "vram": 0,
+            "size": 0,
+            "vrom": 856,
+            "files": []
+        },
+        {
+            "name": ".data",
+            "vram": 0,
+            "size": 0,
+            "vrom": 856,
+            "files": []
+        },
+        {
+            "name": ".sdata",
+            "vram": 0,
+            "size": 8,
+            "vrom": 856,
+            "files": [
+                {
+                    "filepath": "simple_ppc.o",
+                    "sectionType": ".sdata",
+                    "vram": 0,
+                    "size": 8,
+                    "vrom": 856,
+                    "symbols": [
+                        {
+                            "name": "cat",
+                            "vram": 0,
+                            "size": 4,
+                            "vrom": 856
+                        },
+                        {
+                            "name": "dog",
+                            "vram": 4,
+                            "size": 4,
+                            "vrom": 860
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".sbss",
+            "vram": 0,
+            "size": 0,
+            "vrom": 864,
+            "files": []
+        },
+        {
+            "name": ".sdata2",
+            "vram": 0,
+            "size": 8,
+            "vrom": 864,
+            "files": [
+                {
+                    "filepath": "simple_ppc.o",
+                    "sectionType": ".sdata2",
+                    "vram": 0,
+                    "size": 8,
+                    "vrom": 864,
+                    "symbols": [
+                        {
+                            "name": "@13",
+                            "vram": 0,
+                            "size": 8,
+                            "vrom": 864
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".sbss2",
+            "vram": 0,
+            "size": 0,
+            "vrom": 872,
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sdata0",
+            "vram": 0,
+            "size": 0,
+            "vrom": 872,
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sbss0",
+            "vram": 0,
+            "size": 0,
+            "vrom": 872,
+            "files": []
+        },
+        {
+            "name": ".bss",
+            "vram": 0,
+            "size": 0,
+            "vrom": 872,
+            "files": []
+        },
+        {
+            "name": "extabindex",
+            "vram": 0,
+            "size": 48,
+            "vrom": 808,
+            "files": [
+                {
+                    "filepath": "simple_ppc.o",
+                    "sectionType": "@17",
+                    "vram": 0,
+                    "size": 12,
+                    "vrom": 856,
+                    "symbols": [
+                        {
+                            "name": "@33",
+                            "vram": 12,
+                            "size": 12,
+                            "vrom": 856
+                        },
+                        {
+                            "name": "@43",
+                            "vram": 24,
+                            "size": 12,
+                            "vrom": 856
+                        },
+                        {
+                            "name": "@57",
+                            "vram": 36,
+                            "size": 12,
+                            "vrom": 856
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

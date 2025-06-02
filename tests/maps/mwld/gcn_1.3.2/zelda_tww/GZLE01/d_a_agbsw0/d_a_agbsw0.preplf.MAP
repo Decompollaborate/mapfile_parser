@@ -1,0 +1,519 @@
+Link map of __start
+  1] .text (section,local) found in executor.o 
+   2] _prolog (func,global) found in executor.o 
+    3] _ctors found as linker generated symbol
+>>> SYMBOL NOT FOUND: ModuleConstructorsX
+>>> SYMBOL NOT FOUND: ModuleProlog
+   2] _epilog (func,global) found in executor.o 
+>>> SYMBOL NOT FOUND: ModuleEpilog
+    3] _dtors found as linker generated symbol
+>>> SYMBOL NOT FOUND: ModuleDestructorsX
+   2] _unresolved (func,global) found in executor.o 
+>>> SYMBOL NOT FOUND: ModuleUnresolved
+   2] .text (section,local) found in executor.o 
+  1] .text (section,local) found in d_a_agbsw0.o 
+   2] ExeSubA__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: g_dComIfG_gameInfo
+>>> SYMBOL NOT FOUND: isSwitch__10dSv_info_cFii
+>>> SYMBOL NOT FOUND: g_mDoGaC_gbaCom
+>>> SYMBOL NOT FOUND: mDoGaC_GbaLink__15mDoGaC_agbCom_cFv
+>>> SYMBOL NOT FOUND: mDoGaC_SendStatusCheck__15mDoGaC_agbCom_cFUc
+    3] MailSend__10daAgbsw0_cFUsUcUcUcUc (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: _savegpr_29
+     4] mMail__10daAgbsw0_c (object,global) found in d_a_agbsw0.o 
+      5] mSE__10daAgbsw0_c (object,global) found in d_a_agbsw0.o 
+      5] se_flag$2291 (object,local) found in d_a_agbsw0.o 
+      5] init$2292 (object,local) found in d_a_agbsw0.o 
+      5] init$localstatic4$execute__10daAgbsw0_cFv (object,weak) found in d_a_agbsw0.o 
+      5] .bss (section,local) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: mDoGaC_SendDataSet__15mDoGaC_agbCom_cFPUliUcUl
+>>> SYMBOL NOT FOUND: _restgpr_29
+>>> SYMBOL NOT FOUND: fopAcM_delete__FP10fopAc_ac_c
+    3] MoveCheck__10daAgbsw0_cFs (func,global) found in d_a_agbsw0.o 
+     4] @4072 (object,local) found in d_a_agbsw0.o 
+      5] ...data.0 (notype,local) found in d_a_agbsw0.o 
+      5] data_2100$11 (object,local) found in d_a_agbsw0.o 
+      5] data_2080$15 (object,local) found in d_a_agbsw0.o 
+      5] attnFnTbl_1811$19 (object,local) found in d_a_agbsw0.o 
+      5] _three$localstatic3$fake_sqrtf__Ff (object,weak) found in d_a_agbsw0.o 
+      5] _half$localstatic4$fake_sqrtf__Ff (object,weak) found in d_a_agbsw0.o 
+      5] l_cyl_src (object,local) found in d_a_agbsw0.o 
+      5] @1630 (object,local) found in d_a_agbsw0.o 
+      5] @1631 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubAT__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: isTbox__12dSv_memBit_cFi
+>>> SYMBOL NOT FOUND: isOceanSvBit__11dSv_ocean_cFUcUs
+        7] HitCheck__10daAgbsw0_cFP10fopAc_ac_c (func,global) found in d_a_agbsw0.o 
+         8] @2955 (object,local) found in d_a_agbsw0.o 
+          9] ...rodata.0 (notype,local) found in d_a_agbsw0.o 
+          9] @1974 (object,local) found in d_a_agbsw0.o 
+          9] @1975 (object,local) found in d_a_agbsw0.o 
+          9] @2279 (object,local) found in d_a_agbsw0.o 
+          9] @2280 (object,local) found in d_a_agbsw0.o 
+          9] @2281 (object,local) found in d_a_agbsw0.o 
+          9] @2367 (object,local) found in d_a_agbsw0.o 
+          9] @2368 (object,local) found in d_a_agbsw0.o 
+          9] @2369 (object,local) found in d_a_agbsw0.o 
+          9] @2370 (object,local) found in d_a_agbsw0.o 
+          9] @2371 (object,local) found in d_a_agbsw0.o 
+          9] @2372 (object,local) found in d_a_agbsw0.o 
+          9] @2373 (object,local) found in d_a_agbsw0.o 
+          9] @2558 (object,local) found in d_a_agbsw0.o 
+          9] @2559 (object,local) found in d_a_agbsw0.o 
+          9] @2560 (object,local) found in d_a_agbsw0.o 
+          9] @2768 (object,local) found in d_a_agbsw0.o 
+          9] @2769 (object,local) found in d_a_agbsw0.o 
+          9] @2770 (object,local) found in d_a_agbsw0.o 
+          9] @4309 (object,local) found in d_a_agbsw0.o 
+          9] @4310 (object,local) found in d_a_agbsw0.o 
+          9] @stringBase0 (object,local) found in d_a_agbsw0.o 
+          9] .rodata (section,local) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: fpoAcM_relativePos__FP10fopAc_ac_cP4cXyzP4cXyz
+>>> SYMBOL NOT FOUND: BigLittleChange__FUl
+      5] @1632 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubM__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+      5] @1633 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubA2__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+      5] @1634 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubF2__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: _savegpr_28
+>>> SYMBOL NOT FOUND: onFree__7daAgb_cFv
+>>> SYMBOL NOT FOUND: onHold__7daAgb_cFv
+        7] HitCheck__10daAgbsw0_cF4cXyzf (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: resetCursor__7daAgb_cFb
+>>> SYMBOL NOT FOUND: _restgpr_28
+      5] @1635 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubF__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+      5] @1636 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubT__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: ChkTgHit__12dCcD_GObjInfFv
+>>> SYMBOL NOT FOUND: GetAc__22dCcD_GAtTgCoCommonBaseFv
+>>> SYMBOL NOT FOUND: chk_state__8daBomb_cCFQ28daBomb_c7State_e
+>>> SYMBOL NOT FOUND: onSwitch__10dSv_info_cFii
+>>> SYMBOL NOT FOUND: Set__4cCcSFP8cCcD_Obj
+      5] @1637 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubMW__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: _savegpr_26
+>>> SYMBOL NOT FOUND: dComIfGp_getReverb__Fi
+>>> SYMBOL NOT FOUND: zel_basic__11JAIZelBasic
+>>> SYMBOL NOT FOUND: seStart__11JAIZelBasicFUlP3VecUlScffffUc
+>>> SYMBOL NOT FOUND: getMyStaffId__16dEvent_manager_cFPCcP10fopAc_ac_ci
+>>> SYMBOL NOT FOUND: __mi__4cXyzCFRC3Vec
+>>> SYMBOL NOT FOUND: PSVECSquareMag
+>>> SYMBOL NOT FOUND: jmaSinTable
+>>> SYMBOL NOT FOUND: jmaSinShift
+>>> SYMBOL NOT FOUND: jmaCosTable
+>>> SYMBOL NOT FOUND: endCheckOld__16dEvent_manager_cFPCc
+>>> SYMBOL NOT FOUND: offSwitch__10dSv_info_cFii
+>>> SYMBOL NOT FOUND: fopAcM_orderOtherEvent2__FP10fopAc_ac_cPcUsUs
+>>> SYMBOL NOT FOUND: _restgpr_26
+      5] @1638 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubS__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: strcmp
+      5] @1639 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubR__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: _savegpr_27
+>>> SYMBOL NOT FOUND: cM_rndF__Ff
+>>> SYMBOL NOT FOUND: fopAcM_fastCreateItem__FP4cXyziiP5csXyzP4cXyzfffiPFPv_i
+>>> SYMBOL NOT FOUND: _restgpr_27
+      5] @1640 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubB__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: isEventBit__11dSv_event_cFUs
+>>> SYMBOL NOT FOUND: onEventBit__11dSv_event_cFUs
+>>> SYMBOL NOT FOUND: mFlags__7daAgb_c
+>>> SYMBOL NOT FOUND: mFigureBeat__10daAgbsw0_c
+        7] BeatedMsg__10daAgbsw0_c (object,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: mFigureDispose__10daAgbsw0_c
+        7] DisposedMsg__10daAgbsw0_c (object,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: fopAcM_searchActorDistanceXZ__FP10fopAc_ac_cP10fopAc_ac_c
+      5] @1641 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubD__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+      5] @1642 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubFA__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+      5] @1643 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubM2__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: dComIfGs_checkGetItem__FUc
+      5] @1644 (object,local) found in d_a_agbsw0.o 
+       6] ExeSubM3__10daAgbsw0_cFv (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: getTriforceNum__20dSv_player_collect_cFv
+        7] TriforceCheck__10daAgbsw0_cFP7daAgb_c (func,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: isTriforce__16dSv_player_map_cFi
+>>> SYMBOL NOT FOUND: isTriforce__20dSv_player_collect_cFUc
+>>> SYMBOL NOT FOUND: isGetMap__16dSv_player_map_cFi
+>>> SYMBOL NOT FOUND: dComIfGs_checkGetItemNum__FUc
+>>> SYMBOL NOT FOUND: checkBaitItem__21dSv_player_bag_item_cFUc
+>>> SYMBOL NOT FOUND: isOpenMap__16dSv_player_map_cFi
+>>> SYMBOL NOT FOUND: dKy_getdaytime_hour__Fv
+>>> SYMBOL NOT FOUND: dKy_moon_type_chk__Fv
+         8] @2282 (object,local) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: isCollect__20dSv_player_collect_cFiUc
+>>> SYMBOL NOT FOUND: isTact__20dSv_player_collect_cFUc
+      5] ExeSubTable$localstatic3$execute__10daAgbsw0_cFv (object,weak) found in d_a_agbsw0.o 
+      5] l_daAgbsw0_Method (object,local) found in d_a_agbsw0.o 
+       6] daAgbsw0_Draw__FP10daAgbsw0_c (func,local) found in d_a_agbsw0.o 
+        7] draw__10daAgbsw0_cFv (func,weak) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: drawPointSingle__6dMap_cFUcfffScsUcUcUc
+       6] daAgbsw0_IsDelete__FP10daAgbsw0_c (func,local) found in d_a_agbsw0.o 
+       6] daAgbsw0_Execute__FP10daAgbsw0_c (func,local) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: __ptmf_scall
+       6] daAgbsw0_Delete__FP10daAgbsw0_c (func,local) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: mDoGaC_SendEntry__15mDoGaC_agbCom_cFUcUl
+       6] daAgbsw0_Create__FP10fopAc_ac_c (func,local) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: __ct__10fopAc_ac_cFv
+>>> SYMBOL NOT FOUND: __vt__9cCcD_Stts
+>>> SYMBOL NOT FOUND: __ct__10dCcD_GSttsFv
+>>> SYMBOL NOT FOUND: __vt__9dCcD_Stts
+>>> SYMBOL NOT FOUND: __ct__12dCcD_GObjInfFv
+        7] __vt__14cCcD_ShapeAttr (object,weak) found in d_a_agbsw0.o 
+         8] GetCoCP__14cCcD_ShapeAttrCFv (func,weak) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: m_virtual_center__14cCcD_ShapeAttr
+          9] GetShapeAttr__8dCcD_CylFv (func,weak) found in d_a_agbsw0.o 
+          9] GetCoCP__12cCcD_CylAttrFv (func,weak) found in d_a_agbsw0.o 
+          9] GetCoCP__12cCcD_CylAttrCFv (func,weak) found in d_a_agbsw0.o 
+          9] CrossAtTg__12cCcD_CylAttrCFRC12cCcD_AabAttrP4cXyz (func,weak) found in d_a_agbsw0.o 
+          9] CrossAtTg__12cCcD_CylAttrCFRC12cCcD_PntAttrP4cXyz (func,weak) found in d_a_agbsw0.o 
+          9] CrossAtTg__12cCcD_CylAttrCFRC14cCcD_ShapeAttrP4cXyz (func,weak) found in d_a_agbsw0.o 
+          9] CrossCo__12cCcD_CylAttrCFRC12cCcD_AabAttrPf (func,weak) found in d_a_agbsw0.o 
+          9] CrossCo__12cCcD_CylAttrCFRC12cCcD_TriAttrPf (func,weak) found in d_a_agbsw0.o 
+          9] CrossCo__12cCcD_CylAttrCFRC12cCcD_PntAttrPf (func,weak) found in d_a_agbsw0.o 
+          9] CrossCo__12cCcD_CylAttrCFRC14cCcD_ShapeAttrPf (func,weak) found in d_a_agbsw0.o 
+          9] GetGObjInf__12cCcD_GObjInfCFv (func,weak) found in d_a_agbsw0.o 
+          9] GetShapeAttr__8cCcD_ObjCFv (func,weak) found in d_a_agbsw0.o 
+          9] CrossAtTg__14cCcD_ShapeAttrCFRC14cCcD_ShapeAttrP4cXyz (func,weak) found in d_a_agbsw0.o 
+          9] CrossCo__14cCcD_ShapeAttrCFRC14cCcD_ShapeAttrPf (func,weak) found in d_a_agbsw0.o 
+          9] GetCoCP__14cCcD_ShapeAttrFv (func,weak) found in d_a_agbsw0.o 
+          9] @280@__dt__8dCcD_CylFv (func,weak) found in d_a_agbsw0.o 
+           10] __dt__8dCcD_CylFv (func,weak) found in d_a_agbsw0.o 
+            11] __vt__8dCcD_Cyl (object,weak) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: ClrCoHit__12dCcD_GObjInfFv
+>>> SYMBOL NOT FOUND: ClrTgHit__12dCcD_GObjInfFv
+>>> SYMBOL NOT FOUND: ClrAtHit__12dCcD_GObjInfFv
+>>> SYMBOL NOT FOUND: GetGObjInf__12dCcD_GObjInfFv
+>>> SYMBOL NOT FOUND: GetNVec__12cCcD_CylAttrCFRC4cXyzP4cXyz
+>>> SYMBOL NOT FOUND: CalcAabBox__12cCcD_CylAttrFv
+>>> SYMBOL NOT FOUND: CrossCo__12cCcD_CylAttrCFRC12cCcD_CylAttrPf
+>>> SYMBOL NOT FOUND: CrossCo__12cCcD_CylAttrCFRC12cCcD_CpsAttrPf
+>>> SYMBOL NOT FOUND: CrossCo__12cCcD_CylAttrCFRC12cCcD_SphAttrPf
+>>> SYMBOL NOT FOUND: CrossAtTg__12cCcD_CylAttrCFRC12cCcD_SphAttrP4cXyz
+>>> SYMBOL NOT FOUND: CrossAtTg__12cCcD_CylAttrCFRC12cCcD_CylAttrP4cXyz
+>>> SYMBOL NOT FOUND: CrossAtTg__12cCcD_CylAttrCFRC12cCcD_TriAttrP4cXyz
+>>> SYMBOL NOT FOUND: CrossAtTg__12cCcD_CylAttrCFRC12cCcD_CpsAttrP4cXyz
+             12] @248@__dt__8dCcD_CylFv (func,weak) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: __vt__12cCcD_CylAttr
+            11] __vt__8cM3dGCyl (object,weak) found in d_a_agbsw0.o 
+             12] __dt__8cM3dGCylFv (func,weak) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: __dl__FPv
+            11] __vt__8cM3dGAab (object,weak) found in d_a_agbsw0.o 
+             12] __dt__8cM3dGAabFv (func,weak) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: __dt__12dCcD_GObjInfFv
+          9] .text (section,local) found in d_a_agbsw0.o 
+         8] __dt__14cCcD_ShapeAttrFv (func,weak) found in d_a_agbsw0.o 
+        7] create__10daAgbsw0_cFv (func,weak) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: Init__9dCcD_SttsFiiP10fopAc_ac_c
+>>> SYMBOL NOT FOUND: Set__8dCcD_CylFRC11dCcD_SrcCyl
+>>> SYMBOL NOT FOUND: SetC__8cM3dGCylFRC4cXyz
+      5] g_profile_AGBSW0 (object,global) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: g_fopAc_Method
+>>> SYMBOL NOT FOUND: g_fpcLf_Method
+      5] __vt__10cCcD_GStts (object,weak) found in d_a_agbsw0.o 
+       6] __dt__10cCcD_GSttsFv (func,weak) found in d_a_agbsw0.o 
+      5] __vt__10dCcD_GStts (object,weak) found in d_a_agbsw0.o 
+       6] __dt__10dCcD_GSttsFv (func,weak) found in d_a_agbsw0.o 
+      5] .data (section,local) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: isSymbol__20dSv_player_collect_cFUc
+>>> SYMBOL NOT FOUND: fopAcM_searchFromName__FPcUlUl
+>>> SYMBOL NOT FOUND: dComIfGs_isStageTbox__Fii
+     4] dComIfGs_getMagic__Fv (func,weak) found in d_a_agbsw0.o 
+>>> SYMBOL NOT FOUND: isDungeonItem__12dSv_memBit_cFi
+>>> SYMBOL NOT FOUND: checkGrabWeapon__9daPy_lk_cFi
+>>> SYMBOL NOT FOUND: dKyw_get_windsdir__Fv
+>>> SYMBOL NOT FOUND: m_playerRoom__10daNpc_Os_c
+>>> SYMBOL NOT FOUND: m_playerRoom__10daNpc_Md_c
+>>> SYMBOL NOT FOUND: m_playerRoom__11daNpc_Cb1_c
+>>> SYMBOL NOT FOUND: m_type__18daPy_dmEcallBack_c
+>>> SYMBOL NOT FOUND: m_flying__10daNpc_Md_c
+>>> SYMBOL NOT FOUND: m_flying__11daNpc_Cb1_c
+   2] __dt__4cXyzFv (func,weak) found in d_a_agbsw0.o 
+   2] getStagInfo__16dStage_stageDt_cCFv (func,weak) found in d_a_agbsw0.o 
+   2] __dt__12cCcD_CylAttrFv (func,weak) found in d_a_agbsw0.o 
+   2] __dt__9dCcD_SttsFv (func,weak) found in d_a_agbsw0.o 
+   2] __dt__9cCcD_SttsFv (func,weak) found in d_a_agbsw0.o 
+   2] .text (section,local) found in d_a_agbsw0.o 
+
+
+.compress.init section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.init section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.compress.text section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.text section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+  00000000 000078 00000000  1 .text 	executor.o 
+  00000000 00002c 00000000  4 _prolog 	executor.o 
+  0000002c 00002c 0000002c  4 _epilog 	executor.o 
+  00000058 000020 00000058  4 _unresolved 	executor.o 
+  00000078 0057e4 00000078  1 .text 	d_a_agbsw0.o 
+  00000078 0002cc 00000078  4 ExeSubA__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00000344 000328 00000344  4 ExeSubAT__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  0000066c 0002d4 0000066c  4 ExeSubA2__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00000940 000174 00000940  4 ExeSubF__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00000ab4 000394 00000ab4  4 ExeSubF2__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00000e48 00003c 00000e48  4 __dt__4cXyzFv 	d_a_agbsw0.o 
+  00000e84 00019c 00000e84  4 ExeSubM__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00001020 0001b4 00001020  4 ExeSubM2__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  000011d4 0001d0 000011d4  4 ExeSubM3__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  000013a4 000448 000013a4  4 TriforceCheck__10daAgbsw0_cFP7daAgb_c 	d_a_agbsw0.o 
+  000017ec 000320 000017ec  4 ExeSubMW__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00001b0c 0001f8 00001b0c  4 ExeSubT__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00001d04 0002e4 00001d04  4 ExeSubS__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00001fe8 000240 00001fe8  4 ExeSubR__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00002228 00083c 00002228  4 ExeSubB__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00002a64 000368 00002a64  4 ExeSubD__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00002dcc 00034c 00002dcc  4 ExeSubFA__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00003118 000130 00003118  4 HitCheck__10daAgbsw0_cFP10fopAc_ac_c 	d_a_agbsw0.o 
+  00003248 000138 00003248  4 HitCheck__10daAgbsw0_cF4cXyzf 	d_a_agbsw0.o 
+  00003380 001428 00003380  4 MoveCheck__10daAgbsw0_cFs 	d_a_agbsw0.o 
+  000047a8 000010 000047a8  4 dComIfGs_getMagic__Fv 	d_a_agbsw0.o 
+  000047b8 00009c 000047b8  4 MailSend__10daAgbsw0_cFUsUcUcUcUc 	d_a_agbsw0.o 
+  00004854 000008 00004854  4 getStagInfo__16dStage_stageDt_cCFv 	d_a_agbsw0.o 
+  0000485c 000020 0000485c  4 daAgbsw0_Draw__FP10daAgbsw0_c 	d_a_agbsw0.o 
+  0000487c 0002f4 0000487c  4 draw__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  00004b70 0001cc 00004b70  4 daAgbsw0_Execute__FP10daAgbsw0_c 	d_a_agbsw0.o 
+  00004d3c 000008 00004d3c  4 daAgbsw0_IsDelete__FP10daAgbsw0_c 	d_a_agbsw0.o 
+  00004d44 000198 00004d44  4 daAgbsw0_Delete__FP10daAgbsw0_c 	d_a_agbsw0.o 
+  00004edc 0000e8 00004edc  4 daAgbsw0_Create__FP10fopAc_ac_c 	d_a_agbsw0.o 
+  00004fc4 0004d8 00004fc4  4 create__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  0000549c 0000cc 0000549c  4 __dt__8dCcD_CylFv 	d_a_agbsw0.o 
+  00005568 00008c 00005568  4 __dt__12cCcD_CylAttrFv 	d_a_agbsw0.o 
+  000055f4 000048 000055f4  4 __dt__8cM3dGCylFv 	d_a_agbsw0.o 
+  0000563c 00005c 0000563c  4 __dt__14cCcD_ShapeAttrFv 	d_a_agbsw0.o 
+  00005698 000048 00005698  4 __dt__8cM3dGAabFv 	d_a_agbsw0.o 
+  000056e0 000090 000056e0  4 __dt__9dCcD_SttsFv 	d_a_agbsw0.o 
+  00005770 00005c 00005770  4 __dt__10dCcD_GSttsFv 	d_a_agbsw0.o 
+  000057cc 000048 000057cc  4 __dt__9cCcD_SttsFv 	d_a_agbsw0.o 
+  00005814 000048 00005814  4 __dt__10cCcD_GSttsFv 	d_a_agbsw0.o 
+  0000585c 0000fc 0000585c  1 .text 	d_a_agbsw0.o 
+  0000585c 000010 0000585c  4 GetShapeAttr__8dCcD_CylFv 	d_a_agbsw0.o 
+  0000586c 000008 0000586c  4 GetCoCP__12cCcD_CylAttrFv 	d_a_agbsw0.o 
+  00005874 000008 00005874  4 GetCoCP__12cCcD_CylAttrCFv 	d_a_agbsw0.o 
+  0000587c 000008 0000587c  4 CrossAtTg__12cCcD_CylAttrCFRC12cCcD_AabAttrP4cXyz 	d_a_agbsw0.o 
+  00005884 000008 00005884  4 CrossAtTg__12cCcD_CylAttrCFRC12cCcD_PntAttrP4cXyz 	d_a_agbsw0.o 
+  0000588c 000038 0000588c  4 CrossAtTg__12cCcD_CylAttrCFRC14cCcD_ShapeAttrP4cXyz 	d_a_agbsw0.o 
+  000058c4 000008 000058c4  4 CrossCo__12cCcD_CylAttrCFRC12cCcD_AabAttrPf 	d_a_agbsw0.o 
+  000058cc 000008 000058cc  4 CrossCo__12cCcD_CylAttrCFRC12cCcD_TriAttrPf 	d_a_agbsw0.o 
+  000058d4 000008 000058d4  4 CrossCo__12cCcD_CylAttrCFRC12cCcD_PntAttrPf 	d_a_agbsw0.o 
+  000058dc 000038 000058dc  4 CrossCo__12cCcD_CylAttrCFRC14cCcD_ShapeAttrPf 	d_a_agbsw0.o 
+  00005914 000004 00005914  4 GetGObjInf__12cCcD_GObjInfCFv 	d_a_agbsw0.o 
+  00005918 000008 00005918  4 GetShapeAttr__8cCcD_ObjCFv 	d_a_agbsw0.o 
+  00005920 000008 00005920  4 CrossAtTg__14cCcD_ShapeAttrCFRC14cCcD_ShapeAttrP4cXyz 	d_a_agbsw0.o 
+  00005928 000008 00005928  4 CrossCo__14cCcD_ShapeAttrCFRC14cCcD_ShapeAttrPf 	d_a_agbsw0.o 
+  00005930 00000c 00005930  4 GetCoCP__14cCcD_ShapeAttrFv 	d_a_agbsw0.o 
+  0000593c 00000c 0000593c  4 GetCoCP__14cCcD_ShapeAttrCFv 	d_a_agbsw0.o 
+  00005948 000008 00005948  4 @280@__dt__8dCcD_CylFv 	d_a_agbsw0.o 
+  00005950 000008 00005950  4 @248@__dt__8dCcD_CylFv 	d_a_agbsw0.o 
+
+
+.compress.fini section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.fini section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.rodata section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+  00000000 00009d 00000000  1 .rodata 	d_a_agbsw0.o 
+  00000000 000000 00000000 ...rodata.0 (entry of .rodata) 	d_a_agbsw0.o 
+  00000000 000004 00000000  4 @1974 	d_a_agbsw0.o 
+  00000004 000004 00000004  4 @1975 	d_a_agbsw0.o 
+  00000008 000004 00000008  4 @2279 	d_a_agbsw0.o 
+  00000010 000008 00000010  8 @2280 	d_a_agbsw0.o 
+  00000018 000008 00000018  8 @2281 	d_a_agbsw0.o 
+  00000020 000004 00000020  4 @2367 	d_a_agbsw0.o 
+  00000024 000004 00000024  4 @2368 	d_a_agbsw0.o 
+  00000028 000004 00000028  4 @2369 	d_a_agbsw0.o 
+  00000030 000008 00000030  8 @2370 	d_a_agbsw0.o 
+  00000038 000008 00000038  8 @2371 	d_a_agbsw0.o 
+  00000040 000004 00000040  4 @2372 	d_a_agbsw0.o 
+  00000044 000004 00000044  4 @2373 	d_a_agbsw0.o 
+  00000048 000004 00000048  4 @2558 	d_a_agbsw0.o 
+  0000004c 000004 0000004c  4 @2559 	d_a_agbsw0.o 
+  00000050 000004 00000050  4 @2560 	d_a_agbsw0.o 
+  00000054 000004 00000054  4 @2768 	d_a_agbsw0.o 
+  00000058 000004 00000058  4 @2769 	d_a_agbsw0.o 
+  0000005c 000004 0000005c  4 @2770 	d_a_agbsw0.o 
+  00000060 000004 00000060  4 @2955 	d_a_agbsw0.o 
+  00000064 000004 00000064  4 @4309 	d_a_agbsw0.o 
+  00000068 000004 00000068  4 @4310 	d_a_agbsw0.o 
+  0000006c 000031 0000006c  4 @stringBase0 	d_a_agbsw0.o 
+
+
+.ctors section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.dtors section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+extab section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+extabindex section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.BINARY section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.data section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+  00000000 000574 00000000  1 .data 	d_a_agbsw0.o 
+  00000000 000000 00000000 ...data.0 (entry of .data) 	d_a_agbsw0.o 
+  00000000 00000c 00000000  4 data_2100$11 	d_a_agbsw0.o 
+  0000000c 00000c 0000000c  4 data_2080$15 	d_a_agbsw0.o 
+  00000018 000004 00000018  4 attnFnTbl_1811$19 	d_a_agbsw0.o 
+  00000020 000008 00000020  8 _three$localstatic3$fake_sqrtf__Ff 	d_a_agbsw0.o 
+  00000028 000008 00000028  8 _half$localstatic4$fake_sqrtf__Ff 	d_a_agbsw0.o 
+  00000030 000044 00000030  4 l_cyl_src 	d_a_agbsw0.o 
+  00000074 00000c 00000074  4 @1630 	d_a_agbsw0.o 
+  00000080 00000c 00000080  4 @1631 	d_a_agbsw0.o 
+  0000008c 00000c 0000008c  4 @1632 	d_a_agbsw0.o 
+  00000098 00000c 00000098  4 @1633 	d_a_agbsw0.o 
+  000000a4 00000c 000000a4  4 @1634 	d_a_agbsw0.o 
+  000000b0 00000c 000000b0  4 @1635 	d_a_agbsw0.o 
+  000000bc 00000c 000000bc  4 @1636 	d_a_agbsw0.o 
+  000000c8 00000c 000000c8  4 @1637 	d_a_agbsw0.o 
+  000000d4 00000c 000000d4  4 @1638 	d_a_agbsw0.o 
+  000000e0 00000c 000000e0  4 @1639 	d_a_agbsw0.o 
+  000000ec 00000c 000000ec  4 @1640 	d_a_agbsw0.o 
+  000000f8 00000c 000000f8  4 @1641 	d_a_agbsw0.o 
+  00000104 00000c 00000104  4 @1642 	d_a_agbsw0.o 
+  00000110 00000c 00000110  4 @1643 	d_a_agbsw0.o 
+  0000011c 00000c 0000011c  4 @1644 	d_a_agbsw0.o 
+  00000128 0000b4 00000128  4 ExeSubTable$localstatic3$execute__10daAgbsw0_cFv 	d_a_agbsw0.o 
+  000001dc 00001c 000001dc  4 @2282 	d_a_agbsw0.o 
+  000001f8 00000c 000001f8  4 BeatedMsg__10daAgbsw0_c 	d_a_agbsw0.o 
+  00000204 000004 00000204  4 DisposedMsg__10daAgbsw0_c 	d_a_agbsw0.o 
+  00000208 000210 00000208  4 @4072 	d_a_agbsw0.o 
+  00000418 000020 00000418  4 l_daAgbsw0_Method 	d_a_agbsw0.o 
+  00000438 000030 00000438  4 g_profile_AGBSW0 	d_a_agbsw0.o 
+  00000468 00000c 00000468  4 __vt__10cCcD_GStts 	d_a_agbsw0.o 
+  00000474 00000c 00000474  4 __vt__10dCcD_GStts 	d_a_agbsw0.o 
+  00000480 000088 00000480  4 __vt__8dCcD_Cyl 	d_a_agbsw0.o 
+  00000508 00000c 00000508  4 __vt__8cM3dGCyl 	d_a_agbsw0.o 
+  00000514 00000c 00000514  4 __vt__8cM3dGAab 	d_a_agbsw0.o 
+  00000520 000054 00000520  4 __vt__14cCcD_ShapeAttr 	d_a_agbsw0.o 
+
+
+.sdata section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.sbss section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.sdata2 section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.sbss2 section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.PPC.EMB.sdata0 section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.PPC.EMB.sbss0 section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+
+
+.bss section layout
+  Starting        Virtual
+  address  Size   address
+  -----------------------
+  00000000 00000f 00000000  1 .bss 	d_a_agbsw0.o 
+  00000000 000008 00000000  4 mMail__10daAgbsw0_c 	d_a_agbsw0.o 
+  00000008 000004 00000008  4 mSE__10daAgbsw0_c 	d_a_agbsw0.o 
+  0000000c 000001 0000000c  1 se_flag$2291 	d_a_agbsw0.o 
+  0000000d 000001 0000000d  1 init$2292 	d_a_agbsw0.o 
+  0000000e 000001 0000000e  1 init$localstatic4$execute__10daAgbsw0_cFv 	d_a_agbsw0.o 
+
+
+Memory map:
+                   Starting Size     File
+                   address           Offset
+   .compress.init  00000000 00000000 00000040
+            .init  00000000 00000000 00000040
+   .compress.text  00000000 00000000 00000040
+            .text  00000000 00005958 00000040
+   .compress.fini  00000000 00000000 00005998
+            .fini  00000000 00000000 00005998
+          .rodata  00000000 0000009d 00005998
+           .ctors  00000000 00000000 00005a35
+           .dtors  00000000 00000000 00005a35
+            extab  00000000 00000000 00005a35
+       extabindex  00000000 00000000 00005a35
+          .BINARY  00000000 00000000 00005a35
+            .data  00000000 00000574 00005a38
+           .sdata  00000000 00000000 00005fac
+            .sbss  00000000 00000000 00005fac
+          .sdata2  00000000 00000000 00005fac
+           .sbss2  00000000 00000000 00005fac
+  .PPC.EMB.sdata0  00000000 00000000 00005fac
+   .PPC.EMB.sbss0  00000000 00000000 00005fac
+             .bss  00000000 0000000f 00005fb0
+   .debug_srcinfo           000000 00000000
+   .debug_sfnames           000000 00000000
+           .debug           000000 00000000
+            .line           000000 00000000

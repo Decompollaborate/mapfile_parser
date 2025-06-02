@@ -1,0 +1,176 @@
+Link map of __start
+>>> SYMBOL NOT FOUND: _ctors
+>>> SYMBOL NOT FOUND: ModuleConstructorsX
+>>> SYMBOL NOT FOUND: ModuleProlog
+>>> SYMBOL NOT FOUND: ModuleEpilog
+>>> SYMBOL NOT FOUND: _dtors
+>>> SYMBOL NOT FOUND: ModuleDestructorsX
+>>> SYMBOL NOT FOUND: ModuleUnresolved
+>>> SYMBOL NOT FOUND: __ct__10fopAc_ac_cFv
+>>> SYMBOL NOT FOUND: g_dComIfG_gameInfo
+>>> SYMBOL NOT FOUND: isSwitch__10dSv_info_cCFii
+>>> SYMBOL NOT FOUND: offSwitch__10dSv_info_cFii
+>>> SYMBOL NOT FOUND: fopAcM_delete__FP10fopAc_ac_c
+>>> SYMBOL NOT FOUND: g_fpcLf_Method
+>>> SYMBOL NOT FOUND: g_fopAc_Method
+
+
+.compress.init section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.init section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.compress.text section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.text section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000078 00000000 00000040  1 .text 	executor.o 
+  00000000 00002c 00000000 00000040  4 _prolog 	executor.o 
+  0000002c 00002c 0000002c 0000006c  4 _epilog 	executor.o 
+  00000058 000020 00000058 00000098  4 _unresolved 	executor.o 
+  00000078 0001ac 00000078 000000b8  1 .text 	d_a_andsw.o 
+  00000078 000040 00000078 000000b8  4 Create__9daAndsw_cFv 	d_a_andsw.o 
+  000000b8 000068 000000b8 000000f8  4 create__9daAndsw_cFv 	d_a_andsw.o 
+  00000120 00009c 00000120 00000160  4 execute__9daAndsw_cFv 	d_a_andsw.o 
+  000001bc 000008 000001bc 000001fc  4 _delete__9daAndsw_cFv 	d_a_andsw.o 
+  000001c4 000020 000001c4 00000204  4 daAndsw_Execute__FP9daAndsw_c 	d_a_andsw.o 
+  000001e4 000020 000001e4 00000224  4 daAndsw_Delete__FP9daAndsw_c 	d_a_andsw.o 
+  00000204 000020 00000204 00000244  4 daAndsw_Create__FP10fopAc_ac_c 	d_a_andsw.o 
+
+
+.compress.fini section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.fini section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.rodata section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.ctors section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.dtors section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+extab section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+extabindex section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.BINARY section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.data section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000050 00000000 00000268  1 .data 	d_a_andsw.o 
+  00000000 000020 00000000 00000268  4 l_daAndsw_Method 	d_a_andsw.o 
+  00000020 000030 00000020 00000288  4 g_profile_ANDSW 	d_a_andsw.o 
+
+
+.sdata section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.sbss section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.sdata2 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.sbss2 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.PPC.EMB.sdata0 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.PPC.EMB.sbss0 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.bss section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+Memory map:
+                   Starting Size     File
+                   address           Offset
+   .compress.init  00000000 00000000 00000040
+            .init  00000000 00000000 00000040
+   .compress.text  00000000 00000000 00000040
+            .text  00000000 00000224 00000040
+   .compress.fini  00000000 00000000 00000264
+            .fini  00000000 00000000 00000264
+          .rodata  00000000 00000000 00000264
+           .ctors  00000000 00000000 00000264
+           .dtors  00000000 00000000 00000264
+            extab  00000000 00000000 00000264
+       extabindex  00000000 00000000 00000264
+          .BINARY  00000000 00000000 00000264
+            .data  00000000 00000050 00000268
+             .got  00000000 00000000 000002b8
+           .sdata  00000000 00000000 000002b8
+            .sbss  00000000 00000000 000002b8
+          .sdata2  00000000 00000000 000002b8
+           .sbss2  00000000 00000000 000002b8
+  .PPC.EMB.sdata0  00000000 00000000 000002b8
+   .PPC.EMB.sbss0  00000000 00000000 000002b8
+             .bss  00000000 00000000 000002b8

@@ -1,0 +1,13 @@
+Section,Symbol name,VRAM,Size in bytes
+executor.o,_prolog,00000000,44
+executor.o,_epilog,0000002C,44
+executor.o,_unresolved,00000058,32
+d_a_andsw.o,Create__9daAndsw_cFv,00000078,64
+d_a_andsw.o,create__9daAndsw_cFv,000000B8,104
+d_a_andsw.o,execute__9daAndsw_cFv,00000120,156
+d_a_andsw.o,_delete__9daAndsw_cFv,000001BC,8
+d_a_andsw.o,daAndsw_Execute__FP9daAndsw_c,000001C4,32
+d_a_andsw.o,daAndsw_Delete__FP9daAndsw_c,000001E4,32
+d_a_andsw.o,daAndsw_Create__FP10fopAc_ac_c,00000204,32
+d_a_andsw.o,l_daAndsw_Method,00000000,32
+d_a_andsw.o,g_profile_ANDSW,00000020,48

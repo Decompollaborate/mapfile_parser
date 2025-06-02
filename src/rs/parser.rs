@@ -232,7 +232,7 @@ impl MapFile {
                                     filepath,
                                     vram,
                                     size,
-                                    section_type,
+                                    section_type.into(),
                                 ));
                         } else if let Some(section_alone_match) =
                             regex_section_alone_entry.captures(prev_line)
@@ -250,7 +250,7 @@ impl MapFile {
                                     filepath,
                                     vram,
                                     size,
-                                    section_type,
+                                    section_type.into(),
                                 ));
                         }
                     }
@@ -319,7 +319,7 @@ impl MapFile {
                             filepath,
                             vram,
                             size,
-                            &section_type,
+                            section_type,
                         ));
                 }
             }
@@ -497,8 +497,8 @@ impl MapFile {
                     }
 
                     let mut new_section =
-                        section::Section::new_fill(filepath, vram, size, &section_type);
-                    if !utils::is_noload_section(&section_type) {
+                        section::Section::new_fill(filepath, vram, size, section_type);
+                    if !utils::is_noload_section(&new_section.section_type) {
                         new_section.vrom = vrom;
                     }
                     current_segment.sections_list.push(new_section);
@@ -510,9 +510,13 @@ impl MapFile {
                     if size > 0 {
                         let current_segment = temp_segment_list.last_mut().unwrap();
 
-                        let mut new_section =
-                            section::Section::new_default(filepath, vram, size, section_type);
-                        if !utils::is_noload_section(section_type) {
+                        let mut new_section = section::Section::new_default(
+                            filepath,
+                            vram,
+                            size,
+                            section_type.into(),
+                        );
+                        if !utils::is_noload_section(&new_section.section_type) {
                             new_section.vrom = vrom;
                         }
                         new_section.align = Some(align);
@@ -608,34 +612,41 @@ impl MapFile {
         let map_data = preprocess_map_data_mw(map_contents);
 
         let memory_map = parse_memory_map_mw(map_data);
-
-        // Almost every line starts with this information, so instead of duplicating it we put them on one single regex
-        let regex_row_entry = Regex::new(r"^\s*(?P<starting>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<vram>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+)\s+(?P<subline>.+)").unwrap();
-
-        let regex_segment_entry = Regex::new(r"^(?P<name>.+) section layout$").unwrap();
-        let regex_label_entry =
-            Regex::new(r"^(?P<label>lbl_[0-9A-F]{8})\s+(?P<filename>.+?)\s*$").unwrap();
-        let regex_symbol_entry =
-            Regex::new(r"^\s*(?P<name>[^ ]+)\s+(?P<filename>.+?)\s*$").unwrap();
+        let regex_entries = MwRegexEntries::new(map_data);
 
         let mut temp_segment_list = vec![segment::Segment::new_placeholder()];
 
         // Use a bunch of characters that shouldn't be valid in any os as a marker that we haven't found a file yet.
-        let mut current_filename = "invalid file <>:\"/\\|?*".to_string();
+        let invalid_file_name = "invalid file <>:\"/\\|?*";
+        let mut current_filename = invalid_file_name.to_string();
 
         for line in map_data.lines() {
-            // Check for regex_row_entry since it is more likely to match
-            if let Some(row_entry_match) = regex_row_entry.captures(line) {
+            // Check for regex_entries.common_row first since it is more likely to match
+            if let (Some(row_entry_match), false) = (
+                regex_entries.common_row.captures(line),
+                temp_segment_list.is_empty(),
+            ) {
                 let starting = utils::parse_hex(&row_entry_match["starting"]);
                 let size = utils::parse_hex(&row_entry_match["size"]);
                 let vram = utils::parse_hex(&row_entry_match["vram"]);
                 let align = utils::parse_hex(&row_entry_match["align"]);
 
+                let rom = row_entry_match.name("rom").map_or_else(
+                    || {
+                        temp_segment_list
+                            .last()
+                            .unwrap()
+                            .vrom
+                            .map(|segment_rom| segment_rom + starting)
+                    },
+                    |x| Some(utils::parse_hex(x.as_str())),
+                );
+
                 let subline = &row_entry_match["subline"];
 
-                if regex_label_entry.is_match(subline) {
+                if regex_entries.label.is_match(subline) {
                     // pass
-                } else if let Some(symbol_entry_match) = regex_symbol_entry.captures(subline) {
+                } else if let Some(symbol_entry_match) = regex_entries.symbol.captures(subline) {
                     let filename = &symbol_entry_match["filename"];
 
                     if filename == current_filename {
@@ -652,7 +663,7 @@ impl MapFile {
                                 new_symbol.size = size;
                             }
                             if !current_section.is_noload_section() {
-                                new_symbol.vrom = current_segment.vrom.map(|x| x + starting)
+                                new_symbol.vrom = rom
                             }
                             if align > 0 {
                                 new_symbol.align = Some(align);
@@ -662,27 +673,62 @@ impl MapFile {
                         }
                     } else {
                         // New file!
-                        current_filename = filename.to_string();
-
                         if size > 0 {
                             let section_type = &symbol_entry_match["name"];
                             let filepath = PathBuf::from(filename);
 
                             let current_segment = temp_segment_list.last_mut().unwrap();
 
-                            let mut new_section =
-                                section::Section::new_default(filepath, vram, size, section_type);
-                            if !utils::is_noload_section(section_type) {
-                                new_section.vrom = current_segment.vrom.map(|x| x + starting)
+                            let mut new_section = section::Section::new_default(
+                                filepath,
+                                vram,
+                                size,
+                                section_type.into(),
+                            );
+                            if !utils::is_noload_section(&new_section.section_type) {
+                                new_section.vrom = rom
                             }
 
                             current_segment.sections_list.push(new_section);
+
+                            // I'm not sure how to treat these cases.
+                            // I guess we can treat them as files without symbols for now...
+                            current_filename = if filename == "Linker Generated Symbol File" {
+                                invalid_file_name.to_string()
+                            } else {
+                                filename.to_string()
+                            };
                         }
                     }
+                } else if regex_entries.fill.is_match(subline) {
+                    // Make a dummy section to handle pads
+                    let current_segment = temp_segment_list.last_mut().unwrap();
+
+                    let mut filepath = PathBuf::new();
+                    let mut section_type = "".to_owned();
+
+                    if let Some(prev_section) = current_segment.sections_list.last() {
+                        let mut name = prev_section.filepath.file_name().unwrap().to_owned();
+
+                        name.push("__fill__");
+                        filepath = prev_section.filepath.with_file_name(name);
+                        section_type.clone_from(&prev_section.section_type);
+                    }
+
+                    let mut new_section =
+                        section::Section::new_fill(filepath, vram, size, section_type);
+                    new_section.align = Some(align);
+                    if !utils::is_noload_section(&new_section.section_type) {
+                        new_section.vrom = rom;
+                    }
+                    current_segment.sections_list.push(new_section);
+
+                    // Don't count this as a valid file.
+                    current_filename = invalid_file_name.to_string();
                 } else {
-                    println!("{}", subline);
+                    // println!("'{}'", subline);
                 }
-            } else if let Some(segment_entry_match) = regex_segment_entry.captures(line) {
+            } else if let Some(segment_entry_match) = regex_entries.segment.captures(line) {
                 let name = &segment_entry_match["name"];
 
                 let new_segment = if let Some(segment_entry) = memory_map.get(name) {
@@ -697,6 +743,10 @@ impl MapFile {
                 };
 
                 temp_segment_list.push(new_segment);
+
+                // Reset the tracked filename state.
+                // This avoid carrying the filename from one segment to the other
+                current_filename = invalid_file_name.to_string();
             }
         }
 
@@ -704,7 +754,6 @@ impl MapFile {
     }
 
     fn post_process_segments_mw(temp_segment_list: Vec<segment::Segment>) -> Vec<segment::Segment> {
-        // TODO: actually implement
         let mut segments_list = Vec::with_capacity(temp_segment_list.len());
 
         for (i, segment) in temp_segment_list.into_iter().enumerate() {
@@ -791,6 +840,40 @@ fn parse_memory_map_mw(map_data: &str) -> HashMap<String, MwMemoryMapEntry> {
     }
 
     memory_map
+}
+
+struct MwRegexEntries {
+    common_row: Regex,
+    segment: Regex,
+    label: Regex,
+    symbol: Regex,
+    fill: Regex,
+}
+
+impl MwRegexEntries {
+    fn new(map_data: &str) -> Self {
+        // Almost every line starts with this information, so instead of duplicating it we put them on one single regex
+        let common_row = if map_data.contains("address  Size   address  offset") {
+            // mwld 2.7+
+            Regex::new(r"^\s*(?P<starting>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<vram>[0-9a-fA-F]+)\s+(?P<rom>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+)\s+(?P<subline>.+)").unwrap()
+        } else {
+            // mwld 1.3.2-
+            Regex::new(r"^\s*(?P<starting>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<vram>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+)\s+(?P<subline>.+)").unwrap()
+        };
+
+        let segment = Regex::new(r"^(?P<name>.+) section layout$").unwrap();
+        let label = Regex::new(r"^(?P<label>lbl_[0-9A-F]{8})\s+(?P<filename>.+?)\s*$").unwrap();
+        let symbol = Regex::new(r"^\s*(?P<name>[^ ]+)\s+(?P<filename>.+?)\s*$").unwrap();
+        let fill = Regex::new(r"^\s*\*fill\*\s*$").unwrap();
+
+        Self {
+            common_row,
+            segment,
+            label,
+            symbol,
+            fill,
+        }
+    }
 }
 
 impl MapFile {

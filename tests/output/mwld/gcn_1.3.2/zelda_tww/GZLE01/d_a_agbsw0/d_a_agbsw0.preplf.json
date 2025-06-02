@@ -1,0 +1,925 @@
+{
+    "segments": [
+        {
+            "name": ".compress.init",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000040",
+            "files": []
+        },
+        {
+            "name": ".init",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000040",
+            "files": []
+        },
+        {
+            "name": ".compress.text",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000040",
+            "files": []
+        },
+        {
+            "name": ".text",
+            "vram": "0x00000000",
+            "size": "0x5958",
+            "vrom": "0x000040",
+            "files": [
+                {
+                    "filepath": "executor.o",
+                    "sectionType": ".text",
+                    "vram": "0x00000000",
+                    "size": "0x78",
+                    "vrom": "0x000040",
+                    "symbols": [
+                        {
+                            "name": "_prolog",
+                            "vram": "0x00000000",
+                            "size": "0x2C",
+                            "vrom": "0x000040"
+                        },
+                        {
+                            "name": "_epilog",
+                            "vram": "0x0000002C",
+                            "size": "0x2C",
+                            "vrom": "0x00006C"
+                        },
+                        {
+                            "name": "_unresolved",
+                            "vram": "0x00000058",
+                            "size": "0x20",
+                            "vrom": "0x000098"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "d_a_agbsw0.o",
+                    "sectionType": ".text",
+                    "vram": "0x00000078",
+                    "size": "0x57E4",
+                    "vrom": "0x0000B8",
+                    "symbols": [
+                        {
+                            "name": "ExeSubA__10daAgbsw0_cFv",
+                            "vram": "0x00000078",
+                            "size": "0x2CC",
+                            "vrom": "0x0000B8"
+                        },
+                        {
+                            "name": "ExeSubAT__10daAgbsw0_cFv",
+                            "vram": "0x00000344",
+                            "size": "0x328",
+                            "vrom": "0x000384"
+                        },
+                        {
+                            "name": "ExeSubA2__10daAgbsw0_cFv",
+                            "vram": "0x0000066C",
+                            "size": "0x2D4",
+                            "vrom": "0x0006AC"
+                        },
+                        {
+                            "name": "ExeSubF__10daAgbsw0_cFv",
+                            "vram": "0x00000940",
+                            "size": "0x174",
+                            "vrom": "0x000980"
+                        },
+                        {
+                            "name": "ExeSubF2__10daAgbsw0_cFv",
+                            "vram": "0x00000AB4",
+                            "size": "0x394",
+                            "vrom": "0x000AF4"
+                        },
+                        {
+                            "name": "__dt__4cXyzFv",
+                            "vram": "0x00000E48",
+                            "size": "0x3C",
+                            "vrom": "0x000E88"
+                        },
+                        {
+                            "name": "ExeSubM__10daAgbsw0_cFv",
+                            "vram": "0x00000E84",
+                            "size": "0x19C",
+                            "vrom": "0x000EC4"
+                        },
+                        {
+                            "name": "ExeSubM2__10daAgbsw0_cFv",
+                            "vram": "0x00001020",
+                            "size": "0x1B4",
+                            "vrom": "0x001060"
+                        },
+                        {
+                            "name": "ExeSubM3__10daAgbsw0_cFv",
+                            "vram": "0x000011D4",
+                            "size": "0x1D0",
+                            "vrom": "0x001214"
+                        },
+                        {
+                            "name": "TriforceCheck__10daAgbsw0_cFP7daAgb_c",
+                            "vram": "0x000013A4",
+                            "size": "0x448",
+                            "vrom": "0x0013E4"
+                        },
+                        {
+                            "name": "ExeSubMW__10daAgbsw0_cFv",
+                            "vram": "0x000017EC",
+                            "size": "0x320",
+                            "vrom": "0x00182C"
+                        },
+                        {
+                            "name": "ExeSubT__10daAgbsw0_cFv",
+                            "vram": "0x00001B0C",
+                            "size": "0x1F8",
+                            "vrom": "0x001B4C"
+                        },
+                        {
+                            "name": "ExeSubS__10daAgbsw0_cFv",
+                            "vram": "0x00001D04",
+                            "size": "0x2E4",
+                            "vrom": "0x001D44"
+                        },
+                        {
+                            "name": "ExeSubR__10daAgbsw0_cFv",
+                            "vram": "0x00001FE8",
+                            "size": "0x240",
+                            "vrom": "0x002028"
+                        },
+                        {
+                            "name": "ExeSubB__10daAgbsw0_cFv",
+                            "vram": "0x00002228",
+                            "size": "0x83C",
+                            "vrom": "0x002268"
+                        },
+                        {
+                            "name": "ExeSubD__10daAgbsw0_cFv",
+                            "vram": "0x00002A64",
+                            "size": "0x368",
+                            "vrom": "0x002AA4"
+                        },
+                        {
+                            "name": "ExeSubFA__10daAgbsw0_cFv",
+                            "vram": "0x00002DCC",
+                            "size": "0x34C",
+                            "vrom": "0x002E0C"
+                        },
+                        {
+                            "name": "HitCheck__10daAgbsw0_cFP10fopAc_ac_c",
+                            "vram": "0x00003118",
+                            "size": "0x130",
+                            "vrom": "0x003158"
+                        },
+                        {
+                            "name": "HitCheck__10daAgbsw0_cF4cXyzf",
+                            "vram": "0x00003248",
+                            "size": "0x138",
+                            "vrom": "0x003288"
+                        },
+                        {
+                            "name": "MoveCheck__10daAgbsw0_cFs",
+                            "vram": "0x00003380",
+                            "size": "0x1428",
+                            "vrom": "0x0033C0"
+                        },
+                        {
+                            "name": "dComIfGs_getMagic__Fv",
+                            "vram": "0x000047A8",
+                            "size": "0x10",
+                            "vrom": "0x0047E8"
+                        },
+                        {
+                            "name": "MailSend__10daAgbsw0_cFUsUcUcUcUc",
+                            "vram": "0x000047B8",
+                            "size": "0x9C",
+                            "vrom": "0x0047F8"
+                        },
+                        {
+                            "name": "getStagInfo__16dStage_stageDt_cCFv",
+                            "vram": "0x00004854",
+                            "size": "0x8",
+                            "vrom": "0x004894"
+                        },
+                        {
+                            "name": "daAgbsw0_Draw__FP10daAgbsw0_c",
+                            "vram": "0x0000485C",
+                            "size": "0x20",
+                            "vrom": "0x00489C"
+                        },
+                        {
+                            "name": "draw__10daAgbsw0_cFv",
+                            "vram": "0x0000487C",
+                            "size": "0x2F4",
+                            "vrom": "0x0048BC"
+                        },
+                        {
+                            "name": "daAgbsw0_Execute__FP10daAgbsw0_c",
+                            "vram": "0x00004B70",
+                            "size": "0x1CC",
+                            "vrom": "0x004BB0"
+                        },
+                        {
+                            "name": "daAgbsw0_IsDelete__FP10daAgbsw0_c",
+                            "vram": "0x00004D3C",
+                            "size": "0x8",
+                            "vrom": "0x004D7C"
+                        },
+                        {
+                            "name": "daAgbsw0_Delete__FP10daAgbsw0_c",
+                            "vram": "0x00004D44",
+                            "size": "0x198",
+                            "vrom": "0x004D84"
+                        },
+                        {
+                            "name": "daAgbsw0_Create__FP10fopAc_ac_c",
+                            "vram": "0x00004EDC",
+                            "size": "0xE8",
+                            "vrom": "0x004F1C"
+                        },
+                        {
+                            "name": "create__10daAgbsw0_cFv",
+                            "vram": "0x00004FC4",
+                            "size": "0x4D8",
+                            "vrom": "0x005004"
+                        },
+                        {
+                            "name": "__dt__8dCcD_CylFv",
+                            "vram": "0x0000549C",
+                            "size": "0xCC",
+                            "vrom": "0x0054DC"
+                        },
+                        {
+                            "name": "__dt__12cCcD_CylAttrFv",
+                            "vram": "0x00005568",
+                            "size": "0x8C",
+                            "vrom": "0x0055A8"
+                        },
+                        {
+                            "name": "__dt__8cM3dGCylFv",
+                            "vram": "0x000055F4",
+                            "size": "0x48",
+                            "vrom": "0x005634"
+                        },
+                        {
+                            "name": "__dt__14cCcD_ShapeAttrFv",
+                            "vram": "0x0000563C",
+                            "size": "0x5C",
+                            "vrom": "0x00567C"
+                        },
+                        {
+                            "name": "__dt__8cM3dGAabFv",
+                            "vram": "0x00005698",
+                            "size": "0x48",
+                            "vrom": "0x0056D8"
+                        },
+                        {
+                            "name": "__dt__9dCcD_SttsFv",
+                            "vram": "0x000056E0",
+                            "size": "0x90",
+                            "vrom": "0x005720"
+                        },
+                        {
+                            "name": "__dt__10dCcD_GSttsFv",
+                            "vram": "0x00005770",
+                            "size": "0x5C",
+                            "vrom": "0x0057B0"
+                        },
+                        {
+                            "name": "__dt__9cCcD_SttsFv",
+                            "vram": "0x000057CC",
+                            "size": "0x48",
+                            "vrom": "0x00580C"
+                        },
+                        {
+                            "name": "__dt__10cCcD_GSttsFv",
+                            "vram": "0x00005814",
+                            "size": "0x48",
+                            "vrom": "0x005854"
+                        },
+                        {
+                            "name": ".text",
+                            "vram": "0x0000585C",
+                            "size": "0xFC",
+                            "vrom": "0x00589C"
+                        },
+                        {
+                            "name": "GetShapeAttr__8dCcD_CylFv",
+                            "vram": "0x0000585C",
+                            "size": "0x10",
+                            "vrom": "0x00589C"
+                        },
+                        {
+                            "name": "GetCoCP__12cCcD_CylAttrFv",
+                            "vram": "0x0000586C",
+                            "size": "0x8",
+                            "vrom": "0x0058AC"
+                        },
+                        {
+                            "name": "GetCoCP__12cCcD_CylAttrCFv",
+                            "vram": "0x00005874",
+                            "size": "0x8",
+                            "vrom": "0x0058B4"
+                        },
+                        {
+                            "name": "CrossAtTg__12cCcD_CylAttrCFRC12cCcD_AabAttrP4cXyz",
+                            "vram": "0x0000587C",
+                            "size": "0x8",
+                            "vrom": "0x0058BC"
+                        },
+                        {
+                            "name": "CrossAtTg__12cCcD_CylAttrCFRC12cCcD_PntAttrP4cXyz",
+                            "vram": "0x00005884",
+                            "size": "0x8",
+                            "vrom": "0x0058C4"
+                        },
+                        {
+                            "name": "CrossAtTg__12cCcD_CylAttrCFRC14cCcD_ShapeAttrP4cXyz",
+                            "vram": "0x0000588C",
+                            "size": "0x38",
+                            "vrom": "0x0058CC"
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC12cCcD_AabAttrPf",
+                            "vram": "0x000058C4",
+                            "size": "0x8",
+                            "vrom": "0x005904"
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC12cCcD_TriAttrPf",
+                            "vram": "0x000058CC",
+                            "size": "0x8",
+                            "vrom": "0x00590C"
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC12cCcD_PntAttrPf",
+                            "vram": "0x000058D4",
+                            "size": "0x8",
+                            "vrom": "0x005914"
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC14cCcD_ShapeAttrPf",
+                            "vram": "0x000058DC",
+                            "size": "0x38",
+                            "vrom": "0x00591C"
+                        },
+                        {
+                            "name": "GetGObjInf__12cCcD_GObjInfCFv",
+                            "vram": "0x00005914",
+                            "size": "0x4",
+                            "vrom": "0x005954"
+                        },
+                        {
+                            "name": "GetShapeAttr__8cCcD_ObjCFv",
+                            "vram": "0x00005918",
+                            "size": "0x8",
+                            "vrom": "0x005958"
+                        },
+                        {
+                            "name": "CrossAtTg__14cCcD_ShapeAttrCFRC14cCcD_ShapeAttrP4cXyz",
+                            "vram": "0x00005920",
+                            "size": "0x8",
+                            "vrom": "0x005960"
+                        },
+                        {
+                            "name": "CrossCo__14cCcD_ShapeAttrCFRC14cCcD_ShapeAttrPf",
+                            "vram": "0x00005928",
+                            "size": "0x8",
+                            "vrom": "0x005968"
+                        },
+                        {
+                            "name": "GetCoCP__14cCcD_ShapeAttrFv",
+                            "vram": "0x00005930",
+                            "size": "0xC",
+                            "vrom": "0x005970"
+                        },
+                        {
+                            "name": "GetCoCP__14cCcD_ShapeAttrCFv",
+                            "vram": "0x0000593C",
+                            "size": "0xC",
+                            "vrom": "0x00597C"
+                        },
+                        {
+                            "name": "@280@__dt__8dCcD_CylFv",
+                            "vram": "0x00005948",
+                            "size": "0x8",
+                            "vrom": "0x005988"
+                        },
+                        {
+                            "name": "@248@__dt__8dCcD_CylFv",
+                            "vram": "0x00005950",
+                            "size": "0x8",
+                            "vrom": "0x005990"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".compress.fini",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005998",
+            "files": []
+        },
+        {
+            "name": ".fini",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005998",
+            "files": []
+        },
+        {
+            "name": ".rodata",
+            "vram": "0x00000000",
+            "size": "0x9D",
+            "vrom": "0x005998",
+            "files": [
+                {
+                    "filepath": "d_a_agbsw0.o",
+                    "sectionType": ".rodata",
+                    "vram": "0x00000000",
+                    "size": "0x9D",
+                    "vrom": "0x005998",
+                    "symbols": [
+                        {
+                            "name": "@1974",
+                            "vram": "0x00000000",
+                            "size": "0x4",
+                            "vrom": "0x005998"
+                        },
+                        {
+                            "name": "@1975",
+                            "vram": "0x00000004",
+                            "size": "0x4",
+                            "vrom": "0x00599C"
+                        },
+                        {
+                            "name": "@2279",
+                            "vram": "0x00000008",
+                            "size": "0x4",
+                            "vrom": "0x0059A0"
+                        },
+                        {
+                            "name": "@2280",
+                            "vram": "0x00000010",
+                            "size": "0x8",
+                            "vrom": "0x0059A8"
+                        },
+                        {
+                            "name": "@2281",
+                            "vram": "0x00000018",
+                            "size": "0x8",
+                            "vrom": "0x0059B0"
+                        },
+                        {
+                            "name": "@2367",
+                            "vram": "0x00000020",
+                            "size": "0x4",
+                            "vrom": "0x0059B8"
+                        },
+                        {
+                            "name": "@2368",
+                            "vram": "0x00000024",
+                            "size": "0x4",
+                            "vrom": "0x0059BC"
+                        },
+                        {
+                            "name": "@2369",
+                            "vram": "0x00000028",
+                            "size": "0x4",
+                            "vrom": "0x0059C0"
+                        },
+                        {
+                            "name": "@2370",
+                            "vram": "0x00000030",
+                            "size": "0x8",
+                            "vrom": "0x0059C8"
+                        },
+                        {
+                            "name": "@2371",
+                            "vram": "0x00000038",
+                            "size": "0x8",
+                            "vrom": "0x0059D0"
+                        },
+                        {
+                            "name": "@2372",
+                            "vram": "0x00000040",
+                            "size": "0x4",
+                            "vrom": "0x0059D8"
+                        },
+                        {
+                            "name": "@2373",
+                            "vram": "0x00000044",
+                            "size": "0x4",
+                            "vrom": "0x0059DC"
+                        },
+                        {
+                            "name": "@2558",
+                            "vram": "0x00000048",
+                            "size": "0x4",
+                            "vrom": "0x0059E0"
+                        },
+                        {
+                            "name": "@2559",
+                            "vram": "0x0000004C",
+                            "size": "0x4",
+                            "vrom": "0x0059E4"
+                        },
+                        {
+                            "name": "@2560",
+                            "vram": "0x00000050",
+                            "size": "0x4",
+                            "vrom": "0x0059E8"
+                        },
+                        {
+                            "name": "@2768",
+                            "vram": "0x00000054",
+                            "size": "0x4",
+                            "vrom": "0x0059EC"
+                        },
+                        {
+                            "name": "@2769",
+                            "vram": "0x00000058",
+                            "size": "0x4",
+                            "vrom": "0x0059F0"
+                        },
+                        {
+                            "name": "@2770",
+                            "vram": "0x0000005C",
+                            "size": "0x4",
+                            "vrom": "0x0059F4"
+                        },
+                        {
+                            "name": "@2955",
+                            "vram": "0x00000060",
+                            "size": "0x4",
+                            "vrom": "0x0059F8"
+                        },
+                        {
+                            "name": "@4309",
+                            "vram": "0x00000064",
+                            "size": "0x4",
+                            "vrom": "0x0059FC"
+                        },
+                        {
+                            "name": "@4310",
+                            "vram": "0x00000068",
+                            "size": "0x4",
+                            "vrom": "0x005A00"
+                        },
+                        {
+                            "name": "@stringBase0",
+                            "vram": "0x0000006C",
+                            "size": "0x31",
+                            "vrom": "0x005A04"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".ctors",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005A35",
+            "files": []
+        },
+        {
+            "name": ".dtors",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005A35",
+            "files": []
+        },
+        {
+            "name": "extab",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005A35",
+            "files": []
+        },
+        {
+            "name": "extabindex",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005A35",
+            "files": []
+        },
+        {
+            "name": ".BINARY",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005A35",
+            "files": []
+        },
+        {
+            "name": ".data",
+            "vram": "0x00000000",
+            "size": "0x574",
+            "vrom": "0x005A38",
+            "files": [
+                {
+                    "filepath": "d_a_agbsw0.o",
+                    "sectionType": ".data",
+                    "vram": "0x00000000",
+                    "size": "0x574",
+                    "vrom": "0x005A38",
+                    "symbols": [
+                        {
+                            "name": "data_2100$11",
+                            "vram": "0x00000000",
+                            "size": "0xC",
+                            "vrom": "0x005A38"
+                        },
+                        {
+                            "name": "data_2080$15",
+                            "vram": "0x0000000C",
+                            "size": "0xC",
+                            "vrom": "0x005A44"
+                        },
+                        {
+                            "name": "attnFnTbl_1811$19",
+                            "vram": "0x00000018",
+                            "size": "0x4",
+                            "vrom": "0x005A50"
+                        },
+                        {
+                            "name": "_three$localstatic3$fake_sqrtf__Ff",
+                            "vram": "0x00000020",
+                            "size": "0x8",
+                            "vrom": "0x005A58"
+                        },
+                        {
+                            "name": "_half$localstatic4$fake_sqrtf__Ff",
+                            "vram": "0x00000028",
+                            "size": "0x8",
+                            "vrom": "0x005A60"
+                        },
+                        {
+                            "name": "l_cyl_src",
+                            "vram": "0x00000030",
+                            "size": "0x44",
+                            "vrom": "0x005A68"
+                        },
+                        {
+                            "name": "@1630",
+                            "vram": "0x00000074",
+                            "size": "0xC",
+                            "vrom": "0x005AAC"
+                        },
+                        {
+                            "name": "@1631",
+                            "vram": "0x00000080",
+                            "size": "0xC",
+                            "vrom": "0x005AB8"
+                        },
+                        {
+                            "name": "@1632",
+                            "vram": "0x0000008C",
+                            "size": "0xC",
+                            "vrom": "0x005AC4"
+                        },
+                        {
+                            "name": "@1633",
+                            "vram": "0x00000098",
+                            "size": "0xC",
+                            "vrom": "0x005AD0"
+                        },
+                        {
+                            "name": "@1634",
+                            "vram": "0x000000A4",
+                            "size": "0xC",
+                            "vrom": "0x005ADC"
+                        },
+                        {
+                            "name": "@1635",
+                            "vram": "0x000000B0",
+                            "size": "0xC",
+                            "vrom": "0x005AE8"
+                        },
+                        {
+                            "name": "@1636",
+                            "vram": "0x000000BC",
+                            "size": "0xC",
+                            "vrom": "0x005AF4"
+                        },
+                        {
+                            "name": "@1637",
+                            "vram": "0x000000C8",
+                            "size": "0xC",
+                            "vrom": "0x005B00"
+                        },
+                        {
+                            "name": "@1638",
+                            "vram": "0x000000D4",
+                            "size": "0xC",
+                            "vrom": "0x005B0C"
+                        },
+                        {
+                            "name": "@1639",
+                            "vram": "0x000000E0",
+                            "size": "0xC",
+                            "vrom": "0x005B18"
+                        },
+                        {
+                            "name": "@1640",
+                            "vram": "0x000000EC",
+                            "size": "0xC",
+                            "vrom": "0x005B24"
+                        },
+                        {
+                            "name": "@1641",
+                            "vram": "0x000000F8",
+                            "size": "0xC",
+                            "vrom": "0x005B30"
+                        },
+                        {
+                            "name": "@1642",
+                            "vram": "0x00000104",
+                            "size": "0xC",
+                            "vrom": "0x005B3C"
+                        },
+                        {
+                            "name": "@1643",
+                            "vram": "0x00000110",
+                            "size": "0xC",
+                            "vrom": "0x005B48"
+                        },
+                        {
+                            "name": "@1644",
+                            "vram": "0x0000011C",
+                            "size": "0xC",
+                            "vrom": "0x005B54"
+                        },
+                        {
+                            "name": "ExeSubTable$localstatic3$execute__10daAgbsw0_cFv",
+                            "vram": "0x00000128",
+                            "size": "0xB4",
+                            "vrom": "0x005B60"
+                        },
+                        {
+                            "name": "@2282",
+                            "vram": "0x000001DC",
+                            "size": "0x1C",
+                            "vrom": "0x005C14"
+                        },
+                        {
+                            "name": "BeatedMsg__10daAgbsw0_c",
+                            "vram": "0x000001F8",
+                            "size": "0xC",
+                            "vrom": "0x005C30"
+                        },
+                        {
+                            "name": "DisposedMsg__10daAgbsw0_c",
+                            "vram": "0x00000204",
+                            "size": "0x4",
+                            "vrom": "0x005C3C"
+                        },
+                        {
+                            "name": "@4072",
+                            "vram": "0x00000208",
+                            "size": "0x210",
+                            "vrom": "0x005C40"
+                        },
+                        {
+                            "name": "l_daAgbsw0_Method",
+                            "vram": "0x00000418",
+                            "size": "0x20",
+                            "vrom": "0x005E50"
+                        },
+                        {
+                            "name": "g_profile_AGBSW0",
+                            "vram": "0x00000438",
+                            "size": "0x30",
+                            "vrom": "0x005E70"
+                        },
+                        {
+                            "name": "__vt__10cCcD_GStts",
+                            "vram": "0x00000468",
+                            "size": "0xC",
+                            "vrom": "0x005EA0"
+                        },
+                        {
+                            "name": "__vt__10dCcD_GStts",
+                            "vram": "0x00000474",
+                            "size": "0xC",
+                            "vrom": "0x005EAC"
+                        },
+                        {
+                            "name": "__vt__8dCcD_Cyl",
+                            "vram": "0x00000480",
+                            "size": "0x88",
+                            "vrom": "0x005EB8"
+                        },
+                        {
+                            "name": "__vt__8cM3dGCyl",
+                            "vram": "0x00000508",
+                            "size": "0xC",
+                            "vrom": "0x005F40"
+                        },
+                        {
+                            "name": "__vt__8cM3dGAab",
+                            "vram": "0x00000514",
+                            "size": "0xC",
+                            "vrom": "0x005F4C"
+                        },
+                        {
+                            "name": "__vt__14cCcD_ShapeAttr",
+                            "vram": "0x00000520",
+                            "size": "0x54",
+                            "vrom": "0x005F58"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".sdata",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005FAC",
+            "files": []
+        },
+        {
+            "name": ".sbss",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005FAC",
+            "files": []
+        },
+        {
+            "name": ".sdata2",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005FAC",
+            "files": []
+        },
+        {
+            "name": ".sbss2",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005FAC",
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sdata0",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005FAC",
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sbss0",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x005FAC",
+            "files": []
+        },
+        {
+            "name": ".bss",
+            "vram": "0x00000000",
+            "size": "0xF",
+            "vrom": "0x005FB0",
+            "files": [
+                {
+                    "filepath": "d_a_agbsw0.o",
+                    "sectionType": ".bss",
+                    "vram": "0x00000000",
+                    "size": "0xF",
+                    "vrom": null,
+                    "symbols": [
+                        {
+                            "name": "mMail__10daAgbsw0_c",
+                            "vram": "0x00000000",
+                            "size": "0x8",
+                            "vrom": null
+                        },
+                        {
+                            "name": "mSE__10daAgbsw0_c",
+                            "vram": "0x00000008",
+                            "size": "0x4",
+                            "vrom": null
+                        },
+                        {
+                            "name": "se_flag$2291",
+                            "vram": "0x0000000C",
+                            "size": "0x1",
+                            "vrom": null
+                        },
+                        {
+                            "name": "init$2292",
+                            "vram": "0x0000000D",
+                            "size": "0x1",
+                            "vrom": null
+                        },
+                        {
+                            "name": "init$localstatic4$execute__10daAgbsw0_cFv",
+                            "vram": "0x0000000E",
+                            "size": "0x1",
+                            "vrom": null
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

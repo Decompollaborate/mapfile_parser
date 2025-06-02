@@ -195,7 +195,7 @@ impl Segment {
             let vram = first_section.vram;
             let mut size = 0;
             let vrom = first_section.vrom;
-            let section_type = &first_section.section_type;
+            let section_type = first_section.section_type.clone();
             let align = first_section.align;
 
             let mut symbols = Vec::new();

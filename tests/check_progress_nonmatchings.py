@@ -71,10 +71,10 @@ def getProgress(mapPath: Path, version: str, pathIndex: int=2) -> tuple[mapfile_
 
 
 cases: list[tuple[Path, str, mapfile_parser.ProgressStats]] = [
-    (Path("tests/maps/drmario64.cn.map"),       "cn",  mapfile_parser.ProgressStats(undecompedSize=273028, decompedSize=199196)),
-    (Path("tests/maps/drmario64.us.lld.map"),   "us",  mapfile_parser.ProgressStats(undecompedSize=170720, decompedSize=272764)),
-    (Path("tests/maps/drmario64.us.map"),       "us",  mapfile_parser.ProgressStats(undecompedSize=170720, decompedSize=272128)),
-    (Path("tests/maps/puzzleleague64.usa.map"), "usa", mapfile_parser.ProgressStats(undecompedSize=263668, decompedSize=454604)),
+    (Path("tests/maps/gnuld/n64/drmario64.cn.map"),       "cn",  mapfile_parser.ProgressStats(undecompedSize=273028, decompedSize=199196)),
+    (Path("tests/maps/ld.lld/n64/drmario64.us.lld.map"),  "us",  mapfile_parser.ProgressStats(undecompedSize=170720, decompedSize=272764)),
+    (Path("tests/maps/gnuld/n64/drmario64.us.map"),       "us",  mapfile_parser.ProgressStats(undecompedSize=170720, decompedSize=272128)),
+    (Path("tests/maps/gnuld/n64/puzzleleague64.usa.map"), "usa", mapfile_parser.ProgressStats(undecompedSize=263668, decompedSize=454604)),
 ]
 
 

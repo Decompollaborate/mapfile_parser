@@ -1,0 +1,97 @@
+Link map of _prolog
+>>> SYMBOL NOT FOUND: daAlldie_Draw__FP10daAlldie_c
+>>> SYMBOL NOT FOUND: daAlldie_Execute__FP10daAlldie_c
+>>> SYMBOL NOT FOUND: daAlldie_IsDelete__FP10daAlldie_c
+>>> SYMBOL NOT FOUND: daAlldie_Delete__FP10daAlldie_c
+>>> SYMBOL NOT FOUND: daAlldie_Create__FP10fopAc_ac_c
+>>> SYMBOL NOT FOUND: l_daAlldie_Method
+>>> SYMBOL NOT FOUND: ModuleConstructorsX
+>>> SYMBOL NOT FOUND: ModuleProlog
+>>> SYMBOL NOT FOUND: ModuleEpilog
+>>> SYMBOL NOT FOUND: ModuleDestructorsX
+>>> SYMBOL NOT FOUND: ModuleUnresolved
+>>> SYMBOL NOT FOUND: g_fpcLf_Method
+>>> SYMBOL NOT FOUND: g_fopAc_Method
+>>> SYMBOL NOT FOUND: _savegpr_29
+>>> SYMBOL NOT FOUND: __ct__10fopAc_ac_cFv
+>>> SYMBOL NOT FOUND: g_dComIfG_gameInfo
+>>> SYMBOL NOT FOUND: isSwitch__10dSv_info_cCFii
+>>> SYMBOL NOT FOUND: getEventIdx__16dEvent_manager_cFP10fopAc_ac_cUc
+>>> SYMBOL NOT FOUND: searchMapEventData__14dEvt_control_cFUcl
+>>> SYMBOL NOT FOUND: _restgpr_29
+>>> SYMBOL NOT FOUND: __dt__10fopAc_ac_cFv
+>>> SYMBOL NOT FOUND: fopAcM_myRoomSearchEnemy__FSc
+>>> SYMBOL NOT FOUND: onSwitch__10dSv_info_cFii
+>>> SYMBOL NOT FOUND: fopAcM_orderOtherEventId__FP10fopAc_ac_csUcUsUsUs
+>>> SYMBOL NOT FOUND: endCheck__16dEvent_manager_cFs
+>>> SYMBOL NOT FOUND: reset__14dEvt_control_cFv
+
+
+.init section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.text section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000078 00000000 00000040  1 .text 	executor.o 
+  00000000 00002c 00000000 00000040  4 _prolog 	executor.o 
+  0000002c 00002c 0000002c 0000006c  4 _epilog 	executor.o 
+  00000058 000020 00000058 00000098  4 _unresolved 	executor.o 
+  00000078 000504 00000078 000000b8  1 .text 	d_a_alldie.o 
+  00000078 00000c 00000078 000000b8  4 getEventNo__10daAlldie_cFv 	d_a_alldie.o 
+  00000084 00000c 00000084 000000c4  4 getSwbit__10daAlldie_cFv 	d_a_alldie.o 
+  00000090 000008 00000090 000000d0  4 actionWait__10daAlldie_cFv 	d_a_alldie.o 
+  00000098 000050 00000098 000000d8  4 actionCheck__10daAlldie_cFv 	d_a_alldie.o 
+  000000e8 0000b0 000000e8 00000128  4 actionTimer__10daAlldie_cFv 	d_a_alldie.o 
+  00000198 000068 00000198 000001d8  4 actionOrder__10daAlldie_cFv 	d_a_alldie.o 
+  00000200 0000a4 00000200 00000240  4 actionEvent__10daAlldie_cFv 	d_a_alldie.o 
+  000002a4 0000cc 000002a4 000002e4  4 actionNext__10daAlldie_cFv 	d_a_alldie.o 
+  00000370 00007c 00000370 000003b0  4 execute__10daAlldie_cFv 	d_a_alldie.o 
+  000003ec 000008 000003ec 0000042c  4 daAlldie_Draw__FP10daAlldie_c 	d_a_alldie.o 
+  000003f4 000024 000003f4 00000434  4 daAlldie_Execute__FP10daAlldie_c 	d_a_alldie.o 
+  00000418 000008 00000418 00000458  4 daAlldie_IsDelete__FP10daAlldie_c 	d_a_alldie.o 
+  00000420 000030 00000420 00000460  4 daAlldie_Delete__FP10daAlldie_c 	d_a_alldie.o 
+  00000450 00012c 00000450 00000490  4 daAlldie_Create__FP10fopAc_ac_c 	d_a_alldie.o 
+
+
+.ctors section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000000 00000000 000005bc  1 .ctors$00 	Linker Generated Symbol File 
+  00000000 000000 00000000 000005bc  4 _ctors 	Linker Generated Symbol File 
+  00000000 000004 00000000 000005bc  1 .ctors$99 	Linker Generated Symbol File 
+  00000000 000004 00000000 000005bc  4 _ctors$99 	Linker Generated Symbol File 
+
+
+.dtors section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000000 00000000 000005c0  1 .dtors$00 	Linker Generated Symbol File 
+  00000000 000000 00000000 000005c0  4 _dtors 	Linker Generated Symbol File 
+  00000000 000004 00000000 000005c0  1 .dtors$99 	Linker Generated Symbol File 
+  00000000 000004 00000000 000005c0  4 _dtors$99 	Linker Generated Symbol File 
+
+
+.data section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000050 00000000 000005c8  1 .data 	d_a_alldie.o 
+  00000000 000020 00000000 000005c8  4 l_daAlldie_Method 	d_a_alldie.o 
+  00000020 000030 00000020 000005e8  4 g_profile_ALLDIE 	d_a_alldie.o 
+
+
+Memory map:
+                   Starting Size     File
+                   address           Offset
+            .init  00000000 00000000 00000040
+            .text  00000000 0000057c 00000040
+           .ctors  00000000 00000004 000005bc
+           .dtors  00000000 00000004 000005c0
+            .data  00000000 00000050 000005c8

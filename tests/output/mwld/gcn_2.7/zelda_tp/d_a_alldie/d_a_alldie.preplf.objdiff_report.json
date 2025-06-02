@@ -1,0 +1,260 @@
+{
+  "measures": {
+    "fuzzy_match_percent": 100.0,
+    "total_code": "1404",
+    "matched_code": "1404",
+    "matched_code_percent": 100.0,
+    "matched_data_percent": 100.0,
+    "total_functions": 17,
+    "matched_functions": 17,
+    "matched_functions_percent": 100.0,
+    "complete_data_percent": 100.0,
+    "total_units": 2
+  },
+  "units": [
+    {
+      "name": "executor",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "120",
+        "matched_code": "120",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 3,
+        "matched_functions": 3,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "120",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "_prolog",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": "_epilog",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "44"
+          }
+        },
+        {
+          "name": "_unresolved",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "88"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 3,
+        "progress_categories": [
+          "executor"
+        ]
+      }
+    },
+    {
+      "name": "d_a_alldie",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "1284",
+        "matched_code": "1284",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 14,
+        "matched_functions": 14,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "1284",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "120"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "80",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "getEventNo__10daAlldie_cFv",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "120"
+          }
+        },
+        {
+          "name": "getSwbit__10daAlldie_cFv",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "132"
+          }
+        },
+        {
+          "name": "actionWait__10daAlldie_cFv",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "144"
+          }
+        },
+        {
+          "name": "actionCheck__10daAlldie_cFv",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "152"
+          }
+        },
+        {
+          "name": "actionTimer__10daAlldie_cFv",
+          "size": "176",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "232"
+          }
+        },
+        {
+          "name": "actionOrder__10daAlldie_cFv",
+          "size": "104",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "408"
+          }
+        },
+        {
+          "name": "actionEvent__10daAlldie_cFv",
+          "size": "164",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "512"
+          }
+        },
+        {
+          "name": "actionNext__10daAlldie_cFv",
+          "size": "204",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "676"
+          }
+        },
+        {
+          "name": "execute__10daAlldie_cFv",
+          "size": "124",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "880"
+          }
+        },
+        {
+          "name": "daAlldie_Draw__FP10daAlldie_c",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1004"
+          }
+        },
+        {
+          "name": "daAlldie_Execute__FP10daAlldie_c",
+          "size": "36",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1012"
+          }
+        },
+        {
+          "name": "daAlldie_IsDelete__FP10daAlldie_c",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1048"
+          }
+        },
+        {
+          "name": "daAlldie_Delete__FP10daAlldie_c",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1056"
+          }
+        },
+        {
+          "name": "daAlldie_Create__FP10fopAc_ac_c",
+          "size": "300",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1104"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 3,
+        "progress_categories": [
+          "d_a_alldie"
+        ]
+      }
+    }
+  ],
+  "version": 2,
+  "categories": [
+    {
+      "id": "executor",
+      "name": "executor",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "120",
+        "matched_code": "120",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 3,
+        "matched_functions": 3,
+        "matched_functions_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1
+      }
+    },
+    {
+      "id": "d_a_alldie",
+      "name": "d_a_alldie",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "1284",
+        "matched_code": "1284",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 14,
+        "matched_functions": 14,
+        "matched_functions_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 1
+      }
+    }
+  ]
+}

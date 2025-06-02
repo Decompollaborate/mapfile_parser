@@ -1,0 +1,576 @@
+{
+    "segments": [
+        {
+            "name": ".text",
+            "vram": "0x00000000",
+            "size": "0xEDC",
+            "vrom": "0x000040",
+            "files": [
+                {
+                    "filepath": "executor.o",
+                    "sectionType": ".text",
+                    "vram": "0x00000000",
+                    "size": "0x78",
+                    "vrom": "0x000040",
+                    "symbols": [
+                        {
+                            "name": "_prolog",
+                            "vram": "0x00000000",
+                            "size": "0x2C",
+                            "vrom": "0x000040"
+                        },
+                        {
+                            "name": "_epilog",
+                            "vram": "0x0000002C",
+                            "size": "0x2C",
+                            "vrom": "0x00006C"
+                        },
+                        {
+                            "name": "_unresolved",
+                            "vram": "0x00000058",
+                            "size": "0x20",
+                            "vrom": "0x000098"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "global_destructor_chain.o",
+                    "sectionType": ".text",
+                    "vram": "0x00000078",
+                    "size": "0x74",
+                    "vrom": "0x0000B8",
+                    "symbols": [
+                        {
+                            "name": "__register_global_object",
+                            "vram": "0x00000078",
+                            "size": "0x1C",
+                            "vrom": "0x0000B8"
+                        },
+                        {
+                            "name": "__destroy_global_chain",
+                            "vram": "0x00000094",
+                            "size": "0x58",
+                            "vrom": "0x0000D4"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "d_a_acorn_leaf.o",
+                    "sectionType": ".text",
+                    "vram": "0x000000EC",
+                    "size": "0xD74",
+                    "vrom": "0x00012C",
+                    "symbols": [
+                        {
+                            "name": "CheckCreateHeap__FP10fopAc_ac_c",
+                            "vram": "0x000000EC",
+                            "size": "0x20",
+                            "vrom": "0x00012C"
+                        },
+                        {
+                            "name": "CreateHeap__9daAleaf_cFv",
+                            "vram": "0x0000010C",
+                            "size": "0x14C",
+                            "vrom": "0x00014C"
+                        },
+                        {
+                            "name": "CreateInit__9daAleaf_cFv",
+                            "vram": "0x00000258",
+                            "size": "0xBC",
+                            "vrom": "0x000298"
+                        },
+                        {
+                            "name": "create_acorn__9daAleaf_cFv",
+                            "vram": "0x00000314",
+                            "size": "0x70",
+                            "vrom": "0x000354"
+                        },
+                        {
+                            "name": "create_acorn_sub__9daAleaf_cFb",
+                            "vram": "0x00000384",
+                            "size": "0xDC",
+                            "vrom": "0x0003C4"
+                        },
+                        {
+                            "name": "__dt__4cXyzFv",
+                            "vram": "0x00000460",
+                            "size": "0x3C",
+                            "vrom": "0x0004A0"
+                        },
+                        {
+                            "name": "_create__9daAleaf_cFv",
+                            "vram": "0x0000049C",
+                            "size": "0x150",
+                            "vrom": "0x0004DC"
+                        },
+                        {
+                            "name": "__dt__13mDoExt_bckAnmFv",
+                            "vram": "0x000005EC",
+                            "size": "0x5C",
+                            "vrom": "0x00062C"
+                        },
+                        {
+                            "name": "__dt__14mDoExt_baseAnmFv",
+                            "vram": "0x00000648",
+                            "size": "0x48",
+                            "vrom": "0x000688"
+                        },
+                        {
+                            "name": "__dt__8dCcD_CylFv",
+                            "vram": "0x00000690",
+                            "size": "0xCC",
+                            "vrom": "0x0006D0"
+                        },
+                        {
+                            "name": "__dt__8cM3dGCylFv",
+                            "vram": "0x0000075C",
+                            "size": "0x48",
+                            "vrom": "0x00079C"
+                        },
+                        {
+                            "name": "__dt__14cCcD_ShapeAttrFv",
+                            "vram": "0x000007A4",
+                            "size": "0x5C",
+                            "vrom": "0x0007E4"
+                        },
+                        {
+                            "name": "__dt__8cM3dGAabFv",
+                            "vram": "0x00000800",
+                            "size": "0x48",
+                            "vrom": "0x000840"
+                        },
+                        {
+                            "name": "set_mtx__9daAleaf_cFv",
+                            "vram": "0x00000848",
+                            "size": "0x88",
+                            "vrom": "0x000888"
+                        },
+                        {
+                            "name": "_execute__9daAleaf_cFv",
+                            "vram": "0x000008D0",
+                            "size": "0x374",
+                            "vrom": "0x000910"
+                        },
+                        {
+                            "name": "_draw__9daAleaf_cFv",
+                            "vram": "0x00000C44",
+                            "size": "0x90",
+                            "vrom": "0x000C84"
+                        },
+                        {
+                            "name": "daAleaf_Create__FPv",
+                            "vram": "0x00000CD4",
+                            "size": "0x20",
+                            "vrom": "0x000D14"
+                        },
+                        {
+                            "name": "daAleaf_Delete__FPv",
+                            "vram": "0x00000CF4",
+                            "size": "0x30",
+                            "vrom": "0x000D34"
+                        },
+                        {
+                            "name": "daAleaf_Draw__FPv",
+                            "vram": "0x00000D24",
+                            "size": "0x24",
+                            "vrom": "0x000D64"
+                        },
+                        {
+                            "name": "daAleaf_Execute__FPv",
+                            "vram": "0x00000D48",
+                            "size": "0x24",
+                            "vrom": "0x000D88"
+                        },
+                        {
+                            "name": "daAleaf_IsDelete__FPv",
+                            "vram": "0x00000D6C",
+                            "size": "0x8",
+                            "vrom": "0x000DAC"
+                        },
+                        {
+                            "name": "GetShapeAttr__8dCcD_CylFv",
+                            "vram": "0x00000D74",
+                            "size": "0x10",
+                            "vrom": "0x000DB4"
+                        },
+                        {
+                            "name": "GetCoCP__12cCcD_CylAttrFv",
+                            "vram": "0x00000D84",
+                            "size": "0x8",
+                            "vrom": "0x000DC4"
+                        },
+                        {
+                            "name": "GetCoCP__12cCcD_CylAttrCFv",
+                            "vram": "0x00000D8C",
+                            "size": "0x8",
+                            "vrom": "0x000DCC"
+                        },
+                        {
+                            "name": "CrossAtTg__12cCcD_CylAttrCFRC12cCcD_AabAttrP4cXyz",
+                            "vram": "0x00000D94",
+                            "size": "0x8",
+                            "vrom": "0x000DD4"
+                        },
+                        {
+                            "name": "CrossAtTg__12cCcD_CylAttrCFRC12cCcD_PntAttrP4cXyz",
+                            "vram": "0x00000D9C",
+                            "size": "0x8",
+                            "vrom": "0x000DDC"
+                        },
+                        {
+                            "name": "CrossAtTg__12cCcD_CylAttrCFRC14cCcD_ShapeAttrP4cXyz",
+                            "vram": "0x00000DA4",
+                            "size": "0x38",
+                            "vrom": "0x000DE4"
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC12cCcD_AabAttrPf",
+                            "vram": "0x00000DDC",
+                            "size": "0x8",
+                            "vrom": "0x000E1C"
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC12cCcD_TriAttrPf",
+                            "vram": "0x00000DE4",
+                            "size": "0x8",
+                            "vrom": "0x000E24"
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC12cCcD_PntAttrPf",
+                            "vram": "0x00000DEC",
+                            "size": "0x8",
+                            "vrom": "0x000E2C"
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC14cCcD_ShapeAttrPf",
+                            "vram": "0x00000DF4",
+                            "size": "0x38",
+                            "vrom": "0x000E34"
+                        },
+                        {
+                            "name": "GetGObjInf__12cCcD_GObjInfCFv",
+                            "vram": "0x00000E2C",
+                            "size": "0x4",
+                            "vrom": "0x000E6C"
+                        },
+                        {
+                            "name": "GetShapeAttr__8cCcD_ObjCFv",
+                            "vram": "0x00000E30",
+                            "size": "0x8",
+                            "vrom": "0x000E70"
+                        },
+                        {
+                            "name": "CrossAtTg__14cCcD_ShapeAttrCFRC14cCcD_ShapeAttrP4cXyz",
+                            "vram": "0x00000E38",
+                            "size": "0x8",
+                            "vrom": "0x000E78"
+                        },
+                        {
+                            "name": "CrossCo__14cCcD_ShapeAttrCFRC14cCcD_ShapeAttrPf",
+                            "vram": "0x00000E40",
+                            "size": "0x8",
+                            "vrom": "0x000E80"
+                        },
+                        {
+                            "name": "GetCoCP__14cCcD_ShapeAttrFv",
+                            "vram": "0x00000E48",
+                            "size": "0xC",
+                            "vrom": "0x000E88"
+                        },
+                        {
+                            "name": "GetCoCP__14cCcD_ShapeAttrCFv",
+                            "vram": "0x00000E54",
+                            "size": "0xC",
+                            "vrom": "0x000E94"
+                        },
+                        {
+                            "name": ".text",
+                            "vram": "0x00000E60",
+                            "size": "0x7C",
+                            "vrom": "0x000EA0"
+                        },
+                        {
+                            "name": "PrmAbstract<Q37daTsubo5Act_c5Prm_e>__5daObjFPC10fopAc_ac_cQ37daTsubo5Act_c5Prm_eQ37daTsubo5Act_c5Prm_e",
+                            "vram": "0x00000E60",
+                            "size": "0x1C",
+                            "vrom": "0x000EA0"
+                        },
+                        {
+                            "name": "__sinit_d_a_acorn_leaf_cpp",
+                            "vram": "0x00000E7C",
+                            "size": "0x50",
+                            "vrom": "0x000EBC"
+                        },
+                        {
+                            "name": "@280@__dt__8dCcD_CylFv",
+                            "vram": "0x00000ECC",
+                            "size": "0x8",
+                            "vrom": "0x000F0C"
+                        },
+                        {
+                            "name": "@248@__dt__8dCcD_CylFv",
+                            "vram": "0x00000ED4",
+                            "size": "0x8",
+                            "vrom": "0x000F14"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".ctors",
+            "vram": "0x00000000",
+            "size": "0x8",
+            "vrom": "0x000F1C",
+            "files": [
+                {
+                    "filepath": "d_a_acorn_leaf.o",
+                    "sectionType": ".ctors",
+                    "vram": "0x00000000",
+                    "size": "0x4",
+                    "vrom": "0x000F1C",
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".dtors",
+            "vram": "0x00000000",
+            "size": "0x8",
+            "vrom": "0x000F24",
+            "files": [
+                {
+                    "filepath": "global_destructor_chain.o",
+                    "sectionType": ".dtors",
+                    "vram": "0x00000000",
+                    "size": "0x4",
+                    "vrom": "0x000F24",
+                    "symbols": [
+                        {
+                            "name": "__destroy_global_chain_reference",
+                            "vram": "0x00000000",
+                            "size": "0x4",
+                            "vrom": "0x000F24"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".rodata",
+            "vram": "0x00000000",
+            "size": "0x75",
+            "vrom": "0x000F30",
+            "files": [
+                {
+                    "filepath": "d_a_acorn_leaf.o",
+                    "sectionType": ".rodata",
+                    "vram": "0x00000000",
+                    "size": "0x75",
+                    "vrom": "0x000F30",
+                    "symbols": [
+                        {
+                            "name": "m_arcname__9daAleaf_c",
+                            "vram": "0x00000000",
+                            "size": "0x6",
+                            "vrom": "0x000F30"
+                        },
+                        {
+                            "name": "@4032",
+                            "vram": "0x00000008",
+                            "size": "0x4",
+                            "vrom": "0x000F38"
+                        },
+                        {
+                            "name": "@4045",
+                            "vram": "0x0000000C",
+                            "size": "0x4",
+                            "vrom": "0x000F3C"
+                        },
+                        {
+                            "name": "@4046",
+                            "vram": "0x00000010",
+                            "size": "0x4",
+                            "vrom": "0x000F40"
+                        },
+                        {
+                            "name": "@4047",
+                            "vram": "0x00000014",
+                            "size": "0x4",
+                            "vrom": "0x000F44"
+                        },
+                        {
+                            "name": "@4048",
+                            "vram": "0x00000018",
+                            "size": "0x4",
+                            "vrom": "0x000F48"
+                        },
+                        {
+                            "name": "@4331",
+                            "vram": "0x00000020",
+                            "size": "0x8",
+                            "vrom": "0x000F50"
+                        },
+                        {
+                            "name": "@4332",
+                            "vram": "0x00000028",
+                            "size": "0x8",
+                            "vrom": "0x000F58"
+                        },
+                        {
+                            "name": "@4333",
+                            "vram": "0x00000030",
+                            "size": "0x4",
+                            "vrom": "0x000F60"
+                        },
+                        {
+                            "name": "@4334",
+                            "vram": "0x00000034",
+                            "size": "0x4",
+                            "vrom": "0x000F64"
+                        },
+                        {
+                            "name": "@4335",
+                            "vram": "0x00000038",
+                            "size": "0x4",
+                            "vrom": "0x000F68"
+                        },
+                        {
+                            "name": "@4336",
+                            "vram": "0x0000003C",
+                            "size": "0x4",
+                            "vrom": "0x000F6C"
+                        },
+                        {
+                            "name": "@4423",
+                            "vram": "0x00000040",
+                            "size": "0x4",
+                            "vrom": "0x000F70"
+                        },
+                        {
+                            "name": "@stringBase0",
+                            "vram": "0x00000044",
+                            "size": "0x31",
+                            "vrom": "0x000F74"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".data",
+            "vram": "0x00000000",
+            "size": "0x1A0",
+            "vrom": "0x000FA8",
+            "files": [
+                {
+                    "filepath": "d_a_acorn_leaf.o",
+                    "sectionType": ".data",
+                    "vram": "0x00000000",
+                    "size": "0x1A0",
+                    "vrom": "0x000FA8",
+                    "symbols": [
+                        {
+                            "name": "l_cyl_src",
+                            "vram": "0x00000000",
+                            "size": "0x44",
+                            "vrom": "0x000FA8"
+                        },
+                        {
+                            "name": "daAleafMethodTable",
+                            "vram": "0x00000044",
+                            "size": "0x20",
+                            "vrom": "0x000FEC"
+                        },
+                        {
+                            "name": "g_profile_ACORN_LEAF",
+                            "vram": "0x00000064",
+                            "size": "0x30",
+                            "vrom": "0x00100C"
+                        },
+                        {
+                            "name": "__vt__13mDoExt_bckAnm",
+                            "vram": "0x00000094",
+                            "size": "0xC",
+                            "vrom": "0x00103C"
+                        },
+                        {
+                            "name": "__vt__14mDoExt_baseAnm",
+                            "vram": "0x000000A0",
+                            "size": "0xC",
+                            "vrom": "0x001048"
+                        },
+                        {
+                            "name": "__vt__8dCcD_Cyl",
+                            "vram": "0x000000AC",
+                            "size": "0x88",
+                            "vrom": "0x001054"
+                        },
+                        {
+                            "name": "__vt__8cM3dGCyl",
+                            "vram": "0x00000134",
+                            "size": "0xC",
+                            "vrom": "0x0010DC"
+                        },
+                        {
+                            "name": "__vt__8cM3dGAab",
+                            "vram": "0x00000140",
+                            "size": "0xC",
+                            "vrom": "0x0010E8"
+                        },
+                        {
+                            "name": "__vt__14cCcD_ShapeAttr",
+                            "vram": "0x0000014C",
+                            "size": "0x54",
+                            "vrom": "0x0010F4"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".bss",
+            "vram": "0x00000000",
+            "size": "0x20",
+            "vrom": "0x001148",
+            "files": [
+                {
+                    "filepath": "global_destructor_chain.o",
+                    "sectionType": ".bss",
+                    "vram": "0x00000000",
+                    "size": "0x4",
+                    "vrom": null,
+                    "symbols": [
+                        {
+                            "name": "__global_destructor_chain",
+                            "vram": "0x00000000",
+                            "size": "0x4",
+                            "vrom": null
+                        }
+                    ]
+                },
+                {
+                    "filepath": "d_a_acorn_leaf.o",
+                    "sectionType": ".bss",
+                    "vram": "0x00000008",
+                    "size": "0x18",
+                    "vrom": null,
+                    "symbols": [
+                        {
+                            "name": "@4011",
+                            "vram": "0x00000008",
+                            "size": "0xC",
+                            "vrom": null
+                        },
+                        {
+                            "name": "acorn_offset",
+                            "vram": "0x00000014",
+                            "size": "0xC",
+                            "vrom": null
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

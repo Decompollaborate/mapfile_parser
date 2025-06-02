@@ -1,0 +1,76 @@
+Link map of _prolog
+>>> SYMBOL NOT FOUND: ModuleConstructorsX
+>>> SYMBOL NOT FOUND: ModuleProlog
+>>> SYMBOL NOT FOUND: ModuleEpilog
+>>> SYMBOL NOT FOUND: ModuleDestructorsX
+>>> SYMBOL NOT FOUND: ModuleUnresolved
+>>> SYMBOL NOT FOUND: g_fpcLf_Method
+>>> SYMBOL NOT FOUND: g_fopAc_Method
+>>> SYMBOL NOT FOUND: __ct__10fopAc_ac_cFv
+>>> SYMBOL NOT FOUND: g_dComIfG_gameInfo
+>>> SYMBOL NOT FOUND: isSwitch__10dSv_info_cCFii
+>>> SYMBOL NOT FOUND: offSwitch__10dSv_info_cFii
+>>> SYMBOL NOT FOUND: fopAcM_delete__FP10fopAc_ac_c
+
+
+.init section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.text section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000078 00000000 00000040  1 .text 	executor.o 
+  00000000 00002c 00000000 00000040  4 _prolog 	executor.o 
+  0000002c 00002c 0000002c 0000006c  4 _epilog 	executor.o 
+  00000058 000020 00000058 00000098  4 _unresolved 	executor.o 
+  00000078 0001ac 00000078 000000b8  1 .text 	d_a_andsw.o 
+  00000078 000040 00000078 000000b8  4 Create__9daAndsw_cFv 	d_a_andsw.o 
+  000000b8 000068 000000b8 000000f8  4 create__9daAndsw_cFv 	d_a_andsw.o 
+  00000120 00009c 00000120 00000160  4 execute__9daAndsw_cFv 	d_a_andsw.o 
+  000001bc 000008 000001bc 000001fc  4 _delete__9daAndsw_cFv 	d_a_andsw.o 
+  000001c4 000020 000001c4 00000204  4 daAndsw_Execute__FP9daAndsw_c 	d_a_andsw.o 
+  000001e4 000020 000001e4 00000224  4 daAndsw_Delete__FP9daAndsw_c 	d_a_andsw.o 
+  00000204 000020 00000204 00000244  4 daAndsw_Create__FP10fopAc_ac_c 	d_a_andsw.o 
+
+
+.ctors section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000000 00000000 00000264  1 .ctors$00 	Linker Generated Symbol File 
+  00000000 000000 00000000 00000264  4 _ctors 	Linker Generated Symbol File 
+  00000000 000004 00000000 00000264  1 .ctors$99 	Linker Generated Symbol File 
+  00000000 000004 00000000 00000264  4 _ctors$99 	Linker Generated Symbol File 
+
+
+.dtors section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000000 00000000 00000268  1 .dtors$00 	Linker Generated Symbol File 
+  00000000 000000 00000000 00000268  4 _dtors 	Linker Generated Symbol File 
+  00000000 000004 00000000 00000268  1 .dtors$99 	Linker Generated Symbol File 
+  00000000 000004 00000000 00000268  4 _dtors$99 	Linker Generated Symbol File 
+
+
+.data section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000050 00000000 00000270  1 .data 	d_a_andsw.o 
+  00000000 000020 00000000 00000270  4 l_daAndsw_Method 	d_a_andsw.o 
+  00000020 000030 00000020 00000290  4 g_profile_ANDSW 	d_a_andsw.o 
+
+
+Memory map:
+                   Starting Size     File
+                   address           Offset
+            .init  00000000 00000000 00000040
+            .text  00000000 00000224 00000040
+           .ctors  00000000 00000004 00000264
+           .dtors  00000000 00000004 00000268
+            .data  00000000 00000050 00000270

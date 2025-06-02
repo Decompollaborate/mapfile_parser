@@ -1,0 +1,9 @@
+VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
+00000000,executor.o,.text,3,44,120,40.00
+00000078,global_destructor_chain.o,.text,2,88,116,58.00
+000000EC,d_a_acorn_leaf.o,.text,42,884,3444,82.00
+00000000,global_destructor_chain.o,.dtors,1,4,4,4.00
+00000000,d_a_acorn_leaf.o,.rodata,14,49,117,8.36
+00000000,d_a_acorn_leaf.o,.data,9,136,416,46.22
+00000000,global_destructor_chain.o,.bss,1,4,4,4.00
+00000008,d_a_acorn_leaf.o,.bss,2,12,24,12.00

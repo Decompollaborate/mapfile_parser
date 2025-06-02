@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.9.4] - 2025-06-02
+
+### Changed
+
+- Implement parsing for `mwld` 2.7+ generated mapfiles.
+- Handle `*fill*`s in `mwld`.
+
 ## [2.9.3] - 2025-06-01
 
 ### Fixed
@@ -613,6 +620,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.9.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.3...2.9.4
 [2.9.3]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.2...2.9.3
 [2.9.2]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.1...2.9.2
 [2.9.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.0...2.9.1

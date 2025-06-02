@@ -1,0 +1,12 @@
+00000000,code,_prolog
+0000002C,code,_epilog
+00000058,code,_unresolved
+00000078,code,Create__9daAndsw_cFv
+000000B8,code,create__9daAndsw_cFv
+00000120,code,execute__9daAndsw_cFv
+000001BC,code,_delete__9daAndsw_cFv
+000001C4,code,daAndsw_Execute__FP9daAndsw_c
+000001E4,code,daAndsw_Delete__FP9daAndsw_c
+00000204,code,daAndsw_Create__FP10fopAc_ac_c
+00000000,data,l_daAndsw_Method
+00000020,data,g_profile_ANDSW

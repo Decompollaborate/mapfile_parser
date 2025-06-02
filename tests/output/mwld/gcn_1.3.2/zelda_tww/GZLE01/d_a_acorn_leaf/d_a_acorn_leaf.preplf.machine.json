@@ -1,0 +1,680 @@
+{
+    "segments": [
+        {
+            "name": ".compress.init",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".init",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".compress.text",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".text",
+            "vram": 0,
+            "size": 3804,
+            "vrom": 64,
+            "files": [
+                {
+                    "filepath": "executor.o",
+                    "sectionType": ".text",
+                    "vram": 0,
+                    "size": 120,
+                    "vrom": 64,
+                    "symbols": [
+                        {
+                            "name": "_prolog",
+                            "vram": 0,
+                            "size": 44,
+                            "vrom": 64
+                        },
+                        {
+                            "name": "_epilog",
+                            "vram": 44,
+                            "size": 44,
+                            "vrom": 108
+                        },
+                        {
+                            "name": "_unresolved",
+                            "vram": 88,
+                            "size": 32,
+                            "vrom": 152
+                        }
+                    ]
+                },
+                {
+                    "filepath": "global_destructor_chain.o",
+                    "sectionType": ".text",
+                    "vram": 120,
+                    "size": 116,
+                    "vrom": 184,
+                    "symbols": [
+                        {
+                            "name": "__register_global_object",
+                            "vram": 120,
+                            "size": 28,
+                            "vrom": 184
+                        },
+                        {
+                            "name": "__destroy_global_chain",
+                            "vram": 148,
+                            "size": 88,
+                            "vrom": 212
+                        }
+                    ]
+                },
+                {
+                    "filepath": "d_a_acorn_leaf.o",
+                    "sectionType": ".text",
+                    "vram": 236,
+                    "size": 3444,
+                    "vrom": 300,
+                    "symbols": [
+                        {
+                            "name": "CheckCreateHeap__FP10fopAc_ac_c",
+                            "vram": 236,
+                            "size": 32,
+                            "vrom": 300
+                        },
+                        {
+                            "name": "CreateHeap__9daAleaf_cFv",
+                            "vram": 268,
+                            "size": 332,
+                            "vrom": 332
+                        },
+                        {
+                            "name": "CreateInit__9daAleaf_cFv",
+                            "vram": 600,
+                            "size": 188,
+                            "vrom": 664
+                        },
+                        {
+                            "name": "create_acorn__9daAleaf_cFv",
+                            "vram": 788,
+                            "size": 112,
+                            "vrom": 852
+                        },
+                        {
+                            "name": "create_acorn_sub__9daAleaf_cFb",
+                            "vram": 900,
+                            "size": 220,
+                            "vrom": 964
+                        },
+                        {
+                            "name": "__dt__4cXyzFv",
+                            "vram": 1120,
+                            "size": 60,
+                            "vrom": 1184
+                        },
+                        {
+                            "name": "_create__9daAleaf_cFv",
+                            "vram": 1180,
+                            "size": 336,
+                            "vrom": 1244
+                        },
+                        {
+                            "name": "__dt__13mDoExt_bckAnmFv",
+                            "vram": 1516,
+                            "size": 92,
+                            "vrom": 1580
+                        },
+                        {
+                            "name": "__dt__14mDoExt_baseAnmFv",
+                            "vram": 1608,
+                            "size": 72,
+                            "vrom": 1672
+                        },
+                        {
+                            "name": "__dt__8dCcD_CylFv",
+                            "vram": 1680,
+                            "size": 204,
+                            "vrom": 1744
+                        },
+                        {
+                            "name": "__dt__8cM3dGCylFv",
+                            "vram": 1884,
+                            "size": 72,
+                            "vrom": 1948
+                        },
+                        {
+                            "name": "__dt__14cCcD_ShapeAttrFv",
+                            "vram": 1956,
+                            "size": 92,
+                            "vrom": 2020
+                        },
+                        {
+                            "name": "__dt__8cM3dGAabFv",
+                            "vram": 2048,
+                            "size": 72,
+                            "vrom": 2112
+                        },
+                        {
+                            "name": "set_mtx__9daAleaf_cFv",
+                            "vram": 2120,
+                            "size": 136,
+                            "vrom": 2184
+                        },
+                        {
+                            "name": "_execute__9daAleaf_cFv",
+                            "vram": 2256,
+                            "size": 884,
+                            "vrom": 2320
+                        },
+                        {
+                            "name": "_draw__9daAleaf_cFv",
+                            "vram": 3140,
+                            "size": 144,
+                            "vrom": 3204
+                        },
+                        {
+                            "name": "daAleaf_Create__FPv",
+                            "vram": 3284,
+                            "size": 32,
+                            "vrom": 3348
+                        },
+                        {
+                            "name": "daAleaf_Delete__FPv",
+                            "vram": 3316,
+                            "size": 48,
+                            "vrom": 3380
+                        },
+                        {
+                            "name": "daAleaf_Draw__FPv",
+                            "vram": 3364,
+                            "size": 36,
+                            "vrom": 3428
+                        },
+                        {
+                            "name": "daAleaf_Execute__FPv",
+                            "vram": 3400,
+                            "size": 36,
+                            "vrom": 3464
+                        },
+                        {
+                            "name": "daAleaf_IsDelete__FPv",
+                            "vram": 3436,
+                            "size": 8,
+                            "vrom": 3500
+                        },
+                        {
+                            "name": "GetShapeAttr__8dCcD_CylFv",
+                            "vram": 3444,
+                            "size": 16,
+                            "vrom": 3508
+                        },
+                        {
+                            "name": "GetCoCP__12cCcD_CylAttrFv",
+                            "vram": 3460,
+                            "size": 8,
+                            "vrom": 3524
+                        },
+                        {
+                            "name": "GetCoCP__12cCcD_CylAttrCFv",
+                            "vram": 3468,
+                            "size": 8,
+                            "vrom": 3532
+                        },
+                        {
+                            "name": "CrossAtTg__12cCcD_CylAttrCFRC12cCcD_AabAttrP4cXyz",
+                            "vram": 3476,
+                            "size": 8,
+                            "vrom": 3540
+                        },
+                        {
+                            "name": "CrossAtTg__12cCcD_CylAttrCFRC12cCcD_PntAttrP4cXyz",
+                            "vram": 3484,
+                            "size": 8,
+                            "vrom": 3548
+                        },
+                        {
+                            "name": "CrossAtTg__12cCcD_CylAttrCFRC14cCcD_ShapeAttrP4cXyz",
+                            "vram": 3492,
+                            "size": 56,
+                            "vrom": 3556
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC12cCcD_AabAttrPf",
+                            "vram": 3548,
+                            "size": 8,
+                            "vrom": 3612
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC12cCcD_TriAttrPf",
+                            "vram": 3556,
+                            "size": 8,
+                            "vrom": 3620
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC12cCcD_PntAttrPf",
+                            "vram": 3564,
+                            "size": 8,
+                            "vrom": 3628
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC14cCcD_ShapeAttrPf",
+                            "vram": 3572,
+                            "size": 56,
+                            "vrom": 3636
+                        },
+                        {
+                            "name": "GetGObjInf__12cCcD_GObjInfCFv",
+                            "vram": 3628,
+                            "size": 4,
+                            "vrom": 3692
+                        },
+                        {
+                            "name": "GetShapeAttr__8cCcD_ObjCFv",
+                            "vram": 3632,
+                            "size": 8,
+                            "vrom": 3696
+                        },
+                        {
+                            "name": "CrossAtTg__14cCcD_ShapeAttrCFRC14cCcD_ShapeAttrP4cXyz",
+                            "vram": 3640,
+                            "size": 8,
+                            "vrom": 3704
+                        },
+                        {
+                            "name": "CrossCo__14cCcD_ShapeAttrCFRC14cCcD_ShapeAttrPf",
+                            "vram": 3648,
+                            "size": 8,
+                            "vrom": 3712
+                        },
+                        {
+                            "name": "GetCoCP__14cCcD_ShapeAttrFv",
+                            "vram": 3656,
+                            "size": 12,
+                            "vrom": 3720
+                        },
+                        {
+                            "name": "GetCoCP__14cCcD_ShapeAttrCFv",
+                            "vram": 3668,
+                            "size": 12,
+                            "vrom": 3732
+                        },
+                        {
+                            "name": ".text",
+                            "vram": 3680,
+                            "size": 0,
+                            "vrom": 3744
+                        },
+                        {
+                            "name": ".text",
+                            "vram": 3680,
+                            "size": 124,
+                            "vrom": 3744
+                        },
+                        {
+                            "name": "PrmAbstract<Q37daTsubo5Act_c5Prm_e>__5daObjFPC10fopAc_ac_cQ37daTsubo5Act_c5Prm_eQ37daTsubo5Act_c5Prm_e",
+                            "vram": 3680,
+                            "size": 28,
+                            "vrom": 3744
+                        },
+                        {
+                            "name": "__sinit_d_a_acorn_leaf_cpp",
+                            "vram": 3708,
+                            "size": 80,
+                            "vrom": 3772
+                        },
+                        {
+                            "name": "@280@__dt__8dCcD_CylFv",
+                            "vram": 3788,
+                            "size": 8,
+                            "vrom": 3852
+                        },
+                        {
+                            "name": "@248@__dt__8dCcD_CylFv",
+                            "vram": 3796,
+                            "size": 8,
+                            "vrom": 3860
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".compress.fini",
+            "vram": 0,
+            "size": 0,
+            "vrom": 3868,
+            "files": []
+        },
+        {
+            "name": ".fini",
+            "vram": 0,
+            "size": 0,
+            "vrom": 3868,
+            "files": []
+        },
+        {
+            "name": ".rodata",
+            "vram": 0,
+            "size": 117,
+            "vrom": 3872,
+            "files": [
+                {
+                    "filepath": "d_a_acorn_leaf.o",
+                    "sectionType": ".rodata",
+                    "vram": 0,
+                    "size": 117,
+                    "vrom": 3872,
+                    "symbols": [
+                        {
+                            "name": "m_arcname__9daAleaf_c",
+                            "vram": 0,
+                            "size": 6,
+                            "vrom": 3872
+                        },
+                        {
+                            "name": "@4032",
+                            "vram": 8,
+                            "size": 4,
+                            "vrom": 3880
+                        },
+                        {
+                            "name": "@4045",
+                            "vram": 12,
+                            "size": 4,
+                            "vrom": 3884
+                        },
+                        {
+                            "name": "@4046",
+                            "vram": 16,
+                            "size": 4,
+                            "vrom": 3888
+                        },
+                        {
+                            "name": "@4047",
+                            "vram": 20,
+                            "size": 4,
+                            "vrom": 3892
+                        },
+                        {
+                            "name": "@4048",
+                            "vram": 24,
+                            "size": 4,
+                            "vrom": 3896
+                        },
+                        {
+                            "name": "@4331",
+                            "vram": 32,
+                            "size": 8,
+                            "vrom": 3904
+                        },
+                        {
+                            "name": "@4332",
+                            "vram": 40,
+                            "size": 8,
+                            "vrom": 3912
+                        },
+                        {
+                            "name": "@4333",
+                            "vram": 48,
+                            "size": 4,
+                            "vrom": 3920
+                        },
+                        {
+                            "name": "@4334",
+                            "vram": 52,
+                            "size": 4,
+                            "vrom": 3924
+                        },
+                        {
+                            "name": "@4335",
+                            "vram": 56,
+                            "size": 4,
+                            "vrom": 3928
+                        },
+                        {
+                            "name": "@4336",
+                            "vram": 60,
+                            "size": 4,
+                            "vrom": 3932
+                        },
+                        {
+                            "name": "@4423",
+                            "vram": 64,
+                            "size": 4,
+                            "vrom": 3936
+                        },
+                        {
+                            "name": "@stringBase0",
+                            "vram": 68,
+                            "size": 49,
+                            "vrom": 3940
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".ctors",
+            "vram": 0,
+            "size": 4,
+            "vrom": 3992,
+            "files": [
+                {
+                    "filepath": "d_a_acorn_leaf.o",
+                    "sectionType": ".ctors",
+                    "vram": 0,
+                    "size": 4,
+                    "vrom": 3992,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".dtors",
+            "vram": 0,
+            "size": 4,
+            "vrom": 3996,
+            "files": [
+                {
+                    "filepath": "global_destructor_chain.o",
+                    "sectionType": ".dtors",
+                    "vram": 0,
+                    "size": 4,
+                    "vrom": 3996,
+                    "symbols": [
+                        {
+                            "name": "__destroy_global_chain_reference",
+                            "vram": 0,
+                            "size": 4,
+                            "vrom": 3996
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "extab",
+            "vram": 0,
+            "size": 0,
+            "vrom": 4000,
+            "files": []
+        },
+        {
+            "name": "extabindex",
+            "vram": 0,
+            "size": 0,
+            "vrom": 4000,
+            "files": []
+        },
+        {
+            "name": ".BINARY",
+            "vram": 0,
+            "size": 0,
+            "vrom": 4000,
+            "files": []
+        },
+        {
+            "name": ".data",
+            "vram": 0,
+            "size": 416,
+            "vrom": 4000,
+            "files": [
+                {
+                    "filepath": "d_a_acorn_leaf.o",
+                    "sectionType": ".data",
+                    "vram": 0,
+                    "size": 416,
+                    "vrom": 4000,
+                    "symbols": [
+                        {
+                            "name": "l_cyl_src",
+                            "vram": 0,
+                            "size": 68,
+                            "vrom": 4000
+                        },
+                        {
+                            "name": "daAleafMethodTable",
+                            "vram": 68,
+                            "size": 32,
+                            "vrom": 4068
+                        },
+                        {
+                            "name": "g_profile_ACORN_LEAF",
+                            "vram": 100,
+                            "size": 48,
+                            "vrom": 4100
+                        },
+                        {
+                            "name": "__vt__13mDoExt_bckAnm",
+                            "vram": 148,
+                            "size": 12,
+                            "vrom": 4148
+                        },
+                        {
+                            "name": "__vt__14mDoExt_baseAnm",
+                            "vram": 160,
+                            "size": 12,
+                            "vrom": 4160
+                        },
+                        {
+                            "name": "__vt__8dCcD_Cyl",
+                            "vram": 172,
+                            "size": 136,
+                            "vrom": 4172
+                        },
+                        {
+                            "name": "__vt__8cM3dGCyl",
+                            "vram": 308,
+                            "size": 12,
+                            "vrom": 4308
+                        },
+                        {
+                            "name": "__vt__8cM3dGAab",
+                            "vram": 320,
+                            "size": 12,
+                            "vrom": 4320
+                        },
+                        {
+                            "name": "__vt__14cCcD_ShapeAttr",
+                            "vram": 332,
+                            "size": 84,
+                            "vrom": 4332
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".sdata",
+            "vram": 0,
+            "size": 0,
+            "vrom": 4416,
+            "files": []
+        },
+        {
+            "name": ".sbss",
+            "vram": 0,
+            "size": 0,
+            "vrom": 4416,
+            "files": []
+        },
+        {
+            "name": ".sdata2",
+            "vram": 0,
+            "size": 0,
+            "vrom": 4416,
+            "files": []
+        },
+        {
+            "name": ".sbss2",
+            "vram": 0,
+            "size": 0,
+            "vrom": 4416,
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sdata0",
+            "vram": 0,
+            "size": 0,
+            "vrom": 4416,
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sbss0",
+            "vram": 0,
+            "size": 0,
+            "vrom": 4416,
+            "files": []
+        },
+        {
+            "name": ".bss",
+            "vram": 0,
+            "size": 32,
+            "vrom": 4416,
+            "files": [
+                {
+                    "filepath": "global_destructor_chain.o",
+                    "sectionType": ".bss",
+                    "vram": 0,
+                    "size": 4,
+                    "vrom": null,
+                    "symbols": [
+                        {
+                            "name": "__global_destructor_chain",
+                            "vram": 0,
+                            "size": 4,
+                            "vrom": null
+                        }
+                    ]
+                },
+                {
+                    "filepath": "d_a_acorn_leaf.o",
+                    "sectionType": ".bss",
+                    "vram": 8,
+                    "size": 24,
+                    "vrom": null,
+                    "symbols": [
+                        {
+                            "name": "@4011",
+                            "vram": 8,
+                            "size": 12,
+                            "vrom": null
+                        },
+                        {
+                            "name": "acorn_offset",
+                            "vram": 20,
+                            "size": 12,
+                            "vrom": null
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}
