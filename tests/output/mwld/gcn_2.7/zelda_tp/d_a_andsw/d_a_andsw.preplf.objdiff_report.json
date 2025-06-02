@@ -1,105 +1,61 @@
 {
   "measures": {
     "fuzzy_match_percent": 100.0,
+    "total_code": "548",
+    "matched_code": "548",
     "matched_code_percent": 100.0,
     "matched_data_percent": 100.0,
+    "total_functions": 10,
+    "matched_functions": 10,
     "matched_functions_percent": 100.0,
-    "complete_code_percent": 100.0,
     "complete_data_percent": 100.0,
-    "total_units": 15
+    "total_units": 2
   },
   "units": [
     {
-      "name": ".text \texecutor",
+      "name": "executor",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "120",
+        "matched_code": "120",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 3,
+        "matched_functions": 3,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
       "sections": [
         {
-          "name": "1",
+          "name": ".text",
           "size": "120",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
         }
       ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          ".text \texecutor"
-        ]
-      }
-    },
-    {
-      "name": "_prolog \texecutor",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+      "functions": [
         {
-          "name": "4",
+          "name": "_prolog",
           "size": "44",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          "_prolog \texecutor"
-        ]
-      }
-    },
-    {
-      "name": "_epilog \texecutor",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+        },
         {
-          "name": "4",
+          "name": "_epilog",
           "size": "44",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "44"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          "_epilog \texecutor"
-        ]
-      }
-    },
-    {
-      "name": "_unresolved \texecutor",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+        },
         {
-          "name": "4",
+          "name": "_unresolved",
           "size": "32",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "88"
           }
@@ -109,205 +65,93 @@
         "module_name": ".text",
         "module_id": 3,
         "progress_categories": [
-          "_unresolved \texecutor"
+          "executor"
         ]
       }
     },
     {
-      "name": ".text \td_a_andsw",
+      "name": "d_a_andsw",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "428",
+        "matched_code": "428",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 7,
+        "matched_functions": 7,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
       "sections": [
         {
-          "name": "1",
+          "name": ".text",
           "size": "428",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "120"
           }
+        },
+        {
+          "name": ".data",
+          "size": "80",
+          "metadata": {
+            "virtual_address": "0"
+          }
         }
       ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          ".text \td_a_andsw"
-        ]
-      }
-    },
-    {
-      "name": "Create__9daAndsw_cFv \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+      "functions": [
         {
-          "name": "4",
+          "name": "Create__9daAndsw_cFv",
           "size": "64",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "120"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          "Create__9daAndsw_cFv \td_a_andsw"
-        ]
-      }
-    },
-    {
-      "name": "create__9daAndsw_cFv \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+        },
         {
-          "name": "4",
+          "name": "create__9daAndsw_cFv",
           "size": "104",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "184"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          "create__9daAndsw_cFv \td_a_andsw"
-        ]
-      }
-    },
-    {
-      "name": "execute__9daAndsw_cFv \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+        },
         {
-          "name": "4",
+          "name": "execute__9daAndsw_cFv",
           "size": "156",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "288"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          "execute__9daAndsw_cFv \td_a_andsw"
-        ]
-      }
-    },
-    {
-      "name": "_delete__9daAndsw_cFv \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+        },
         {
-          "name": "4",
+          "name": "_delete__9daAndsw_cFv",
           "size": "8",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "444"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          "_delete__9daAndsw_cFv \td_a_andsw"
-        ]
-      }
-    },
-    {
-      "name": "daAndsw_Execute__FP9daAndsw_c \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+        },
         {
-          "name": "4",
+          "name": "daAndsw_Execute__FP9daAndsw_c",
           "size": "32",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "452"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          "daAndsw_Execute__FP9daAndsw_c \td_a_andsw"
-        ]
-      }
-    },
-    {
-      "name": "daAndsw_Delete__FP9daAndsw_c \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+        },
         {
-          "name": "4",
+          "name": "daAndsw_Delete__FP9daAndsw_c",
           "size": "32",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "484"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          "daAndsw_Delete__FP9daAndsw_c \td_a_andsw"
-        ]
-      }
-    },
-    {
-      "name": "daAndsw_Create__FP10fopAc_ac_c \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+        },
         {
-          "name": "4",
+          "name": "daAndsw_Create__FP10fopAc_ac_c",
           "size": "32",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "516"
           }
@@ -317,85 +161,7 @@
         "module_name": ".text",
         "module_id": 3,
         "progress_categories": [
-          "daAndsw_Create__FP10fopAc_ac_c \td_a_andsw"
-        ]
-      }
-    },
-    {
-      "name": ".data \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "1",
-          "size": "80",
-          "metadata": {
-            "virtual_address": "0"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".data",
-        "module_id": 12,
-        "progress_categories": [
-          ".data \td_a_andsw"
-        ]
-      }
-    },
-    {
-      "name": "l_daAndsw_Method \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "4",
-          "size": "32",
-          "metadata": {
-            "virtual_address": "0"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".data",
-        "module_id": 12,
-        "progress_categories": [
-          "l_daAndsw_Method \td_a_andsw"
-        ]
-      }
-    },
-    {
-      "name": "g_profile_ANDSW \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "4",
-          "size": "48",
-          "metadata": {
-            "virtual_address": "32"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".data",
-        "module_id": 12,
-        "progress_categories": [
-          "g_profile_ANDSW \td_a_andsw"
+          "d_a_andsw"
         ]
       }
     }
@@ -403,196 +169,33 @@
   "version": 2,
   "categories": [
     {
-      "id": ".text \texecutor",
-      "name": ".text \texecutor",
+      "id": "executor",
+      "name": "executor",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "120",
+        "matched_code": "120",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 3,
+        "matched_functions": 3,
         "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 1
       }
     },
     {
-      "id": "_prolog \texecutor",
-      "name": "_prolog \texecutor",
+      "id": "d_a_andsw",
+      "name": "d_a_andsw",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "428",
+        "matched_code": "428",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 7,
+        "matched_functions": 7,
         "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "_epilog \texecutor",
-      "name": "_epilog \texecutor",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "_unresolved \texecutor",
-      "name": "_unresolved \texecutor",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": ".text \td_a_andsw",
-      "name": ".text \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "Create__9daAndsw_cFv \td_a_andsw",
-      "name": "Create__9daAndsw_cFv \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "create__9daAndsw_cFv \td_a_andsw",
-      "name": "create__9daAndsw_cFv \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "execute__9daAndsw_cFv \td_a_andsw",
-      "name": "execute__9daAndsw_cFv \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "_delete__9daAndsw_cFv \td_a_andsw",
-      "name": "_delete__9daAndsw_cFv \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "daAndsw_Execute__FP9daAndsw_c \td_a_andsw",
-      "name": "daAndsw_Execute__FP9daAndsw_c \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "daAndsw_Delete__FP9daAndsw_c \td_a_andsw",
-      "name": "daAndsw_Delete__FP9daAndsw_c \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "daAndsw_Create__FP10fopAc_ac_c \td_a_andsw",
-      "name": "daAndsw_Create__FP10fopAc_ac_c \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": ".data \td_a_andsw",
-      "name": ".data \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "l_daAndsw_Method \td_a_andsw",
-      "name": "l_daAndsw_Method \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "g_profile_ANDSW \td_a_andsw",
-      "name": "g_profile_ANDSW \td_a_andsw",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 1
       }

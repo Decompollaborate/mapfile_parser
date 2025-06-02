@@ -1,1 +1,20 @@
 Section,Symbol name,VRAM,Size in bytes
+executor.o,_prolog,00000000,44
+executor.o,_epilog,0000002C,44
+executor.o,_unresolved,00000058,32
+d_a_alldie.o,getEventNo__10daAlldie_cFv,00000078,12
+d_a_alldie.o,getSwbit__10daAlldie_cFv,00000084,12
+d_a_alldie.o,actionWait__10daAlldie_cFv,00000090,8
+d_a_alldie.o,actionCheck__10daAlldie_cFv,00000098,80
+d_a_alldie.o,actionTimer__10daAlldie_cFv,000000E8,176
+d_a_alldie.o,actionOrder__10daAlldie_cFv,00000198,104
+d_a_alldie.o,actionEvent__10daAlldie_cFv,00000200,164
+d_a_alldie.o,actionNext__10daAlldie_cFv,000002A4,204
+d_a_alldie.o,execute__10daAlldie_cFv,00000370,124
+d_a_alldie.o,daAlldie_Draw__FP10daAlldie_c,000003EC,8
+d_a_alldie.o,daAlldie_Execute__FP10daAlldie_c,000003F4,36
+d_a_alldie.o,daAlldie_IsDelete__FP10daAlldie_c,00000418,8
+d_a_alldie.o,daAlldie_Delete__FP10daAlldie_c,00000420,48
+d_a_alldie.o,daAlldie_Create__FP10fopAc_ac_c,00000450,300
+d_a_alldie.o,l_daAlldie_Method,00000000,32
+d_a_alldie.o,g_profile_ALLDIE,00000020,48

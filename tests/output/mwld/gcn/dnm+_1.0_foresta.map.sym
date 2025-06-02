@@ -5377,7 +5377,6 @@
 0017F21C,code,bIT_actor_move
 0017F2C4,code,.text
 0017F2C4,code,bIT_actor_draw
-0017F2F8,code,.text
 0017F2F8,code,bPI_classifyitemDataTable
 0017F458,code,bPI_set_draw_tbl
 0017F6B4,code,bPI_chg_draw_tbl
@@ -7421,7 +7420,6 @@
 00205A6C,code,aNOR_actor_init
 00205AA4,code,aNOR_actor_move
 00205ADC,code,aNOR_actor_draw
-00205B14,code,.text
 00205B14,code,aNPC_dma_cloth_data
 00205BE0,code,aNPC_dma_cloth_data_fg
 00205D38,code,aNPC_reset_trans_condition_cloth_data
@@ -7750,7 +7748,6 @@
 00216D18,code,aNPC_actor_move_c
 00216EAC,code,aNPC_set_talk_area_info
 00216FAC,code,aNPC_talk_area_check
-002170A0,code,.text
 002170A0,code,aNPC_dma_cloth_data
 0021716C,code,aNPC_dma_cloth_data_fg
 002172C4,code,aNPC_reset_trans_condition_cloth_data
@@ -10888,7 +10885,6 @@
 0029D938,code,mBR_birthday_ovl_set_proc
 0029D958,code,mBR_birthday_ovl_construct
 0029DA14,code,mBR_birthday_ovl_destruct
-0029DA24,code,.text
 0029DA24,code,mBD_roll_control
 0029DBB4,code,mBD_roll_control2
 0029DC78,code,mBD_move_Move
@@ -11107,7 +11103,6 @@
 002B35E4,code,mEE_editEndChk_ovl_set_proc
 002B3604,code,mEE_editEndChk_ovl_construct
 002B3674,code,mEE_editEndChk_ovl_destruct
-002B3684,code,.text
 002B3684,code,mEditor_get_code
 002B36F4,code,mEditor_Set_Stick_Area
 002B387C,code,mEditor_Check_Move_Cursol
@@ -11201,7 +11196,6 @@
 002BABE4,code,mHW_haniwa_ovl_set_proc
 002BAC38,code,mHW_haniwa_ovl_construct
 002BAD78,code,mHW_haniwa_ovl_destruct
-002BAD88,code,.text
 002BAD88,code,mHB_move_Move
 002BADB4,code,mHB_move_Wait
 002BADF4,code,mHB_move_End
@@ -11345,7 +11339,6 @@
 002C5728,code,mNW_needlework_ovl_init
 002C5864,code,mNW_needlework_ovl_construct
 002C5914,code,mNW_needlework_ovl_destruct
-002C595C,code,.text
 002C595C,code,mNT_roll_control
 002C5AB8,code,mNT_roll_control2
 002C5B7C,code,mNT_Play_page_read

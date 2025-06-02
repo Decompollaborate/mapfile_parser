@@ -14,100 +14,82 @@
             "vrom": 64,
             "files": [
                 {
-                    "filepath": ".text \texecutor.o",
-                    "sectionType": "1",
+                    "filepath": "executor.o",
+                    "sectionType": ".text",
                     "vram": 0,
                     "size": 120,
                     "vrom": 64,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "_prolog",
+                            "vram": 0,
+                            "size": 44,
+                            "vrom": 64
+                        },
+                        {
+                            "name": "_epilog",
+                            "vram": 44,
+                            "size": 44,
+                            "vrom": 108
+                        },
+                        {
+                            "name": "_unresolved",
+                            "vram": 88,
+                            "size": 32,
+                            "vrom": 152
+                        }
+                    ]
                 },
                 {
-                    "filepath": "_prolog \texecutor.o",
-                    "sectionType": "4",
-                    "vram": 0,
-                    "size": 44,
-                    "vrom": 64,
-                    "symbols": []
-                },
-                {
-                    "filepath": "_epilog \texecutor.o",
-                    "sectionType": "4",
-                    "vram": 44,
-                    "size": 44,
-                    "vrom": 108,
-                    "symbols": []
-                },
-                {
-                    "filepath": "_unresolved \texecutor.o",
-                    "sectionType": "4",
-                    "vram": 88,
-                    "size": 32,
-                    "vrom": 152,
-                    "symbols": []
-                },
-                {
-                    "filepath": ".text \td_a_andsw.o",
-                    "sectionType": "1",
+                    "filepath": "d_a_andsw.o",
+                    "sectionType": ".text",
                     "vram": 120,
                     "size": 428,
                     "vrom": 184,
-                    "symbols": []
-                },
-                {
-                    "filepath": "Create__9daAndsw_cFv \td_a_andsw.o",
-                    "sectionType": "4",
-                    "vram": 120,
-                    "size": 64,
-                    "vrom": 184,
-                    "symbols": []
-                },
-                {
-                    "filepath": "create__9daAndsw_cFv \td_a_andsw.o",
-                    "sectionType": "4",
-                    "vram": 184,
-                    "size": 104,
-                    "vrom": 248,
-                    "symbols": []
-                },
-                {
-                    "filepath": "execute__9daAndsw_cFv \td_a_andsw.o",
-                    "sectionType": "4",
-                    "vram": 288,
-                    "size": 156,
-                    "vrom": 352,
-                    "symbols": []
-                },
-                {
-                    "filepath": "_delete__9daAndsw_cFv \td_a_andsw.o",
-                    "sectionType": "4",
-                    "vram": 444,
-                    "size": 8,
-                    "vrom": 508,
-                    "symbols": []
-                },
-                {
-                    "filepath": "daAndsw_Execute__FP9daAndsw_c \td_a_andsw.o",
-                    "sectionType": "4",
-                    "vram": 452,
-                    "size": 32,
-                    "vrom": 516,
-                    "symbols": []
-                },
-                {
-                    "filepath": "daAndsw_Delete__FP9daAndsw_c \td_a_andsw.o",
-                    "sectionType": "4",
-                    "vram": 484,
-                    "size": 32,
-                    "vrom": 548,
-                    "symbols": []
-                },
-                {
-                    "filepath": "daAndsw_Create__FP10fopAc_ac_c \td_a_andsw.o",
-                    "sectionType": "4",
-                    "vram": 516,
-                    "size": 32,
-                    "vrom": 580,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "Create__9daAndsw_cFv",
+                            "vram": 120,
+                            "size": 64,
+                            "vrom": 184
+                        },
+                        {
+                            "name": "create__9daAndsw_cFv",
+                            "vram": 184,
+                            "size": 104,
+                            "vrom": 248
+                        },
+                        {
+                            "name": "execute__9daAndsw_cFv",
+                            "vram": 288,
+                            "size": 156,
+                            "vrom": 352
+                        },
+                        {
+                            "name": "_delete__9daAndsw_cFv",
+                            "vram": 444,
+                            "size": 8,
+                            "vrom": 508
+                        },
+                        {
+                            "name": "daAndsw_Execute__FP9daAndsw_c",
+                            "vram": 452,
+                            "size": 32,
+                            "vrom": 516
+                        },
+                        {
+                            "name": "daAndsw_Delete__FP9daAndsw_c",
+                            "vram": 484,
+                            "size": 32,
+                            "vrom": 548
+                        },
+                        {
+                            "name": "daAndsw_Create__FP10fopAc_ac_c",
+                            "vram": 516,
+                            "size": 32,
+                            "vrom": 580
+                        }
+                    ]
                 }
             ]
         },
@@ -118,16 +100,16 @@
             "vrom": 612,
             "files": [
                 {
-                    "filepath": ".ctors$99 \tLinker Generated Symbol File",
-                    "sectionType": "1",
+                    "filepath": "Linker Generated Symbol File",
+                    "sectionType": ".ctors$99",
                     "vram": 0,
                     "size": 4,
                     "vrom": 612,
                     "symbols": []
                 },
                 {
-                    "filepath": "_ctors$99 \tLinker Generated Symbol File",
-                    "sectionType": "4",
+                    "filepath": "Linker Generated Symbol File",
+                    "sectionType": "_ctors$99",
                     "vram": 0,
                     "size": 4,
                     "vrom": 612,
@@ -142,16 +124,16 @@
             "vrom": 616,
             "files": [
                 {
-                    "filepath": ".dtors$99 \tLinker Generated Symbol File",
-                    "sectionType": "1",
+                    "filepath": "Linker Generated Symbol File",
+                    "sectionType": ".dtors$99",
                     "vram": 0,
                     "size": 4,
                     "vrom": 616,
                     "symbols": []
                 },
                 {
-                    "filepath": "_dtors$99 \tLinker Generated Symbol File",
-                    "sectionType": "4",
+                    "filepath": "Linker Generated Symbol File",
+                    "sectionType": "_dtors$99",
                     "vram": 0,
                     "size": 4,
                     "vrom": 616,
@@ -166,28 +148,25 @@
             "vrom": 624,
             "files": [
                 {
-                    "filepath": ".data \td_a_andsw.o",
-                    "sectionType": "1",
+                    "filepath": "d_a_andsw.o",
+                    "sectionType": ".data",
                     "vram": 0,
                     "size": 80,
                     "vrom": 624,
-                    "symbols": []
-                },
-                {
-                    "filepath": "l_daAndsw_Method \td_a_andsw.o",
-                    "sectionType": "4",
-                    "vram": 0,
-                    "size": 32,
-                    "vrom": 624,
-                    "symbols": []
-                },
-                {
-                    "filepath": "g_profile_ANDSW \td_a_andsw.o",
-                    "sectionType": "4",
-                    "vram": 32,
-                    "size": 48,
-                    "vrom": 656,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "l_daAndsw_Method",
+                            "vram": 0,
+                            "size": 32,
+                            "vrom": 624
+                        },
+                        {
+                            "name": "g_profile_ANDSW",
+                            "vram": 32,
+                            "size": 48,
+                            "vrom": 656
+                        }
+                    ]
                 }
             ]
         }

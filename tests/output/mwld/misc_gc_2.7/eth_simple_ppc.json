@@ -28,52 +28,43 @@
             "vrom": "0x000040",
             "files": [
                 {
-                    "filepath": ".text \tsimple_ppc.o",
-                    "sectionType": "1",
+                    "filepath": "simple_ppc.o",
+                    "sectionType": ".text",
                     "vram": "0x00000000",
                     "size": "0x2C8",
                     "vrom": "0x000040",
-                    "symbols": []
-                },
-                {
-                    "filepath": "test_1 \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x00000000",
-                    "size": "0xC8",
-                    "vrom": "0x000040",
-                    "symbols": []
-                },
-                {
-                    "filepath": "test_2 \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x000000C8",
-                    "size": "0xC8",
-                    "vrom": "0x000108",
-                    "symbols": []
-                },
-                {
-                    "filepath": "math_op_1 \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x00000190",
-                    "size": "0x98",
-                    "vrom": "0x0001D0",
-                    "symbols": []
-                },
-                {
-                    "filepath": "math_op_2 \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x00000228",
-                    "size": "0x8",
-                    "vrom": "0x000268",
-                    "symbols": []
-                },
-                {
-                    "filepath": "math_op_1_dup \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x00000230",
-                    "size": "0x98",
-                    "vrom": "0x000270",
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "test_1",
+                            "vram": "0x00000000",
+                            "size": "0xC8",
+                            "vrom": "0x000040"
+                        },
+                        {
+                            "name": "test_2",
+                            "vram": "0x000000C8",
+                            "size": "0xC8",
+                            "vrom": "0x000108"
+                        },
+                        {
+                            "name": "math_op_1",
+                            "vram": "0x00000190",
+                            "size": "0x98",
+                            "vrom": "0x0001D0"
+                        },
+                        {
+                            "name": "math_op_2",
+                            "vram": "0x00000228",
+                            "size": "0x8",
+                            "vrom": "0x000268"
+                        },
+                        {
+                            "name": "math_op_1_dup",
+                            "vram": "0x00000230",
+                            "size": "0x98",
+                            "vrom": "0x000270"
+                        }
+                    ]
                 }
             ]
         },
@@ -119,44 +110,37 @@
             "vrom": "0x000308",
             "files": [
                 {
-                    "filepath": "extab \tsimple_ppc.o",
-                    "sectionType": "1",
+                    "filepath": "simple_ppc.o",
+                    "sectionType": "extab",
                     "vram": "0x00000000",
                     "size": "0x20",
                     "vrom": "0x000308",
-                    "symbols": []
-                },
-                {
-                    "filepath": "@16 \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x00000000",
-                    "size": "0x8",
-                    "vrom": "0x000308",
-                    "symbols": []
-                },
-                {
-                    "filepath": "@32 \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x00000008",
-                    "size": "0x8",
-                    "vrom": "0x000310",
-                    "symbols": []
-                },
-                {
-                    "filepath": "@42 \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x00000010",
-                    "size": "0x8",
-                    "vrom": "0x000318",
-                    "symbols": []
-                },
-                {
-                    "filepath": "@56 \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x00000018",
-                    "size": "0x8",
-                    "vrom": "0x000320",
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "@16",
+                            "vram": "0x00000000",
+                            "size": "0x8",
+                            "vrom": "0x000308"
+                        },
+                        {
+                            "name": "@32",
+                            "vram": "0x00000008",
+                            "size": "0x8",
+                            "vrom": "0x000310"
+                        },
+                        {
+                            "name": "@42",
+                            "vram": "0x00000010",
+                            "size": "0x8",
+                            "vrom": "0x000318"
+                        },
+                        {
+                            "name": "@56",
+                            "vram": "0x00000018",
+                            "size": "0x8",
+                            "vrom": "0x000320"
+                        }
+                    ]
                 }
             ]
         },
@@ -188,28 +172,25 @@
             "vrom": "0x000358",
             "files": [
                 {
-                    "filepath": ".sdata \tsimple_ppc.o",
-                    "sectionType": "1",
+                    "filepath": "simple_ppc.o",
+                    "sectionType": ".sdata",
                     "vram": "0x00000000",
                     "size": "0x8",
                     "vrom": "0x000358",
-                    "symbols": []
-                },
-                {
-                    "filepath": "cat \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x00000000",
-                    "size": "0x4",
-                    "vrom": "0x000358",
-                    "symbols": []
-                },
-                {
-                    "filepath": "dog \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x00000004",
-                    "size": "0x4",
-                    "vrom": "0x00035C",
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "cat",
+                            "vram": "0x00000000",
+                            "size": "0x4",
+                            "vrom": "0x000358"
+                        },
+                        {
+                            "name": "dog",
+                            "vram": "0x00000004",
+                            "size": "0x4",
+                            "vrom": "0x00035C"
+                        }
+                    ]
                 }
             ]
         },
@@ -227,20 +208,19 @@
             "vrom": "0x000360",
             "files": [
                 {
-                    "filepath": ".sdata2 \tsimple_ppc.o",
-                    "sectionType": "1",
+                    "filepath": "simple_ppc.o",
+                    "sectionType": ".sdata2",
                     "vram": "0x00000000",
                     "size": "0x8",
                     "vrom": "0x000360",
-                    "symbols": []
-                },
-                {
-                    "filepath": "@13 \tsimple_ppc.o",
-                    "sectionType": "8",
-                    "vram": "0x00000000",
-                    "size": "0x8",
-                    "vrom": "0x000360",
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "@13",
+                            "vram": "0x00000000",
+                            "size": "0x8",
+                            "vrom": "0x000360"
+                        }
+                    ]
                 }
             ]
         },
@@ -279,36 +259,31 @@
             "vrom": "0x000328",
             "files": [
                 {
-                    "filepath": "@17 \tsimple_ppc.o",
-                    "sectionType": "4",
+                    "filepath": "simple_ppc.o",
+                    "sectionType": "@17",
                     "vram": "0x00000000",
                     "size": "0xC",
                     "vrom": "0x000328",
-                    "symbols": []
-                },
-                {
-                    "filepath": "@33 \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x0000000C",
-                    "size": "0xC",
-                    "vrom": "0x000334",
-                    "symbols": []
-                },
-                {
-                    "filepath": "@43 \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x00000018",
-                    "size": "0xC",
-                    "vrom": "0x000340",
-                    "symbols": []
-                },
-                {
-                    "filepath": "@57 \tsimple_ppc.o",
-                    "sectionType": "4",
-                    "vram": "0x00000024",
-                    "size": "0xC",
-                    "vrom": "0x00034C",
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "@33",
+                            "vram": "0x0000000C",
+                            "size": "0xC",
+                            "vrom": "0x000334"
+                        },
+                        {
+                            "name": "@43",
+                            "vram": "0x00000018",
+                            "size": "0xC",
+                            "vrom": "0x000340"
+                        },
+                        {
+                            "name": "@57",
+                            "vram": "0x00000024",
+                            "size": "0xC",
+                            "vrom": "0x00034C"
+                        }
+                    ]
                 }
             ]
         }

@@ -608,15 +608,7 @@ impl MapFile {
         let map_data = preprocess_map_data_mw(map_contents);
 
         let memory_map = parse_memory_map_mw(map_data);
-
-        // Almost every line starts with this information, so instead of duplicating it we put them on one single regex
-        let regex_row_entry = Regex::new(r"^\s*(?P<starting>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<vram>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+)\s+(?P<subline>.+)").unwrap();
-
-        let regex_segment_entry = Regex::new(r"^(?P<name>.+) section layout$").unwrap();
-        let regex_label_entry =
-            Regex::new(r"^(?P<label>lbl_[0-9A-F]{8})\s+(?P<filename>.+?)\s*$").unwrap();
-        let regex_symbol_entry =
-            Regex::new(r"^\s*(?P<name>[^ ]+)\s+(?P<filename>.+?)\s*$").unwrap();
+        let regex_entries = MwRegexEntries::new(map_data);
 
         let mut temp_segment_list = vec![segment::Segment::new_placeholder()];
 
@@ -625,8 +617,8 @@ impl MapFile {
         let mut current_filename = invalid_file_name.to_string();
 
         for line in map_data.lines() {
-            // Check for regex_row_entry since it is more likely to match
-            if let Some(row_entry_match) = regex_row_entry.captures(line) {
+            // Check for regex_entries.common_row first since it is more likely to match
+            if let Some(row_entry_match) = regex_entries.common_row.captures(line) {
                 let starting = utils::parse_hex(&row_entry_match["starting"]);
                 let size = utils::parse_hex(&row_entry_match["size"]);
                 let vram = utils::parse_hex(&row_entry_match["vram"]);
@@ -634,9 +626,9 @@ impl MapFile {
 
                 let subline = &row_entry_match["subline"];
 
-                if regex_label_entry.is_match(subline) {
+                if regex_entries.label.is_match(subline) {
                     // pass
-                } else if let Some(symbol_entry_match) = regex_symbol_entry.captures(subline) {
+                } else if let Some(symbol_entry_match) = regex_entries.symbol.captures(subline) {
                     let filename = &symbol_entry_match["filename"];
 
                     if filename == current_filename {
@@ -645,9 +637,6 @@ impl MapFile {
 
                         if !BANNED_SYMBOL_NAMES.contains(&symbol) {
                             let current_segment = temp_segment_list.last_mut().unwrap();
-                            if current_segment.sections_list.last_mut().is_none() {
-                                println!("{}", current_segment.name);
-                            }
                             let current_section = current_segment.sections_list.last_mut().unwrap();
 
                             let mut new_symbol =
@@ -666,8 +655,6 @@ impl MapFile {
                         }
                     } else {
                         // New file!
-                        current_filename = filename.to_string();
-
                         if size > 0 {
                             let section_type = &symbol_entry_match["name"];
                             let filepath = PathBuf::from(filename);
@@ -681,12 +668,20 @@ impl MapFile {
                             }
 
                             current_segment.sections_list.push(new_section);
+
+                            // I'm not sure how to treat these cases.
+                            // I guess we can treat them as files without symbols for now...
+                            current_filename = if filename == "Linker Generated Symbol File" {
+                                invalid_file_name.to_string()
+                            } else {
+                                filename.to_string()
+                            };
                         }
                     }
                 } else {
                     println!("{}", subline);
                 }
-            } else if let Some(segment_entry_match) = regex_segment_entry.captures(line) {
+            } else if let Some(segment_entry_match) = regex_entries.segment.captures(line) {
                 let name = &segment_entry_match["name"];
 
                 let new_segment = if let Some(segment_entry) = memory_map.get(name) {
@@ -712,7 +707,6 @@ impl MapFile {
     }
 
     fn post_process_segments_mw(temp_segment_list: Vec<segment::Segment>) -> Vec<segment::Segment> {
-        // TODO: actually implement
         let mut segments_list = Vec::with_capacity(temp_segment_list.len());
 
         for (i, segment) in temp_segment_list.into_iter().enumerate() {
@@ -799,6 +793,37 @@ fn parse_memory_map_mw(map_data: &str) -> HashMap<String, MwMemoryMapEntry> {
     }
 
     memory_map
+}
+
+struct MwRegexEntries {
+    common_row: Regex,
+    segment: Regex,
+    label: Regex,
+    symbol: Regex,
+}
+
+impl MwRegexEntries {
+    fn new(map_data: &str) -> Self {
+        // Almost every line starts with this information, so instead of duplicating it we put them on one single regex
+        let common_row = if map_data.contains("address  Size   address  offset") {
+            // mwld 2.7+
+            Regex::new(r"^\s*(?P<starting>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<vram>[0-9a-fA-F]+)\s+(?P<rom>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+)\s+(?P<subline>.+)").unwrap()
+        } else {
+            // mwld 1.3.2-
+            Regex::new(r"^\s*(?P<starting>[0-9a-fA-F]+)\s+(?P<size>[0-9a-fA-F]+)\s+(?P<vram>[0-9a-fA-F]+)\s+(?P<align>[0-9a-fA-F]+)\s+(?P<subline>.+)").unwrap()
+        };
+
+        let segment = Regex::new(r"^(?P<name>.+) section layout$").unwrap();
+        let label = Regex::new(r"^(?P<label>lbl_[0-9A-F]{8})\s+(?P<filename>.+?)\s*$").unwrap();
+        let symbol = Regex::new(r"^\s*(?P<name>[^ ]+)\s+(?P<filename>.+?)\s*$").unwrap();
+
+        Self {
+            common_row,
+            segment,
+            label,
+            symbol,
+        }
+    }
 }
 
 impl MapFile {

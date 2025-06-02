@@ -1,1 +1,16 @@
 Section,Symbol name,VRAM,Size in bytes
+simple_ppc.o,test_1,00000000,200
+simple_ppc.o,test_2,000000C8,200
+simple_ppc.o,math_op_1,00000190,152
+simple_ppc.o,math_op_2,00000228,8
+simple_ppc.o,math_op_1_dup,00000230,152
+simple_ppc.o,@16,00000000,8
+simple_ppc.o,@32,00000008,8
+simple_ppc.o,@42,00000010,8
+simple_ppc.o,@56,00000018,8
+simple_ppc.o,cat,00000000,4
+simple_ppc.o,dog,00000004,4
+simple_ppc.o,@13,00000000,8
+simple_ppc.o,@33,0000000C,12
+simple_ppc.o,@43,00000018,12
+simple_ppc.o,@57,00000024,12

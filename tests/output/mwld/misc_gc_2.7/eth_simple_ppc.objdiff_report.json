@@ -1,157 +1,105 @@
 {
   "measures": {
     "fuzzy_match_percent": 100.0,
+    "total_code": "712",
+    "matched_code": "712",
     "matched_code_percent": 100.0,
     "matched_data_percent": 100.0,
+    "total_functions": 5,
+    "matched_functions": 5,
     "matched_functions_percent": 100.0,
-    "complete_code_percent": 100.0,
     "complete_data_percent": 100.0,
-    "total_units": 20
+    "total_units": 1
   },
   "units": [
     {
-      "name": ".text \tsimple_ppc",
+      "name": "simple_ppc",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "712",
+        "matched_code": "712",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 5,
+        "matched_functions": 5,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
       "sections": [
         {
-          "name": "1",
+          "name": ".text",
           "size": "712",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": "extab",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": ".sdata",
+          "size": "8",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": ".sdata2",
+          "size": "8",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": "@17",
+          "size": "12",
           "metadata": {
             "virtual_address": "0"
           }
         }
       ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          ".text \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "test_1 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+      "functions": [
         {
-          "name": "4",
+          "name": "test_1",
           "size": "200",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          "test_1 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "test_2 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+        },
         {
-          "name": "4",
+          "name": "test_2",
           "size": "200",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "200"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          "test_2 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "math_op_1 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+        },
         {
-          "name": "4",
+          "name": "math_op_1",
           "size": "152",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "400"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          "math_op_1 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "math_op_2 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+        },
         {
-          "name": "4",
+          "name": "math_op_2",
           "size": "8",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "552"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 3,
-        "progress_categories": [
-          "math_op_2 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "math_op_1_dup \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
+        },
         {
-          "name": "4",
+          "name": "math_op_1_dup",
           "size": "152",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "560"
           }
@@ -161,371 +109,7 @@
         "module_name": ".text",
         "module_id": 3,
         "progress_categories": [
-          "math_op_1_dup \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "extab \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "1",
-          "size": "32",
-          "metadata": {
-            "virtual_address": "0"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": "extab",
-        "module_id": 9,
-        "progress_categories": [
-          "extab \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "@16 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "4",
-          "size": "8",
-          "metadata": {
-            "virtual_address": "0"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": "extab",
-        "module_id": 9,
-        "progress_categories": [
-          "@16 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "@32 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "4",
-          "size": "8",
-          "metadata": {
-            "virtual_address": "8"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": "extab",
-        "module_id": 9,
-        "progress_categories": [
-          "@32 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "@42 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "4",
-          "size": "8",
-          "metadata": {
-            "virtual_address": "16"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": "extab",
-        "module_id": 9,
-        "progress_categories": [
-          "@42 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "@56 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "4",
-          "size": "8",
-          "metadata": {
-            "virtual_address": "24"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": "extab",
-        "module_id": 9,
-        "progress_categories": [
-          "@56 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": ".sdata \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "1",
-          "size": "8",
-          "metadata": {
-            "virtual_address": "0"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".sdata",
-        "module_id": 13,
-        "progress_categories": [
-          ".sdata \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "cat \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "4",
-          "size": "4",
-          "metadata": {
-            "virtual_address": "0"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".sdata",
-        "module_id": 13,
-        "progress_categories": [
-          "cat \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "dog \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "4",
-          "size": "4",
-          "metadata": {
-            "virtual_address": "4"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".sdata",
-        "module_id": 13,
-        "progress_categories": [
-          "dog \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": ".sdata2 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "1",
-          "size": "8",
-          "metadata": {
-            "virtual_address": "0"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".sdata2",
-        "module_id": 15,
-        "progress_categories": [
-          ".sdata2 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "@13 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "8",
-          "size": "8",
-          "metadata": {
-            "virtual_address": "0"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".sdata2",
-        "module_id": 15,
-        "progress_categories": [
-          "@13 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "@17 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "4",
-          "size": "12",
-          "metadata": {
-            "virtual_address": "0"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": "extabindex",
-        "module_id": 20,
-        "progress_categories": [
-          "@17 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "@33 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "4",
-          "size": "12",
-          "metadata": {
-            "virtual_address": "12"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": "extabindex",
-        "module_id": 20,
-        "progress_categories": [
-          "@33 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "@43 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "4",
-          "size": "12",
-          "metadata": {
-            "virtual_address": "24"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": "extabindex",
-        "module_id": 20,
-        "progress_categories": [
-          "@43 \tsimple_ppc"
-        ]
-      }
-    },
-    {
-      "name": "@57 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": "4",
-          "size": "12",
-          "metadata": {
-            "virtual_address": "36"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": "extabindex",
-        "module_id": 20,
-        "progress_categories": [
-          "@57 \tsimple_ppc"
+          "simple_ppc"
         ]
       }
     }
@@ -533,261 +117,17 @@
   "version": 2,
   "categories": [
     {
-      "id": ".text \tsimple_ppc",
-      "name": ".text \tsimple_ppc",
+      "id": "simple_ppc",
+      "name": "simple_ppc",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "712",
+        "matched_code": "712",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 5,
+        "matched_functions": 5,
         "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "test_1 \tsimple_ppc",
-      "name": "test_1 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "test_2 \tsimple_ppc",
-      "name": "test_2 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "math_op_1 \tsimple_ppc",
-      "name": "math_op_1 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "math_op_2 \tsimple_ppc",
-      "name": "math_op_2 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "math_op_1_dup \tsimple_ppc",
-      "name": "math_op_1_dup \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "extab \tsimple_ppc",
-      "name": "extab \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "@16 \tsimple_ppc",
-      "name": "@16 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "@32 \tsimple_ppc",
-      "name": "@32 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "@42 \tsimple_ppc",
-      "name": "@42 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "@56 \tsimple_ppc",
-      "name": "@56 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": ".sdata \tsimple_ppc",
-      "name": ".sdata \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "cat \tsimple_ppc",
-      "name": "cat \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "dog \tsimple_ppc",
-      "name": "dog \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": ".sdata2 \tsimple_ppc",
-      "name": ".sdata2 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "@13 \tsimple_ppc",
-      "name": "@13 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "@17 \tsimple_ppc",
-      "name": "@17 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "@33 \tsimple_ppc",
-      "name": "@33 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "@43 \tsimple_ppc",
-      "name": "@43 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
-        "total_units": 1
-      }
-    },
-    {
-      "id": "@57 \tsimple_ppc",
-      "name": "@57 \tsimple_ppc",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 1
       }
