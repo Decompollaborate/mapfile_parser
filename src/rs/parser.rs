@@ -618,11 +618,25 @@ impl MapFile {
 
         for line in map_data.lines() {
             // Check for regex_entries.common_row first since it is more likely to match
-            if let Some(row_entry_match) = regex_entries.common_row.captures(line) {
+            if let (Some(row_entry_match), false) = (
+                regex_entries.common_row.captures(line),
+                temp_segment_list.is_empty(),
+            ) {
                 let starting = utils::parse_hex(&row_entry_match["starting"]);
                 let size = utils::parse_hex(&row_entry_match["size"]);
                 let vram = utils::parse_hex(&row_entry_match["vram"]);
                 let align = utils::parse_hex(&row_entry_match["align"]);
+
+                let rom = row_entry_match.name("rom").map_or_else(
+                    || {
+                        temp_segment_list
+                            .last()
+                            .unwrap()
+                            .vrom
+                            .map(|segment_rom| segment_rom + starting)
+                    },
+                    |x| Some(utils::parse_hex(x.as_str())),
+                );
 
                 let subline = &row_entry_match["subline"];
 
@@ -645,7 +659,7 @@ impl MapFile {
                                 new_symbol.size = size;
                             }
                             if !current_section.is_noload_section() {
-                                new_symbol.vrom = current_segment.vrom.map(|x| x + starting)
+                                new_symbol.vrom = rom
                             }
                             if align > 0 {
                                 new_symbol.align = Some(align);
@@ -664,7 +678,7 @@ impl MapFile {
                             let mut new_section =
                                 section::Section::new_default(filepath, vram, size, section_type);
                             if !utils::is_noload_section(section_type) {
-                                new_section.vrom = current_segment.vrom.map(|x| x + starting)
+                                new_section.vrom = rom
                             }
 
                             current_segment.sections_list.push(new_section);
@@ -697,7 +711,7 @@ impl MapFile {
                         section::Section::new_fill(filepath, vram, size, &section_type);
                     new_section.align = Some(align);
                     if !utils::is_noload_section(&section_type) {
-                        new_section.vrom = current_segment.vrom.map(|x| x + starting);
+                        new_section.vrom = rom;
                     }
                     current_segment.sections_list.push(new_section);
 

@@ -263,25 +263,25 @@
                     "sectionType": "@17",
                     "vram": "0x00000000",
                     "size": "0xC",
-                    "vrom": "0x000328",
+                    "vrom": "0x000358",
                     "symbols": [
                         {
                             "name": "@33",
                             "vram": "0x0000000C",
                             "size": "0xC",
-                            "vrom": "0x000334"
+                            "vrom": "0x000358"
                         },
                         {
                             "name": "@43",
                             "vram": "0x00000018",
                             "size": "0xC",
-                            "vrom": "0x000340"
+                            "vrom": "0x000358"
                         },
                         {
                             "name": "@57",
                             "vram": "0x00000024",
                             "size": "0xC",
-                            "vrom": "0x00034C"
+                            "vrom": "0x000358"
                         }
                     ]
                 }

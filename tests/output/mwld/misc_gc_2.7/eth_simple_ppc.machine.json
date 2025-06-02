@@ -263,25 +263,25 @@
                     "sectionType": "@17",
                     "vram": 0,
                     "size": 12,
-                    "vrom": 808,
+                    "vrom": 856,
                     "symbols": [
                         {
                             "name": "@33",
                             "vram": 12,
                             "size": 12,
-                            "vrom": 820
+                            "vrom": 856
                         },
                         {
                             "name": "@43",
                             "vram": 24,
                             "size": 12,
-                            "vrom": 832
+                            "vrom": 856
                         },
                         {
                             "name": "@57",
                             "vram": 36,
                             "size": 12,
-                            "vrom": 844
+                            "vrom": 856
                         }
                     ]
                 }
