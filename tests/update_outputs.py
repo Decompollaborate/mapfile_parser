@@ -10,6 +10,7 @@ from pathlib import Path
 
 print(f"Running mapfile_parser version {mapfile_parser.__version__}")
 
+mapsPath = Path("tests/maps")
 outputFolder = Path("tests/output/")
 outputFolder.mkdir(parents=True, exist_ok=True)
 
@@ -28,29 +29,32 @@ prefixesToTrim.append("build/")
 
 reportCategories = mapfile_parser.ReportCategories()
 
-for mapPath in sorted(Path("tests/maps").iterdir()):
+for mapPath in sorted(mapsPath.rglob("*")):
+    if not mapPath.is_file():
+        continue
+
     print(mapPath)
 
     print("    .json")
-    mapfile_parser.frontends.jsonify.doJsonify(mapPath, outputFolder/mapPath.with_suffix(".json").name)
+    mapfile_parser.frontends.jsonify.doJsonify(mapPath, outputFolder/mapPath.with_suffix(".json").relative_to(mapsPath))
 
     print("    .machine.json")
-    mapfile_parser.frontends.jsonify.doJsonify(mapPath, outputFolder/mapPath.with_suffix(".machine.json").name, humanReadable=False)
+    mapfile_parser.frontends.jsonify.doJsonify(mapPath, outputFolder/mapPath.with_suffix(".machine.json").relative_to(mapsPath), humanReadable=False)
 
     print("    .sym")
-    mapfile_parser.frontends.pj64_syms.doPj64Syms(mapPath, outputFolder/mapPath.with_suffix(".sym").name)
+    mapfile_parser.frontends.pj64_syms.doPj64Syms(mapPath, outputFolder/mapPath.with_suffix(".sym").relative_to(mapsPath))
 
     print("    .objdiff_report.json")
     mapfile_parser.frontends.objdiff_report.doObjdiffReport(
         mapPath,
-        outputFolder/mapPath.with_suffix(".objdiff_report.json").name,
+        outputFolder/mapPath.with_suffix(".objdiff_report.json").relative_to(mapsPath),
         prefixesToTrim,
         reportCategories,
         quiet=True,
     )
 
     print("    .csv")
-    mapfile_parser.frontends.symbol_sizes_csv.doSymbolSizesCsv(mapPath, outputFolder/mapPath.with_suffix(".csv").name)
+    mapfile_parser.frontends.symbol_sizes_csv.doSymbolSizesCsv(mapPath, outputFolder/mapPath.with_suffix(".csv").relative_to(mapsPath))
 
     print("    .symbols.csv")
-    mapfile_parser.frontends.symbol_sizes_csv.doSymbolSizesCsv(mapPath, outputFolder/mapPath.with_suffix(".symbols.csv").name, symbolsSummary=True)
+    mapfile_parser.frontends.symbol_sizes_csv.doSymbolSizesCsv(mapPath, outputFolder/mapPath.with_suffix(".symbols.csv").relative_to(mapsPath), symbolsSummary=True)
