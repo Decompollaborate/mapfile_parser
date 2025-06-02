@@ -1,0 +1,6 @@
+VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
+00000000,executor.o,.text,3,44,120,40.00
+00000078,d_a_agbsw0.o,.text,58,5160,22500,387.93
+00000000,d_a_agbsw0.o,.rodata,22,49,157,7.14
+00000000,d_a_agbsw0.o,.data,34,528,1396,41.06
+00000000,d_a_agbsw0.o,.bss,5,8,15,3.00

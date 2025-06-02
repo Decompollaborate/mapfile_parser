@@ -1,0 +1,316 @@
+{
+    "segments": [
+        {
+            "name": ".compress.init",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".init",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".compress.text",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".text",
+            "vram": 0,
+            "size": 712,
+            "vrom": 64,
+            "files": [
+                {
+                    "filepath": ".text \tsimple_ppc.o",
+                    "sectionType": "1",
+                    "vram": 0,
+                    "size": 712,
+                    "vrom": 64,
+                    "symbols": []
+                },
+                {
+                    "filepath": "test_1 \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 0,
+                    "size": 200,
+                    "vrom": 64,
+                    "symbols": []
+                },
+                {
+                    "filepath": "test_2 \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 200,
+                    "size": 200,
+                    "vrom": 264,
+                    "symbols": []
+                },
+                {
+                    "filepath": "math_op_1 \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 400,
+                    "size": 152,
+                    "vrom": 464,
+                    "symbols": []
+                },
+                {
+                    "filepath": "math_op_2 \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 552,
+                    "size": 8,
+                    "vrom": 616,
+                    "symbols": []
+                },
+                {
+                    "filepath": "math_op_1_dup \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 560,
+                    "size": 152,
+                    "vrom": 624,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".compress.fini",
+            "vram": 0,
+            "size": 0,
+            "vrom": 776,
+            "files": []
+        },
+        {
+            "name": ".fini",
+            "vram": 0,
+            "size": 0,
+            "vrom": 776,
+            "files": []
+        },
+        {
+            "name": ".rodata",
+            "vram": 0,
+            "size": 0,
+            "vrom": 776,
+            "files": []
+        },
+        {
+            "name": ".ctors",
+            "vram": 0,
+            "size": 0,
+            "vrom": 776,
+            "files": []
+        },
+        {
+            "name": ".dtors",
+            "vram": 0,
+            "size": 0,
+            "vrom": 776,
+            "files": []
+        },
+        {
+            "name": "extab",
+            "vram": 0,
+            "size": 32,
+            "vrom": 776,
+            "files": [
+                {
+                    "filepath": "extab \tsimple_ppc.o",
+                    "sectionType": "1",
+                    "vram": 0,
+                    "size": 32,
+                    "vrom": 776,
+                    "symbols": []
+                },
+                {
+                    "filepath": "@16 \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 0,
+                    "size": 8,
+                    "vrom": 776,
+                    "symbols": []
+                },
+                {
+                    "filepath": "@32 \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 8,
+                    "size": 8,
+                    "vrom": 784,
+                    "symbols": []
+                },
+                {
+                    "filepath": "@42 \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 16,
+                    "size": 8,
+                    "vrom": 792,
+                    "symbols": []
+                },
+                {
+                    "filepath": "@56 \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 24,
+                    "size": 8,
+                    "vrom": 800,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": "extabindex",
+            "vram": 0,
+            "size": 48,
+            "vrom": 808,
+            "files": []
+        },
+        {
+            "name": ".BINARY",
+            "vram": 0,
+            "size": 0,
+            "vrom": 856,
+            "files": []
+        },
+        {
+            "name": ".data",
+            "vram": 0,
+            "size": 0,
+            "vrom": 856,
+            "files": []
+        },
+        {
+            "name": ".sdata",
+            "vram": 0,
+            "size": 8,
+            "vrom": 856,
+            "files": [
+                {
+                    "filepath": ".sdata \tsimple_ppc.o",
+                    "sectionType": "1",
+                    "vram": 0,
+                    "size": 8,
+                    "vrom": 856,
+                    "symbols": []
+                },
+                {
+                    "filepath": "cat \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 0,
+                    "size": 4,
+                    "vrom": 856,
+                    "symbols": []
+                },
+                {
+                    "filepath": "dog \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 4,
+                    "size": 4,
+                    "vrom": 860,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".sbss",
+            "vram": 0,
+            "size": 0,
+            "vrom": 864,
+            "files": []
+        },
+        {
+            "name": ".sdata2",
+            "vram": 0,
+            "size": 8,
+            "vrom": 864,
+            "files": [
+                {
+                    "filepath": ".sdata2 \tsimple_ppc.o",
+                    "sectionType": "1",
+                    "vram": 0,
+                    "size": 8,
+                    "vrom": 864,
+                    "symbols": []
+                },
+                {
+                    "filepath": "@13 \tsimple_ppc.o",
+                    "sectionType": "8",
+                    "vram": 0,
+                    "size": 8,
+                    "vrom": 864,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".sbss2",
+            "vram": 0,
+            "size": 0,
+            "vrom": 872,
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sdata0",
+            "vram": 0,
+            "size": 0,
+            "vrom": 872,
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sbss0",
+            "vram": 0,
+            "size": 0,
+            "vrom": 872,
+            "files": []
+        },
+        {
+            "name": ".bss",
+            "vram": 0,
+            "size": 0,
+            "vrom": 872,
+            "files": []
+        },
+        {
+            "name": "extabindex",
+            "vram": 0,
+            "size": 48,
+            "vrom": 808,
+            "files": [
+                {
+                    "filepath": "@17 \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 0,
+                    "size": 12,
+                    "vrom": 808,
+                    "symbols": []
+                },
+                {
+                    "filepath": "@33 \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 12,
+                    "size": 12,
+                    "vrom": 820,
+                    "symbols": []
+                },
+                {
+                    "filepath": "@43 \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 24,
+                    "size": 12,
+                    "vrom": 832,
+                    "symbols": []
+                },
+                {
+                    "filepath": "@57 \tsimple_ppc.o",
+                    "sectionType": "4",
+                    "vram": 36,
+                    "size": 12,
+                    "vrom": 844,
+                    "symbols": []
+                }
+            ]
+        }
+    ]
+}

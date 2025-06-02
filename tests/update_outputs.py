@@ -7,11 +7,14 @@ from __future__ import annotations
 
 import mapfile_parser
 from pathlib import Path
+import shutil
 
 print(f"Running mapfile_parser version {mapfile_parser.__version__}")
 
 mapsPath = Path("tests/maps")
+
 outputFolder = Path("tests/output/")
+shutil.rmtree(outputFolder)
 outputFolder.mkdir(parents=True, exist_ok=True)
 
 versions = ["us", "cn", "gw", "usa"]

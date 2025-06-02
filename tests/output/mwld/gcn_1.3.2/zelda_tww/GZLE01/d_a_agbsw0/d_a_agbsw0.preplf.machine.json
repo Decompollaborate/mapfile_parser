@@ -1,0 +1,925 @@
+{
+    "segments": [
+        {
+            "name": ".compress.init",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".init",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".compress.text",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".text",
+            "vram": 0,
+            "size": 22872,
+            "vrom": 64,
+            "files": [
+                {
+                    "filepath": "executor.o",
+                    "sectionType": ".text",
+                    "vram": 0,
+                    "size": 120,
+                    "vrom": 64,
+                    "symbols": [
+                        {
+                            "name": "_prolog",
+                            "vram": 0,
+                            "size": 44,
+                            "vrom": 64
+                        },
+                        {
+                            "name": "_epilog",
+                            "vram": 44,
+                            "size": 44,
+                            "vrom": 108
+                        },
+                        {
+                            "name": "_unresolved",
+                            "vram": 88,
+                            "size": 32,
+                            "vrom": 152
+                        }
+                    ]
+                },
+                {
+                    "filepath": "d_a_agbsw0.o",
+                    "sectionType": ".text",
+                    "vram": 120,
+                    "size": 22500,
+                    "vrom": 184,
+                    "symbols": [
+                        {
+                            "name": "ExeSubA__10daAgbsw0_cFv",
+                            "vram": 120,
+                            "size": 716,
+                            "vrom": 184
+                        },
+                        {
+                            "name": "ExeSubAT__10daAgbsw0_cFv",
+                            "vram": 836,
+                            "size": 808,
+                            "vrom": 900
+                        },
+                        {
+                            "name": "ExeSubA2__10daAgbsw0_cFv",
+                            "vram": 1644,
+                            "size": 724,
+                            "vrom": 1708
+                        },
+                        {
+                            "name": "ExeSubF__10daAgbsw0_cFv",
+                            "vram": 2368,
+                            "size": 372,
+                            "vrom": 2432
+                        },
+                        {
+                            "name": "ExeSubF2__10daAgbsw0_cFv",
+                            "vram": 2740,
+                            "size": 916,
+                            "vrom": 2804
+                        },
+                        {
+                            "name": "__dt__4cXyzFv",
+                            "vram": 3656,
+                            "size": 60,
+                            "vrom": 3720
+                        },
+                        {
+                            "name": "ExeSubM__10daAgbsw0_cFv",
+                            "vram": 3716,
+                            "size": 412,
+                            "vrom": 3780
+                        },
+                        {
+                            "name": "ExeSubM2__10daAgbsw0_cFv",
+                            "vram": 4128,
+                            "size": 436,
+                            "vrom": 4192
+                        },
+                        {
+                            "name": "ExeSubM3__10daAgbsw0_cFv",
+                            "vram": 4564,
+                            "size": 464,
+                            "vrom": 4628
+                        },
+                        {
+                            "name": "TriforceCheck__10daAgbsw0_cFP7daAgb_c",
+                            "vram": 5028,
+                            "size": 1096,
+                            "vrom": 5092
+                        },
+                        {
+                            "name": "ExeSubMW__10daAgbsw0_cFv",
+                            "vram": 6124,
+                            "size": 800,
+                            "vrom": 6188
+                        },
+                        {
+                            "name": "ExeSubT__10daAgbsw0_cFv",
+                            "vram": 6924,
+                            "size": 504,
+                            "vrom": 6988
+                        },
+                        {
+                            "name": "ExeSubS__10daAgbsw0_cFv",
+                            "vram": 7428,
+                            "size": 740,
+                            "vrom": 7492
+                        },
+                        {
+                            "name": "ExeSubR__10daAgbsw0_cFv",
+                            "vram": 8168,
+                            "size": 576,
+                            "vrom": 8232
+                        },
+                        {
+                            "name": "ExeSubB__10daAgbsw0_cFv",
+                            "vram": 8744,
+                            "size": 2108,
+                            "vrom": 8808
+                        },
+                        {
+                            "name": "ExeSubD__10daAgbsw0_cFv",
+                            "vram": 10852,
+                            "size": 872,
+                            "vrom": 10916
+                        },
+                        {
+                            "name": "ExeSubFA__10daAgbsw0_cFv",
+                            "vram": 11724,
+                            "size": 844,
+                            "vrom": 11788
+                        },
+                        {
+                            "name": "HitCheck__10daAgbsw0_cFP10fopAc_ac_c",
+                            "vram": 12568,
+                            "size": 304,
+                            "vrom": 12632
+                        },
+                        {
+                            "name": "HitCheck__10daAgbsw0_cF4cXyzf",
+                            "vram": 12872,
+                            "size": 312,
+                            "vrom": 12936
+                        },
+                        {
+                            "name": "MoveCheck__10daAgbsw0_cFs",
+                            "vram": 13184,
+                            "size": 5160,
+                            "vrom": 13248
+                        },
+                        {
+                            "name": "dComIfGs_getMagic__Fv",
+                            "vram": 18344,
+                            "size": 16,
+                            "vrom": 18408
+                        },
+                        {
+                            "name": "MailSend__10daAgbsw0_cFUsUcUcUcUc",
+                            "vram": 18360,
+                            "size": 156,
+                            "vrom": 18424
+                        },
+                        {
+                            "name": "getStagInfo__16dStage_stageDt_cCFv",
+                            "vram": 18516,
+                            "size": 8,
+                            "vrom": 18580
+                        },
+                        {
+                            "name": "daAgbsw0_Draw__FP10daAgbsw0_c",
+                            "vram": 18524,
+                            "size": 32,
+                            "vrom": 18588
+                        },
+                        {
+                            "name": "draw__10daAgbsw0_cFv",
+                            "vram": 18556,
+                            "size": 756,
+                            "vrom": 18620
+                        },
+                        {
+                            "name": "daAgbsw0_Execute__FP10daAgbsw0_c",
+                            "vram": 19312,
+                            "size": 460,
+                            "vrom": 19376
+                        },
+                        {
+                            "name": "daAgbsw0_IsDelete__FP10daAgbsw0_c",
+                            "vram": 19772,
+                            "size": 8,
+                            "vrom": 19836
+                        },
+                        {
+                            "name": "daAgbsw0_Delete__FP10daAgbsw0_c",
+                            "vram": 19780,
+                            "size": 408,
+                            "vrom": 19844
+                        },
+                        {
+                            "name": "daAgbsw0_Create__FP10fopAc_ac_c",
+                            "vram": 20188,
+                            "size": 232,
+                            "vrom": 20252
+                        },
+                        {
+                            "name": "create__10daAgbsw0_cFv",
+                            "vram": 20420,
+                            "size": 1240,
+                            "vrom": 20484
+                        },
+                        {
+                            "name": "__dt__8dCcD_CylFv",
+                            "vram": 21660,
+                            "size": 204,
+                            "vrom": 21724
+                        },
+                        {
+                            "name": "__dt__12cCcD_CylAttrFv",
+                            "vram": 21864,
+                            "size": 140,
+                            "vrom": 21928
+                        },
+                        {
+                            "name": "__dt__8cM3dGCylFv",
+                            "vram": 22004,
+                            "size": 72,
+                            "vrom": 22068
+                        },
+                        {
+                            "name": "__dt__14cCcD_ShapeAttrFv",
+                            "vram": 22076,
+                            "size": 92,
+                            "vrom": 22140
+                        },
+                        {
+                            "name": "__dt__8cM3dGAabFv",
+                            "vram": 22168,
+                            "size": 72,
+                            "vrom": 22232
+                        },
+                        {
+                            "name": "__dt__9dCcD_SttsFv",
+                            "vram": 22240,
+                            "size": 144,
+                            "vrom": 22304
+                        },
+                        {
+                            "name": "__dt__10dCcD_GSttsFv",
+                            "vram": 22384,
+                            "size": 92,
+                            "vrom": 22448
+                        },
+                        {
+                            "name": "__dt__9cCcD_SttsFv",
+                            "vram": 22476,
+                            "size": 72,
+                            "vrom": 22540
+                        },
+                        {
+                            "name": "__dt__10cCcD_GSttsFv",
+                            "vram": 22548,
+                            "size": 72,
+                            "vrom": 22612
+                        },
+                        {
+                            "name": ".text",
+                            "vram": 22620,
+                            "size": 252,
+                            "vrom": 22684
+                        },
+                        {
+                            "name": "GetShapeAttr__8dCcD_CylFv",
+                            "vram": 22620,
+                            "size": 16,
+                            "vrom": 22684
+                        },
+                        {
+                            "name": "GetCoCP__12cCcD_CylAttrFv",
+                            "vram": 22636,
+                            "size": 8,
+                            "vrom": 22700
+                        },
+                        {
+                            "name": "GetCoCP__12cCcD_CylAttrCFv",
+                            "vram": 22644,
+                            "size": 8,
+                            "vrom": 22708
+                        },
+                        {
+                            "name": "CrossAtTg__12cCcD_CylAttrCFRC12cCcD_AabAttrP4cXyz",
+                            "vram": 22652,
+                            "size": 8,
+                            "vrom": 22716
+                        },
+                        {
+                            "name": "CrossAtTg__12cCcD_CylAttrCFRC12cCcD_PntAttrP4cXyz",
+                            "vram": 22660,
+                            "size": 8,
+                            "vrom": 22724
+                        },
+                        {
+                            "name": "CrossAtTg__12cCcD_CylAttrCFRC14cCcD_ShapeAttrP4cXyz",
+                            "vram": 22668,
+                            "size": 56,
+                            "vrom": 22732
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC12cCcD_AabAttrPf",
+                            "vram": 22724,
+                            "size": 8,
+                            "vrom": 22788
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC12cCcD_TriAttrPf",
+                            "vram": 22732,
+                            "size": 8,
+                            "vrom": 22796
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC12cCcD_PntAttrPf",
+                            "vram": 22740,
+                            "size": 8,
+                            "vrom": 22804
+                        },
+                        {
+                            "name": "CrossCo__12cCcD_CylAttrCFRC14cCcD_ShapeAttrPf",
+                            "vram": 22748,
+                            "size": 56,
+                            "vrom": 22812
+                        },
+                        {
+                            "name": "GetGObjInf__12cCcD_GObjInfCFv",
+                            "vram": 22804,
+                            "size": 4,
+                            "vrom": 22868
+                        },
+                        {
+                            "name": "GetShapeAttr__8cCcD_ObjCFv",
+                            "vram": 22808,
+                            "size": 8,
+                            "vrom": 22872
+                        },
+                        {
+                            "name": "CrossAtTg__14cCcD_ShapeAttrCFRC14cCcD_ShapeAttrP4cXyz",
+                            "vram": 22816,
+                            "size": 8,
+                            "vrom": 22880
+                        },
+                        {
+                            "name": "CrossCo__14cCcD_ShapeAttrCFRC14cCcD_ShapeAttrPf",
+                            "vram": 22824,
+                            "size": 8,
+                            "vrom": 22888
+                        },
+                        {
+                            "name": "GetCoCP__14cCcD_ShapeAttrFv",
+                            "vram": 22832,
+                            "size": 12,
+                            "vrom": 22896
+                        },
+                        {
+                            "name": "GetCoCP__14cCcD_ShapeAttrCFv",
+                            "vram": 22844,
+                            "size": 12,
+                            "vrom": 22908
+                        },
+                        {
+                            "name": "@280@__dt__8dCcD_CylFv",
+                            "vram": 22856,
+                            "size": 8,
+                            "vrom": 22920
+                        },
+                        {
+                            "name": "@248@__dt__8dCcD_CylFv",
+                            "vram": 22864,
+                            "size": 8,
+                            "vrom": 22928
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".compress.fini",
+            "vram": 0,
+            "size": 0,
+            "vrom": 22936,
+            "files": []
+        },
+        {
+            "name": ".fini",
+            "vram": 0,
+            "size": 0,
+            "vrom": 22936,
+            "files": []
+        },
+        {
+            "name": ".rodata",
+            "vram": 0,
+            "size": 157,
+            "vrom": 22936,
+            "files": [
+                {
+                    "filepath": "d_a_agbsw0.o",
+                    "sectionType": ".rodata",
+                    "vram": 0,
+                    "size": 157,
+                    "vrom": 22936,
+                    "symbols": [
+                        {
+                            "name": "@1974",
+                            "vram": 0,
+                            "size": 4,
+                            "vrom": 22936
+                        },
+                        {
+                            "name": "@1975",
+                            "vram": 4,
+                            "size": 4,
+                            "vrom": 22940
+                        },
+                        {
+                            "name": "@2279",
+                            "vram": 8,
+                            "size": 4,
+                            "vrom": 22944
+                        },
+                        {
+                            "name": "@2280",
+                            "vram": 16,
+                            "size": 8,
+                            "vrom": 22952
+                        },
+                        {
+                            "name": "@2281",
+                            "vram": 24,
+                            "size": 8,
+                            "vrom": 22960
+                        },
+                        {
+                            "name": "@2367",
+                            "vram": 32,
+                            "size": 4,
+                            "vrom": 22968
+                        },
+                        {
+                            "name": "@2368",
+                            "vram": 36,
+                            "size": 4,
+                            "vrom": 22972
+                        },
+                        {
+                            "name": "@2369",
+                            "vram": 40,
+                            "size": 4,
+                            "vrom": 22976
+                        },
+                        {
+                            "name": "@2370",
+                            "vram": 48,
+                            "size": 8,
+                            "vrom": 22984
+                        },
+                        {
+                            "name": "@2371",
+                            "vram": 56,
+                            "size": 8,
+                            "vrom": 22992
+                        },
+                        {
+                            "name": "@2372",
+                            "vram": 64,
+                            "size": 4,
+                            "vrom": 23000
+                        },
+                        {
+                            "name": "@2373",
+                            "vram": 68,
+                            "size": 4,
+                            "vrom": 23004
+                        },
+                        {
+                            "name": "@2558",
+                            "vram": 72,
+                            "size": 4,
+                            "vrom": 23008
+                        },
+                        {
+                            "name": "@2559",
+                            "vram": 76,
+                            "size": 4,
+                            "vrom": 23012
+                        },
+                        {
+                            "name": "@2560",
+                            "vram": 80,
+                            "size": 4,
+                            "vrom": 23016
+                        },
+                        {
+                            "name": "@2768",
+                            "vram": 84,
+                            "size": 4,
+                            "vrom": 23020
+                        },
+                        {
+                            "name": "@2769",
+                            "vram": 88,
+                            "size": 4,
+                            "vrom": 23024
+                        },
+                        {
+                            "name": "@2770",
+                            "vram": 92,
+                            "size": 4,
+                            "vrom": 23028
+                        },
+                        {
+                            "name": "@2955",
+                            "vram": 96,
+                            "size": 4,
+                            "vrom": 23032
+                        },
+                        {
+                            "name": "@4309",
+                            "vram": 100,
+                            "size": 4,
+                            "vrom": 23036
+                        },
+                        {
+                            "name": "@4310",
+                            "vram": 104,
+                            "size": 4,
+                            "vrom": 23040
+                        },
+                        {
+                            "name": "@stringBase0",
+                            "vram": 108,
+                            "size": 49,
+                            "vrom": 23044
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".ctors",
+            "vram": 0,
+            "size": 0,
+            "vrom": 23093,
+            "files": []
+        },
+        {
+            "name": ".dtors",
+            "vram": 0,
+            "size": 0,
+            "vrom": 23093,
+            "files": []
+        },
+        {
+            "name": "extab",
+            "vram": 0,
+            "size": 0,
+            "vrom": 23093,
+            "files": []
+        },
+        {
+            "name": "extabindex",
+            "vram": 0,
+            "size": 0,
+            "vrom": 23093,
+            "files": []
+        },
+        {
+            "name": ".BINARY",
+            "vram": 0,
+            "size": 0,
+            "vrom": 23093,
+            "files": []
+        },
+        {
+            "name": ".data",
+            "vram": 0,
+            "size": 1396,
+            "vrom": 23096,
+            "files": [
+                {
+                    "filepath": "d_a_agbsw0.o",
+                    "sectionType": ".data",
+                    "vram": 0,
+                    "size": 1396,
+                    "vrom": 23096,
+                    "symbols": [
+                        {
+                            "name": "data_2100$11",
+                            "vram": 0,
+                            "size": 12,
+                            "vrom": 23096
+                        },
+                        {
+                            "name": "data_2080$15",
+                            "vram": 12,
+                            "size": 12,
+                            "vrom": 23108
+                        },
+                        {
+                            "name": "attnFnTbl_1811$19",
+                            "vram": 24,
+                            "size": 4,
+                            "vrom": 23120
+                        },
+                        {
+                            "name": "_three$localstatic3$fake_sqrtf__Ff",
+                            "vram": 32,
+                            "size": 8,
+                            "vrom": 23128
+                        },
+                        {
+                            "name": "_half$localstatic4$fake_sqrtf__Ff",
+                            "vram": 40,
+                            "size": 8,
+                            "vrom": 23136
+                        },
+                        {
+                            "name": "l_cyl_src",
+                            "vram": 48,
+                            "size": 68,
+                            "vrom": 23144
+                        },
+                        {
+                            "name": "@1630",
+                            "vram": 116,
+                            "size": 12,
+                            "vrom": 23212
+                        },
+                        {
+                            "name": "@1631",
+                            "vram": 128,
+                            "size": 12,
+                            "vrom": 23224
+                        },
+                        {
+                            "name": "@1632",
+                            "vram": 140,
+                            "size": 12,
+                            "vrom": 23236
+                        },
+                        {
+                            "name": "@1633",
+                            "vram": 152,
+                            "size": 12,
+                            "vrom": 23248
+                        },
+                        {
+                            "name": "@1634",
+                            "vram": 164,
+                            "size": 12,
+                            "vrom": 23260
+                        },
+                        {
+                            "name": "@1635",
+                            "vram": 176,
+                            "size": 12,
+                            "vrom": 23272
+                        },
+                        {
+                            "name": "@1636",
+                            "vram": 188,
+                            "size": 12,
+                            "vrom": 23284
+                        },
+                        {
+                            "name": "@1637",
+                            "vram": 200,
+                            "size": 12,
+                            "vrom": 23296
+                        },
+                        {
+                            "name": "@1638",
+                            "vram": 212,
+                            "size": 12,
+                            "vrom": 23308
+                        },
+                        {
+                            "name": "@1639",
+                            "vram": 224,
+                            "size": 12,
+                            "vrom": 23320
+                        },
+                        {
+                            "name": "@1640",
+                            "vram": 236,
+                            "size": 12,
+                            "vrom": 23332
+                        },
+                        {
+                            "name": "@1641",
+                            "vram": 248,
+                            "size": 12,
+                            "vrom": 23344
+                        },
+                        {
+                            "name": "@1642",
+                            "vram": 260,
+                            "size": 12,
+                            "vrom": 23356
+                        },
+                        {
+                            "name": "@1643",
+                            "vram": 272,
+                            "size": 12,
+                            "vrom": 23368
+                        },
+                        {
+                            "name": "@1644",
+                            "vram": 284,
+                            "size": 12,
+                            "vrom": 23380
+                        },
+                        {
+                            "name": "ExeSubTable$localstatic3$execute__10daAgbsw0_cFv",
+                            "vram": 296,
+                            "size": 180,
+                            "vrom": 23392
+                        },
+                        {
+                            "name": "@2282",
+                            "vram": 476,
+                            "size": 28,
+                            "vrom": 23572
+                        },
+                        {
+                            "name": "BeatedMsg__10daAgbsw0_c",
+                            "vram": 504,
+                            "size": 12,
+                            "vrom": 23600
+                        },
+                        {
+                            "name": "DisposedMsg__10daAgbsw0_c",
+                            "vram": 516,
+                            "size": 4,
+                            "vrom": 23612
+                        },
+                        {
+                            "name": "@4072",
+                            "vram": 520,
+                            "size": 528,
+                            "vrom": 23616
+                        },
+                        {
+                            "name": "l_daAgbsw0_Method",
+                            "vram": 1048,
+                            "size": 32,
+                            "vrom": 24144
+                        },
+                        {
+                            "name": "g_profile_AGBSW0",
+                            "vram": 1080,
+                            "size": 48,
+                            "vrom": 24176
+                        },
+                        {
+                            "name": "__vt__10cCcD_GStts",
+                            "vram": 1128,
+                            "size": 12,
+                            "vrom": 24224
+                        },
+                        {
+                            "name": "__vt__10dCcD_GStts",
+                            "vram": 1140,
+                            "size": 12,
+                            "vrom": 24236
+                        },
+                        {
+                            "name": "__vt__8dCcD_Cyl",
+                            "vram": 1152,
+                            "size": 136,
+                            "vrom": 24248
+                        },
+                        {
+                            "name": "__vt__8cM3dGCyl",
+                            "vram": 1288,
+                            "size": 12,
+                            "vrom": 24384
+                        },
+                        {
+                            "name": "__vt__8cM3dGAab",
+                            "vram": 1300,
+                            "size": 12,
+                            "vrom": 24396
+                        },
+                        {
+                            "name": "__vt__14cCcD_ShapeAttr",
+                            "vram": 1312,
+                            "size": 84,
+                            "vrom": 24408
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".sdata",
+            "vram": 0,
+            "size": 0,
+            "vrom": 24492,
+            "files": []
+        },
+        {
+            "name": ".sbss",
+            "vram": 0,
+            "size": 0,
+            "vrom": 24492,
+            "files": []
+        },
+        {
+            "name": ".sdata2",
+            "vram": 0,
+            "size": 0,
+            "vrom": 24492,
+            "files": []
+        },
+        {
+            "name": ".sbss2",
+            "vram": 0,
+            "size": 0,
+            "vrom": 24492,
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sdata0",
+            "vram": 0,
+            "size": 0,
+            "vrom": 24492,
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sbss0",
+            "vram": 0,
+            "size": 0,
+            "vrom": 24492,
+            "files": []
+        },
+        {
+            "name": ".bss",
+            "vram": 0,
+            "size": 15,
+            "vrom": 24496,
+            "files": [
+                {
+                    "filepath": "d_a_agbsw0.o",
+                    "sectionType": ".bss",
+                    "vram": 0,
+                    "size": 15,
+                    "vrom": null,
+                    "symbols": [
+                        {
+                            "name": "mMail__10daAgbsw0_c",
+                            "vram": 0,
+                            "size": 8,
+                            "vrom": null
+                        },
+                        {
+                            "name": "mSE__10daAgbsw0_c",
+                            "vram": 8,
+                            "size": 4,
+                            "vrom": null
+                        },
+                        {
+                            "name": "se_flag$2291",
+                            "vram": 12,
+                            "size": 1,
+                            "vrom": null
+                        },
+                        {
+                            "name": "init$2292",
+                            "vram": 13,
+                            "size": 1,
+                            "vrom": null
+                        },
+                        {
+                            "name": "init$localstatic4$execute__10daAgbsw0_cFv",
+                            "vram": 14,
+                            "size": 1,
+                            "vrom": null
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,10 @@
+VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
+80A39264,__save_fpr 	runtime.o,4,5,0,76,15.20
+80A392B0,__restore_fpr 	runtime.o,4,5,0,76,15.20
+80A392FC,__save_gpr 	runtime.o,4,15,0,76,5.07
+80A39348,__restore_gpr 	runtime.o,4,15,0,76,5.07
+80AA5930,__OSDBIntegrator 	OS.o,16,1,0,36,36.00
+80AA5960,__OSDBJump 	OS.o,16,1,0,4,4.00
+80AA59A0,OSExceptionVector 	OS.o,16,3,0,156,52.00
+80AAB8C0,OSDisableInterrupts 	OSInterrupt.o,16,1,0,20,20.00
+80AAE730,SystemCallVector 	OSSync.o,16,1,0,32,32.00

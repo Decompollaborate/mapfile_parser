@@ -621,7 +621,8 @@ impl MapFile {
         let mut temp_segment_list = vec![segment::Segment::new_placeholder()];
 
         // Use a bunch of characters that shouldn't be valid in any os as a marker that we haven't found a file yet.
-        let mut current_filename = "invalid file <>:\"/\\|?*".to_string();
+        let invalid_file_name = "invalid file <>:\"/\\|?*";
+        let mut current_filename = invalid_file_name.to_string();
 
         for line in map_data.lines() {
             // Check for regex_row_entry since it is more likely to match
@@ -644,6 +645,9 @@ impl MapFile {
 
                         if !BANNED_SYMBOL_NAMES.contains(&symbol) {
                             let current_segment = temp_segment_list.last_mut().unwrap();
+                            if current_segment.sections_list.last_mut().is_none() {
+                                println!("{}", current_segment.name);
+                            }
                             let current_section = current_segment.sections_list.last_mut().unwrap();
 
                             let mut new_symbol =
@@ -697,6 +701,10 @@ impl MapFile {
                 };
 
                 temp_segment_list.push(new_segment);
+
+                // Reset the tracked filename state.
+                // This avoid carrying the filename from one segment to the other
+                current_filename = invalid_file_name.to_string();
             }
         }
 

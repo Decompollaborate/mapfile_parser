@@ -1,0 +1,266 @@
+{
+    "segments": [
+        {
+            "name": ".compress.init",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000040",
+            "files": []
+        },
+        {
+            "name": ".init",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000040",
+            "files": []
+        },
+        {
+            "name": ".compress.text",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000040",
+            "files": []
+        },
+        {
+            "name": ".text",
+            "vram": "0x00000000",
+            "size": "0x224",
+            "vrom": "0x000040",
+            "files": [
+                {
+                    "filepath": ".text \texecutor.o",
+                    "sectionType": "1",
+                    "vram": "0x00000000",
+                    "size": "0x78",
+                    "vrom": "0x000040",
+                    "symbols": []
+                },
+                {
+                    "filepath": "_prolog \texecutor.o",
+                    "sectionType": "4",
+                    "vram": "0x00000000",
+                    "size": "0x2C",
+                    "vrom": "0x000040",
+                    "symbols": []
+                },
+                {
+                    "filepath": "_epilog \texecutor.o",
+                    "sectionType": "4",
+                    "vram": "0x0000002C",
+                    "size": "0x2C",
+                    "vrom": "0x00006C",
+                    "symbols": []
+                },
+                {
+                    "filepath": "_unresolved \texecutor.o",
+                    "sectionType": "4",
+                    "vram": "0x00000058",
+                    "size": "0x20",
+                    "vrom": "0x000098",
+                    "symbols": []
+                },
+                {
+                    "filepath": ".text \td_a_andsw.o",
+                    "sectionType": "1",
+                    "vram": "0x00000078",
+                    "size": "0x1AC",
+                    "vrom": "0x0000B8",
+                    "symbols": []
+                },
+                {
+                    "filepath": "Create__9daAndsw_cFv \td_a_andsw.o",
+                    "sectionType": "4",
+                    "vram": "0x00000078",
+                    "size": "0x40",
+                    "vrom": "0x0000B8",
+                    "symbols": []
+                },
+                {
+                    "filepath": "create__9daAndsw_cFv \td_a_andsw.o",
+                    "sectionType": "4",
+                    "vram": "0x000000B8",
+                    "size": "0x68",
+                    "vrom": "0x0000F8",
+                    "symbols": []
+                },
+                {
+                    "filepath": "execute__9daAndsw_cFv \td_a_andsw.o",
+                    "sectionType": "4",
+                    "vram": "0x00000120",
+                    "size": "0x9C",
+                    "vrom": "0x000160",
+                    "symbols": []
+                },
+                {
+                    "filepath": "_delete__9daAndsw_cFv \td_a_andsw.o",
+                    "sectionType": "4",
+                    "vram": "0x000001BC",
+                    "size": "0x8",
+                    "vrom": "0x0001FC",
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAndsw_Execute__FP9daAndsw_c \td_a_andsw.o",
+                    "sectionType": "4",
+                    "vram": "0x000001C4",
+                    "size": "0x20",
+                    "vrom": "0x000204",
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAndsw_Delete__FP9daAndsw_c \td_a_andsw.o",
+                    "sectionType": "4",
+                    "vram": "0x000001E4",
+                    "size": "0x20",
+                    "vrom": "0x000224",
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAndsw_Create__FP10fopAc_ac_c \td_a_andsw.o",
+                    "sectionType": "4",
+                    "vram": "0x00000204",
+                    "size": "0x20",
+                    "vrom": "0x000244",
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".compress.fini",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000264",
+            "files": []
+        },
+        {
+            "name": ".fini",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000264",
+            "files": []
+        },
+        {
+            "name": ".rodata",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000264",
+            "files": []
+        },
+        {
+            "name": ".ctors",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000264",
+            "files": []
+        },
+        {
+            "name": ".dtors",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000264",
+            "files": []
+        },
+        {
+            "name": "extab",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000264",
+            "files": []
+        },
+        {
+            "name": "extabindex",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000264",
+            "files": []
+        },
+        {
+            "name": ".BINARY",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000264",
+            "files": []
+        },
+        {
+            "name": ".data",
+            "vram": "0x00000000",
+            "size": "0x50",
+            "vrom": "0x000268",
+            "files": [
+                {
+                    "filepath": ".data \td_a_andsw.o",
+                    "sectionType": "1",
+                    "vram": "0x00000000",
+                    "size": "0x50",
+                    "vrom": "0x000268",
+                    "symbols": []
+                },
+                {
+                    "filepath": "l_daAndsw_Method \td_a_andsw.o",
+                    "sectionType": "4",
+                    "vram": "0x00000000",
+                    "size": "0x20",
+                    "vrom": "0x000268",
+                    "symbols": []
+                },
+                {
+                    "filepath": "g_profile_ANDSW \td_a_andsw.o",
+                    "sectionType": "4",
+                    "vram": "0x00000020",
+                    "size": "0x30",
+                    "vrom": "0x000288",
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".sdata",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x0002B8",
+            "files": []
+        },
+        {
+            "name": ".sbss",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x0002B8",
+            "files": []
+        },
+        {
+            "name": ".sdata2",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x0002B8",
+            "files": []
+        },
+        {
+            "name": ".sbss2",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x0002B8",
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sdata0",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x0002B8",
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sbss0",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x0002B8",
+            "files": []
+        },
+        {
+            "name": ".bss",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x0002B8",
+            "files": []
+        }
+    ]
+}

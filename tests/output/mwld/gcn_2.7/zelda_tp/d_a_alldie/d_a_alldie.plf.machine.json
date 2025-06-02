@@ -1,0 +1,251 @@
+{
+    "segments": [
+        {
+            "name": ".init",
+            "vram": 0,
+            "size": 0,
+            "vrom": 64,
+            "files": []
+        },
+        {
+            "name": ".text",
+            "vram": 0,
+            "size": 1404,
+            "vrom": 64,
+            "files": [
+                {
+                    "filepath": ".text \texecutor.o",
+                    "sectionType": "1",
+                    "vram": 0,
+                    "size": 120,
+                    "vrom": 64,
+                    "symbols": []
+                },
+                {
+                    "filepath": "_prolog \texecutor.o",
+                    "sectionType": "4",
+                    "vram": 0,
+                    "size": 44,
+                    "vrom": 64,
+                    "symbols": []
+                },
+                {
+                    "filepath": "_epilog \texecutor.o",
+                    "sectionType": "4",
+                    "vram": 44,
+                    "size": 44,
+                    "vrom": 108,
+                    "symbols": []
+                },
+                {
+                    "filepath": "_unresolved \texecutor.o",
+                    "sectionType": "4",
+                    "vram": 88,
+                    "size": 32,
+                    "vrom": 152,
+                    "symbols": []
+                },
+                {
+                    "filepath": ".text \td_a_alldie.o",
+                    "sectionType": "1",
+                    "vram": 120,
+                    "size": 1284,
+                    "vrom": 184,
+                    "symbols": []
+                },
+                {
+                    "filepath": "getEventNo__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 120,
+                    "size": 12,
+                    "vrom": 184,
+                    "symbols": []
+                },
+                {
+                    "filepath": "getSwbit__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 132,
+                    "size": 12,
+                    "vrom": 196,
+                    "symbols": []
+                },
+                {
+                    "filepath": "actionWait__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 144,
+                    "size": 8,
+                    "vrom": 208,
+                    "symbols": []
+                },
+                {
+                    "filepath": "actionCheck__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 152,
+                    "size": 80,
+                    "vrom": 216,
+                    "symbols": []
+                },
+                {
+                    "filepath": "actionTimer__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 232,
+                    "size": 176,
+                    "vrom": 296,
+                    "symbols": []
+                },
+                {
+                    "filepath": "actionOrder__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 408,
+                    "size": 104,
+                    "vrom": 472,
+                    "symbols": []
+                },
+                {
+                    "filepath": "actionEvent__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 512,
+                    "size": 164,
+                    "vrom": 576,
+                    "symbols": []
+                },
+                {
+                    "filepath": "actionNext__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 676,
+                    "size": 204,
+                    "vrom": 740,
+                    "symbols": []
+                },
+                {
+                    "filepath": "execute__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 880,
+                    "size": 124,
+                    "vrom": 944,
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAlldie_Draw__FP10daAlldie_c \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 1004,
+                    "size": 8,
+                    "vrom": 1068,
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAlldie_Execute__FP10daAlldie_c \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 1012,
+                    "size": 36,
+                    "vrom": 1076,
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAlldie_IsDelete__FP10daAlldie_c \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 1048,
+                    "size": 8,
+                    "vrom": 1112,
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAlldie_Delete__FP10daAlldie_c \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 1056,
+                    "size": 48,
+                    "vrom": 1120,
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAlldie_Create__FP10fopAc_ac_c \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 1104,
+                    "size": 300,
+                    "vrom": 1168,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".ctors",
+            "vram": 0,
+            "size": 4,
+            "vrom": 1468,
+            "files": [
+                {
+                    "filepath": ".ctors$99 \tLinker Generated Symbol File",
+                    "sectionType": "1",
+                    "vram": 0,
+                    "size": 4,
+                    "vrom": 1468,
+                    "symbols": []
+                },
+                {
+                    "filepath": "_ctors$99 \tLinker Generated Symbol File",
+                    "sectionType": "4",
+                    "vram": 0,
+                    "size": 4,
+                    "vrom": 1468,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".dtors",
+            "vram": 0,
+            "size": 4,
+            "vrom": 1472,
+            "files": [
+                {
+                    "filepath": ".dtors$99 \tLinker Generated Symbol File",
+                    "sectionType": "1",
+                    "vram": 0,
+                    "size": 4,
+                    "vrom": 1472,
+                    "symbols": []
+                },
+                {
+                    "filepath": "_dtors$99 \tLinker Generated Symbol File",
+                    "sectionType": "4",
+                    "vram": 0,
+                    "size": 4,
+                    "vrom": 1472,
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".data",
+            "vram": 0,
+            "size": 80,
+            "vrom": 1480,
+            "files": [
+                {
+                    "filepath": ".data \td_a_alldie.o",
+                    "sectionType": "1",
+                    "vram": 0,
+                    "size": 80,
+                    "vrom": 1480,
+                    "symbols": []
+                },
+                {
+                    "filepath": "l_daAlldie_Method \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 0,
+                    "size": 32,
+                    "vrom": 1480,
+                    "symbols": []
+                },
+                {
+                    "filepath": "g_profile_ALLDIE \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": 32,
+                    "size": 48,
+                    "vrom": 1512,
+                    "symbols": []
+                }
+            ]
+        }
+    ]
+}

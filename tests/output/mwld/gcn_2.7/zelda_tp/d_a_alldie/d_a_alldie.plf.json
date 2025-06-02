@@ -1,0 +1,251 @@
+{
+    "segments": [
+        {
+            "name": ".init",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000040",
+            "files": []
+        },
+        {
+            "name": ".text",
+            "vram": "0x00000000",
+            "size": "0x57C",
+            "vrom": "0x000040",
+            "files": [
+                {
+                    "filepath": ".text \texecutor.o",
+                    "sectionType": "1",
+                    "vram": "0x00000000",
+                    "size": "0x78",
+                    "vrom": "0x000040",
+                    "symbols": []
+                },
+                {
+                    "filepath": "_prolog \texecutor.o",
+                    "sectionType": "4",
+                    "vram": "0x00000000",
+                    "size": "0x2C",
+                    "vrom": "0x000040",
+                    "symbols": []
+                },
+                {
+                    "filepath": "_epilog \texecutor.o",
+                    "sectionType": "4",
+                    "vram": "0x0000002C",
+                    "size": "0x2C",
+                    "vrom": "0x00006C",
+                    "symbols": []
+                },
+                {
+                    "filepath": "_unresolved \texecutor.o",
+                    "sectionType": "4",
+                    "vram": "0x00000058",
+                    "size": "0x20",
+                    "vrom": "0x000098",
+                    "symbols": []
+                },
+                {
+                    "filepath": ".text \td_a_alldie.o",
+                    "sectionType": "1",
+                    "vram": "0x00000078",
+                    "size": "0x504",
+                    "vrom": "0x0000B8",
+                    "symbols": []
+                },
+                {
+                    "filepath": "getEventNo__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x00000078",
+                    "size": "0xC",
+                    "vrom": "0x0000B8",
+                    "symbols": []
+                },
+                {
+                    "filepath": "getSwbit__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x00000084",
+                    "size": "0xC",
+                    "vrom": "0x0000C4",
+                    "symbols": []
+                },
+                {
+                    "filepath": "actionWait__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x00000090",
+                    "size": "0x8",
+                    "vrom": "0x0000D0",
+                    "symbols": []
+                },
+                {
+                    "filepath": "actionCheck__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x00000098",
+                    "size": "0x50",
+                    "vrom": "0x0000D8",
+                    "symbols": []
+                },
+                {
+                    "filepath": "actionTimer__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x000000E8",
+                    "size": "0xB0",
+                    "vrom": "0x000128",
+                    "symbols": []
+                },
+                {
+                    "filepath": "actionOrder__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x00000198",
+                    "size": "0x68",
+                    "vrom": "0x0001D8",
+                    "symbols": []
+                },
+                {
+                    "filepath": "actionEvent__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x00000200",
+                    "size": "0xA4",
+                    "vrom": "0x000240",
+                    "symbols": []
+                },
+                {
+                    "filepath": "actionNext__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x000002A4",
+                    "size": "0xCC",
+                    "vrom": "0x0002E4",
+                    "symbols": []
+                },
+                {
+                    "filepath": "execute__10daAlldie_cFv \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x00000370",
+                    "size": "0x7C",
+                    "vrom": "0x0003B0",
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAlldie_Draw__FP10daAlldie_c \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x000003EC",
+                    "size": "0x8",
+                    "vrom": "0x00042C",
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAlldie_Execute__FP10daAlldie_c \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x000003F4",
+                    "size": "0x24",
+                    "vrom": "0x000434",
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAlldie_IsDelete__FP10daAlldie_c \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x00000418",
+                    "size": "0x8",
+                    "vrom": "0x000458",
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAlldie_Delete__FP10daAlldie_c \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x00000420",
+                    "size": "0x30",
+                    "vrom": "0x000460",
+                    "symbols": []
+                },
+                {
+                    "filepath": "daAlldie_Create__FP10fopAc_ac_c \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x00000450",
+                    "size": "0x12C",
+                    "vrom": "0x000490",
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".ctors",
+            "vram": "0x00000000",
+            "size": "0x4",
+            "vrom": "0x0005BC",
+            "files": [
+                {
+                    "filepath": ".ctors$99 \tLinker Generated Symbol File",
+                    "sectionType": "1",
+                    "vram": "0x00000000",
+                    "size": "0x4",
+                    "vrom": "0x0005BC",
+                    "symbols": []
+                },
+                {
+                    "filepath": "_ctors$99 \tLinker Generated Symbol File",
+                    "sectionType": "4",
+                    "vram": "0x00000000",
+                    "size": "0x4",
+                    "vrom": "0x0005BC",
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".dtors",
+            "vram": "0x00000000",
+            "size": "0x4",
+            "vrom": "0x0005C0",
+            "files": [
+                {
+                    "filepath": ".dtors$99 \tLinker Generated Symbol File",
+                    "sectionType": "1",
+                    "vram": "0x00000000",
+                    "size": "0x4",
+                    "vrom": "0x0005C0",
+                    "symbols": []
+                },
+                {
+                    "filepath": "_dtors$99 \tLinker Generated Symbol File",
+                    "sectionType": "4",
+                    "vram": "0x00000000",
+                    "size": "0x4",
+                    "vrom": "0x0005C0",
+                    "symbols": []
+                }
+            ]
+        },
+        {
+            "name": ".data",
+            "vram": "0x00000000",
+            "size": "0x50",
+            "vrom": "0x0005C8",
+            "files": [
+                {
+                    "filepath": ".data \td_a_alldie.o",
+                    "sectionType": "1",
+                    "vram": "0x00000000",
+                    "size": "0x50",
+                    "vrom": "0x0005C8",
+                    "symbols": []
+                },
+                {
+                    "filepath": "l_daAlldie_Method \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x00000000",
+                    "size": "0x20",
+                    "vrom": "0x0005C8",
+                    "symbols": []
+                },
+                {
+                    "filepath": "g_profile_ALLDIE \td_a_alldie.o",
+                    "sectionType": "4",
+                    "vram": "0x00000020",
+                    "size": "0x30",
+                    "vrom": "0x0005E8",
+                    "symbols": []
+                }
+            ]
+        }
+    ]
+}

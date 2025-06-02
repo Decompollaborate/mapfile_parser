@@ -171,7 +171,7 @@ checksum = "13dc2df351e3202783a1fe0d44375f7295ffb4049267b0f3018346dc122a1d94"
 
 [[package]]
 name = "mapfile_parser"
-version = "2.9.3"
+version = "2.9.4-dev0"
 dependencies = [
  "lazy_static",
  "objdiff-core",

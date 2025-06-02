@@ -1,0 +1,10 @@
+VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
+800035E4,.init 	exception.o,1,1,0,7988,7988.00
+8033A6E4,__OSDBJump 	OS.o,4,1,0,4,4.00
+8033A718,OSExceptionVector 	OS.o,4,3,0,156,52.00
+8033D6F4,OSDisableInterrupts 	OSInterrupt.o,4,1,0,20,20.00
+80340A20,SystemCallVector 	OSSync.o,4,1,0,32,32.00
+80362108,__save_fpr 	runtime.o,4,4,0,76,19.00
+80362154,__restore_fpr 	runtime.o,4,4,0,76,19.00
+803621A0,__save_gpr 	runtime.o,4,15,0,76,5.07
+803621EC,__restore_gpr 	runtime.o,4,15,0,76,5.07
