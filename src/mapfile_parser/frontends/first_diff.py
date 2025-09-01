@@ -41,10 +41,8 @@ def doFirstDiff(mapPath, expectedMapPath, romPath, expectedRomPath, diffCount: i
         print("No differences!")
         return 0
 
-    builtMapFile = mapfile.MapFile()
-    builtMapFile.readMapFile(mapPath)
-    expectedMapFile = mapfile.MapFile()
-    expectedMapFile.readMapFile(expectedMapPath)
+    builtMapFile = mapfile.MapFile.newFromMapFile(mapPath)
+    expectedMapFile = mapfile.MapFile.newFromMapFile(expectedMapPath)
 
     endian_diff = 0
     if endian == "little":

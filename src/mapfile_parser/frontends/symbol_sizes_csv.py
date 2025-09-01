@@ -17,8 +17,7 @@ def doSymbolSizesCsv(mapPath: Path, outputPath: Path|None, filterSection: str|No
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
 
-    mapFile = mapfile.MapFile()
-    mapFile.readMapFile(mapPath)
+    mapFile = mapfile.MapFile.newFromMapFile(mapPath)
 
     if filterSection is not None:
         mapFile = mapFile.filterBySectionType(filterSection)

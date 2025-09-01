@@ -18,8 +18,7 @@ def doJsonify(mapPath: Path, outputPath: Path|None, humanReadable: bool=True, ap
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
 
-    mapFile = mapfile.MapFile()
-    mapFile.readMapFile(mapPath)
+    mapFile = mapfile.MapFile.newFromMapFile(mapPath)
 
     jsonStr = json.dumps(mapFile.toJson(humanReadable=humanReadable), indent=4)
 

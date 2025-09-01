@@ -18,8 +18,7 @@ def doSymInfo(mapPath: Path, symName: str, *, as_vram: bool=False, as_vrom: bool
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
 
-    mapFile = mapfile.MapFile()
-    mapFile.readMapFile(mapPath)
+    mapFile = mapfile.MapFile.newFromMapFile(mapPath)
 
     possibleFiles: list[mapfile.Section] = []
 

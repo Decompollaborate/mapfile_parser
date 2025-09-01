@@ -15,10 +15,7 @@ from .. import progress_stats
 
 
 def getProgress(mapPath: Path, asmPath: Path, nonmatchingsPath: Path, pathIndex: int=2, checkFunctionFiles: bool=True, debugging: bool=False) -> tuple[progress_stats.ProgressStats, dict[str, progress_stats.ProgressStats]]:
-    mapFile = mapfile.MapFile()
-
-    mapFile.debugging = debugging
-    mapFile.readMapFile(mapPath)
+    mapFile = mapfile.MapFile.newFromMapFile(mapPath)
 
     return mapFile.filterBySectionType(".text").getProgress(asmPath, nonmatchingsPath, pathIndex=pathIndex, checkFunctionFiles=checkFunctionFiles)
 

@@ -449,7 +449,7 @@ class Segment:
                 newSegment._sectionsList.append(section)
         return newSegment
 
-    #! @deprecated: Use either `getEverySectionExceptSectionType` instead.
+    #! @deprecated: Use `getEverySectionExceptSectionType` instead.
     def getEveryFileExceptSectionType(self, sectionType: str) -> Segment:
         return self.getEverySectionExceptSectionType(sectionType)
 
@@ -588,17 +588,17 @@ class Segment:
         self._sectionsList.append(section)
 
 
-    #! @deprecated: Use either `copySectionList` instead.
+    #! @deprecated: Use `copySectionList` instead.
     def copyFileList(self) -> list[Section]:
         """Returns a copy (not a reference) of the internal section list"""
         return self.copySectionList()
 
-    #! @deprecated: Use either `setSectionList` instead.
+    #! @deprecated: Use `setSectionList` instead.
     def setFileList(self, newList: list[Section]) -> None:
         """Replaces the internal section list with a copy of `newList`"""
         return self.setSectionList(newList)
 
-    #! @deprecated: Use either `appendSection` instead.
+    #! @deprecated: Use `appendSection` instead.
     def appendFile(self, section: Section) -> None:
         """Appends a copy of `section` into the internal section list"""
         return self.appendSection(section)
@@ -706,7 +706,7 @@ class MapFile:
 
         return nativeMapFile
 
-    #! @deprecated: Use either `newFromMapFile` instead.
+    #! @deprecated: Use `newFromMapFile` instead.
     def readMapFile(self, mapPath: Path):
         """
         Opens the mapfile pointed by the `mapPath` argument and parses it.
@@ -719,12 +719,11 @@ class MapFile:
         - Metrowerks ld
         """
 
-        nativeMapFile = MapFileRs()
-        nativeMapFile.readMapFile(mapPath)
+        nativeMapFile = MapFileRs.newFromMapFile(mapPath)
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
-    #! @deprecated: Use either `newFromMapStr` instead.
+    #! @deprecated: Use `newFromMapStr` instead.
     def parseMapContents(self, mapContents: str):
         """
         Parses the contents of the map.
@@ -739,12 +738,11 @@ class MapFile:
         - Metrowerks ld
         """
 
-        nativeMapFile = MapFileRs()
-        nativeMapFile.parseMapContents(mapContents)
+        nativeMapFile = MapFileRs.newFromMapStr(mapContents)
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
-    #! @deprecated: Use either `newFromGnuMapStr` instead.
+    #! @deprecated: Use `newFromGnuMapStr` instead.
     def parseMapContentsGNU(self, mapContents: str):
         """
         Parses the contents of a GNU ld map.
@@ -752,12 +750,11 @@ class MapFile:
         The `mapContents` argument must contain the contents of a GNU ld mapfile.
         """
 
-        nativeMapFile = MapFileRs()
-        nativeMapFile.parseMapContentsGNU(mapContents)
+        nativeMapFile = MapFileRs.newFromGnuMapStr(mapContents)
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
-    #! @deprecated: Use either `newFromLldMapStr` instead.
+    #! @deprecated: Use `newFromLldMapStr` instead.
     def parseMapContentsLLD(self, mapContents: str):
         """
         Parses the contents of a clang ld.lld map.
@@ -765,8 +762,7 @@ class MapFile:
         The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
         """
 
-        nativeMapFile = MapFileRs()
-        nativeMapFile.parseMapContentsLLD(mapContents)
+        nativeMapFile = MapFileRs.newFromLldMapStr(mapContents)
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 

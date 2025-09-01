@@ -14,12 +14,10 @@ from .. import utils
 
 
 def getComparison(mapPath, expectedMapPath, *, reverseCheck: bool=True) -> mapfile.MapsComparisonInfo:
-    buildMap = mapfile.MapFile()
-    buildMap.readMapFile(mapPath)
+    buildMap = mapfile.MapFile.newFromMapFile(mapPath)
     buildMap = buildMap.filterBySectionType(".bss")
 
-    expectedMap = mapfile.MapFile()
-    expectedMap.readMapFile(expectedMapPath)
+    expectedMap = mapfile.MapFile.newFromMapFile(expectedMapPath)
     expectedMap = expectedMap.filterBySectionType(".bss")
 
     return buildMap.compareFilesAndSymbols(expectedMap, checkOtherOnSelf=reverseCheck)

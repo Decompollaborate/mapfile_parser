@@ -46,8 +46,7 @@ def getProgressFromMapFile(mapFile: mapfile_parser.MapFile, aliases: dict[str, s
     return totalStats, progressPerFolder
 
 def getProgress(mapPath: Path, version: str, pathIndex: int=2) -> tuple[mapfile_parser.ProgressStats, dict[str, mapfile_parser.ProgressStats]]:
-    mapFile = mapfile_parser.MapFile()
-    mapFile.readMapFile(mapPath)
+    mapFile = mapfile_parser.MapFile.newFromMapFile(mapPath)
 
     for segment in mapFile:
         for file in segment:

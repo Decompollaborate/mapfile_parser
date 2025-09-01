@@ -39,8 +39,7 @@ def doObjdiffReport(
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
 
-    mapFile = mapfile.MapFile()
-    mapFile.readMapFile(mapPath)
+    mapFile = mapfile.MapFile.newFromMapFile(mapPath)
 
     if emitCategories:
         printDefaultCategories(mapFile, prefixesToTrim)
