@@ -67,7 +67,7 @@ impl MapFile {
     pub fn find_symbol_by_name(
         &self,
         sym_name: &str,
-    ) -> Option<found_symbol_info::FoundSymbolInfo> {
+    ) -> Option<found_symbol_info::FoundSymbolInfo<'_>> {
         for segment in &self.segments_list {
             if let Some(info) = segment.find_symbol_by_name(sym_name) {
                 return Some(info);
@@ -84,7 +84,7 @@ impl MapFile {
     pub fn find_symbol_by_vram_or_vrom(
         &self,
         address: u64,
-    ) -> Option<found_symbol_info::FoundSymbolInfo> {
+    ) -> Option<found_symbol_info::FoundSymbolInfo<'_>> {
         for segment in &self.segments_list {
             #[allow(deprecated)]
             if let Some(info) = segment.find_symbol_by_vram_or_vrom(address) {
@@ -99,7 +99,7 @@ impl MapFile {
         &self,
         address: u64,
     ) -> (
-        Option<found_symbol_info::FoundSymbolInfo>,
+        Option<found_symbol_info::FoundSymbolInfo<'_>>,
         Vec<&section::Section>,
     ) {
         let mut possible_sections = Vec::new();
@@ -119,7 +119,7 @@ impl MapFile {
         &self,
         address: u64,
     ) -> (
-        Option<found_symbol_info::FoundSymbolInfo>,
+        Option<found_symbol_info::FoundSymbolInfo<'_>>,
         Vec<&section::Section>,
     ) {
         let mut possible_sections = Vec::new();

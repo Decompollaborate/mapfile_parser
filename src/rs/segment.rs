@@ -81,7 +81,7 @@ impl Segment {
     pub fn find_symbol_by_name(
         &self,
         sym_name: &str,
-    ) -> Option<found_symbol_info::FoundSymbolInfo> {
+    ) -> Option<found_symbol_info::FoundSymbolInfo<'_>> {
         for section in &self.sections_list {
             if let Some(sym) = section.find_symbol_by_name(sym_name) {
                 return Some(found_symbol_info::FoundSymbolInfo::new_default(
@@ -99,7 +99,7 @@ impl Segment {
     pub fn find_symbol_by_vram_or_vrom(
         &self,
         address: u64,
-    ) -> Option<found_symbol_info::FoundSymbolInfo> {
+    ) -> Option<found_symbol_info::FoundSymbolInfo<'_>> {
         for section in &self.sections_list {
             #[allow(deprecated)]
             if let Some((sym, offset)) = section.find_symbol_by_vram_or_vrom(address) {
@@ -115,7 +115,7 @@ impl Segment {
         &self,
         address: u64,
     ) -> (
-        Option<found_symbol_info::FoundSymbolInfo>,
+        Option<found_symbol_info::FoundSymbolInfo<'_>>,
         Vec<&section::Section>,
     ) {
         let mut possible_sections = Vec::new();
@@ -139,7 +139,7 @@ impl Segment {
         &self,
         address: u64,
     ) -> (
-        Option<found_symbol_info::FoundSymbolInfo>,
+        Option<found_symbol_info::FoundSymbolInfo<'_>>,
         Vec<&section::Section>,
     ) {
         let mut possible_sections = Vec::new();
