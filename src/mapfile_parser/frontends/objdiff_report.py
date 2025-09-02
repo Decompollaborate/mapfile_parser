@@ -484,6 +484,8 @@ tools:
     parser.add_argument("--emit-categories", help="Print automatically-generated categories from your mapfile, using the decomp.yaml format. These categories are expected to be tweaked and not used as-is.", action="store_true")
     parser.add_argument("--quiet", help="Avoid printing the progress report to the stdout and to the Github action summary.", action="store_true")
 
+    parser.add_argument("-x", "--plf-ext", help="File extension for partially linked files (plf). Will be used to transform the `plf`s path into a mapfile path by replacing the extension. The extension must contain the leading period. This argument can be passed multiple times.", action="append")
+
     parser.set_defaults(func=processArguments)
 
 
