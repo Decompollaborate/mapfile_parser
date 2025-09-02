@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+from collections.abc import Callable
 import dataclasses
 import decomp_settings
 from pathlib import Path
@@ -34,12 +35,15 @@ def doObjdiffReport(
         emitCategories: bool=False,
         quiet: bool=False,
         summaryTableConfig: SummaryTableConfig|None=SummaryTableConfig(),
+        plfResolver: Callable[[Path], Path|None]|None=None,
     ) -> int:
     if not mapPath.exists():
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
 
     mapFile = mapfile.MapFile.newFromMapFile(mapPath)
+    if plfResolver is not None:
+        mapFile = mapFile.resolvePartiallyLinkedFiles(plfResolver)
 
     if emitCategories:
         printDefaultCategories(mapFile, prefixesToTrim)
@@ -346,6 +350,18 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
     else:
         summaryTableConfig = None
 
+    plfExt: list[str]|None = args.plf_ext
+
+    plfResolver = None
+    if plfExt is not None:
+        def resolver(x: Path) -> Path|None:
+            if x.suffix in plfExt:
+                newPath = x.with_suffix(".map")
+                if newPath.exists():
+                    return newPath
+            return None
+        plfResolver = resolver
+
     exit(doObjdiffReport(
         mapPath,
         outputPath,
@@ -356,6 +372,7 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
         nonmatchingsPath=nonmatchingsPath,
         emitCategories=emitCategories,
         summaryTableConfig=summaryTableConfig,
+        plfResolver=plfResolver,
     ))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):

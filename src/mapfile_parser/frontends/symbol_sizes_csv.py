@@ -6,18 +6,29 @@
 from __future__ import annotations
 
 import argparse
+from collections.abc import Callable
 import decomp_settings
 from pathlib import Path
 
 from .. import mapfile
 
 
-def doSymbolSizesCsv(mapPath: Path, outputPath: Path|None, filterSection: str|None=None, sameFolder: bool=False, symbolsSummary: bool=False, allFiles: bool=False) -> int:
+def doSymbolSizesCsv(
+        mapPath: Path,
+        outputPath: Path|None,
+        filterSection: str|None=None,
+        sameFolder: bool=False,
+        symbolsSummary: bool=False,
+        allFiles: bool=False,
+        plfResolver: Callable[[Path], Path|None]|None=None,
+    ) -> int:
     if not mapPath.exists():
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
 
     mapFile = mapfile.MapFile.newFromMapFile(mapPath)
+    if plfResolver is not None:
+        mapFile = mapFile.resolvePartiallyLinkedFiles(plfResolver)
 
     if filterSection is not None:
         mapFile = mapFile.filterBySectionType(filterSection)
@@ -52,8 +63,20 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
     sameFolder: bool = args.same_folder
     symbolsSummary: bool = args.symbols
     allFiles: bool = args.all
+    plfExt: list[str]|None = args.plf_ext
 
-    exit(doSymbolSizesCsv(mapPath, outputPath, filterSection, sameFolder, symbolsSummary, allFiles))
+    plfResolver = None
+    if plfExt is not None:
+        def resolver(x: Path) -> Path|None:
+            if x.suffix in plfExt:
+                newPath = x.with_suffix(".map")
+                if newPath.exists():
+                    return newPath
+            return None
+
+        plfResolver = resolver
+
+    exit(doSymbolSizesCsv(mapPath, outputPath, filterSection, sameFolder, symbolsSummary, allFiles, plfResolver=plfResolver))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     parser = subparser.add_parser("symbol_sizes_csv", help="Produces a csv summarizing the files sizes by parsing a map file.")
@@ -76,5 +99,7 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
     parser.add_argument("--symbols", help="Prints the size of every symbol instead of a summary.", action="store_true")
     parser.add_argument("-a", "--all", help="Don't skip files without symbols.", action="store_true")
     parser.add_argument("-f", "--filter-section", help="Only print the symbols of the passed section. For example: .text")
+
+    parser.add_argument("-x", "--plf-ext", help="File extension for partially linked files (plf). Will be used to transform the `plf`s path into a mapfile path by replacing the extension. The extension must contain the leading period. This argument can be passed multiple times.", action="append")
 
     parser.set_defaults(func=processArguments)

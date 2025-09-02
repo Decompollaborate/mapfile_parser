@@ -6,15 +6,28 @@
 from __future__ import annotations
 
 import argparse
+from collections.abc import Callable
 import decomp_settings
 from pathlib import Path
-from typing import Callable, Literal
+from typing import Literal
 
 from .. import mapfile
 from .. import utils
 
 
-def doFirstDiff(mapPath, expectedMapPath, romPath, expectedRomPath, diffCount: int=5, mismatchSize: bool=False, addColons: bool=True, bytesConverterCallback:Callable[[bytes, mapfile.MapFile],str|None]|None=None, endian: Literal["big", "little"] ="big") -> int:
+def doFirstDiff(
+        mapPath: Path,
+        expectedMapPath: Path,
+        romPath: Path,
+        expectedRomPath: Path,
+        diffCount: int=5,
+        mismatchSize: bool=False,
+        addColons: bool=True,
+        bytesConverterCallback: Callable[[bytes, mapfile.MapFile],str|None]|None=None,
+        endian: Literal["big", "little"] ="big",
+        plfResolver: Callable[[Path], Path|None]|None=None,
+        plfResolverExpected: Callable[[Path], Path|None]|None=None,
+    ) -> int:
     if not mapPath.exists():
         print(f"{mapPath} must exist")
         return 1
@@ -42,7 +55,12 @@ def doFirstDiff(mapPath, expectedMapPath, romPath, expectedRomPath, diffCount: i
         return 0
 
     builtMapFile = mapfile.MapFile.newFromMapFile(mapPath)
+    if plfResolver is not None:
+        builtMapFile = builtMapFile.resolvePartiallyLinkedFiles(plfResolver)
+
     expectedMapFile = mapfile.MapFile.newFromMapFile(expectedMapPath)
+    if plfResolverExpected is not None:
+        expectedMapFile = expectedMapFile.resolvePartiallyLinkedFiles(plfResolverExpected)
 
     endian_diff = 0
     if endian == "little":
@@ -164,7 +182,20 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
 
     endian = args.endian
 
-    exit(doFirstDiff(mapPath, expectedMapPath, romPath, expectedRomPath, diffCount, mismatchSize, endian=endian))
+    plfExt: list[str]|None = args.plf_ext
+
+    plfResolver = None
+    if plfExt is not None:
+        def resolver(x: Path) -> Path|None:
+            if x.suffix in plfExt:
+                newPath = x.with_suffix(".map")
+                if newPath.exists():
+                    return newPath
+            return None
+
+        plfResolver = resolver
+
+    exit(doFirstDiff(mapPath, expectedMapPath, romPath, expectedRomPath, diffCount, mismatchSize, endian=endian, plfResolver=plfResolver))
 
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
@@ -197,5 +228,7 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
     parser.add_argument("-c", "--count", type=int, default=5, help="find up to this many instruction difference(s)")
     parser.add_argument("-m", "--mismatch-size", help="Do not exit early if the ROM sizes does not match", action="store_true")
     parser.add_argument("-e", "--endian", help="Specify endianness of the binary", choices=["big", "little"], default="big")
+
+    parser.add_argument("-x", "--plf-ext", help="File extension for partially linked files (plf). Will be used to transform the `plf`s path into a mapfile path by replacing the extension. The extension must contain the leading period. This argument can be passed multiple times.", action="append")
 
     parser.set_defaults(func=processArguments)

@@ -12,7 +12,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 - Support for partially linked objects (a.k.a. `plf`).
   - This is done by calling a function with a user provided callback that
     converts a given object path into the corresponding mapfile for that `plf`.
-  - Rust: `MapFile::resolve_partially_linked_files`.
+  - Rust: `MapFile::resolve_partially_linked_files()`.
+  - Python: `MapFile::resolvePartiallyLinkedFiles()`.
+- All the CLI utilities include basic support for `plf`s.
+  - Pass the flag `-x .extension` or `--plf-ext .extension` to specify the
+    extension of the partially linked objects files that should be replaced with
+    a `.map` extension.
+  - The frontends API allow to further customize this behavior by passing a
+    callback like the one used by `MapFile::resolvePartiallyLinkedFiles`.
 
 ## [2.9.4] - 2025-06-02
 

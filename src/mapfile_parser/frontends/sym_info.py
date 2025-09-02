@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+from collections.abc import Callable
 import decomp_settings
 from pathlib import Path
 
@@ -13,12 +14,22 @@ from .. import mapfile
 from .. import utils
 
 
-def doSymInfo(mapPath: Path, symName: str, *, as_vram: bool=False, as_vrom: bool=False, as_name: bool=False) -> int:
+def doSymInfo(
+        mapPath: Path,
+        symName: str,
+        *,
+        as_vram: bool=False,
+        as_vrom: bool=False,
+        as_name: bool=False,
+        plfResolver: Callable[[Path], Path|None]|None=None,
+    ) -> int:
     if not mapPath.exists():
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
 
     mapFile = mapfile.MapFile.newFromMapFile(mapPath)
+    if plfResolver is not None:
+        mapFile = mapFile.resolvePartiallyLinkedFiles(plfResolver)
 
     possibleFiles: list[mapfile.Section] = []
 
@@ -65,8 +76,20 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
     as_vram: bool = args.vram
     as_vrom: bool = args.vrom
     as_name: bool = args.name
+    plfExt: list[str]|None = args.plf_ext
 
-    exit(doSymInfo(mapPath, symName, as_vram=as_vram, as_vrom=as_vrom, as_name=as_name))
+    plfResolver = None
+    if plfExt is not None:
+        def resolver(x: Path) -> Path|None:
+            if x.suffix in plfExt:
+                newPath = x.with_suffix(".map")
+                if newPath.exists():
+                    return newPath
+            return None
+
+        plfResolver = resolver
+
+    exit(doSymInfo(mapPath, symName, as_vram=as_vram, as_vrom=as_vrom, as_name=as_name, plfResolver=plfResolver))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     parser = subparser.add_parser("sym_info", help="Display various information about a symbol or address.")
@@ -84,6 +107,8 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
     if emitMapfile:
         parser.add_argument("mapfile", help="Path to a map file.", type=Path)
     parser.add_argument("symname", help="Symbol name or VROM/VRAM address to lookup. How to treat this argument will be guessed.")
+
+    parser.add_argument("-x", "--plf-ext", help="File extension for partially linked files (plf). Will be used to transform the `plf`s path into a mapfile path by replacing the extension. The extension must contain the leading period. This argument can be passed multiple times.", action="append")
 
     vram_vrom_group = parser.add_mutually_exclusive_group()
     vram_vrom_group.add_argument("--vram", help="Treat the argument as a VRAM address instead of guessing.", action="store_true")

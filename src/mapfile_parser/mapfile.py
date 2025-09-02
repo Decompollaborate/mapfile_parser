@@ -5,6 +5,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 import dataclasses
 import re
 from typing import Any, Generator
@@ -605,10 +606,13 @@ class Segment:
 
 
     def clone(self) -> Segment:
-        s = Segment(self.name, self.vram, self.size, self.vrom, self.align)
+        s = self.cloneNoSectionlist()
         for f in self._sectionsList:
             s._sectionsList.append(f.clone())
         return s
+
+    def cloneNoSectionlist(self) -> Segment:
+        return Segment(self.name, self.vram, self.size, self.vrom, self.align)
 
 
     def __iter__(self) -> Generator[Section, None, None]:
@@ -1010,6 +1014,86 @@ class MapFile:
                             compInfo.comparedList.append(SymbolComparisonInfo(symbol, -1, None, symbol.vram, section))
 
         return compInfo
+
+    def resolvePartiallyLinkedFiles(self, resolver: Callable[[Path], Path|None]) -> MapFile:
+        """
+        Resolve sections and paths of a mapfile built from partially linked objects.
+
+        `elf` files built by using partially linked files/objects (usually
+        referred to as `plf`) usually generate mapfiles that have filepaths that
+        point to the partially linked objects instead of the original objects
+        used to build those intermediary objects, making it awkward to work with
+        paths because all symbols will be listed as part as the same single `plf`.
+
+        This function resolves those sections by using a resolver callback that
+        transforms a path to an object/`plf` into the corresponding mapfile of
+        said partially linked object.
+        This callback should return `None` if the given path does not correspond
+        to a `plf`, the pointed mapfile does not exist, etc.
+
+        An usual convention for a file extension for partially linked objects is
+        the `.plf` extension instead of `.o`.
+        """
+
+        # Construct a mapping for every "plf -> map"
+        knownMaps: dict[Path, MapFile] = dict()
+        for seg in self._segmentsList:
+            for sect in seg._sectionsList:
+                # Only read the map if this is a new plf.
+                if sect.filepath in knownMaps:
+                    continue
+                if (other_map_path := resolver(sect.filepath)) is not None:
+                    knownMaps[sect.filepath] = MapFile.newFromMapFile(other_map_path)
+        return self._resolve_plf_impl(knownMaps)
+
+    def _resolve_plf_impl(self, knownMaps: dict[Path, MapFile]) -> MapFile:
+        if len(knownMaps) == 0:
+            return self.clone()
+
+        resolvedMap = MapFile()
+        for seg in self._segmentsList:
+            newSeg = seg.cloneNoSectionlist()
+
+            for sect in seg._sectionsList:
+                if (otherMap := knownMaps.get(sect.filepath)) is not None:
+                    # Each segment of a plf is just a normal elf section
+                    partialSegment = None
+                    for x in otherMap._segmentsList:
+                        if x.name == sect.sectionType:
+                            partialSegment = x
+                            break
+
+                    if partialSegment is not None:
+                        # Take all the sections from the plf map and insert them
+                        # into the new generated map, replacing the old sections
+                        # and symbols.
+                        for partialSect in partialSegment._sectionsList:
+                            sectTemp = partialSect.clone()
+
+                            # Adjust the vram and vrom addresses of the section
+                            # because they are relative to zero.
+                            sectTemp.vram += sect.vram
+                            if sectTemp.vrom is not None and sect.vrom is not None and partialSegment.vrom is not None:
+                                sectTemp.vrom = sectTemp.vrom + sect.vrom - partialSegment.vrom
+
+                            # Adjust vram and vrom of symbols too.
+                            for partialSym in sectTemp._symbols:
+                                partialSym.vram += sect.vram
+                                if partialSym.vrom is not None and sect.vrom is not None and partialSegment.vrom is not None:
+                                    partialSym.vrom = partialSym.vrom + sect.vrom - partialSegment.vrom
+
+                            newSeg._sectionsList.append(sectTemp)
+                    else:
+                        # Keep the original section if there are no sections
+                        # matching the section type in the plf.
+                        newSeg._sectionsList.append(sect.clone())
+                else:
+                    # Keep the original section if there are no maps for this path
+                    newSeg._sectionsList.append(sect.clone())
+                pass
+
+            resolvedMap._segmentsList.append(newSeg)
+        return resolvedMap
 
 
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
