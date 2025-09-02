@@ -1,0 +1,5384 @@
+{
+  "measures": {
+    "fuzzy_match_percent": 100.0,
+    "total_code": "36528",
+    "matched_code": "36528",
+    "matched_code_percent": 100.0,
+    "matched_data_percent": 100.0,
+    "total_functions": 164,
+    "matched_functions": 164,
+    "matched_functions_percent": 100.0,
+    "complete_data_percent": 100.0,
+    "total_units": 98
+  },
+  "units": [
+    {
+      "name": "gc-eu-mq-dbg/src/boot/boot_main",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "320",
+        "matched_code": "320",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "320",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "36784"
+          }
+        },
+        {
+          "name": ".reginfo",
+          "size": "24",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "2544",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "bootclear",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": "bootproc",
+          "size": "264",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "56"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/boot/idle",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "1136",
+        "matched_code": "1136",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "1136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "320"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "624",
+          "metadata": {
+            "virtual_address": "36800"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "3088",
+          "metadata": {
+            "virtual_address": "2544"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "64"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "Main_ThreadEntry",
+          "size": "244",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "320"
+          }
+        },
+        {
+          "name": "Idle_ThreadEntry",
+          "size": "892",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "564"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/boot/viconfig",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "384",
+        "matched_code": "384",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "384",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1456"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "37424"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "32"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "128"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "ViConfig_UpdateVi",
+          "size": "312",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1456"
+          }
+        },
+        {
+          "name": "ViConfig_UpdateBlack",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1768"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/boot/z_std_dma",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "4000",
+        "matched_code": "4000",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 14,
+        "matched_functions": 14,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "4000",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1840"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "27296",
+          "metadata": {
+            "virtual_address": "37488"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "6144",
+          "metadata": {
+            "virtual_address": "80"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "1904",
+          "metadata": {
+            "virtual_address": "5632"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "256"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "DmaMgr_StrCmp",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1840"
+          }
+        },
+        {
+          "name": "DmaMgr_DmaRomToRam",
+          "size": "876",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1948"
+          }
+        },
+        {
+          "name": "DmaMgr_AudioDmaHandler",
+          "size": "312",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2824"
+          }
+        },
+        {
+          "name": "DmaMgr_DmaFromDriveRom",
+          "size": "160",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3136"
+          }
+        },
+        {
+          "name": "DmaMgr_Error",
+          "size": "496",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3296"
+          }
+        },
+        {
+          "name": "DmaMgr_FindFileName",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3792"
+          }
+        },
+        {
+          "name": "DmaMgr_GetFileName",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3888"
+          }
+        },
+        {
+          "name": "DmaMgr_ProcessRequest",
+          "size": "464",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3996"
+          }
+        },
+        {
+          "name": "DmaMgr_ThreadEntry",
+          "size": "152",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4460"
+          }
+        },
+        {
+          "name": "DmaMgr_RequestAsync",
+          "size": "348",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4612"
+          }
+        },
+        {
+          "name": "DmaMgr_RequestSync",
+          "size": "124",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4960"
+          }
+        },
+        {
+          "name": "DmaMgr_Init",
+          "size": "544",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5084"
+          }
+        },
+        {
+          "name": "DmaMgr_RequestAsyncDebug",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5628"
+          }
+        },
+        {
+          "name": "DmaMgr_RequestSyncDebug",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5696"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/boot/yaz0",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "816",
+        "matched_code": "816",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 4,
+        "matched_functions": 4,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "816",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5840"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "1040",
+          "metadata": {
+            "virtual_address": "7536"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "320"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "Yaz0_FirstDMA",
+          "size": "152",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5840"
+          }
+        },
+        {
+          "name": "Yaz0_NextDMA",
+          "size": "232",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5992"
+          }
+        },
+        {
+          "name": "Yaz0_DecompressImpl",
+          "size": "356",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6224"
+          }
+        },
+        {
+          "name": "Yaz0_Decompress",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6580"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/boot/z_locale",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "400",
+        "matched_code": "400",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 5,
+        "matched_functions": 5,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "400",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6656"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "144",
+          "metadata": {
+            "virtual_address": "64784"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "6224"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "8576"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "384"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "Locale_Init",
+          "size": "220",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6656"
+          }
+        },
+        {
+          "name": "Locale_ResetRegion",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6876"
+          }
+        },
+        {
+          "name": "func_80001F48",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6888"
+          }
+        },
+        {
+          "name": "func_80001F8C",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6956"
+          }
+        },
+        {
+          "name": "Locale_IsRegionNative",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "7024"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/boot/assert",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "128",
+        "matched_code": "128",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "7056"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "80",
+          "metadata": {
+            "virtual_address": "64928"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "448"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__assert",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "7056"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/boot/is_debug",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "848",
+        "matched_code": "848",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 6,
+        "matched_functions": 6,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "848",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "7200"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "65008"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "8608"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "512"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "isPrintfInit",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "7200"
+          }
+        },
+        {
+          "name": "osSyncPrintfUnused",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "7312"
+          }
+        },
+        {
+          "name": "osSyncPrintf",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "7376"
+          }
+        },
+        {
+          "name": "rmonPrintf",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "7440"
+          }
+        },
+        {
+          "name": "is_proutSyncPrintf",
+          "size": "468",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "7504"
+          }
+        },
+        {
+          "name": "func_80002384",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "7972"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/boot/driverominit",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "480",
+        "matched_code": "480",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "480",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "8048"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "6240"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "128",
+          "metadata": {
+            "virtual_address": "8624"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "576"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osDriveRomInit",
+          "size": "480",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "8048"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/boot/mio0",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "172",
+        "matched_code": "172",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "172",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "8528"
+          }
+        },
+        {
+          "name": ".MIPS.abiflags",
+          "size": "24",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "Mio0_Decompress",
+          "size": "172",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "8528"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libu64/stackcheck",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "912",
+        "matched_code": "912",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 5,
+        "matched_functions": 5,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "912",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "8704"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "208",
+          "metadata": {
+            "virtual_address": "65040"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "6256"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "640"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "StackCheck_Init",
+          "size": "268",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "8704"
+          }
+        },
+        {
+          "name": "StackCheck_Cleanup",
+          "size": "156",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "8972"
+          }
+        },
+        {
+          "name": "StackCheck_GetState",
+          "size": "340",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9128"
+          }
+        },
+        {
+          "name": "StackCheck_CheckAll",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9468"
+          }
+        },
+        {
+          "name": "StackCheck_Check",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9556"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libu64/debug",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "1248",
+        "matched_code": "1248",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 10,
+        "matched_functions": 10,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "1248",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9616"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "512",
+          "metadata": {
+            "virtual_address": "65248"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "704"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "LogUtils_CheckFloatRange",
+          "size": "152",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9616"
+          }
+        },
+        {
+          "name": "LogUtils_CheckIntRange",
+          "size": "136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9768"
+          }
+        },
+        {
+          "name": "LogUtils_LogHexDump",
+          "size": "420",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9904"
+          }
+        },
+        {
+          "name": "LogUtils_LogPointer",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10324"
+          }
+        },
+        {
+          "name": "LogUtils_CheckBoundary",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10404"
+          }
+        },
+        {
+          "name": "LogUtils_CheckNullPointer",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10496"
+          }
+        },
+        {
+          "name": "LogUtils_CheckValidPointer",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10560"
+          }
+        },
+        {
+          "name": "LogUtils_LogThreadId",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10672"
+          }
+        },
+        {
+          "name": "LogUtils_HungupThread",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10736"
+          }
+        },
+        {
+          "name": "LogUtils_ResetHungup",
+          "size": "52",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10812"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libc64/sprintf",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "208",
+        "matched_code": "208",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 3,
+        "matched_functions": 3,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "208",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10864"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "768"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "proutSprintf",
+          "size": "36",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10864"
+          }
+        },
+        {
+          "name": "vsprintf",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10900"
+          }
+        },
+        {
+          "name": "sprintf",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10980"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/piacs",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "192",
+        "matched_code": "192",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 3,
+        "matched_functions": 3,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "192",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11072"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "6272"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "8752"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "832"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osPiCreateAccessQueue",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11072"
+          }
+        },
+        {
+          "name": "__osPiGetAccess",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11152"
+          }
+        },
+        {
+          "name": "__osPiRelAccess",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11220"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/sendmesg",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "336",
+        "matched_code": "336",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11264"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "864"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osSendMesg",
+          "size": "336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11264"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/stopthread",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "192",
+        "matched_code": "192",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "192",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11600"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "896"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osStopThread",
+          "size": "192",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11600"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/viextendvstart",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "16",
+        "matched_code": "16",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11792"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "928"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osViExtendVStart",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11792"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/recvmesg",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "320",
+        "matched_code": "320",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "320",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11808"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "992"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osRecvMesg",
+          "size": "320",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11808"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/initialize",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "848",
+        "matched_code": "848",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 3,
+        "matched_functions": 3,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "848",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "12128"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "6368"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "8784"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1024"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__createSpeedParam",
+          "size": "156",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "12128"
+          }
+        },
+        {
+          "name": "__osInitialize_common",
+          "size": "684",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "12284"
+          }
+        },
+        {
+          "name": "__osInitialize_autodetect",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "12968"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/libc/ll",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "704",
+        "matched_code": "704",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 10,
+        "matched_functions": 10,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "704",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "12976"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1056"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__ull_rshift",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "12976"
+          }
+        },
+        {
+          "name": "__ull_rem",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13020"
+          }
+        },
+        {
+          "name": "__ull_div",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13080"
+          }
+        },
+        {
+          "name": "__ll_lshift",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13140"
+          }
+        },
+        {
+          "name": "__ll_rem",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13184"
+          }
+        },
+        {
+          "name": "__ll_div",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13244"
+          }
+        },
+        {
+          "name": "__ll_mul",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13336"
+          }
+        },
+        {
+          "name": "__ull_divremi",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13384"
+          }
+        },
+        {
+          "name": "__ll_mod",
+          "size": "156",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13480"
+          }
+        },
+        {
+          "name": "__ll_rshift",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13636"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/exceptasm",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "2344",
+        "matched_code": "2344",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 8,
+        "matched_functions": 8,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "2344",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13680"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "68",
+          "metadata": {
+            "virtual_address": "65760"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "48",
+          "metadata": {
+            "virtual_address": "6400"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osExceptionPreamble",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13680"
+          }
+        },
+        {
+          "name": "__osException",
+          "size": "1588",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13696"
+          }
+        },
+        {
+          "name": "__osEnqueueAndYield",
+          "size": "256",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "15284"
+          }
+        },
+        {
+          "name": "__osEnqueueThread",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "15540"
+          }
+        },
+        {
+          "name": "__osPopThread",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "15612"
+          }
+        },
+        {
+          "name": "__osNop",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "15628"
+          }
+        },
+        {
+          "name": "__osDispatchThread",
+          "size": "380",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "15636"
+          }
+        },
+        {
+          "name": "__osCleanupThread",
+          "size": "8",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16016"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/thread",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "64",
+        "matched_code": "64",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16032"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "6448"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1088"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osDequeueThread",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16032"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/destroythread",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "272",
+        "matched_code": "272",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "272",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16096"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1120"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osDestroyThread",
+          "size": "272",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16096"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/libc/bzero",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "156",
+        "matched_code": "156",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "156",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16368"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "bzero",
+          "size": "156",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16368"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/parameters",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "96",
+          "metadata": {
+            "virtual_address": "16528"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/createthread",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "336",
+        "matched_code": "336",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16624"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1152"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osCreateThread",
+          "size": "336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16624"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/setsr",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "16",
+        "matched_code": "16",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16960"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osSetSR",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16960"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/getsr",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "12",
+        "matched_code": "12",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16976"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osGetSR",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16976"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/writebackdcache",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "116",
+        "matched_code": "116",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16992"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osWritebackDCache",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16992"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "64",
+        "matched_code": "64",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "17120"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1184"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osViGetNextFramebuffer",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "17120"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/pimgr",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "368",
+        "matched_code": "368",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "368",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "17184"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "48",
+          "metadata": {
+            "virtual_address": "6480"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "5232",
+          "metadata": {
+            "virtual_address": "8800"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1216"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osCreatePiManager",
+          "size": "368",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "17184"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/devmgr",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "1040",
+        "matched_code": "1040",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "1040",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "17568"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "65840"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1248"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osDevMgrMain",
+          "size": "1040",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "17568"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/pirawdma",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "208",
+        "matched_code": "208",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "208",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "18608"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1280"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osPiRawStartDma",
+          "size": "208",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "18608"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/virtualtophysical",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "128",
+        "matched_code": "128",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "18816"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1312"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osVirtualToPhysical",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "18816"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/viblack",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "112",
+        "matched_code": "112",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "18944"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1344"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osViBlack",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "18944"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/sirawread",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "80",
+        "matched_code": "80",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19056"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1376"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osSiRawReadIo",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19056"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/getthreadid",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "32",
+        "matched_code": "32",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19136"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1408"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osGetThreadId",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19136"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/setintmask",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "160",
+        "matched_code": "160",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "160",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19168"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "128",
+          "metadata": {
+            "virtual_address": "65872"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osSetIntMask",
+          "size": "160",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19168"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/visetmode",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "96",
+        "matched_code": "96",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19328"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1440"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osViSetMode",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19328"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/probetlb",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "184",
+        "matched_code": "184",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "184",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19424"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osProbeTLB",
+          "size": "184",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19424"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/getmemsize",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "288",
+        "matched_code": "288",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "288",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19616"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1472"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osGetMemSize",
+          "size": "288",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19616"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/seteventmesg",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "192",
+        "matched_code": "192",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "192",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19904"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "6528"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "128",
+          "metadata": {
+            "virtual_address": "14032"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1504"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osSetEventMesg",
+          "size": "192",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19904"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/libc/xprintf",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "3296",
+        "matched_code": "3296",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "3296",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "20096"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "256",
+          "metadata": {
+            "virtual_address": "66000"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "80",
+          "metadata": {
+            "virtual_address": "6544"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1536"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "_Printf",
+          "size": "3296",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "20096"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/unmaptlball",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "68",
+        "matched_code": "68",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23392"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osUnmapTLBAll",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23392"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/epidma",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "160",
+        "matched_code": "160",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "160",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23472"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1568"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osEPiStartDma",
+          "size": "160",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23472"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/libc/string",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "160",
+        "matched_code": "160",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 3,
+        "matched_functions": 3,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "160",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23632"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1600"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "strchr",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23632"
+          }
+        },
+        {
+          "name": "strlen",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23696"
+          }
+        },
+        {
+          "name": "memcpy",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23736"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/invalicache",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "116",
+        "matched_code": "116",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23792"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osInvalICache",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23792"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/createmesgqueue",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "48",
+        "matched_code": "48",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23920"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1632"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osCreateMesgQueue",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23920"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/invaldcache",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "172",
+        "matched_code": "172",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "172",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23968"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osInvalDCache",
+          "size": "172",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23968"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/si",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "48",
+        "matched_code": "48",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24144"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1664"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osSiDeviceBusy",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24144"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/jammesg",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "336",
+        "matched_code": "336",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24192"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1696"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osJamMesg",
+          "size": "336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24192"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/setthreadpri",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "224",
+        "matched_code": "224",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "224",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24528"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1728"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osSetThreadPri",
+          "size": "224",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24528"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/getthreadpri",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "32",
+        "matched_code": "32",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24752"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1760"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osGetThreadPri",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24752"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/epirawread",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "352",
+        "matched_code": "352",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "352",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24784"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1792"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osEPiRawReadIo",
+          "size": "352",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24784"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/viswapbuf",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "80",
+        "matched_code": "80",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "25136"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1824"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osViSwapBuffer",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "25136"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/epirawdma",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "480",
+        "matched_code": "480",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "480",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "25216"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1856"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osEPiRawStartDma",
+          "size": "480",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "25216"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/libc/bcmp",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "284",
+        "matched_code": "284",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "284",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "25696"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "bcmp",
+          "size": "284",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "25696"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/gettime",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "144",
+        "matched_code": "144",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "25984"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1888"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osGetTime",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "25984"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/timerintr",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "1072",
+        "matched_code": "1072",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 4,
+        "matched_functions": 4,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "1072",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "26128"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "6624"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "14160"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1920"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osTimerServicesInit",
+          "size": "140",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "26128"
+          }
+        },
+        {
+          "name": "__osTimerInterrupt",
+          "size": "376",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "26268"
+          }
+        },
+        {
+          "name": "__osSetTimerIntr",
+          "size": "160",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "26644"
+          }
+        },
+        {
+          "name": "__osInsertTimer",
+          "size": "396",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "26804"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/getcount",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "12",
+        "matched_code": "12",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "27200"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osGetCount",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "27200"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/setglobalintmask",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "80",
+        "matched_code": "80",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "27216"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1952"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osSetGlobalIntMask",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "27216"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/setcompare",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "12",
+        "matched_code": "12",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "27296"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osSetCompare",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "27296"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/libc/bcopy",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "772",
+        "matched_code": "772",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "772",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "27312"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "bcopy",
+          "size": "772",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "27312"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/resetglobalintmask",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "96",
+        "matched_code": "96",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "28096"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1984"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osResetGlobalIntMask",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "28096"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/interrupt",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "140",
+        "matched_code": "140",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "140",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "28192"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osDisableInt",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "28192"
+          }
+        },
+        {
+          "name": "__osRestoreInt",
+          "size": "28",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "28304"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/vi",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "288",
+        "matched_code": "288",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "288",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "28336"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "112",
+          "metadata": {
+            "virtual_address": "6800"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2080"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osViInit",
+          "size": "288",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "28336"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/viswapcontext",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "768",
+        "matched_code": "768",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "768",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "28624"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2112"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osViSwapContext",
+          "size": "768",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "28624"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/pigetcmdq",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "48",
+        "matched_code": "48",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29392"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2144"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osPiGetCmdQueue",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29392"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/epiread",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "80",
+        "matched_code": "80",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29440"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2176"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osEPiReadIo",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29440"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/visetspecial",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "352",
+        "matched_code": "352",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "352",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29520"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2208"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osViSetSpecialFeatures",
+          "size": "352",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29520"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/cartrominit",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "352",
+        "matched_code": "352",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "352",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29872"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "6912"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "128",
+          "metadata": {
+            "virtual_address": "14224"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2240"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osCartRomInit",
+          "size": "352",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29872"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/setfpccsr",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "16",
+        "matched_code": "16",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30224"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osSetFpcCsr",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30224"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/getfpccsr",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "12",
+        "matched_code": "12",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30240"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osGetFpcCsr",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30240"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/epiwrite",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "80",
+        "matched_code": "80",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30256"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2304"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osEPiWriteIo",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30256"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/maptlbrdb",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "88",
+        "matched_code": "88",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30336"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osMapTLBRdb",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30336"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/yieldthread",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "80",
+        "matched_code": "80",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30432"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2336"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osYieldThread",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30432"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/getcause",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "12",
+        "matched_code": "12",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30512"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osGetCause",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30512"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/epirawwrite",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "352",
+        "matched_code": "352",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "352",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30528"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2368"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osEPiRawWriteIo",
+          "size": "352",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30528"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/libc/xlitob",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "672",
+        "matched_code": "672",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "672",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30880"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "48",
+          "metadata": {
+            "virtual_address": "7008"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2400"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "_Litob",
+          "size": "672",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30880"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/libc/ldiv",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "400",
+        "matched_code": "400",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "400",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "31552"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2432"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "ldiv",
+          "size": "132",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "31552"
+          }
+        },
+        {
+          "name": "lldiv",
+          "size": "268",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "31684"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/libc/xldtob",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "2832",
+        "matched_code": "2832",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "2832",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "31952"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "96",
+          "metadata": {
+            "virtual_address": "66256"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2464"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "_Ldtob",
+          "size": "2832",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "31952"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/sirawwrite",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "80",
+        "matched_code": "80",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "34784"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2496"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osSiRawWriteIo",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "34784"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/vimgr",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "784",
+        "matched_code": "784",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "784",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "34880"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "7056"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "4640",
+          "metadata": {
+            "virtual_address": "14352"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2528"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osCreateViManager",
+          "size": "384",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "34880"
+          }
+        },
+        {
+          "name": "viMgrMain",
+          "size": "400",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "35264"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "16",
+        "matched_code": "16",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "35664"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2560"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osViGetCurrentContext",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "35664"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/startthread",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "336",
+        "matched_code": "336",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "35680"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2592"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osStartThread",
+          "size": "336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "35680"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/visetyscale",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "80",
+        "matched_code": "80",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36016"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2624"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osViSetYScale",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36016"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/visetxscale",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "272",
+        "matched_code": "272",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "272",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36096"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2656"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "osViSetXScale",
+          "size": "272",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36096"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/sethwintrroutine",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "112",
+        "matched_code": "112",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36368"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2688"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osSetHWIntrRoutine",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36368"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/gethwintrroutine",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "48",
+        "matched_code": "48",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36480"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2720"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osGetHWIntrRoutine",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36480"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/os/setwatchlo",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "16",
+        "matched_code": "16",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36528"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "__osSetWatchLo",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36528"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/data/rsp_boot.text",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "208",
+        "matched_code": "208",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "208",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36544"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "rspbootTextStart",
+          "size": "208",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36544"
+          }
+        },
+        {
+          "name": "rspbootTextEnd",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36752"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/data/cic6105.text",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "32",
+        "matched_code": "32",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36752"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "cic6105TextStart",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36752"
+          }
+        },
+        {
+          "name": "cic6105TextEnd",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36784"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/boot/build",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "48",
+          "metadata": {
+            "virtual_address": "66352"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "2752"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".rodata",
+        "module_id": 1,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/boot/carthandle",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".data",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "64"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "192"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".data",
+        "module_id": 2,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/vimodepallan1",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".data",
+          "size": "80",
+          "metadata": {
+            "virtual_address": "6288"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "960"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".data",
+        "module_id": 2,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/vimodentsclan1",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".data",
+          "size": "80",
+          "metadata": {
+            "virtual_address": "6640"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2016"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".data",
+        "module_id": 2,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/vimodempallan1",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".data",
+          "size": "80",
+          "metadata": {
+            "virtual_address": "6720"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2048"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".data",
+        "module_id": 2,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/io/vimodefpallan1",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".data",
+          "size": "80",
+          "metadata": {
+            "virtual_address": "6928"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "2272"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".data",
+        "module_id": 2,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    }
+  ],
+  "version": 2,
+  "categories": [
+    {
+      "id": "gc-eu-mq-dbg",
+      "name": "gc-eu-mq-dbg",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "36528",
+        "matched_code": "36528",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 164,
+        "matched_functions": 164,
+        "matched_functions_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 98
+      }
+    }
+  ]
+}

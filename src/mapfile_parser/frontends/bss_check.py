@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+from collections.abc import Callable
 import decomp_settings
 from pathlib import Path
 
@@ -13,14 +14,23 @@ from .. import mapfile
 from .. import utils
 
 
-def getComparison(mapPath, expectedMapPath, *, reverseCheck: bool=True) -> mapfile.MapsComparisonInfo:
-    buildMap = mapfile.MapFile()
-    buildMap.readMapFile(mapPath)
+def getComparison(
+        mapPath: Path,
+        expectedMapPath: Path,
+        *,
+        reverseCheck: bool=True,
+        plfResolver: Callable[[Path], Path|None]|None=None,
+        plfResolverExpected: Callable[[Path], Path|None]|None=None,
+    ) -> mapfile.MapsComparisonInfo:
+    buildMap = mapfile.MapFile.newFromMapFile(mapPath)
     buildMap = buildMap.filterBySectionType(".bss")
+    if plfResolver is not None:
+        buildMap = buildMap.resolvePartiallyLinkedFiles(plfResolver)
 
-    expectedMap = mapfile.MapFile()
-    expectedMap.readMapFile(expectedMapPath)
+    expectedMap = mapfile.MapFile.newFromMapFile(expectedMapPath)
     expectedMap = expectedMap.filterBySectionType(".bss")
+    if plfResolverExpected is not None:
+        expectedMap = expectedMap.resolvePartiallyLinkedFiles(plfResolverExpected)
 
     return buildMap.compareFilesAndSymbols(expectedMap, checkOtherOnSelf=reverseCheck)
 
@@ -126,7 +136,15 @@ def printFileComparison(comparisonInfo: mapfile.MapsComparisonInfo):
         utils.eprint("Some files appear to be missing symbols. Have they been renamed or declared as static? You may need to remake 'expected'")
 
 
-def doBssCheck(mapPath, expectedMapPath, *, printAll: bool=False, reverseCheck: bool=True) -> int:
+def doBssCheck(
+        mapPath: Path,
+        expectedMapPath: Path,
+        *,
+        printAll: bool=False,
+        reverseCheck: bool=True,
+        plfResolver: Callable[[Path], Path|None]|None=None,
+        plfResolverExpected: Callable[[Path], Path|None]|None=None,
+    ) -> int:
     if not mapPath.exists():
         utils.eprint(f"{mapPath} must exist")
         return 1
@@ -134,7 +152,7 @@ def doBssCheck(mapPath, expectedMapPath, *, printAll: bool=False, reverseCheck: 
         utils.eprint(f"{expectedMapPath} must exist")
         return 1
 
-    comparisonInfo = getComparison(mapPath, expectedMapPath, reverseCheck=reverseCheck)
+    comparisonInfo = getComparison(mapPath, expectedMapPath, reverseCheck=reverseCheck, plfResolver=plfResolver, plfResolverExpected=plfResolverExpected)
     printSymbolComparison(comparisonInfo, printAll)
 
     if len(comparisonInfo.badFiles) + len(comparisonInfo.missingFiles) != 0:
@@ -165,8 +183,20 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
 
     printAll: bool = args.print_all
     reverseCheck: bool = not args.no_reverse_check
+    plfExt: list[str]|None = args.plf_ext
 
-    exit(doBssCheck(mapPath, expectedMapPath, printAll=printAll, reverseCheck=reverseCheck))
+    plfResolver = None
+    if plfExt is not None:
+        def resolver(x: Path) -> Path|None:
+            if x.suffix in plfExt:
+                newPath = x.with_suffix(".map")
+                if newPath.exists():
+                    return newPath
+            return None
+
+        plfResolver = resolver
+
+    exit(doBssCheck(mapPath, expectedMapPath, printAll=printAll, reverseCheck=reverseCheck, plfResolver=plfResolver))
 
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
@@ -192,5 +222,7 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
 
     parser.add_argument("-a", "--print-all", help="Print all bss, not just non-matching.", action="store_true")
     parser.add_argument("--no-reverse-check", help="Disable looking for symbols on the expected map that are missing on the built map file.", action="store_true")
+
+    parser.add_argument("-x", "--plf-ext", help="File extension for partially linked files (plf). Will be used to transform the `plf`s path into a mapfile path by replacing the extension. The extension must contain the leading period. This argument can be passed multiple times.", action="append")
 
     parser.set_defaults(func=processArguments)

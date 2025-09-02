@@ -5,6 +5,7 @@
 
 from __future__ import annotations
 
+from collections.abc import Callable
 import dataclasses
 import re
 from typing import Any, Generator
@@ -159,7 +160,7 @@ class Symbol:
 
 
     def clone(self) -> Symbol:
-        return Symbol(self.name, self.vram, self.size, self.vrom, self.align)
+        return Symbol(self.name, self.vram, self.size, self.vrom, self.align, self.nonmatchingSymExists)
 
 
     def __eq__(self, other: object) -> bool:
@@ -377,7 +378,7 @@ class Section:
 
 
     def clone(self) -> Section:
-        f = Section(self.filepath, self.vram, self.size, self.sectionType, self.vrom, self.align)
+        f = Section(self.filepath, self.vram, self.size, self.sectionType, self.vrom, self.align, self.isFill)
         for sym in self._symbols:
             f._symbols.append(sym.clone())
         return f
@@ -449,7 +450,7 @@ class Segment:
                 newSegment._sectionsList.append(section)
         return newSegment
 
-    #! @deprecated: Use either `getEverySectionExceptSectionType` instead.
+    #! @deprecated: Use `getEverySectionExceptSectionType` instead.
     def getEveryFileExceptSectionType(self, sectionType: str) -> Segment:
         return self.getEverySectionExceptSectionType(sectionType)
 
@@ -588,27 +589,30 @@ class Segment:
         self._sectionsList.append(section)
 
 
-    #! @deprecated: Use either `copySectionList` instead.
+    #! @deprecated: Use `copySectionList` instead.
     def copyFileList(self) -> list[Section]:
         """Returns a copy (not a reference) of the internal section list"""
         return self.copySectionList()
 
-    #! @deprecated: Use either `setSectionList` instead.
+    #! @deprecated: Use `setSectionList` instead.
     def setFileList(self, newList: list[Section]) -> None:
         """Replaces the internal section list with a copy of `newList`"""
         return self.setSectionList(newList)
 
-    #! @deprecated: Use either `appendSection` instead.
+    #! @deprecated: Use `appendSection` instead.
     def appendFile(self, section: Section) -> None:
         """Appends a copy of `section` into the internal section list"""
         return self.appendSection(section)
 
 
     def clone(self) -> Segment:
-        s = Segment(self.name, self.vram, self.size, self.vrom, self.align)
+        s = self.cloneNoSectionlist()
         for f in self._sectionsList:
             s._sectionsList.append(f.clone())
         return s
+
+    def cloneNoSectionlist(self) -> Segment:
+        return Segment(self.name, self.vram, self.size, self.vrom, self.align)
 
 
     def __iter__(self) -> Generator[Section, None, None]:
@@ -706,7 +710,7 @@ class MapFile:
 
         return nativeMapFile
 
-    #! @deprecated: Use either `newFromMapFile` instead.
+    #! @deprecated: Use `newFromMapFile` instead.
     def readMapFile(self, mapPath: Path):
         """
         Opens the mapfile pointed by the `mapPath` argument and parses it.
@@ -719,12 +723,11 @@ class MapFile:
         - Metrowerks ld
         """
 
-        nativeMapFile = MapFileRs()
-        nativeMapFile.readMapFile(mapPath)
+        nativeMapFile = MapFileRs.newFromMapFile(mapPath)
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
-    #! @deprecated: Use either `newFromMapStr` instead.
+    #! @deprecated: Use `newFromMapStr` instead.
     def parseMapContents(self, mapContents: str):
         """
         Parses the contents of the map.
@@ -739,12 +742,11 @@ class MapFile:
         - Metrowerks ld
         """
 
-        nativeMapFile = MapFileRs()
-        nativeMapFile.parseMapContents(mapContents)
+        nativeMapFile = MapFileRs.newFromMapStr(mapContents)
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
-    #! @deprecated: Use either `newFromGnuMapStr` instead.
+    #! @deprecated: Use `newFromGnuMapStr` instead.
     def parseMapContentsGNU(self, mapContents: str):
         """
         Parses the contents of a GNU ld map.
@@ -752,12 +754,11 @@ class MapFile:
         The `mapContents` argument must contain the contents of a GNU ld mapfile.
         """
 
-        nativeMapFile = MapFileRs()
-        nativeMapFile.parseMapContentsGNU(mapContents)
+        nativeMapFile = MapFileRs.newFromGnuMapStr(mapContents)
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
-    #! @deprecated: Use either `newFromLldMapStr` instead.
+    #! @deprecated: Use `newFromLldMapStr` instead.
     def parseMapContentsLLD(self, mapContents: str):
         """
         Parses the contents of a clang ld.lld map.
@@ -765,8 +766,7 @@ class MapFile:
         The `mapContents` argument must contain the contents of a clang ld.lld mapfile.
         """
 
-        nativeMapFile = MapFileRs()
-        nativeMapFile.parseMapContentsLLD(mapContents)
+        nativeMapFile = MapFileRs.newFromLldMapStr(mapContents)
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
@@ -1014,6 +1014,86 @@ class MapFile:
                             compInfo.comparedList.append(SymbolComparisonInfo(symbol, -1, None, symbol.vram, section))
 
         return compInfo
+
+    def resolvePartiallyLinkedFiles(self, resolver: Callable[[Path], Path|None]) -> MapFile:
+        """
+        Resolve sections and paths of a mapfile built from partially linked objects.
+
+        `elf` files built by using partially linked files/objects (usually
+        referred to as `plf`) usually generate mapfiles that have filepaths that
+        point to the partially linked objects instead of the original objects
+        used to build those intermediary objects, making it awkward to work with
+        paths because all symbols will be listed as part as the same single `plf`.
+
+        This function resolves those sections by using a resolver callback that
+        transforms a path to an object/`plf` into the corresponding mapfile of
+        said partially linked object.
+        This callback should return `None` if the given path does not correspond
+        to a `plf`, the pointed mapfile does not exist, etc.
+
+        An usual convention for a file extension for partially linked objects is
+        the `.plf` extension instead of `.o`.
+        """
+
+        # Construct a mapping for every "plf -> map"
+        knownMaps: dict[Path, MapFile] = dict()
+        for seg in self._segmentsList:
+            for sect in seg._sectionsList:
+                # Only read the map if this is a new plf.
+                if sect.filepath in knownMaps:
+                    continue
+                if (other_map_path := resolver(sect.filepath)) is not None:
+                    knownMaps[sect.filepath] = MapFile.newFromMapFile(other_map_path)
+        return self._resolve_plf_impl(knownMaps)
+
+    def _resolve_plf_impl(self, knownMaps: dict[Path, MapFile]) -> MapFile:
+        if len(knownMaps) == 0:
+            return self.clone()
+
+        resolvedMap = MapFile()
+        for seg in self._segmentsList:
+            newSeg = seg.cloneNoSectionlist()
+
+            for sect in seg._sectionsList:
+                if (otherMap := knownMaps.get(sect.filepath)) is not None:
+                    # Each segment of a plf is just a normal elf section
+                    partialSegment = None
+                    for x in otherMap._segmentsList:
+                        if x.name == sect.sectionType:
+                            partialSegment = x
+                            break
+
+                    if partialSegment is not None:
+                        # Take all the sections from the plf map and insert them
+                        # into the new generated map, replacing the old sections
+                        # and symbols.
+                        for partialSect in partialSegment._sectionsList:
+                            sectTemp = partialSect.clone()
+
+                            # Adjust the vram and vrom addresses of the section
+                            # because they are relative to zero.
+                            sectTemp.vram += sect.vram
+                            if sectTemp.vrom is not None and sect.vrom is not None and partialSegment.vrom is not None:
+                                sectTemp.vrom = sectTemp.vrom + sect.vrom - partialSegment.vrom
+
+                            # Adjust vram and vrom of symbols too.
+                            for partialSym in sectTemp._symbols:
+                                partialSym.vram += sect.vram
+                                if partialSym.vrom is not None and sect.vrom is not None and partialSegment.vrom is not None:
+                                    partialSym.vrom = partialSym.vrom + sect.vrom - partialSegment.vrom
+
+                            newSeg._sectionsList.append(sectTemp)
+                    else:
+                        # Keep the original section if there are no sections
+                        # matching the section type in the plf.
+                        newSeg._sectionsList.append(sect.clone())
+                else:
+                    # Keep the original section if there are no maps for this path
+                    newSeg._sectionsList.append(sect.clone())
+                pass
+
+            resolvedMap._segmentsList.append(newSeg)
+        return resolvedMap
 
 
     def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):

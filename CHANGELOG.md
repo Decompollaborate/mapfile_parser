@@ -7,6 +7,22 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.10.0] - 2025-09-01
+
+### Added
+
+- Support for partially linked objects (a.k.a. `plf`).
+  - This is done by calling a function with a user provided callback that
+    converts a given object path into the corresponding mapfile for that `plf`.
+  - Rust: `MapFile::resolve_partially_linked_files()`.
+  - Python: `MapFile::resolvePartiallyLinkedFiles()`.
+- All the CLI utilities include basic support for `plf`s.
+  - Pass the flag `-x .extension` or `--plf-ext .extension` to specify the
+    extension of the partially linked objects files that should be replaced with
+    a `.map` extension.
+  - The frontends API allow to further customize this behavior by passing a
+    callback like the one used by `MapFile::resolvePartiallyLinkedFiles`.
+
 ## [2.9.4] - 2025-06-02
 
 ### Changed
@@ -620,6 +636,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.10.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.4...2.10.0
 [2.9.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.3...2.9.4
 [2.9.3]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.2...2.9.3
 [2.9.2]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.1...2.9.2

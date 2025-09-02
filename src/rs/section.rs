@@ -332,7 +332,7 @@ impl Section {
     pub fn symbol_match_state_iter(
         &self,
         path_decomp_settings: Option<&PathDecompSettings>,
-    ) -> SymbolDecompStateIter {
+    ) -> SymbolDecompStateIter<'_> {
         let mut whole_file_is_undecomped = false;
         let mut functions_path = None;
 

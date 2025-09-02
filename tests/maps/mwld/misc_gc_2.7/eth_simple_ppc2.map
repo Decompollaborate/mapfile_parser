@@ -1,0 +1,177 @@
+Link map of __start
+>>> SYMBOL NOT FOUND: some_external_function
+
+
+.compress.init section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.init section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.compress.text section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.text section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000390 00000000 00000040  1 .text 	simple_ppc.o 
+  00000000 0000c8 00000000 00000040  4 test_1 	simple_ppc.o 
+  000000c8 0000c8 000000c8 00000108  4 test_2 	simple_ppc.o 
+  00000190 0000c8 00000190 000001d0  4 test_3 	simple_ppc.o 
+  00000258 000098 00000258 00000298  4 math_op_1 	simple_ppc.o 
+  000002f0 000008 000002f0 00000330  4 math_op_2 	simple_ppc.o 
+  000002f8 000098 000002f8 00000338  4 math_op_1_dup 	simple_ppc.o 
+
+
+.compress.fini section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.fini section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.rodata section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.ctors section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.dtors section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+extab section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000028 00000000 000003d0  1 extab 	simple_ppc.o 
+  00000000 000008 00000000 000003d0  4 @16 	simple_ppc.o 
+  00000008 000008 00000008 000003d8  4 @32 	simple_ppc.o 
+  00000010 000008 00000010 000003e0  4 @48 	simple_ppc.o 
+  00000018 000008 00000018 000003e8  4 @58 	simple_ppc.o 
+  00000020 000008 00000020 000003f0  4 @72 	simple_ppc.o 
+
+
+extabindex section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.BINARY section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.data section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.sdata section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000008 00000000 00000438  1 .sdata 	simple_ppc.o 
+  00000000 000004 00000000 00000438  4 cat 	simple_ppc.o 
+  00000004 000004 00000004 0000043c  4 dog 	simple_ppc.o 
+
+
+.sbss section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.sdata2 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 000008 00000000 00000440  1 .sdata2 	simple_ppc.o 
+  00000000 000008 00000000 00000440  8 @13 	simple_ppc.o 
+
+
+.sbss2 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.PPC.EMB.sdata0 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.PPC.EMB.sbss0 section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+.bss section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+
+
+extabindex section layout
+  Starting        Virtual  File
+  address  Size   address  offset
+  ---------------------------------
+  00000000 00000c 00000000 00000434  4 @17 	simple_ppc.o 
+  0000000c 00000c 0000000c 00000434  4 @33 	simple_ppc.o 
+  00000018 00000c 00000018 00000434  4 @49 	simple_ppc.o 
+  00000024 00000c 00000024 00000434  4 @59 	simple_ppc.o 
+  00000030 00000c 00000030 00000434  4 @73 	simple_ppc.o 
+
+
+Memory map:
+                   Starting Size     File
+                   address           Offset
+   .compress.init  00000000 00000000 00000040
+            .init  00000000 00000000 00000040
+   .compress.text  00000000 00000000 00000040
+            .text  00000000 00000390 00000040
+   .compress.fini  00000000 00000000 000003d0
+            .fini  00000000 00000000 000003d0
+          .rodata  00000000 00000000 000003d0
+           .ctors  00000000 00000000 000003d0
+           .dtors  00000000 00000000 000003d0
+            extab  00000000 00000028 000003d0
+       extabindex  00000000 0000003c 000003f8
+          .BINARY  00000000 00000000 00000434
+            .data  00000000 00000000 00000434
+             .got  00000000 00000000 00000434
+           .sdata  00000000 00000008 00000438
+            .sbss  00000000 00000000 00000440
+          .sdata2  00000000 00000008 00000440
+           .sbss2  00000000 00000000 00000448
+  .PPC.EMB.sdata0  00000000 00000000 00000448
+   .PPC.EMB.sbss0  00000000 00000000 00000448
+             .bss  00000000 00000000 00000448

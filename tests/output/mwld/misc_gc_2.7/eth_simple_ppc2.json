@@ -1,0 +1,309 @@
+{
+    "segments": [
+        {
+            "name": ".compress.init",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000040",
+            "files": []
+        },
+        {
+            "name": ".init",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000040",
+            "files": []
+        },
+        {
+            "name": ".compress.text",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000040",
+            "files": []
+        },
+        {
+            "name": ".text",
+            "vram": "0x00000000",
+            "size": "0x390",
+            "vrom": "0x000040",
+            "files": [
+                {
+                    "filepath": "simple_ppc.o",
+                    "sectionType": ".text",
+                    "vram": "0x00000000",
+                    "size": "0x390",
+                    "vrom": "0x000040",
+                    "symbols": [
+                        {
+                            "name": "test_1",
+                            "vram": "0x00000000",
+                            "size": "0xC8",
+                            "vrom": "0x000040"
+                        },
+                        {
+                            "name": "test_2",
+                            "vram": "0x000000C8",
+                            "size": "0xC8",
+                            "vrom": "0x000108"
+                        },
+                        {
+                            "name": "test_3",
+                            "vram": "0x00000190",
+                            "size": "0xC8",
+                            "vrom": "0x0001D0"
+                        },
+                        {
+                            "name": "math_op_1",
+                            "vram": "0x00000258",
+                            "size": "0x98",
+                            "vrom": "0x000298"
+                        },
+                        {
+                            "name": "math_op_2",
+                            "vram": "0x000002F0",
+                            "size": "0x8",
+                            "vrom": "0x000330"
+                        },
+                        {
+                            "name": "math_op_1_dup",
+                            "vram": "0x000002F8",
+                            "size": "0x98",
+                            "vrom": "0x000338"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".compress.fini",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x0003D0",
+            "files": []
+        },
+        {
+            "name": ".fini",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x0003D0",
+            "files": []
+        },
+        {
+            "name": ".rodata",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x0003D0",
+            "files": []
+        },
+        {
+            "name": ".ctors",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x0003D0",
+            "files": []
+        },
+        {
+            "name": ".dtors",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x0003D0",
+            "files": []
+        },
+        {
+            "name": "extab",
+            "vram": "0x00000000",
+            "size": "0x28",
+            "vrom": "0x0003D0",
+            "files": [
+                {
+                    "filepath": "simple_ppc.o",
+                    "sectionType": "extab",
+                    "vram": "0x00000000",
+                    "size": "0x28",
+                    "vrom": "0x0003D0",
+                    "symbols": [
+                        {
+                            "name": "@16",
+                            "vram": "0x00000000",
+                            "size": "0x8",
+                            "vrom": "0x0003D0"
+                        },
+                        {
+                            "name": "@32",
+                            "vram": "0x00000008",
+                            "size": "0x8",
+                            "vrom": "0x0003D8"
+                        },
+                        {
+                            "name": "@48",
+                            "vram": "0x00000010",
+                            "size": "0x8",
+                            "vrom": "0x0003E0"
+                        },
+                        {
+                            "name": "@58",
+                            "vram": "0x00000018",
+                            "size": "0x8",
+                            "vrom": "0x0003E8"
+                        },
+                        {
+                            "name": "@72",
+                            "vram": "0x00000020",
+                            "size": "0x8",
+                            "vrom": "0x0003F0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": "extabindex",
+            "vram": "0x00000000",
+            "size": "0x3C",
+            "vrom": "0x0003F8",
+            "files": []
+        },
+        {
+            "name": ".BINARY",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000434",
+            "files": []
+        },
+        {
+            "name": ".data",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000434",
+            "files": []
+        },
+        {
+            "name": ".sdata",
+            "vram": "0x00000000",
+            "size": "0x8",
+            "vrom": "0x000438",
+            "files": [
+                {
+                    "filepath": "simple_ppc.o",
+                    "sectionType": ".sdata",
+                    "vram": "0x00000000",
+                    "size": "0x8",
+                    "vrom": "0x000438",
+                    "symbols": [
+                        {
+                            "name": "cat",
+                            "vram": "0x00000000",
+                            "size": "0x4",
+                            "vrom": "0x000438"
+                        },
+                        {
+                            "name": "dog",
+                            "vram": "0x00000004",
+                            "size": "0x4",
+                            "vrom": "0x00043C"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".sbss",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000440",
+            "files": []
+        },
+        {
+            "name": ".sdata2",
+            "vram": "0x00000000",
+            "size": "0x8",
+            "vrom": "0x000440",
+            "files": [
+                {
+                    "filepath": "simple_ppc.o",
+                    "sectionType": ".sdata2",
+                    "vram": "0x00000000",
+                    "size": "0x8",
+                    "vrom": "0x000440",
+                    "symbols": [
+                        {
+                            "name": "@13",
+                            "vram": "0x00000000",
+                            "size": "0x8",
+                            "vrom": "0x000440"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".sbss2",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000448",
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sdata0",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000448",
+            "files": []
+        },
+        {
+            "name": ".PPC.EMB.sbss0",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000448",
+            "files": []
+        },
+        {
+            "name": ".bss",
+            "vram": "0x00000000",
+            "size": "0x0",
+            "vrom": "0x000448",
+            "files": []
+        },
+        {
+            "name": "extabindex",
+            "vram": "0x00000000",
+            "size": "0x3C",
+            "vrom": "0x0003F8",
+            "files": [
+                {
+                    "filepath": "simple_ppc.o",
+                    "sectionType": "@17",
+                    "vram": "0x00000000",
+                    "size": "0xC",
+                    "vrom": "0x000434",
+                    "symbols": [
+                        {
+                            "name": "@33",
+                            "vram": "0x0000000C",
+                            "size": "0xC",
+                            "vrom": "0x000434"
+                        },
+                        {
+                            "name": "@49",
+                            "vram": "0x00000018",
+                            "size": "0xC",
+                            "vrom": "0x000434"
+                        },
+                        {
+                            "name": "@59",
+                            "vram": "0x00000024",
+                            "size": "0xC",
+                            "vrom": "0x000434"
+                        },
+                        {
+                            "name": "@73",
+                            "vram": "0x00000030",
+                            "size": "0xC",
+                            "vrom": "0x000434"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

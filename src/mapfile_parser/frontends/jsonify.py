@@ -6,6 +6,7 @@
 from __future__ import annotations
 
 import argparse
+from collections.abc import Callable
 import decomp_settings
 import json
 from pathlib import Path
@@ -13,13 +14,20 @@ from pathlib import Path
 from .. import mapfile
 
 
-def doJsonify(mapPath: Path, outputPath: Path|None, humanReadable: bool=True, applyFixes: bool=False) -> int:
+def doJsonify(
+        mapPath: Path,
+        outputPath: Path|None,
+        humanReadable: bool=True,
+        applyFixes: bool=False,
+        plfResolver: Callable[[Path], Path|None]|None=None,
+    ) -> int:
     if not mapPath.exists():
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
 
-    mapFile = mapfile.MapFile()
-    mapFile.readMapFile(mapPath)
+    mapFile = mapfile.MapFile.newFromMapFile(mapPath)
+    if plfResolver is not None:
+        mapFile = mapFile.resolvePartiallyLinkedFiles(plfResolver)
 
     jsonStr = json.dumps(mapFile.toJson(humanReadable=humanReadable), indent=4)
 
@@ -44,8 +52,20 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
     outputPath: Path|None = Path(args.output) if args.output is not None else None
     machine: bool = args.machine
     applyFixes: bool = args.apply_fixes
+    plfExt: list[str]|None = args.plf_ext
 
-    exit(doJsonify(mapPath, outputPath, humanReadable=not machine, applyFixes=applyFixes))
+    plfResolver = None
+    if plfExt is not None:
+        def resolver(x: Path) -> Path|None:
+            if x.suffix in plfExt:
+                newPath = x.with_suffix(".map")
+                if newPath.exists():
+                    return newPath
+            return None
+
+        plfResolver = resolver
+
+    exit(doJsonify(mapPath, outputPath, humanReadable=not machine, applyFixes=applyFixes, plfResolver=plfResolver))
 
 def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
     parser = subparser.add_parser("jsonify", help="Converts a mapfile into a json format.")
@@ -66,5 +86,7 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
     parser.add_argument("-o", "--output", help="Output path of for the generated json. If omitted then stdout is used instead.")
     parser.add_argument("-m", "--machine", help="Emit numbers as numbers instead of outputting them as pretty strings.", action="store_true")
     parser.add_argument("-f", "--apply-fixes", help="DEPRECATED, this is applied automatically now. Apply certain fixups, like fixing size calculation of because of the existence of fake `.NON_MATCHING` symbols.", action="store_true")
+
+    parser.add_argument("-x", "--plf-ext", help="File extension for partially linked files (plf). Will be used to transform the `plf`s path into a mapfile path by replacing the extension. The extension must contain the leading period. This argument can be passed multiple times.", action="append")
 
     parser.set_defaults(func=processArguments)
