@@ -1,7 +1,11 @@
 /* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::{collections::HashMap, fmt::Write};
+use std::{
+    collections::{hash_map, HashMap},
+    fmt::Write,
+    path::{Path, PathBuf},
+};
 
 #[cfg(feature = "python_bindings")]
 use pyo3::prelude::*;
@@ -357,6 +361,107 @@ impl MapFile {
         comp_info
     }
 
+    /// Resolve sections and paths of a mapfile built from partially linked objects.
+    ///
+    /// `elf` files built by using partially linked files/objects (usually
+    /// referred to as `plf`) usually generate mapfiles that have filepaths that
+    /// point to the partially linked objects instead of the original objects
+    /// used to build those intermediary objects, making it awkward to work with
+    /// paths because all symbols will be listed as part as the same single `plf`.
+    ///
+    /// This function resolves those sections by using a resolver callback that
+    /// transforms a path to an object/`plf` into the corresponding mapfile of
+    /// said partially linked object.
+    /// This callback should return `None` if the given path does not correspond
+    /// to a `plf`, the pointed mapfile does not exist, etc.
+    ///
+    /// An usual convention for a file extension for partially linked objects is
+    /// the `.plf` extension instead of `.o`.
+    #[must_use]
+    pub fn resolve_partially_linked_files<F>(&self, resolver: F) -> Self
+    where
+        F: Fn(&Path) -> Option<PathBuf>,
+    {
+        // Construct a mapping for every "plf -> map"
+        let mut known_maps = HashMap::new();
+
+        for seg in &self.segments_list {
+            for sect in &seg.sections_list {
+                // Only read the map if this is a new plf.
+                if let hash_map::Entry::Vacant(vacant_entry) = known_maps.entry(&sect.filepath) {
+                    if let Some(other_map_path) = resolver(&sect.filepath) {
+                        vacant_entry.insert(MapFile::new_from_map_file(&other_map_path));
+                    }
+                }
+            }
+        }
+
+        self.resolve_plf_impl(known_maps)
+    }
+
+    fn resolve_plf_impl(&self, known_maps: HashMap<&PathBuf, MapFile>) -> Self {
+        // If there's no other plf maps then just return a copy of this map unmodified.
+        if known_maps.is_empty() {
+            return self.clone();
+        }
+
+        let mut resolved_map = Self::new_impl();
+
+        for seg in &self.segments_list {
+            let mut new_seg = seg.clone_no_sectionlist();
+
+            for sect in &seg.sections_list {
+                if let Some(other_map) = known_maps.get(&sect.filepath) {
+                    // Each segment of a plf is just a normal elf section
+                    if let Some(partial_segment) = other_map
+                        .segments_list
+                        .iter()
+                        .find(|x| x.name == sect.section_type)
+                    {
+                        // Take all the sections from the plf map and insert them
+                        // into the new generated map, replacing the old sections
+                        // and symbols.
+                        for partial_sect in &partial_segment.sections_list {
+                            let mut sect_temp = partial_sect.clone();
+
+                            // Adjust the vram and vrom addresses of the section
+                            // because they are relative to zero.
+                            sect_temp.vram += sect.vram;
+                            if let (Some(a), Some(b), Some(c)) =
+                                (sect_temp.vrom, sect.vrom, partial_segment.vrom)
+                            {
+                                sect_temp.vrom = Some(a + b - c);
+                            }
+
+                            // Adjust vram and vrom of symbols too.
+                            for partial_sym in &mut sect_temp.symbols {
+                                partial_sym.vram += sect.vram;
+                                if let (Some(a), Some(b), Some(c)) =
+                                    (partial_sym.vrom, sect.vrom, partial_segment.vrom)
+                                {
+                                    partial_sym.vrom = Some(a + b - c);
+                                }
+                            }
+
+                            new_seg.sections_list.push(sect_temp);
+                        }
+                    } else {
+                        // Keep the original section if there are no sections
+                        // matching the section type in the plf.
+                        new_seg.sections_list.push(sect.clone());
+                    }
+                } else {
+                    // Keep the original section if there are no maps for this path
+                    new_seg.sections_list.push(sect.clone());
+                }
+            }
+
+            resolved_map.segments_list.push(new_seg);
+        }
+
+        resolved_map
+    }
+
     pub fn to_csv(&self, print_vram: bool, skip_without_symbols: bool) -> String {
         let mut ret = section::Section::to_csv_header(print_vram) + "\n";
 
@@ -400,10 +505,8 @@ pub(crate) mod python_bindings {
         path::PathBuf,
     };
 
-    use crate::{
-        found_symbol_info, maps_comparison_info, progress_stats, report::ReportCategories, section,
-        segment, symbol,
-    };
+    use super::*;
+    use crate::report::ReportCategories;
 
     #[pymethods]
     impl super::MapFile {

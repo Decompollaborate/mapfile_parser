@@ -7,6 +7,13 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Support for partially linked objects (a.k.a. `plf`).
+  - This is done by calling a function with a user provided callback that
+    converts a given object path into the corresponding mapfile for that `plf`.
+  - Rust: `MapFile::resolve_partially_linked_files`.
+
 ## [2.9.4] - 2025-06-02
 
 ### Changed
