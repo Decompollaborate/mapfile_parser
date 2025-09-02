@@ -160,7 +160,7 @@ class Symbol:
 
 
     def clone(self) -> Symbol:
-        return Symbol(self.name, self.vram, self.size, self.vrom, self.align)
+        return Symbol(self.name, self.vram, self.size, self.vrom, self.align, self.nonmatchingSymExists)
 
 
     def __eq__(self, other: object) -> bool:
@@ -378,7 +378,7 @@ class Section:
 
 
     def clone(self) -> Section:
-        f = Section(self.filepath, self.vram, self.size, self.sectionType, self.vrom, self.align)
+        f = Section(self.filepath, self.vram, self.size, self.sectionType, self.vrom, self.align, self.isFill)
         for sym in self._symbols:
             f._symbols.append(sym.clone())
         return f
