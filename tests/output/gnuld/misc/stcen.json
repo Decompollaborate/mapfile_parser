@@ -1428,7 +1428,14 @@
                     "vram": "0x8018D4B0",
                     "size": "0x28",
                     "vrom": "0x00D4B0",
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8018D4B0_build/us/src/st/cen/D600.c.o_.rodata",
+                            "vram": "0x8018D4B0",
+                            "size": "0x28",
+                            "vrom": "0x00D4B0"
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/us/asm/us/st/cen/data/D4D8.rodata.s.o",

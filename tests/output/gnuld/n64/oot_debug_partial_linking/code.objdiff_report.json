@@ -1,12 +1,12 @@
 {
   "measures": {
     "fuzzy_match_percent": 100.0,
-    "total_code": "1017104",
-    "matched_code": "1017104",
+    "total_code": "1017120",
+    "matched_code": "1017120",
     "matched_code_percent": 100.0,
     "matched_data_percent": 100.0,
-    "total_functions": 3151,
-    "matched_functions": 3151,
+    "total_functions": 3152,
+    "matched_functions": 3152,
     "matched_functions_percent": 100.0,
     "complete_data_percent": 100.0,
     "total_units": 234
@@ -24976,8 +24976,12 @@
       "name": "gc-eu-mq-dbg/__pad_text",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "16",
+        "matched_code": "16",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -24985,6 +24989,17 @@
         {
           "name": ".text",
           "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "777808"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_000BDE50_build/gc-eu-mq-dbg/__pad_text.o_.text",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "777808"
           }
@@ -36321,12 +36336,12 @@
       "name": "gc-eu-mq-dbg",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "1017104",
-        "matched_code": "1017104",
+        "total_code": "1017120",
+        "matched_code": "1017120",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 3151,
-        "matched_functions": 3151,
+        "total_functions": 3152,
+        "matched_functions": 3152,
         "matched_functions_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 234

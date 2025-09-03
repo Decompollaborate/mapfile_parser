@@ -63,11 +63,13 @@ d_a_agbsw0.o,@248@__dt__8dCcD_CylFv,00005950,8
 d_a_agbsw0.o,@1974,00000000,4
 d_a_agbsw0.o,@1975,00000004,4
 d_a_agbsw0.o,@2279,00000008,4
+d_a_agbsw0.o,$_static_symbol_0000000C_d_a_agbsw0.o_.rodata,0000000C,4
 d_a_agbsw0.o,@2280,00000010,8
 d_a_agbsw0.o,@2281,00000018,8
 d_a_agbsw0.o,@2367,00000020,4
 d_a_agbsw0.o,@2368,00000024,4
 d_a_agbsw0.o,@2369,00000028,4
+d_a_agbsw0.o,$_static_symbol_0000002C_d_a_agbsw0.o_.rodata,0000002C,4
 d_a_agbsw0.o,@2370,00000030,8
 d_a_agbsw0.o,@2371,00000038,8
 d_a_agbsw0.o,@2372,00000040,4
@@ -85,6 +87,7 @@ d_a_agbsw0.o,@stringBase0,0000006C,49
 d_a_agbsw0.o,data_2100$11,00000000,12
 d_a_agbsw0.o,data_2080$15,0000000C,12
 d_a_agbsw0.o,attnFnTbl_1811$19,00000018,4
+d_a_agbsw0.o,$_static_symbol_0000001C_d_a_agbsw0.o_.data,0000001C,4
 d_a_agbsw0.o,_three$localstatic3$fake_sqrtf__Ff,00000020,8
 d_a_agbsw0.o,_half$localstatic4$fake_sqrtf__Ff,00000028,8
 d_a_agbsw0.o,l_cyl_src,00000030,68

@@ -12,7 +12,14 @@
                     "vram": 0,
                     "size": 24,
                     "vrom": 0,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/us/src/weapon/header.c.o_.reginfo",
+                            "vram": 0,
+                            "size": 24,
+                            "vrom": 0
+                        }
+                    ]
                 }
             ]
         },
@@ -28,7 +35,14 @@
                     "vram": 24,
                     "size": 24,
                     "vrom": 24,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000018_build/us/src/weapon/header.c.o_.MIPS.abiflags",
+                            "vram": 24,
+                            "size": 24,
+                            "vrom": 24
+                        }
+                    ]
                 }
             ]
         },
@@ -882,7 +896,14 @@
                     "vram": 0,
                     "size": 800,
                     "vrom": 5888,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.pdr",
+                            "vram": 0,
+                            "size": 800,
+                            "vrom": 5888
+                        }
+                    ]
                 }
             ]
         },
@@ -898,7 +919,14 @@
                     "vram": 0,
                     "size": 16,
                     "vrom": 6688,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/us/src/weapon/header.c.o_.gnu.attributes",
+                            "vram": 0,
+                            "size": 16,
+                            "vrom": 6688
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/us/src/weapon/w_000.c.o",
@@ -906,7 +934,14 @@
                     "vram": 16,
                     "size": 16,
                     "vrom": 6704,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000010_build/us/src/weapon/w_000.c.o_.gnu.attributes",
+                            "vram": 16,
+                            "size": 16,
+                            "vrom": 6704
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/us/asm/us/weapon/data/w_000.data.s.o",
@@ -914,7 +949,14 @@
                     "vram": 32,
                     "size": 16,
                     "vrom": 6720,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000020_build/us/asm/us/weapon/data/w_000.data.s.o_.gnu.attributes",
+                            "vram": 32,
+                            "size": 16,
+                            "vrom": 6720
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/us/asm/us/weapon/data/w_000.sbss.s.o",
@@ -922,7 +964,14 @@
                     "vram": 48,
                     "size": 16,
                     "vrom": 6736,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000030_build/us/asm/us/weapon/data/w_000.sbss.s.o_.gnu.attributes",
+                            "vram": 48,
+                            "size": 16,
+                            "vrom": 6736
+                        }
+                    ]
                 }
             ]
         },
@@ -938,7 +987,14 @@
                     "vram": 0,
                     "size": 237,
                     "vrom": 6752,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_line",
+                            "vram": 0,
+                            "size": 237,
+                            "vrom": 6752
+                        }
+                    ]
                 }
             ]
         },
@@ -954,7 +1010,14 @@
                     "vram": 0,
                     "size": 389,
                     "vrom": 6989,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_info",
+                            "vram": 0,
+                            "size": 389,
+                            "vrom": 6989
+                        }
+                    ]
                 }
             ]
         },
@@ -970,7 +1033,14 @@
                     "vram": 0,
                     "size": 33,
                     "vrom": 7378,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_abbrev",
+                            "vram": 0,
+                            "size": 33,
+                            "vrom": 7378
+                        }
+                    ]
                 }
             ]
         },
@@ -986,7 +1056,14 @@
                     "vram": 0,
                     "size": 32,
                     "vrom": 7411,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_aranges",
+                            "vram": 0,
+                            "size": 32,
+                            "vrom": 7411
+                        }
+                    ]
                 }
             ]
         },
@@ -1002,7 +1079,14 @@
                     "vram": 0,
                     "size": 464,
                     "vrom": 7443,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_str",
+                            "vram": 0,
+                            "size": 464,
+                            "vrom": 7443
+                        }
+                    ]
                 }
             ]
         }

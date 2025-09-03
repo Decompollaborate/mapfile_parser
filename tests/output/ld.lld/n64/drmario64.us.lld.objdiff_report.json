@@ -1,13 +1,13 @@
 {
   "measures": {
-    "fuzzy_match_percent": 61.50481,
-    "total_code": "443484",
-    "matched_code": "272764",
-    "matched_code_percent": 61.50481,
+    "fuzzy_match_percent": 61.513145,
+    "total_code": "443580",
+    "matched_code": "272860",
+    "matched_code_percent": 61.513145,
     "matched_data_percent": 100.0,
-    "total_functions": 1511,
-    "matched_functions": 1176,
-    "matched_functions_percent": 77.829254,
+    "total_functions": 1512,
+    "matched_functions": 1177,
+    "matched_functions_percent": 77.84392,
     "complete_data_percent": 100.0,
     "total_units": 339
   },
@@ -8172,8 +8172,12 @@
       "name": "lib/ultralib/src/os/parameters",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "96",
+        "matched_code": "96",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -8181,6 +8185,17 @@
         {
           "name": ".text",
           "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2147538752"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_8000D740_build/lib/ultralib/src/os/parameters.o_.text",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2147538752"
           }
@@ -23792,12 +23807,12 @@
       "name": "lib",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "40996",
-        "matched_code": "40996",
+        "total_code": "41092",
+        "matched_code": "41092",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 266,
-        "matched_functions": 266,
+        "total_functions": 267,
+        "matched_functions": 267,
         "matched_functions_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 128

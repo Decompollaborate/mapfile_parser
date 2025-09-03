@@ -82,8 +82,18 @@ class Symbol:
     vrom: int|None
     align: int|None
     nonmatchingSymExists: bool
+    inferredStatic: bool
 
-    def __init__(self, name: str, vram: int, size: int=0, vrom: int|None=None, align: int|None=None, nonmatchingSymExists: bool=False): ...
+    def __init__(
+        self,
+        name: str,
+        vram: int,
+        size: int=0,
+        vrom: int|None=None,
+        align: int|None=None,
+        nonmatchingSymExists: bool=False,
+        inferredStatic: bool=False,
+    ): ...
 
     def getVramStr(self) -> str: ...
     def getSizeStr(self) -> str: ...

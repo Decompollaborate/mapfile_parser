@@ -274,12 +274,12 @@ VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
 800C2400,build/asm/usa/data/libultra/rsp/f3dex.rodata.o,.rodata,2,2048,2048,1024.00
 800C2C00,build/asm/usa/data/libultra/rsp/s2dex.rodata.o,.rodata,2,960,960,480.00
 800C2FC0,build/src/main/sound.o,.rodata,12,56,208,17.33
-800C3090,build/src/main/sfxlimit.o,.rodata,5,24,64,12.80
-800C30D0,build/src/main/title.o,.rodata,8,96,240,30.00
+800C3090,build/src/main/sfxlimit.o,.rodata,6,24,64,10.67
+800C30D0,build/src/main/title.o,.rodata,9,96,240,26.67
 800C31C0,build/asm/usa/data/main/0C3DC0.rodata.o,.rodata,7,60,208,29.71
 800C3290,build/asm/usa/data/main/0C3E90.rodata.o,.rodata,3,64,96,32.00
 800C32F0,build/asm/usa/data/main/0C3EF0.rodata.o,.rodata,107,748,3264,30.50
-800C3FB0,build/src/main/file.o,.rodata,1,8,64,64.00
+800C3FB0,build/src/main/file.o,.rodata,2,56,64,32.00
 800C3FF0,build/src/main/image.o,.rodata,3,72,96,32.00
 800C4050,build/src/main/screen.o,.rodata,9,168,456,50.67
 800C4218,build/src/main/story.o,.rodata,6,32,120,20.00
@@ -287,7 +287,7 @@ VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
 800C42D0,build/src/main/editor.o,.rodata,9,68,448,49.78
 800C4490,build/src/main/bonus.o,.rodata,17,708,1264,74.35
 800C4980,build/src/main/end.o,.rodata,22,328,1008,45.82
-800C4D70,build/src/main/hvqm2util.o,.rodata,7,56,704,100.57
+800C4D70,build/src/main/hvqm2util.o,.rodata,8,432,704,88.00
 800C5030,build/asm/usa/data/main/0C5C30.rodata.o,.rodata,15,60,336,22.40
 800C5180,build/asm/usa/data/main/0C5D80.rodata.o,.rodata,1,16,16,16.00
 800C5190,build/asm/usa/data/main/0C5D90.rodata.o,.rodata,1,16,16,16.00
@@ -295,7 +295,7 @@ VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
 800C5840,build/asm/usa/data/main/0C6440.rodata.o,.rodata,20,80,448,22.40
 800C5A00,build/src/main/controller.o,.rodata,1,48,48,48.00
 800C5A30,build/asm/usa/data/main/0C6630.rodata.o,.rodata,10,328,912,91.20
-800C5DC0,build/src/main/text.o,.rodata,12,392,608,50.67
+800C5DC0,build/src/main/text.o,.rodata,13,392,608,46.77
 800C6020,build/asm/usa/data/main/0C6C20.rodata.o,.rodata,7,408,1568,224.00
 800C6640,build/src/main/dlist.o,.rodata,5,328,736,147.20
 800C6920,build/asm/usa/data/main/0C7520.rodata.o,.rodata,9,16,80,8.89
@@ -331,6 +331,7 @@ VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
 800C95C0,build/asm/usa/data/main/0CA1C0.rodata.o,.rodata,2,24,32,16.00
 800C95E0,build/asm/usa/data/main/0CA1E0.rodata.o,.rodata,14,336,512,36.57
 800C97E0,build/asm/usa/data/main/0CA3E0.rodata.o,.rodata,7,96,152,21.71
+800C9878,build/src/main/build.o,.rodata,1,32,32,32.00
 800C98A0,build/asm/usa/data/main/800C98A0.bss.o,.bss,178,655360,791312,4445.57
 8018ABB0,build/asm/usa/data/main/file.bss.o,.bss,4,14344,14368,3592.00
 8018E3D0,build/asm/usa/data/main/8018E3D0.bss.o,.bss,229,8192,26064,113.82

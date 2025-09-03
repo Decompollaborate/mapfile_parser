@@ -1,12 +1,12 @@
 {
   "measures": {
     "fuzzy_match_percent": 100.0,
-    "total_code": "36528",
-    "matched_code": "36528",
+    "total_code": "36624",
+    "matched_code": "36624",
     "matched_code_percent": 100.0,
     "matched_data_percent": 100.0,
-    "total_functions": 164,
-    "matched_functions": 164,
+    "total_functions": 165,
+    "matched_functions": 165,
     "matched_functions_percent": 100.0,
     "complete_data_percent": 100.0,
     "total_units": 98
@@ -1868,8 +1868,12 @@
       "name": "gc-eu-mq-dbg/src/libultra/os/parameters",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "96",
+        "matched_code": "96",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -1877,6 +1881,17 @@
         {
           "name": ".text",
           "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16528"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_00004090_build/gc-eu-mq-dbg/src/libultra/os/parameters.o_.text",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "16528"
           }
@@ -5369,12 +5384,12 @@
       "name": "gc-eu-mq-dbg",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "36528",
-        "matched_code": "36528",
+        "total_code": "36624",
+        "matched_code": "36624",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 164,
-        "matched_functions": 164,
+        "total_functions": 165,
+        "matched_functions": 165,
         "matched_functions_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 98

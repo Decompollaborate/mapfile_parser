@@ -7,6 +7,16 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- Mapfile parsing will now try to infer static symbols by analyzing mismatches
+  on section address and size vs the addresses and sizes of symbols within that
+  section.
+  - For every inferred static sym a corresponding symbol will be inserted into
+    the section. Its name will be prefixed with `$_static_symbol_`.
+  - It is possible to check if a symbol is an inferred static in the API by
+    checking `Symbol::inferred_static`.
+
 ## [2.10.0] - 2025-09-01
 
 ### Added

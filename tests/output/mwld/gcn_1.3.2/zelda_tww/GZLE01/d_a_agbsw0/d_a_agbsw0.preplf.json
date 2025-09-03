@@ -459,6 +459,12 @@
                             "vrom": "0x0059A0"
                         },
                         {
+                            "name": "$_static_symbol_0000000C_d_a_agbsw0.o_.rodata",
+                            "vram": "0x0000000C",
+                            "size": "0x4",
+                            "vrom": "0x00599C"
+                        },
+                        {
                             "name": "@2280",
                             "vram": "0x00000010",
                             "size": "0x8",
@@ -487,6 +493,12 @@
                             "vram": "0x00000028",
                             "size": "0x4",
                             "vrom": "0x0059C0"
+                        },
+                        {
+                            "name": "$_static_symbol_0000002C_d_a_agbsw0.o_.rodata",
+                            "vram": "0x0000002C",
+                            "size": "0x4",
+                            "vrom": "0x00599C"
                         },
                         {
                             "name": "@2370",
@@ -641,6 +653,12 @@
                             "vram": "0x00000018",
                             "size": "0x4",
                             "vrom": "0x005A50"
+                        },
+                        {
+                            "name": "$_static_symbol_0000001C_d_a_agbsw0.o_.data",
+                            "vram": "0x0000001C",
+                            "size": "0x4",
+                            "vrom": "0x005A3C"
                         },
                         {
                             "name": "_three$localstatic3$fake_sqrtf__Ff",

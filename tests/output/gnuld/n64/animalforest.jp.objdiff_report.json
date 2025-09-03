@@ -1,12 +1,12 @@
 {
   "measures": {
     "fuzzy_match_percent": 100.0,
-    "total_code": "2515760",
-    "matched_code": "2515760",
+    "total_code": "2515856",
+    "matched_code": "2515856",
     "matched_code_percent": 100.0,
     "matched_data_percent": 100.0,
-    "total_functions": 14425,
-    "matched_functions": 14425,
+    "total_functions": 14426,
+    "matched_functions": 14426,
     "matched_functions_percent": 100.0,
     "complete_data_percent": 100.0,
     "total_units": 4527
@@ -3406,19 +3406,19 @@
       ],
       "functions": [
         {
+          "name": "$_static_symbol_8002E4C0_build/lib/ultralib/src/io/sptask.o_.text",
+          "size": "268",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2147673280"
+          }
+        },
+        {
           "name": "osSpTaskLoad",
           "size": "360",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2147673548"
-          }
-        },
-        {
-          "name": "$_static_symbol_8002E4C0_build/lib/ultralib/src/io/sptask.o",
-          "size": "268",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2147673280"
           }
         },
         {
@@ -4259,8 +4259,12 @@
       "name": "lib/ultralib/src/os/parameters",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "96",
+        "matched_code": "96",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -4268,6 +4272,17 @@
         {
           "name": ".text",
           "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2147680720"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_800301D0_build/lib/ultralib/src/os/parameters.o_.text",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2147680720"
           }
@@ -4772,19 +4787,19 @@
       ],
       "functions": [
         {
+          "name": "$_static_symbol_800307B0_build/lib/ultralib/src/io/pfsreadwritefile.o_.text",
+          "size": "212",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2147682224"
+          }
+        },
+        {
           "name": "osPfsReadWriteFile",
           "size": "892",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2147682436"
-          }
-        },
-        {
-          "name": "$_static_symbol_800307B0_build/lib/ultralib/src/io/pfsreadwritefile.o",
-          "size": "212",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2147682224"
           }
         }
       ],
@@ -240340,12 +240355,12 @@
       "name": "lib",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "56704",
-        "matched_code": "56704",
+        "total_code": "56800",
+        "matched_code": "56800",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 228,
-        "matched_functions": 228,
+        "total_functions": 229,
+        "matched_functions": 229,
         "matched_functions_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 159

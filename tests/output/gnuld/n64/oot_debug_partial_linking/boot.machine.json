@@ -782,7 +782,14 @@
                     "vram": 16528,
                     "size": 96,
                     "vrom": 16528,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00004090_build/gc-eu-mq-dbg/src/libultra/os/parameters.o_.text",
+                            "vram": 16528,
+                            "size": 96,
+                            "vrom": 16528
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/createthread.o",
@@ -1991,7 +1998,14 @@
                     "vram": 36784,
                     "size": 16,
                     "vrom": 36784,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00008FB0_build/gc-eu-mq-dbg/src/boot/boot_main.o_.rodata",
+                            "vram": 36784,
+                            "size": 16,
+                            "vrom": 36784
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/idle.o",
@@ -1999,7 +2013,14 @@
                     "vram": 36800,
                     "size": 624,
                     "vrom": 36800,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00008FC0_build/gc-eu-mq-dbg/src/boot/idle.o_.rodata",
+                            "vram": 36800,
+                            "size": 624,
+                            "vrom": 36800
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/viconfig.o",
@@ -2007,7 +2028,14 @@
                     "vram": 37424,
                     "size": 64,
                     "vrom": 37424,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00009230_build/gc-eu-mq-dbg/src/boot/viconfig.o_.rodata",
+                            "vram": 37424,
+                            "size": 64,
+                            "vrom": 37424
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/z_std_dma.o",
@@ -2015,7 +2043,14 @@
                     "vram": 37488,
                     "size": 27296,
                     "vrom": 37488,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00009270_build/gc-eu-mq-dbg/src/boot/z_std_dma.o_.rodata",
+                            "vram": 37488,
+                            "size": 27296,
+                            "vrom": 37488
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/z_locale.o",
@@ -2023,7 +2058,14 @@
                     "vram": 64784,
                     "size": 144,
                     "vrom": 64784,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000FD10_build/gc-eu-mq-dbg/src/boot/z_locale.o_.rodata",
+                            "vram": 64784,
+                            "size": 144,
+                            "vrom": 64784
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/assert.o",
@@ -2031,7 +2073,14 @@
                     "vram": 64928,
                     "size": 80,
                     "vrom": 64928,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000FDA0_build/gc-eu-mq-dbg/src/boot/assert.o_.rodata",
+                            "vram": 64928,
+                            "size": 80,
+                            "vrom": 64928
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/is_debug.o",
@@ -2039,7 +2088,14 @@
                     "vram": 65008,
                     "size": 32,
                     "vrom": 65008,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000FDF0_build/gc-eu-mq-dbg/src/boot/is_debug.o_.rodata",
+                            "vram": 65008,
+                            "size": 32,
+                            "vrom": 65008
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libu64/stackcheck.o",
@@ -2047,7 +2103,14 @@
                     "vram": 65040,
                     "size": 208,
                     "vrom": 65040,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000FE10_build/gc-eu-mq-dbg/src/libu64/stackcheck.o_.rodata",
+                            "vram": 65040,
+                            "size": 208,
+                            "vrom": 65040
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libu64/debug.o",
@@ -2055,7 +2118,14 @@
                     "vram": 65248,
                     "size": 512,
                     "vrom": 65248,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000FEE0_build/gc-eu-mq-dbg/src/libu64/debug.o_.rodata",
+                            "vram": 65248,
+                            "size": 512,
+                            "vrom": 65248
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o",
@@ -2063,7 +2133,14 @@
                     "vram": 65760,
                     "size": 68,
                     "vrom": 65760,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000100E0_build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o_.rodata",
+                            "vram": 65760,
+                            "size": 68,
+                            "vrom": 65760
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o__fill__",
@@ -2079,7 +2156,14 @@
                     "vram": 65840,
                     "size": 32,
                     "vrom": 65840,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00010130_build/gc-eu-mq-dbg/src/libultra/io/devmgr.o_.rodata",
+                            "vram": 65840,
+                            "size": 32,
+                            "vrom": 65840
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setintmask.o",
@@ -2102,7 +2186,14 @@
                     "vram": 66000,
                     "size": 256,
                     "vrom": 66000,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000101D0_build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o_.rodata",
+                            "vram": 66000,
+                            "size": 256,
+                            "vrom": 66000
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o",
@@ -2110,7 +2201,14 @@
                     "vram": 66256,
                     "size": 96,
                     "vrom": 66256,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000102D0_build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o_.rodata",
+                            "vram": 66256,
+                            "size": 96,
+                            "vrom": 66256
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/build.o",
@@ -2276,7 +2374,14 @@
                     "vram": 6240,
                     "size": 16,
                     "vrom": 72640,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00001860_build/gc-eu-mq-dbg/src/boot/driverominit.o_.data",
+                            "vram": 6240,
+                            "size": 16,
+                            "vrom": 72640
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libu64/stackcheck.o",
@@ -2563,7 +2668,14 @@
                     "vram": 6912,
                     "size": 16,
                     "vrom": 73312,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00001B00_build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o_.data",
+                            "vram": 6912,
+                            "size": 16,
+                            "vrom": 73312
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o",
@@ -2586,7 +2698,14 @@
                     "vram": 7008,
                     "size": 48,
                     "vrom": 73408,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00001B60_build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o_.data",
+                            "vram": 7008,
+                            "size": 48,
+                            "vrom": 73408
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vimgr.o",
@@ -2623,7 +2742,14 @@
                     "vram": 0,
                     "size": 24,
                     "vrom": 73488,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/src/boot/boot_main.o_.reginfo",
+                            "vram": 0,
+                            "size": 24,
+                            "vrom": 73488
+                        }
+                    ]
                 }
             ]
         },
@@ -2639,7 +2765,14 @@
                     "vram": 0,
                     "size": 24,
                     "vrom": 73512,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/src/boot/mio0.o_.MIPS.abiflags",
+                            "vram": 0,
+                            "size": 24,
+                            "vrom": 73512
+                        }
+                    ]
                 }
             ]
         },
@@ -2835,7 +2968,14 @@
                     "vram": 8576,
                     "size": 32,
                     "vrom": null,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00002180_build/gc-eu-mq-dbg/src/boot/z_locale.o_.bss",
+                            "vram": 8576,
+                            "size": 32,
+                            "vrom": null
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/is_debug.o",
@@ -3082,7 +3222,14 @@
                     "vram": 0,
                     "size": 64,
                     "vrom": 73536,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/src/boot/boot_main.o_.options",
+                            "vram": 0,
+                            "size": 64,
+                            "vrom": 73536
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/idle.o",
@@ -3090,7 +3237,14 @@
                     "vram": 64,
                     "size": 64,
                     "vrom": 73600,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000040_build/gc-eu-mq-dbg/src/boot/idle.o_.options",
+                            "vram": 64,
+                            "size": 64,
+                            "vrom": 73600
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/viconfig.o",
@@ -3098,7 +3252,14 @@
                     "vram": 128,
                     "size": 64,
                     "vrom": 73664,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000080_build/gc-eu-mq-dbg/src/boot/viconfig.o_.options",
+                            "vram": 128,
+                            "size": 64,
+                            "vrom": 73664
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/carthandle.o",
@@ -3106,7 +3267,14 @@
                     "vram": 192,
                     "size": 64,
                     "vrom": 73728,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000000C0_build/gc-eu-mq-dbg/src/boot/carthandle.o_.options",
+                            "vram": 192,
+                            "size": 64,
+                            "vrom": 73728
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/z_std_dma.o",
@@ -3114,7 +3282,14 @@
                     "vram": 256,
                     "size": 64,
                     "vrom": 73792,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000100_build/gc-eu-mq-dbg/src/boot/z_std_dma.o_.options",
+                            "vram": 256,
+                            "size": 64,
+                            "vrom": 73792
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/yaz0.o",
@@ -3122,7 +3297,14 @@
                     "vram": 320,
                     "size": 64,
                     "vrom": 73856,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000140_build/gc-eu-mq-dbg/src/boot/yaz0.o_.options",
+                            "vram": 320,
+                            "size": 64,
+                            "vrom": 73856
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/z_locale.o",
@@ -3130,7 +3312,14 @@
                     "vram": 384,
                     "size": 64,
                     "vrom": 73920,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000180_build/gc-eu-mq-dbg/src/boot/z_locale.o_.options",
+                            "vram": 384,
+                            "size": 64,
+                            "vrom": 73920
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/assert.o",
@@ -3138,7 +3327,14 @@
                     "vram": 448,
                     "size": 64,
                     "vrom": 73984,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000001C0_build/gc-eu-mq-dbg/src/boot/assert.o_.options",
+                            "vram": 448,
+                            "size": 64,
+                            "vrom": 73984
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/is_debug.o",
@@ -3146,7 +3342,14 @@
                     "vram": 512,
                     "size": 64,
                     "vrom": 74048,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000200_build/gc-eu-mq-dbg/src/boot/is_debug.o_.options",
+                            "vram": 512,
+                            "size": 64,
+                            "vrom": 74048
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/driverominit.o",
@@ -3154,7 +3357,14 @@
                     "vram": 576,
                     "size": 64,
                     "vrom": 74112,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000240_build/gc-eu-mq-dbg/src/boot/driverominit.o_.options",
+                            "vram": 576,
+                            "size": 64,
+                            "vrom": 74112
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libu64/stackcheck.o",
@@ -3162,7 +3372,14 @@
                     "vram": 640,
                     "size": 64,
                     "vrom": 74176,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000280_build/gc-eu-mq-dbg/src/libu64/stackcheck.o_.options",
+                            "vram": 640,
+                            "size": 64,
+                            "vrom": 74176
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libu64/debug.o",
@@ -3170,7 +3387,14 @@
                     "vram": 704,
                     "size": 64,
                     "vrom": 74240,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000002C0_build/gc-eu-mq-dbg/src/libu64/debug.o_.options",
+                            "vram": 704,
+                            "size": 64,
+                            "vrom": 74240
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libc64/sprintf.o",
@@ -3178,7 +3402,14 @@
                     "vram": 768,
                     "size": 64,
                     "vrom": 74304,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000300_build/gc-eu-mq-dbg/src/libc64/sprintf.o_.options",
+                            "vram": 768,
+                            "size": 64,
+                            "vrom": 74304
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/piacs.o",
@@ -3186,7 +3417,14 @@
                     "vram": 832,
                     "size": 32,
                     "vrom": 74368,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000340_build/gc-eu-mq-dbg/src/libultra/io/piacs.o_.options",
+                            "vram": 832,
+                            "size": 32,
+                            "vrom": 74368
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/sendmesg.o",
@@ -3194,7 +3432,14 @@
                     "vram": 864,
                     "size": 32,
                     "vrom": 74400,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000360_build/gc-eu-mq-dbg/src/libultra/os/sendmesg.o_.options",
+                            "vram": 864,
+                            "size": 32,
+                            "vrom": 74400
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/stopthread.o",
@@ -3202,7 +3447,14 @@
                     "vram": 896,
                     "size": 32,
                     "vrom": 74432,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000380_build/gc-eu-mq-dbg/src/libultra/os/stopthread.o_.options",
+                            "vram": 896,
+                            "size": 32,
+                            "vrom": 74432
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/viextendvstart.o",
@@ -3210,7 +3462,14 @@
                     "vram": 928,
                     "size": 32,
                     "vrom": 74464,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000003A0_build/gc-eu-mq-dbg/src/libultra/io/viextendvstart.o_.options",
+                            "vram": 928,
+                            "size": 32,
+                            "vrom": 74464
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vimodepallan1.o",
@@ -3218,7 +3477,14 @@
                     "vram": 960,
                     "size": 32,
                     "vrom": 74496,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000003C0_build/gc-eu-mq-dbg/src/libultra/io/vimodepallan1.o_.options",
+                            "vram": 960,
+                            "size": 32,
+                            "vrom": 74496
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/recvmesg.o",
@@ -3226,7 +3492,14 @@
                     "vram": 992,
                     "size": 32,
                     "vrom": 74528,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000003E0_build/gc-eu-mq-dbg/src/libultra/os/recvmesg.o_.options",
+                            "vram": 992,
+                            "size": 32,
+                            "vrom": 74528
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/initialize.o",
@@ -3234,7 +3507,14 @@
                     "vram": 1024,
                     "size": 32,
                     "vrom": 74560,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000400_build/gc-eu-mq-dbg/src/libultra/os/initialize.o_.options",
+                            "vram": 1024,
+                            "size": 32,
+                            "vrom": 74560
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/ll.o",
@@ -3242,7 +3522,14 @@
                     "vram": 1056,
                     "size": 32,
                     "vrom": 74592,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000420_build/gc-eu-mq-dbg/src/libultra/libc/ll.o_.options",
+                            "vram": 1056,
+                            "size": 32,
+                            "vrom": 74592
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/thread.o",
@@ -3250,7 +3537,14 @@
                     "vram": 1088,
                     "size": 32,
                     "vrom": 74624,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000440_build/gc-eu-mq-dbg/src/libultra/os/thread.o_.options",
+                            "vram": 1088,
+                            "size": 32,
+                            "vrom": 74624
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/destroythread.o",
@@ -3258,7 +3552,14 @@
                     "vram": 1120,
                     "size": 32,
                     "vrom": 74656,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000460_build/gc-eu-mq-dbg/src/libultra/os/destroythread.o_.options",
+                            "vram": 1120,
+                            "size": 32,
+                            "vrom": 74656
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/createthread.o",
@@ -3266,7 +3567,14 @@
                     "vram": 1152,
                     "size": 32,
                     "vrom": 74688,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000480_build/gc-eu-mq-dbg/src/libultra/os/createthread.o_.options",
+                            "vram": 1152,
+                            "size": 32,
+                            "vrom": 74688
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o",
@@ -3274,7 +3582,14 @@
                     "vram": 1184,
                     "size": 32,
                     "vrom": 74720,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000004A0_build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o_.options",
+                            "vram": 1184,
+                            "size": 32,
+                            "vrom": 74720
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/pimgr.o",
@@ -3282,7 +3597,14 @@
                     "vram": 1216,
                     "size": 32,
                     "vrom": 74752,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000004C0_build/gc-eu-mq-dbg/src/libultra/io/pimgr.o_.options",
+                            "vram": 1216,
+                            "size": 32,
+                            "vrom": 74752
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/devmgr.o",
@@ -3290,7 +3612,14 @@
                     "vram": 1248,
                     "size": 32,
                     "vrom": 74784,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000004E0_build/gc-eu-mq-dbg/src/libultra/io/devmgr.o_.options",
+                            "vram": 1248,
+                            "size": 32,
+                            "vrom": 74784
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o",
@@ -3298,7 +3627,14 @@
                     "vram": 1280,
                     "size": 32,
                     "vrom": 74816,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000500_build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o_.options",
+                            "vram": 1280,
+                            "size": 32,
+                            "vrom": 74816
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o",
@@ -3306,7 +3642,14 @@
                     "vram": 1312,
                     "size": 32,
                     "vrom": 74848,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000520_build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o_.options",
+                            "vram": 1312,
+                            "size": 32,
+                            "vrom": 74848
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/viblack.o",
@@ -3314,7 +3657,14 @@
                     "vram": 1344,
                     "size": 32,
                     "vrom": 74880,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000540_build/gc-eu-mq-dbg/src/libultra/io/viblack.o_.options",
+                            "vram": 1344,
+                            "size": 32,
+                            "vrom": 74880
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/sirawread.o",
@@ -3322,7 +3672,14 @@
                     "vram": 1376,
                     "size": 32,
                     "vrom": 74912,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000560_build/gc-eu-mq-dbg/src/libultra/io/sirawread.o_.options",
+                            "vram": 1376,
+                            "size": 32,
+                            "vrom": 74912
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o",
@@ -3330,7 +3687,14 @@
                     "vram": 1408,
                     "size": 32,
                     "vrom": 74944,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000580_build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o_.options",
+                            "vram": 1408,
+                            "size": 32,
+                            "vrom": 74944
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/visetmode.o",
@@ -3338,7 +3702,14 @@
                     "vram": 1440,
                     "size": 32,
                     "vrom": 74976,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000005A0_build/gc-eu-mq-dbg/src/libultra/io/visetmode.o_.options",
+                            "vram": 1440,
+                            "size": 32,
+                            "vrom": 74976
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o",
@@ -3346,7 +3717,14 @@
                     "vram": 1472,
                     "size": 32,
                     "vrom": 75008,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000005C0_build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o_.options",
+                            "vram": 1472,
+                            "size": 32,
+                            "vrom": 75008
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o",
@@ -3354,7 +3732,14 @@
                     "vram": 1504,
                     "size": 32,
                     "vrom": 75040,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000005E0_build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o_.options",
+                            "vram": 1504,
+                            "size": 32,
+                            "vrom": 75040
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o",
@@ -3362,7 +3747,14 @@
                     "vram": 1536,
                     "size": 32,
                     "vrom": 75072,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000600_build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o_.options",
+                            "vram": 1536,
+                            "size": 32,
+                            "vrom": 75072
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/epidma.o",
@@ -3370,7 +3762,14 @@
                     "vram": 1568,
                     "size": 32,
                     "vrom": 75104,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000620_build/gc-eu-mq-dbg/src/libultra/io/epidma.o_.options",
+                            "vram": 1568,
+                            "size": 32,
+                            "vrom": 75104
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/string.o",
@@ -3378,7 +3777,14 @@
                     "vram": 1600,
                     "size": 32,
                     "vrom": 75136,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000640_build/gc-eu-mq-dbg/src/libultra/libc/string.o_.options",
+                            "vram": 1600,
+                            "size": 32,
+                            "vrom": 75136
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o",
@@ -3386,7 +3792,14 @@
                     "vram": 1632,
                     "size": 32,
                     "vrom": 75168,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000660_build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o_.options",
+                            "vram": 1632,
+                            "size": 32,
+                            "vrom": 75168
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/si.o",
@@ -3394,7 +3807,14 @@
                     "vram": 1664,
                     "size": 32,
                     "vrom": 75200,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000680_build/gc-eu-mq-dbg/src/libultra/io/si.o_.options",
+                            "vram": 1664,
+                            "size": 32,
+                            "vrom": 75200
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/jammesg.o",
@@ -3402,7 +3822,14 @@
                     "vram": 1696,
                     "size": 32,
                     "vrom": 75232,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000006A0_build/gc-eu-mq-dbg/src/libultra/os/jammesg.o_.options",
+                            "vram": 1696,
+                            "size": 32,
+                            "vrom": 75232
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o",
@@ -3410,7 +3837,14 @@
                     "vram": 1728,
                     "size": 32,
                     "vrom": 75264,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000006C0_build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o_.options",
+                            "vram": 1728,
+                            "size": 32,
+                            "vrom": 75264
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o",
@@ -3418,7 +3852,14 @@
                     "vram": 1760,
                     "size": 32,
                     "vrom": 75296,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000006E0_build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o_.options",
+                            "vram": 1760,
+                            "size": 32,
+                            "vrom": 75296
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/epirawread.o",
@@ -3426,7 +3867,14 @@
                     "vram": 1792,
                     "size": 32,
                     "vrom": 75328,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000700_build/gc-eu-mq-dbg/src/libultra/io/epirawread.o_.options",
+                            "vram": 1792,
+                            "size": 32,
+                            "vrom": 75328
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o",
@@ -3434,7 +3882,14 @@
                     "vram": 1824,
                     "size": 32,
                     "vrom": 75360,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000720_build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o_.options",
+                            "vram": 1824,
+                            "size": 32,
+                            "vrom": 75360
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o",
@@ -3442,7 +3897,14 @@
                     "vram": 1856,
                     "size": 32,
                     "vrom": 75392,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000740_build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o_.options",
+                            "vram": 1856,
+                            "size": 32,
+                            "vrom": 75392
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/gettime.o",
@@ -3450,7 +3912,14 @@
                     "vram": 1888,
                     "size": 32,
                     "vrom": 75424,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000760_build/gc-eu-mq-dbg/src/libultra/os/gettime.o_.options",
+                            "vram": 1888,
+                            "size": 32,
+                            "vrom": 75424
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/timerintr.o",
@@ -3458,7 +3927,14 @@
                     "vram": 1920,
                     "size": 32,
                     "vrom": 75456,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000780_build/gc-eu-mq-dbg/src/libultra/os/timerintr.o_.options",
+                            "vram": 1920,
+                            "size": 32,
+                            "vrom": 75456
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o",
@@ -3466,7 +3942,14 @@
                     "vram": 1952,
                     "size": 32,
                     "vrom": 75488,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000007A0_build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o_.options",
+                            "vram": 1952,
+                            "size": 32,
+                            "vrom": 75488
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o",
@@ -3474,7 +3957,14 @@
                     "vram": 1984,
                     "size": 32,
                     "vrom": 75520,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000007C0_build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o_.options",
+                            "vram": 1984,
+                            "size": 32,
+                            "vrom": 75520
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o",
@@ -3482,7 +3972,14 @@
                     "vram": 2016,
                     "size": 32,
                     "vrom": 75552,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000007E0_build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o_.options",
+                            "vram": 2016,
+                            "size": 32,
+                            "vrom": 75552
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o",
@@ -3490,7 +3987,14 @@
                     "vram": 2048,
                     "size": 32,
                     "vrom": 75584,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000800_build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o_.options",
+                            "vram": 2048,
+                            "size": 32,
+                            "vrom": 75584
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vi.o",
@@ -3498,7 +4002,14 @@
                     "vram": 2080,
                     "size": 32,
                     "vrom": 75616,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000820_build/gc-eu-mq-dbg/src/libultra/io/vi.o_.options",
+                            "vram": 2080,
+                            "size": 32,
+                            "vrom": 75616
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o",
@@ -3506,7 +4017,14 @@
                     "vram": 2112,
                     "size": 32,
                     "vrom": 75648,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000840_build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o_.options",
+                            "vram": 2112,
+                            "size": 32,
+                            "vrom": 75648
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o",
@@ -3514,7 +4032,14 @@
                     "vram": 2144,
                     "size": 32,
                     "vrom": 75680,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000860_build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o_.options",
+                            "vram": 2144,
+                            "size": 32,
+                            "vrom": 75680
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/epiread.o",
@@ -3522,7 +4047,14 @@
                     "vram": 2176,
                     "size": 32,
                     "vrom": 75712,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000880_build/gc-eu-mq-dbg/src/libultra/io/epiread.o_.options",
+                            "vram": 2176,
+                            "size": 32,
+                            "vrom": 75712
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o",
@@ -3530,7 +4062,14 @@
                     "vram": 2208,
                     "size": 32,
                     "vrom": 75744,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000008A0_build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o_.options",
+                            "vram": 2208,
+                            "size": 32,
+                            "vrom": 75744
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o",
@@ -3538,7 +4077,14 @@
                     "vram": 2240,
                     "size": 32,
                     "vrom": 75776,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000008C0_build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o_.options",
+                            "vram": 2240,
+                            "size": 32,
+                            "vrom": 75776
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o",
@@ -3546,7 +4092,14 @@
                     "vram": 2272,
                     "size": 32,
                     "vrom": 75808,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000008E0_build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o_.options",
+                            "vram": 2272,
+                            "size": 32,
+                            "vrom": 75808
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o",
@@ -3554,7 +4107,14 @@
                     "vram": 2304,
                     "size": 32,
                     "vrom": 75840,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000900_build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o_.options",
+                            "vram": 2304,
+                            "size": 32,
+                            "vrom": 75840
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o",
@@ -3562,7 +4122,14 @@
                     "vram": 2336,
                     "size": 32,
                     "vrom": 75872,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000920_build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o_.options",
+                            "vram": 2336,
+                            "size": 32,
+                            "vrom": 75872
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o",
@@ -3570,7 +4137,14 @@
                     "vram": 2368,
                     "size": 32,
                     "vrom": 75904,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000940_build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o_.options",
+                            "vram": 2368,
+                            "size": 32,
+                            "vrom": 75904
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o",
@@ -3578,7 +4152,14 @@
                     "vram": 2400,
                     "size": 32,
                     "vrom": 75936,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000960_build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o_.options",
+                            "vram": 2400,
+                            "size": 32,
+                            "vrom": 75936
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o",
@@ -3586,7 +4167,14 @@
                     "vram": 2432,
                     "size": 32,
                     "vrom": 75968,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000980_build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o_.options",
+                            "vram": 2432,
+                            "size": 32,
+                            "vrom": 75968
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o",
@@ -3594,7 +4182,14 @@
                     "vram": 2464,
                     "size": 32,
                     "vrom": 76000,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000009A0_build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o_.options",
+                            "vram": 2464,
+                            "size": 32,
+                            "vrom": 76000
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o",
@@ -3602,7 +4197,14 @@
                     "vram": 2496,
                     "size": 32,
                     "vrom": 76032,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000009C0_build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o_.options",
+                            "vram": 2496,
+                            "size": 32,
+                            "vrom": 76032
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vimgr.o",
@@ -3610,7 +4212,14 @@
                     "vram": 2528,
                     "size": 32,
                     "vrom": 76064,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000009E0_build/gc-eu-mq-dbg/src/libultra/io/vimgr.o_.options",
+                            "vram": 2528,
+                            "size": 32,
+                            "vrom": 76064
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o",
@@ -3618,7 +4227,14 @@
                     "vram": 2560,
                     "size": 32,
                     "vrom": 76096,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000A00_build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o_.options",
+                            "vram": 2560,
+                            "size": 32,
+                            "vrom": 76096
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/startthread.o",
@@ -3626,7 +4242,14 @@
                     "vram": 2592,
                     "size": 32,
                     "vrom": 76128,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000A20_build/gc-eu-mq-dbg/src/libultra/os/startthread.o_.options",
+                            "vram": 2592,
+                            "size": 32,
+                            "vrom": 76128
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o",
@@ -3634,7 +4257,14 @@
                     "vram": 2624,
                     "size": 32,
                     "vrom": 76160,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000A40_build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o_.options",
+                            "vram": 2624,
+                            "size": 32,
+                            "vrom": 76160
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o",
@@ -3642,7 +4272,14 @@
                     "vram": 2656,
                     "size": 32,
                     "vrom": 76192,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000A60_build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o_.options",
+                            "vram": 2656,
+                            "size": 32,
+                            "vrom": 76192
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o",
@@ -3650,7 +4287,14 @@
                     "vram": 2688,
                     "size": 32,
                     "vrom": 76224,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000A80_build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o_.options",
+                            "vram": 2688,
+                            "size": 32,
+                            "vrom": 76224
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o",
@@ -3658,7 +4302,14 @@
                     "vram": 2720,
                     "size": 32,
                     "vrom": 76256,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000AA0_build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o_.options",
+                            "vram": 2720,
+                            "size": 32,
+                            "vrom": 76256
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/build.o",
@@ -3666,7 +4317,14 @@
                     "vram": 2752,
                     "size": 64,
                     "vrom": 76288,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000AC0_build/gc-eu-mq-dbg/src/boot/build.o_.options",
+                            "vram": 2752,
+                            "size": 64,
+                            "vrom": 76288
+                        }
+                    ]
                 }
             ]
         },
@@ -3682,7 +4340,14 @@
                     "vram": 0,
                     "size": 32,
                     "vrom": 76352,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/src/boot/mio0.o_.pdr",
+                            "vram": 0,
+                            "size": 32,
+                            "vrom": 76352
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o",
@@ -3690,7 +4355,14 @@
                     "vram": 32,
                     "size": 256,
                     "vrom": 76384,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000020_build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o_.pdr",
+                            "vram": 32,
+                            "size": 256,
+                            "vrom": 76384
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/bzero.o",
@@ -3698,7 +4370,14 @@
                     "vram": 288,
                     "size": 32,
                     "vrom": 76640,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000120_build/gc-eu-mq-dbg/src/libultra/libc/bzero.o_.pdr",
+                            "vram": 288,
+                            "size": 32,
+                            "vrom": 76640
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setsr.o",
@@ -3706,7 +4385,14 @@
                     "vram": 320,
                     "size": 32,
                     "vrom": 76672,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000140_build/gc-eu-mq-dbg/src/libultra/os/setsr.o_.pdr",
+                            "vram": 320,
+                            "size": 32,
+                            "vrom": 76672
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getsr.o",
@@ -3714,7 +4400,14 @@
                     "vram": 352,
                     "size": 32,
                     "vrom": 76704,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000160_build/gc-eu-mq-dbg/src/libultra/os/getsr.o_.pdr",
+                            "vram": 352,
+                            "size": 32,
+                            "vrom": 76704
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o",
@@ -3722,7 +4415,14 @@
                     "vram": 384,
                     "size": 32,
                     "vrom": 76736,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000180_build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o_.pdr",
+                            "vram": 384,
+                            "size": 32,
+                            "vrom": 76736
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setintmask.o",
@@ -3730,7 +4430,14 @@
                     "vram": 416,
                     "size": 32,
                     "vrom": 76768,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000001A0_build/gc-eu-mq-dbg/src/libultra/os/setintmask.o_.pdr",
+                            "vram": 416,
+                            "size": 32,
+                            "vrom": 76768
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/probetlb.o",
@@ -3738,7 +4445,14 @@
                     "vram": 448,
                     "size": 32,
                     "vrom": 76800,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000001C0_build/gc-eu-mq-dbg/src/libultra/os/probetlb.o_.pdr",
+                            "vram": 448,
+                            "size": 32,
+                            "vrom": 76800
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o",
@@ -3746,7 +4460,14 @@
                     "vram": 480,
                     "size": 32,
                     "vrom": 76832,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000001E0_build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o_.pdr",
+                            "vram": 480,
+                            "size": 32,
+                            "vrom": 76832
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/invalicache.o",
@@ -3754,7 +4475,14 @@
                     "vram": 512,
                     "size": 32,
                     "vrom": 76864,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000200_build/gc-eu-mq-dbg/src/libultra/os/invalicache.o_.pdr",
+                            "vram": 512,
+                            "size": 32,
+                            "vrom": 76864
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o",
@@ -3762,7 +4490,14 @@
                     "vram": 544,
                     "size": 32,
                     "vrom": 76896,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000220_build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o_.pdr",
+                            "vram": 544,
+                            "size": 32,
+                            "vrom": 76896
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o",
@@ -3770,7 +4505,14 @@
                     "vram": 576,
                     "size": 32,
                     "vrom": 76928,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000240_build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o_.pdr",
+                            "vram": 576,
+                            "size": 32,
+                            "vrom": 76928
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getcount.o",
@@ -3778,7 +4520,14 @@
                     "vram": 608,
                     "size": 32,
                     "vrom": 76960,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000260_build/gc-eu-mq-dbg/src/libultra/os/getcount.o_.pdr",
+                            "vram": 608,
+                            "size": 32,
+                            "vrom": 76960
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setcompare.o",
@@ -3786,7 +4535,14 @@
                     "vram": 640,
                     "size": 32,
                     "vrom": 76992,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000280_build/gc-eu-mq-dbg/src/libultra/os/setcompare.o_.pdr",
+                            "vram": 640,
+                            "size": 32,
+                            "vrom": 76992
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o",
@@ -3794,7 +4550,14 @@
                     "vram": 672,
                     "size": 32,
                     "vrom": 77024,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000002A0_build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o_.pdr",
+                            "vram": 672,
+                            "size": 32,
+                            "vrom": 77024
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/interrupt.o",
@@ -3802,7 +4565,14 @@
                     "vram": 704,
                     "size": 64,
                     "vrom": 77056,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000002C0_build/gc-eu-mq-dbg/src/libultra/os/interrupt.o_.pdr",
+                            "vram": 704,
+                            "size": 64,
+                            "vrom": 77056
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o",
@@ -3810,7 +4580,14 @@
                     "vram": 768,
                     "size": 32,
                     "vrom": 77120,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000300_build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o_.pdr",
+                            "vram": 768,
+                            "size": 32,
+                            "vrom": 77120
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o",
@@ -3818,7 +4595,14 @@
                     "vram": 800,
                     "size": 32,
                     "vrom": 77152,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000320_build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o_.pdr",
+                            "vram": 800,
+                            "size": 32,
+                            "vrom": 77152
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o",
@@ -3826,7 +4610,14 @@
                     "vram": 832,
                     "size": 32,
                     "vrom": 77184,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000340_build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o_.pdr",
+                            "vram": 832,
+                            "size": 32,
+                            "vrom": 77184
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getcause.o",
@@ -3834,7 +4625,14 @@
                     "vram": 864,
                     "size": 32,
                     "vrom": 77216,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000360_build/gc-eu-mq-dbg/src/libultra/os/getcause.o_.pdr",
+                            "vram": 864,
+                            "size": 32,
+                            "vrom": 77216
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o",
@@ -3842,7 +4640,14 @@
                     "vram": 896,
                     "size": 32,
                     "vrom": 77248,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000380_build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o_.pdr",
+                            "vram": 896,
+                            "size": 32,
+                            "vrom": 77248
+                        }
+                    ]
                 }
             ]
         },
@@ -3858,7 +4663,14 @@
                     "vram": 0,
                     "size": 16,
                     "vrom": 77280,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/src/boot/mio0.o_.gnu.attributes",
+                            "vram": 0,
+                            "size": 16,
+                            "vrom": 77280
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o",
@@ -3866,7 +4678,14 @@
                     "vram": 16,
                     "size": 16,
                     "vrom": 77296,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000010_build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o_.gnu.attributes",
+                            "vram": 16,
+                            "size": 16,
+                            "vrom": 77296
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/bzero.o",
@@ -3874,7 +4693,14 @@
                     "vram": 32,
                     "size": 16,
                     "vrom": 77312,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000020_build/gc-eu-mq-dbg/src/libultra/libc/bzero.o_.gnu.attributes",
+                            "vram": 32,
+                            "size": 16,
+                            "vrom": 77312
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/parameters.o",
@@ -3882,7 +4708,14 @@
                     "vram": 48,
                     "size": 16,
                     "vrom": 77328,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000030_build/gc-eu-mq-dbg/src/libultra/os/parameters.o_.gnu.attributes",
+                            "vram": 48,
+                            "size": 16,
+                            "vrom": 77328
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setsr.o",
@@ -3890,7 +4723,14 @@
                     "vram": 64,
                     "size": 16,
                     "vrom": 77344,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000040_build/gc-eu-mq-dbg/src/libultra/os/setsr.o_.gnu.attributes",
+                            "vram": 64,
+                            "size": 16,
+                            "vrom": 77344
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getsr.o",
@@ -3898,7 +4738,14 @@
                     "vram": 80,
                     "size": 16,
                     "vrom": 77360,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000050_build/gc-eu-mq-dbg/src/libultra/os/getsr.o_.gnu.attributes",
+                            "vram": 80,
+                            "size": 16,
+                            "vrom": 77360
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o",
@@ -3906,7 +4753,14 @@
                     "vram": 96,
                     "size": 16,
                     "vrom": 77376,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000060_build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o_.gnu.attributes",
+                            "vram": 96,
+                            "size": 16,
+                            "vrom": 77376
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setintmask.o",
@@ -3914,7 +4768,14 @@
                     "vram": 112,
                     "size": 16,
                     "vrom": 77392,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000070_build/gc-eu-mq-dbg/src/libultra/os/setintmask.o_.gnu.attributes",
+                            "vram": 112,
+                            "size": 16,
+                            "vrom": 77392
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/probetlb.o",
@@ -3922,7 +4783,14 @@
                     "vram": 128,
                     "size": 16,
                     "vrom": 77408,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000080_build/gc-eu-mq-dbg/src/libultra/os/probetlb.o_.gnu.attributes",
+                            "vram": 128,
+                            "size": 16,
+                            "vrom": 77408
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o",
@@ -3930,7 +4798,14 @@
                     "vram": 144,
                     "size": 16,
                     "vrom": 77424,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000090_build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o_.gnu.attributes",
+                            "vram": 144,
+                            "size": 16,
+                            "vrom": 77424
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/invalicache.o",
@@ -3938,7 +4813,14 @@
                     "vram": 160,
                     "size": 16,
                     "vrom": 77440,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000000A0_build/gc-eu-mq-dbg/src/libultra/os/invalicache.o_.gnu.attributes",
+                            "vram": 160,
+                            "size": 16,
+                            "vrom": 77440
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o",
@@ -3946,7 +4828,14 @@
                     "vram": 176,
                     "size": 16,
                     "vrom": 77456,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000000B0_build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o_.gnu.attributes",
+                            "vram": 176,
+                            "size": 16,
+                            "vrom": 77456
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o",
@@ -3954,7 +4843,14 @@
                     "vram": 192,
                     "size": 16,
                     "vrom": 77472,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000000C0_build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o_.gnu.attributes",
+                            "vram": 192,
+                            "size": 16,
+                            "vrom": 77472
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getcount.o",
@@ -3962,7 +4858,14 @@
                     "vram": 208,
                     "size": 16,
                     "vrom": 77488,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000000D0_build/gc-eu-mq-dbg/src/libultra/os/getcount.o_.gnu.attributes",
+                            "vram": 208,
+                            "size": 16,
+                            "vrom": 77488
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setcompare.o",
@@ -3970,7 +4873,14 @@
                     "vram": 224,
                     "size": 16,
                     "vrom": 77504,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000000E0_build/gc-eu-mq-dbg/src/libultra/os/setcompare.o_.gnu.attributes",
+                            "vram": 224,
+                            "size": 16,
+                            "vrom": 77504
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o",
@@ -3978,7 +4888,14 @@
                     "vram": 240,
                     "size": 16,
                     "vrom": 77520,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000000F0_build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o_.gnu.attributes",
+                            "vram": 240,
+                            "size": 16,
+                            "vrom": 77520
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/interrupt.o",
@@ -3986,7 +4903,14 @@
                     "vram": 256,
                     "size": 16,
                     "vrom": 77536,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000100_build/gc-eu-mq-dbg/src/libultra/os/interrupt.o_.gnu.attributes",
+                            "vram": 256,
+                            "size": 16,
+                            "vrom": 77536
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o",
@@ -3994,7 +4918,14 @@
                     "vram": 272,
                     "size": 16,
                     "vrom": 77552,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000110_build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o_.gnu.attributes",
+                            "vram": 272,
+                            "size": 16,
+                            "vrom": 77552
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o",
@@ -4002,7 +4933,14 @@
                     "vram": 288,
                     "size": 16,
                     "vrom": 77568,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000120_build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o_.gnu.attributes",
+                            "vram": 288,
+                            "size": 16,
+                            "vrom": 77568
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o",
@@ -4010,7 +4948,14 @@
                     "vram": 304,
                     "size": 16,
                     "vrom": 77584,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000130_build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o_.gnu.attributes",
+                            "vram": 304,
+                            "size": 16,
+                            "vrom": 77584
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getcause.o",
@@ -4018,7 +4963,14 @@
                     "vram": 320,
                     "size": 16,
                     "vrom": 77600,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000140_build/gc-eu-mq-dbg/src/libultra/os/getcause.o_.gnu.attributes",
+                            "vram": 320,
+                            "size": 16,
+                            "vrom": 77600
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o",
@@ -4026,7 +4978,14 @@
                     "vram": 336,
                     "size": 16,
                     "vrom": 77616,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000150_build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o_.gnu.attributes",
+                            "vram": 336,
+                            "size": 16,
+                            "vrom": 77616
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/data/rsp_boot.text.o",
@@ -4034,7 +4993,14 @@
                     "vram": 352,
                     "size": 16,
                     "vrom": 77632,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000160_build/gc-eu-mq-dbg/data/rsp_boot.text.o_.gnu.attributes",
+                            "vram": 352,
+                            "size": 16,
+                            "vrom": 77632
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/data/cic6105.text.o",
@@ -4042,7 +5008,14 @@
                     "vram": 368,
                     "size": 16,
                     "vrom": 77648,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000170_build/gc-eu-mq-dbg/data/cic6105.text.o_.gnu.attributes",
+                            "vram": 368,
+                            "size": 16,
+                            "vrom": 77648
+                        }
+                    ]
                 }
             ]
         },
@@ -4058,7 +5031,14 @@
                     "vram": 0,
                     "size": 2724,
                     "vrom": 77664,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/src/boot/boot_main.o_.mdebug",
+                            "vram": 0,
+                            "size": 2724,
+                            "vrom": 77664
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/idle.o",
@@ -4066,7 +5046,14 @@
                     "vram": 2724,
                     "size": 4684,
                     "vrom": 80388,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000AA4_build/gc-eu-mq-dbg/src/boot/idle.o_.mdebug",
+                            "vram": 2724,
+                            "size": 4684,
+                            "vrom": 80388
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/viconfig.o",
@@ -4074,7 +5061,14 @@
                     "vram": 7408,
                     "size": 2044,
                     "vrom": 85072,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00001CF0_build/gc-eu-mq-dbg/src/boot/viconfig.o_.mdebug",
+                            "vram": 7408,
+                            "size": 2044,
+                            "vrom": 85072
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/carthandle.o",
@@ -4082,7 +5076,14 @@
                     "vram": 9452,
                     "size": 536,
                     "vrom": 87116,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000024EC_build/gc-eu-mq-dbg/src/boot/carthandle.o_.mdebug",
+                            "vram": 9452,
+                            "size": 536,
+                            "vrom": 87116
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/z_std_dma.o",
@@ -4090,7 +5091,14 @@
                     "vram": 9988,
                     "size": 19340,
                     "vrom": 87652,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00002704_build/gc-eu-mq-dbg/src/boot/z_std_dma.o_.mdebug",
+                            "vram": 9988,
+                            "size": 19340,
+                            "vrom": 87652
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/yaz0.o",
@@ -4098,7 +5106,14 @@
                     "vram": 29328,
                     "size": 1848,
                     "vrom": 106992,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00007290_build/gc-eu-mq-dbg/src/boot/yaz0.o_.mdebug",
+                            "vram": 29328,
+                            "size": 1848,
+                            "vrom": 106992
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/z_locale.o",
@@ -4106,7 +5121,14 @@
                     "vram": 31176,
                     "size": 2560,
                     "vrom": 108840,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000079C8_build/gc-eu-mq-dbg/src/boot/z_locale.o_.mdebug",
+                            "vram": 31176,
+                            "size": 2560,
+                            "vrom": 108840
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/assert.o",
@@ -4114,7 +5136,14 @@
                     "vram": 33736,
                     "size": 1548,
                     "vrom": 111400,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000083C8_build/gc-eu-mq-dbg/src/boot/assert.o_.mdebug",
+                            "vram": 33736,
+                            "size": 1548,
+                            "vrom": 111400
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/is_debug.o",
@@ -4122,7 +5151,14 @@
                     "vram": 35284,
                     "size": 2184,
                     "vrom": 112948,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000089D4_build/gc-eu-mq-dbg/src/boot/is_debug.o_.mdebug",
+                            "vram": 35284,
+                            "size": 2184,
+                            "vrom": 112948
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/driverominit.o",
@@ -4130,7 +5166,14 @@
                     "vram": 37468,
                     "size": 1620,
                     "vrom": 115132,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000925C_build/gc-eu-mq-dbg/src/boot/driverominit.o_.mdebug",
+                            "vram": 37468,
+                            "size": 1620,
+                            "vrom": 115132
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libu64/stackcheck.o",
@@ -4138,7 +5181,14 @@
                     "vram": 39088,
                     "size": 1992,
                     "vrom": 116752,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000098B0_build/gc-eu-mq-dbg/src/libu64/stackcheck.o_.mdebug",
+                            "vram": 39088,
+                            "size": 1992,
+                            "vrom": 116752
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libu64/debug.o",
@@ -4146,7 +5196,14 @@
                     "vram": 41080,
                     "size": 3264,
                     "vrom": 118744,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000A078_build/gc-eu-mq-dbg/src/libu64/debug.o_.mdebug",
+                            "vram": 41080,
+                            "size": 3264,
+                            "vrom": 118744
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libc64/sprintf.o",
@@ -4154,7 +5211,14 @@
                     "vram": 44344,
                     "size": 1360,
                     "vrom": 122008,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000AD38_build/gc-eu-mq-dbg/src/libc64/sprintf.o_.mdebug",
+                            "vram": 44344,
+                            "size": 1360,
+                            "vrom": 122008
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/piacs.o",
@@ -4162,7 +5226,14 @@
                     "vram": 45704,
                     "size": 1412,
                     "vrom": 123368,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000B288_build/gc-eu-mq-dbg/src/libultra/io/piacs.o_.mdebug",
+                            "vram": 45704,
+                            "size": 1412,
+                            "vrom": 123368
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/sendmesg.o",
@@ -4170,7 +5241,14 @@
                     "vram": 47116,
                     "size": 1076,
                     "vrom": 124780,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000B80C_build/gc-eu-mq-dbg/src/libultra/os/sendmesg.o_.mdebug",
+                            "vram": 47116,
+                            "size": 1076,
+                            "vrom": 124780
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/stopthread.o",
@@ -4178,7 +5256,14 @@
                     "vram": 48192,
                     "size": 1044,
                     "vrom": 125856,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000BC40_build/gc-eu-mq-dbg/src/libultra/os/stopthread.o_.mdebug",
+                            "vram": 48192,
+                            "size": 1044,
+                            "vrom": 125856
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/viextendvstart.o",
@@ -4186,7 +5271,14 @@
                     "vram": 49236,
                     "size": 696,
                     "vrom": 126900,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000C054_build/gc-eu-mq-dbg/src/libultra/io/viextendvstart.o_.mdebug",
+                            "vram": 49236,
+                            "size": 696,
+                            "vrom": 126900
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vimodepallan1.o",
@@ -4194,7 +5286,14 @@
                     "vram": 49932,
                     "size": 536,
                     "vrom": 127596,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000C30C_build/gc-eu-mq-dbg/src/libultra/io/vimodepallan1.o_.mdebug",
+                            "vram": 49932,
+                            "size": 536,
+                            "vrom": 127596
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/recvmesg.o",
@@ -4202,7 +5301,14 @@
                     "vram": 50468,
                     "size": 1076,
                     "vrom": 128132,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000C524_build/gc-eu-mq-dbg/src/libultra/os/recvmesg.o_.mdebug",
+                            "vram": 50468,
+                            "size": 1076,
+                            "vrom": 128132
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/initialize.o",
@@ -4210,7 +5316,14 @@
                     "vram": 51544,
                     "size": 2396,
                     "vrom": 129208,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000C958_build/gc-eu-mq-dbg/src/libultra/os/initialize.o_.mdebug",
+                            "vram": 51544,
+                            "size": 2396,
+                            "vrom": 129208
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/ll.o",
@@ -4218,7 +5331,14 @@
                     "vram": 53940,
                     "size": 1712,
                     "vrom": 131604,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000D2B4_build/gc-eu-mq-dbg/src/libultra/libc/ll.o_.mdebug",
+                            "vram": 53940,
+                            "size": 1712,
+                            "vrom": 131604
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/thread.o",
@@ -4226,7 +5346,14 @@
                     "vram": 55652,
                     "size": 856,
                     "vrom": 133316,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000D964_build/gc-eu-mq-dbg/src/libultra/os/thread.o_.mdebug",
+                            "vram": 55652,
+                            "size": 856,
+                            "vrom": 133316
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/destroythread.o",
@@ -4234,7 +5361,14 @@
                     "vram": 56508,
                     "size": 1100,
                     "vrom": 134172,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000DCBC_build/gc-eu-mq-dbg/src/libultra/os/destroythread.o_.mdebug",
+                            "vram": 56508,
+                            "size": 1100,
+                            "vrom": 134172
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/createthread.o",
@@ -4242,7 +5376,14 @@
                     "vram": 57608,
                     "size": 1020,
                     "vrom": 135272,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000E108_build/gc-eu-mq-dbg/src/libultra/os/createthread.o_.mdebug",
+                            "vram": 57608,
+                            "size": 1020,
+                            "vrom": 135272
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o",
@@ -4250,7 +5391,14 @@
                     "vram": 58628,
                     "size": 972,
                     "vrom": 136292,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000E504_build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o_.mdebug",
+                            "vram": 58628,
+                            "size": 972,
+                            "vrom": 136292
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/pimgr.o",
@@ -4258,7 +5406,14 @@
                     "vram": 59600,
                     "size": 2028,
                     "vrom": 137264,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000E8D0_build/gc-eu-mq-dbg/src/libultra/io/pimgr.o_.mdebug",
+                            "vram": 59600,
+                            "size": 2028,
+                            "vrom": 137264
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/devmgr.o",
@@ -4266,7 +5421,14 @@
                     "vram": 61628,
                     "size": 1248,
                     "vrom": 139292,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000F0BC_build/gc-eu-mq-dbg/src/libultra/io/devmgr.o_.mdebug",
+                            "vram": 61628,
+                            "size": 1248,
+                            "vrom": 139292
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o",
@@ -4274,7 +5436,14 @@
                     "vram": 62876,
                     "size": 924,
                     "vrom": 140540,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000F59C_build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o_.mdebug",
+                            "vram": 62876,
+                            "size": 924,
+                            "vrom": 140540
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o",
@@ -4282,7 +5451,14 @@
                     "vram": 63800,
                     "size": 700,
                     "vrom": 141464,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000F938_build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o_.mdebug",
+                            "vram": 63800,
+                            "size": 700,
+                            "vrom": 141464
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/viblack.o",
@@ -4290,7 +5466,14 @@
                     "vram": 64500,
                     "size": 936,
                     "vrom": 142164,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000FBF4_build/gc-eu-mq-dbg/src/libultra/io/viblack.o_.mdebug",
+                            "vram": 64500,
+                            "size": 936,
+                            "vrom": 142164
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/sirawread.o",
@@ -4298,7 +5481,14 @@
                     "vram": 65436,
                     "size": 692,
                     "vrom": 143100,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0000FF9C_build/gc-eu-mq-dbg/src/libultra/io/sirawread.o_.mdebug",
+                            "vram": 65436,
+                            "size": 692,
+                            "vrom": 143100
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o",
@@ -4306,7 +5496,14 @@
                     "vram": 66128,
                     "size": 684,
                     "vrom": 143792,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00010250_build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o_.mdebug",
+                            "vram": 66128,
+                            "size": 684,
+                            "vrom": 143792
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/visetmode.o",
@@ -4314,7 +5511,14 @@
                     "vram": 66812,
                     "size": 948,
                     "vrom": 144476,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000104FC_build/gc-eu-mq-dbg/src/libultra/io/visetmode.o_.mdebug",
+                            "vram": 66812,
+                            "size": 948,
+                            "vrom": 144476
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o",
@@ -4322,7 +5526,14 @@
                     "vram": 67760,
                     "size": 484,
                     "vrom": 145424,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000108B0_build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o_.mdebug",
+                            "vram": 67760,
+                            "size": 484,
+                            "vrom": 145424
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o",
@@ -4330,7 +5541,14 @@
                     "vram": 68244,
                     "size": 1264,
                     "vrom": 145908,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00010A94_build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o_.mdebug",
+                            "vram": 68244,
+                            "size": 1264,
+                            "vrom": 145908
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o",
@@ -4338,7 +5556,14 @@
                     "vram": 69508,
                     "size": 1424,
                     "vrom": 147172,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00010F84_build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o_.mdebug",
+                            "vram": 69508,
+                            "size": 1424,
+                            "vrom": 147172
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/epidma.o",
@@ -4346,7 +5571,14 @@
                     "vram": 70932,
                     "size": 980,
                     "vrom": 148596,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00011514_build/gc-eu-mq-dbg/src/libultra/io/epidma.o_.mdebug",
+                            "vram": 70932,
+                            "size": 980,
+                            "vrom": 148596
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/string.o",
@@ -4354,7 +5586,14 @@
                     "vram": 71912,
                     "size": 724,
                     "vrom": 149576,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000118E8_build/gc-eu-mq-dbg/src/libultra/libc/string.o_.mdebug",
+                            "vram": 71912,
+                            "size": 724,
+                            "vrom": 149576
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o",
@@ -4362,7 +5601,14 @@
                     "vram": 72636,
                     "size": 704,
                     "vrom": 150300,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00011BBC_build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o_.mdebug",
+                            "vram": 72636,
+                            "size": 704,
+                            "vrom": 150300
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/si.o",
@@ -4370,7 +5616,14 @@
                     "vram": 73340,
                     "size": 468,
                     "vrom": 151004,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00011E7C_build/gc-eu-mq-dbg/src/libultra/io/si.o_.mdebug",
+                            "vram": 73340,
+                            "size": 468,
+                            "vrom": 151004
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/jammesg.o",
@@ -4378,7 +5631,14 @@
                     "vram": 73808,
                     "size": 1072,
                     "vrom": 151472,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00012050_build/gc-eu-mq-dbg/src/libultra/os/jammesg.o_.mdebug",
+                            "vram": 73808,
+                            "size": 1072,
+                            "vrom": 151472
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o",
@@ -4386,7 +5646,14 @@
                     "vram": 74880,
                     "size": 1128,
                     "vrom": 152544,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00012480_build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o_.mdebug",
+                            "vram": 74880,
+                            "size": 1128,
+                            "vrom": 152544
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o",
@@ -4394,7 +5661,14 @@
                     "vram": 76008,
                     "size": 688,
                     "vrom": 153672,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000128E8_build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o_.mdebug",
+                            "vram": 76008,
+                            "size": 688,
+                            "vrom": 153672
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/epirawread.o",
@@ -4402,7 +5676,14 @@
                     "vram": 76696,
                     "size": 748,
                     "vrom": 154360,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00012B98_build/gc-eu-mq-dbg/src/libultra/io/epirawread.o_.mdebug",
+                            "vram": 76696,
+                            "size": 748,
+                            "vrom": 154360
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o",
@@ -4410,7 +5691,14 @@
                     "vram": 77444,
                     "size": 944,
                     "vrom": 155108,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00012E84_build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o_.mdebug",
+                            "vram": 77444,
+                            "size": 944,
+                            "vrom": 155108
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o",
@@ -4418,7 +5706,14 @@
                     "vram": 78388,
                     "size": 988,
                     "vrom": 156052,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00013234_build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o_.mdebug",
+                            "vram": 78388,
+                            "size": 988,
+                            "vrom": 156052
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/gettime.o",
@@ -4426,7 +5721,14 @@
                     "vram": 79376,
                     "size": 1028,
                     "vrom": 157040,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00013610_build/gc-eu-mq-dbg/src/libultra/os/gettime.o_.mdebug",
+                            "vram": 79376,
+                            "size": 1028,
+                            "vrom": 157040
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/timerintr.o",
@@ -4434,7 +5736,14 @@
                     "vram": 80404,
                     "size": 1820,
                     "vrom": 158068,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00013A14_build/gc-eu-mq-dbg/src/libultra/os/timerintr.o_.mdebug",
+                            "vram": 80404,
+                            "size": 1820,
+                            "vrom": 158068
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o",
@@ -4442,7 +5751,14 @@
                     "vram": 82224,
                     "size": 972,
                     "vrom": 159888,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00014130_build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o_.mdebug",
+                            "vram": 82224,
+                            "size": 972,
+                            "vrom": 159888
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o",
@@ -4450,7 +5766,14 @@
                     "vram": 83196,
                     "size": 976,
                     "vrom": 160860,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000144FC_build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o_.mdebug",
+                            "vram": 83196,
+                            "size": 976,
+                            "vrom": 160860
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o",
@@ -4458,7 +5781,14 @@
                     "vram": 84172,
                     "size": 540,
                     "vrom": 161836,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000148CC_build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o_.mdebug",
+                            "vram": 84172,
+                            "size": 540,
+                            "vrom": 161836
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o",
@@ -4466,7 +5796,14 @@
                     "vram": 84712,
                     "size": 540,
                     "vrom": 162376,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00014AE8_build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o_.mdebug",
+                            "vram": 84712,
+                            "size": 540,
+                            "vrom": 162376
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vi.o",
@@ -4474,7 +5811,14 @@
                     "vram": 85252,
                     "size": 1372,
                     "vrom": 162916,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00014D04_build/gc-eu-mq-dbg/src/libultra/io/vi.o_.mdebug",
+                            "vram": 85252,
+                            "size": 1372,
+                            "vrom": 162916
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o",
@@ -4482,7 +5826,14 @@
                     "vram": 86624,
                     "size": 1100,
                     "vrom": 164288,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00015260_build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o_.mdebug",
+                            "vram": 86624,
+                            "size": 1100,
+                            "vrom": 164288
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o",
@@ -4490,7 +5841,14 @@
                     "vram": 87724,
                     "size": 700,
                     "vrom": 165388,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000156AC_build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o_.mdebug",
+                            "vram": 87724,
+                            "size": 700,
+                            "vrom": 165388
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/epiread.o",
@@ -4498,7 +5856,14 @@
                     "vram": 88424,
                     "size": 760,
                     "vrom": 166088,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00015968_build/gc-eu-mq-dbg/src/libultra/io/epiread.o_.mdebug",
+                            "vram": 88424,
+                            "size": 760,
+                            "vrom": 166088
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o",
@@ -4506,7 +5871,14 @@
                     "vram": 89184,
                     "size": 988,
                     "vrom": 166848,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00015C60_build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o_.mdebug",
+                            "vram": 89184,
+                            "size": 988,
+                            "vrom": 166848
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o",
@@ -4514,7 +5886,14 @@
                     "vram": 90172,
                     "size": 1372,
                     "vrom": 167836,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0001603C_build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o_.mdebug",
+                            "vram": 90172,
+                            "size": 1372,
+                            "vrom": 167836
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o",
@@ -4522,7 +5901,14 @@
                     "vram": 91544,
                     "size": 540,
                     "vrom": 169208,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00016598_build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o_.mdebug",
+                            "vram": 91544,
+                            "size": 540,
+                            "vrom": 169208
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o",
@@ -4530,7 +5916,14 @@
                     "vram": 92084,
                     "size": 760,
                     "vrom": 169748,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000167B4_build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o_.mdebug",
+                            "vram": 92084,
+                            "size": 760,
+                            "vrom": 169748
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o",
@@ -4538,7 +5931,14 @@
                     "vram": 92844,
                     "size": 1044,
                     "vrom": 170508,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00016AAC_build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o_.mdebug",
+                            "vram": 92844,
+                            "size": 1044,
+                            "vrom": 170508
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o",
@@ -4546,7 +5946,14 @@
                     "vram": 93888,
                     "size": 752,
                     "vrom": 171552,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00016EC0_build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o_.mdebug",
+                            "vram": 93888,
+                            "size": 752,
+                            "vrom": 171552
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o",
@@ -4554,7 +5961,14 @@
                     "vram": 94640,
                     "size": 1040,
                     "vrom": 172304,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000171B0_build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o_.mdebug",
+                            "vram": 94640,
+                            "size": 1040,
+                            "vrom": 172304
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o",
@@ -4562,7 +5976,14 @@
                     "vram": 95680,
                     "size": 656,
                     "vrom": 173344,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000175C0_build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o_.mdebug",
+                            "vram": 95680,
+                            "size": 656,
+                            "vrom": 173344
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o",
@@ -4570,7 +5991,14 @@
                     "vram": 96336,
                     "size": 1500,
                     "vrom": 174000,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00017850_build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o_.mdebug",
+                            "vram": 96336,
+                            "size": 1500,
+                            "vrom": 174000
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o",
@@ -4578,7 +6006,14 @@
                     "vram": 97836,
                     "size": 696,
                     "vrom": 175500,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00017E2C_build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o_.mdebug",
+                            "vram": 97836,
+                            "size": 696,
+                            "vrom": 175500
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vimgr.o",
@@ -4586,7 +6021,14 @@
                     "vram": 98532,
                     "size": 2164,
                     "vrom": 176196,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000180E4_build/gc-eu-mq-dbg/src/libultra/io/vimgr.o_.mdebug",
+                            "vram": 98532,
+                            "size": 2164,
+                            "vrom": 176196
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o",
@@ -4594,7 +6036,14 @@
                     "vram": 100696,
                     "size": 712,
                     "vrom": 178360,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00018958_build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o_.mdebug",
+                            "vram": 100696,
+                            "size": 712,
+                            "vrom": 178360
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/startthread.o",
@@ -4602,7 +6051,14 @@
                     "vram": 101408,
                     "size": 1176,
                     "vrom": 179072,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00018C20_build/gc-eu-mq-dbg/src/libultra/os/startthread.o_.mdebug",
+                            "vram": 101408,
+                            "size": 1176,
+                            "vrom": 179072
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o",
@@ -4610,7 +6066,14 @@
                     "vram": 102584,
                     "size": 948,
                     "vrom": 180248,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000190B8_build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o_.mdebug",
+                            "vram": 102584,
+                            "size": 948,
+                            "vrom": 180248
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o",
@@ -4618,7 +6081,14 @@
                     "vram": 103532,
                     "size": 956,
                     "vrom": 181196,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0001946C_build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o_.mdebug",
+                            "vram": 103532,
+                            "size": 956,
+                            "vrom": 181196
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o",
@@ -4626,7 +6096,14 @@
                     "vram": 104488,
                     "size": 980,
                     "vrom": 182152,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00019828_build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o_.mdebug",
+                            "vram": 104488,
+                            "size": 980,
+                            "vrom": 182152
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o",
@@ -4634,7 +6111,14 @@
                     "vram": 105468,
                     "size": 712,
                     "vrom": 183132,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00019BFC_build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o_.mdebug",
+                            "vram": 105468,
+                            "size": 712,
+                            "vrom": 183132
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/gc-eu-mq-dbg/src/boot/build.o",
@@ -4642,7 +6126,14 @@
                     "vram": 106180,
                     "size": 604,
                     "vrom": 183844,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00019EC4_build/gc-eu-mq-dbg/src/boot/build.o_.mdebug",
+                            "vram": 106180,
+                            "size": 604,
+                            "vrom": 183844
+                        }
+                    ]
                 }
             ]
         }

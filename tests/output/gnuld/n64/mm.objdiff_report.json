@@ -1,12 +1,12 @@
 {
   "measures": {
     "fuzzy_match_percent": 100.0,
-    "total_code": "4781984",
-    "matched_code": "4781984",
+    "total_code": "4786080",
+    "matched_code": "4786080",
     "matched_code_percent": 100.0,
     "matched_data_percent": 100.0,
-    "total_functions": 17149,
-    "matched_functions": 17149,
+    "total_functions": 17151,
+    "matched_functions": 17151,
     "matched_functions_percent": 100.0,
     "complete_data_percent": 100.0,
     "total_units": 2629
@@ -16,8 +16,12 @@
       "name": "asm/makerom/rom_header",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "64",
+        "matched_code": "64",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -25,6 +29,17 @@
         {
           "name": ".text",
           "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2148003840"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_8007F000_build/asm/makerom/rom_header.o_.text",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2148003840"
           }
@@ -42,8 +57,12 @@
       "name": "asm/makerom/ipl3",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "4032",
+        "matched_code": "4032",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -51,6 +70,17 @@
         {
           "name": ".text",
           "size": "4032",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2148003904"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_8007F040_build/asm/makerom/ipl3.o_.text",
+          "size": "4032",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2148003904"
           }
@@ -222301,12 +222331,12 @@
       "name": "asm",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "34400",
-        "matched_code": "34400",
+        "total_code": "38496",
+        "matched_code": "38496",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 70,
-        "matched_functions": 70,
+        "total_functions": 72,
+        "matched_functions": 72,
         "matched_functions_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 42

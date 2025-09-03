@@ -11,12 +11,17 @@
 80003540,data,memcpy
 80003590,data,TRK_memset
 800035C0,data,TRK_memcpy
+800035E4,data,$_static_symbol_800035E4_exception.o_.init
 80005518,data,__TRK_reset
+80005544,data,$_static_symbol_80005544_Linker Generated Symbol File_.init
+80005544,data,$_static_symbol_80005544_Linker Generated Symbol File__rom_copy_info
+800055C8,data,$_static_symbol_800055C8_Linker Generated Symbol File__bss_init_info
 80005600,data,@154
 80005608,data,@159
 80005610,data,@180
 80005628,data,@188
 80005630,data,@211
+80005648,data,$_static_symbol_80005648_NMWException.o_extab
 800056C0,code,version_check__Fv
 80005728,code,CheckHeap1__9HeapCheckFv
 8000578C,code,CheckHeap__FUl
@@ -152,6 +157,7 @@
 8000CFB8,code,__sinit_m_Do_mtx_cpp
 8000D034,code,__dt__18mDoMtx_quatStack_cFv
 8000D070,code,__dt__14mDoMtx_stack_cFv
+8000D0AC,code,$_static_symbol_8000D0AC_m_Do_mtx.o_.text
 8000D0AC,code,mDoExt_setJ3DData__FPA4_fPC16J3DTransformInfoUs
 8000D320,code,initPlay__14mDoExt_baseAnmFsifss
 8000D428,code,play__14mDoExt_baseAnmFv
@@ -421,6 +427,7 @@
 8001645C,code,__dt__21mDoDvdThd_toMainRam_cFv
 800164BC,code,execute__21mDoDvdThd_toMainRam_cFv
 80016574,code,__sinit_m_Do_dvd_thread_cpp
+8001659C,code,$_static_symbol_8001659C_m_Do_dvd_thread.o_.text
 8001659C,code,mDoDvdErr_ThdInit__Fv
 8001665C,code,mDoDvdErr_ThdCleanup__Fv
 800166A4,code,mDoDvdErr_Watch__FPv
@@ -510,6 +517,7 @@
 800194FC,code,checkBallModelDraw__13fopEn_enemy_cFv
 80019520,code,setBallModelEffect__13fopEn_enemy_cFP12dKy_tevstr_c
 800196A0,code,drawBallModel__13fopEn_enemy_cFP12dKy_tevstr_c
+800197BC,code,$_static_symbol_800197BC_f_op_actor.o_.text
 800197BC,code,fopAcIt_Executor__FPFPvPv_iPv
 800197F8,code,fopAcIt_Judge__FPFPvPv_PvPv
 80019834,code,fopAcTg_ToActorQ__FP16create_tag_class
@@ -634,6 +642,7 @@
 8001E104,code,@16@__dt__15dBgS_ObjRoofChkFv
 8001E10C,code,@52@__dt__15dBgS_ObjRoofChkFv
 8001E114,code,@36@__dt__15dBgS_ObjRoofChkFv
+8001E11C,code,$_static_symbol_8001E11C_f_op_actor_mng.o_.text
 8001E11C,code,onFrollCrashFlg__9daPy_py_cFUci
 8001E120,code,checkWolfDash__9daPy_py_cCFv
 8001E128,code,checkFrontRoll__9daPy_py_cCFv
@@ -751,6 +760,7 @@
 80020368,code,insert__10J2DPictureFPCcUcf
 8002039C,code,fopMsgM_createExpHeap__FUlP7JKRHeap
 800203E0,code,fopMsgM_destroyExpHeap__FP10JKRExpHeap
+80020400,code,$_static_symbol_80020400_f_op_msg_mng.o_.text
 80020400,code,fopDwIt_GetTag__Fv
 80020444,code,fopDwIt_Begin__Fv
 80020480,code,fopDwIt_Next__FP16create_tag_class
@@ -844,6 +854,7 @@
 80021BC0,code,fpcLyIt_OnlyHereLY__FP11layer_classPFPvPv_iPv
 80021C28,code,fpcLyIt_Judge__FP11layer_classPFPvPv_PvPv
 80021C60,code,fpcLyIt_AllJudge__FPFPvPv_PvPv
+80021CD4,code,$_static_symbol_80021CD4_f_pc_layer_iter.o_.text
 80021CD4,code,fpcLyTg_ToQueue__FP26layer_management_tag_classUiUsUs
 80021DCC,code,fpcLyTg_QueueTo__FP26layer_management_tag_class
 80021E2C,code,fpcLyTg_Move__FP26layer_management_tag_classUiUsUs
@@ -1497,6 +1508,7 @@
 80030E84,code,__dt__8cM3dGAabFv
 80030ECC,code,.text
 80030ECC,code,__dt__15cCcD_DivideInfoFv
+80030F14,code,$_static_symbol_80030F14_d_com_inf_game.o_.text
 80030F14,code,set__Q27daSus_c6data_cFScRC4cXyzRC4cXyzUcUcUc
 80030FBC,code,reset__Q27daSus_c6data_cFv
 80030FCC,code,isSwitch__Q27daSus_c6data_cFv
@@ -1735,6 +1747,7 @@
 80035798,code,memory_to_card__10dSv_info_cFPci
 80035A04,code,card_to_memory__10dSv_info_cFPci
 80035BD0,code,initdata_to_card__10dSv_info_cFPci
+80035C88,code,$_static_symbol_80035C88_d_save.o_.text
 80035C88,code,setInitEventBit__Fv
 80035C8C,code,__ct__9dJntCol_cFv
 80035CA0,code,init__9dJntCol_cFP10fopAc_ac_cPC13dJntColData_cP8J3DModeli
@@ -1745,6 +1758,7 @@
 80036AEC,code,getArrowOffsetPosAndAngle__9dJntCol_cCFPC4cXyzPC5csXyzP4cXyzP4cXyz
 80036C44,code,getHitmarkPosAndAngle__9dJntCol_cCFPC4cXyzPC5csXyzP4cXyzP5csXyzi
 80036FA8,code,setArrowPosAndAngle__9dJntCol_cFPC4cXyzPC4cXyziP4cXyzP5csXyz
+80037038,code,$_static_symbol_80037038_d_jnt_col.o_.text
 80037038,code,eff_break_tsubo__5daObjFP10fopAc_ac_c4cXyzi
 80037180,code,make_eff_break_kotubo__5daObjFP10fopAc_ac_c
 80037210,code,make_eff_break_kotubo2__5daObjFP10fopAc_ac_c
@@ -1759,6 +1773,7 @@
 80037A4C,code,.text
 80037A4C,code,GetCoCP__12cCcD_CylAttrFv
 80037A54,code,GetCoCP__12cCcD_SphAttrFv
+80037A5C,code,$_static_symbol_80037A5C_d_a_obj.o_.text
 80037A5C,code,getItemNo__12daItemBase_cFv
 80037A64,code,hide__12daItemBase_cFv
 80037A74,code,show__12daItemBase_cFv
@@ -1986,6 +2001,7 @@
 8003EB10,code,__dt__26fmpTresTypeGroupDataList_cFv
 8003EB70,code,__dt__22fmpTresTypeGroupData_cFv
 8003EC90,code,__ct__26fmpTresTypeGroupDataList_cFv
+8003ECA0,code,$_static_symbol_8003ECA0_d_map_path_fmap.o_.text
 8003ECA0,code,chkGetCompass__10dMapInfo_nFv
 8003ECD8,code,chkGetMap__10dMapInfo_nFv
 8003ED10,code,isVisitedRoom__10dMapInfo_nFi
@@ -2111,6 +2127,7 @@
 800436EC,code,setPtI_Id__14dEvt_control_cFUi
 800436F4,code,setPtD__14dEvt_control_cFPv
 80043724,code,setGtItm__14dEvt_control_cFUc
+8004372C,code,$_static_symbol_8004372C_d_event.o_.text
 8004372C,code,getTelopNo__FPCc
 800437C4,code,getTelopNo__Fv
 800437F0,code,getStartTelopNo__Fv
@@ -2193,6 +2210,7 @@
 80048748,code,dEv_talkman_get_action__Fi
 800487F0,code,ChkPresentEnd__16dEvent_manager_cFv
 8004882C,code,checkStartDemo__16dEvent_manager_cFv
+8004886C,code,$_static_symbol_8004886C_d_event_manager.o_.text
 8004886C,code,eventUpdate__17dEvLib_callback_cFv
 800488A4,code,setEvent__17dEvLib_callback_cFiii
 80048940,code,orderEvent__17dEvLib_callback_cFiii
@@ -2722,6 +2740,7 @@
 80073D08,code,request__10dAttLook_cFP10fopAc_ac_cfffsi
 80073FC4,code,__dt__15dAttDrawParam_cFv
 8007400C,code,__sinit_d_attention_cpp
+80074048,code,$_static_symbol_80074048_d_attention.o_.text
 80074048,code,setCode__5dBgPcFR5sBgPc
 80074074,code,__ct__6dBgPlcFv
 80074080,code,__dt__6dBgPlcFv
@@ -2834,6 +2853,7 @@
 8007748C,code,@20@__dt__9dBgS_AcchFv
 80077494,code,.text
 80077494,code,checkPlayerFly__9daPy_py_cCFv
+8007749C,code,$_static_symbol_8007749C_d_bg_s_acch.o_.text
 8007749C,code,__ct__8dBgS_ChkFv
 800774E8,code,__dt__8dBgS_ChkFv
 80077560,code,GetPolyPassChkInfo__8dBgS_ChkFv
@@ -2867,6 +2887,7 @@
 80077B88,code,@20@__dt__18dBgS_CamGndChk_WtrFv
 80077B90,code,@76@__dt__18dBgS_CamGndChk_WtrFv
 80077B98,code,@60@__dt__18dBgS_CamGndChk_WtrFv
+80077BA0,code,$_static_symbol_80077BA0_d_bg_s_gnd_chk.o_.text
 80077BA0,code,__ct__15dBgS_GrpPassChkFv
 80077BC4,code,__dt__15dBgS_GrpPassChkFv
 80077C20,code,.text
@@ -3110,6 +3131,7 @@
 8007E4B4,code,ChkMoveFlag__4dBgWCFv
 8007E4C0,code,dBgW_NewSet__FP6cBgD_tUlPA3_A4_f
 8007E548,code,__dt__4dBgWFv
+8007E5A8,code,$_static_symbol_8007E5A8_d_bg_w.o_.text
 8007E5A8,code,__ct__9dBgW_BaseFv
 8007E5F8,code,__dt__9cBgW_BgIdFv
 8007E640,code,__dt__9dBgW_BaseFv
@@ -3335,6 +3357,7 @@
 80085E6C,code,SetCam__12dCcMassS_MngFRC8cM3dGCps
 80085EB0,code,GetResultCam__12dCcMassS_MngCFv
 80085EB8,code,GetCamTopPos__12dCcMassS_MngFP3Vec
+80085ED4,code,$_static_symbol_80085ED4_d_cc_mass_s.o_.text
 80085ED4,code,Ct__4dCcSFv
 80085F08,code,Dt__4dCcSFv
 80085F28,code,ChkShieldFrontRange__4dCcSFP8cCcD_ObjP8cCcD_ObjiPC4cXyz
@@ -6124,6 +6147,7 @@
 8014519C,code,getShadowSize__12daItemBase_cFv
 801451B4,code,getCollisionH__12daItemBase_cFv
 801451D0,code,getCollisionR__12daItemBase_cFv
+801451EC,code,$_static_symbol_801451EC_d_a_itembase.o_.text
 801451EC,code,isLoadRoom__Fi
 801452DC,code,execute__9daNocrm_cFv
 80145508,code,getRoomNo__9daNocrm_cFi
@@ -7511,6 +7535,7 @@
 801ADDD4,code,dKyeff_IsDelete__FP8dKyeff_c
 801ADDDC,code,dKyeff_Delete__FP8dKyeff_c
 801ADE00,code,dKyeff_Create__FP12kankyo_class
+801ADEA0,code,$_static_symbol_801ADEA0_d_kyeff.o_.text
 801ADEA0,code,dKyeff2_Draw__FP9dKyeff2_c
 801ADEC4,code,execute__9dKyeff2_cFv
 801ADEE8,code,dKyeff2_Execute__FP9dKyeff2_c
@@ -7525,6 +7550,7 @@
 801AE37C,code,dThunder_Delete__FP10dThunder_c
 801AE3FC,code,dThunder_Create__FP12kankyo_class
 801AE458,code,create__10dThunder_cFv
+801AE938,code,$_static_symbol_801AE938_d_ky_thunder.o_.text
 801AE938,code,__ct__15dKantera_icon_cFv
 801AE974,code,__dt__15dKantera_icon_cFv
 801AEA68,code,initiate__15dKantera_icon_cFv
@@ -7557,6 +7583,7 @@
 801AFA00,code,setHIO__19dMenu_Calibration_cFb
 801AFBF4,code,draw__19dMenu_Calibration_cFv
 801AFC14,code,__sinit_d_menu_calibration_cpp
+801AFD48,code,$_static_symbol_801AFD48_d_menu_calibration.o_.text
 801AFD48,code,__ct__17dMenu_Collect2D_cFP10JKRExpHeapP9STControlP10CSTControl
 801AFE34,code,__dt__17dMenu_Collect2D_cFv
 801AFEA4,code,_create__17dMenu_Collect2D_cFv
@@ -7968,6 +7995,7 @@
 801CD95C,code,getPlayerPos2D__12dMenu_Fmap_cFv
 801CDA2C,code,__dt__9dMf_HIO_cFv
 801CDA74,code,__sinit_d_menu_fmap_cpp
+801CE068,code,$_static_symbol_801CE068_d_menu_fmap.o_.text
 801CE068,code,twoValueLineInterpolation__FUcUcf
 801CE0CC,code,twoColorLineInterporation__FRC8_GXColorRC8_GXColorfR8_GXColor
 801CE15C,code,init__15renderingFmap_cFPUcUsUsUsUs
@@ -8106,6 +8134,7 @@
 801D8088,code,isWarpAccept__17dMenu_Fmap2DTop_cFv
 801D810C,code,.text
 801D810C,code,@4@__dt__18dMenu_Fmap2DBack_cFv
+801D8114,code,$_static_symbol_801D8114_d_menu_fmap2D.o_.text
 801D8114,code,__ct__14dMenu_Insect_cFP10JKRExpHeapP9STControlP10CSTControlUc
 801D82F4,code,__dt__14dMenu_Insect_cFv
 801D8658,code,_create__14dMenu_Insect_cFv
@@ -9409,6 +9438,7 @@
 8023B870,code,selectAnimeTransform__17dMsgScrn3Select_cFi
 8023B914,code,.text
 8023B914,code,__sinit_d_msg_scrn_3select_cpp
+8023B9B4,code,$_static_symbol_8023B9B4_d_msg_scrn_3select.o_.text
 8023B9B4,code,__ct__15dMsgScrnArrow_cFv
 8023BC78,code,__dt__15dMsgScrnArrow_cFv
 8023BDC0,code,draw__15dMsgScrnArrow_cFv
@@ -9884,6 +9914,7 @@
 80256044,code,setAnimation__12J2DTextBoxExFP15J2DAnmTransform
 80256064,code,setAnimation__12J2DPictureExFP15J2DAnmTransform
 80256084,code,setAnimation__11J2DWindowExFP15J2DAnmTransform
+802560A4,code,$_static_symbol_802560A4_d_pane_class_ex.o_.text
 802560A4,code,__ct__10dLog_HIO_cFv
 802560B4,code,preLoad_dyl_create__10dScnLogo_cFv
 802560F8,code,preLoad_dyl_remove__10dScnLogo_cFv
@@ -10104,12 +10135,14 @@
 80261340,code,dTimer_isReadyFlag__Fv
 80261394,code,__dt__21dDlst_TimerScrnDraw_cFv
 802613DC,code,createGetIn__8dTimer_cF4cXyz
+8026141C,code,$_static_symbol_8026141C_d_timer.o_.text
 8026141C,code,dkWmark_Create__FP12kankyo_class
 80261640,code,__dt__9dkWmark_cFv
 8026169C,code,dkWmark_Delete__FP9dkWmark_c
 802616C4,code,setMatrix__9dkWmark_cFv
 80261964,code,dkWmark_Execute__FP9dkWmark_c
 80261A18,code,dkWmark_Draw__FP9dkWmark_c
+80261B54,code,$_static_symbol_80261B54_d_k_wmark.o_.text
 80261B54,code,create__11dkWpillar_cFv
 80261F04,code,dkWpillar_Create__FP12kankyo_class
 80261F24,code,__dt__11dkWpillar_cFv
@@ -10118,6 +10151,7 @@
 802620A8,code,dkWpillar_Execute__FP11dkWpillar_c
 802620C8,code,draw__11dkWpillar_cFv
 802621AC,code,dkWpillar_Draw__FP11dkWpillar_c
+802621CC,code,$_static_symbol_802621CC_d_k_wpillar.o_.text
 802621CC,code,__dt__24DynamicModuleControlBaseFv
 80262284,code,__ct__24DynamicModuleControlBaseFv
 802622D0,code,link__24DynamicModuleControlBaseFv
@@ -10452,6 +10486,7 @@
 8026EB38,code,cM3d_2PlaneLinePosNearPos__FRC8cM3dGPlaRC8cM3dGPlaPC3VecP3Vec
 8026EBBC,code,cM3d_CrawVec__FRC3VecRC3VecP3Vec
 8026EC3C,code,__sinit_c_m3d_cpp
+8026EC54,code,$_static_symbol_8026EC54_c_m3d.o_.text
 8026EC54,code,Set__8cM3dGAabFPC4cXyzPC4cXyz
 8026EC88,code,CrossY__8cM3dGAabCFPC4cXyz
 8026ECD0,code,UnderPlaneYUnder__8cM3dGAabCFf
@@ -10619,11 +10654,13 @@
 802734FC,code,diagnoseGpHang__Fv
 802736DC,code,__sinit_JFWDisplay_cpp
 80273724,code,__dt__18JSUList<8JFWAlarm>Fv
+80273778,code,$_static_symbol_80273778_JFWDisplay.o_.text
 80273778,code,init__11J3DUClipperFv
 8027378C,code,calcViewFrustum__11J3DUClipperFv
 802738FC,code,clip__11J3DUClipperCFPA4_Cf3Vecf
 80273A44,code,clip__11J3DUClipperCFPA4_CfP3VecP3Vec
 80273E08,code,getUseMtxNum__11J3DShapeMtxCFv
+80273E10,code,$_static_symbol_80273E10_J3DUDL.o_.text
 80273E10,code,__ct__18JPAResourceManagerFPCvP7JKRHeap
 80273E68,code,getResource__18JPAResourceManagerCFUs
 80273EA8,code,checkUserIndexDuplication__18JPAResourceManagerCFUs
@@ -10819,6 +10856,7 @@
 8027EF30,code,getCurrentCreateNumber__14JPABaseEmitterCFv
 8027EF40,code,getDrawCount__14JPABaseEmitterCFv
 8027EF50,code,loadTexture__14JPABaseEmitterFUc11_GXTexMapID
+8027EFA4,code,$_static_symbol_8027EFA4_JPAEmitter.o_.text
 8027EFA4,code,__dt__19JPAParticleCallBackFv
 8027EFEC,code,init_p__15JPABaseParticleFP18JPAEmitterWorkData
 8027F8C8,code,init_c__15JPABaseParticleFP18JPAEmitterWorkDataP15JPABaseParticle
@@ -11169,6 +11207,7 @@
 80288874,code,__cl__Q37JStudio28@unnamed@jstudio_object_cpp@54TOutputVariableValue_BOOL_<Q27JStudio14TAdaptor_light>CFfPQ27JStudio8TAdaptor
 802888D0,code,__cl__Q37JStudio28@unnamed@jstudio_object_cpp@55TOutputVariableValue_BOOL_<Q27JStudio15TAdaptor_camera>CFfPQ27JStudio8TAdaptor
 8028892C,code,__cl__Q37JStudio28@unnamed@jstudio_object_cpp@54TOutputVariableValue_BOOL_<Q27JStudio14TAdaptor_actor>CFfPQ27JStudio8TAdaptor
+80288988,code,$_static_symbol_80288988_jstudio-object.o_.text
 80288988,code,isEqual__Q37JStudio6object7TIDDataFRCQ37JStudio6object7TIDDataRCQ37JStudio6object7TIDData
 80288A78,code,__ct__Q37JStudio3stb7TObjectFUlPCvUl
 80288AC0,code,__ct__Q37JStudio3stb7TObjectFRCQ47JStudio3stb4data20TParse_TBlock_object
@@ -11205,6 +11244,7 @@
 802897E8,code,parseBlock_block__Q37JStudio3stb6TParseFRCQ47JStudio3stb4data13TParse_TBlockUl
 80289820,code,parseBlock_object__Q37JStudio3stb6TParseFRCQ47JStudio3stb4data20TParse_TBlock_objectUl
 80289928,code,find_if<Q37JGadget37TLinkList<Q37JStudio3stb7TObject,-12>8iterator,Q37JStudio6object18TPRObject_ID_equal>__3stdFQ37JGadget37TLinkList<Q37JStudio3stb7TObject,-12>8iteratorQ37JGadget37TLinkList<Q37JStudio3stb7TObject,-12>8iteratorQ37JStudio6object18TPRObject_ID_equal
+802899BC,code,$_static_symbol_802899BC_stb.o_.text
 802899BC,code,getData__Q47JStudio3stb4data16TParse_TSequenceCFPQ57JStudio3stb4data16TParse_TSequence5TData
 80289A08,code,getData__Q47JStudio3stb4data17TParse_TParagraphCFPQ57JStudio3stb4data17TParse_TParagraph5TData
 80289A80,code,getData__Q47JStudio3stb4data22TParse_TParagraph_dataCFPQ57JStudio3stb4data22TParse_TParagraph_data5TData
@@ -11215,6 +11255,7 @@
 80289EEC,code,createObject_JSG_<Q214JStudio_JStage21TAdaptor_ambientLight,Q26JStage13TAmbientLight>__Q214JStudio_JStage21@unnamed@control_cpp@FRCQ47JStudio3stb4data20TParse_TBlock_objectPQ26JStage7TObjectPCQ26JStage7TSystem
 80289FF0,code,createObject_JSG_<Q214JStudio_JStage14TAdaptor_light,Q26JStage6TLight>__Q214JStudio_JStage21@unnamed@control_cpp@FRCQ47JStudio3stb4data20TParse_TBlock_objectPQ26JStage7TObjectPCQ26JStage7TSystem
 8028A0F4,code,createObject_JSG_<Q214JStudio_JStage12TAdaptor_fog,Q26JStage4TFog>__Q214JStudio_JStage21@unnamed@control_cpp@FRCQ47JStudio3stb4data20TParse_TBlock_objectPQ26JStage7TObjectPCQ26JStage7TSystem
+8028A1F8,code,$_static_symbol_8028A1F8_control.o_.text
 8028A1F8,code,transform_toGlobalFromLocal__14JStudio_JStageFPA4_fRCQ37JStudio8TControl39TTransform_translation_rotation_scalingPCQ26JStage7TObjectUl
 8028A290,code,transform_toGlobalFromLocal__14JStudio_JStageFPA4_fRCQ37JStudio8TControl19TTransform_positionPCQ26JStage7TObjectUl
 8028A328,code,transform_toLocalFromGlobal__14JStudio_JStageFPA4_fRCQ37JStudio8TControl39TTransform_translation_rotation_scalingPCQ26JStage7TObjectUl
@@ -11260,6 +11301,7 @@
 8028B7B0,code,adaptor_do_end__Q214JStudio_JStage21TAdaptor_ambientLightFv
 8028B804,code,adaptor_do_update__Q214JStudio_JStage21TAdaptor_ambientLightFUl
 8028B87C,code,adaptor_do_data__Q214JStudio_JStage21TAdaptor_ambientLightFPCvUlPCvUl
+8028B8A0,code,$_static_symbol_8028B8A0_object-ambientlight.o_.text
 8028B8A0,code,__ct__Q214JStudio_JStage15TAdaptor_cameraFPCQ26JStage7TSystemPQ26JStage7TCamera
 8028B960,code,__dt__Q214JStudio_JStage15TAdaptor_cameraFv
 8028B9D4,code,adaptor_do_prepare__Q214JStudio_JStage15TAdaptor_cameraFv
@@ -11309,6 +11351,7 @@
 8028D550,code,__dt__Q215JStudio_JAudio213TCreateObjectFv
 8028D5B0,code,create__Q215JStudio_JAudio213TCreateObjectFPPQ27JStudio7TObjectRCQ47JStudio3stb4data20TParse_TBlock_object
 8028D624,code,createObject_JAI_SOUND___Q215JStudio_JAudio213TCreateObjectFRCQ47JStudio3stb4data20TParse_TBlock_objectPQ215JStudio_JAudio213TCreateObject
+8028D728,code,$_static_symbol_8028D728_control.o_.text
 8028D728,code,setValue_VOLUME___FP8JAISoundf
 8028D750,code,setValue_PAN___FP8JAISoundf
 8028D778,code,setValue_PITCH___FP8JAISoundf
@@ -11343,6 +11386,7 @@
 8028E474,code,emitter_create__Q217JStudio_JParticle13TCreateObjectFUl
 8028E4E4,code,emitter_destroy__Q217JStudio_JParticle13TCreateObjectFP14JPABaseEmitter
 8028E508,code,createObject_JPA_PARTICLE___Q217JStudio_JParticle13TCreateObjectFRCQ47JStudio3stb4data20TParse_TBlock_objectPQ217JStudio_JParticle13TCreateObject
+8028E60C,code,$_static_symbol_8028E60C_control.o_.text
 8028E60C,code,__ct__Q217JStudio_JParticle17TAdaptor_particleFPQ217JStudio_JParticle13TCreateObject
 8028E700,code,__dt__Q317JStudio_JParticle17TAdaptor_particle21TJPACallback_emitter_Fv
 8028E760,code,__dt__Q217JStudio_JParticle17TAdaptor_particleFv
@@ -11366,6 +11410,7 @@
 8028F0D0,code,drawAfter__Q317JStudio_JParticle17TAdaptor_particle21TJPACallback_emitter_FP14JPABaseEmitter
 8028F108,code,beginParticle_fadeIn___Q217JStudio_JParticle17TAdaptor_particleFv
 8028F1C0,code,endParticle_fadeOut___Q217JStudio_JParticle17TAdaptor_particleFUl
+8028F2E8,code,$_static_symbol_8028F2E8_object-particle.o_.text
 8028F2E8,code,imixcopy__7JASCalcFPCsPCsPsUl
 8028F318,code,bcopyfast__7JASCalcFPCvPvUl
 8028F354,code,bcopy__7JASCalcFPCvPvUl
@@ -11373,6 +11418,7 @@
 8028F480,code,bzero__7JASCalcFPvUl
 8028F578,code,pow2__7JASCalcFf
 8028F69C,code,clamp<s,l>__7JASCalcFl
+8028F6C4,code,$_static_symbol_8028F6C4_JASCalc.o_.text
 8028F6C4,code,__ct__13JASTaskThreadFiiUl
 8028F724,code,__dt__13JASTaskThreadFv
 8028F850,code,allocCallStack__13JASTaskThreadFPFPv_vPCvUl
@@ -11386,6 +11432,7 @@
 8028FFA8,code,regist__14JASCallbackMgrFPFPv_lPv
 80290030,code,reject__14JASCallbackMgrFPFPv_lPv
 802900C4,code,callback__14JASCallbackMgrFv
+80290140,code,$_static_symbol_80290140_JASCallback.o_.text
 80290140,code,__ct__7JASHeapFP11JASDisposer
 802901AC,code,initRootHeap__7JASHeapFPvUl
 8029021C,code,alloc__7JASHeapFP7JASHeapUl
@@ -11417,11 +11464,13 @@
 80290EE4,code,start__8JASProbeFlPCc
 80290F24,code,stop__8JASProbeFl
 80290F64,code,JASReport__FPCce
+80291060,code,$_static_symbol_80291060_JASReport.o_.text
 80291060,code,execAllCommand__10JASPortCmdFv
 80291094,code,execCommandOnce__Q210JASPortCmd9TPortHeadFv
 8029110C,code,execCommandStay__Q210JASPortCmd9TPortHeadFv
 8029116C,code,__sinit_JASCmdStack_cpp
 802911D0,code,__dt__Q210JASPortCmd9TPortHeadFv
+80291228,code,$_static_symbol_80291228_JASCmdStack.o_.text
 80291228,code,__ct__8JASTrackFv
 8029131C,code,__dt__8JASTrackFv
 80291444,code,setChannelMgrCount__8JASTrackFUl
@@ -11582,6 +11631,7 @@
 80295864,code,parseRegCommand__12JASSeqParserFP8JASTracki
 802958D4,code,parse__12JASSeqParserFP8JASTrack
 80295950,code,__sinit_JASSeqParser_cpp
+80296108,code,$_static_symbol_80296108_JASSeqParser.o_.text
 80296108,code,init__12JASSeqReaderFv
 80296148,code,init__12JASSeqReaderFPv
 8029618C,code,call__12JASSeqReaderFUl
@@ -11628,6 +11678,7 @@
 80297F74,code,getInstParam__12JASVoiceBankCFiiiP12JASInstParam
 80297FAC,code,__dt__12JASVoiceBankFv
 80298008,code,getType__12JASVoiceBankCFv
+80298014,code,$_static_symbol_80298014_JASVoiceBank.o_.text
 80298014,code,__ct__12JASBasicInstFv
 8029807C,code,__dt__12JASBasicInstFv
 802980F8,code,getParam__12JASBasicInstCFiiP12JASInstParam
@@ -11647,6 +11698,7 @@
 802984C4,code,__ct__Q210JASDrumSet5TPercFv
 802984E4,code,setRelease__Q210JASDrumSet5TPercFUl
 802984EC,code,getType__10JASDrumSetCFv
+802984F8,code,$_static_symbol_802984F8_JASDrumSet.o_.text
 802984F8,code,__ct__16JASBasicWaveBankFv
 80298558,code,__dt__16JASBasicWaveBankFv
 802985E4,code,__dt__Q216JASBasicWaveBank11TWaveHandleFv
@@ -11686,6 +11738,7 @@
 80298FA4,code,onEraseDone__10JASWaveArcFv
 80298FA8,code,.text
 80298FA8,code,@4@__dt__17JASSimpleWaveBankFv
+80298FB0,code,$_static_symbol_80298FB0_JASSimpleWaveBank.o_.text
 80298FB0,code,getGroupCount__11JASWSParserFPCv
 80298FD8,code,createWaveBank__11JASWSParserFPCvP7JKRHeap
 80299034,code,createBasicWaveBank__11JASWSParserFPCvP7JKRHeap
@@ -11794,6 +11847,7 @@
 8029D1F8,code,checkDone__15JASAudioReseterCFv
 8029D200,code,calc__15JASAudioReseterFv
 8029D2D4,code,callback__15JASAudioReseterFPv
+8029D2F4,code,$_static_symbol_8029D2F4_JASAudioReseter.o_.text
 8029D2F4,code,__ct__13JASDSPChannelFv
 8029D320,code,free__13JASDSPChannelFv
 8029D330,code,start__13JASDSPChannelFv
@@ -11843,6 +11897,7 @@
 8029E094,code,setDistFilter__Q26JASDsp8TChannelFs
 8029E09C,code,setBusConnect__Q26JASDsp8TChannelFUcUc
 8029E0BC,code,DSP_CreateMap2__FUl
+8029E130,code,$_static_symbol_8029E130_JASDSPInterface.o_.text
 8029E130,code,setDSPLevel__9JASDriverFf
 8029E150,code,getChannelLevel_dsp__9JASDriverFv
 8029E158,code,getDSPLevel__9JASDriverFv
@@ -11860,24 +11915,42 @@
 8029E3B0,code,clamp__14JASSoundParamsFv
 8029E47C,code,combine__14JASSoundParamsFRC14JASSoundParamsRC14JASSoundParams
 8029E4E0,code,DSPReleaseHalt2__FUl
+8029E528,code,$_static_symbol_8029E528_dspproc.o_.text
 8029E540,code,setup_callback__FUs
+8029E54C,code,$_static_symbol_8029E54C_dspproc.o_.text
 8029E560,code,DsetupTable__FUlUlUlUlUl
+8029E5C4,code,$_static_symbol_8029E5C4_dspproc.o_.text
 8029E5E0,code,DsetMixerLevel__Ff
+8029E604,code,$_static_symbol_8029E604_dspproc.o_.text
 8029E620,code,DsyncFrame2ch__FUlUlUl
+8029E674,code,$_static_symbol_8029E674_dspproc.o_.text
 8029E680,code,DsyncFrame4ch__FUlUlUlUlUl
+8029E6E0,code,$_static_symbol_8029E6E0_dspproc.o__fill___.text
 8029E6E0,code,DspHandShake__FPv
+8029E718,code,$_static_symbol_8029E718_dsptask.o_.text
 8029E720,code,DspBoot__FPFPv_v
+8029E7CC,code,$_static_symbol_8029E7CC_dsptask.o_.text
 8029E7E0,code,DSPSendCommands2__FPUlUlPFUs_v
+8029E8C8,code,$_static_symbol_8029E8C8_dsptask.o_.text
 8029E8E0,code,DspInitWork__Fv
+8029E90C,code,$_static_symbol_8029E90C_dsptask.o_.text
 8029E920,code,DspStartWork__FUlPFUs_v
+8029E968,code,$_static_symbol_8029E968_dsptask.o_.text
 8029E980,code,DspFinishWork__FUs
+8029EA00,code,$_static_symbol_8029EA00_dsptask.o__fill___.text
 8029EA00,code,DSPAddTask
+8029EA84,code,$_static_symbol_8029EA84_osdsp.o_.text
 8029EAA0,code,DSPAddPriorTask__FP15STRUCT_DSP_TASK
 8029EB20,code,__DSPHandler
+8029EE24,code,$_static_symbol_8029EE24_osdsp_task.o_.text
 8029EE40,code,DsyncFrame2__FUlUlUl
+8029EE90,code,$_static_symbol_8029EE90_osdsp_task.o_.text
 8029EEA0,code,DsyncFrame3__FUlUlUlUlUl
+8029EEF8,code,$_static_symbol_8029EEF8_osdsp_task.o_.text
 8029EF00,code,Dsp_Update_Request__Fv
+8029EF78,code,$_static_symbol_8029EF78_osdsp_task.o_.text
 8029EF80,code,Dsp_Running_Check__Fv
+8029EF94,code,$_static_symbol_8029EF94_osdsp_task.o_.text
 8029EFA0,code,Dsp_Running_Start__Fv
 8029EFAC,code,__dt__10JAIAudibleFv
 8029EFF4,code,__dt__11JAIAudienceFv
@@ -11906,6 +11979,7 @@
 8029F898,code,@16@releaseChild__5JAISeFi
 8029F8A0,code,@16@getChild__5JAISeFi
 8029F8A8,code,@16@getNumChild__5JAISeCFv
+8029F8B0,code,$_static_symbol_8029F8B0_JAISe.o_.text
 8029F8B0,code,isUsingSeqData__16JAISeCategoryMgrFRC16JAISeqDataRegion
 8029F91C,code,releaseSeqData__16JAISeCategoryMgrFRC16JAISeqDataRegion
 8029F9C4,code,JAISeMgr_calc___16JAISeCategoryMgrFv
@@ -11956,6 +12030,7 @@
 802A1730,code,getChildTrack__6JAISeqFi
 802A1768,code,asSeq__6JAISeqFv
 802A176C,code,getTempoMgr__6JAISeqFv
+802A1774,code,$_static_symbol_802A1774_JAISeq.o_.text
 802A1774,code,__dt__14JAISeqDataUserFv
 802A17BC,code,__dt__13JAISeqDataMgrFv
 802A1804,code,isUsingSeqData__9JAISeqMgrFRC16JAISeqDataRegion
@@ -11999,6 +12074,7 @@
 802A2CF4,code,getFreeHandle__15JAISoundHandlesFv
 802A2D34,code,__ct__12JAISoundInfoFb
 802A2D50,code,__dt__12JAISoundInfoFv
+802A2DB4,code,$_static_symbol_802A2DB4_JAISoundInfo.o_.text
 802A2DB4,code,moveVolume__18JAISoundParamsMoveFfUl
 802A2E0C,code,movePitch__18JAISoundParamsMoveFfUl
 802A2E64,code,moveFxMix__18JAISoundParamsMoveFfUl
@@ -12007,6 +12083,7 @@
 802A2F6C,code,__ct__15JAISoundStarterFb
 802A2F88,code,__dt__15JAISoundStarterFv
 802A2FEC,code,startLevelSound__15JAISoundStarterF10JAISoundIDP14JAISoundHandlePCQ29JGeometry8TVec3<f>
+802A30D4,code,$_static_symbol_802A30D4_JAISoundStarter.o_.text
 802A30D4,code,JAIStream_JASAramStreamCallback___FUlP13JASAramStreamPv
 802A3104,code,__ct__9JAIStreamFP12JAIStreamMgrP31JAISoundStrategyMgr<9JAIStream>
 802A319C,code,JAIStreamMgr_startID___9JAIStreamF10JAISoundIDlPCQ29JGeometry8TVec3<f>P11JAIAudiencei
@@ -12024,6 +12101,7 @@
 802A3AC4,code,getChildTrack__9JAIStreamFi
 802A3ACC,code,asStream__9JAIStreamFv
 802A3AD0,code,getTempoMgr__9JAIStreamFv
+802A3AD8,code,$_static_symbol_802A3AD8_JAIStream.o_.text
 802A3AD8,code,__dt__16JAIStreamDataMgrFv
 802A3B20,code,__dt__16JAIStreamAramMgrFv
 802A3B68,code,__ct__12JAIStreamMgrFb
@@ -12058,13 +12136,17 @@
 802A49D8,code,readMaxSeCategory__17JAUAudioArcLoaderFiii
 802A49FC,code,__dt__17JAUAudioArcLoaderFv
 802A4A5C,code,__defctor__7JASHeapFv
+802A4A80,code,$_static_symbol_802A4A80_JAUAudioMgr.o_.text
 802A4A80,code,appendBankTable__22JAUBankTableDictionaryFP23JSULink<12JAUBankTable>
 802A4AA0,code,getBank__12JAUBankTableCFUl
+802A4AC4,code,$_static_symbol_802A4AC4_JAUBankTable.o_.text
 802A4AC4,code,__ct__14JAISoundHandleFv
+802A4AD0,code,$_static_symbol_802A4AD0_JAUClusterSound.o_.text
 802A4AD0,code,__ct__18JAU_JASInitializerFv
 802A4B28,code,initJASystem__18JAU_JASInitializerFP12JKRSolidHeap
 802A4D3C,code,__ct__18JAU_JAIInitializerFv
 802A4D60,code,initJAInterface__18JAU_JAIInitializerFv
+802A4EE8,code,$_static_symbol_802A4EE8_JAUInitializer.o_.text
 802A4EE8,code,__ct__Q210JAUSection12TSectionDataFv
 802A4F68,code,resetRegisteredBankTables__Q210JAUSection12TSectionDataFv
 802A4FE4,code,resetRegisteredWaveBankTables__Q210JAUSection12TSectionDataFv
@@ -12133,6 +12215,7 @@
 802A6D48,code,releaseIdleDynamicSeqDataBlock__23JAUDynamicSeqDataBlocksFP14JAISeqDataUser
 802A6E00,code,releaseIdleDynamicSeqDataBlock___23JAUDynamicSeqDataBlocksFP14JAISeqDataUserUl
 802A6EDC,code,rearrangeLoadingSeqs___23JAUDynamicSeqDataBlocksFv
+802A6F70,code,$_static_symbol_802A6F70_JAUSeqDataBlockMgr.o_.text
 802A6F70,code,getStartSoundIndex__17JAUSoundAnimationCFf
 802A7044,code,getEndSoundIndex__17JAUSoundAnimationCFf
 802A7114,code,init__13JAUSoundTableFPCv
@@ -12264,6 +12347,7 @@
 802AA908,code,initParams__10Z2SoundMgrFv
 802AA9E8,code,multiVolumeSoundID__10Z2SoundMgrF10JAISoundIDf
 802AAAC4,code,isPlayingSoundID__10Z2SoundMgrF10JAISoundID
+802AAB94,code,$_static_symbol_802AAB94_Z2SoundMgr.o_.text
 802AAB94,code,__ct__14Z2SoundStarterFb
 802AABF4,code,startSound__14Z2SoundStarterF10JAISoundIDP14JAISoundHandlePCQ29JGeometry8TVec3<f>
 802AAC3C,code,startSound__14Z2SoundStarterF10JAISoundIDP14JAISoundHandlePCQ29JGeometry8TVec3<f>UlfffffUl
@@ -12283,6 +12367,7 @@
 802AB4A0,code,stopAllSounds__14Z2SoundHandlesFUl
 802AB504,code,isActive__14Z2SoundHandlesCFv
 802AB538,code,setPos__14Z2SoundHandlesFRCQ29JGeometry8TVec3<f>
+802AB64C,code,$_static_symbol_802AB64C_Z2SoundHandles.o_.text
 802AB64C,code,__ct__7Z2SeMgrFv
 802AB710,code,__ct__12Z2MultiSeObjFv
 802AB750,code,initSe__7Z2SeMgrFv
@@ -12372,6 +12457,7 @@
 802B6760,code,setCameraPolygonPos__11Z2StatusMgrFP3Vec
 802B6784,code,setCameraGroupInfo__11Z2StatusMgrFUc
 802B6788,code,setCameraInWaterDepth__11Z2StatusMgrFf
+802B6840,code,$_static_symbol_802B6840_Z2StatusMgr.o_.text
 802B6840,code,__ct__10Z2SceneMgrFv
 802B68B0,code,setInDarkness__10Z2SceneMgrFb
 802B68E0,code,setSceneExist__10Z2SceneMgrFb
@@ -12590,6 +12676,7 @@
 802C2E9C,code,Z2_E_mm_modPitch__FP17Z2SoundHandlePoolUl
 802C2EE4,code,Z2_B_zan_modPitch__FP17Z2SoundHandlePoolUl
 802C3040,code,__sinit_Z2Creature_cpp
+802C321C,code,$_static_symbol_802C321C_Z2Creature.o_.text
 802C321C,code,setLinkGroupInfo__14Z2CreatureLinkFUc
 802C3220,code,setLinkHp__14Z2CreatureLinkFll
 802C3228,code,setLinkSwordType__14Z2CreatureLinkFll
@@ -12711,6 +12798,7 @@
 802CCF88,code,isMidnaSpeak__12Z2SpeechMgr2Fv
 802CCFB8,code,__ct__15Z2SpeechStarterFv
 802CCFF8,code,startSound__15Z2SpeechStarterF10JAISoundIDP14JAISoundHandlePCQ29JGeometry8TVec3<f>UlfffffUl
+802CD248,code,$_static_symbol_802CD248_Z2SpeechMgr2.o_.text
 802CD248,code,__ct__10Z2AudioMgrFv
 802CD34C,code,init__10Z2AudioMgrFP12JKRSolidHeapUlPvP10JKRArchive
 802CD7F8,code,__dt__24JAUStreamAramMgrBase_<1>Fv
@@ -12777,6 +12865,7 @@
 802CEDA0,code,state_dump__7JKRHeapCFRCQ27JKRHeap6TState
 802CEDA4,code,do_changeGroupID__7JKRHeapFUc
 802CEDAC,code,do_getCurrentGroupId__7JKRHeapFv
+802CEDB4,code,$_static_symbol_802CEDB4_JKRHeap.o_.text
 802CEDB4,code,createRoot__10JKRExpHeapFib
 802CEE2C,code,create__10JKRExpHeapFUlP7JKRHeapb
 802CEF00,code,create__10JKRExpHeapFPvUlP7JKRHeapb
@@ -12818,6 +12907,7 @@
 802D09E0,code,state_compare__10JKRExpHeapCFRCQ27JKRHeap6TStateRCQ27JKRHeap6TState
 802D0A10,code,getHeapType__10JKRExpHeapFv
 802D0A1C,code,do_getCurrentGroupId__10JKRExpHeapFv
+802D0A24,code,$_static_symbol_802D0A24_JKRExpHeap.o_.text
 802D0A24,code,create__12JKRSolidHeapFUlP7JKRHeapb
 802D0AD0,code,do_destroy__12JKRSolidHeapFv
 802D0B30,code,__ct__12JKRSolidHeapFPvUlP7JKRHeapb
@@ -12862,6 +12952,7 @@
 802D1474,code,do_getTotalFreeSize__13JKRAssertHeapFv
 802D147C,code,__ct__11JKRDisposerFv
 802D14E4,code,__dt__11JKRDisposerFv
+802D1568,code,$_static_symbol_802D1568_JKRDisposer.o_.text
 802D1568,code,__ct__9JKRThreadFUlii
 802D1610,code,__ct__9JKRThreadFP7JKRHeapUlii
 802D16B8,code,__ct__9JKRThreadFP8OSThreadi
@@ -12881,6 +12972,7 @@
 802D1E94,code,__sinit_JKRThread_cpp
 802D1EFC,code,__dt__17JSUList<7JKRTask>Fv
 802D1F50,code,__dt__19JSUList<9JKRThread>Fv
+802D1FA4,code,$_static_symbol_802D1FA4_JKRThread.o_.text
 802D1FA4,code,create__7JKRAramFUlUllll
 802D2040,code,__ct__7JKRAramFUlUll
 802D214C,code,__dt__7JKRAramFv
@@ -12909,6 +13001,7 @@
 802D3378,code,__dt__12JKRAramBlockFv
 802D3434,code,allocHead__12JKRAramBlockFUlUcP11JKRAramHeap
 802D34D0,code,allocTail__12JKRAramBlockFUlUcP11JKRAramHeap
+802D3574,code,$_static_symbol_802D3574_JKRAramBlock.o_.text
 802D3574,code,prepareCommand__12JKRAramPieceFiUlUlUlP12JKRAramBlockPFUl_v
 802D35F4,code,sendCommand__12JKRAramPieceFP12JKRAMCommand
 802D3614,code,orderAsync__12JKRAramPieceFiUlUlUlP12JKRAramBlockPFUl_v
@@ -12919,6 +13012,7 @@
 802D39EC,code,__ct__12JKRAMCommandFv
 802D3A5C,code,__dt__12JKRAMCommandFv
 802D3B04,code,__sinit_JKRAramPiece_cpp
+802D3B48,code,$_static_symbol_802D3B48_JKRAramPiece.o_.text
 802D3B48,code,create__13JKRAramStreamFl
 802D3BB8,code,__ct__13JKRAramStreamFl
 802D3C08,code,__dt__13JKRAramStreamFv
@@ -12941,6 +13035,7 @@
 802D44C4,code,fetchVolumeName__13JKRFileLoaderFPclPCc
 802D45A0,code,__sinit_JKRFileLoader_cpp
 802D45E4,code,__dt__24JSUList<13JKRFileLoader>Fv
+802D4638,code,$_static_symbol_802D4638_JKRFileLoader.o_.text
 802D4638,code,__ct__12JKRArcFinderFP10JKRArchivell
 802D46C4,code,findNextFile__12JKRArcFinderFv
 802D4770,code,__ct__12JKRDvdFinderFPCc
@@ -12973,6 +13068,7 @@
 802D56F4,code,getNameResource__12JKRFileCacheFUlPCc
 802D5720,code,readFsResource__12JKRFileCacheFPvUlPCc
 802D574C,code,readNameResource__12JKRFileCacheFPvUlUlPCc
+802D5778,code,$_static_symbol_802D5778_JKRFileCache.o_.text
 802D5778,code,check_mount_already__10JKRArchiveFlP7JKRHeap
 802D57E4,code,mount__10JKRArchiveFPCcQ210JKRArchive10EMountModeP7JKRHeapQ210JKRArchive15EMountDirection
 802D5840,code,mount__10JKRArchiveFPvP7JKRHeapQ210JKRArchive15EMountDirection
@@ -13011,6 +13107,7 @@
 802D6884,code,store__Q210JKRArchive8CArcNameFPCcc
 802D693C,code,setExpandSize__10JKRArchiveFPQ210JKRArchive12SDIFileEntryUl
 802D6978,code,getExpandSize__10JKRArchiveCFPQ210JKRArchive12SDIFileEntry
+802D69B8,code,$_static_symbol_802D69B8_JKRArchivePri.o_.text
 802D69B8,code,__ct__13JKRMemArchiveFlQ210JKRArchive15EMountDirection
 802D6A6C,code,__ct__13JKRMemArchiveFPvUl15JKRMemBreakFlag
 802D6B24,code,__dt__13JKRMemArchiveFv
@@ -13066,6 +13163,7 @@
 802D9AF8,code,getFileSize__10JKRDvdFileCFv
 802D9B00,code,__sinit_JKRDvdFile_cpp
 802D9B44,code,__dt__21JSUList<10JKRDvdFile>Fv
+802D9B98,code,$_static_symbol_802D9B98_JKRDvdFile.o_.text
 802D9B98,code,loadToMainRAM__12JKRDvdRipperFPCcPUc15JKRExpandSwitchUlP7JKRHeapQ212JKRDvdRipper15EAllocDirectionUlPiPUl
 802D9C54,code,loadToMainRAM__12JKRDvdRipperFlPUc15JKRExpandSwitchUlP7JKRHeapQ212JKRDvdRipper15EAllocDirectionUlPiPUl
 802D9D10,code,loadToMainRAM__12JKRDvdRipperFP10JKRDvdFilePUc15JKRExpandSwitchUlP7JKRHeapQ212JKRDvdRipper15EAllocDirectionUlPiPUl
@@ -13091,6 +13189,7 @@
 802DB580,code,dmaBufferFlush__FUl
 802DB5E8,code,__sinit_JKRDvdAramRipper_cpp
 802DB62C,code,__dt__23JSUList<12JKRADCommand>Fv
+802DB680,code,$_static_symbol_802DB680_JKRDvdAramRipper.o_.text
 802DB680,code,create__9JKRDecompFl
 802DB6E0,code,__ct__9JKRDecompFl
 802DB730,code,__dt__9JKRDecompFv
@@ -13124,16 +13223,19 @@
 802DC3FC,code,skip__20JSURandomInputStreamFl
 802DC458,code,peek__20JSURandomInputStreamFPvl
 802DC4DC,code,seek__20JSURandomInputStreamFl17JSUStreamSeekFrom
+802DC520,code,$_static_symbol_802DC520_JSUInputStream.o_.text
 802DC520,code,setBuffer__20JSUMemoryInputStreamFPCvl
 802DC534,code,readData__20JSUMemoryInputStreamFPvl
 802DC5AC,code,seekPos__20JSUMemoryInputStreamFl17JSUStreamSeekFrom
 802DC628,code,getLength__20JSUMemoryInputStreamCFv
 802DC630,code,getPosition__20JSUMemoryInputStreamCFv
+802DC638,code,$_static_symbol_802DC638_JSUMemoryStream.o_.text
 802DC638,code,__ct__18JSUFileInputStreamFP7JKRFile
 802DC67C,code,readData__18JSUFileInputStreamFPvl
 802DC74C,code,seekPos__18JSUFileInputStreamFl17JSUStreamSeekFrom
 802DC82C,code,getLength__18JSUFileInputStreamCFv
 802DC85C,code,getPosition__18JSUFileInputStreamCFv
+802DC864,code,$_static_symbol_802DC864_JSUFileStream.o_.text
 802DC864,code,parseVariableUInt_16_32_following__Q27JGadget6binaryFPCvPUlPUlPQ37JGadget6binary5TEBit
 802DC8C8,code,__dt__Q37JGadget6binary19TParse_header_blockFv
 802DC910,code,parse_next__Q37JGadget6binary19TParse_header_blockFPPCvUl
@@ -13144,6 +13246,7 @@
 802DCBA8,code,Insert__Q27JGadget13TNodeLinkListFQ37JGadget13TNodeLinkList8iteratorPQ27JGadget13TLinkListNode
 802DCBD4,code,Erase__Q27JGadget13TNodeLinkListFPQ27JGadget13TLinkListNode
 802DCBF8,code,Remove__Q27JGadget13TNodeLinkListFPQ27JGadget13TLinkListNode
+802DCCC8,code,$_static_symbol_802DCCC8_linklist.o_.text
 802DCCC8,code,extend_default__Q27JGadget6vectorFUlUlUl
 802DCCD0,code,__ct__Q27JGadget20TVector_pointer_voidFRCQ27JGadget14TAllocator<Pv>
 802DCCFC,code,__dt__Q27JGadget20TVector_pointer_voidFv
@@ -13198,6 +13301,7 @@
 802DEA58,code,getIndex__10JUTNameTabCFPCc
 802DEAF8,code,getName__10JUTNameTabCFUs
 802DEB28,code,calcKeyCode__10JUTNameTabCFPCc
+802DEB58,code,$_static_symbol_802DEB58_JUTNameTab.o_.text
 802DEB58,code,__ct__12JUTGraphFifoFUl
 802DEC34,code,__dt__12JUTGraphFifoFv
 802DECF8,code,__ct__7JUTFontFv
@@ -13205,6 +13309,7 @@
 802DED70,code,setCharColor__7JUTFontFQ28JUtility6TColor
 802DEDC4,code,setGradColor__7JUTFontFQ28JUtility6TColorQ28JUtility6TColor
 802DEE28,code,drawString_size_scale__7JUTFontFffffPCcUlb
+802DEF48,code,$_static_symbol_802DEF48_JUTFont.o_.text
 802DEF48,code,__ct__10JUTResFontFv
 802DEF94,code,__ct__10JUTResFontFPC7ResFONTP7JKRHeap
 802DF000,code,__dt__10JUTResFontFv
@@ -13238,6 +13343,7 @@
 802E0440,code,drawString__10JUTDbPrintFiiiPCUc
 802E0530,code,JUTReport__FiiPCce
 802E0600,code,JUTReport__FiiiPCce
+802E06DC,code,$_static_symbol_802E06DC_JUTDbPrint.o_.text
 802E06DC,code,__ct__10JUTGamePadFQ210JUTGamePad8EPadPort
 802E07B0,code,__dt__10JUTGamePadFv
 802E085C,code,initList__10JUTGamePadFv
@@ -13274,6 +13380,7 @@
 802E1CA8,code,__ct__Q210JUTGamePad6CStickFv
 802E1CD8,code,__ct__Q210JUTGamePad7CButtonFv
 802E1D08,code,__dt__21JSUList<10JUTGamePad>Fv
+802E1D5C,code,$_static_symbol_802E1D5C_JUTGamePad.o_.text
 802E1D5C,code,__ct__12JUTExceptionFP14JUTDirectPrint
 802E1E40,code,create__12JUTExceptionFP14JUTDirectPrint
 802E1EA8,code,run__12JUTExceptionFv
@@ -13307,6 +13414,7 @@
 802E40EC,code,__dt__12JUTExceptionFv
 802E414C,code,__sinit_JUTException_cpp
 802E4194,code,__dt__39JSUList<Q212JUTException12JUTExMapFile>Fv
+802E41E8,code,$_static_symbol_802E41E8_JUTException.o_.text
 802E41E8,code,__ct__14JUTDirectPrintFv
 802E4240,code,start__14JUTDirectPrintFv
 802E4288,code,erase__14JUTDirectPrintFiiii
@@ -13317,12 +13425,14 @@
 802E4708,code,drawString_f__14JUTDirectPrintFUsUsPCce
 802E4798,code,setCharColor__14JUTDirectPrintFQ28JUtility6TColor
 802E47C8,code,setCharColor__14JUTDirectPrintFUcUcUc
+802E495C,code,$_static_symbol_802E495C_JUTDirectPrint.o_.text
 802E495C,code,create__12JUTAssertionFv
 802E4960,code,flush_subroutine__12JUTAssertionFv
 802E499C,code,flushMessage__12JUTAssertionFv
 802E4A54,code,flushMessage_dbPrint__12JUTAssertionFv
 802E4C34,code,setVisible__12JUTAssertionFb
 802E4C3C,code,setMessageCount__12JUTAssertionFi
+802E4C54,code,$_static_symbol_802E4C54_JUTAssert.o_.text
 802E4C54,code,createManager__8JUTVideoFPC16_GXRenderModeObj
 802E4CAC,code,destroyManager__8JUTVideoFv
 802E4CF4,code,__ct__8JUTVideoFPC16_GXRenderModeObj
@@ -13349,6 +13459,7 @@
 802E579C,code,startFadeOut__8JUTFaderFi
 802E57D0,code,setStatus__8JUTFaderFQ28JUTFader7EStatusi
 802E5840,code,__dt__8JUTFaderFv
+802E5888,code,$_static_symbol_802E5888_JUTFader.o_.text
 802E5888,code,__ct__10JUTProcBarFv
 802E599C,code,__dt__10JUTProcBarFv
 802E59E0,code,create__10JUTProcBarFv
@@ -13395,6 +13506,7 @@
 802E8648,code,JUTReportConsole
 802E867C,code,JUTWarningConsole_f
 802E86FC,code,JUTWarningConsole
+802E8730,code,$_static_symbol_802E8730_JUTConsole.o_.text
 802E8730,code,fetch32byte__13JUTDirectFileFv
 802E87F8,code,__ct__13JUTDirectFileFv
 802E881C,code,__dt__13JUTDirectFileFv
@@ -13429,6 +13541,7 @@
 802E9B9C,code,J2DDrawFrame__FffffQ28JUtility6TColorUc
 802E9BE8,code,J2DDrawFrame__FRCQ29JGeometry8TBox2<f>Q28JUtility6TColorUc
 802E9C88,code,getGrafType__13J2DOrthoGraphCFv
+802E9C90,code,$_static_symbol_802E9C90_J2DOrthoGraph.o_.text
 802E9C90,code,load__9J2DTexMtxFUl
 802E9CC4,code,calc__9J2DTexMtxFv
 802E9D2C,code,getTextureMtx__9J2DTexMtxFRC17J2DTextureSRTInfo3VecPA4_f
@@ -13452,6 +13565,7 @@
 802EA194,code,getIndTexMtx__11J2DIndBlockFUl
 802EA19C,code,getIndTexOrder__11J2DIndBlockFUl
 802EA1A4,code,getIndTexStageNum__11J2DIndBlockCFv
+802EA1AC,code,$_static_symbol_802EA1AC_J2DTevs.o_.text
 802EA1AC,code,__ct__11J2DMaterialFv
 802EA2CC,code,__dt__11J2DMaterialFv
 802EA38C,code,setGX__11J2DMaterialFv
@@ -13831,6 +13945,7 @@
 802F594C,code,initchar__8J2DPrintFv
 802F59C0,code,getNumberS32__8J2DPrintFPPCUclli
 802F5AC4,code,getNumberF32__8J2DPrintFPPCUcffi
+802F5BF8,code,$_static_symbol_802F5BF8_J2DPrint.o_.text
 802F5BF8,code,__ct__7J2DPaneFv
 802F5CB8,code,initiate__7J2DPaneFv
 802F5D40,code,__ct__7J2DPaneFP7J2DPanebUxRCQ29JGeometry8TBox2<f>
@@ -13885,6 +14000,7 @@
 802F8474,code,update__7J2DPaneFv
 802F8478,code,drawSelf__7J2DPaneFff
 802F847C,code,__sinit_J2DPane_cpp
+802F8498,code,$_static_symbol_802F8498_J2DPane.o_.text
 802F8498,code,__ct__9J2DScreenFv
 802F8540,code,__dt__9J2DScreenFv
 802F85A8,code,clean__9J2DScreenFv
@@ -13945,6 +14061,7 @@
 802FC024,code,getContentsMaterial__9J2DWindowCFv
 802FC02C,code,isUsed__9J2DWindowFPC7ResFONT
 802FC04C,code,rewriteAlpha__9J2DWindowFv
+802FC050,code,$_static_symbol_802FC050_J2DWindow.o_.text
 802FC050,code,__ct__10J2DPictureFv
 802FC118,code,__ct__10J2DPictureFP7J2DPaneP20JSURandomInputStreamP10JKRArchive
 802FC1D4,code,__ct__10J2DPictureFP7J2DPaneP20JSURandomInputStreamP11J2DMaterial
@@ -14026,6 +14143,7 @@
 80300C68,code,getTypeID__10J2DTextBoxCFv
 80300C70,code,isUsed__10J2DTextBoxFPC7ResTIMG
 80300C90,code,rewriteAlpha__10J2DTextBoxFv
+80300C94,code,$_static_symbol_80300C94_J2DTextBox.o_.text
 80300C94,code,__ct__11J2DWindowExFP7J2DPaneP20JSURandomInputStreamUlP11J2DMaterial
 80300F80,code,setMinSize__11J2DWindowExFv
 80301144,code,__dt__11J2DWindowExFv
@@ -14172,6 +14290,7 @@
 80308A28,code,isUsed__12J2DTextBoxExFPC7ResTIMG
 80308A48,code,setAnimation__12J2DTextBoxExFP14J2DAnmVtxColor
 80308A4C,code,setAnimation__12J2DTextBoxExFP10J2DAnmBase
+80308A6C,code,$_static_symbol_80308A6C_J2DTextBoxEx.o_.text
 80308A6C,code,load__20J2DAnmLoaderDataBaseFPCv
 80309290,code,__ct__19J2DAnmKeyLoader_v15Fv
 803092AC,code,__dt__19J2DAnmKeyLoader_v15Fv
@@ -14358,6 +14477,7 @@
 80312FBC,code,drawFast__14J3DShapePacketFv
 80313044,code,draw__9J3DPacketFv
 80313048,code,entry__12J3DMatPacketFP13J3DDrawBuffer
+803130A8,code,$_static_symbol_803130A8_J3DPacket.o_.text
 803130A8,code,resetMtxLoadCache__11J3DShapeMtxFv
 803130E4,code,loadMtxIndx_PNGP__11J3DShapeMtxCFiUs
 80313128,code,loadMtxIndx_PCPU__11J3DShapeMtxCFiUs
@@ -15160,6 +15280,7 @@
 8032C624,code,setTexNoAnm__14J3DMaterialAnmFiP11J3DTexNoAnm
 8032C664,code,setTevColorAnm__14J3DMaterialAnmFiP14J3DTevColorAnm
 8032C6A4,code,setTevKColorAnm__14J3DMaterialAnmFiP15J3DTevKColorAnm
+8032C6E4,code,$_static_symbol_8032C6E4_J3DMaterialAnm.o_.text
 8032C6E4,code,__ct__12J3DSkinNListFv
 8032C704,code,J3DPSWeightMTXMultVec__FPA4_ffP3VecP3Vec
 8032C7BC,code,J3DPSWeightMTXMultVecSR__FPA4_ffP3VecP3Vec
@@ -15326,6 +15447,7 @@
 8033403C,code,newDither__22J3DMaterialFactory_v21CFi
 80334074,code,newNBTScale__22J3DMaterialFactory_v21CFi
 80334118,code,JSUConvertOffsetToPtr<23J3DMaterialInitData_v21>__FPCvPCv
+80334130,code,$_static_symbol_80334130_J3DMaterialFactory_v21.o_.text
 80334130,code,load__24J3DClusterLoaderDataBaseFPCv
 803341CC,code,__ct__20J3DClusterLoader_v15Fv
 803341E8,code,__dt__20J3DClusterLoader_v15Fv
@@ -15403,9 +15525,11 @@
 80336FF0,code,calcSizeTextureTable__14J3DModelLoaderFPC15J3DTextureBlock
 80337010,code,calcSizePatchedMaterial__14J3DModelLoaderFPC16J3DMaterialBlockUl
 803370A0,code,calcSizeMaterialDL__14J3DModelLoaderFPC18J3DMaterialDLBlockUl
+80337178,code,$_static_symbol_80337178_J3DModelLoaderCalcSize.o_.text
 80337178,code,__ct__15J3DJointFactoryFRC13J3DJointBlock
 803371D0,code,create__15J3DJointFactoryFi
 80337338,code,JSUConvertOffsetToPtr<16J3DJointInitData>__FPCvUl
+80337350,code,$_static_symbol_80337350_J3DJointFactory.o_.text
 80337350,code,__ct__15J3DShapeFactoryFRC13J3DShapeBlock
 80337400,code,create__15J3DShapeFactoryFiUlP14_GXVtxDescList
 803375BC,code,newShapeMtx__15J3DShapeFactoryCFUlii
@@ -15418,6 +15542,7 @@
 80337AF8,code,JSUConvertOffsetToPtr<19J3DShapeMtxInitData>__FPCvUl
 80337B10,code,JSUConvertOffsetToPtr<Uc>__FPCvUl
 80337B28,code,JSUConvertOffsetToPtr<14_GXVtxDescList>__FPCvUl
+80337B40,code,$_static_symbol_80337B40_J3DShapeFactory.o_.text
 80337B40,code,load__20J3DAnmLoaderDataBaseFPCv24J3DAnmLoaderDataBaseFlag
 80338134,code,setResource__20J3DAnmLoaderDataBaseFP10J3DAnmBasePCv
 80338468,code,__ct__20J3DAnmFullLoader_v15Fv
@@ -15490,6 +15615,7 @@
 80339D9C,code,PPCMtwpar
 80339DA4,code,PPCDisableSpeculation
 80339DCC,code,PPCSetFpNonIEEEMode
+80339DD4,code,$_static_symbol_80339DD4_PPCArch.o_.text
 80339DD4,code,__OSFPRInit
 80339EFC,code,OSGetConsoleType
 80339F24,code,InquiryCallback
@@ -15504,6 +15630,7 @@
 8033A80C,code,__OSPSInit
 8033A860,code,__OSGetDIConfig
 8033A874,code,OSRegisterVersion
+8033A8A0,code,$_static_symbol_8033A8A0_OS.o_.text
 8033A8A0,code,OSInitAlarm
 8033A8F8,code,OSCreateAlarm
 8033A908,code,InsertAlarm
@@ -15513,16 +15640,19 @@
 8033AD58,code,DecrementerExceptionCallback
 8033AF88,code,DecrementerExceptionHandler
 8033AFD8,code,OnReset
+8033B078,code,$_static_symbol_8033B078_OSAlarm.o_.text
 8033B078,code,DLInsert
 8033B124,code,OSFreeToHeap
 8033B1A0,code,OSSetCurrentHeap
 8033B1B0,code,OSInitAlloc
 8033B220,code,OSCreateHeap
+8033B28C,code,$_static_symbol_8033B28C_OSAlloc.o_.text
 8033B28C,code,OSGetArenaHi
 8033B294,code,OSGetArenaLo
 8033B29C,code,OSSetArenaHi
 8033B2A4,code,OSSetArenaLo
 8033B2AC,code,OSAllocFromArenaLo
+8033B2D8,code,$_static_symbol_8033B2D8_OSArena.o_.text
 8033B2D8,code,__OSInitAudioSystem
 8033B494,code,__OSStopAudioSystem
 8033B56C,code,DCEnable
@@ -15544,6 +15674,7 @@
 8033B8F8,code,L2GlobalInvalidate
 8033B990,code,DMAErrorHandler
 8033BAF0,code,__OSCacheInit
+8033BBE4,code,$_static_symbol_8033BBE4_OSCache.o_.text
 8033BBE4,code,__OSLoadFPUContext
 8033BD08,code,__OSSaveFPUContext
 8033BE30,code,OSSaveFPUContext
@@ -15558,8 +15689,10 @@
 8033C388,code,OSSwitchFPUContext
 8033C40C,code,__OSContextInit
 8033C454,code,OSFillFPUContext
+8033C580,code,$_static_symbol_8033C580_OSContext.o_.text
 8033C580,code,OSSetErrorHandler
 8033C798,code,__OSUnhandledException
+8033CA80,code,$_static_symbol_8033CA80_OSError.o_.text
 8033CA80,code,PackArgs
 8033CC08,code,Run
 8033CC44,code,ReadDisc
@@ -15568,9 +15701,11 @@
 8033CCFC,code,GetApploaderPosition
 8033CDC0,code,__OSBootDolSimple
 8033D244,code,__OSBootDol
+8033D3E0,code,$_static_symbol_8033D3E0_OSExec.o_.text
 8033D3E0,code,GetFontCode
 8033D554,code,OSGetFontEncode
 8033D5B8,code,ParseStringS
+8033D6F4,code,$_static_symbol_8033D6F4_OSFont.o_.text
 8033D6F4,code,OSDisableInterrupts
 8033D708,code,OSEnableInterrupts
 8033D71C,code,OSRestoreInterrupts
@@ -15582,6 +15717,7 @@
 8033DB44,code,__OSUnmaskInterrupts
 8033DBCC,code,__OSDispatchInterrupt
 8033DF10,code,ExternalInterruptHandler
+8033DF60,code,$_static_symbol_8033DF60_OSInterrupt.o_.text
 8033DF60,code,OSNotifyLink
 8033DF64,code,OSNotifyUnlink
 8033DF68,code,OSSetStringTable
@@ -15592,6 +15728,7 @@
 8033E570,code,Undo
 8033E7A8,code,OSUnlink
 8033E97C,code,__OSModuleInit
+8033E994,code,$_static_symbol_8033E994_OSLink.o_.text
 8033E994,code,OSInitMessageQueue
 8033E9F4,code,OSSendMessage
 8033EABC,code,OSReceiveMessage
@@ -15603,6 +15740,7 @@
 8033EE58,code,Config48MB
 8033EED8,code,RealMode
 8033EEF0,code,__OSInitMemoryProtection
+8033F008,code,$_static_symbol_8033F008_OSMemory.o_.text
 8033F008,code,OSInitMutex
 8033F040,code,OSLockMutex
 8033F11C,code,OSUnlockMutex
@@ -15614,9 +15752,11 @@
 8033F424,code,__OSCheckMutex
 8033F524,code,__OSCheckDeadLock
 8033F55C,code,__OSCheckMutexes
+8033F5D0,code,$_static_symbol_8033F5D0_OSMutex.o_.text
 8033F5D0,code,__OSReboot
 8033F640,code,OSSetSaveRegion
 8033F64C,code,OSGetSaveRegion
+8033F660,code,$_static_symbol_8033F660_OSReboot.o_.text
 8033F660,code,OSRegisterResetFunction
 8033F6E4,code,__OSCallResetFunctions
 8033F78C,code,Reset
@@ -15624,9 +15764,11 @@
 8033F864,code,__OSDoHotReset
 8033F8AC,code,OSResetSystem
 8033FAAC,code,OSGetResetCode
+8033FAE4,code,$_static_symbol_8033FAE4_OSReset.o_.text
 8033FAE4,code,__OSResetSWInterruptHandler
 8033FBD8,code,OSGetResetButtonState
 8033FE70,code,OSGetResetSwitchState
+8033FE90,code,$_static_symbol_8033FE90_OSResetSW.o_.text
 8033FE90,code,WriteSramCallback
 8033FEF0,code,WriteSram
 80340008,code,__OSInitSram
@@ -15644,6 +15786,7 @@
 8034084C,code,OSSetWirelessID
 803408F8,code,OSGetGbsMode
 80340968,code,OSSetGbsMode
+80340A20,code,$_static_symbol_80340A20_OSRtc.o_.text
 80340A20,code,SystemCallVector
 80340A40,code,__OSInitSystemCall
 80340AA4,code,DefaultSwitchThreadCallback
@@ -15674,12 +15817,14 @@
 80341E64,code,CheckThreadQueue
 80341F00,code,OSCheckActiveThreads
 80342650,code,OSClearStack
+803426FC,code,$_static_symbol_803426FC_OSThread.o_.text
 803426FC,code,OSGetTime
 80342714,code,OSGetTick
 8034271C,code,__OSGetSystemTime
 80342780,code,__OSTimeToSystemTime
 803427D8,code,GetDates
 80342974,code,OSTicksToCalendarTime
+80342B78,code,$_static_symbol_80342B78_OSTime.o_.text
 80342B78,code,__init_user
 80342B98,code,__init_cpp
 80342BEC,code,_ExitProcess
@@ -15706,10 +15851,12 @@
 803441F8,code,EXIGetState
 80344210,code,UnlockedHandler
 80344238,code,EXIGetID
+803445E8,code,$_static_symbol_803445E8_EXIBios.o_.text
 803445E8,code,ProbeBarnacle
 80344774,code,__OSEnableBarnacle
 80344930,code,InitializeUART
 803449A0,code,WriteUARTN
+80344BA0,code,$_static_symbol_80344BA0_EXIUart.o_.text
 80344BA0,code,SIBusy
 80344BC0,code,SIIsChanBusy
 80344BFC,code,CompleteTransfer
@@ -15732,6 +15879,7 @@
 80345CF8,code,GetTypeCallback
 80345F90,code,SIGetType
 80346154,code,SIGetTypeAsync
+80346290,code,$_static_symbol_80346290_SIBios.o_.text
 80346290,code,SISetSamplingRate
 80346374,code,SIRefreshSamplingRate
 80346398,code,DBInit
@@ -15739,6 +15887,7 @@
 80346408,code,__DBExceptionDestination
 80346418,code,__DBIsExceptionMarked
 80346434,code,DBPrintf
+80346484,code,$_static_symbol_80346484_db.o_.text
 80346484,code,PSMTXIdentity
 803464B0,code,PSMTXCopy
 803464E4,code,PSMTXConcat
@@ -15755,12 +15904,15 @@
 80346A8C,code,C_MTXLookAt
 80346C18,code,C_MTXLightPerspective
 80346CE4,code,C_MTXLightOrtho
+80346D6C,code,$_static_symbol_80346D6C_mtx.o_.text
 80346D6C,code,PSMTXMultVec
 80346DC0,code,PSMTXMultVecArray
 80346E4C,code,PSMTXMultVecSR
 80346EA0,code,PSMTXMultVecArraySR
+80346F28,code,$_static_symbol_80346F28_mtxvec.o_.text
 80346F28,code,C_MTXPerspective
 80346FF8,code,C_MTXOrtho
+80347090,code,$_static_symbol_80347090_mtx44.o_.text
 80347090,code,PSVECAdd
 803470B4,code,PSVECSubtract
 803470D8,code,PSVECScale
@@ -15773,9 +15925,11 @@
 803472C8,code,C_VECReflect
 8034739C,code,PSVECSquareDistance
 803473C4,code,PSVECDistance
+80347418,code,$_static_symbol_80347418_vec.o_.text
 80347418,code,PSQUATMultiply
 80347474,code,C_QUATRotAxisRad
 80347500,code,C_QUATSlerp
+80347674,code,$_static_symbol_80347674_quat.o_.text
 80347674,code,__DVDInitWA
 803476B4,code,__DVDInterruptHandler
 80347994,code,AlarmHandler
@@ -15797,6 +15951,7 @@
 80348458,code,DVDLowClearCallback
 80348474,code,__DVDLowSetWAType
 803484B8,code,__DVDLowTestAlarm
+803484F0,code,$_static_symbol_803484F0_dvdlow.o_.text
 803484F0,code,__DVDFSInit
 80348528,code,DVDConvertPathToEntrynum
 8034881C,code,DVDFastOpen
@@ -15813,6 +15968,7 @@
 80348F80,code,DVDOpenDir
 80349040,code,DVDReadDir
 803490E4,code,DVDCloseDir
+803490EC,code,$_static_symbol_803490EC_dvdfs.o_.text
 803490EC,code,defaultOptionalCommandChecker
 803490F0,code,DVDInit
 803491C8,code,stateReadingFST
@@ -15860,15 +16016,20 @@
 8034B628,code,DVDCheckDisk
 8034B720,code,__DVDPrepareResetAsync
 8034B83C,code,__DVDTestAlarm
+8034B874,code,$_static_symbol_8034B874_dvd.o_.text
 8034B874,code,__DVDClearWaitingQueue
 8034B8AC,code,__DVDPushWaitingQueue
 8034B914,code,__DVDPopWaitingQueue
 8034B9B4,code,__DVDCheckWaitingQueue
 8034BA0C,code,__DVDDequeueWaitingQueue
+8034BA6C,code,$_static_symbol_8034BA6C_dvdqueue.o_.text
 8034BA6C,code,ErrorCode2Num
 8034BB88,code,__DVDStoreErrorCode
+8034BC04,code,$_static_symbol_8034BC04_dvderror.o_.text
 8034BC04,code,DVDCompareDiskID
+8034BCFC,code,$_static_symbol_8034BCFC_dvdidutils.o_.text
 8034BCFC,code,__DVDPrintFatalMessage
+8034BD2C,code,$_static_symbol_8034BD2C_dvdFatal.o_.text
 8034BD2C,code,cb
 8034BE04,code,__fstLoad
 8034BF6C,code,__VIRetraceHandler
@@ -15895,10 +16056,12 @@
 8034DB04,code,VIGetDTVStatus
 8034DB40,code,__VIDisplayPositionToXY
 8034DD5C,code,__VIGetCurrentPosition
+8034DDBC,code,$_static_symbol_8034DDBC_vi.o_.text
 8034DDBC,code,ClampStick
 8034DEEC,code,ClampCircle
 8034E094,code,PADClamp
 8034E1A8,code,PADClampCircle
+8034E2B4,code,$_static_symbol_8034E2B4_Padclamp.o_.text
 8034E2B4,code,UpdateOrigin
 8034E458,code,PADOriginCallback
 8034E51C,code,PADOriginUpdateCallback
@@ -15919,6 +16082,7 @@
 8034FB40,code,SamplingHandler
 8034FBA0,code,PADSetSamplingCallback
 8034FBF4,code,__PADDisableRecalibration
+8034FC70,code,$_static_symbol_8034FC70_Pad.o_.text
 8034FC70,code,AIRegisterDMACallback
 8034FCB4,code,AIInitDMA
 8034FD3C,code,AIStartDMA
@@ -15938,6 +16102,7 @@
 8035026C,code,__AIDHandler
 80350318,code,__AICallbackStackSwitch
 80350370,code,__AI_SRC_INIT
+80350554,code,$_static_symbol_80350554_ai.o_.text
 80350554,code,ARRegisterDMACallback
 80350598,code,ARGetDMAStatus
 803505D4,code,ARStartDMA
@@ -15948,22 +16113,26 @@
 80350870,code,__ARClearInterrupt
 80350890,code,__ARGetInterruptStatus
 803508A0,code,__ARChecksize
+80352094,code,$_static_symbol_80352094_ar.o_.text
 80352094,code,__ARQServiceQueueLo
 80352194,code,__ARQCallbackHack
 80352198,code,__ARQInterruptServiceRoutine
 80352264,code,ARQInit
 803522D4,code,ARQPostRequest
+80352430,code,$_static_symbol_80352430_arq.o_.text
 80352430,code,DSPCheckMailToDSP
 80352440,code,DSPCheckMailFromDSP
 80352450,code,DSPReadMailFromDSP
 80352468,code,DSPSendMailToDSP
 8035247C,code,DSPAssertInt
 803524BC,code,DSPInit
+80352580,code,$_static_symbol_80352580_dsp.o_.text
 80352580,code,__DSP_debug_printf
 803525D0,code,__DSP_exec_task
 80352770,code,__DSP_boot_task
 803528FC,code,__DSP_insert_task
 8035299C,code,__DSP_remove_task
+80352A30,code,$_static_symbol_80352A30_dsp_task.o_.text
 80352A30,code,__CARDDefaultApiCallback
 80352A34,code,__CARDSyncCallback
 80352A68,code,__CARDExtHandler
@@ -15990,21 +16159,25 @@
 80353E20,code,__CARDSync
 80353EB8,code,OnReset
 80353F08,code,CARDGetFastMode
+80353F24,code,$_static_symbol_80353F24_CARDBios.o_.text
 80353F24,code,bitrev
 80354090,code,ReadArrayUnlock
 803541D4,code,DummyLen
 80354298,code,__CARDUnlock
 80354DF0,code,InitCallback
 80354E60,code,DoneCallback
+80355184,code,$_static_symbol_80355184_CARDUnlock.o_.text
 80355184,code,BlockReadCallback
 80355260,code,__CARDRead
 803552C4,code,BlockWriteCallback
 803553AC,code,__CARDWrite
+80355414,code,$_static_symbol_80355414_CARDRdwr.o_.text
 80355414,code,__CARDGetFatBlock
 8035541C,code,WriteCallback
 803554F0,code,EraseCallback
 803555B8,code,__CARDAllocBlock
 803556D0,code,__CARDUpdateFatBlock
+8035577C,code,$_static_symbol_8035577C_CARDBlock.o_.text
 8035577C,code,__CARDGetDirBlock
 80355784,code,WriteCallback
 80355854,code,EraseCallback
@@ -16016,6 +16189,7 @@
 803562D8,code,__CARDVerify
 80356364,code,CARDCheckExAsync
 803568F4,code,CARDCheck
+80356948,code,$_static_symbol_80356948_CARDCheck.o_.text
 80356948,code,IsCard
 80356A14,code,CARDProbe
 80356A4C,code,CARDProbeEx
@@ -16025,15 +16199,18 @@
 803572F4,code,CARDMount
 8035733C,code,DoUnmount
 803573D8,code,CARDUnmount
+80357484,code,$_static_symbol_80357484_CARDMount.o_.text
 80357484,code,FormatCallback
 803575C8,code,__CARDFormatRegionAsync
 80357C20,code,CARDFormat
+80357C74,code,$_static_symbol_80357C74_CARDFormat.o_.text
 80357C74,code,__CARDCompareFileName
 80357CDC,code,__CARDAccess
 80357D70,code,__CARDIsWritable
 80357EA4,code,__CARDIsReadable
 80357F98,code,CARDOpen
 803580B4,code,CARDClose
+80358108,code,$_static_symbol_80358108_CARDOpen.o_.text
 80358108,code,CreateCallbackFat
 80358238,code,CARDCreateAsync
 80358458,code,CARDCreate
@@ -16041,6 +16218,7 @@
 80358658,code,ReadCallback
 80358788,code,CARDReadAsync
 803588CC,code,CARDRead
+80358914,code,$_static_symbol_80358914_CARDRead.o_.text
 80358914,code,WriteCallback
 80358A84,code,EraseCallback
 80358B34,code,CARDWriteAsync
@@ -16050,12 +16228,14 @@
 80358F9C,code,CARDSetStatusAsync
 80359110,code,CARDSetStatus
 80359158,code,CARDGetSerialNo
+8035921C,code,$_static_symbol_8035921C_CARDNet.o_.text
 8035921C,code,__GXDefaultTexRegionCallback
 80359318,code,__GXDefaultTlutRegionCallback
 8035933C,code,__GXShutdown
 803594CC,code,__GXInitRevisionBits
 80359670,code,GXInit
 80359C70,code,__GXInitGX
+8035A5A8,code,$_static_symbol_8035A5A8_GXInit.o_.text
 8035A5A8,code,GXCPInterruptHandler
 8035A6DC,code,GXInitFifoBase
 8035A748,code,GXInitFifoPtrs
@@ -16079,6 +16259,7 @@
 8035AEA0,code,GXGetCurrentGXThread
 8035AEA8,code,GXGetCPUFifo
 8035AEB0,code,GXGetGPFifo
+8035AEB8,code,$_static_symbol_8035AEB8_GXFifo.o_.text
 8035AEB8,code,GXSetVtxDesc
 8035B124,code,GXSetVtxDescv
 8035B3AC,code,__GXSetVCD
@@ -16091,6 +16272,7 @@
 8035BB6C,code,GXInvalidateVtxCache
 8035BB7C,code,GXSetTexCoordGen2
 8035BDFC,code,GXSetNumTexGens
+8035BE38,code,$_static_symbol_8035BE38_GXAttr.o_.text
 8035BE38,code,GXSetMisc
 8035BECC,code,GXFlush
 8035BF28,code,__GXAbort
@@ -16112,6 +16294,7 @@
 8035C5AC,code,GXSetDrawDoneCallback
 8035C5F0,code,GXFinishInterruptHandler
 8035C670,code,__GXPEInit
+8035C6E4,code,$_static_symbol_8035C6E4_GXMisc.o_.text
 8035C6E4,code,__GXSetDirtyState
 8035C764,code,GXBegin
 8035C834,code,__GXSendFlushPrim
@@ -16121,6 +16304,7 @@
 8035C984,code,GXSetCullMode
 8035C9AC,code,GXSetCoPlanar
 8035C9E0,code,__GXSetGenMode
+8035CA04,code,$_static_symbol_8035CA04_GXGeometry.o_.text
 8035CA04,code,GXSetDispCopySrc
 8035CA80,code,GXSetTexCopySrc
 8035CAFC,code,GXSetDispCopyDst
@@ -16136,6 +16320,7 @@
 8035D304,code,GXCopyDisp
 8035D46C,code,GXCopyTex
 8035D5F8,code,GXClearBoundingBox
+8035D630,code,$_static_symbol_8035D630_GXFrameBuf.o_.text
 8035D630,code,GXInitLightAttn
 8035D64C,code,GXInitLightSpot
 8035D7DC,code,GXInitLightDistAttn
@@ -16147,6 +16332,7 @@
 8035DA48,code,GXSetChanMatColor
 8035DB30,code,GXSetNumChans
 8035DB6C,code,GXSetChanCtrl
+8035DC1C,code,$_static_symbol_8035DC1C_GXLight.o_.text
 8035DC1C,code,GXGetTexBufferSize
 8035DD78,code,__GetImageTileCount
 8035DE40,code,GXInitTexObj
@@ -16172,6 +16358,7 @@
 8035E750,code,__SetSURegs
 8035E7F0,code,__GXSetSUTexRegs
 8035E96C,code,__GXSetTmemConfig
+8035ECC0,code,$_static_symbol_8035ECC0_GXTexture.o_.text
 8035ECC0,code,GXSetTevIndirect
 8035ED2C,code,GXSetIndTexMtx
 8035EEA4,code,GXSetIndTexCoordScale
@@ -16181,6 +16368,7 @@
 8035F140,code,__GXUpdateBPMask
 8035F144,code,__GXSetIndirectMask
 8035F174,code,__GXFlushTextureState
+8035F198,code,$_static_symbol_8035F198_GXBump.o_.text
 8035F198,code,GXSetTevOp
 8035F224,code,GXSetTevColorIn
 8035F268,code,GXSetTevAlphaIn
@@ -16209,7 +16397,9 @@
 8035FE04,code,GXSetDstAlpha
 8035FE40,code,GXSetFieldMask
 8035FE78,code,GXSetFieldMode
+8035FEF0,code,$_static_symbol_8035FEF0_GXPixel.o_.text
 8035FEF0,code,GXCallDisplayList
+8035FF60,code,$_static_symbol_8035FF60_GXDisplayList.o_.text
 8035FF60,code,GXProject
 803600D4,code,GXSetProjection
 80360178,code,GXSetProjectionv
@@ -16226,16 +16416,20 @@
 80360590,code,GXSetScissorBoxOffset
 803605D0,code,GXSetClipMode
 803605F8,code,__GXSetMatrixIndex
+8036067C,code,$_static_symbol_8036067C_GXTransform.o_.text
 8036067C,code,GXSetGPMetric
 80360EC4,code,GXClearGPMetric
 80360ED4,code,GXReadXfRasMetric
+80360F98,code,$_static_symbol_80360F98_GXPerf.o_.text
 80360F98,code,GDInitGDLObj
 80360FB0,code,GDFlushCurrToMem
 80360FDC,code,GDPadCurr32
 803610D4,code,GDOverflowed
+80361104,code,$_static_symbol_80361104_GDBase.o_.text
 80361104,code,GDSetVtxDescv
 80361700,code,GDSetArray
 8036190C,code,GDSetArrayRaw
+80361B14,code,$_static_symbol_80361B14_GDGeometry.o_.text
 80361B14,code,__va_arg
 80361BDC,code,__destroy_global_chain
 80361C24,code,__register_global_object
@@ -16245,6 +16439,7 @@
 80361D60,code,__construct_array
 80361E5C,code,__dt__26__partial_array_destructorFv
 80361F14,code,__construct_new_array
+80362018,code,$_static_symbol_80362018_NMWException.o_.text
 80362018,code,__ptmf_test
 80362048,code,__ptmf_cmpr
 80362084,code,__ptmf_scall
@@ -16279,6 +16474,7 @@
 803632C8,code,__num2dec_internal
 8036367C,code,__two_exp
 80364E00,code,__timesdec
+80365078,code,$_static_symbol_80365078_ansi_fp.o_.text
 80365078,code,div
 803650D0,code,abs
 803650E0,code,__flush_buffer
@@ -16297,6 +16493,7 @@
 80365BB4,code,fseek
 80365C20,code,_fseek
 80365E90,code,ftell
+80365F74,code,$_static_symbol_80365F74_FILE_POS.o_.text
 80365F74,code,wcstombs
 8036608C,code,memcmp
 803660D8,code,__memrchr
@@ -16382,6 +16579,7 @@
 8036CE40,code,TRKNubWelcome
 8036CE68,code,TRKTerminateNub
 8036CE8C,code,TRKInitializeNub
+8036CFD8,code,$_static_symbol_8036CFD8_nubinit.o_.text
 8036CFD8,code,TRKMessageSend
 8036D01C,code,TRKReadBuffer_ui32
 8036D10C,code,TRKReadBuffer_ui8
@@ -16397,6 +16595,7 @@
 8036D6F0,code,TRKGetBuffer
 8036D71C,code,TRKGetFreeBuffer
 8036D7E4,code,TRKInitializeMessageBuffers
+8036D858,code,$_static_symbol_8036D858_msgbuf.o_.text
 8036D858,code,TRKTerminateSerialHandler
 8036D860,code,TRKInitializeSerialHandler
 8036D924,code,TRKProcessInput
@@ -16423,6 +16622,7 @@
 8036ECC0,code,SetTRKConnected
 8036ECCC,code,GetTRKConnected
 8036ECDC,code,OutputData
+8036ED84,code,$_static_symbol_8036ED84_msghndlr.o_.text
 8036ED84,code,HandlePositionFileSupportRequest
 8036EE94,code,HandleCloseFileSupportRequest
 8036EF7C,code,HandleOpenFileSupportRequest
@@ -16463,6 +16663,7 @@
 80370D88,code,TRKTargetReadInstruction
 80370DD4,code,TRKTargetAccessMemory
 80370F20,code,TRKValidMemory32
+803711C4,code,$_static_symbol_803711C4_targimpl.o_.text
 803711D0,code,TRKAccessFile
 803711D8,code,TRKOpenFile
 803711E0,code,TRKCloseFile
@@ -16477,6 +16678,7 @@
 803719F8,code,__TRK_copy_vectors
 80371B24,code,TRKTargetTranslate
 80371B7C,code,EnableMetroTRKInterrupts
+80371B9C,code,$_static_symbol_80371B9C_dolphin_trk.o_.text
 80371B9C,code,TRK_main
 80371BF4,code,TRKLoadContext
 80371C7C,code,TRKUARTInterruptHandler
@@ -16496,6 +16698,7 @@
 80372190,code,SetUseSerialIO
 8037219C,code,__TRK_write_console
 80372258,code,__read_console
+80372314,code,$_static_symbol_80372314_mslsupp.o_.text
 80372314,code,udp_cc_post_stop
 8037231C,code,udp_cc_pre_continue
 80372324,code,udp_cc_peek
@@ -16555,6 +16758,7 @@
 8037338C,code,DBGRead
 80373468,code,DBGReadMailbox
 80373514,code,DBGEXIImm
+803737AC,code,$_static_symbol_803737AC_DebuggerDriver.o_.text
 803737AC,code,Hu_IsStub
 803737C0,data,__init_cpp_exceptions_reference
 80373980,data,__destroy_global_chain_reference
@@ -16659,6 +16863,7 @@
 8037B0D0,data,@stringBase0
 8037B0D8,data,typeToTypeGroup__7dTres_c
 8037B100,data,@stringBase0
+8037B140,data,$_static_symbol_8037B140_d_eye_hl.o__fill___.rodata
 8037B140,data,black_tex
 8037B180,data,msg_data
 8037B3E0,data,font_data
@@ -17071,6 +17276,7 @@
 80394F70,data,@stringBase0
 80394F78,data,@3778
 80394F84,data,...rodata.0
+80394F84,data,$_static_symbol_80394F84_d_menu_collect.o_.rodata
 80394F88,data,text_sv$4768
 80394FA0,data,text_op$4769
 80394FB8,data,ftext_sv$4770
@@ -17105,6 +17311,7 @@
 803955F0,data,cont_bt$4211
 80395618,data,c_tag$4229
 80395628,data,@4325
+80395642,data,$_static_symbol_80395642_d_menu_dmap.o_.rodata
 80395648,data,floor_tag$4932
 80395688,data,icon_tag$4933
 803956C8,data,boss_tag$4934
@@ -17202,6 +17409,7 @@
 80396D98,data,text_b_tag$5025
 80396DC0,data,@stringBase0
 80396EA8,data,dMo_soundMode
+80396EB4,data,$_static_symbol_80396EB4_d_menu_option.o_.rodata
 80396EB8,data,text_a_tag$1682
 80396EE0,data,text_b_tag$1683
 80396F08,data,l_tagName012$1684
@@ -17528,6 +17736,7 @@
 8039D490,data,@stringBase0
 8039D9A0,data,@stringBase0
 8039D9A8,data,@stringBase0
+8039DA20,data,$_static_symbol_8039DA20_JUTConsole.o__fill___.rodata
 8039DA20,data,JUTResFONT_Ascfont_fix12
 803A1B80,data,j2dDefaultTexCoordInfo
 803A1BA0,data,j2dDefaultTexMtxInfo
@@ -17693,6 +17902,7 @@
 803A2F60,data,g_ntscZeldaIntDf
 803A2F9C,data,g_ntscZeldaProg
 803A2FD8,data,g_mDoMtx_identity
+803A3020,data,$_static_symbol_803A3020_m_Do_mtx.o__fill___.data
 803A3020,data,l_invisibleMat$7041
 803A30A8,data,gap_07_803A30A8_data
 803A30C0,data,l_matDL
@@ -17800,6 +18010,7 @@
 803A7218,data,__vt__8cM3dGAab
 803A7224,data,__vt__15cCcD_DivideInfo
 803A7230,data,__vt__12dCcMassS_Mng
+803A723C,data,$_static_symbol_803A723C_d_com_inf_game.o_.data
 803A7240,data,ZeroQuat
 803A7250,data,__vt__10CSTControl
 803A7260,data,__vt__9STControl
@@ -17807,6 +18018,7 @@
 803A7288,data,saveBitLabels__16dSv_event_flag_c
 803A78F8,data,__vt__8cM3dGLin
 803A7904,data,__vt__8cM3dGSph
+803A7910,data,$_static_symbol_803A7910_d_jnt_col.o_.data
 803A7910,data,__vt__16dDemo_particle_c
 803A7928,data,__vt__17jmessage_tControl
 803A7934,data,__vt__Q27JStudio13TCreateObject
@@ -17827,6 +18039,7 @@
 803A7C84,data,__vt__11J3DTexNoAnm
 803A7C90,data,__vt__18dRenderingFDAmap_c
 803A7CF8,data,__vt__11dDrawPath_c
+803A7D38,data,$_static_symbol_803A7D38_d_map_path.o_.data
 803A7D38,data,@2134
 803A7D74,data,__vt__19dMenuFmapIconDisp_c
 803A7D80,data,__vt__19renderingPlusDoor_c
@@ -17892,22 +18105,36 @@
 803A8730,data,@1645
 803A873C,data,@1646
 803A8748,data,m_emitterFourData__8dPaPoF_c
+803A87A0,data,$_static_symbol_803A87A0_d_particle_copoly.o__fill___.data
 803A87A0,data,cNullVec__6Z2Calc
 803A87AC,data,...data.0
+803A87AC,data,$_static_symbol_803A87AC_d_drawlist.o_.data
 803A87C0,data,l_frontZMat
+803A87FC,data,$_static_symbol_803A87FC_d_drawlist.o_.data
 803A8800,data,l_frontNoZSubMat
 803A882C,data,l_shadowVolPos
+803A888C,data,$_static_symbol_803A888C_d_drawlist.o_.data
 803A88A0,data,l_shadowVolDL
+803A88DB,data,$_static_symbol_803A88DB_d_drawlist.o_.data
 803A88E0,data,l_shadowProjMat
+803A893A,data,$_static_symbol_803A893A_d_drawlist.o_.data
 803A8940,data,l_shadowVolMat
+803A899A,data,$_static_symbol_803A899A_d_drawlist.o_.data
 803A89A0,data,l_clearMat
+803A89F5,data,$_static_symbol_803A89F5_d_drawlist.o_.data
 803A8A00,data,l_frontMat
+803A8A55,data,$_static_symbol_803A8A55_d_drawlist.o_.data
 803A8A60,data,l_backSubMat
 803A8A9C,data,l_simpleShadowPos
+803A8B44,data,$_static_symbol_803A8B44_d_drawlist.o_.data
 803A8B60,data,l_shadowVolumeDL
+803A8BB8,data,$_static_symbol_803A8BB8_d_drawlist.o_.data
 803A8BC0,data,l_shadowSealTexDL
+803A8C15,data,$_static_symbol_803A8C15_d_drawlist.o_.data
 803A8C20,data,l_shadowSealTex2DL
+803A8C75,data,$_static_symbol_803A8C75_d_drawlist.o_.data
 803A8C80,data,l_shadowSealDL
+803A8CE9,data,$_static_symbol_803A8CE9_d_drawlist.o_.data
 803A8D00,data,l_matDL$5404
 803A8D7C,data,l_imageDrawColor$5405
 803A8D8C,data,l_tevColorChan$5438
@@ -17962,12 +18189,14 @@
 803A9C48,data,__vt__19dAttDraw_CallBack_c
 803A9C54,data,__vt__15dAttDrawParam_c
 803A9C60,data,__vt__11dAttParam_c
+803A9C6C,data,$_static_symbol_803A9C6C_d_attention.o_.data
 803A9C70,data,dist_table__12dAttention_c
 803AB608,data,__vt__4dBgS
 803AB61C,data,__vt__4cBgS
 803AB630,data,__vt__11cBgS_ChkElm
 803AB640,data,__vt__9dBgS_Acch
 803AB664,data,__vt__12dBgS_AcchCir
+803AB670,data,$_static_symbol_803AB670_d_bg_s_acch.o_.data
 803AB670,data,__vt__8dBgS_Chk
 803AB688,data,__vt__18dBgS_CamGndChk_Wtr
 803AB6B8,data,__vt__14dBgS_CamGndChk
@@ -17975,6 +18204,7 @@
 803AB718,data,__vt__18dBgS_ObjGndChk_Spl
 803AB748,data,__vt__18dBgS_ObjGndChk_Wtr
 803AB778,data,__vt__11dBgS_GndChk
+803AB7A8,data,$_static_symbol_803AB7A8_d_bg_s_gnd_chk.o_.data
 803AB7A8,data,__vt__15dBgS_GrpPassChk
 803AB7B4,data,__vt__15cBgS_GrpPassChk
 803AB7C0,data,__vt__16dBgS_HorseLinChk
@@ -18000,6 +18230,7 @@
 803ABBA8,data,__vt__4cBgW
 803ABCAC,data,__vt__13cBgW_NodeTree
 803ABCB8,data,__vt__11cBgW_RwgElm
+803ABCC4,data,$_static_symbol_803ABCC4_d_bg_w.o_.data
 803ABCC8,data,__vt__9dBgW_Base
 803ABDB8,data,__vt__9cBgW_BgId
 803ABDC8,data,__vt__8dBgWKCol
@@ -18620,6 +18851,7 @@
 803BA0A0,data,arcName$1960
 803BA0C0,data,l_sightDL
 803BA14C,data,__vt__18daPy_sightPacket_c
+803BA15C,data,$_static_symbol_803BA15C_d_a_player.o_.data
 803BA160,data,cNullVec__6Z2Calc
 803BA16C,data,...data.0
 803BA16C,data,@4478
@@ -18701,6 +18933,7 @@
 803BA878,data,SelOpenEndFrameTbl
 803BA884,data,MenuSelStartFrameTbl
 803BA890,data,MenuSelEndFrameTbl
+803BA89C,data,$_static_symbol_803BA89C_d_file_select.o_.data
 803BA8A0,data,l_tagName13
 803BA8B8,data,@4167
 803BA8C4,data,@4168
@@ -18752,6 +18985,7 @@
 803BAAEC,data,DataSelProc
 803BAD20,data,l_tagName101$5620
 803BAD30,data,l_numTex$5621
+803BAD3C,data,$_static_symbol_803BAD3C_d_file_select.o_.data
 803BAD40,data,l_tagName0$6517
 803BAD58,data,l_tagName3$6528
 803BAD70,data,l_tagName4$6529
@@ -18846,6 +19080,7 @@
 803BB480,data,__vt__15dFile_warning_c
 803BB48C,data,gap_07_803BB48C_data
 803BB498,data,cNullVec__6Z2Calc
+803BB4A4,data,$_static_symbol_803BB4A4_d_file_sel_info.o_.data
 803BB4A8,data,l_htag$1666
 803BB548,data,amariheartTex$1667
 803BB558,data,@1708
@@ -18860,6 +19095,7 @@
 803BB5D4,data,brightChackProc
 803BB5EC,data,__vt__19dDlst_BrightCheck_c
 803BB5FC,data,__vt__14dBrightCheck_c
+803BB608,data,$_static_symbol_803BB608_d_bright_check.o_.data
 803BB618,data,cNullVec__6Z2Calc
 803BB624,data,...data.0
 803BB624,data,@3693
@@ -18879,7 +19115,9 @@
 803BB72C,data,bpk_name$1508
 803BB73C,data,btk_name$1509
 803BB74C,data,btk2_name$1510
+803BB75C,data,$_static_symbol_803BB75C_d_select_cursor.o_.data
 803BB78C,data,__vt__16dSelect_cursor_c
+803BB79C,data,$_static_symbol_803BB79C_d_select_cursor.o_.data
 803BB7A8,data,__vt__19dSelect_cursorHIO_c
 803BB7B8,data,__vt__9dSi_HIO_c
 803BB7C8,data,cam_seira_shop
@@ -18904,6 +19142,7 @@
 803BB95C,data,@1777
 803BB968,data,@1778
 803BB974,data,process
+803BBA04,data,$_static_symbol_803BBA04_d_shop_system.o_.data
 803BBA7C,data,__vt__13dShopSystem_c
 803BBB50,data,cNullVec__6Z2Calc
 803BBB5C,data,@1647
@@ -18931,7 +19170,9 @@
 803BBD40,data,g_profile_GAMEOVER
 803BBD68,data,__vt__24dDlst_GameOverScrnDraw_c
 803BBD78,data,__vt__12dMenu_save_c
+803BBD84,data,$_static_symbol_803BBD84_d_gameover.o_.data
 803BBD90,data,__vt__10dGov_HIO_c
+803BBD9C,data,$_static_symbol_803BBD9C_d_gameover.o_.data
 803BBDA8,data,__vt__24dDlst_Gameover_CAPTURE_c
 803BBDB8,data,cNullVec__6Z2Calc
 803BBDC4,data,...data.0
@@ -19172,6 +19413,7 @@
 803BD6E8,data,__vt__15renderingFmap_c
 803BD750,data,__vt__17dMenu_Fmap2DTop_c
 803BD760,data,__vt__18dMenu_Fmap2DBack_c
+803BD77C,data,$_static_symbol_803BD77C_d_menu_fmap2D.o_.data
 803BD780,data,cNullVec__6Z2Calc
 803BD78C,data,@1625
 803BD798,data,@1626
@@ -19258,6 +19500,7 @@
 803BDDDC,data,@1660
 803BDDE8,data,calibration_process
 803BDE24,data,calibration_padding
+803BDE48,data,$_static_symbol_803BDE48_d_menu_option.o_.data
 803BDE54,data,__vt__14dMenu_Option_c
 803BDE70,data,cNullVec__6Z2Calc
 803BDE7C,data,@1753
@@ -19280,6 +19523,7 @@
 803BDFA8,data,SelOpenEndFrameTbl
 803BDFB4,data,YnSelStartFrameTbl
 803BDFC4,data,YnSelEndFrameTbl
+803BDFD4,data,$_static_symbol_803BDFD4_d_menu_save.o_.data
 803BDFD8,data,l_tagName0$3857
 803BDFF0,data,l_tagName000$3866
 803BE000,data,l_tagName000U$3867
@@ -19482,11 +19726,15 @@
 803BF200,data,@5377
 803BF258,data,__vt__14dMeterButton_c
 803BF268,data,__vt__14dMeterHaihai_c
+803BF288,data,$_static_symbol_803BF288_d_meter_haihai.o_.data
 803BF288,data,haku_tag$1501
 803BF2B8,data,__vt__15dMeterHakusha_c
+803BF2D8,data,$_static_symbol_803BF2D8_d_meter_hakusha.o_.data
 803BF2D8,data,@2022
 803BF2F8,data,__vt__11dMeterMap_c
+803BF308,data,$_static_symbol_803BF308_d_meter_map.o_.data
 803BF308,data,__vt__14dMeterString_c
+803BF328,data,$_static_symbol_803BF328_d_meter_string.o_.data
 803BF328,data,bmg_filename$1796
 803BF350,data,i_action_num$5999
 803BF554,data,@6337
@@ -19494,6 +19742,7 @@
 803BF59C,data,@6384
 803BF5C0,data,@6438
 803BF750,data,__vt__13dMeter2Draw_c
+803BF760,data,$_static_symbol_803BF760_d_meter2_draw.o_.data
 803BF760,data,@4572
 803BF7F4,data,tex_name$5183
 803BF81C,data,letter_data__12dMenu_Letter
@@ -19501,6 +19750,7 @@
 803BFA28,data,@2497
 803BFA54,data,l_dMeter2_Method
 803BFA68,data,g_profile_METER2
+803BFA90,data,$_static_symbol_803BFA90_d_meter2.o_.data
 803BFA90,data,@2263
 803BFBA8,data,@2863
 803BFCAC,data,mpIconName$2906
@@ -19555,8 +19805,10 @@
 803C0C3C,data,@1629
 803C0C48,data,@1630
 803C0C54,data,process
+803C0C9C,data,$_static_symbol_803C0C9C_d_msg_scrn_3select.o_.data
 803C0CA0,data,tag_n$1635
 803C0CB8,data,unkdata$1636
+803C0CDC,data,$_static_symbol_803C0CDC_d_msg_scrn_3select.o_.data
 803C0CE8,data,__vt__17dMsgScrn3Select_c
 803C0CF8,data,__vt__15dMsgScrnArrow_c
 803C0D08,data,@1753
@@ -19593,6 +19845,7 @@
 803C1078,data,@1756
 803C1084,data,@1757
 803C1090,data,process
+803C10CC,data,$_static_symbol_803C10CC_d_msg_scrn_howl.o_.data
 803C10D0,data,ylinen_tag
 803C10E8,data,tlinen_tag
 803C1120,data,tline_tag
@@ -19609,7 +19862,9 @@
 803C13C8,data,__vt__14dMsgScrnTalk_c
 803C1420,data,__vt__14dMsgScrnTree_c
 803C1478,data,__vt__16dMsgStringBase_c
+803C1498,data,$_static_symbol_803C1498_d_msg_string_base.o_.data
 803C1498,data,__vt__12dMsgString_c
+803C14B8,data,$_static_symbol_803C14B8_d_msg_string.o_.data
 803C14B8,data,cNullVec__6Z2Calc
 803C14C4,data,...data.0
 803C14C4,data,@4646
@@ -19738,6 +19993,7 @@
 803C26D8,data,@3833
 803C26E4,data,SelProc
 803C2750,data,@4121
+803C2784,data,$_static_symbol_803C2784_d_name.o_.data
 803C2788,data,l_cur0TagName$4610
 803C27C8,data,l_cur1TagName$4611
 803C2808,data,l_menu_icon_tag$4617
@@ -19868,7 +20124,9 @@
 803C366C,data,__vt__12cCcD_TriAttr
 803C36D0,data,__vt__14cCcD_ShapeAttr
 803C3728,data,__vt__9cCcD_Stts
+803C3748,data,$_static_symbol_803C3748_c_cc_d.o_.data
 803C3748,data,__vt__4cCcS
+803C3778,data,$_static_symbol_803C3778_c_cc_s.o_.data
 803C3778,data,atntable
 803C3F80,data,__vt__8cBgS_Chk
 803C3F90,data,__vt__11cBgS_GndChk
@@ -19878,10 +20136,13 @@
 803C3FE0,data,__vt__8cM3dGCir
 803C3FEC,data,__vt__8cM2dGCir
 803C3FF8,data,__vt__8cM3dGCps
+803C4020,data,$_static_symbol_803C4020_c_m3d_g_cps.o__fill___.data
 803C4020,data,e_mtx
+803C4050,data,$_static_symbol_803C4050_JFWDisplay.o_.data
 803C4060,data,clear_z_TX
 803C40A0,data,__vt__10JFWDisplay
 803C40C0,data,jpa_pos
+803C4204,data,$_static_symbol_803C4204_JPAResource.o_.data
 803C4220,data,jpa_crd
 803C4240,data,@851
 803C426C,data,@850
@@ -19947,6 +20208,7 @@
 803C4AC0,data,__vt__Q27JStudio6TParse
 803C4AE0,data,__vt__Q27JStudio8TFactory
 803C4AF4,data,__vt__Q27JStudio8TControl
+803C4B00,data,$_static_symbol_803C4B00_jstudio-control.o_.data
 803C4B00,data,@343
 803C4B0C,data,@346
 803C4B18,data,@349
@@ -20017,6 +20279,7 @@
 803C53AC,data,__vt__Q27JStudio16TObject_particle
 803C53CC,data,__vt__Q27JStudio17TAdaptor_particle
 803C5418,data,__vt__Q27JStudio15TObject_message
+803C5438,data,$_static_symbol_803C5438_jstudio-object.o_.data
 803C545C,data,__vt__Q27JStudio13TObject_light
 803C547C,data,__vt__Q27JStudio14TAdaptor_light
 803C54A4,data,__vt__Q27JStudio11TObject_fog
@@ -20041,6 +20304,7 @@
 803C56D4,data,__vt__Q37JStudio3stb8TControl
 803C56E0,data,__vt__Q37JStudio3stb15TObject_control
 803C5700,data,__vt__Q37JStudio3stb7TObject
+803C5720,data,$_static_symbol_803C5720_stb.o_.data
 803C5720,data,__vt__Q214JStudio_JStage13TCreateObject
 803C5730,data,@474
 803C573C,data,@483
@@ -20055,8 +20319,11 @@
 803C57A8,data,@663
 803C57B4,data,__vt__Q314JStudio_JStage14TAdaptor_actor26TVVOutput_ANIMATION_FRAME_
 803C57C4,data,__vt__Q214JStudio_JStage14TAdaptor_actor
+803C5814,data,$_static_symbol_803C5814_object-actor.o_.data
 803C5864,data,__vt__Q214JStudio_JStage81TVariableValueOutput_object_<Q214JStudio_JStage14TAdaptor_actor,Q26JStage6TActor>
+803C5874,data,$_static_symbol_803C5874_object-actor.o_.data
 803C5888,data,__vt__Q214JStudio_JStage21TAdaptor_ambientLight
+803C58A8,data,$_static_symbol_803C58A8_object-ambientlight.o_.data
 803C58A8,data,@367
 803C58B4,data,@368
 803C58C0,data,@372
@@ -20066,21 +20333,27 @@
 803C58F0,data,@382
 803C58FC,data,@383
 803C5908,data,__vt__Q214JStudio_JStage15TAdaptor_camera
+803C5944,data,$_static_symbol_803C5944_object-camera.o_.data
 803C5980,data,__vt__Q214JStudio_JStage83TVariableValueOutput_object_<Q214JStudio_JStage15TAdaptor_camera,Q26JStage7TCamera>
+803C5990,data,$_static_symbol_803C5990_object-camera.o_.data
 803C59A0,data,@367
 803C59AC,data,@368
 803C59B8,data,@372
 803C59C4,data,@373
 803C59D0,data,__vt__Q214JStudio_JStage12TAdaptor_fog
+803C59F0,data,$_static_symbol_803C59F0_object-fog.o_.data
 803C5A10,data,__vt__Q214JStudio_JStage77TVariableValueOutput_object_<Q214JStudio_JStage12TAdaptor_fog,Q26JStage4TFog>
+803C5A20,data,$_static_symbol_803C5A20_object-fog.o_.data
 803C5A30,data,__vt__Q314JStudio_JStage14TAdaptor_light20TVVOutput_direction_
 803C5A40,data,__vt__Q214JStudio_JStage14TAdaptor_light
 803C5A68,data,__vt__Q215JStudio_JAudio213TCreateObject
 803C5A78,data,__vt__Q315JStudio_JAudio214TAdaptor_sound13TVVOSetValue_
 803C5A88,data,__vt__Q215JStudio_JAudio214TAdaptor_sound
+803C5AD8,data,$_static_symbol_803C5AD8_object-sound.o_.data
 803C5AD8,data,__vt__Q217JStudio_JParticle13TCreateObject
 803C5AF0,data,__vt__Q317JStudio_JParticle17TAdaptor_particle21TJPACallback_emitter_
 803C5B0C,data,__vt__Q217JStudio_JParticle17TAdaptor_particle
+803C5B58,data,$_static_symbol_803C5B58_object-particle.o_.data
 803C5B58,data,__vt__13JASTaskThread
 803C5B68,data,__vt__19JASDefaultBankTable
 803C5B74,data,__vt__17JASBankTable<256>
@@ -20156,9 +20429,11 @@
 803C76A8,data,__vt__12JASBasicBank
 803C76BC,data,__vt__7JASBank
 803C76D0,data,__vt__12JASVoiceBank
+803C76E4,data,$_static_symbol_803C76E4_JASVoiceBank.o_.data
 803C76E8,data,__vt__12JASBasicInst
 803C76FC,data,__vt__7JASInst
 803C7710,data,__vt__10JASDrumSet
+803C7724,data,$_static_symbol_803C7724_JASDrumSet.o_.data
 803C7728,data,__vt__Q216JASBasicWaveBank11TWaveHandle
 803C773C,data,__vt__Q216JASBasicWaveBank10TWaveGroup
 803C7754,data,__vt__13JASWaveHandle
@@ -20166,6 +20441,7 @@
 803C7780,data,__vt__11JASWaveBank
 803C7798,data,__vt__Q217JASSimpleWaveBank11TWaveHandle
 803C77AC,data,__vt__17JASSimpleWaveBank
+803C77DC,data,$_static_symbol_803C77DC_JASSimpleWaveBank.o_.data
 803C77E0,data,sCurrentDir__16JASWaveArcLoader
 803C7820,data,__vt__10JASWaveArc
 803C7838,data,__vt__11JASDisposer
@@ -20176,6 +20452,7 @@
 803C78B8,data,history$267
 803C78E0,data,__vt__14JASAudioThread
 803C78F0,data,SEND_TABLE__6JASDsp
+803C7920,data,$_static_symbol_803C7920_JASDSPInterface.o__fill___.data
 803C7920,data,jdsp
 803C9820,data,__vt__10JAIAudible
 803C9838,data,__vt__11JAIAudience
@@ -20238,6 +20515,7 @@
 803CA9BC,data,@5852
 803CAB18,data,@377
 803CAC48,data,__vt__11Z2SoundInfo
+803CAC98,data,$_static_symbol_803CAC98_Z2SoundInfo.o_.data
 803CAC98,data,__vt__10Z2Audience
 803CACB8,data,__vt__9Z2Audible
 803CACCC,data,gap_07_803CACCC_data
@@ -20317,16 +20595,19 @@
 803CC398,data,__vt__13JKRDvdArchive
 803CC3E8,data,__vt__14JKRCompArchive
 803CC438,data,__vt__10JKRDvdFile
+803CC45C,data,$_static_symbol_803CC45C_JKRDvdFile.o_.data
 803CC460,data,sMessageBuffer__9JKRDecomp
 803CC480,data,sMessageQueue__9JKRDecomp
 803CC4A0,data,__vt__9JKRDecomp
 803CC4B0,data,__vt__20JSURandomInputStream
 803CC4D4,data,__vt__14JSUInputStream
 803CC4F0,data,__vt__20JSUMemoryInputStream
+803CC514,data,$_static_symbol_803CC514_JSUMemoryStream.o_.data
 803CC518,data,__vt__18JSUFileInputStream
 803CC540,data,__vt__12JUTCacheFont
 803CC590,data,__vt__12JUTGraphFifo
 803CC5A0,data,__vt__10JUTResFont
+803CC5EC,data,$_static_symbol_803CC5EC_JUTResFont.o_.data
 803CC5F0,data,sChannelMask__Q210JUTGamePad7CRumble
 803CC600,data,channel_mask
 803CC610,data,__vt__10JUTGamePad
@@ -20365,6 +20646,7 @@
 803CD108,data,__vt__9J2DWindow
 803CD1D8,data,__vt__10J2DPicture
 803CD328,data,__vt__10J2DTextBox
+803CD3E4,data,$_static_symbol_803CD3E4_J2DTextBox.o_.data
 803CD3E8,data,__vt__11J2DWindowEx
 803CD4B4,data,gap_07_803CD4B4_data
 803CD4B8,data,__vt__12J2DPictureEx
@@ -20385,9 +20667,11 @@
 803CD7A8,data,__vt__11J2DAnmColor
 803CD7BC,data,__vt__18J2DAnmTransformKey
 803CD7D4,data,__vt__19J2DAnmTransformFull
+803CD7E8,data,$_static_symbol_803CD7E8_J2DAnimation.o_.data
 803CD7E8,data,@556
 803CD82C,data,@606
 803CD880,data,c2r$899
+803CD8A0,data,$_static_symbol_803CD8A0_J3DGD.o__fill___.data
 803CD8A0,data,NullTexData
 803CD8B0,data,j3dIdentityMtx
 803CD8E0,data,IndMtx
@@ -20496,7 +20780,9 @@
 803CEE24,data,__vt__19J3DAnmTextureSRTKey
 803CEE34,data,__vt__27J3DAnmTransformFullWithLerp
 803CEE48,data,__vt__19J3DAnmTransformFull
+803CEE5C,data,$_static_symbol_803CEE5C_J3DAnimation.o_.data
 803CEE60,data,__vt__14J3DMaterialAnm
+803CEE70,data,$_static_symbol_803CEE70_J3DMaterialAnm.o_.data
 803CEE70,data,__vt__13J3DSkinDeform
 803CEE80,data,__vt__16J3DMaterialTable
 803CEE8C,data,gap_07_803CEE8C_data
@@ -20504,6 +20790,7 @@
 803CEF0C,data,__vt__15J3DTevBlockNull
 803CEFE8,data,__vt__18J3DTexGenBlockNull
 803CF054,data,__vt__17J3DColorBlockNull
+803CF0E4,data,$_static_symbol_803CF0E4_J3DMaterialFactory.o_.data
 803CF0E8,data,__vt__20J3DClusterLoader_v15
 803CF0F8,data,__vt__16J3DClusterLoader
 803CF108,data,__vt__18J3DModelLoader_v21
@@ -20512,10 +20799,12 @@
 803CF1BC,data,__vt__75J3DMtxCalcNoAnm<28J3DMtxCalcCalcTransformBasic,25J3DMtxCalcJ3DSysInitBasic>
 803CF1E8,data,__vt__10J3DTexture
 803CF1F4,data,__vt__14J3DModelLoader
+803CF238,data,$_static_symbol_803CF238_J3DModelLoader.o_.data
 803CF238,data,__vt__19J3DAnmKeyLoader_v15
 803CF24C,data,__vt__20J3DAnmFullLoader_v15
 803CF260,data,__vt__12J3DAnmLoader
 803CF274,data,__vt__20J3DAnmVisibilityFull
+803CF284,data,$_static_symbol_803CF284_J3DAnmLoader.o_.data
 803CF288,data,@8
 803CF2CC,data,@102
 803CF2DC,data,@103
@@ -20536,6 +20825,7 @@
 803CF434,data,@151
 803CF464,data,@152
 803CF480,data,ResetFunctionInfo
+803CF490,data,$_static_symbol_803CF490_OSAlarm.o_.data
 803CF490,data,DSPInitCode
 803CF510,data,@68
 803CF53C,data,@87
@@ -20651,6 +20941,7 @@
 803D1480,data,@243
 803D14B4,data,@269
 803D14E4,data,@315
+803D151E,data,$_static_symbol_803D151E_dvdfs.o_.data
 803D1520,data,@8
 803D1568,data,@21
 803D1574,data,@27
@@ -20695,10 +20986,12 @@
 803D1E08,data,@300
 803D1E38,data,@3
 803D1E80,data,ResetFunctionInfo
+803D1EA0,data,$_static_symbol_803D1EA0_CARDBios.o__fill___.data
 803D1EA0,data,CardData
 803D2000,data,SectorSizeTable
 803D2020,data,LatencyTable
 803D2040,data,@17
+803D2084,data,$_static_symbol_803D2084_GXInit.o_.data
 803D20A0,data,DefaultTexData
 803D20C0,data,GXDefaultVATList
 803D2190,data,GXDefaultProjData
@@ -20710,15 +21003,18 @@
 803D2394,data,@510
 803D23D8,data,@776
 803D23F4,data,@775
+803D2448,data,$_static_symbol_803D2448_GXAttr.o_.data
 803D2448,data,GXNtsc480IntDf
 803D2484,data,GXNtsc480Int
 803D24C0,data,GXMpal480IntDf
 803D24FC,data,GXPal528IntDf
 803D2538,data,GXEurgb60Hz480IntDf
+803D2574,data,$_static_symbol_803D2574_GXFrameBuf.o_.data
 803D2578,data,@81
 803D2598,data,@105
 803D268C,data,@146
 803D2780,data,@225
+803D27BC,data,$_static_symbol_803D27BC_GXTexture.o_.data
 803D27C0,data,TEVCOpTableST0
 803D27D4,data,TEVCOpTableST1
 803D27E8,data,TEVAOpTableST0
@@ -20727,7 +21023,9 @@
 803D2838,data,p2f$360
 803D2858,data,@415
 803D28B4,data,@414
+803D2944,data,$_static_symbol_803D2944_GXPerf.o_.data
 803D2948,data,@120
+803D29B0,data,$_static_symbol_803D29B0_GDGeometry.o_.data
 803D29B0,data,__files
 803D2AF0,data,@1238
 803D2C18,data,__ctype_map
@@ -20774,14 +21072,18 @@
 803DD8D8,data,@1437
 803DD8E4,data,mClipper__14mDoLib_clipper
 803DD940,data,l_thread__9mDoDvdThd
+803DDC58,data,$_static_symbol_803DDC58_m_Do_dvd_thread.o_.bss
 803DDC60,data,l_threadStack__9mDoDvdThd
 803DEC60,data,l_param__9mDoDvdThd
 803DECA8,data,padding
 803DECC0,data,DvdErr_thread
+803DEFD8,data,$_static_symbol_803DEFD8_m_Do_DVDError.o_.bss
 803DEFE0,data,DvdErr_stack
 803DFBE0,data,Alarm
+803DFC20,data,$_static_symbol_803DFC20_m_Do_DVDError.o__fill___.bss
 803DFC20,data,MemCardStack
 803E0C20,data,MemCardThread
+803E0F38,data,$_static_symbol_803E0F38_m_Do_MemCard.o_.bss
 803E0F40,data,MemCardWorkArea0
 803EAF40,data,g_mDoMemCd_control
 803ECF40,data,sTmpBuf
@@ -21090,6 +21392,7 @@
 80430110,data,g_cursorHIO
 80430158,data,i_text_buf$6000
 80430178,data,@3846
+80430184,data,$_static_symbol_80430184_d_meter2_info.o_.bss
 80430188,data,g_meter2_info
 80430280,data,@4011
 8043028C,data,g_MsgObject_HIO_c
@@ -21236,6 +21539,7 @@
 80431BB0,data,sBankDisposeMsg__10JASChannel
 80431BF0,data,sBankDisposeList__10JASChannel
 80431C30,data,@330
+80431C3C,data,$_static_symbol_80431C3C_JASChannel.o_.bss
 80431C40,data,sFreeRunLfo__6JASLfo
 80431C58,data,sDmaDacBuffer__9JASDriver
 80431C64,data,gap_08_80431C64_bss
@@ -21245,6 +21549,7 @@
 80431D78,data,sSubFrameCallback__9JASDriver
 80431E78,data,sUpdateDacCallback__9JASDriver
 80431F80,data,audio_task
+80431FD0,data,$_static_symbol_80431FD0_dsptask.o_.bss
 80431FE0,data,AUDIO_YIELD_BUFFER
 80433FE0,data,taskwork
 80434060,data,sync_stack
@@ -21254,9 +21559,11 @@
 80434098,data,@315
 804340A4,data,@493
 804340B0,data,memPool_$localstatic3$getMemPool___35JASPoolAllocObject<13JAISoundChild>Fv
+804340C0,data,$_static_symbol_804340C0_JAISeq.o_.bss
 804340C0,data,@329
 804340CC,data,memPool_$localstatic3$getMemPool___27JASPoolAllocObject<6JAISeq>Fv
 804340E0,data,@365
+804340EC,data,$_static_symbol_804340EC_JAIStream.o_.bss
 804340F0,data,@284
 804340FC,data,memPool_$localstatic3$getMemPool___30JASPoolAllocObject<9JAIStream>Fv
 80434110,data,@267
@@ -21265,6 +21572,7 @@
 80434134,data,@366
 80434140,data,@370
 8043414C,data,@374
+80434158,data,$_static_symbol_80434158_JAUInitializer.o_.bss
 804341B8,data,@189
 804341C4,data,memPool_$localstatic3$getMemPool___39JASPoolAllocObject<17Z2SoundHandlePool>Fv
 804341D8,data,@1539
@@ -21309,6 +21617,7 @@
 80434578,data,exCallbackObject
 8043458C,data,@302
 80434598,data,sMapFileList__12JUTException
+804345A4,data,$_static_symbol_804345A4_JUTException.o_.bss
 804345A8,data,context
 80434870,data,sMessageFileLine__Q212JUTAssertion23@unnamed@JUTAssert_cpp@
 804348B0,data,sMessageString__Q212JUTAssertion23@unnamed@JUTAssert_cpp@
@@ -21357,6 +21666,7 @@
 8044C810,data,InputBufferVcount
 8044C820,data,cmdFixDevice$336
 8044C830,data,CommandList
+8044C86C,data,$_static_symbol_8044C86C_dvdlow.o_.bss
 8044C870,data,AlarmForWA
 8044C898,data,AlarmForTimeout
 8044C8C0,data,AlarmForBreak
@@ -21382,6 +21692,7 @@
 8044D430,data,fragmentinfo
 8044D440,data,__atexit_funcs
 8044D540,data,protopool$48
+8044D578,data,$_static_symbol_8044D578_alloc.o_.bss
 8044D578,data,stderr_buff
 8044D678,data,stdout_buff
 8044D778,data,stdin_buff
@@ -21631,7 +21942,9 @@
 804509B8,data,SwitchThreadCallback
 804509BC,data,@736
 804509C0,data,__EXIVersion
+804509C4,data,$_static_symbol_804509C4_EXIBios.o_.sdata
 804509C8,data,__SIVersion
+804509CC,data,$_static_symbol_804509CC_SIBios.o_.sdata
 804509D0,data,Unit01
 804509D8,data,FirstRead
 804509E0,data,@122
@@ -21681,6 +21994,7 @@
 80450AEC,data,__float_epsilon
 80450AF0,data,SendCount
 80450B00,data,fillcheck_check_frame
+80450B01,data,$_static_symbol_80450B01_m_Do_main.o_.sbss
 80450B08,data,sPowerOnTime__7mDoMain
 80450B10,data,sHungUpTime__7mDoMain
 80450B18,data,mDisplayHeapSize
@@ -22046,6 +22360,7 @@
 8045105C,data,dShopSystem_item_count
 80451060,data,data_80451060
 80451064,data,dShopSystem_camera_count
+80451068,data,$_static_symbol_80451068_d_shop_system.o_.sbss
 80451068,data,S_fuwan_sin$5904
 8045106A,data,data_8045106A
 8045106B,data,data_8045106B
@@ -22119,6 +22434,7 @@
 804511C0,data,sManager__10JFWDisplay
 804511C4,data,prevFrame$637
 804511C8,data,init$638
+804511C9,data,$_static_symbol_804511C9_JFWDisplay.o_.sbss
 804511D0,data,nextTick$680
 804511D8,data,init$681
 804511DC,data,nextCount$688
@@ -22304,6 +22620,7 @@
 804514E8,data,mEnabled__Q210JUTGamePad7CRumble
 804514EC,data,sCallback__Q210JUTGamePad13C3ButtonReset
 804514F0,data,sCallbackArg__Q210JUTGamePad13C3ButtonReset
+804514F4,data,$_static_symbol_804514F4_JUTGamePad.o_.sbss
 804514F8,data,sThreshold__Q210JUTGamePad13C3ButtonReset
 80451500,data,sResetSwitchPushing__Q210JUTGamePad13C3ButtonReset
 80451501,data,sResetOccurred__Q210JUTGamePad13C3ButtonReset
@@ -22370,6 +22687,7 @@
 80451620,data,AreWeInitialized
 80451624,data,OSExceptionTable
 80451628,data,__OSInIPL
+8045162C,data,$_static_symbol_8045162C_OS.o_.sbss
 80451630,data,__OSStartTime
 80451638,data,AlarmQueue
 80451640,data,HeapArray
@@ -22385,6 +22703,7 @@
 80451670,data,InterruptHandlerTable
 80451674,data,__OSLastInterruptSrr0
 80451678,data,__OSLastInterrupt
+8045167A,data,$_static_symbol_8045167A_OSInterrupt.o_.sbss
 80451680,data,__OSLastInterruptTime
 80451688,data,SaveStart
 8045168C,data,SaveEnd
@@ -22393,11 +22712,13 @@
 804516A0,data,ResetCallback
 804516A4,data,Down
 804516A8,data,LastState
+804516AC,data,$_static_symbol_804516AC_OSResetSW.o_.sbss
 804516B0,data,HoldUp
 804516B8,data,HoldDown
 804516C0,data,RunQueueBits
 804516C4,data,RunQueueHint
 804516C8,data,Reschedule
+804516CC,data,$_static_symbol_804516CC_OSThread.o_.sbss
 804516D0,data,Debug_BBA_804516D0
 804516D8,data,IDSerialPort1
 804516E0,data,Chan
@@ -22420,6 +22741,7 @@
 80451730,data,Breaking
 80451734,data,WorkAroundType
 80451738,data,WorkAroundSeekLocation
+8045173C,data,$_static_symbol_8045173C_dvdlow.o_.sbss
 80451740,data,LastReadFinished
 80451748,data,LastReadIssued
 80451750,data,LastCommandWasRead
@@ -22450,6 +22772,7 @@
 804517B8,data,MotorState
 804517BC,data,DVDInitialized
 804517C0,data,LastState
+804517C4,data,$_static_symbol_804517C4_dvd.o_.sbss
 804517C8,data,FatalFunc
 804517D0,data,status
 804517D4,data,bb2
@@ -22465,8 +22788,10 @@
 80451804,data,displayOffsetH
 80451806,data,displayOffsetV
 80451808,data,changeMode
+8045180C,data,$_static_symbol_8045180C_vi.o_.sbss
 80451810,data,changed
 80451818,data,shdwChangeMode
+8045181C,data,$_static_symbol_8045181C_vi.o_.sbss
 80451820,data,shdwChanged
 80451828,data,CurrTiming
 8045182C,data,CurrTvMode
@@ -22497,6 +22822,7 @@
 804518A0,data,min_wait
 804518A8,data,max_wait
 804518B0,data,buffer
+804518B8,data,$_static_symbol_804518B8_ai.o_.sbss
 804518B8,data,__AR_Callback
 804518BC,data,__AR_Size
 804518C0,data,__AR_InternalSize
@@ -22520,6 +22846,7 @@
 8045190C,data,__DSP_last_task
 80451910,data,__DSP_first_task
 80451914,data,__DSP_curr_task
+80451918,data,$_static_symbol_80451918_dsp_task.o_.sbss
 80451918,data,__CARDEncode
 8045191A,data,__CARDFastMode
 80451920,data,__piReg
@@ -22527,6 +22854,7 @@
 80451928,data,__peReg
 8045192C,data,__memReg
 80451930,data,peCount
+80451934,data,$_static_symbol_80451934_GXInit.o_.sbss
 80451938,data,time
 80451940,data,calledOnce
 80451944,data,resetFuncRegistered
@@ -22565,10 +22893,12 @@
 80451A08,data,@1708
 80451A0C,data,@1709
 80451A10,data,@1710
+80451A14,data,$_static_symbol_80451A14_m_Do_main.o_.sdata2
 80451A18,data,@1712
 80451A20,data,@330
 80451A24,data,@331
 80451A28,data,@332
+80451A2C,data,$_static_symbol_80451A2C_m_Do_controller_pad.o_.sdata2
 80451A30,data,@334
 80451A38,data,@4062
 80451A3C,data,@4063
@@ -22601,6 +22931,7 @@
 80451AB4,data,@4528
 80451ABC,data,@4592
 80451AC0,data,@4593
+80451AC4,data,$_static_symbol_80451AC4_m_Do_graphic.o_.sdata2
 80451AC8,data,@4595
 80451AD0,data,@4641
 80451AD4,data,@4642
@@ -22625,6 +22956,7 @@
 80451B28,data,@5939
 80451B2C,data,@6819
 80451B30,data,@7404
+80451B34,data,$_static_symbol_80451B34_m_Do_ext.o_.sdata2
 80451B38,data,@7406
 80451B40,data,@7624
 80451B44,data,@7625
@@ -22660,6 +22992,7 @@
 80451BD4,data,@1950
 80451BD8,data,@1952
 80451BE0,data,@2020
+80451BE4,data,$_static_symbol_80451BE4_f_op_actor.o_.sdata2
 80451BE8,data,@2022
 80451BF0,data,@2071
 80451BF4,data,@2072
@@ -22700,6 +23033,7 @@
 80451CA0,data,@1472
 80451CA4,data,@1473
 80451CA8,data,@1474
+80451CAC,data,$_static_symbol_80451CAC_d_map.o_.sdata2
 80451CB0,data,@1476
 80451CB8,data,@1478
 80451CC0,data,l_lineWidthPatOff$1624
@@ -22718,6 +23052,7 @@
 80451D00,data,@2558
 80451D04,data,@2674
 80451D08,data,@3154
+80451D0C,data,$_static_symbol_80451D0C_d_com_inf_game.o_.sdata2
 80451D10,data,@3156
 80451D18,data,@3588
 80451D1C,data,@3589
@@ -22738,6 +23073,7 @@
 80451D60,data,@1051
 80451D64,data,@1547
 80451D68,data,@1548
+80451D6C,data,$_static_symbol_80451D6C_d_jnt_col.o_.sdata2
 80451D70,data,@1549
 80451D78,data,@1550
 80451D80,data,@1551
@@ -22760,6 +23096,7 @@
 80451DD0,data,@4642
 80451DD4,data,@4655
 80451DD8,data,@4710
+80451DDC,data,$_static_symbol_80451DDC_d_demo.o_.sdata2
 80451DE0,data,@5123
 80451DE8,data,@5322
 80451DEC,data,gap_11_80451DEC_sdata2
@@ -22777,6 +23114,7 @@
 80451E2C,data,@3887
 80451E30,data,@3957
 80451E38,data,@4202
+80451E3C,data,$_static_symbol_80451E3C_d_map_path_dmap.o_.sdata2
 80451E40,data,@4211
 80451E48,data,l_mapBaseColor$4239
 80451E4C,data,@4264
@@ -22813,12 +23151,14 @@
 80451ED4,data,@1840
 80451ED8,data,@1842
 80451EE0,data,@2019
+80451EE4,data,$_static_symbol_80451EE4_d_event_data.o_.sdata2
 80451EE8,data,@2020
 80451EF0,data,@2222
 80451EF4,data,@2223
 80451EF8,data,@2589
 80451EFC,data,@2730
 80451F00,data,@1884
+80451F04,data,$_static_symbol_80451F04_d_event_manager.o_.sdata2
 80451F08,data,@1885
 80451F10,data,@1886
 80451F18,data,@1887
@@ -22837,6 +23177,7 @@
 80451F58,data,@4049
 80451F5C,data,@4090
 80451F60,data,@4091
+80451F64,data,$_static_symbol_80451F64_d_particle.o_.sdata2
 80451F68,data,@4093
 80451F70,data,@4391
 80451F74,data,@4473
@@ -22874,6 +23215,7 @@
 80452008,data,@4072
 8045200C,data,@4073
 80452010,data,@4074
+80452014,data,$_static_symbol_80452014_d_drawlist.o_.sdata2
 80452018,data,@4076
 80452020,data,@4079
 80452028,data,@4270
@@ -22896,6 +23238,7 @@
 80452070,data,@5267
 80452074,data,@5268
 80452078,data,@5269
+8045207C,data,$_static_symbol_8045207C_d_drawlist.o_.sdata2
 80452080,data,@5270
 80452088,data,@5271
 80452090,data,@5272
@@ -22952,6 +23295,7 @@
 80452168,data,@3107
 8045216C,data,@3108
 80452170,data,@3109
+80452174,data,$_static_symbol_80452174_d_kankyo_wether.o_.sdata2
 80452178,data,@3282
 80452180,data,@3283
 80452188,data,@3284
@@ -23092,6 +23436,7 @@
 804523C0,data,@6362
 804523C4,data,@6363
 804523C8,data,@6364
+804523CC,data,$_static_symbol_804523CC_d_kankyo_rain.o_.sdata2
 804523D0,data,@6365
 804523D8,data,@6366
 804523DC,data,@6367
@@ -23116,6 +23461,7 @@
 80452428,data,@6947
 8045242C,data,@6948
 80452430,data,@6949
+80452434,data,$_static_symbol_80452434_d_kankyo_rain.o_.sdata2
 80452438,data,@6950
 80452440,data,@6951
 80452444,data,@6952
@@ -23255,6 +23601,7 @@
 80452660,data,@1471
 80452664,data,@1478
 80452668,data,@1805
+8045266C,data,$_static_symbol_8045266C_d_attention.o_.sdata2
 80452670,data,@1807
 80452678,data,@1876
 80452680,data,@1877
@@ -23264,6 +23611,7 @@
 80452698,data,@2427
 8045269C,data,@2428
 804526A0,data,@2922
+804526A4,data,$_static_symbol_804526A4_d_attention.o_.sdata2
 804526A8,data,@2924
 804526B0,data,@3035
 804526B4,data,@3036
@@ -23298,6 +23646,7 @@
 80452738,data,@5299
 80452740,data,@5300
 80452748,data,@5301
+8045274C,data,$_static_symbol_8045274C_d_bg_w_kcol.o_.sdata2
 80452750,data,@6099
 80452758,data,@253
 8045275C,data,@254
@@ -23310,10 +23659,12 @@
 80452778,data,@3705
 8045277C,data,@3924
 80452780,data,@3925
+80452784,data,$_static_symbol_80452784_d_cc_s.o_.sdata2
 80452788,data,@3927
 80452790,data,@4336
 80452794,data,gap_11_80452794_sdata2
 80452798,data,@1976
+8045279C,data,$_static_symbol_8045279C_d_cc_uty.o_.sdata2
 804527A0,data,@1977
 804527A8,data,@1978
 804527B0,data,@1979
@@ -23321,6 +23672,7 @@
 804527BC,data,@1981
 804527C0,data,@1982
 804527C8,data,@3769
+804527CC,data,$_static_symbol_804527CC_d_cam_param.o_.sdata2
 804527D0,data,@3770
 804527D8,data,@3771
 804527E0,data,@3772
@@ -23372,14 +23724,17 @@
 804528B0,data,@4140
 804528B4,data,@4173
 804528B8,data,@5141
+804528BC,data,$_static_symbol_804528BC_d_ev_camera.o_.sdata2
 804528C0,data,@5142
 804528C8,data,@5143
 804528D0,data,@5144
 804528D8,data,@5145
 804528DC,data,@5346
 804528E0,data,@5844
+804528E4,data,$_static_symbol_804528E4_d_ev_camera.o_.sdata2
 804528E8,data,@5846
 804528F0,data,@5959
+804528F4,data,$_static_symbol_804528F4_d_ev_camera.o_.sdata2
 804528F8,data,@5962
 80452900,data,@6682
 80452904,data,@6683
@@ -23612,6 +23967,7 @@
 80452CD8,data,@6399
 80452CDC,data,@6400
 80452CE0,data,@6845
+80452CE4,data,$_static_symbol_80452CE4_d_a_alink.o_.sdata2
 80452CE8,data,@6846
 80452CF0,data,@6847
 80452CF8,data,@6848
@@ -24018,6 +24374,7 @@
 804533A8,data,@1543
 804533AC,data,@1615
 804533B0,data,@1616
+804533B4,data,$_static_symbol_804533B4_d_a_itembase.o_.sdata2
 804533B8,data,@1618
 804533C0,data,@1704
 804533C8,data,@1566
@@ -24031,6 +24388,7 @@
 804533F0,data,@4672
 804533F4,data,@4673
 804533F8,data,@4674
+804533FC,data,$_static_symbol_804533FC_d_a_npc.o_.sdata2
 80453400,data,@4677
 80453408,data,@4723
 80453410,data,@4724
@@ -24076,6 +24434,7 @@
 804534B8,data,@4021
 804534BC,data,@4372
 804534C0,data,@4373
+804534C4,data,$_static_symbol_804534C4_d_a_npc_cd.o_.sdata2
 804534C8,data,@4375
 804534D0,data,@4582
 804534D4,data,id$4592
@@ -24084,21 +24443,26 @@
 804534E0,data,@4050
 804534E4,data,@4585
 804534E8,data,@4586
+804534EC,data,$_static_symbol_804534EC_d_a_npc_cd2.o_.sdata2
 804534F0,data,@4588
 804534F8,data,@4845
 804534FC,data,id$4857
 80453500,data,@4921
 80453504,data,@4922
 80453508,data,@4970
+8045350C,data,$_static_symbol_8045350C_d_a_npc_cd2.o_.sdata2
 80453510,data,@4971
 80453518,data,@4972
 80453520,data,@5050
+80453524,data,$_static_symbol_80453524_d_a_npc_cd2.o_.sdata2
 80453528,data,@5051
 80453530,data,@5052
 80453538,data,@5053
 80453540,data,@5149
+80453544,data,$_static_symbol_80453544_d_a_npc_cd2.o_.sdata2
 80453548,data,@5359
 80453550,data,@3857
+80453554,data,$_static_symbol_80453554_d_a_obj_item.o_.sdata2
 80453558,data,@3858
 80453560,data,@3859
 80453568,data,@3860
@@ -24107,6 +24471,7 @@
 80453578,data,@4068
 8045357C,data,@4069
 80453580,data,@4070
+80453584,data,$_static_symbol_80453584_d_a_obj_item.o_.sdata2
 80453588,data,@4072
 80453590,data,@4320
 80453594,data,@4321
@@ -24115,6 +24480,7 @@
 804535A0,data,@4524
 804535A4,data,@4665
 804535A8,data,@4666
+804535AC,data,$_static_symbol_804535AC_d_a_obj_item.o_.sdata2
 804535B0,data,@4668
 804535B8,data,@4781
 804535BC,data,@4923
@@ -24134,6 +24500,7 @@
 804535F4,data,@1534
 804535F8,data,@1535
 80453600,data,@1555
+80453604,data,$_static_symbol_80453604_d_a_player.o_.sdata2
 80453608,data,@1578
 80453610,data,@1588
 80453614,data,@1589
@@ -24142,6 +24509,7 @@
 80453620,data,@1663
 80453624,data,@1664
 80453628,data,@1665
+8045362C,data,$_static_symbol_8045362C_d_a_player.o_.sdata2
 80453630,data,@1715
 80453638,data,@1716
 80453640,data,@1717
@@ -24157,6 +24525,7 @@
 80453684,data,@2072
 80453688,data,@2073
 80453690,data,@4445
+80453694,data,$_static_symbol_80453694_d_camera.o_.sdata2
 80453698,data,@4448
 804536A0,data,@5656
 804536A4,data,@5657
@@ -24167,6 +24536,7 @@
 804536B8,data,@5662
 804536BC,data,@5663
 804536C0,data,@6093
+804536C4,data,$_static_symbol_804536C4_d_camera.o_.sdata2
 804536C8,data,@6177
 804536D0,data,@6178
 804536D8,data,@6179
@@ -24318,12 +24688,14 @@
 80453928,data,@3812
 8045392C,data,@4165
 80453930,data,@4166
+80453934,data,$_static_symbol_80453934_d_file_select.o_.sdata2
 80453938,data,@4342
 80453940,data,@4611
 80453944,data,@4612
 80453948,data,@4778
 8045394C,data,@5472
 80453950,data,@5473
+80453954,data,$_static_symbol_80453954_d_file_select.o_.sdata2
 80453958,data,@5475
 80453960,data,@5614
 80453964,data,@5615
@@ -24350,6 +24722,7 @@
 804539B8,data,@8608
 804539BC,data,@8978
 804539C0,data,@8979
+804539C4,data,$_static_symbol_804539C4_d_file_select.o_.sdata2
 804539C8,data,@8980
 804539D0,data,@8981
 804539D4,data,@8993
@@ -24385,6 +24758,7 @@
 80453A68,data,@2019
 80453A6C,data,@2020
 80453A70,data,@1030
+80453A74,data,$_static_symbol_80453A74_d_select_icon.o_.sdata2
 80453A78,data,@1032
 80453A80,data,@1049
 80453A88,data,@1466
@@ -24403,6 +24777,7 @@
 80453AC8,data,@1744
 80453ACC,data,@1745
 80453AD0,data,@1133
+80453AD4,data,$_static_symbol_80453AD4_d_shop_item_ctrl.o_.sdata2
 80453AD8,data,@1327
 80453AE0,data,@1328
 80453AE8,data,@1329
@@ -24429,6 +24804,7 @@
 80453B40,data,@2644
 80453B44,data,@2733
 80453B48,data,@2940
+80453B4C,data,$_static_symbol_80453B4C_d_shop_system.o_.sdata2
 80453B50,data,@2942
 80453B58,data,item_no$3079
 80453B60,data,@3303
@@ -24496,6 +24872,7 @@
 80453C70,data,@4850
 80453C74,data,@4851
 80453C78,data,@4852
+80453C7C,data,$_static_symbol_80453C7C_d_kankyo.o_.sdata2
 80453C80,data,@4964
 80453C88,data,@5077
 80453C8C,data,@5106
@@ -24641,6 +25018,7 @@
 80453EC0,data,@1763
 80453EC4,data,@1764
 80453EC8,data,@1765
+80453ECC,data,$_static_symbol_80453ECC_d_ky_thunder.o_.sdata2
 80453ED0,data,@1766
 80453ED8,data,@1767
 80453EDC,data,@1768
@@ -24651,6 +25029,7 @@
 80453EF0,data,@1773
 80453EF4,data,@1774
 80453EF8,data,@1575
+80453EFC,data,$_static_symbol_80453EFC_d_kantera_icon_meter.o_.sdata2
 80453F00,data,@1577
 80453F08,data,@1584
 80453F10,data,@1673
@@ -24698,6 +25077,7 @@
 80453FD0,data,@7947
 80453FD4,data,@7948
 80453FD8,data,@7949
+80453FDC,data,$_static_symbol_80453FDC_d_menu_collect.o_.sdata2
 80453FE0,data,@7963
 80453FE8,data,@3962
 80453FEC,data,@3963
@@ -24736,6 +25116,7 @@
 8045408C,data,l_lineWidthPatStay$3822
 80454094,data,@3837
 80454098,data,@3946
+8045409C,data,$_static_symbol_8045409C_d_menu_dmap_map.o_.sdata2
 804540A0,data,@3947
 804540A8,data,@4168
 804540B0,data,@4170
@@ -24793,6 +25174,7 @@
 80454198,data,@4104
 8045419C,data,@4105
 804541A0,data,@4106
+804541A4,data,$_static_symbol_804541A4_d_menu_fmap_map.o_.sdata2
 804541A8,data,@4108
 804541B0,data,l_lineWidthPatData$4134
 804541B8,data,l_lineWidthPatData2$4135
@@ -24812,6 +25194,7 @@
 804541F4,data,@2137
 804541F8,data,@2139
 80454200,data,@2191
+80454204,data,$_static_symbol_80454204_d_menu_fmap2D.o_.sdata2
 80454208,data,@2991
 80454210,data,@3008
 80454214,data,@3009
@@ -24831,10 +25214,12 @@
 80454250,data,@1786
 80454254,data,@1787
 80454258,data,@1788
+8045425C,data,$_static_symbol_8045425C_d_menu_insect.o_.sdata2
 80454260,data,@1847
 80454268,data,@1920
 8045426C,data,@1966
 80454270,data,@1967
+80454274,data,$_static_symbol_80454274_d_menu_insect.o_.sdata2
 80454278,data,@1969
 80454280,data,@2302
 80454288,data,@1863
@@ -24842,6 +25227,7 @@
 80454290,data,@1865
 80454294,data,@1866
 80454298,data,@1867
+8045429C,data,$_static_symbol_8045429C_d_menu_item_explain.o_.sdata2
 804542A0,data,@1869
 804542A8,data,@2099
 804542AC,data,@2100
@@ -24865,6 +25251,7 @@
 804542F8,data,@4054
 804542FC,data,@4055
 80454300,data,@4056
+80454304,data,$_static_symbol_80454304_d_menu_letter.o_.sdata2
 80454308,data,@4058
 80454310,data,@4171
 80454318,data,@4308
@@ -24876,6 +25263,7 @@
 80454330,data,@1865
 80454334,data,@2247
 80454338,data,@2248
+8045433C,data,$_static_symbol_8045433C_d_menu_option.o_.sdata2
 80454340,data,@2250
 80454348,data,@2272
 8045434C,data,@2273
@@ -24903,8 +25291,10 @@
 804543A8,data,@2204
 804543AC,data,@2205
 804543B0,data,@2206
+804543B4,data,$_static_symbol_804543B4_d_menu_ring.o_.sdata2
 804543B8,data,@2208
 804543C0,data,@2362
+804543C4,data,$_static_symbol_804543C4_d_menu_ring.o_.sdata2
 804543C8,data,@2498
 804543D0,data,@2636
 804543D4,data,@2666
@@ -24939,6 +25329,7 @@
 80454460,data,@4181
 80454464,data,@4182
 80454468,data,@4183
+8045446C,data,$_static_symbol_8045446C_d_menu_save.o_.sdata2
 80454470,data,@4185
 80454478,data,@4879
 8045447C,data,@6327
@@ -24953,6 +25344,7 @@
 804544A0,data,@1767
 804544A4,data,@1768
 804544A8,data,@1769
+804544AC,data,$_static_symbol_804544AC_d_menu_skill.o_.sdata2
 804544B0,data,@1843
 804544B8,data,@1937
 804544C0,data,@4152
@@ -25123,6 +25515,7 @@
 80454758,data,@2322
 8045475C,data,@2323
 80454760,data,@2324
+80454764,data,$_static_symbol_80454764_d_meter_button.o_.sdata2
 80454768,data,@2326
 80454770,data,@3432
 80454774,data,@3433
@@ -25157,6 +25550,7 @@
 804547E8,data,@1943
 804547EC,data,@1944
 804547F0,data,@1993
+804547F4,data,$_static_symbol_804547F4_d_meter_haihai.o_.sdata2
 804547F8,data,@2014
 80454800,data,@1579
 80454804,data,@1580
@@ -25166,6 +25560,7 @@
 80454814,data,@1890
 80454818,data,@1892
 80454820,data,@1621
+80454824,data,$_static_symbol_80454824_d_meter_map.o_.sdata2
 80454828,data,@1646
 80454830,data,@1669
 80454834,data,@1670
@@ -25181,6 +25576,7 @@
 80454860,data,@1781
 80454864,data,@1782
 80454868,data,@1783
+8045486C,data,$_static_symbol_8045486C_d_meter_string.o_.sdata2
 80454870,data,@1785
 80454878,data,@1829
 8045487C,data,@1946
@@ -25191,6 +25587,7 @@
 80454890,data,@2774
 80454894,data,@2775
 80454898,data,@2776
+8045489C,data,$_static_symbol_8045489C_d_meter2_draw.o_.sdata2
 804548A0,data,@2778
 804548A8,data,@3620
 804548AC,data,@3621
@@ -25258,11 +25655,13 @@
 804549A8,data,@3920
 804549AC,data,@3921
 804549B0,data,@3922
+804549B4,data,$_static_symbol_804549B4_d_meter2_info.o_.sdata2
 804549B8,data,@4108
 804549C0,data,@5206
 804549C8,data,@2137
 804549CC,data,@2138
 804549D0,data,@2306
+804549D4,data,$_static_symbol_804549D4_d_meter2.o_.sdata2
 804549D8,data,@2690
 804549E0,data,@2691
 804549E8,data,@2992
@@ -25336,6 +25735,7 @@
 80454B10,data,@4145
 80454B14,data,@4146
 80454B18,data,@4147
+80454B1C,data,$_static_symbol_80454B1C_d_msg_object.o_.sdata2
 80454B20,data,@4965
 80454B28,data,@5044
 80454B2C,data,@5947
@@ -25346,6 +25746,7 @@
 80454B40,data,@3702
 80454B44,data,@3703
 80454B48,data,@3704
+80454B4C,data,$_static_symbol_80454B4C_d_msg_unit.o_.sdata2
 80454B50,data,@3707
 80454B58,data,@1783
 80454B5C,data,@1784
@@ -25408,10 +25809,12 @@
 80454C58,data,@2010
 80454C5C,data,@2011
 80454C60,data,@2012
+80454C64,data,$_static_symbol_80454C64_d_msg_scrn_howl.o_.sdata2
 80454C68,data,@2015
 80454C70,data,@2142
 80454C74,data,@2143
 80454C78,data,@2144
+80454C7C,data,$_static_symbol_80454C7C_d_msg_scrn_howl.o_.sdata2
 80454C80,data,@2168
 80454C88,data,@2398
 80454C8C,data,@2399
@@ -25429,6 +25832,7 @@
 80454CC0,data,@1816
 80454CC4,data,@1817
 80454CC8,data,@1818
+80454CCC,data,$_static_symbol_80454CCC_d_msg_scrn_kanban.o_.sdata2
 80454CD0,data,@1907
 80454CD8,data,@1569
 80454CDC,data,@1730
@@ -25457,18 +25861,22 @@
 80454D40,data,@2382
 80454D44,data,@2383
 80454D48,data,@2384
+80454D4C,data,$_static_symbol_80454D4C_d_msg_scrn_talk.o_.sdata2
 80454D50,data,@2386
 80454D58,data,@1829
 80454D5C,data,@1830
 80454D60,data,@1831
+80454D64,data,$_static_symbol_80454D64_d_msg_scrn_tree.o_.sdata2
 80454D68,data,@1935
 80454D70,data,@1888
 80454D78,data,@666
 80454D7C,data,@667
 80454D80,data,@668
+80454D84,data,$_static_symbol_80454D84_d_msg_string.o_.sdata2
 80454D88,data,@670
 80454D90,data,@5116
 80454D98,data,@5608
+80454D9C,data,$_static_symbol_80454D9C_d_msg_flow.o_.sdata2
 80454DA0,data,@6040
 80454DA8,data,@6273
 80454DAC,data,@6613
@@ -25491,6 +25899,7 @@
 80454DF8,data,@3867
 80454E00,data,@3868
 80454E08,data,@3869
+80454E0C,data,$_static_symbol_80454E0C_d_npc_lib.o_.sdata2
 80454E10,data,@3873
 80454E18,data,@3970
 80454E1C,data,gap_11_80454E1C_sdata2
@@ -25521,14 +25930,17 @@
 80454E80,data,@1644
 80454E84,data,@1675
 80454E88,data,@1333
+80454E8C,data,$_static_symbol_80454E8C_d_pane_class.o_.sdata2
 80454E90,data,@1335
 80454E98,data,@1458
+80454E9C,data,$_static_symbol_80454E9C_d_pane_class.o_.sdata2
 80454EA0,data,@1595
 80454EA8,data,@1658
 80454EAC,data,@1659
 80454EB0,data,@1660
 80454EB4,data,@1661
 80454EB8,data,@971
+80454EBC,data,$_static_symbol_80454EBC_d_pane_class_alpha.o_.sdata2
 80454EC0,data,@973
 80454EC8,data,@986
 80454ED0,data,@1000
@@ -25560,6 +25972,7 @@
 80454F48,data,@1894
 80454F4C,data,@1899
 80454F50,data,@1904
+80454F54,data,$_static_symbol_80454F54_d_timer.o_.sdata2
 80454F58,data,@2458
 80454F60,data,animeFrame$2848
 80454F68,data,@2930
@@ -25585,6 +25998,7 @@
 80454FB8,data,@1518
 80454FBC,data,@1649
 80454FC0,data,@1650
+80454FC4,data,$_static_symbol_80454FC4_d_k_wmark.o_.sdata2
 80454FC8,data,@1651
 80454FD0,data,@1652
 80454FD8,data,@1653
@@ -25597,10 +26011,12 @@
 80455000,data,@1525
 80455004,data,@1634
 80455008,data,@1008
+8045500C,data,$_static_symbol_8045500C_DynamicLink.o_.sdata2
 80455010,data,@1010
 80455018,data,@153
 8045501C,data,@154
 80455020,data,@279
+80455024,data,$_static_symbol_80455024_c_cc_d.o_.sdata2
 80455028,data,@300
 80455030,data,@430
 80455038,data,@340
@@ -25608,6 +26024,7 @@
 80455040,data,@574
 80455044,data,@575
 80455048,data,@576
+8045504C,data,$_static_symbol_8045504C_c_cc_s.o_.sdata2
 80455050,data,@577
 80455058,data,@578
 80455060,data,@579
@@ -25631,6 +26048,7 @@
 804550C8,data,@123
 804550CC,data,@124
 804550D0,data,@125
+804550D4,data,$_static_symbol_804550D4_c_math.o_.sdata2
 804550D8,data,@126
 804550E0,data,@138
 804550E4,data,@139
@@ -25644,6 +26062,7 @@
 80455108,data,@138
 80455110,data,@139
 80455118,data,@107
+8045511C,data,$_static_symbol_8045511C_c_m3d.o_.sdata2
 80455120,data,@108
 80455128,data,@109
 80455130,data,@110
@@ -25689,6 +26108,7 @@
 804551D4,data,@85
 804551D8,data,@128
 804551E0,data,@93
+804551E4,data,$_static_symbol_804551E4_c_lib.o_.sdata2
 804551E8,data,@216
 804551F0,data,@217
 804551F8,data,@218
@@ -25711,6 +26131,7 @@
 80455250,data,@310
 80455254,data,@537
 80455258,data,@538
+8045525C,data,$_static_symbol_8045525C_JFWDisplay.o_.sdata2
 80455260,data,@540
 80455268,data,@821
 80455270,data,@842
@@ -25719,22 +26140,26 @@
 80455280,data,@51
 80455284,data,@52
 80455288,data,@129
+8045528C,data,$_static_symbol_8045528C_J3DUClipper.o_.sdata2
 80455290,data,@1208
 80455294,data,@1209
 80455298,data,@1210
 8045529C,data,@1211
 804552A0,data,@1213
 804552A8,data,@264
+804552AC,data,$_static_symbol_804552AC_JPABaseShape.o_.sdata2
 804552B0,data,@623
 804552B8,data,@736
 804552BC,data,@737
 804552C0,data,@738
+804552C4,data,$_static_symbol_804552C4_JPABaseShape.o_.sdata2
 804552C8,data,@740
 804552D0,data,@1143
 804552D4,data,@1144
 804552D8,data,@1262
 804552DC,data,@1263
 804552E0,data,@280
+804552E4,data,$_static_symbol_804552E4_JPAExtraShape.o_.sdata2
 804552E8,data,@326
 804552F0,data,@353
 804552F4,data,@404
@@ -25746,8 +26171,10 @@
 80455310,data,@286
 80455314,data,@287
 80455318,data,@288
+8045531C,data,$_static_symbol_8045531C_JPADynamicsBlock.o_.sdata2
 80455320,data,@321
 80455328,data,@500
+8045532C,data,$_static_symbol_8045532C_JPADynamicsBlock.o_.sdata2
 80455330,data,@502
 80455338,data,@357
 8045533C,data,@358
@@ -25806,6 +26233,7 @@
 80455470,data,@200
 80455478,data,@201
 80455480,data,@202
+80455484,data,$_static_symbol_80455484_jstudio-math.o_.sdata2
 80455488,data,@203
 80455490,data,@204
 80455498,data,@205
@@ -25820,6 +26248,7 @@
 804554D8,data,ga4cSignature__Q37JStudio3stb4data
 804554E0,data,@644
 804554E8,data,@846
+804554EC,data,$_static_symbol_804554EC_object-light.o_.sdata2
 804554F0,data,@847
 804554F8,data,@848
 80455500,data,@849
@@ -25831,12 +26260,14 @@
 80455520,data,@550
 80455524,data,@551
 80455528,data,@552
+8045552C,data,$_static_symbol_8045552C_object-particle.o_.sdata2
 80455530,data,@779
 80455538,data,@780
 80455540,data,@781
 80455548,data,@782
 80455550,data,@786
 80455558,data,@156
+8045555C,data,$_static_symbol_8045555C_JASCalc.o_.sdata2
 80455560,data,@162
 80455568,data,@167
 8045556C,data,scale_frac$174
@@ -25846,6 +26277,7 @@
 80455588,data,@25
 8045558C,data,@26
 80455590,data,@27
+80455594,data,$_static_symbol_80455594_JASProbe.o_.sdata2
 80455598,data,@29
 804555A0,data,@457
 804555A4,data,@679
@@ -25864,10 +26296,12 @@
 804555E0,data,@425
 804555E4,data,@426
 804555E8,data,@427
+804555EC,data,$_static_symbol_804555EC_JASSeqParser.o_.sdata2
 804555F0,data,@430
 804555F8,data,@515
 804555FC,data,@516
 80455600,data,@729
+80455604,data,$_static_symbol_80455604_JASSeqParser.o_.sdata2
 80455608,data,@862
 80455610,data,@390
 80455614,data,@391
@@ -25885,6 +26319,7 @@
 8045564C,data,@80
 80455650,data,@90
 80455658,data,@835
+8045565C,data,$_static_symbol_8045565C_JASBNKParser.o_.sdata2
 80455660,data,@838
 80455668,data,@990
 80455670,data,@1045
@@ -25894,9 +26329,11 @@
 80455680,data,@318
 80455684,data,@319
 80455688,data,@320
+8045568C,data,$_static_symbol_8045568C_JASChannel.o_.sdata2
 80455690,data,@435
 80455698,data,@445
 804556A0,data,@471
+804556A4,data,$_static_symbol_804556A4_JASChannel.o_.sdata2
 804556A8,data,@474
 804556B0,data,@533
 804556B4,data,@534
@@ -25917,14 +26354,17 @@
 804556F8,data,@5
 804556FC,data,@16
 80455700,data,@17
+80455704,data,$_static_symbol_80455704_JASOscillator.o_.sdata2
 80455708,data,@20
 80455710,data,@85
+80455714,data,$_static_symbol_80455714_JASOscillator.o_.sdata2
 80455718,data,@87
 80455720,data,@233
 80455724,data,@234
 80455728,data,@235
 8045572C,data,@275
 80455730,data,@276
+80455734,data,$_static_symbol_80455734_JASAiCtrl.o_.sdata2
 80455738,data,@278
 80455740,data,@82
 80455748,data,@54
@@ -25952,6 +26392,7 @@
 804557B8,data,@239
 804557BC,data,@255
 804557C0,data,@256
+804557C4,data,$_static_symbol_804557C4_JAISound.o_.sdata2
 804557C8,data,@330
 804557D0,data,@452
 804557D8,data,@122
@@ -26016,6 +26457,7 @@
 804558F0,data,@1386
 804558F4,data,@1387
 804558F8,data,@1388
+804558FC,data,$_static_symbol_804558FC_Z2SeMgr.o_.sdata2
 80455900,data,@1389
 80455908,data,@1390
 80455910,data,@1391
@@ -26032,6 +26474,7 @@
 80455950,data,@1402
 80455954,data,@1403
 80455958,data,@1404
+8045595C,data,$_static_symbol_8045595C_Z2SeMgr.o_.sdata2
 80455960,data,@1405
 80455968,data,@1406
 80455970,data,@1407
@@ -26046,6 +26489,7 @@
 80455998,data,@3372
 8045599C,data,@3373
 804559A0,data,@3559
+804559A4,data,$_static_symbol_804559A4_Z2SeqMgr.o_.sdata2
 804559A8,data,@3561
 804559B0,data,@4726
 804559B4,data,@4727
@@ -26060,6 +26504,7 @@
 804559D8,data,@4736
 804559DC,data,@4737
 804559E0,data,@4738
+804559E4,data,$_static_symbol_804559E4_Z2SeqMgr.o_.sdata2
 804559E8,data,@4741
 804559F0,data,@5673
 804559F4,data,@5674
@@ -26081,6 +26526,7 @@
 80455A38,data,@3511
 80455A3C,data,@3512
 80455A40,data,@3529
+80455A44,data,$_static_symbol_80455A44_Z2SceneMgr.o_.sdata2
 80455A48,data,@3531
 80455A50,data,@5341
 80455A54,data,@5342
@@ -26095,6 +26541,7 @@
 80455A78,data,@509
 80455A7C,data,@510
 80455A80,data,@511
+80455A84,data,$_static_symbol_80455A84_Z2SoundInfo.o_.sdata2
 80455A88,data,@515
 80455A90,data,STRM_CH_SHIFT__20JAUStdSoundTableType
 80455A94,data,@556
@@ -26110,6 +26557,7 @@
 80455AC0,data,@1002
 80455AC4,data,@1003
 80455AC8,data,@1004
+80455ACC,data,$_static_symbol_80455ACC_Z2Audience.o_.sdata2
 80455AD0,data,@1008
 80455AD8,data,@1036
 80455ADC,data,@1058
@@ -26138,12 +26586,14 @@
 80455B38,data,@480
 80455B3C,data,@481
 80455B40,data,@482
+80455B44,data,$_static_symbol_80455B44_Z2SoundObject.o_.sdata2
 80455B48,data,@485
 80455B50,data,@751
 80455B54,data,@752
 80455B58,data,@753
 80455B5C,data,@754
 80455B60,data,@755
+80455B64,data,$_static_symbol_80455B64_Z2SoundObject.o_.sdata2
 80455B68,data,@758
 80455B70,data,@787
 80455B74,data,@788
@@ -26177,6 +26627,7 @@
 80455C18,data,@533
 80455C1C,data,@534
 80455C20,data,@535
+80455C24,data,$_static_symbol_80455C24_Z2Creature.o_.sdata2
 80455C28,data,@538
 80455C30,data,@584
 80455C34,data,@585
@@ -26207,6 +26658,7 @@
 80455C98,data,@3721
 80455C9C,data,@3722
 80455CA0,data,@3723
+80455CA4,data,$_static_symbol_80455CA4_Z2LinkMgr.o_.sdata2
 80455CA8,data,@3724
 80455CB0,data,@3725
 80455CB8,data,@3726
@@ -26217,6 +26669,7 @@
 80455CD0,data,@3837
 80455CD4,data,@3838
 80455CD8,data,@3839
+80455CDC,data,$_static_symbol_80455CDC_Z2LinkMgr.o_.sdata2
 80455CE0,data,@3842
 80455CE8,data,@3941
 80455CEC,data,@3942
@@ -26244,6 +26697,7 @@
 80455D48,data,@3503
 80455D4C,data,@3504
 80455D50,data,@3505
+80455D54,data,$_static_symbol_80455D54_Z2EnvSeMgr.o_.sdata2
 80455D58,data,@3508
 80455D60,data,@3574
 80455D64,data,@3585
@@ -26292,6 +26746,7 @@
 80455E10,data,@4267
 80455E14,data,@4268
 80455E18,data,@4269
+80455E1C,data,$_static_symbol_80455E1C_Z2EnvSeMgr.o_.sdata2
 80455E20,data,@4271
 80455E28,data,@4400
 80455E2C,data,@4422
@@ -26360,12 +26815,16 @@
 80455F6C,data,@301
 80455F70,data,@302
 80455F78,data,@303
+80455F7C,data,$_static_symbol_80455F7C_GFPixel.o_.sdata2
 80455F80,data,@304
 80455F88,data,@305
+80455F8C,data,$_static_symbol_80455F8C_GFPixel.o_.sdata2
 80455F90,data,@308
 80455F98,data,@802
+80455F9C,data,$_static_symbol_80455F9C_JKRExpHeap.o_.sdata2
 80455FA0,data,@804
 80455FA8,data,@365
+80455FAC,data,$_static_symbol_80455FAC_JKRSolidHeap.o_.sdata2
 80455FB0,data,@367
 80455FB8,data,@369
 80455FC0,data,@498
@@ -26377,14 +26836,17 @@
 80455FE0,data,@288
 80455FE8,data,@291
 80455FF0,data,@386
+80455FF4,data,$_static_symbol_80455FF4_JUTResFont.o_.sdata2
 80455FF8,data,@388
 80456000,data,@390
 80456008,data,@334
 8045600C,data,@335
 80456010,data,@337
 80456018,data,@664
+8045601C,data,$_static_symbol_8045601C_JUTGamePad.o_.sdata2
 80456020,data,@667
 80456028,data,@673
+8045602C,data,$_static_symbol_8045602C_JUTGamePad.o_.sdata2
 80456030,data,@739
 80456038,data,@740
 80456040,data,@741
@@ -26407,11 +26869,13 @@
 804560B8,data,@264
 804560BC,data,@265
 804560C0,data,@266
+804560C4,data,$_static_symbol_804560C4_JUTAssert.o_.sdata2
 804560C8,data,@268
 804560D0,data,@266
 804560D8,data,@334
 804560DC,data,@335
 804560E0,data,@354
+804560E4,data,$_static_symbol_804560E4_JUTProcBar.o_.sdata2
 804560E8,data,@356
 804560F0,data,@383
 804560F4,data,@384
@@ -26429,11 +26893,13 @@
 80456128,data,@463
 8045612C,data,@464
 80456130,data,@465
+80456134,data,$_static_symbol_80456134_JUTConsole.o_.sdata2
 80456138,data,@468
 80456140,data,@470
 80456148,data,@314
 8045614C,data,@315
 80456150,data,@412
+80456154,data,$_static_symbol_80456154_J2DGrafContext.o_.sdata2
 80456158,data,@414
 80456160,data,@258
 80456168,data,@271
@@ -26463,6 +26929,7 @@
 804561CC,data,@660
 804561D0,data,@666
 804561D8,data,@725
+804561DC,data,$_static_symbol_804561DC_J2DPrint.o_.sdata2
 804561E0,data,@730
 804561E8,data,@852
 804561EC,data,@876
@@ -26478,6 +26945,7 @@
 80456220,data,@1561
 80456224,data,@1562
 80456228,data,@1563
+8045622C,data,$_static_symbol_8045622C_J2DScreen.o_.sdata2
 80456230,data,@1705
 80456238,data,@1829
 8045623C,data,@1830
@@ -26493,6 +26961,7 @@
 80456278,data,@1613
 8045627C,data,@1794
 80456280,data,@698
+80456284,data,$_static_symbol_80456284_J2DTextBox.o_.sdata2
 80456288,data,@700
 80456290,data,@703
 80456298,data,@1039
@@ -26508,11 +26977,13 @@
 804562D0,data,@2690
 804562D4,data,gap_11_804562D4_sdata2
 804562D8,data,@625
+804562DC,data,$_static_symbol_804562DC_J2DTextBoxEx.o_.sdata2
 804562E0,data,@627
 804562E8,data,@630
 804562F0,data,@719
 804562F8,data,@666
 80456300,data,@617
+80456304,data,$_static_symbol_80456304_J2DAnimation.o_.sdata2
 80456308,data,@620
 80456310,data,@664
 80456314,data,@808
@@ -26524,10 +26995,13 @@
 80456330,data,@830
 80456334,data,@1059
 80456338,data,@1060
+8045633C,data,$_static_symbol_8045633C_J3DGD.o_.sdata2
 80456340,data,@1061
 80456348,data,@1062
+8045634C,data,$_static_symbol_8045634C_J3DGD.o_.sdata2
 80456350,data,@1063
 80456358,data,@1064
+8045635C,data,$_static_symbol_8045635C_J3DGD.o_.sdata2
 80456360,data,@1067
 80456368,data,@451
 8045636C,data,@452
@@ -26573,8 +27047,10 @@
 80456430,data,@458
 80456434,data,@459
 80456438,data,@578
+8045643C,data,$_static_symbol_8045643C_J3DAnimation.o_.sdata2
 80456440,data,@580
 80456448,data,@691
+8045644C,data,$_static_symbol_8045644C_J3DAnimation.o_.sdata2
 80456450,data,@821
 80456458,data,@1065
 8045645C,data,@1340
@@ -26602,10 +27078,12 @@
 804564C8,data,@75
 804564D0,data,@94
 804564D8,data,@32
+804564DC,data,$_static_symbol_804564DC_JMATrigonometric.o_.sdata2
 804564E0,data,@64
 804564E8,data,@65
 804564F0,data,@66
 804564F8,data,@67
+804564FC,data,$_static_symbol_804564FC_JMATrigonometric.o_.sdata2
 80456500,data,@69
 80456508,data,@36
 8045650C,data,@37
@@ -26624,14 +27102,18 @@
 80456544,data,@73
 80456548,data,@74
 8045654C,data,@122
+80456550,data,$_static_symbol_80456550_vec.o_.sdata2
 80456550,data,@77
 80456554,data,@81
 80456558,data,@90
 8045655C,data,@246
+80456560,data,$_static_symbol_80456560_quat.o_.sdata2
 80456560,data,@82
+80456564,data,$_static_symbol_80456564_Padclamp.o_.sdata2
 80456568,data,@83
 80456570,data,@84
 80456578,data,@86
+80456580,data,$_static_symbol_80456580_Padclamp.o_.sdata2
 80456580,data,__GXData
 80456584,data,@298
 80456588,data,@299
@@ -26642,6 +27124,7 @@
 8045659C,data,@363
 804565A0,data,@365
 804565A8,data,@181
+804565AC,data,$_static_symbol_804565AC_GXFrameBuf.o_.sdata2
 804565B0,data,@236
 804565B8,data,@70
 804565BC,data,@71
@@ -26655,7 +27138,9 @@
 804565DC,data,@79
 804565E0,data,@80
 804565E4,data,@96
+804565E8,data,$_static_symbol_804565E8_GXLight.o_.sdata2
 804565E8,data,@221
+804565EC,data,$_static_symbol_804565EC_GXTexture.o_.sdata2
 804565F0,data,@223
 804565F8,data,@289
 804565FC,data,@290
@@ -26663,15 +27148,21 @@
 80456604,data,@292
 80456608,data,@293
 8045660C,data,@294
+80456610,data,$_static_symbol_80456610_GXTexture.o_.sdata2
 80456610,data,@166
+80456614,data,$_static_symbol_80456614_GXBump.o_.sdata2
 80456618,data,@167
 8045661C,data,@168
 80456620,data,@169
+80456624,data,$_static_symbol_80456624_GXPixel.o_.sdata2
 80456628,data,@170
 80456630,data,@171
+80456634,data,$_static_symbol_80456634_GXPixel.o_.sdata2
 80456638,data,@172
 80456640,data,@173
+80456644,data,$_static_symbol_80456644_GXPixel.o_.sdata2
 80456648,data,@175
+80456650,data,$_static_symbol_80456650_GXPixel.o_.sdata2
 80456650,data,@27
 80456654,data,@28
 80456658,data,@29
@@ -26851,7 +27342,9 @@
 80456BB0,data,@2018
 80456BB8,data,@1477
 80456BC0,data,@883
+80005660,data,$_static_symbol_80005660_NMWException.o_@155
 8000566C,data,@160
 80005678,data,@181
 80005684,data,@189
 80005690,data,@212
+8000569C,data,$_static_symbol_8000569C_Linker Generated Symbol File__eti_init_info

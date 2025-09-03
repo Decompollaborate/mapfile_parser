@@ -2286,11 +2286,13 @@ build/src/main/sound.o,RO_DBL_800C3068_usa,800C3068,8
 build/src/main/sound.o,RO_DBL_800C3070_usa,800C3070,8
 build/src/main/sound.o,RO_DBL_800C3078_usa,800C3078,8
 build/src/main/sound.o,RO_DBL_800C3080_usa,800C3080,16
+build/src/main/sfxlimit.o,$_static_symbol_800C3090_build/src/main/sfxlimit.o_.rodata,800C3090,8
 build/src/main/sfxlimit.o,RO_DBL_800C3098_usa,800C3098,8
 build/src/main/sfxlimit.o,RO_DBL_800C30A0_usa,800C30A0,8
 build/src/main/sfxlimit.o,RO_DBL_800C30A8_usa,800C30A8,8
 build/src/main/sfxlimit.o,RO_DBL_800C30B0_usa,800C30B0,8
 build/src/main/sfxlimit.o,jtbl_800C30B8_usa,800C30B8,24
+build/src/main/title.o,$_static_symbol_800C30D0_build/src/main/title.o_.rodata,800C30D0,72
 build/src/main/title.o,RO_DBL_800C3118_usa,800C3118,8
 build/src/main/title.o,RO_DBL_800C3120_usa,800C3120,8
 build/src/main/title.o,RO_STR_800C3128_usa,800C3128,12
@@ -2416,6 +2418,7 @@ build/asm/usa/data/main/0C3EF0.rodata.o,RO_DBL_800C3F68_usa,800C3F68,8
 build/asm/usa/data/main/0C3EF0.rodata.o,RO_DBL_800C3F70_usa,800C3F70,8
 build/asm/usa/data/main/0C3EF0.rodata.o,RO_STR_800C3F78_usa,800C3F78,12
 build/asm/usa/data/main/0C3EF0.rodata.o,RO_STR_800C3F84_usa,800C3F84,44
+build/src/main/file.o,$_static_symbol_800C3FB0_build/src/main/file.o_.rodata,800C3FB0,56
 build/src/main/file.o,sFileBumpRodataAlignment,800C3FE8,8
 build/src/main/image.o,RO_STR_800C3FF0_usa,800C3FF0,72
 build/src/main/image.o,RO_DBL_800C4038_usa,800C4038,8
@@ -2489,6 +2492,7 @@ build/src/main/end.o,jtbl_800C4D38_usa,800C4D38,32
 build/src/main/end.o,RO_DBL_800C4D58_usa,800C4D58,8
 build/src/main/end.o,RO_DBL_800C4D60_usa,800C4D60,8
 build/src/main/end.o,RO_DBL_800C4D68_usa,800C4D68,8
+build/src/main/hvqm2util.o,$_static_symbol_800C4D70_build/src/main/hvqm2util.o_.rodata,800C4D70,432
 build/src/main/hvqm2util.o,RO_STR_800C4F20_usa,800C4F20,12
 build/src/main/hvqm2util.o,RO_STR_800C4F2C_usa,800C4F2C,40
 build/src/main/hvqm2util.o,RO_STR_800C4F54_usa,800C4F54,40
@@ -2600,6 +2604,7 @@ build/asm/usa/data/main/0C6630.rodata.o,jtbl_800C5CE8_usa,800C5CE8,48
 build/asm/usa/data/main/0C6630.rodata.o,jtbl_800C5D18_usa,800C5D18,88
 build/asm/usa/data/main/0C6630.rodata.o,jtbl_800C5D70_usa,800C5D70,40
 build/asm/usa/data/main/0C6630.rodata.o,jtbl_800C5D98_usa,800C5D98,40
+build/src/main/text.o,$_static_symbol_800C5DC0_build/src/main/text.o_.rodata,800C5DC0,108
 build/src/main/text.o,RO_STR_800C5E2C_usa,800C5E2C,12
 build/src/main/text.o,RO_STR_800C5E38_usa,800C5E38,16
 build/src/main/text.o,RO_STR_800C5E48_usa,800C5E48,8
@@ -2980,6 +2985,7 @@ build/asm/usa/data/main/0CA3E0.rodata.o,RO_800C97F4_usa,800C97F4,12
 build/asm/usa/data/main/0CA3E0.rodata.o,STR_800C9800,800C9800,4
 build/asm/usa/data/main/0CA3E0.rodata.o,STR_800C9804,800C9804,20
 build/asm/usa/data/main/0CA3E0.rodata.o,jtbl_800C9818_usa,800C9818,96
+build/src/main/build.o,$_static_symbol_800C9878_build/src/main/build.o_.rodata,800C9878,32
 build/asm/usa/data/main/800C98A0.bss.o,sMainStack,800C98A0,8192
 build/asm/usa/data/main/800C98A0.bss.o,sIdleStack,800CB8A0,8192
 build/asm/usa/data/main/800C98A0.bss.o,B_800CD8A0_usa,800CD8A0,4528

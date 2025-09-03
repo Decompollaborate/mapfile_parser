@@ -1,4 +1,6 @@
 Section,Symbol name,VRAM,Size in bytes
+build/us/src/weapon/header.c.o,$_static_symbol_00000000_build/us/src/weapon/header.c.o_.reginfo,00000000,24
+build/us/src/weapon/header.c.o,$_static_symbol_00000018_build/us/src/weapon/header.c.o_.MIPS.abiflags,00000018,24
 build/us/src/weapon/header.c.o,g_Weapon,8017A000,64
 build/us/asm/us/weapon/data/w_000.data.s.o,D_4000_8017A040,8017A040,324
 build/us/asm/us/weapon/data/w_000.data.s.o,D_4000_8017A184,8017A184,28
@@ -130,3 +132,13 @@ build/us/src/weapon/w_000.c.o,WeaponUnused34,8017B6E8,8
 build/us/src/weapon/w_000.c.o,WeaponUnused38,8017B6F0,8
 build/us/src/weapon/w_000.c.o,WeaponUnused3C,8017B6F8,8
 build/us/asm/us/weapon/data/w_000.sbss.s.o,D_4000_8017B700,8017B700,6400
+build/us/src/weapon/w_000.c.o,$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.pdr,00000000,800
+build/us/src/weapon/header.c.o,$_static_symbol_00000000_build/us/src/weapon/header.c.o_.gnu.attributes,00000000,16
+build/us/src/weapon/w_000.c.o,$_static_symbol_00000010_build/us/src/weapon/w_000.c.o_.gnu.attributes,00000010,16
+build/us/asm/us/weapon/data/w_000.data.s.o,$_static_symbol_00000020_build/us/asm/us/weapon/data/w_000.data.s.o_.gnu.attributes,00000020,16
+build/us/asm/us/weapon/data/w_000.sbss.s.o,$_static_symbol_00000030_build/us/asm/us/weapon/data/w_000.sbss.s.o_.gnu.attributes,00000030,16
+build/us/src/weapon/w_000.c.o,$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_line,00000000,237
+build/us/src/weapon/w_000.c.o,$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_info,00000000,389
+build/us/src/weapon/w_000.c.o,$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_abbrev,00000000,33
+build/us/src/weapon/w_000.c.o,$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_aranges,00000000,32
+build/us/src/weapon/w_000.c.o,$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_str,00000000,464

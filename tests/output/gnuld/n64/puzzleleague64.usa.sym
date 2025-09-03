@@ -2285,11 +2285,13 @@
 800C3070,data,RO_DBL_800C3070_usa
 800C3078,data,RO_DBL_800C3078_usa
 800C3080,data,RO_DBL_800C3080_usa
+800C3090,data,$_static_symbol_800C3090_build/src/main/sfxlimit.o_.rodata
 800C3098,data,RO_DBL_800C3098_usa
 800C30A0,data,RO_DBL_800C30A0_usa
 800C30A8,data,RO_DBL_800C30A8_usa
 800C30B0,data,RO_DBL_800C30B0_usa
 800C30B8,data,jtbl_800C30B8_usa
+800C30D0,data,$_static_symbol_800C30D0_build/src/main/title.o_.rodata
 800C3118,data,RO_DBL_800C3118_usa
 800C3120,data,RO_DBL_800C3120_usa
 800C3128,data,RO_STR_800C3128_usa
@@ -2415,6 +2417,7 @@
 800C3F70,data,RO_DBL_800C3F70_usa
 800C3F78,data,RO_STR_800C3F78_usa
 800C3F84,data,RO_STR_800C3F84_usa
+800C3FB0,data,$_static_symbol_800C3FB0_build/src/main/file.o_.rodata
 800C3FE8,data,sFileBumpRodataAlignment
 800C3FF0,data,RO_STR_800C3FF0_usa
 800C4038,data,RO_DBL_800C4038_usa
@@ -2488,6 +2491,7 @@
 800C4D58,data,RO_DBL_800C4D58_usa
 800C4D60,data,RO_DBL_800C4D60_usa
 800C4D68,data,RO_DBL_800C4D68_usa
+800C4D70,data,$_static_symbol_800C4D70_build/src/main/hvqm2util.o_.rodata
 800C4F20,data,RO_STR_800C4F20_usa
 800C4F2C,data,RO_STR_800C4F2C_usa
 800C4F54,data,RO_STR_800C4F54_usa
@@ -2599,6 +2603,7 @@
 800C5D18,data,jtbl_800C5D18_usa
 800C5D70,data,jtbl_800C5D70_usa
 800C5D98,data,jtbl_800C5D98_usa
+800C5DC0,data,$_static_symbol_800C5DC0_build/src/main/text.o_.rodata
 800C5E2C,data,RO_STR_800C5E2C_usa
 800C5E38,data,RO_STR_800C5E38_usa
 800C5E48,data,RO_STR_800C5E48_usa
@@ -2979,6 +2984,7 @@
 800C9800,data,STR_800C9800
 800C9804,data,STR_800C9804
 800C9818,data,jtbl_800C9818_usa
+800C9878,data,$_static_symbol_800C9878_build/src/main/build.o_.rodata
 800C98A0,data,sMainStack
 800CB8A0,data,sIdleStack
 800CD8A0,data,B_800CD8A0_usa

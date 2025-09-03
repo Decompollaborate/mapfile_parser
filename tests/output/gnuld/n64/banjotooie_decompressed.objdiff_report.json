@@ -1,12 +1,12 @@
 {
   "measures": {
     "fuzzy_match_percent": 100.0,
-    "total_code": "2925456",
-    "matched_code": "2925456",
+    "total_code": "2925648",
+    "matched_code": "2925648",
     "matched_code_percent": 100.0,
     "matched_data_percent": 100.0,
-    "total_functions": 21024,
-    "matched_functions": 21024,
+    "total_functions": 21026,
+    "matched_functions": 21026,
     "matched_functions_percent": 100.0,
     "complete_data_percent": 100.0,
     "total_units": 2850
@@ -1204,8 +1204,12 @@
       "name": "libultra_rom_boot.a(parameters.o)",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "96",
+        "matched_code": "96",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -1213,6 +1217,17 @@
         {
           "name": ".text",
           "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2147494608"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_80002AD0_build/us/libultra_rom_boot.a(parameters.o)_.text",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2147494608"
           }
@@ -9634,8 +9649,12 @@
       "name": "libultra_rom.a(parameters.o)",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "96",
+        "matched_code": "96",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -9643,6 +9662,17 @@
         {
           "name": ".text",
           "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2147672080"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_8002E010_build/us/libultra_rom.a(parameters.o)_.text",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2147672080"
           }
@@ -10430,19 +10460,19 @@
       ],
       "functions": [
         {
+          "name": "$_static_symbol_8002EF80_build/us/libultra_rom.a(sptask.o)_.text",
+          "size": "268",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2147676032"
+          }
+        },
+        {
           "name": "osSpTaskLoad",
           "size": "360",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2147676300"
-          }
-        },
-        {
-          "name": "$_static_symbol_8002EF80_build/us/libultra_rom.a(sptask.o)",
-          "size": "268",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2147676032"
           }
         },
         {
@@ -255587,10 +255617,13 @@
       "name": "libultra_rom_boot.a(parameters.o)",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "96",
+        "matched_code": "96",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 1
       }
@@ -256199,10 +256232,13 @@
       "name": "libultra_rom.a(parameters.o)",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "96",
+        "matched_code": "96",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
-        "complete_code_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 1
       }

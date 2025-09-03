@@ -1,5 +1,17 @@
 VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
+00000000,build/us/src/weapon/header.c.o,.reginfo,1,24,24,24.00
+00000018,build/us/src/weapon/header.c.o,.MIPS.abiflags,1,24,24,24.00
 8017A000,build/us/src/weapon/header.c.o,.data,1,64,64,64.00
 8017A040,build/us/asm/us/weapon/data/w_000.data.s.o,.data,104,324,4244,40.81
 8017B0D4,build/us/src/weapon/w_000.c.o,.text,25,540,1580,63.20
 8017B700,build/us/asm/us/weapon/data/w_000.sbss.s.o,.sbss,1,6400,6400,6400.00
+00000000,build/us/src/weapon/w_000.c.o,.pdr,1,800,800,800.00
+00000000,build/us/src/weapon/header.c.o,.gnu.attributes,1,16,16,16.00
+00000010,build/us/src/weapon/w_000.c.o,.gnu.attributes,1,16,16,16.00
+00000020,build/us/asm/us/weapon/data/w_000.data.s.o,.gnu.attributes,1,16,16,16.00
+00000030,build/us/asm/us/weapon/data/w_000.sbss.s.o,.gnu.attributes,1,16,16,16.00
+00000000,build/us/src/weapon/w_000.c.o,.debug_line,1,237,237,237.00
+00000000,build/us/src/weapon/w_000.c.o,.debug_info,1,389,389,389.00
+00000000,build/us/src/weapon/w_000.c.o,.debug_abbrev,1,33,33,33.00
+00000000,build/us/src/weapon/w_000.c.o,.debug_aranges,1,32,32,32.00
+00000000,build/us/src/weapon/w_000.c.o,.debug_str,1,464,464,464.00

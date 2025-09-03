@@ -4,5 +4,10 @@ simple_mips.o,test_2,000000B8,184
 simple_mips.o,math_op_1,00000170,88
 simple_mips.o,math_op_2,000001C8,8
 simple_mips.o,math_op_1_dup,000001D0,96
+simple_mips.o,$_static_symbol_00000230_simple_mips.o_.rodata,00000230,48
+simple_mips.o,$_static_symbol_00000260_simple_mips.o_.reginfo,00000260,24
 simple_mips.o,cat,00000280,4
 simple_mips.o,dog,00000284,12
+simple_mips.o,$_static_symbol_00000000_simple_mips.o_.options,00000000,64
+simple_mips.o,$_static_symbol_00000000_simple_mips.o_.gptab.data,00000000,24
+simple_mips.o,$_static_symbol_00000000_simple_mips.o_.mdebug,00000000,1104

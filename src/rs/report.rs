@@ -216,32 +216,17 @@ fn report_from_section(
         | section.section_type.starts_with(".init");
     let track_data = false;
 
-    for (i, sym_state) in section
-        .symbol_match_state_iter(path_decomp_settings)
-        .enumerate()
-    {
+    for sym_state in section.symbol_match_state_iter(path_decomp_settings) {
         let mut fuzzy_match_percent = 0.0;
 
         let sym = match sym_state {
             symbol_decomp_state::SymbolDecompState::Decomped(sym) => {
-                let static_size = sym.vram - section.vram;
-
                 if is_text {
                     measures.matched_code += sym.size;
                     measures.matched_functions += 1;
                     fuzzy_match_percent = 100.0;
-
-                    if i == 0 && sym.vram != section.vram {
-                        measures.matched_code += static_size;
-                        measures.matched_functions += 1;
-                        fuzzy_match_percent = 100.0;
-                    }
                 } else {
                     measures.matched_data += if track_data { sym.size } else { 0 };
-
-                    if i == 0 && sym.vram != section.vram {
-                        measures.matched_data += if track_data { static_size } else { 0 };
-                    }
                 }
                 sym
             }
@@ -262,38 +247,8 @@ fn report_from_section(
                 }),
                 // address: Some(sym.vram - section.vram),
             });
-
-            if i == 0 && sym.vram != section.vram {
-                // First symbol is a static symbol, so fake a placeholder
-                let static_vram = section.vram;
-                let static_size = sym.vram - section.vram;
-
-                measures.total_code += static_size;
-                measures.total_functions += 1;
-
-                functions.push(report::ReportItem {
-                    name: format!(
-                        "$_static_symbol_{:08X}_{}",
-                        static_vram,
-                        section.filepath.display()
-                    ),
-                    size: static_size,
-                    fuzzy_match_percent,
-                    metadata: Some(report::ReportItemMetadata {
-                        demangled_name: None,
-                        virtual_address: Some(static_vram),
-                    }),
-                    // address: Some(0),
-                });
-            }
         } else {
             measures.total_data += if track_data { sym.size } else { 0 };
-
-            if i == 0 && sym.vram != section.vram {
-                // First symbol is a static symbol, so fake a placeholder
-                let static_size = sym.vram - section.vram;
-                measures.total_data += if track_data { static_size } else { 0 };
-            }
         }
     }
 

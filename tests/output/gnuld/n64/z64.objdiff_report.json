@@ -1,12 +1,12 @@
 {
   "measures": {
     "fuzzy_match_percent": 100.0,
-    "total_code": "3865704",
-    "matched_code": "3865704",
+    "total_code": "3869896",
+    "matched_code": "3869896",
     "matched_code_percent": 100.0,
     "matched_data_percent": 100.0,
-    "total_functions": 13378,
-    "matched_functions": 13378,
+    "total_functions": 13381,
+    "matched_functions": 13381,
     "matched_functions_percent": 100.0,
     "complete_data_percent": 100.0,
     "total_units": 2358
@@ -16,8 +16,12 @@
       "name": "src/makerom/rom_header",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "64",
+        "matched_code": "64",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -25,6 +29,17 @@
         {
           "name": ".text",
           "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_00000000_build/src/makerom/rom_header.o_.text",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -42,8 +57,12 @@
       "name": "src/makerom/ipl3",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "4032",
+        "matched_code": "4032",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -51,6 +70,17 @@
         {
           "name": ".text",
           "size": "4032",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "64"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_00000040_build/src/makerom/ipl3.o_.text",
+          "size": "4032",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "64"
           }
@@ -1800,8 +1830,12 @@
       "name": "src/libultra/os/parameters",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "96",
+        "matched_code": "96",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -1809,6 +1843,17 @@
         {
           "name": ".text",
           "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2147501296"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_800044F0_build/src/libultra/os/parameters.o_.text",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2147501296"
           }
@@ -182810,12 +182855,12 @@
       "name": "src",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "3852344",
-        "matched_code": "3852344",
+        "total_code": "3856536",
+        "matched_code": "3856536",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 13370,
-        "matched_functions": 13370,
+        "total_functions": 13373,
+        "matched_functions": 13373,
         "matched_functions_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 1291

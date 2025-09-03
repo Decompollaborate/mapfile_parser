@@ -52,6 +52,7 @@
 00000010,data,@4046
 00000014,data,@4047
 00000018,data,@4048
+0000001C,data,$_static_symbol_0000001C_d_a_acorn_leaf.o_.rodata
 00000020,data,@4331
 00000028,data,@4332
 00000030,data,@4333

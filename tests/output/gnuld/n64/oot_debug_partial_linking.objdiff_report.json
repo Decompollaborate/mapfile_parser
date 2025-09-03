@@ -1,12 +1,12 @@
 {
   "measures": {
     "fuzzy_match_percent": 100.0,
-    "total_code": "3869824",
-    "matched_code": "3869824",
+    "total_code": "3869936",
+    "matched_code": "3869936",
     "matched_code_percent": 100.0,
     "matched_data_percent": 100.0,
-    "total_functions": 13379,
-    "matched_functions": 13379,
+    "total_functions": 13381,
+    "matched_functions": 13381,
     "matched_functions_percent": 100.0,
     "complete_data_percent": 100.0,
     "total_units": 2332
@@ -37,19 +37,19 @@
       ],
       "functions": [
         {
+          "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/segments/makerom.plf_.text",
+          "size": "4096",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
           "name": "entrypoint",
           "size": "96",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "4096"
-          }
-        },
-        {
-          "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/segments/makerom.plf",
-          "size": "4096",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "0"
           }
         }
       ],
@@ -1756,8 +1756,12 @@
       "name": "gc-eu-mq-dbg/src/libultra/os/parameters",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "96",
+        "matched_code": "96",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -1765,6 +1769,17 @@
         {
           "name": ".text",
           "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2147501296"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_00004090_build/gc-eu-mq-dbg/src/libultra/os/parameters.o_.text",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2147501296"
           }
@@ -29706,8 +29721,12 @@
       "name": "gc-eu-mq-dbg/__pad_text",
       "measures": {
         "fuzzy_match_percent": 100.0,
+        "total_code": "16",
+        "matched_code": "16",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -29715,6 +29734,17 @@
         {
           "name": ".text",
           "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2148379824"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "$_static_symbol_000BDE50_build/gc-eu-mq-dbg/__pad_text.o_.text",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2148379824"
           }
@@ -181966,12 +181996,12 @@
       "name": "gc-eu-mq-dbg",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "3869824",
-        "matched_code": "3869824",
+        "total_code": "3869936",
+        "matched_code": "3869936",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 13379,
-        "matched_functions": 13379,
+        "total_functions": 13381,
+        "matched_functions": 13381,
         "matched_functions_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 2332

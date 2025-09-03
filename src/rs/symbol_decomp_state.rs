@@ -6,7 +6,11 @@ use std::path::PathBuf;
 use crate::{section, symbol};
 
 pub enum SymbolDecompState<'sect> {
+    /// The symbol has been decompiled.
+    /// In other words it is being handled by a compiler instead of assembled from automatic disassemblies.
     Decomped(&'sect symbol::Symbol),
+    /// The symbol haven't been decompiled yet.
+    /// This was built from an automatic disassembly.
     Undecomped(&'sect symbol::Symbol),
 }
 
@@ -53,7 +57,9 @@ impl<'sect> Iterator for SymbolDecompStateIter<'sect> {
         let sym = &self.section.symbols[self.index];
         self.index += 1;
 
-        if self.whole_file_is_undecomped || sym.nonmatching_sym_exists {
+        if sym.inferred_static {
+            return Some(SymbolDecompState::Decomped(sym));
+        } else if self.whole_file_is_undecomped || sym.nonmatching_sym_exists {
             return Some(SymbolDecompState::Undecomped(sym));
         } else if let Some(functions_path) = &self.functions_path {
             if functions_path.join(sym.name.clone() + ".s").exists() {

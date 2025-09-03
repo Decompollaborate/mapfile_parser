@@ -406,6 +406,12 @@
                             "vrom": 3912
                         },
                         {
+                            "name": "$_static_symbol_0000001C_d_a_acorn_leaf.o_.rodata",
+                            "vram": 28,
+                            "size": 4,
+                            "vrom": 3892
+                        },
+                        {
                             "name": "@4331",
                             "vram": 32,
                             "size": 8,

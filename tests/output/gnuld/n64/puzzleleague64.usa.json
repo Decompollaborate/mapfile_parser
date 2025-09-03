@@ -16235,6 +16235,12 @@
                     "vrom": "0x0C3C90",
                     "symbols": [
                         {
+                            "name": "$_static_symbol_800C3090_build/src/main/sfxlimit.o_.rodata",
+                            "vram": "0x800C3090",
+                            "size": "0x8",
+                            "vrom": "0x0C3C90"
+                        },
+                        {
                             "name": "RO_DBL_800C3098_usa",
                             "vram": "0x800C3098",
                             "size": "0x8",
@@ -16273,6 +16279,12 @@
                     "size": "0xF0",
                     "vrom": "0x0C3CD0",
                     "symbols": [
+                        {
+                            "name": "$_static_symbol_800C30D0_build/src/main/title.o_.rodata",
+                            "vram": "0x800C30D0",
+                            "size": "0x48",
+                            "vrom": "0x0C3CD0"
+                        },
                         {
                             "name": "RO_DBL_800C3118_usa",
                             "vram": "0x800C3118",
@@ -17060,6 +17072,12 @@
                     "vrom": "0x0C4BB0",
                     "symbols": [
                         {
+                            "name": "$_static_symbol_800C3FB0_build/src/main/file.o_.rodata",
+                            "vram": "0x800C3FB0",
+                            "size": "0x38",
+                            "vrom": "0x0C4BB0"
+                        },
+                        {
                             "name": "sFileBumpRodataAlignment",
                             "vram": "0x800C3FE8",
                             "size": "0x8",
@@ -17569,6 +17587,12 @@
                     "size": "0x2C0",
                     "vrom": "0x0C5970",
                     "symbols": [
+                        {
+                            "name": "$_static_symbol_800C4D70_build/src/main/hvqm2util.o_.rodata",
+                            "vram": "0x800C4D70",
+                            "size": "0x1B0",
+                            "vrom": "0x0C5970"
+                        },
                         {
                             "name": "RO_STR_800C4F20_usa",
                             "vram": "0x800C4F20",
@@ -18307,6 +18331,12 @@
                     "size": "0x260",
                     "vrom": "0x0C69C0",
                     "symbols": [
+                        {
+                            "name": "$_static_symbol_800C5DC0_build/src/main/text.o_.rodata",
+                            "vram": "0x800C5DC0",
+                            "size": "0x6C",
+                            "vrom": "0x0C69C0"
+                        },
                         {
                             "name": "RO_STR_800C5E2C_usa",
                             "vram": "0x800C5E2C",
@@ -20910,7 +20940,14 @@
                     "vram": "0x800C9878",
                     "size": "0x20",
                     "vrom": "0x0CA478",
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_800C9878_build/src/main/build.o_.rodata",
+                            "vram": "0x800C9878",
+                            "size": "0x20",
+                            "vrom": "0x0CA478"
+                        }
+                    ]
                 }
             ]
         },

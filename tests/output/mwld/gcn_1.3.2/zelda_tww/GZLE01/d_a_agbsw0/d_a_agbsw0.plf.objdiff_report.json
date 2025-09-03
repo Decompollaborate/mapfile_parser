@@ -1,12 +1,12 @@
 {
   "measures": {
     "fuzzy_match_percent": 100.0,
-    "total_code": "22700",
-    "matched_code": "22700",
+    "total_code": "22872",
+    "matched_code": "22872",
     "matched_code_percent": 100.0,
     "matched_data_percent": 100.0,
-    "total_functions": 56,
-    "matched_functions": 56,
+    "total_functions": 57,
+    "matched_functions": 57,
     "matched_functions_percent": 100.0,
     "complete_data_percent": 100.0,
     "total_units": 2
@@ -73,12 +73,12 @@
       "name": "d_a_agbsw0",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "22580",
-        "matched_code": "22580",
+        "total_code": "22752",
+        "matched_code": "22752",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 53,
-        "matched_functions": 53,
+        "total_functions": 54,
+        "matched_functions": 54,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -537,6 +537,14 @@
           "metadata": {
             "virtual_address": "22440"
           }
+        },
+        {
+          "name": "$_static_symbol_000057B0_d_a_agbsw0.o_.text",
+          "size": "172",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "22448"
+          }
         }
       ],
       "metadata": {
@@ -571,12 +579,12 @@
       "name": "d_a_agbsw0",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "22580",
-        "matched_code": "22580",
+        "total_code": "22752",
+        "matched_code": "22752",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 53,
-        "matched_functions": 53,
+        "total_functions": 54,
+        "matched_functions": 54,
         "matched_functions_percent": 100.0,
         "complete_data_percent": 100.0,
         "total_units": 1

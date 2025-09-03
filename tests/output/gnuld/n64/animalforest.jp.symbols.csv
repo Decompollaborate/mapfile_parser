@@ -1,4 +1,5 @@
 Section,Symbol name,VRAM,Size in bytes
+build/asm/jp/makerom/header.o,$_static_symbol_80024C00_build/asm/jp/makerom/header.o_.data,80024C00,64
 build/bin/jp/makerom/ipl3.o,_binary_bin_jp_makerom_ipl3_bin_start,80024C40,4032
 build/bin/jp/makerom/ipl3.o,_binary_bin_jp_makerom_ipl3_bin_end,80025C00,0
 build/asm/jp/makerom/entry.o,entrypoint,80025C00,96
@@ -244,6 +245,7 @@ build/lib/ultralib/src/gu/sinf.o,fsin,8002E290,0
 build/lib/ultralib/src/gu/sinf.o,__sinf,8002E290,0
 build/lib/ultralib/src/gu/sinf.o,sinf,8002E290,448
 build/lib/ultralib/src/gu/sins.o,sins,8002E450,112
+build/lib/ultralib/src/io/sptask.o,$_static_symbol_8002E4C0_build/lib/ultralib/src/io/sptask.o_.text,8002E4C0,268
 build/lib/ultralib/src/io/sptask.o,osSpTaskLoad,8002E5CC,360
 build/lib/ultralib/src/io/sptask.o,osSpTaskStartGo,8002E734,76
 build/lib/ultralib/src/os/destroythread.o,osDestroyThread,8002E780,272
@@ -287,6 +289,7 @@ build/lib/ultralib/src/os/writebackdcache.o,osWritebackDCache,8002FE00,128
 build/lib/ultralib/src/os/initialize.o,__createSpeedParam,8002FE80,156
 build/lib/ultralib/src/os/initialize.o,__osInitialize_common,8002FF1C,684
 build/lib/ultralib/src/os/initialize.o,__osInitialize_autodetect,800301C8,8
+build/lib/ultralib/src/os/parameters.o,$_static_symbol_800301D0_build/lib/ultralib/src/os/parameters.o_.text,800301D0,96
 build/lib/ultralib/src/os/setsr.o,__osSetSR,80030230,16
 build/lib/ultralib/src/os/getsr.o,__osGetSR,80030240,16
 build/lib/ultralib/src/io/vigetnextframebuf.o,osViGetNextFramebuffer,80030250,64
@@ -299,6 +302,7 @@ build/lib/ultralib/src/io/viblack.o,osViBlack,800306B0,112
 build/lib/ultralib/src/io/sirawread.o,__osSiRawReadIo,80030720,80
 build/lib/ultralib/src/os/getthreadid.o,osGetThreadId,80030770,32
 build/lib/ultralib/src/io/sptaskyield.o,osSpTaskYield,80030790,32
+build/lib/ultralib/src/io/pfsreadwritefile.o,$_static_symbol_800307B0_build/lib/ultralib/src/io/pfsreadwritefile.o_.text,800307B0,212
 build/lib/ultralib/src/io/pfsreadwritefile.o,osPfsReadWriteFile,80030884,892
 build/lib/ultralib/src/io/pfsgetstatus.o,__osPfsGetStatus,80030C00,208
 build/lib/ultralib/src/io/pfsgetstatus.o,__osPfsRequestOneChannel,80030CD0,196
@@ -497,6 +501,7 @@ build/asm/jp/data/boot/libc64/fp.data.o,sNaN0x3FFFFF,8003C588,4
 build/asm/jp/data/boot/libc64/fp.data.o,D_8003C58C,8003C58C,4
 build/src/boot/libc64/qrand.o,__qrand_idum,8003C590,16
 build/lib/ultralib/src/vimodes/vimodepallan1.o,osViModePalLan1,8003C5A0,80
+build/lib/ultralib/src/gu/sins.o,$_static_symbol_8003C5F0_build/lib/ultralib/src/gu/sins.o_.data,8003C5F0,2048
 build/lib/ultralib/src/os/exceptasm.o,__osHwIntTable,8003CDF0,40
 build/lib/ultralib/src/os/exceptasm.o,__osPiIntTable,8003CE18,8
 build/lib/ultralib/src/os/thread.o,__osThreadTail,8003CE20,8
@@ -518,15 +523,25 @@ build/lib/ultralib/src/vimodes/vimodentsclpn1.o,osViModeNtscLpn1,8003CEC0,80
 build/lib/ultralib/src/io/contpfs.o,__osPfsInodeCacheChannel,8003CF10,4
 build/lib/ultralib/src/io/contpfs.o,__osPfsInodeCacheBank,8003CF14,12
 build/lib/ultralib/src/os/seteventmesg.o,__osPreNMI,8003CF20,16
+build/lib/ultralib/src/libc/xprintf.o,$_static_symbol_8003CF30_build/lib/ultralib/src/libc/xprintf.o_.data,8003CF30,80
 build/lib/ultralib/src/os/timerintr.o,__osTimerList,8003CF80,16
+build/lib/ultralib/src/gu/position.o,$_static_symbol_8003CF90_build/lib/ultralib/src/gu/position.o_.data,8003CF90,16
+build/lib/ultralib/src/mgu/rotate.o,$_static_symbol_8003CFA0_build/lib/ultralib/src/mgu/rotate.o_.data,8003CFA0,16
 build/lib/ultralib/src/vimodes/vimodentsclan1.o,osViModeNtscLan1,8003CFB0,80
 build/lib/ultralib/src/vimodes/vimodempallan1.o,osViModeMpalLan1,8003D000,80
+build/lib/ultralib/src/io/vi.o,$_static_symbol_8003D050_build/lib/ultralib/src/io/vi.o_.data,8003D050,96
 build/lib/ultralib/src/io/vi.o,__osViCurr,8003D0B0,4
 build/lib/ultralib/src/io/vi.o,__osViNext,8003D0B4,12
+build/lib/ultralib/src/io/cartrominit.o,$_static_symbol_8003D0C0_build/lib/ultralib/src/io/cartrominit.o_.data,8003D0C0,16
 build/lib/ultralib/src/vimodes/vimodefpallan1.o,osViModeFpalLan1,8003D0D0,80
 build/lib/ultralib/src/io/contramread.o,__osPfsLastChannel,8003D120,16
+build/lib/ultralib/src/libc/xlitob.o,$_static_symbol_8003D130_build/lib/ultralib/src/libc/xlitob.o_.data,8003D130,48
 build/lib/ultralib/src/io/vimgr.o,__osViDevMgr,8003D160,28
 build/lib/ultralib/src/io/vimgr.o,__additional_scanline,8003D17C,4
+build/src/boot/boot_main.o,$_static_symbol_8003D180_build/src/boot/boot_main.o_.rodata,8003D180,16
+build/src/boot/idle.o,$_static_symbol_8003D190_build/src/boot/idle.o_.rodata,8003D190,32
+build/src/boot/ovlmgr.o,$_static_symbol_8003D1B0_build/src/boot/ovlmgr.o_.rodata,8003D1B0,32
+build/src/boot/z_std_dma.o,$_static_symbol_8003D1D0_build/src/boot/z_std_dma.o_.rodata,8003D1D0,544
 build/asm/jp/data/boot/0187F0.rodata.o,RO_STR_8003D3F0_jp,8003D3F0,16
 build/asm/jp/data/boot/0187F0.rodata.o,RO_STR_8003D400_jp,8003D400,28
 build/asm/jp/data/boot/0187F0.rodata.o,RO_STR_8003D41C_jp,8003D41C,36
@@ -659,8 +674,19 @@ build/asm/jp/data/boot/019250.rodata.o,RO_STR_8003E278_jp,8003E278,4
 build/asm/jp/data/boot/019250.rodata.o,RO_STR_8003E27C_jp,8003E27C,20
 build/asm/jp/data/boot/libu64/gfxprint.rodata.o,jtbl_8003E290_jp,8003E290,32
 build/asm/jp/data/boot/libu64/debug.rodata.o,RO_STR_8003E2B0_jp,8003E2B0,16
+build/src/boot/libc64/math64.o,$_static_symbol_8003E2C0_build/src/boot/libc64/math64.o_.rodata,8003E2C0,80
+build/src/boot/libc64/__osMalloc.o,$_static_symbol_8003E310_build/src/boot/libc64/__osMalloc.o_.rodata,8003E310,704
 build/lib/ultralib/src/os/setintmask.o,__osRcpImTable,8003E5D0,128
+build/lib/ultralib/src/gu/sinf.o,$_static_symbol_8003E650_build/lib/ultralib/src/gu/sinf.o_.rodata,8003E650,80
+build/lib/ultralib/src/os/exceptasm.o,$_static_symbol_8003E6A0_build/lib/ultralib/src/os/exceptasm.o_.rodata,8003E6A0,80
+build/lib/ultralib/src/gu/perspective.o,$_static_symbol_8003E6F0_build/lib/ultralib/src/gu/perspective.o_.rodata,8003E6F0,16
+build/lib/ultralib/src/io/devmgr.o,$_static_symbol_8003E700_build/lib/ultralib/src/io/devmgr.o_.rodata,8003E700,32
+build/lib/ultralib/src/gu/lookathil.o,$_static_symbol_8003E720_build/lib/ultralib/src/gu/lookathil.o_.rodata,8003E720,16
+build/lib/ultralib/src/libc/xprintf.o,$_static_symbol_8003E730_build/lib/ultralib/src/libc/xprintf.o_.rodata,8003E730,256
+build/lib/ultralib/src/gu/cosf.o,$_static_symbol_8003E830_build/lib/ultralib/src/gu/cosf.o_.rodata,8003E830,80
 build/lib/ultralib/src/gu/libm_vals.o,__libm_qnan_f,8003E880,16
+build/lib/ultralib/src/libc/xldtob.o,$_static_symbol_8003E890_build/lib/ultralib/src/libc/xldtob.o_.rodata,8003E890,96
+build/lib/ultralib/src/libc/llcvt.o,$_static_symbol_8003E8F0_build/lib/ultralib/src/libc/llcvt.o_.rodata,8003E8F0,16
 build/asm/jp/data/boot/version.rodata.o,__Creator__,8003E900,36
 build/asm/jp/data/boot/version.rodata.o,__DateTime__,8003E924,20
 build/asm/jp/data/boot/version.rodata.o,__MakeOption__,8003E938,8
@@ -713,12 +739,14 @@ build/src/boot/libc64/math64.o,gFatanUseContFrac,800419B0,16
 build/src/boot/libc64/malloc.o,malloc_arena,800419C0,48
 build/src/boot/libc64/qrand.o,__qrand_itemp,800419F0,16
 build/src/boot/libc64/__osMalloc.o,sArenaLockMsg,80041A00,16
+build/lib/ultralib/src/io/sptask.o,$_static_symbol_80041A10_build/lib/ultralib/src/io/sptask.o_.bss,80041A10,64
 build/lib/ultralib/src/io/controller.o,__osContPifRam,80041A50,64
 build/lib/ultralib/src/io/controller.o,__osContLastCmd,80041A90,1
 build/lib/ultralib/src/io/controller.o,__osMaxControllers,80041A91,7
 build/lib/ultralib/src/io/controller.o,__osEepromTimer,80041A98,32
 build/lib/ultralib/src/io/controller.o,__osEepromTimerQ,80041AB8,24
 build/lib/ultralib/src/io/controller.o,__osEepromTimerMsg,80041AD0,16
+build/lib/ultralib/src/io/siacs.o,$_static_symbol_80041AE0_build/lib/ultralib/src/io/siacs.o_.bss,80041AE0,8
 build/lib/ultralib/src/io/siacs.o,__osSiAccessQueue,80041AE8,24
 build/lib/ultralib/src/os/initialize.o,__osFinalrom,80041B00,16
 build/lib/ultralib/src/debug/kdebugserver.o,__osThreadSave,80041B10,432
@@ -728,8 +756,10 @@ build/lib/ultralib/src/flash/flashinit.o,__osFlashMessageQ,80041CE8,24
 build/lib/ultralib/src/flash/flashinit.o,__osFlashHandler,80041D00,116
 build/lib/ultralib/src/flash/flashinit.o,__osFlashMsgBuf,80041D74,4
 build/lib/ultralib/src/flash/flashinit.o,__osFlashVersion,80041D78,8
+build/lib/ultralib/src/io/motor.o,$_static_symbol_80041D80_build/lib/ultralib/src/io/motor.o_.bss,80041D80,256
 build/lib/ultralib/src/io/pimgr.o,__Dom1SpeedParam,80041E80,120
 build/lib/ultralib/src/io/pimgr.o,__Dom2SpeedParam,80041EF8,4680
+build/lib/ultralib/src/io/piacs.o,$_static_symbol_80043140_build/lib/ultralib/src/io/piacs.o_.bss,80043140,8
 build/lib/ultralib/src/io/piacs.o,__osPiAccessQueue,80043148,24
 build/lib/ultralib/src/io/contpfs.o,__osPfsInodeCache,80043160,256
 build/lib/ultralib/src/os/seteventmesg.o,__osEventStateTab,80043260,128
@@ -743,6 +773,7 @@ build/lib/ultralib/src/io/gbpakinit.o,__osGbpakTimerQ,80043340,24
 build/lib/ultralib/src/io/gbpakinit.o,__osGbpakTimerMsg,80043358,8
 build/lib/ultralib/src/io/pfsisplug.o,__osPfsPifRam,80043360,64
 build/lib/ultralib/src/io/cartrominit.o,__CartRomHandle,800433A0,128
+build/lib/ultralib/src/io/vimgr.o,$_static_symbol_80043420_build/lib/ultralib/src/io/vimgr.o_.bss,80043420,4640
 build/lib/ultralib/src/io/conteepread.o,__osEepPifRam,80044640,64
 build/lib/ultralib/src/io/conteepread.o,__osEepromRead16K,80044680,16
 build/src/dmadata/dmadata.o,dma_rom_ad,80044690,54016
@@ -5422,6 +5453,7 @@ build/asm/jp/data/code/72ACB0.data.o,D_FLT_80107ADC_jp,80107ADC,12
 build/asm/jp/data/code/72ACB0.data.o,D_FLT_80107AE8_jp,80107AE8,8
 build/asm/jp/data/code/72ACB0.data.o,D_80107AF0_jp,80107AF0,16
 build/asm/jp/data/code/m_lib.data.o,D_80107B00_jp,80107B00,48
+build/src/code/m_lights.o,$_static_symbol_80107B30_build/src/code/m_lights.o_.data,80107B30,32
 build/asm/jp/data/code/72B7F0.data.o,D_80107B50_jp,80107B50,16
 build/asm/jp/data/code/72B7F0.data.o,D_80107B60_jp,80107B60,16
 build/asm/jp/data/code/72B7F0.data.o,D_80107B70_jp,80107B70,8
@@ -5671,6 +5703,7 @@ build/asm/jp/data/code/72F9B0.data.o,D_8010DC84_jp,8010DC84,4
 build/asm/jp/data/code/72F9B0.data.o,D_8010DC88_jp,8010DC88,4
 build/asm/jp/data/code/72F9B0.data.o,D_8010DC8C_jp,8010DC8C,4
 build/asm/jp/data/code/72F9B0.data.o,D_8010DC90_jp,8010DC90,16
+build/src/code/m_start_data_init.o,$_static_symbol_8010DCA0_build/src/code/m_start_data_init.o_.data,8010DCA0,64
 build/asm/jp/data/code/731980.data.o,D_8010DCE0_jp,8010DCE0,4
 build/asm/jp/data/code/731980.data.o,D_8010DCE4_jp,8010DCE4,4
 build/asm/jp/data/code/731980.data.o,D_8010DCE8_jp,8010DCE8,4
@@ -5893,9 +5926,12 @@ build/asm/jp/data/code/733A10.data.o,D_80115020_jp,80115020,112
 build/asm/jp/data/code/733A10.data.o,D_80115090_jp,80115090,3312
 build/asm/jp/data/code/733A10.data.o,D_80115D80_jp,80115D80,832
 build/asm/jp/data/code/733A10.data.o,D_801160C0_jp,801160C0,80
+build/src/code/c_keyframe.o,$_static_symbol_80116110_build/src/code/c_keyframe.o_.rodata,80116110,80
 build/asm/jp/data/code/739E00.rodata.o,RO_STR_80116160_jp,80116160,36
 build/asm/jp/data/code/739E00.rodata.o,RO_STR_80116184_jp,80116184,44
+build/src/code/m_actor.o,$_static_symbol_801161B0_build/src/code/m_actor.o_.rodata,801161B0,56
 build/src/code/m_actor.o,RO_801161E8_jp,801161E8,24
+build/src/code/m_actor_dlftbls.o,$_static_symbol_80116200_build/src/code/m_actor_dlftbls.o_.rodata,80116200,80
 build/asm/jp/data/code/739EF0.rodata.o,RO_FLT_80116250_jp,80116250,4
 build/asm/jp/data/code/739EF0.rodata.o,RO_FLT_80116254_jp,80116254,4
 build/asm/jp/data/code/739EF0.rodata.o,RO_FLT_80116258_jp,80116258,4
@@ -6033,6 +6069,8 @@ build/asm/jp/data/code/73A0F0.rodata.o,jtbl_80116730_jp,80116730,128
 build/asm/jp/data/code/73A0F0.rodata.o,jtbl_801167B0_jp,801167B0,36
 build/asm/jp/data/code/73A0F0.rodata.o,RO_FLT_801167D4_jp,801167D4,4
 build/asm/jp/data/code/73A0F0.rodata.o,RO_FLT_801167D8_jp,801167D8,8
+build/src/code/m_collision_obj.o,$_static_symbol_801167E0_build/src/code/m_collision_obj.o_.rodata,801167E0,16
+build/src/code/m_controller.o,$_static_symbol_801167F0_build/src/code/m_controller.o_.rodata,801167F0,16
 build/asm/jp/data/code/73A4A0.rodata.o,RO_80116800_jp,80116800,4
 build/asm/jp/data/code/73A4A0.rodata.o,RO_STR_80116804_jp,80116804,4
 build/asm/jp/data/code/73A4A0.rodata.o,RO_80116808_jp,80116808,8
@@ -6204,6 +6242,7 @@ build/asm/jp/data/code/m_kankyo.rodata.o,RO_FLT_80117228_jp,80117228,4
 build/asm/jp/data/code/m_kankyo.rodata.o,RO_FLT_8011722C_jp,8011722C,4
 build/asm/jp/data/code/m_lib.rodata.o,RO_FLT_80117230_jp,80117230,4
 build/asm/jp/data/code/m_lib.rodata.o,RO_FLT_80117234_jp,80117234,12
+build/src/code/m_lights.o,$_static_symbol_80117240_build/src/code/m_lights.o_.rodata,80117240,16
 build/asm/jp/data/code/m_msg_main.rodata.o,RO_STR_80117250_jp,80117250,16
 build/asm/jp/data/code/m_msg_main.rodata.o,RO_STR_80117260_jp,80117260,16
 build/asm/jp/data/code/m_msg_main.rodata.o,RO_STR_80117270_jp,80117270,16
@@ -6375,6 +6414,7 @@ build/asm/jp/data/code/73B9C0.rodata.o,RO_STR_80117D60_jp,80117D60,12
 build/asm/jp/data/code/73B9C0.rodata.o,RO_STR_80117D6C_jp,80117D6C,12
 build/asm/jp/data/code/73B9C0.rodata.o,RO_STR_80117D78_jp,80117D78,24
 build/asm/jp/data/code/73B9C0.rodata.o,RO_STR_80117D90_jp,80117D90,32
+build/src/code/irqmgr.o,$_static_symbol_80117DB0_build/src/code/irqmgr.o_.rodata,80117DB0,32
 build/asm/jp/data/code/73BA70.rodata.o,RO_80117DD0_jp,80117DD0,28
 build/asm/jp/data/code/73BA70.rodata.o,RO_80117DEC_jp,80117DEC,104
 build/asm/jp/data/code/73BA70.rodata.o,RO_80117E54_jp,80117E54,8
@@ -6434,6 +6474,8 @@ build/asm/jp/data/code/sys_math3d.rodata.o,RO_FLT_80118150_jp,80118150,4
 build/asm/jp/data/code/sys_math3d.rodata.o,RO_FLT_80118154_jp,80118154,4
 build/asm/jp/data/code/sys_math3d.rodata.o,RO_FLT_80118158_jp,80118158,8
 build/asm/jp/data/code/sys_math_atan.rodata.o,RO_FLT_80118160_jp,80118160,16
+build/src/code/sys_matrix.o,$_static_symbol_80118170_build/src/code/sys_matrix.o_.rodata,80118170,48
+build/src/code/zurumode.o,$_static_symbol_801181A0_build/src/code/zurumode.o_.rodata,801181A0,48
 build/asm/jp/data/code/audio_synthesis.rodata.o,jtbl_801181D0_jp,801181D0,32
 build/asm/jp/data/code/audio_synthesis.rodata.o,RO_FLT_801181F0_jp,801181F0,16
 build/asm/jp/data/code/audio_heap.rodata.o,RO_FLT_80118200_jp,80118200,4
@@ -7364,6 +7406,8 @@ build/src/overlays/gamestates/ovl_play/m_play.o,D_80804344_jp,80804344,36
 build/src/overlays/gamestates/ovl_play/m_play.o,D_80804368_jp,80804368,36
 build/src/overlays/gamestates/ovl_play/m_play.o,D_8080438C_jp,8080438C,28
 build/src/overlays/gamestates/ovl_play/m_play.o,D_808043A8_jp,808043A8,24
+build/src/overlays/gamestates/ovl_play/m_play.o,$_static_symbol_808043C0_build/src/overlays/gamestates/ovl_play/m_play.o_.rodata,808043C0,192
+build/src/overlays/gamestates/ovl_play/m_play.o,$_static_symbol_80804480_build/src/overlays/gamestates/ovl_play/m_play.o_.bss,80804480,240
 build/asm/jp/data/overlays/gamestates/ovl_play/ovl_play_reloc.data.o,D_80804570,80804570,544
 build/asm/jp/overlays/gamestates/ovl_second_game/second_game.o,func_80804790_jp,80804790,208
 build/asm/jp/overlays/gamestates/ovl_second_game/second_game.o,second_game_cleanup,80804860,12
@@ -25826,6 +25870,7 @@ build/asm/jp/data/overlays/other_ovl/ovl__00970920/ovl__00970920.bss.o,B_80AB534
 build/asm/jp/data/overlays/other_ovl/ovl__00970920/ovl__00970920.bss.o,B_80AB5360_jp,80AB5360,32
 build/asm/jp/data/overlays/other_ovl/ovl__00970920/ovl__00970920.bss.o,B_80AB5380_jp,80AB5380,32
 build/asm/jp/data/overlays/other_ovl/ovl__00970920/ovl__00970920.bss.o,B_80AB53A0_jp,80AB53A0,960
+build/asm/jp/data/overlays/other_ovl/ovl__00970920/ovl__00970920_reloc.data.o,$_static_symbol_80AB5760_build/asm/jp/data/overlays/other_ovl/ovl__00970920/ovl__00970920_reloc.data.o_.data,80AB5760,832
 build/bin/jp/segment_009757E0.o,_binary_bin_jp_segment_009757E0_bin_start,80AB5AA0,384000
 build/bin/jp/segment_009757E0.o,_binary_bin_jp_segment_009757E0_bin_end,80B136A0,0
 build/bin/jp/segment_009D4000.o,_binary_bin_jp_segment_009D4000_bin_start,80B136A0,40976
