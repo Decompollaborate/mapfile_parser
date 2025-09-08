@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.11.0] - 2025-09-08
+
 ### Added
 
 - Progress reports using the objdiff's report format can now emit progress for
@@ -662,6 +664,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.11.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.10.0...2.11.0
 [2.10.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.4...2.10.0
 [2.9.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.3...2.9.4
 [2.9.3]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.2...2.9.3
