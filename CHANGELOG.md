@@ -17,6 +17,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - It is possible to check if a symbol is an inferred static in the API by
     checking `Symbol::inferred_static`.
 
+### Fixed
+
+- Fix the vram address plf-resolved mapfiles when the sections of those plfs
+  were not relative to zero.
+
 ## [2.10.0] - 2025-09-01
 
 ### Added

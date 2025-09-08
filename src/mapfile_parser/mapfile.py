@@ -1073,13 +1073,13 @@ class MapFile:
 
                             # Adjust the vram and vrom addresses of the section
                             # because they are relative to zero.
-                            sectTemp.vram += sect.vram
+                            sectTemp.vram += sect.vram - partialSegment.vram
                             if sectTemp.vrom is not None and sect.vrom is not None and partialSegment.vrom is not None:
                                 sectTemp.vrom = sectTemp.vrom + sect.vrom - partialSegment.vrom
 
                             # Adjust vram and vrom of symbols too.
                             for partialSym in sectTemp._symbols:
-                                partialSym.vram += sect.vram
+                                partialSym.vram += sect.vram - partialSegment.vram
                                 if partialSym.vrom is not None and sect.vrom is not None and partialSegment.vrom is not None:
                                     partialSym.vrom = partialSym.vrom + sect.vrom - partialSegment.vrom
 
