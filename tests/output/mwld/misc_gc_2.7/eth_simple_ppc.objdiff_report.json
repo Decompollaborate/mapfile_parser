@@ -4,11 +4,12 @@
     "total_code": "712",
     "matched_code": "712",
     "matched_code_percent": 100.0,
+    "total_data": "96",
+    "matched_data": "96",
     "matched_data_percent": 100.0,
     "total_functions": 5,
     "matched_functions": 5,
     "matched_functions_percent": 100.0,
-    "complete_data_percent": 100.0,
     "total_units": 1
   },
   "units": [
@@ -19,6 +20,8 @@
         "total_code": "712",
         "matched_code": "712",
         "matched_code_percent": 100.0,
+        "total_data": "96",
+        "matched_data": "96",
         "matched_data_percent": 100.0,
         "total_functions": 5,
         "matched_functions": 5,
@@ -37,6 +40,7 @@
         {
           "name": "extab",
           "size": "32",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -44,6 +48,7 @@
         {
           "name": ".sdata",
           "size": "8",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -51,6 +56,7 @@
         {
           "name": ".sdata2",
           "size": "8",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -58,6 +64,7 @@
         {
           "name": "@17",
           "size": "12",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -124,11 +131,12 @@
         "total_code": "712",
         "matched_code": "712",
         "matched_code_percent": 100.0,
+        "total_data": "96",
+        "matched_data": "96",
         "matched_data_percent": 100.0,
         "total_functions": 5,
         "matched_functions": 5,
         "matched_functions_percent": 100.0,
-        "complete_data_percent": 100.0,
         "total_units": 1
       }
     }

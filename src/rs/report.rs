@@ -78,9 +78,12 @@ where
         for section in &segment.sections_list {
             let section_name = object_to_unit_name(section);
 
-            let Some(mut new_report_unit) =
-                report_from_section(section, section_name.clone(), path_decomp_settings)
-            else {
+            let Some(mut new_report_unit) = report_from_section(
+                section,
+                section_name.clone(),
+                path_decomp_settings,
+                report_categories.report_data,
+            ) else {
                 continue;
             };
 
@@ -202,6 +205,7 @@ fn report_from_section(
     section: &section::Section,
     section_name: String,
     path_decomp_settings: Option<&PathDecompSettings>,
+    track_data: bool,
 ) -> Option<report::ReportUnit> {
     if section.is_fill || BANNED_SECTIONS.contains(section.section_type.as_str()) {
         return None;
@@ -214,7 +218,6 @@ fn report_from_section(
     let is_text = section.section_type.starts_with(".text")
         | section.section_type.starts_with(".start")
         | section.section_type.starts_with(".init");
-    let track_data = false;
 
     for sym_state in section.symbol_match_state_iter(path_decomp_settings) {
         let mut fuzzy_match_percent = 0.0;
@@ -316,6 +319,9 @@ fn report_item_from_section(section: &section::Section) -> report::ReportItem {
 #[cfg_attr(feature = "python_bindings", pyclass(module = "mapfile_parser"))]
 pub struct ReportCategories {
     categories: Vec<ReportCategoryEntry>,
+    // I don't like having this here, but I don't want to break the api
+    // and I forgot to have a proper thing for configuring the report.
+    report_data: bool,
 }
 
 impl ReportCategories {
@@ -323,6 +329,7 @@ impl ReportCategories {
     pub fn new() -> Self {
         Self {
             categories: Vec::new(),
+            report_data: true,
         }
     }
 
@@ -365,6 +372,14 @@ impl ReportCategories {
         }
 
         ids
+    }
+
+    pub fn report_data(&self) -> bool {
+        self.report_data
+    }
+
+    pub fn report_data_mut(&mut self) -> &mut bool {
+        &mut self.report_data
     }
 }
 
@@ -416,6 +431,11 @@ pub(crate) mod python_bindings {
         #[pyo3(name = "push")]
         fn py_push(&mut self, id: String, name: String, paths: Vec<String>) {
             self.push(id, name, paths);
+        }
+
+        #[pyo3(name = "setReportData")]
+        fn py_set_report_data(&mut self, reportData: bool) {
+            *self.report_data_mut() = reportData;
         }
     }
 }

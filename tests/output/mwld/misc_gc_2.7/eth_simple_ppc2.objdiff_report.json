@@ -4,11 +4,12 @@
     "total_code": "912",
     "matched_code": "912",
     "matched_code_percent": 100.0,
+    "total_data": "116",
+    "matched_data": "116",
     "matched_data_percent": 100.0,
     "total_functions": 6,
     "matched_functions": 6,
     "matched_functions_percent": 100.0,
-    "complete_data_percent": 100.0,
     "total_units": 1
   },
   "units": [
@@ -19,6 +20,8 @@
         "total_code": "912",
         "matched_code": "912",
         "matched_code_percent": 100.0,
+        "total_data": "116",
+        "matched_data": "116",
         "matched_data_percent": 100.0,
         "total_functions": 6,
         "matched_functions": 6,
@@ -37,6 +40,7 @@
         {
           "name": "extab",
           "size": "40",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -44,6 +48,7 @@
         {
           "name": ".sdata",
           "size": "8",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -51,6 +56,7 @@
         {
           "name": ".sdata2",
           "size": "8",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -58,6 +64,7 @@
         {
           "name": "@17",
           "size": "12",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -132,11 +139,12 @@
         "total_code": "912",
         "matched_code": "912",
         "matched_code_percent": 100.0,
+        "total_data": "116",
+        "matched_data": "116",
         "matched_data_percent": 100.0,
         "total_functions": 6,
         "matched_functions": 6,
         "matched_functions_percent": 100.0,
-        "complete_data_percent": 100.0,
         "total_units": 1
       }
     }

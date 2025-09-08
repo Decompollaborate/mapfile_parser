@@ -31,6 +31,7 @@ for v in versions:
 prefixesToTrim.append("build/")
 
 reportCategories = mapfile_parser.ReportCategories()
+reportCategories.setReportData(True)
 
 def plfResolver(x: Path) -> Path|None:
     if x.suffix == ".plf":

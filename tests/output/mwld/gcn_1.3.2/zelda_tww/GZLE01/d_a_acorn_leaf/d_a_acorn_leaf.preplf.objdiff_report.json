@@ -4,11 +4,12 @@
     "total_code": "3928",
     "matched_code": "3928",
     "matched_code_percent": 100.0,
+    "total_data": "563",
+    "matched_data": "563",
     "matched_data_percent": 100.0,
     "total_functions": 48,
     "matched_functions": 48,
     "matched_functions_percent": 100.0,
-    "complete_data_percent": 100.0,
     "total_units": 3
   },
   "units": [
@@ -76,6 +77,8 @@
         "total_code": "116",
         "matched_code": "116",
         "matched_code_percent": 100.0,
+        "total_data": "8",
+        "matched_data": "8",
         "matched_data_percent": 100.0,
         "total_functions": 2,
         "matched_functions": 2,
@@ -94,6 +97,7 @@
         {
           "name": ".dtors",
           "size": "4",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -101,6 +105,7 @@
         {
           "name": ".bss",
           "size": "4",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -139,6 +144,8 @@
         "total_code": "3692",
         "matched_code": "3692",
         "matched_code_percent": 100.0,
+        "total_data": "555",
+        "matched_data": "555",
         "matched_data_percent": 100.0,
         "total_functions": 43,
         "matched_functions": 43,
@@ -157,6 +164,7 @@
         {
           "name": ".rodata",
           "size": "117",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -171,6 +179,7 @@
         {
           "name": ".data",
           "size": "416",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -178,6 +187,7 @@
         {
           "name": ".bss",
           "size": "24",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "8"
           }
@@ -563,11 +573,12 @@
         "total_code": "116",
         "matched_code": "116",
         "matched_code_percent": 100.0,
+        "total_data": "8",
+        "matched_data": "8",
         "matched_data_percent": 100.0,
         "total_functions": 2,
         "matched_functions": 2,
         "matched_functions_percent": 100.0,
-        "complete_data_percent": 100.0,
         "total_units": 1
       }
     },
@@ -579,11 +590,12 @@
         "total_code": "3692",
         "matched_code": "3692",
         "matched_code_percent": 100.0,
+        "total_data": "555",
+        "matched_data": "555",
         "matched_data_percent": 100.0,
         "total_functions": 43,
         "matched_functions": 43,
         "matched_functions_percent": 100.0,
-        "complete_data_percent": 100.0,
         "total_units": 1
       }
     }

@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Progress reports using the objdiff's report format can now emit progress for
+  data symbols!
+  - Data progress reporting requires `.NON_MATCHING` markers for every data
+    symbol that is not considered matched yet (i.e. from an automatic disassembly).
+  - It is turned off by default in `objdiff_report`. To turn it on set
+    `report_data: True` on your `decomp.yaml` file.
+
 ### Changed
 
 - Mapfile parsing will now try to infer static symbols by analyzing mismatches
@@ -16,6 +25,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     the section. Its name will be prefixed with `$_static_symbol_`.
   - It is possible to check if a symbol is an inferred static in the API by
     checking `Symbol::inferred_static`.
+- The `--emit-categories` flag of `objdiff_report` not sets
+  `check_asm_paths: False` and `report_data: True` by default.
 
 ### Fixed
 

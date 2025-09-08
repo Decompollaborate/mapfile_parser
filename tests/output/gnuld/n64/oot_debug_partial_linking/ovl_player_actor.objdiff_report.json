@@ -4,11 +4,12 @@
     "total_code": "135680",
     "matched_code": "135680",
     "matched_code_percent": 100.0,
+    "total_data": "8808",
+    "matched_data": "8808",
     "matched_data_percent": 100.0,
     "total_functions": 547,
     "matched_functions": 547,
     "matched_functions_percent": 100.0,
-    "complete_data_percent": 100.0,
     "total_units": 1
   },
   "units": [
@@ -19,6 +20,8 @@
         "total_code": "135680",
         "matched_code": "135680",
         "matched_code_percent": 100.0,
+        "total_data": "8808",
+        "matched_data": "8808",
         "matched_data_percent": 100.0,
         "total_functions": 547,
         "matched_functions": 547,
@@ -37,6 +40,7 @@
         {
           "name": ".data",
           "size": "7728",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "135680"
           }
@@ -44,6 +48,7 @@
         {
           "name": ".rodata",
           "size": "784",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "143408"
           }
@@ -51,6 +56,7 @@
         {
           "name": ".reginfo",
           "size": "24",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -58,6 +64,7 @@
         {
           "name": ".bss",
           "size": "208",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "32"
           }
@@ -65,6 +72,7 @@
         {
           "name": ".options",
           "size": "64",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -4467,11 +4475,12 @@
         "total_code": "135680",
         "matched_code": "135680",
         "matched_code_percent": 100.0,
+        "total_data": "8808",
+        "matched_data": "8808",
         "matched_data_percent": 100.0,
         "total_functions": 547,
         "matched_functions": 547,
         "matched_functions_percent": 100.0,
-        "complete_data_percent": 100.0,
         "total_units": 1
       }
     }

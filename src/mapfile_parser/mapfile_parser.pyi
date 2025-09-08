@@ -311,6 +311,23 @@ class MapFile:
     def __len__(self) -> int: ...
 
 class ReportCategories:
+    """
+    Allows configuring certain aspects of the generated objdiff report file,
+    like categories.
+    """
     def __init__(self): ...
 
-    def push(self, id: str, name: str, paths: list[str]): ...
+    def push(self, id: str, name: str, paths: list[str]):
+        """
+        Add a category with the given list of paths.
+
+        If the category id already exists then the paths are merged together
+        with the previous list of paths.
+        """
+
+    def setReportData(self, reportData: bool):
+        """
+        Track data progress on the generated report file.
+
+        Defaults to `True`.
+        """
