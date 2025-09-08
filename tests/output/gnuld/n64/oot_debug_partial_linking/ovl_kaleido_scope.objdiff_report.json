@@ -1,0 +1,890 @@
+{
+  "measures": {
+    "fuzzy_match_percent": 100.0,
+    "total_code": "92240",
+    "matched_code": "92240",
+    "matched_code_percent": 100.0,
+    "matched_data_percent": 100.0,
+    "total_functions": 47,
+    "matched_functions": 47,
+    "matched_functions_percent": 100.0,
+    "complete_data_percent": 100.0,
+    "total_units": 9
+  },
+  "units": [
+    {
+      "name": "gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "9408",
+        "matched_code": "9408",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "9408",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "432",
+          "metadata": {
+            "virtual_address": "92240"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "160",
+          "metadata": {
+            "virtual_address": "113664"
+          }
+        },
+        {
+          "name": ".reginfo",
+          "size": "24",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "KaleidoScope_DrawQuestStatus",
+          "size": "9384",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": "KaleidoScope_UpdateQuestStatusPoint",
+          "size": "24",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9384"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "8304",
+        "matched_code": "8304",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 3,
+        "matched_functions": 3,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "8304",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9408"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "464",
+          "metadata": {
+            "virtual_address": "92672"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "320",
+          "metadata": {
+            "virtual_address": "113824"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "64"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "KaleidoScope_DrawInventoryEditorText",
+          "size": "756",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9408"
+          }
+        },
+        {
+          "name": "KaleidoScope_DrawDigit",
+          "size": "472",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10164"
+          }
+        },
+        {
+          "name": "KaleidoScope_DrawInventoryEditor",
+          "size": "7076",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10636"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "6992",
+        "matched_code": "6992",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 3,
+        "matched_functions": 3,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "6992",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "17712"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "48",
+          "metadata": {
+            "virtual_address": "93136"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "272",
+          "metadata": {
+            "virtual_address": "114144"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "128"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "KaleidoScope_DrawEquipmentImage",
+          "size": "1100",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "17712"
+          }
+        },
+        {
+          "name": "KaleidoScope_DrawPlayerWork",
+          "size": "420",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "18812"
+          }
+        },
+        {
+          "name": "KaleidoScope_DrawEquipment",
+          "size": "5472",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19232"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "8816",
+        "matched_code": "8816",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 5,
+        "matched_functions": 5,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "8816",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24704"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "112",
+          "metadata": {
+            "virtual_address": "93184"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "688",
+          "metadata": {
+            "virtual_address": "114416"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "192"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "KaleidoScope_DrawAmmoCount",
+          "size": "1396",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24704"
+          }
+        },
+        {
+          "name": "KaleidoScope_SetCursorPos",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "26100"
+          }
+        },
+        {
+          "name": "KaleidoScope_SetItemCursorPos",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "26144"
+          }
+        },
+        {
+          "name": "KaleidoScope_DrawItemSelect",
+          "size": "3800",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "26188"
+          }
+        },
+        {
+          "name": "KaleidoScope_UpdateItemEquip",
+          "size": "3532",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29988"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "13536",
+        "matched_code": "13536",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "13536",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "33520"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "592",
+          "metadata": {
+            "virtual_address": "93296"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "160",
+          "metadata": {
+            "virtual_address": "115104"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "256"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "KaleidoScope_DrawDungeonMap",
+          "size": "6280",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "33520"
+          }
+        },
+        {
+          "name": "KaleidoScope_DrawWorldMap",
+          "size": "7256",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "39800"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "512",
+        "matched_code": "512",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 1,
+        "matched_functions": 1,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "512",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "47056"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "93888"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "320"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "KaleidoScope_UpdatePrompt",
+          "size": "512",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "47056"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "42864",
+        "matched_code": "42864",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 27,
+        "matched_functions": 27,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "42864",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "47568"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "2944",
+          "metadata": {
+            "virtual_address": "93904"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "2752",
+          "metadata": {
+            "virtual_address": "115264"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "112",
+          "metadata": {
+            "virtual_address": "32"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "384"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "KaleidoScope_SetupPlayerPreRender",
+          "size": "268",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "47568"
+          }
+        },
+        {
+          "name": "KaleidoScope_ProcessPlayerPreRender",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "47836"
+          }
+        },
+        {
+          "name": "KaleidoScope_QuadTextureIA4",
+          "size": "472",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "47892"
+          }
+        },
+        {
+          "name": "KaleidoScope_QuadTextureIA8",
+          "size": "472",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "48364"
+          }
+        },
+        {
+          "name": "KaleidoScope_OverridePalIndexCI4",
+          "size": "312",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "48836"
+          }
+        },
+        {
+          "name": "KaleidoScope_MoveCursorToSpecialPos",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "49148"
+          }
+        },
+        {
+          "name": "KaleidoScope_DrawQuadTextureRGBA32",
+          "size": "576",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "49244"
+          }
+        },
+        {
+          "name": "KaleidoScope_SetDefaultCursor",
+          "size": "192",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "49820"
+          }
+        },
+        {
+          "name": "KaleidoScope_SetupPageSwitch",
+          "size": "376",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "50012"
+          }
+        },
+        {
+          "name": "KaleidoScope_HandlePageToggles",
+          "size": "316",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "50388"
+          }
+        },
+        {
+          "name": "KaleidoScope_DrawCursor",
+          "size": "860",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "50704"
+          }
+        },
+        {
+          "name": "KaleidoScope_DrawPageSections",
+          "size": "680",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "51564"
+          }
+        },
+        {
+          "name": "KaleidoScope_DrawPages",
+          "size": "6108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "52244"
+          }
+        },
+        {
+          "name": "KaleidoScope_DrawUIOverlay",
+          "size": "6456",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "58352"
+          }
+        },
+        {
+          "name": "KaleidoScope_UpdateNamePanel",
+          "size": "620",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "64808"
+          }
+        },
+        {
+          "name": "KaleidoScope_UpdatePageSwitch",
+          "size": "480",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "65428"
+          }
+        },
+        {
+          "name": "KaleidoScope_SetView",
+          "size": "120",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "65908"
+          }
+        },
+        {
+          "name": "KaleidoScope_SetPageVertices",
+          "size": "1680",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "66028"
+          }
+        },
+        {
+          "name": "KaleidoScope_SetVertices",
+          "size": "7032",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "67708"
+          }
+        },
+        {
+          "name": "KaleidoScope_DrawGameOver",
+          "size": "1700",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "74740"
+          }
+        },
+        {
+          "name": "KaleidoScope_Draw",
+          "size": "596",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "76440"
+          }
+        },
+        {
+          "name": "KaleidoScope_GrayOutTextureRGBA32",
+          "size": "176",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "77036"
+          }
+        },
+        {
+          "name": "KaleidoScope_UpdateOpening",
+          "size": "496",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "77212"
+          }
+        },
+        {
+          "name": "KaleidoScope_UpdateCursorVtx",
+          "size": "832",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "77708"
+          }
+        },
+        {
+          "name": "KaleidoScope_LoadDungeonMap",
+          "size": "188",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "78540"
+          }
+        },
+        {
+          "name": "KaleidoScope_UpdateDungeonMap",
+          "size": "268",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "78728"
+          }
+        },
+        {
+          "name": "KaleidoScope_Update",
+          "size": "11436",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "78996"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "1808",
+        "matched_code": "1808",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 4,
+        "matched_functions": 4,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "1808",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "90432"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "80",
+          "metadata": {
+            "virtual_address": "96848"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "240",
+          "metadata": {
+            "virtual_address": "118016"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "448"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "PauseMapMark_Init",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "90432"
+          }
+        },
+        {
+          "name": "PauseMapMark_Clear",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "90480"
+          }
+        },
+        {
+          "name": "PauseMapMark_DrawForDungeon",
+          "size": "1644",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "90496"
+          }
+        },
+        {
+          "name": "PauseMapMark_Draw",
+          "size": "100",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "92140"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".data",
+          "size": "16736",
+          "metadata": {
+            "virtual_address": "96928"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "128",
+          "metadata": {
+            "virtual_address": "118256"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "512"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".data",
+        "module_id": 1,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    }
+  ],
+  "version": 2,
+  "categories": [
+    {
+      "id": "gc-eu-mq-dbg",
+      "name": "gc-eu-mq-dbg",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "92240",
+        "matched_code": "92240",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 47,
+        "matched_functions": 47,
+        "matched_functions_percent": 100.0,
+        "complete_data_percent": 100.0,
+        "total_units": 9
+      }
+    }
+  ]
+}

@@ -1,15 +1,15 @@
 {
   "measures": {
     "fuzzy_match_percent": 100.0,
-    "total_code": "1017120",
-    "matched_code": "1017120",
+    "total_code": "1017200",
+    "matched_code": "1017200",
     "matched_code_percent": 100.0,
     "matched_data_percent": 100.0,
     "total_functions": 3152,
     "matched_functions": 3152,
     "matched_functions_percent": 100.0,
     "complete_data_percent": 100.0,
-    "total_units": 234
+    "total_units": 235
   },
   "units": [
     {
@@ -35,22 +35,22 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "144",
+          "name": ".data",
+          "size": "160",
           "metadata": {
             "virtual_address": "1017280"
           }
         },
         {
-          "name": ".reginfo",
-          "size": "24",
+          "name": ".rodata",
+          "size": "144",
           "metadata": {
-            "virtual_address": "0"
+            "virtual_address": "1146576"
           }
         },
         {
-          "name": ".data",
-          "size": "160",
+          "name": ".reginfo",
+          "size": "24",
           "metadata": {
             "virtual_address": "0"
           }
@@ -208,24 +208,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "880",
-          "metadata": {
-            "virtual_address": "1017424"
-          }
-        },
-        {
           "name": ".data",
           "size": "672",
           "metadata": {
-            "virtual_address": "160"
+            "virtual_address": "1017440"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "880",
+          "metadata": {
+            "virtual_address": "1146720"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "0"
+            "virtual_address": "32"
           }
         },
         {
@@ -405,17 +405,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "800",
-          "metadata": {
-            "virtual_address": "1018304"
-          }
-        },
-        {
           "name": ".data",
           "size": "176",
           "metadata": {
-            "virtual_address": "832"
+            "virtual_address": "1018112"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "800",
+          "metadata": {
+            "virtual_address": "1147600"
           }
         },
         {
@@ -603,17 +603,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "144",
-          "metadata": {
-            "virtual_address": "1019104"
-          }
-        },
-        {
           "name": ".data",
           "size": "80",
           "metadata": {
-            "virtual_address": "1008"
+            "virtual_address": "1018288"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "144",
+          "metadata": {
+            "virtual_address": "1148400"
           }
         },
         {
@@ -700,7 +700,7 @@
           "name": ".rodata",
           "size": "224",
           "metadata": {
-            "virtual_address": "1019248"
+            "virtual_address": "1148544"
           }
         },
         {
@@ -779,7 +779,7 @@
           "name": ".rodata",
           "size": "256",
           "metadata": {
-            "virtual_address": "1019472"
+            "virtual_address": "1148768"
           }
         },
         {
@@ -871,24 +871,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "144",
-          "metadata": {
-            "virtual_address": "1019728"
-          }
-        },
-        {
           "name": ".data",
           "size": "80",
           "metadata": {
-            "virtual_address": "1088"
+            "virtual_address": "1018368"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "144",
+          "metadata": {
+            "virtual_address": "1149024"
           }
         },
         {
           "name": ".bss",
           "size": "15856",
           "metadata": {
-            "virtual_address": "16"
+            "virtual_address": "48"
           }
         },
         {
@@ -1004,17 +1004,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1200",
-          "metadata": {
-            "virtual_address": "1019872"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "1168"
+            "virtual_address": "1018448"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1200",
+          "metadata": {
+            "virtual_address": "1149168"
           }
         },
         {
@@ -1170,17 +1170,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "96",
-          "metadata": {
-            "virtual_address": "1021072"
-          }
-        },
-        {
           "name": ".data",
           "size": "240",
           "metadata": {
-            "virtual_address": "1184"
+            "virtual_address": "1018464"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "96",
+          "metadata": {
+            "virtual_address": "1150368"
           }
         },
         {
@@ -1880,24 +1880,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "944",
-          "metadata": {
-            "virtual_address": "1021168"
-          }
-        },
-        {
           "name": ".data",
           "size": "448",
           "metadata": {
-            "virtual_address": "2464"
+            "virtual_address": "1019744"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "944",
+          "metadata": {
+            "virtual_address": "1150464"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "15872"
+            "virtual_address": "15904"
           }
         },
         {
@@ -1952,7 +1952,7 @@
           "name": ".rodata",
           "size": "128",
           "metadata": {
-            "virtual_address": "1022112"
+            "virtual_address": "1151408"
           }
         },
         {
@@ -2012,24 +2012,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "4016",
-          "metadata": {
-            "virtual_address": "1022240"
-          }
-        },
-        {
           "name": ".data",
           "size": "800",
           "metadata": {
-            "virtual_address": "2912"
+            "virtual_address": "1020192"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "4016",
+          "metadata": {
+            "virtual_address": "1151536"
           }
         },
         {
           "name": ".bss",
           "size": "128",
           "metadata": {
-            "virtual_address": "15888"
+            "virtual_address": "15920"
           }
         },
         {
@@ -2618,7 +2618,7 @@
           }
         },
         {
-          "name": "func_8002DE04",
+          "name": "Actor_SwapHookshotAttachment",
           "size": "112",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -2626,7 +2626,7 @@
           }
         },
         {
-          "name": "func_8002DE74",
+          "name": "Actor_RequestHorseCameraSetting",
           "size": "88",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -2650,7 +2650,7 @@
           }
         },
         {
-          "name": "func_8002DF18",
+          "name": "Actor_InitPlayerHorse",
           "size": "32",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -2898,7 +2898,7 @@
           }
         },
         {
-          "name": "func_8002F368",
+          "name": "Actor_GetPlayerExchangeItemId",
           "size": "12",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -3194,7 +3194,7 @@
           }
         },
         {
-          "name": "func_800314B0",
+          "name": "Actor_CullingCheck",
           "size": "36",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -3202,7 +3202,7 @@
           }
         },
         {
-          "name": "func_800314D4",
+          "name": "Actor_CullingVolumeTest",
           "size": "216",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -3210,7 +3210,7 @@
           }
         },
         {
-          "name": "func_800315AC",
+          "name": "Actor_DrawAll",
           "size": "1148",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -3642,7 +3642,7 @@
           }
         },
         {
-          "name": "func_80034DD4",
+          "name": "Actor_UpdateAlphaByDistance",
           "size": "236",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -3658,7 +3658,7 @@
           }
         },
         {
-          "name": "func_80034F54",
+          "name": "Actor_UpdateFidgetTables",
           "size": "452",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -3961,24 +3961,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "5680",
-          "metadata": {
-            "virtual_address": "1026256"
-          }
-        },
-        {
           "name": ".data",
           "size": "15088",
           "metadata": {
-            "virtual_address": "3712"
+            "virtual_address": "1020992"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "5680",
+          "metadata": {
+            "virtual_address": "1155552"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "16016"
+            "virtual_address": "16048"
           }
         },
         {
@@ -4054,24 +4054,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "2400",
-          "metadata": {
-            "virtual_address": "1031936"
-          }
-        },
-        {
           "name": ".data",
           "size": "336",
           "metadata": {
-            "virtual_address": "18800"
+            "virtual_address": "1036080"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "2400",
+          "metadata": {
+            "virtual_address": "1161232"
           }
         },
         {
           "name": ".bss",
           "size": "288",
           "metadata": {
-            "virtual_address": "16032"
+            "virtual_address": "16064"
           }
         },
         {
@@ -5541,7 +5541,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/code/code_800430A0",
+      "name": "gc-eu-mq-dbg/src/code/z_bg_collect",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "992",
@@ -5566,7 +5566,7 @@
           "name": ".rodata",
           "size": "128",
           "metadata": {
-            "virtual_address": "1034336"
+            "virtual_address": "1163632"
           }
         },
         {
@@ -5620,7 +5620,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/code/code_80043480",
+      "name": "gc-eu-mq-dbg/src/code/z_bg_item",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "880",
@@ -5645,7 +5645,7 @@
           "name": ".rodata",
           "size": "16",
           "metadata": {
-            "virtual_address": "1034464"
+            "virtual_address": "1163760"
           }
         },
         {
@@ -5793,24 +5793,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "5408",
-          "metadata": {
-            "virtual_address": "1034480"
-          }
-        },
-        {
           "name": ".data",
           "size": "15424",
           "metadata": {
-            "virtual_address": "19136"
+            "virtual_address": "1036416"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "5408",
+          "metadata": {
+            "virtual_address": "1163776"
           }
         },
         {
           "name": ".bss",
           "size": "4528",
           "metadata": {
-            "virtual_address": "16320"
+            "virtual_address": "16352"
           }
         },
         {
@@ -7158,17 +7158,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "48",
-          "metadata": {
-            "virtual_address": "1039888"
-          }
-        },
-        {
           "name": ".data",
           "size": "736",
           "metadata": {
-            "virtual_address": "34560"
+            "virtual_address": "1051840"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "48",
+          "metadata": {
+            "virtual_address": "1169184"
           }
         },
         {
@@ -7228,24 +7228,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1936",
-          "metadata": {
-            "virtual_address": "1039936"
-          }
-        },
-        {
           "name": ".data",
           "size": "688",
           "metadata": {
-            "virtual_address": "35296"
+            "virtual_address": "1052576"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1936",
+          "metadata": {
+            "virtual_address": "1169232"
           }
         },
         {
           "name": ".bss",
           "size": "5984",
           "metadata": {
-            "virtual_address": "20848"
+            "virtual_address": "20880"
           }
         },
         {
@@ -8740,7 +8740,7 @@
           "name": ".bss",
           "size": "5168",
           "metadata": {
-            "virtual_address": "26832"
+            "virtual_address": "26864"
           }
         },
         {
@@ -8792,24 +8792,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "96",
-          "metadata": {
-            "virtual_address": "1041872"
-          }
-        },
-        {
           "name": ".data",
           "size": "192",
           "metadata": {
-            "virtual_address": "35984"
+            "virtual_address": "1053264"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "96",
+          "metadata": {
+            "virtual_address": "1171168"
           }
         },
         {
           "name": ".bss",
           "size": "544",
           "metadata": {
-            "virtual_address": "32000"
+            "virtual_address": "32032"
           }
         },
         {
@@ -8909,24 +8909,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "144",
-          "metadata": {
-            "virtual_address": "1041968"
-          }
-        },
-        {
           "name": ".data",
           "size": "80",
           "metadata": {
-            "virtual_address": "36176"
+            "virtual_address": "1053456"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "144",
+          "metadata": {
+            "virtual_address": "1171264"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "32544"
+            "virtual_address": "32576"
           }
         },
         {
@@ -9010,24 +9010,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1440",
-          "metadata": {
-            "virtual_address": "1042112"
-          }
-        },
-        {
           "name": ".data",
           "size": "352",
           "metadata": {
-            "virtual_address": "36256"
+            "virtual_address": "1053536"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1440",
+          "metadata": {
+            "virtual_address": "1171408"
           }
         },
         {
           "name": ".bss",
           "size": "48",
           "metadata": {
-            "virtual_address": "32560"
+            "virtual_address": "32592"
           }
         },
         {
@@ -9321,7 +9321,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/code/code_80069420",
+      "name": "gc-eu-mq-dbg/src/code/z_memory_utils",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "128",
@@ -9399,17 +9399,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1120",
-          "metadata": {
-            "virtual_address": "1043552"
-          }
-        },
-        {
           "name": ".data",
           "size": "4224",
           "metadata": {
-            "virtual_address": "36608"
+            "virtual_address": "1053888"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1120",
+          "metadata": {
+            "virtual_address": "1172848"
           }
         },
         {
@@ -9733,17 +9733,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "416",
-          "metadata": {
-            "virtual_address": "1044672"
-          }
-        },
-        {
           "name": ".data",
           "size": "80",
           "metadata": {
-            "virtual_address": "40832"
+            "virtual_address": "1058112"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "416",
+          "metadata": {
+            "virtual_address": "1173968"
           }
         },
         {
@@ -9838,7 +9838,7 @@
           "name": ".data",
           "size": "1088",
           "metadata": {
-            "virtual_address": "40912"
+            "virtual_address": "1058192"
           }
         },
         {
@@ -9868,7 +9868,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/code/code_8006C3A0",
+      "name": "gc-eu-mq-dbg/src/code/z_env_flags",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "368",
@@ -9965,7 +9965,7 @@
           "name": ".rodata",
           "size": "16",
           "metadata": {
-            "virtual_address": "1045088"
+            "virtual_address": "1174384"
           }
         },
         {
@@ -10028,7 +10028,7 @@
           "name": ".rodata",
           "size": "320",
           "metadata": {
-            "virtual_address": "1045104"
+            "virtual_address": "1174400"
           }
         },
         {
@@ -10128,17 +10128,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "544",
-          "metadata": {
-            "virtual_address": "1045424"
-          }
-        },
-        {
           "name": ".data",
           "size": "272",
           "metadata": {
-            "virtual_address": "42288"
+            "virtual_address": "1059568"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "544",
+          "metadata": {
+            "virtual_address": "1174720"
           }
         },
         {
@@ -10151,7 +10151,7 @@
       ],
       "functions": [
         {
-          "name": "func_8006CFC0",
+          "name": "Horse_CanSpawn",
           "size": "180",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -10159,7 +10159,7 @@
           }
         },
         {
-          "name": "func_8006D074",
+          "name": "Horse_ResetHorseData",
           "size": "56",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -10167,7 +10167,7 @@
           }
         },
         {
-          "name": "func_8006D0AC",
+          "name": "Horse_FixLakeHyliaPosition",
           "size": "64",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -10175,7 +10175,7 @@
           }
         },
         {
-          "name": "func_8006D0EC",
+          "name": "Horse_SetupInGameplay",
           "size": "1432",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -10183,7 +10183,7 @@
           }
         },
         {
-          "name": "func_8006D684",
+          "name": "Horse_SetupInCutscene",
           "size": "1508",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -10191,7 +10191,7 @@
           }
         },
         {
-          "name": "func_8006DC68",
+          "name": "Horse_InitPlayerHorse",
           "size": "308",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -10199,7 +10199,7 @@
           }
         },
         {
-          "name": "func_8006DD9C",
+          "name": "Horse_RotateToPoint",
           "size": "148",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -10238,17 +10238,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1056",
-          "metadata": {
-            "virtual_address": "1045968"
-          }
-        },
-        {
           "name": ".data",
           "size": "64",
           "metadata": {
-            "virtual_address": "42560"
+            "virtual_address": "1059840"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1056",
+          "metadata": {
+            "virtual_address": "1175264"
           }
         },
         {
@@ -10332,17 +10332,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "48",
-          "metadata": {
-            "virtual_address": "1047024"
-          }
-        },
-        {
           "name": ".data",
           "size": "80",
           "metadata": {
-            "virtual_address": "42624"
+            "virtual_address": "1059904"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "48",
+          "metadata": {
+            "virtual_address": "1176320"
           }
         },
         {
@@ -10413,7 +10413,7 @@
           "name": ".rodata",
           "size": "176",
           "metadata": {
-            "virtual_address": "1047072"
+            "virtual_address": "1176368"
           }
         },
         {
@@ -10489,24 +10489,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1536",
-          "metadata": {
-            "virtual_address": "1047248"
-          }
-        },
-        {
           "name": ".data",
           "size": "1008",
           "metadata": {
-            "virtual_address": "42704"
+            "virtual_address": "1059984"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1536",
+          "metadata": {
+            "virtual_address": "1176544"
           }
         },
         {
           "name": ".bss",
           "size": "208",
           "metadata": {
-            "virtual_address": "32608"
+            "virtual_address": "32640"
           }
         },
         {
@@ -10894,17 +10894,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "32",
-          "metadata": {
-            "virtual_address": "1048784"
-          }
-        },
-        {
           "name": ".data",
           "size": "48",
           "metadata": {
-            "virtual_address": "43712"
+            "virtual_address": "1060992"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1178080"
           }
         },
         {
@@ -11332,24 +11332,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "64",
-          "metadata": {
-            "virtual_address": "1048816"
-          }
-        },
-        {
           "name": ".data",
           "size": "288",
           "metadata": {
-            "virtual_address": "43760"
+            "virtual_address": "1061040"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "1178112"
           }
         },
         {
           "name": ".bss",
           "size": "48",
           "metadata": {
-            "virtual_address": "32816"
+            "virtual_address": "32848"
           }
         },
         {
@@ -11457,24 +11457,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "96",
-          "metadata": {
-            "virtual_address": "1048880"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "44048"
+            "virtual_address": "1061328"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "96",
+          "metadata": {
+            "virtual_address": "1178176"
           }
         },
         {
           "name": ".bss",
           "size": "400",
           "metadata": {
-            "virtual_address": "32864"
+            "virtual_address": "32896"
           }
         },
         {
@@ -11718,24 +11718,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "288",
-          "metadata": {
-            "virtual_address": "1048976"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "44064"
+            "virtual_address": "1061344"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "288",
+          "metadata": {
+            "virtual_address": "1178272"
           }
         },
         {
           "name": ".bss",
           "size": "48",
           "metadata": {
-            "virtual_address": "33264"
+            "virtual_address": "33296"
           }
         },
         {
@@ -11907,24 +11907,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "256",
-          "metadata": {
-            "virtual_address": "1049264"
-          }
-        },
-        {
           "name": ".data",
           "size": "192",
           "metadata": {
-            "virtual_address": "44080"
+            "virtual_address": "1061360"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "256",
+          "metadata": {
+            "virtual_address": "1178560"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "33312"
+            "virtual_address": "33344"
           }
         },
         {
@@ -12000,24 +12000,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "96",
-          "metadata": {
-            "virtual_address": "1049520"
-          }
-        },
-        {
           "name": ".data",
           "size": "32",
           "metadata": {
-            "virtual_address": "44272"
+            "virtual_address": "1061552"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "96",
+          "metadata": {
+            "virtual_address": "1178816"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "33328"
+            "virtual_address": "33360"
           }
         },
         {
@@ -12208,7 +12208,7 @@
           "name": ".rodata",
           "size": "32",
           "metadata": {
-            "virtual_address": "1049616"
+            "virtual_address": "1178912"
           }
         },
         {
@@ -12372,17 +12372,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "2912",
-          "metadata": {
-            "virtual_address": "1049648"
-          }
-        },
-        {
           "name": ".data",
           "size": "14624",
           "metadata": {
-            "virtual_address": "44304"
+            "virtual_address": "1061584"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "2912",
+          "metadata": {
+            "virtual_address": "1178944"
           }
         },
         {
@@ -12562,24 +12562,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1520",
-          "metadata": {
-            "virtual_address": "1052560"
-          }
-        },
-        {
           "name": ".data",
           "size": "32",
           "metadata": {
-            "virtual_address": "58928"
+            "virtual_address": "1076208"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1520",
+          "metadata": {
+            "virtual_address": "1181856"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "33344"
+            "virtual_address": "33376"
           }
         },
         {
@@ -12711,24 +12711,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "2672",
-          "metadata": {
-            "virtual_address": "1054080"
-          }
-        },
-        {
           "name": ".data",
           "size": "768",
           "metadata": {
-            "virtual_address": "66640"
+            "virtual_address": "1083920"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "2672",
+          "metadata": {
+            "virtual_address": "1183376"
           }
         },
         {
           "name": ".bss",
           "size": "32",
           "metadata": {
-            "virtual_address": "33360"
+            "virtual_address": "33392"
           }
         },
         {
@@ -13167,7 +13167,7 @@
           "name": ".rodata",
           "size": "16",
           "metadata": {
-            "virtual_address": "1056752"
+            "virtual_address": "1186048"
           }
         },
         {
@@ -13291,24 +13291,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "496",
-          "metadata": {
-            "virtual_address": "1056768"
-          }
-        },
-        {
           "name": ".data",
           "size": "1760",
           "metadata": {
-            "virtual_address": "67408"
+            "virtual_address": "1084688"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "496",
+          "metadata": {
+            "virtual_address": "1186064"
           }
         },
         {
           "name": ".bss",
           "size": "32",
           "metadata": {
-            "virtual_address": "33392"
+            "virtual_address": "33424"
           }
         },
         {
@@ -13657,7 +13657,7 @@
           }
         },
         {
-          "name": "func_80090480",
+          "name": "Player_UpdateWeaponInfo",
           "size": "388",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -13673,7 +13673,7 @@
           }
         },
         {
-          "name": "func_800906D4",
+          "name": "Player_UpdateMeleeWeaponInfo",
           "size": "272",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -13697,7 +13697,7 @@
           }
         },
         {
-          "name": "func_80090A28",
+          "name": "Player_CalcMeleeWeaponTipPositions",
           "size": "212",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -13787,7 +13787,7 @@
           "name": ".rodata",
           "size": "128",
           "metadata": {
-            "virtual_address": "1057264"
+            "virtual_address": "1186560"
           }
         },
         {
@@ -13879,24 +13879,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "256",
-          "metadata": {
-            "virtual_address": "1057392"
-          }
-        },
-        {
           "name": ".data",
           "size": "48",
           "metadata": {
-            "virtual_address": "69168"
+            "virtual_address": "1086448"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "256",
+          "metadata": {
+            "virtual_address": "1186688"
           }
         },
         {
           "name": ".bss",
           "size": "144",
           "metadata": {
-            "virtual_address": "33424"
+            "virtual_address": "33456"
           }
         },
         {
@@ -14116,17 +14116,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1104",
-          "metadata": {
-            "virtual_address": "1057648"
-          }
-        },
-        {
           "name": ".data",
           "size": "3616",
           "metadata": {
-            "virtual_address": "69216"
+            "virtual_address": "1086496"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1104",
+          "metadata": {
+            "virtual_address": "1186944"
           }
         },
         {
@@ -14754,17 +14754,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "912",
-          "metadata": {
-            "virtual_address": "1058752"
-          }
-        },
-        {
           "name": ".data",
           "size": "128",
           "metadata": {
-            "virtual_address": "72832"
+            "virtual_address": "1090112"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "912",
+          "metadata": {
+            "virtual_address": "1188048"
           }
         },
         {
@@ -14931,7 +14931,7 @@
           "name": ".rodata",
           "size": "80",
           "metadata": {
-            "virtual_address": "1059664"
+            "virtual_address": "1188960"
           }
         },
         {
@@ -15009,7 +15009,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/code/code_80097A00",
+      "name": "gc-eu-mq-dbg/src/code/z_inventory",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "512",
@@ -15031,17 +15031,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "32",
-          "metadata": {
-            "virtual_address": "1059744"
-          }
-        },
-        {
           "name": ".data",
           "size": "896",
           "metadata": {
-            "virtual_address": "72960"
+            "virtual_address": "1090240"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1189040"
           }
         },
         {
@@ -15109,17 +15109,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "944",
-          "metadata": {
-            "virtual_address": "1059776"
-          }
-        },
-        {
           "name": ".data",
           "size": "128",
           "metadata": {
-            "virtual_address": "73856"
+            "virtual_address": "1091136"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "944",
+          "metadata": {
+            "virtual_address": "1189072"
           }
         },
         {
@@ -15443,17 +15443,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "2160",
-          "metadata": {
-            "virtual_address": "1060720"
-          }
-        },
-        {
           "name": ".data",
           "size": "8896",
           "metadata": {
-            "virtual_address": "77216"
+            "virtual_address": "1094496"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "2160",
+          "metadata": {
+            "virtual_address": "1190016"
           }
         },
         {
@@ -15945,24 +15945,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1840",
-          "metadata": {
-            "virtual_address": "1062880"
-          }
-        },
-        {
           "name": ".data",
           "size": "32",
           "metadata": {
-            "virtual_address": "86112"
+            "virtual_address": "1103392"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1840",
+          "metadata": {
+            "virtual_address": "1192176"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "33568"
+            "virtual_address": "33600"
           }
         },
         {
@@ -16705,14 +16705,14 @@
           "name": ".rodata",
           "size": "112",
           "metadata": {
-            "virtual_address": "1064720"
+            "virtual_address": "1194016"
           }
         },
         {
           "name": ".bss",
-          "size": "3856",
+          "size": "3840",
           "metadata": {
-            "virtual_address": "33584"
+            "virtual_address": "33616"
           }
         },
         {
@@ -16839,7 +16839,7 @@
           "name": ".rodata",
           "size": "224",
           "metadata": {
-            "virtual_address": "1064832"
+            "virtual_address": "1194128"
           }
         },
         {
@@ -16923,17 +16923,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "128",
-          "metadata": {
-            "virtual_address": "1065056"
-          }
-        },
-        {
           "name": ".data",
           "size": "64",
           "metadata": {
-            "virtual_address": "86144"
+            "virtual_address": "1103424"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "128",
+          "metadata": {
+            "virtual_address": "1194352"
           }
         },
         {
@@ -17137,17 +17137,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "2016",
-          "metadata": {
-            "virtual_address": "1065184"
-          }
-        },
-        {
           "name": ".data",
           "size": "432",
           "metadata": {
-            "virtual_address": "86208"
+            "virtual_address": "1103488"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "2016",
+          "metadata": {
+            "virtual_address": "1194480"
           }
         },
         {
@@ -17287,17 +17287,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "48",
-          "metadata": {
-            "virtual_address": "1067200"
-          }
-        },
-        {
           "name": ".data",
           "size": "176",
           "metadata": {
-            "virtual_address": "86640"
+            "virtual_address": "1103920"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "48",
+          "metadata": {
+            "virtual_address": "1196496"
           }
         },
         {
@@ -17368,14 +17368,14 @@
           "name": ".rodata",
           "size": "16",
           "metadata": {
-            "virtual_address": "1067248"
+            "virtual_address": "1196544"
           }
         },
         {
           "name": ".bss",
-          "size": "272",
+          "size": "288",
           "metadata": {
-            "virtual_address": "37440"
+            "virtual_address": "37456"
           }
         },
         {
@@ -17491,17 +17491,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "816",
-          "metadata": {
-            "virtual_address": "1067264"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "88016"
+            "virtual_address": "1105296"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "816",
+          "metadata": {
+            "virtual_address": "1196560"
           }
         },
         {
@@ -17788,7 +17788,7 @@
           "name": ".rodata",
           "size": "1056",
           "metadata": {
-            "virtual_address": "1068080"
+            "virtual_address": "1197376"
           }
         },
         {
@@ -17899,7 +17899,7 @@
           "name": ".data",
           "size": "144",
           "metadata": {
-            "virtual_address": "88032"
+            "virtual_address": "1105312"
           }
         },
         {
@@ -17970,7 +17970,7 @@
           "name": ".rodata",
           "size": "336",
           "metadata": {
-            "virtual_address": "1069136"
+            "virtual_address": "1198432"
           }
         },
         {
@@ -18126,17 +18126,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "5488",
-          "metadata": {
-            "virtual_address": "1069472"
-          }
-        },
-        {
           "name": ".data",
           "size": "768",
           "metadata": {
-            "virtual_address": "88176"
+            "virtual_address": "1105456"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "5488",
+          "metadata": {
+            "virtual_address": "1198768"
           }
         },
         {
@@ -18231,14 +18231,14 @@
           "name": ".rodata",
           "size": "80",
           "metadata": {
-            "virtual_address": "1074960"
+            "virtual_address": "1204256"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "37712"
+            "virtual_address": "37744"
           }
         },
         {
@@ -18309,14 +18309,14 @@
           "name": ".data",
           "size": "32",
           "metadata": {
-            "virtual_address": "88944"
+            "virtual_address": "1106224"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "37728"
+            "virtual_address": "37760"
           }
         },
         {
@@ -18400,17 +18400,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "416",
-          "metadata": {
-            "virtual_address": "1075040"
-          }
-        },
-        {
           "name": ".data",
           "size": "128",
           "metadata": {
-            "virtual_address": "88976"
+            "virtual_address": "1106256"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "416",
+          "metadata": {
+            "virtual_address": "1204336"
           }
         },
         {
@@ -18526,17 +18526,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "48",
-          "metadata": {
-            "virtual_address": "1075456"
-          }
-        },
-        {
           "name": ".data",
           "size": "208",
           "metadata": {
-            "virtual_address": "89104"
+            "virtual_address": "1106384"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "48",
+          "metadata": {
+            "virtual_address": "1204752"
           }
         },
         {
@@ -18652,17 +18652,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "16",
-          "metadata": {
-            "virtual_address": "1075504"
-          }
-        },
-        {
           "name": ".data",
           "size": "2720",
           "metadata": {
-            "virtual_address": "89312"
+            "virtual_address": "1106592"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "1204800"
           }
         },
         {
@@ -18778,17 +18778,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "16",
-          "metadata": {
-            "virtual_address": "1075520"
-          }
-        },
-        {
           "name": ".data",
           "size": "4864",
           "metadata": {
-            "virtual_address": "92032"
+            "virtual_address": "1109312"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "1204816"
           }
         },
         {
@@ -18904,17 +18904,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "64",
-          "metadata": {
-            "virtual_address": "1075536"
-          }
-        },
-        {
           "name": ".data",
           "size": "48",
           "metadata": {
-            "virtual_address": "96896"
+            "virtual_address": "1114176"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "1204832"
           }
         },
         {
@@ -19022,17 +19022,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "112",
-          "metadata": {
-            "virtual_address": "1075600"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "96944"
+            "virtual_address": "1114224"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "112",
+          "metadata": {
+            "virtual_address": "1204896"
           }
         },
         {
@@ -19132,24 +19132,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "2928",
-          "metadata": {
-            "virtual_address": "1075712"
-          }
-        },
-        {
           "name": ".data",
           "size": "672",
           "metadata": {
-            "virtual_address": "96960"
+            "virtual_address": "1114240"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "2928",
+          "metadata": {
+            "virtual_address": "1205008"
           }
         },
         {
           "name": ".bss",
           "size": "496",
           "metadata": {
-            "virtual_address": "37744"
+            "virtual_address": "37776"
           }
         },
         {
@@ -19483,7 +19483,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/code/code_800BB0A0",
+      "name": "gc-eu-mq-dbg/src/code/z_cutscene_spline",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "1232",
@@ -19508,7 +19508,7 @@
           "name": ".rodata",
           "size": "16",
           "metadata": {
-            "virtual_address": "1078640"
+            "virtual_address": "1207936"
           }
         },
         {
@@ -19568,24 +19568,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "288",
-          "metadata": {
-            "virtual_address": "1078656"
-          }
-        },
-        {
           "name": ".data",
           "size": "32",
           "metadata": {
-            "virtual_address": "97632"
+            "virtual_address": "1114912"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "288",
+          "metadata": {
+            "virtual_address": "1207952"
           }
         },
         {
           "name": ".bss",
           "size": "160",
           "metadata": {
-            "virtual_address": "38240"
+            "virtual_address": "38272"
           }
         },
         {
@@ -19693,17 +19693,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "320",
-          "metadata": {
-            "virtual_address": "1078944"
-          }
-        },
-        {
           "name": ".data",
           "size": "80",
           "metadata": {
-            "virtual_address": "97664"
+            "virtual_address": "1114944"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "320",
+          "metadata": {
+            "virtual_address": "1208240"
           }
         },
         {
@@ -19790,14 +19790,14 @@
           "name": ".rodata",
           "size": "576",
           "metadata": {
-            "virtual_address": "1079264"
+            "virtual_address": "1208560"
           }
         },
         {
           "name": ".bss",
           "size": "32",
           "metadata": {
-            "virtual_address": "38400"
+            "virtual_address": "38432"
           }
         },
         {
@@ -19881,24 +19881,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "2192",
-          "metadata": {
-            "virtual_address": "1079840"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "97744"
+            "virtual_address": "1115024"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "2192",
+          "metadata": {
+            "virtual_address": "1209136"
           }
         },
         {
           "name": ".bss",
           "size": "20768",
           "metadata": {
-            "virtual_address": "38432"
+            "virtual_address": "38464"
           }
         },
         {
@@ -20313,7 +20313,7 @@
           "name": ".rodata",
           "size": "608",
           "metadata": {
-            "virtual_address": "1082032"
+            "virtual_address": "1211328"
           }
         },
         {
@@ -20832,7 +20832,7 @@
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "97760"
+            "virtual_address": "1115040"
           }
         },
         {
@@ -20887,7 +20887,7 @@
           "name": ".rodata",
           "size": "112",
           "metadata": {
-            "virtual_address": "1082640"
+            "virtual_address": "1211936"
           }
         },
         {
@@ -20982,7 +20982,7 @@
           "name": ".rodata",
           "size": "32",
           "metadata": {
-            "virtual_address": "1082752"
+            "virtual_address": "1212048"
           }
         },
         {
@@ -21050,24 +21050,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "992",
-          "metadata": {
-            "virtual_address": "1082784"
-          }
-        },
-        {
           "name": ".data",
           "size": "32",
           "metadata": {
-            "virtual_address": "97776"
+            "virtual_address": "1115056"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "992",
+          "metadata": {
+            "virtual_address": "1212080"
           }
         },
         {
           "name": ".bss",
           "size": "256",
           "metadata": {
-            "virtual_address": "59200"
+            "virtual_address": "59232"
           }
         },
         {
@@ -21266,7 +21266,7 @@
           "name": ".rodata",
           "size": "144",
           "metadata": {
-            "virtual_address": "1083776"
+            "virtual_address": "1213072"
           }
         },
         {
@@ -21358,24 +21358,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1232",
-          "metadata": {
-            "virtual_address": "1083920"
-          }
-        },
-        {
           "name": ".data",
           "size": "64",
           "metadata": {
-            "virtual_address": "97808"
+            "virtual_address": "1115088"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1232",
+          "metadata": {
+            "virtual_address": "1213216"
           }
         },
         {
           "name": ".bss",
           "size": "144",
           "metadata": {
-            "virtual_address": "59456"
+            "virtual_address": "59488"
           }
         },
         {
@@ -21598,7 +21598,7 @@
           "name": ".rodata",
           "size": "32",
           "metadata": {
-            "virtual_address": "1085152"
+            "virtual_address": "1214448"
           }
         },
         {
@@ -21674,24 +21674,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "320",
-          "metadata": {
-            "virtual_address": "1085184"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "97872"
+            "virtual_address": "1115152"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "320",
+          "metadata": {
+            "virtual_address": "1214480"
           }
         },
         {
           "name": ".bss",
           "size": "16016",
           "metadata": {
-            "virtual_address": "59600"
+            "virtual_address": "59632"
           }
         },
         {
@@ -21751,24 +21751,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1424",
-          "metadata": {
-            "virtual_address": "1085504"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "97888"
+            "virtual_address": "1115168"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1424",
+          "metadata": {
+            "virtual_address": "1214800"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "75616"
+            "virtual_address": "75648"
           }
         },
         {
@@ -21932,24 +21932,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1264",
-          "metadata": {
-            "virtual_address": "1086928"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "97904"
+            "virtual_address": "1115184"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1264",
+          "metadata": {
+            "virtual_address": "1216224"
           }
         },
         {
           "name": ".bss",
           "size": "32",
           "metadata": {
-            "virtual_address": "75632"
+            "virtual_address": "75664"
           }
         },
         {
@@ -22137,24 +22137,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "160",
-          "metadata": {
-            "virtual_address": "1088192"
-          }
-        },
-        {
           "name": ".data",
           "size": "48",
           "metadata": {
-            "virtual_address": "97920"
+            "virtual_address": "1115200"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "160",
+          "metadata": {
+            "virtual_address": "1217488"
           }
         },
         {
           "name": ".bss",
           "size": "112",
           "metadata": {
-            "virtual_address": "75664"
+            "virtual_address": "75696"
           }
         },
         {
@@ -22257,14 +22257,14 @@
           "name": ".rodata",
           "size": "240",
           "metadata": {
-            "virtual_address": "1088352"
+            "virtual_address": "1217648"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "75776"
+            "virtual_address": "75808"
           }
         },
         {
@@ -22340,17 +22340,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "16",
-          "metadata": {
-            "virtual_address": "1088592"
-          }
-        },
-        {
           "name": ".data",
           "size": "64",
           "metadata": {
-            "virtual_address": "97968"
+            "virtual_address": "1115248"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "1217888"
           }
         },
         {
@@ -22437,14 +22437,14 @@
           "name": ".rodata",
           "size": "400",
           "metadata": {
-            "virtual_address": "1088608"
+            "virtual_address": "1217904"
           }
         },
         {
           "name": ".bss",
           "size": "544",
           "metadata": {
-            "virtual_address": "75792"
+            "virtual_address": "75824"
           }
         },
         {
@@ -23208,17 +23208,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "16",
-          "metadata": {
-            "virtual_address": "1089008"
-          }
-        },
-        {
           "name": ".data",
           "size": "2064",
           "metadata": {
-            "virtual_address": "98032"
+            "virtual_address": "1115312"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "1218304"
           }
         },
         {
@@ -23286,24 +23286,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "256",
-          "metadata": {
-            "virtual_address": "1089024"
-          }
-        },
-        {
           "name": ".data",
           "size": "128",
           "metadata": {
-            "virtual_address": "100096"
+            "virtual_address": "1117376"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "256",
+          "metadata": {
+            "virtual_address": "1218320"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "76336"
+            "virtual_address": "76368"
           }
         },
         {
@@ -23622,7 +23622,7 @@
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "100224"
+            "virtual_address": "1117504"
           }
         },
         {
@@ -23701,7 +23701,7 @@
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "100240"
+            "virtual_address": "1117520"
           }
         },
         {
@@ -23747,22 +23747,22 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/code/code_800D31A0",
+      "name": "gc-eu-mq-dbg/src/code/sys_freeze",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "128",
-        "matched_code": "128",
+        "total_code": "80",
+        "matched_code": "80",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 3,
-        "matched_functions": 3,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
       "sections": [
         {
           "name": ".text",
-          "size": "128",
+          "size": "80",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "746304"
@@ -23772,14 +23772,7 @@
           "name": ".rodata",
           "size": "32",
           "metadata": {
-            "virtual_address": "1089280"
-          }
-        },
-        {
-          "name": ".data",
-          "size": "16",
-          "metadata": {
-            "virtual_address": "100256"
+            "virtual_address": "1218576"
           }
         },
         {
@@ -23798,7 +23791,54 @@
           "metadata": {
             "virtual_address": "746304"
           }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/code/sys_debug_controller",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "48",
+        "matched_code": "48",
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "total_functions": 2,
+        "matched_functions": 2,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "746384"
+          }
         },
+        {
+          "name": ".data",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "1117536"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "7296"
+          }
+        }
+      ],
+      "functions": [
         {
           "name": "func_800D31F0",
           "size": "32",
@@ -23847,24 +23887,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "944",
-          "metadata": {
-            "virtual_address": "1089312"
-          }
-        },
-        {
           "name": ".data",
           "size": "32",
           "metadata": {
-            "virtual_address": "100272"
+            "virtual_address": "1117552"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "944",
+          "metadata": {
+            "virtual_address": "1218608"
           }
         },
         {
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "7296"
+            "virtual_address": "7360"
           }
         }
       ],
@@ -23997,31 +24037,31 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "288",
-          "metadata": {
-            "virtual_address": "1090256"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "100304"
+            "virtual_address": "1117584"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "288",
+          "metadata": {
+            "virtual_address": "1219552"
           }
         },
         {
           "name": ".bss",
           "size": "48",
           "metadata": {
-            "virtual_address": "76352"
+            "virtual_address": "76384"
           }
         },
         {
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "7360"
+            "virtual_address": "7424"
           }
         }
       ],
@@ -24186,31 +24226,31 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "2576",
-          "metadata": {
-            "virtual_address": "1090544"
-          }
-        },
-        {
           "name": ".data",
           "size": "96",
           "metadata": {
-            "virtual_address": "100320"
+            "virtual_address": "1117600"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "2576",
+          "metadata": {
+            "virtual_address": "1219840"
           }
         },
         {
           "name": ".bss",
           "size": "3712",
           "metadata": {
-            "virtual_address": "76400"
+            "virtual_address": "76432"
           }
         },
         {
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "7424"
+            "virtual_address": "7488"
           }
         }
       ],
@@ -24583,31 +24623,31 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1072",
-          "metadata": {
-            "virtual_address": "1093120"
-          }
-        },
-        {
           "name": ".data",
           "size": "64",
           "metadata": {
-            "virtual_address": "100416"
+            "virtual_address": "1117696"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1072",
+          "metadata": {
+            "virtual_address": "1222416"
           }
         },
         {
           "name": ".bss",
           "size": "96",
           "metadata": {
-            "virtual_address": "80112"
+            "virtual_address": "80144"
           }
         },
         {
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "7488"
+            "virtual_address": "7552"
           }
         }
       ],
@@ -24794,6 +24834,13 @@
           "metadata": {
             "virtual_address": "762768"
           }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "0"
+          }
         }
       ],
       "functions": [
@@ -24845,24 +24892,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "6704",
-          "metadata": {
-            "virtual_address": "1094192"
-          }
-        },
-        {
           "name": ".data",
           "size": "1008",
           "metadata": {
-            "virtual_address": "100480"
+            "virtual_address": "1117760"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "6704",
+          "metadata": {
+            "virtual_address": "1223488"
           }
         },
         {
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "7552"
+            "virtual_address": "7616"
           }
         }
       ],
@@ -24973,7 +25020,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/__pad_text",
+      "name": "gc-eu-mq-dbg/__pad_text0",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "16",
@@ -24997,7 +25044,7 @@
       ],
       "functions": [
         {
-          "name": "$_static_symbol_000BDE50_build/gc-eu-mq-dbg/__pad_text.o_.text",
+          "name": "$_static_symbol_000BDE50_build/gc-eu-mq-dbg/__pad_text0.o_.text",
           "size": "16",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -25014,7 +25061,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/lib/synthesis",
+      "name": "gc-eu-mq-dbg/src/audio/internal/synthesis",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "12640",
@@ -25036,24 +25083,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "32",
-          "metadata": {
-            "virtual_address": "1100896"
-          }
-        },
-        {
           "name": ".data",
           "size": "48",
           "metadata": {
-            "virtual_address": "110720"
+            "virtual_address": "1128000"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1230192"
           }
         },
         {
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "7680"
+            "virtual_address": "7744"
           }
         }
       ],
@@ -25596,7 +25643,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/lib/heap",
+      "name": "gc-eu-mq-dbg/src/audio/internal/heap",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "13264",
@@ -25621,14 +25668,14 @@
           "name": ".rodata",
           "size": "48",
           "metadata": {
-            "virtual_address": "1100928"
+            "virtual_address": "1230224"
           }
         },
         {
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "7744"
+            "virtual_address": "7808"
           }
         }
       ],
@@ -26059,7 +26106,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/lib/load",
+      "name": "gc-eu-mq-dbg/src/audio/internal/load",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "15856",
@@ -26081,31 +26128,31 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "112",
-          "metadata": {
-            "virtual_address": "1100976"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "110768"
+            "virtual_address": "1128048"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "112",
+          "metadata": {
+            "virtual_address": "1230272"
           }
         },
         {
           "name": ".bss",
           "size": "192",
           "metadata": {
-            "virtual_address": "80208"
+            "virtual_address": "80240"
           }
         },
         {
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "7808"
+            "virtual_address": "7872"
           }
         }
       ],
@@ -26736,7 +26783,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/lib/thread",
+      "name": "gc-eu-mq-dbg/src/audio/internal/thread",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "6240",
@@ -26758,24 +26805,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "304",
-          "metadata": {
-            "virtual_address": "1101088"
-          }
-        },
-        {
           "name": ".data",
           "size": "32",
           "metadata": {
-            "virtual_address": "110784"
+            "virtual_address": "1128064"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "304",
+          "metadata": {
+            "virtual_address": "1230384"
           }
         },
         {
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "7872"
+            "virtual_address": "7936"
           }
         }
       ],
@@ -27094,32 +27141,39 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/lib/dcache",
+      "name": "gc-eu-mq-dbg/src/audio/internal/os",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "128",
-        "matched_code": "128",
+        "total_code": "256",
+        "matched_code": "256",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 2,
-        "matched_functions": 2,
+        "total_functions": 3,
+        "matched_functions": 3,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
       "sections": [
         {
           "name": ".text",
-          "size": "128",
+          "size": "256",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "825824"
           }
         },
         {
+          "name": ".data",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "1128096"
+          }
+        },
+        {
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "7936"
+            "virtual_address": "8000"
           }
         }
       ],
@@ -27139,54 +27193,7 @@
           "metadata": {
             "virtual_address": "825888"
           }
-        }
-      ],
-      "metadata": {
-        "module_name": ".text",
-        "module_id": 0,
-        "progress_categories": [
-          "gc-eu-mq-dbg"
-        ]
-      }
-    },
-    {
-      "name": "gc-eu-mq-dbg/src/audio/lib/aisetnextbuf",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "total_code": "128",
-        "matched_code": "128",
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "total_functions": 1,
-        "matched_functions": 1,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": ".text",
-          "size": "128",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "825952"
-          }
         },
-        {
-          "name": ".data",
-          "size": "16",
-          "metadata": {
-            "virtual_address": "110816"
-          }
-        },
-        {
-          "name": ".options",
-          "size": "64",
-          "metadata": {
-            "virtual_address": "8000"
-          }
-        }
-      ],
-      "functions": [
         {
           "name": "osAiSetNextBuffer",
           "size": "128",
@@ -27205,7 +27212,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/lib/playback",
+      "name": "gc-eu-mq-dbg/src/audio/internal/playback",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "8064",
@@ -27230,7 +27237,7 @@
           "name": ".rodata",
           "size": "48",
           "metadata": {
-            "virtual_address": "1101392"
+            "virtual_address": "1230688"
           }
         },
         {
@@ -27500,7 +27507,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/lib/effects",
+      "name": "gc-eu-mq-dbg/src/audio/internal/effects",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "2688",
@@ -27522,17 +27529,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "48",
-          "metadata": {
-            "virtual_address": "1101440"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "110832"
+            "virtual_address": "1128112"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "48",
+          "metadata": {
+            "virtual_address": "1230736"
           }
         },
         {
@@ -27634,7 +27641,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/lib/seqplayer",
+      "name": "gc-eu-mq-dbg/src/audio/internal/seqplayer",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "13856",
@@ -27656,17 +27663,17 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "1600",
-          "metadata": {
-            "virtual_address": "1101488"
-          }
-        },
-        {
           "name": ".data",
           "size": "80",
           "metadata": {
-            "virtual_address": "110848"
+            "virtual_address": "1128128"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "1600",
+          "metadata": {
+            "virtual_address": "1230784"
           }
         },
         {
@@ -27976,7 +27983,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/general",
+      "name": "gc-eu-mq-dbg/src/audio/game/general",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "43264",
@@ -27998,24 +28005,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "2496",
-          "metadata": {
-            "virtual_address": "1103088"
-          }
-        },
-        {
           "name": ".data",
           "size": "6656",
           "metadata": {
-            "virtual_address": "110928"
+            "virtual_address": "1128208"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "2496",
+          "metadata": {
+            "virtual_address": "1232384"
           }
         },
         {
           "name": ".bss",
           "size": "816",
           "metadata": {
-            "virtual_address": "80400"
+            "virtual_address": "80432"
           }
         },
         {
@@ -28916,7 +28923,7 @@
           }
         },
         {
-          "name": "func_800F6700",
+          "name": "Audio_SetSoundOutputMode",
           "size": "160",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -29101,7 +29108,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/sfx",
+      "name": "gc-eu-mq-dbg/src/audio/game/sfx",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "8224",
@@ -29123,24 +29130,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "32",
-          "metadata": {
-            "virtual_address": "1105584"
-          }
-        },
-        {
           "name": ".data",
           "size": "80",
           "metadata": {
-            "virtual_address": "122656"
+            "virtual_address": "1139936"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "1234880"
           }
         },
         {
           "name": ".bss",
           "size": "10320",
           "metadata": {
-            "virtual_address": "81216"
+            "virtual_address": "81248"
           }
         },
         {
@@ -29338,7 +29345,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/sequence",
+      "name": "gc-eu-mq-dbg/src/audio/game/sequence",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "7392",
@@ -29360,24 +29367,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "128",
-          "metadata": {
-            "virtual_address": "1105616"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "122736"
+            "virtual_address": "1140016"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "128",
+          "metadata": {
+            "virtual_address": "1234912"
           }
         },
         {
           "name": ".bss",
           "size": "3520",
           "metadata": {
-            "virtual_address": "91536"
+            "virtual_address": "91568"
           }
         },
         {
@@ -29533,24 +29540,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "64",
-          "metadata": {
-            "virtual_address": "1105760"
-          }
-        },
-        {
           "name": ".data",
           "size": "2224",
           "metadata": {
-            "virtual_address": "124848"
+            "virtual_address": "1142128"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "1235056"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "120928"
+            "virtual_address": "120960"
           }
         },
         {
@@ -29725,7 +29732,7 @@
           "name": ".rodata",
           "size": "336",
           "metadata": {
-            "virtual_address": "1105824"
+            "virtual_address": "1235120"
           }
         },
         {
@@ -29788,7 +29795,7 @@
           "name": ".rodata",
           "size": "80",
           "metadata": {
-            "virtual_address": "1106160"
+            "virtual_address": "1235456"
           }
         },
         {
@@ -29843,7 +29850,7 @@
           "name": ".rodata",
           "size": "80",
           "metadata": {
-            "virtual_address": "1106240"
+            "virtual_address": "1235536"
           }
         },
         {
@@ -29906,7 +29913,7 @@
           "name": ".rodata",
           "size": "128",
           "metadata": {
-            "virtual_address": "1106320"
+            "virtual_address": "1235616"
           }
         },
         {
@@ -29961,7 +29968,7 @@
           "name": ".rodata",
           "size": "320",
           "metadata": {
-            "virtual_address": "1106448"
+            "virtual_address": "1235744"
           }
         },
         {
@@ -29991,7 +29998,7 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/libu64/code_800FC620",
+      "name": "gc-eu-mq-dbg/src/libu64/runtime",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "total_code": "848",
@@ -30014,9 +30021,9 @@
         },
         {
           "name": ".data",
-          "size": "32",
+          "size": "16",
           "metadata": {
-            "virtual_address": "127072"
+            "virtual_address": "1144352"
           }
         },
         {
@@ -30029,7 +30036,7 @@
       ],
       "functions": [
         {
-          "name": "func_800FC800",
+          "name": "Runtime_New",
           "size": "60",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -30037,7 +30044,7 @@
           }
         },
         {
-          "name": "func_800FC83C",
+          "name": "Runtime_Delete",
           "size": "44",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -30077,7 +30084,7 @@
           }
         },
         {
-          "name": "func_800FCB34",
+          "name": "Runtime_ExecuteGlobalCtors",
           "size": "112",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -30085,7 +30092,7 @@
           }
         },
         {
-          "name": "SystemHeap_Init",
+          "name": "Runtime_Init",
           "size": "44",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -30351,14 +30358,14 @@
           "name": ".rodata",
           "size": "80",
           "metadata": {
-            "virtual_address": "1106768"
+            "virtual_address": "1236064"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "120944"
+            "virtual_address": "120976"
           }
         },
         {
@@ -30507,9 +30514,16 @@
         },
         {
           "name": ".data",
-          "size": "12",
+          "size": "32",
           "metadata": {
-            "virtual_address": "127104"
+            "virtual_address": "1144368"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "96"
           }
         }
       ],
@@ -30706,24 +30720,24 @@
           }
         },
         {
-          "name": ".rodata",
-          "size": "240",
-          "metadata": {
-            "virtual_address": "1106848"
-          }
-        },
-        {
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "127120"
+            "virtual_address": "1144400"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "240",
+          "metadata": {
+            "virtual_address": "1236144"
           }
         },
         {
           "name": ".bss",
           "size": "48",
           "metadata": {
-            "virtual_address": "120960"
+            "virtual_address": "120992"
           }
         },
         {
@@ -30898,14 +30912,14 @@
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "127136"
+            "virtual_address": "1144416"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "121008"
+            "virtual_address": "121040"
           }
         },
         {
@@ -31016,14 +31030,14 @@
           "name": ".rodata",
           "size": "1552",
           "metadata": {
-            "virtual_address": "1107088"
+            "virtual_address": "1236384"
           }
         },
         {
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "121024"
+            "virtual_address": "121056"
           }
         },
         {
@@ -31622,7 +31636,7 @@
           "name": ".bss",
           "size": "16",
           "metadata": {
-            "virtual_address": "121040"
+            "virtual_address": "121072"
           }
         },
         {
@@ -31727,8 +31741,8 @@
       "name": "gc-eu-mq-dbg/src/libultra/mgu/scale",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "164",
-        "matched_code": "164",
+        "total_code": "176",
+        "matched_code": "176",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
@@ -31739,17 +31753,24 @@
       "sections": [
         {
           "name": ".text",
-          "size": "164",
+          "size": "176",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "930688"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "128"
           }
         }
       ],
       "functions": [
         {
           "name": "guScale",
-          "size": "164",
+          "size": "176",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "930688"
@@ -31790,7 +31811,7 @@
           "name": ".rodata",
           "size": "80",
           "metadata": {
-            "virtual_address": "1108640"
+            "virtual_address": "1237936"
           }
         },
         {
@@ -31845,7 +31866,7 @@
           "name": ".data",
           "size": "2048",
           "metadata": {
-            "virtual_address": "127152"
+            "virtual_address": "1144432"
           }
         },
         {
@@ -31900,7 +31921,7 @@
           "name": ".bss",
           "size": "64",
           "metadata": {
-            "virtual_address": "121056"
+            "virtual_address": "121088"
           }
         },
         {
@@ -31971,7 +31992,7 @@
           "name": ".bss",
           "size": "256",
           "metadata": {
-            "virtual_address": "121120"
+            "virtual_address": "121152"
           }
         },
         {
@@ -32042,14 +32063,14 @@
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "129200"
+            "virtual_address": "1146480"
           }
         },
         {
           "name": ".bss",
           "size": "32",
           "metadata": {
-            "virtual_address": "121376"
+            "virtual_address": "121408"
           }
         },
         {
@@ -32120,14 +32141,14 @@
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "129216"
+            "virtual_address": "1146496"
           }
         },
         {
           "name": ".bss",
           "size": "144",
           "metadata": {
-            "virtual_address": "121408"
+            "virtual_address": "121440"
           }
         },
         {
@@ -32262,7 +32283,7 @@
           "name": ".rodata",
           "size": "16",
           "metadata": {
-            "virtual_address": "1108720"
+            "virtual_address": "1238016"
           }
         },
         {
@@ -32567,8 +32588,8 @@
       "name": "gc-eu-mq-dbg/src/libultra/mgu/mtxidentf",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "72",
-        "matched_code": "72",
+        "total_code": "80",
+        "matched_code": "80",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
@@ -32579,17 +32600,24 @@
       "sections": [
         {
           "name": ".text",
-          "size": "72",
+          "size": "80",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "937184"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "160"
           }
         }
       ],
       "functions": [
         {
           "name": "guMtxIdentF",
-          "size": "72",
+          "size": "80",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "937184"
@@ -32790,14 +32818,14 @@
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "129232"
+            "virtual_address": "1146512"
           }
         },
         {
           "name": ".bss",
           "size": "256",
           "metadata": {
-            "virtual_address": "121552"
+            "virtual_address": "121584"
           }
         },
         {
@@ -32878,8 +32906,8 @@
       "name": "gc-eu-mq-dbg/src/libultra/mgu/mtxl2f",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "104",
-        "matched_code": "104",
+        "total_code": "112",
+        "matched_code": "112",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
@@ -32890,17 +32918,24 @@
       "sections": [
         {
           "name": ".text",
-          "size": "104",
+          "size": "112",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "942400"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "192"
           }
         }
       ],
       "functions": [
         {
           "name": "guMtxL2F",
-          "size": "104",
+          "size": "112",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "942400"
@@ -32989,7 +33024,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10336"
+            "virtual_address": "224"
           }
         }
       ],
@@ -33037,7 +33072,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10368"
+            "virtual_address": "10336"
           }
         }
       ],
@@ -33085,7 +33120,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10400"
+            "virtual_address": "10368"
           }
         }
       ],
@@ -33141,14 +33176,14 @@
           "name": ".rodata",
           "size": "16",
           "metadata": {
-            "virtual_address": "1108736"
+            "virtual_address": "1238032"
           }
         },
         {
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10432"
+            "virtual_address": "10400"
           }
         }
       ],
@@ -33204,7 +33239,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10464"
+            "virtual_address": "10432"
           }
         }
       ],
@@ -33230,8 +33265,8 @@
       "name": "gc-eu-mq-dbg/src/libultra/mgu/mtxident",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "76",
-        "matched_code": "76",
+        "total_code": "80",
+        "matched_code": "80",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
@@ -33242,17 +33277,24 @@
       "sections": [
         {
           "name": ".text",
-          "size": "76",
+          "size": "80",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "945408"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "256"
           }
         }
       ],
       "functions": [
         {
           "name": "guMtxIdent",
-          "size": "76",
+          "size": "80",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "945408"
@@ -33293,14 +33335,14 @@
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "129248"
+            "virtual_address": "1146528"
           }
         },
         {
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10496"
+            "virtual_address": "10464"
           }
         }
       ],
@@ -33356,7 +33398,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10528"
+            "virtual_address": "10496"
           }
         }
       ],
@@ -33404,14 +33446,14 @@
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "129264"
+            "virtual_address": "1146544"
           }
         },
         {
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10560"
+            "virtual_address": "10528"
           }
         }
       ],
@@ -33467,7 +33509,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10592"
+            "virtual_address": "10560"
           }
         }
       ],
@@ -33515,7 +33557,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10624"
+            "virtual_address": "10592"
           }
         }
       ],
@@ -33541,8 +33583,8 @@
       "name": "gc-eu-mq-dbg/src/libultra/mgu/normalize",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "84",
-        "matched_code": "84",
+        "total_code": "96",
+        "matched_code": "96",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
@@ -33553,17 +33595,24 @@
       "sections": [
         {
           "name": ".text",
-          "size": "84",
+          "size": "96",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "946944"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "288"
           }
         }
       ],
       "functions": [
         {
           "name": "guNormalize",
-          "size": "84",
+          "size": "96",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "946944"
@@ -33604,7 +33653,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10656"
+            "virtual_address": "10624"
           }
         }
       ],
@@ -33652,7 +33701,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10688"
+            "virtual_address": "10656"
           }
         }
       ],
@@ -33700,7 +33749,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10720"
+            "virtual_address": "10688"
           }
         }
       ],
@@ -33756,7 +33805,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10752"
+            "virtual_address": "10720"
           }
         }
       ],
@@ -33812,14 +33861,14 @@
           "name": ".rodata",
           "size": "80",
           "metadata": {
-            "virtual_address": "1108752"
+            "virtual_address": "1238048"
           }
         },
         {
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10784"
+            "virtual_address": "10752"
           }
         }
       ],
@@ -33867,7 +33916,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10816"
+            "virtual_address": "10784"
           }
         }
       ],
@@ -33915,7 +33964,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10848"
+            "virtual_address": "10816"
           }
         }
       ],
@@ -33963,14 +34012,14 @@
           "name": ".bss",
           "size": "64",
           "metadata": {
-            "virtual_address": "121808"
+            "virtual_address": "121840"
           }
         },
         {
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10880"
+            "virtual_address": "10848"
           }
         }
       ],
@@ -34034,7 +34083,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10912"
+            "virtual_address": "10880"
           }
         }
       ],
@@ -34082,7 +34131,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10944"
+            "virtual_address": "10912"
           }
         }
       ],
@@ -34130,7 +34179,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "10976"
+            "virtual_address": "10944"
           }
         }
       ],
@@ -34178,7 +34227,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11008"
+            "virtual_address": "10976"
           }
         }
       ],
@@ -34226,7 +34275,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11040"
+            "virtual_address": "11008"
           }
         }
       ],
@@ -34282,7 +34331,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11072"
+            "virtual_address": "11040"
           }
         }
       ],
@@ -34346,7 +34395,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11104"
+            "virtual_address": "11072"
           }
         }
       ],
@@ -34372,8 +34421,8 @@
       "name": "gc-eu-mq-dbg/src/libultra/mgu/translate",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "200",
-        "matched_code": "200",
+        "total_code": "208",
+        "matched_code": "208",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
@@ -34384,17 +34433,24 @@
       "sections": [
         {
           "name": ".text",
-          "size": "200",
+          "size": "208",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "953792"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "352"
           }
         }
       ],
       "functions": [
         {
           "name": "guTranslate",
-          "size": "200",
+          "size": "208",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "953792"
@@ -34435,7 +34491,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11136"
+            "virtual_address": "11104"
           }
         }
       ],
@@ -34483,14 +34539,14 @@
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "129280"
+            "virtual_address": "1146560"
           }
         },
         {
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11168"
+            "virtual_address": "11136"
           }
         }
       ],
@@ -34538,7 +34594,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11200"
+            "virtual_address": "11168"
           }
         }
       ],
@@ -34594,7 +34650,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11232"
+            "virtual_address": "11200"
           }
         }
       ],
@@ -34642,7 +34698,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11264"
+            "virtual_address": "11232"
           }
         }
       ],
@@ -34690,7 +34746,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11296"
+            "virtual_address": "11264"
           }
         }
       ],
@@ -34716,8 +34772,8 @@
       "name": "gc-eu-mq-dbg/src/libultra/os/writebackdcacheall",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "40",
-        "matched_code": "40",
+        "total_code": "48",
+        "matched_code": "48",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
@@ -34728,17 +34784,24 @@
       "sections": [
         {
           "name": ".text",
-          "size": "40",
+          "size": "48",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "955952"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "384"
           }
         }
       ],
       "functions": [
         {
           "name": "osWritebackDCacheAll",
-          "size": "40",
+          "size": "48",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "955952"
@@ -34779,7 +34842,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11328"
+            "virtual_address": "11296"
           }
         }
       ],
@@ -34805,8 +34868,8 @@
       "name": "gc-eu-mq-dbg/src/libultra/mgu/mtxf2l",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "100",
-        "matched_code": "100",
+        "total_code": "112",
+        "matched_code": "112",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
@@ -34817,17 +34880,24 @@
       "sections": [
         {
           "name": ".text",
-          "size": "100",
+          "size": "112",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "956032"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "416"
           }
         }
       ],
       "functions": [
         {
           "name": "guMtxF2L",
-          "size": "100",
+          "size": "112",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "956032"
@@ -34868,14 +34938,14 @@
           "name": ".rodata",
           "size": "16",
           "metadata": {
-            "virtual_address": "1108848"
+            "virtual_address": "1238144"
           }
         },
         {
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11360"
+            "virtual_address": "11328"
           }
         }
       ],
@@ -34979,7 +35049,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11392"
+            "virtual_address": "11360"
           }
         }
       ],
@@ -35027,7 +35097,7 @@
           "name": ".options",
           "size": "32",
           "metadata": {
-            "virtual_address": "11424"
+            "virtual_address": "11392"
           }
         }
       ],
@@ -35053,8 +35123,8 @@
       "name": "gc-eu-mq-dbg/src/libc/sqrt",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "12",
-        "matched_code": "12",
+        "total_code": "16",
+        "matched_code": "16",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
@@ -35065,17 +35135,24 @@
       "sections": [
         {
           "name": ".text",
-          "size": "12",
+          "size": "16",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "956784"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "448"
           }
         }
       ],
       "functions": [
         {
           "name": "sqrt",
-          "size": "12",
+          "size": "16",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "956784"
@@ -35091,11 +35168,11 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/libc/absf",
+      "name": "gc-eu-mq-dbg/src/libc/fabsf",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "12",
-        "matched_code": "12",
+        "total_code": "16",
+        "matched_code": "16",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 1,
@@ -35106,17 +35183,24 @@
       "sections": [
         {
           "name": ".text",
-          "size": "12",
+          "size": "16",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "956800"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "480"
           }
         }
       ],
       "functions": [
         {
-          "name": "absf",
-          "size": "12",
+          "name": "fabsf",
+          "size": "16",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "956800"
@@ -35157,7 +35241,7 @@
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "11456"
+            "virtual_address": "11424"
           }
         }
       ],
@@ -35205,7 +35289,7 @@
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "11520"
+            "virtual_address": "11488"
           }
         }
       ],
@@ -35253,7 +35337,7 @@
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "11584"
+            "virtual_address": "11552"
           }
         }
       ],
@@ -35301,21 +35385,21 @@
           "name": ".rodata",
           "size": "39520",
           "metadata": {
-            "virtual_address": "1108864"
+            "virtual_address": "1238160"
           }
         },
         {
           "name": ".bss",
           "size": "32",
           "metadata": {
-            "virtual_address": "121872"
+            "virtual_address": "121904"
           }
         },
         {
           "name": ".options",
           "size": "128",
           "metadata": {
-            "virtual_address": "0"
+            "virtual_address": "512"
           }
         }
       ],
@@ -35635,14 +35719,14 @@
           "name": ".rodata",
           "size": "896",
           "metadata": {
-            "virtual_address": "1148384"
+            "virtual_address": "1277680"
           }
         },
         {
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "11648"
+            "virtual_address": "11616"
           }
         }
       ],
@@ -35775,263 +35859,6 @@
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/session_config",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": ".rodata",
-          "size": "16",
-          "metadata": {
-            "virtual_address": "1105744"
-          }
-        },
-        {
-          "name": ".data",
-          "size": "1952",
-          "metadata": {
-            "virtual_address": "122880"
-          }
-        },
-        {
-          "name": ".bss",
-          "size": "25712",
-          "metadata": {
-            "virtual_address": "95216"
-          }
-        },
-        {
-          "name": ".options",
-          "size": "64",
-          "metadata": {
-            "virtual_address": "8576"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".rodata",
-        "module_id": 1,
-        "progress_categories": [
-          "gc-eu-mq-dbg"
-        ]
-      }
-    },
-    {
-      "name": "gc-eu-mq-dbg/src/libultra/gu/libm_vals",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": ".rodata",
-          "size": "4",
-          "metadata": {
-            "virtual_address": "1108832"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".rodata",
-        "module_id": 1,
-        "progress_categories": [
-          "gc-eu-mq-dbg"
-        ]
-      }
-    },
-    {
-      "name": "gc-eu-mq-dbg/src/audio/tables/soundfont_table",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": ".rodata",
-          "size": "624",
-          "metadata": {
-            "virtual_address": "1149280"
-          }
-        },
-        {
-          "name": ".options",
-          "size": "64",
-          "metadata": {
-            "virtual_address": "128"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".rodata",
-        "module_id": 1,
-        "progress_categories": [
-          "gc-eu-mq-dbg"
-        ]
-      }
-    },
-    {
-      "name": "gc-eu-mq-dbg/assets/audio/sequence_font_table",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": ".rodata",
-          "size": "448",
-          "metadata": {
-            "virtual_address": "1149904"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".rodata",
-        "module_id": 1,
-        "progress_categories": [
-          "gc-eu-mq-dbg"
-        ]
-      }
-    },
-    {
-      "name": "gc-eu-mq-dbg/src/audio/tables/sequence_table",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": ".rodata",
-          "size": "1776",
-          "metadata": {
-            "virtual_address": "1150352"
-          }
-        },
-        {
-          "name": ".options",
-          "size": "64",
-          "metadata": {
-            "virtual_address": "192"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".rodata",
-        "module_id": 1,
-        "progress_categories": [
-          "gc-eu-mq-dbg"
-        ]
-      }
-    },
-    {
-      "name": "gc-eu-mq-dbg/src/audio/tables/samplebank_table",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": ".rodata",
-          "size": "128",
-          "metadata": {
-            "virtual_address": "1152128"
-          }
-        },
-        {
-          "name": ".options",
-          "size": "64",
-          "metadata": {
-            "virtual_address": "256"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".rodata",
-        "module_id": 1,
-        "progress_categories": [
-          "gc-eu-mq-dbg"
-        ]
-      }
-    },
-    {
-      "name": "gc-eu-mq-dbg/data/rsp.rodata",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": ".rodata",
-          "size": "8480",
-          "metadata": {
-            "virtual_address": "1152256"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".rodata",
-        "module_id": 1,
-        "progress_categories": [
-          "gc-eu-mq-dbg"
-        ]
-      }
-    },
-    {
-      "name": "gc-eu-mq-dbg/data/z_text.data",
-      "measures": {
-        "fuzzy_match_percent": 100.0,
-        "matched_code_percent": 100.0,
-        "matched_data_percent": 100.0,
-        "matched_functions_percent": 100.0,
-        "total_units": 1
-      },
-      "sections": [
-        {
-          "name": ".MIPS.abiflags",
-          "size": "24",
-          "metadata": {
-            "virtual_address": "0"
-          }
-        },
-        {
-          "name": ".data",
-          "size": "1152",
-          "metadata": {
-            "virtual_address": "86816"
-          }
-        }
-      ],
-      "metadata": {
-        "module_name": ".MIPS.abiflags",
-        "module_id": 3,
-        "progress_categories": [
-          "gc-eu-mq-dbg"
-        ]
-      }
-    },
-    {
       "name": "gc-eu-mq-dbg/src/code/z_effect_soft_sprite_dlftbls",
       "measures": {
         "fuzzy_match_percent": 100.0,
@@ -36045,7 +35872,7 @@
           "name": ".data",
           "size": "1040",
           "metadata": {
-            "virtual_address": "1424"
+            "virtual_address": "1018704"
           }
         },
         {
@@ -36058,7 +35885,7 @@
       ],
       "metadata": {
         "module_name": ".data",
-        "module_id": 4,
+        "module_id": 1,
         "progress_categories": [
           "gc-eu-mq-dbg"
         ]
@@ -36078,7 +35905,7 @@
           "name": ".data",
           "size": "288",
           "metadata": {
-            "virtual_address": "42000"
+            "virtual_address": "1059280"
           }
         },
         {
@@ -36091,7 +35918,7 @@
       ],
       "metadata": {
         "module_name": ".data",
-        "module_id": 4,
+        "module_id": 1,
         "progress_categories": [
           "gc-eu-mq-dbg"
         ]
@@ -36111,7 +35938,7 @@
           "name": ".data",
           "size": "7680",
           "metadata": {
-            "virtual_address": "58960"
+            "virtual_address": "1076240"
           }
         },
         {
@@ -36124,7 +35951,7 @@
       ],
       "metadata": {
         "module_name": ".data",
-        "module_id": 4,
+        "module_id": 1,
         "progress_categories": [
           "gc-eu-mq-dbg"
         ]
@@ -36144,7 +35971,7 @@
           "name": ".data",
           "size": "3232",
           "metadata": {
-            "virtual_address": "73984"
+            "virtual_address": "1091264"
           }
         },
         {
@@ -36157,7 +35984,40 @@
       ],
       "metadata": {
         "module_name": ".data",
-        "module_id": 4,
+        "module_id": 1,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/data/z_text.data",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".data",
+          "size": "1152",
+          "metadata": {
+            "virtual_address": "1104096"
+          }
+        },
+        {
+          "name": ".MIPS.abiflags",
+          "size": "24",
+          "metadata": {
+            "virtual_address": "0"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".data",
+        "module_id": 1,
         "progress_categories": [
           "gc-eu-mq-dbg"
         ]
@@ -36177,20 +36037,20 @@
           "name": ".data",
           "size": "48",
           "metadata": {
-            "virtual_address": "87968"
+            "virtual_address": "1105248"
           }
         }
       ],
       "metadata": {
         "module_name": ".data",
-        "module_id": 4,
+        "module_id": 1,
         "progress_categories": [
           "gc-eu-mq-dbg"
         ]
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/lib/data",
+      "name": "gc-eu-mq-dbg/src/audio/internal/data",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "matched_code_percent": 100.0,
@@ -36203,27 +36063,27 @@
           "name": ".data",
           "size": "9232",
           "metadata": {
-            "virtual_address": "101488"
+            "virtual_address": "1118768"
           }
         },
         {
           "name": ".options",
           "size": "64",
           "metadata": {
-            "virtual_address": "7616"
+            "virtual_address": "7680"
           }
         }
       ],
       "metadata": {
         "module_name": ".data",
-        "module_id": 4,
+        "module_id": 1,
         "progress_categories": [
           "gc-eu-mq-dbg"
         ]
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/sfx_params",
+      "name": "gc-eu-mq-dbg/src/audio/game/sfx_params",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "matched_code_percent": 100.0,
@@ -36236,7 +36096,7 @@
           "name": ".data",
           "size": "5072",
           "metadata": {
-            "virtual_address": "117584"
+            "virtual_address": "1134864"
           }
         },
         {
@@ -36249,14 +36109,14 @@
       ],
       "metadata": {
         "module_name": ".data",
-        "module_id": 4,
+        "module_id": 1,
         "progress_categories": [
           "gc-eu-mq-dbg"
         ]
       }
     },
     {
-      "name": "gc-eu-mq-dbg/src/audio/data",
+      "name": "gc-eu-mq-dbg/src/audio/game/data",
       "measures": {
         "fuzzy_match_percent": 100.0,
         "matched_code_percent": 100.0,
@@ -36269,14 +36129,14 @@
           "name": ".data",
           "size": "128",
           "metadata": {
-            "virtual_address": "122752"
+            "virtual_address": "1140032"
           }
         },
         {
           "name": ".bss",
           "size": "160",
           "metadata": {
-            "virtual_address": "95056"
+            "virtual_address": "95088"
           }
         },
         {
@@ -36289,7 +36149,47 @@
       ],
       "metadata": {
         "module_name": ".data",
-        "module_id": 4,
+        "module_id": 1,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/audio/game/session_config",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".data",
+          "size": "1952",
+          "metadata": {
+            "virtual_address": "1140160"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "25712",
+          "metadata": {
+            "virtual_address": "95248"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "8576"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".data",
+        "module_id": 1,
         "progress_categories": [
           "gc-eu-mq-dbg"
         ]
@@ -36309,7 +36209,7 @@
           "name": ".data",
           "size": "16",
           "metadata": {
-            "virtual_address": "124832"
+            "virtual_address": "1142112"
           }
         },
         {
@@ -36322,7 +36222,224 @@
       ],
       "metadata": {
         "module_name": ".data",
-        "module_id": 4,
+        "module_id": 1,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/audio/game/session_init",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "1235040"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "32"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".rodata",
+        "module_id": 2,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/libultra/gu/libm_vals",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "16",
+          "metadata": {
+            "virtual_address": "1238128"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "32",
+          "metadata": {
+            "virtual_address": "320"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".rodata",
+        "module_id": 2,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/audio/tables/soundfont_table",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "624",
+          "metadata": {
+            "virtual_address": "1278576"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "640"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".rodata",
+        "module_id": 2,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/assets/audio/sequence_font_table",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "448",
+          "metadata": {
+            "virtual_address": "1279200"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".rodata",
+        "module_id": 2,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/audio/tables/sequence_table",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "1776",
+          "metadata": {
+            "virtual_address": "1279648"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "704"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".rodata",
+        "module_id": 2,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/src/audio/tables/samplebank_table",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "128",
+          "metadata": {
+            "virtual_address": "1281424"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "metadata": {
+            "virtual_address": "768"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".rodata",
+        "module_id": 2,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    },
+    {
+      "name": "gc-eu-mq-dbg/data/rsp.rodata",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "matched_code_percent": 100.0,
+        "matched_data_percent": 100.0,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".rodata",
+          "size": "8480",
+          "metadata": {
+            "virtual_address": "1281552"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".rodata",
+        "module_id": 2,
         "progress_categories": [
           "gc-eu-mq-dbg"
         ]
@@ -36336,15 +36453,15 @@
       "name": "gc-eu-mq-dbg",
       "measures": {
         "fuzzy_match_percent": 100.0,
-        "total_code": "1017120",
-        "matched_code": "1017120",
+        "total_code": "1017200",
+        "matched_code": "1017200",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
         "total_functions": 3152,
         "matched_functions": 3152,
         "matched_functions_percent": 100.0,
         "complete_data_percent": 100.0,
-        "total_units": 234
+        "total_units": 235
       }
     }
   ]
