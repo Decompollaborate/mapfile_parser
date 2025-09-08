@@ -3,5 +3,10 @@
 00000170,code,math_op_1
 000001C8,code,math_op_2
 000001D0,code,math_op_1_dup
+00000230,data,$_static_symbol_00000230_simple_mips.o_.rodata
+00000260,data,$_static_symbol_00000260_simple_mips.o_.reginfo
 00000280,data,cat
 00000284,data,dog
+00000000,data,$_static_symbol_00000000_simple_mips.o_.options
+00000000,data,$_static_symbol_00000000_simple_mips.o_.gptab.data
+00000000,data,$_static_symbol_00000000_simple_mips.o_.mdebug

@@ -9,7 +9,7 @@ use std::{
 
 use regex::*;
 
-use crate::{mapfile::MapFile, section, segment, symbol, utils, Section};
+use crate::{mapfile::MapFile, section, segment, symbol, utils};
 
 lazy_static! {
     static ref BANNED_SYMBOL_NAMES: HashSet<&'static str> = {
@@ -365,7 +365,6 @@ impl MapFile {
 
                 // The size of the section
                 let mut acummulated_size = 0;
-                let symbols_count = section.symbols.len();
                 let is_noload_section = section.is_noload_section();
 
                 if let Some(vrom) = section.vrom {
@@ -376,24 +375,45 @@ impl MapFile {
                     section.vrom = Some(vrom_offset);
                 }
 
+                // Look up for static symbols.
+                // gnu ld does not provide symbol sizes, so the only static
+                // symbol we may infer are the ones that are at the beginning
+                // of the section.
+                if let Some(first_sym) = section.symbols.first() {
+                    if first_sym.vram != section.vram {
+                        // There's at least one static symbol at the beginning of the section.
+                        let sym_name = generate_static_sym_name_for_address(
+                            section.vram,
+                            &section.filepath,
+                            &section.section_type,
+                        );
+                        let sym = symbol::Symbol::new_static(
+                            sym_name,
+                            section.vram,
+                            first_sym.vram - section.vram,
+                            section.vrom,
+                        );
+                        section.symbols.insert(0, sym);
+                    }
+                } else if section.size > 0 && !section.is_fill {
+                    // There's at least one static symbol.
+                    let sym_name = generate_static_sym_name_for_address(
+                        section.vram,
+                        &section.filepath,
+                        &section.section_type,
+                    );
+                    let sym = symbol::Symbol::new_static(
+                        sym_name,
+                        section.vram,
+                        section.size,
+                        section.vrom,
+                    );
+                    section.symbols.insert(0, sym);
+                }
+
+                let symbols_count = section.symbols.len();
                 if symbols_count > 0 {
                     let mut sym_vrom = vrom_offset;
-
-                    // The first symbol of the section on the mapfile may not be the actual first
-                    // symbol if it is marked `static`, be a jumptable, etc, producing a mismatch
-                    // on the vrom address of each symbol of this section.
-                    // A way to adjust this difference is by increasing the start of the vrom
-                    // by the difference in vram address between the first symbol and the vram
-                    // of the section.
-                    if let Some(first_sym) = section.symbols.first() {
-                        sym_vrom = sym_vrom + first_sym.vram - section.vram;
-
-                        // Aditionally, if the first symbol is missing then calculation of the size
-                        // for the last symbol would be wrong, since we subtract the accumulated
-                        // size of each symbol from the section's total size to calculate it.
-                        // We need to adjust the total size by this difference too.
-                        acummulated_size += first_sym.vram - section.vram;
-                    }
 
                     // Calculate size of each symbol
                     for index in 0..symbols_count - 1 {
@@ -571,6 +591,13 @@ impl MapFile {
 
                 let mut acummulated_size = 0;
                 let symbols_count = section.symbols.len();
+                let mut has_statics = false;
+
+                if let Some(first_sym) = section.symbols.first() {
+                    if first_sym.vram != section.vram {
+                        has_statics = true;
+                    }
+                }
 
                 if symbols_count > 0 {
                     // Calculate the size of symbols that the map section did not report.
@@ -585,17 +612,27 @@ impl MapFile {
 
                         if sym.size == 0 {
                             sym.size = sym_size;
+                        } else if sym.size != sym_size {
+                            has_statics = true;
                         }
                     }
 
                     // Calculate size of last symbol of the section
                     let sym = &mut section.symbols[symbols_count - 1];
+                    let sym_size = section.size - acummulated_size;
                     if sym.size == 0 {
-                        let sym_size = section.size - acummulated_size;
                         sym.size = sym_size;
+                    } else if sym.size != sym_size {
+                        has_statics = true;
                     }
 
                     Self::fixup_non_matching_symbols_for_section(&mut section);
+                } else if section.size > 0 {
+                    has_statics = true;
+                }
+
+                if has_statics {
+                    section = fill_static_symbols(section);
                 }
 
                 new_segment.sections_list.push(section);
@@ -775,6 +812,7 @@ impl MapFile {
                     Self::fixup_non_matching_symbols_for_section(&mut section);
                 }
 
+                let section = fill_static_symbols(section);
                 new_segment.sections_list.push(section);
             }
 
@@ -891,7 +929,7 @@ impl MapFile {
         map_data
     }
 
-    fn fixup_non_matching_symbols_for_section(section: &mut Section) {
+    fn fixup_non_matching_symbols_for_section(section: &mut section::Section) {
         // Fixup `.NON_MATCHING` symbols.
         // These kind of symbols have the same address as their
         // real counterpart, but their order is not guaranteed,
@@ -925,4 +963,66 @@ impl MapFile {
             }
         }
     }
+}
+
+fn fill_static_symbols(mut section: section::Section) -> section::Section {
+    let mut new_symbols = Vec::with_capacity(section.symbols.len() * 2);
+
+    let mut current_vram = section.vram;
+    for sym in section.symbols {
+        if sym.vram > current_vram && sym.size > 0 {
+            let static_size = sym.vram - current_vram;
+            if static_size >= 0x4 {
+                // sizes smaller than 0x4 are usually just padding between symbols
+                let vrom = section.vrom.map(|x| x + static_size);
+                let sym_name = generate_static_sym_name_for_address(
+                    current_vram,
+                    &section.filepath,
+                    &section.section_type,
+                );
+                let sym = symbol::Symbol::new_static(sym_name, current_vram, static_size, vrom);
+                new_symbols.push(sym);
+            }
+        }
+        if sym.size > 0 {
+            current_vram = sym.vram + sym.size;
+        }
+        new_symbols.push(sym);
+    }
+    if current_vram < section.vram + section.size {
+        let static_size = section.vram + section.size - current_vram;
+        if static_size >= 0x10 {
+            // sizes smaller than 0x10 bytes are usually just section padding
+            let vrom = section.vrom.map(|x| x + static_size);
+            let sym_name = generate_static_sym_name_for_address(
+                current_vram,
+                &section.filepath,
+                &section.section_type,
+            );
+            let sym = symbol::Symbol::new_static(sym_name, current_vram, static_size, vrom);
+            new_symbols.push(sym);
+        }
+    }
+
+    new_symbols.shrink_to_fit();
+    section.symbols = new_symbols;
+
+    section
+}
+
+fn generate_static_sym_name_for_address(
+    static_vram: u64,
+    filepath: &Path,
+    section_type: &str,
+) -> String {
+    // We should not change the `$_static_symbol_` prefix because other
+    // tools may rely on this naming scheme.
+    // The rest of the name _may_ be fair game, but we should try to avoid
+    // changing it without a good reason.
+    format!(
+        "$_static_symbol_{:08X}_{}_{}",
+        static_vram,
+        filepath.display(),
+        section_type,
+    )
 }

@@ -31,6 +31,12 @@ pub struct Symbol {
     /// Note the symbol with the actual `.NON_MATCHING` will have this member
     /// set to `false`.
     pub nonmatching_sym_exists: bool,
+
+    /// This symbol was not originally present on the mapfile, but instead it
+    /// was added during parsing because it was inferred this symbol must exist
+    /// due to mismatches on the addresses or sizes of other symbols in this
+    /// section or mismatches in the section itself.
+    pub inferred_static: bool,
 }
 
 impl Symbol {
@@ -41,6 +47,7 @@ impl Symbol {
         vrom: Option<u64>,
         align: Option<u64>,
         nonmatching_sym_exists: bool,
+        inferred_static: bool,
     ) -> Self {
         Self {
             name,
@@ -49,15 +56,20 @@ impl Symbol {
             vrom,
             align,
             nonmatching_sym_exists,
+            inferred_static,
         }
     }
 
     pub fn new(name: String, vram: u64, size: u64, vrom: Option<u64>, align: Option<u64>) -> Self {
-        Self::new_impl(name, vram, size, vrom, align, false)
+        Self::new_impl(name, vram, size, vrom, align, false, false)
     }
 
     pub fn new_default(name: String, vram: u64) -> Self {
-        Self::new_impl(name, vram, 0, None, None, false)
+        Self::new_impl(name, vram, 0, None, None, false, false)
+    }
+
+    pub fn new_static(name: String, vram: u64, size: u64, vrom: Option<u64>) -> Self {
+        Self::new_impl(name, vram, size, vrom, None, false, true)
     }
 
     pub fn get_vram_str(&self) -> String {
@@ -128,7 +140,7 @@ pub(crate) mod python_bindings {
     #[pymethods]
     impl super::Symbol {
         #[new]
-        #[pyo3(signature=(name,vram,size=0,vrom=None,align=None, nonmatchingSymExists=false))]
+        #[pyo3(signature=(name,vram,size=0,vrom=None,align=None, nonmatchingSymExists=false, inferredStatic=false))]
         fn py_new(
             name: String,
             vram: u64,
@@ -136,8 +148,17 @@ pub(crate) mod python_bindings {
             vrom: Option<u64>,
             align: Option<u64>,
             nonmatchingSymExists: bool,
+            inferredStatic: bool,
         ) -> Self {
-            Self::new_impl(name, vram, size, vrom, align, nonmatchingSymExists)
+            Self::new_impl(
+                name,
+                vram,
+                size,
+                vrom,
+                align,
+                nonmatchingSymExists,
+                inferredStatic,
+            )
         }
 
         /* Getters and setters */
@@ -205,6 +226,17 @@ pub(crate) mod python_bindings {
         #[setter]
         fn set_nonmatchingSymExists(&mut self, value: bool) -> PyResult<()> {
             self.nonmatching_sym_exists = value;
+            Ok(())
+        }
+
+        #[getter]
+        fn get_inferredStatic(&self) -> PyResult<bool> {
+            Ok(self.inferred_static)
+        }
+
+        #[setter]
+        fn set_inferredStatic(&mut self, value: bool) -> PyResult<()> {
+            self.inferred_static = value;
             Ok(())
         }
 

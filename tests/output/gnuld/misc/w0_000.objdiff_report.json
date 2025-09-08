@@ -4,11 +4,12 @@
     "total_code": "1580",
     "matched_code": "1580",
     "matched_code_percent": 100.0,
+    "total_data": "10756",
+    "matched_data": "10756",
     "matched_data_percent": 100.0,
     "total_functions": 25,
     "matched_functions": 25,
     "matched_functions_percent": 100.0,
-    "complete_data_percent": 100.0,
     "total_units": 4
   },
   "units": [
@@ -17,6 +18,8 @@
       "measures": {
         "fuzzy_match_percent": 100.0,
         "matched_code_percent": 100.0,
+        "total_data": "112",
+        "matched_data": "112",
         "matched_data_percent": 100.0,
         "matched_functions_percent": 100.0,
         "total_units": 1
@@ -25,6 +28,7 @@
         {
           "name": ".reginfo",
           "size": "24",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -32,6 +36,7 @@
         {
           "name": ".MIPS.abiflags",
           "size": "24",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "24"
           }
@@ -39,6 +44,7 @@
         {
           "name": ".data",
           "size": "64",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149031936"
           }
@@ -57,6 +63,8 @@
       "measures": {
         "fuzzy_match_percent": 100.0,
         "matched_code_percent": 100.0,
+        "total_data": "4244",
+        "matched_data": "4244",
         "matched_data_percent": 100.0,
         "matched_functions_percent": 100.0,
         "total_units": 1
@@ -65,6 +73,7 @@
         {
           "name": ".data",
           "size": "4244",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149032000"
           }
@@ -316,6 +325,8 @@
       "measures": {
         "fuzzy_match_percent": 100.0,
         "matched_code_percent": 100.0,
+        "total_data": "6400",
+        "matched_data": "6400",
         "matched_data_percent": 100.0,
         "matched_functions_percent": 100.0,
         "total_units": 1
@@ -324,6 +335,7 @@
         {
           "name": ".sbss",
           "size": "6400",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2149037824"
           }
@@ -348,11 +360,12 @@
         "total_code": "1580",
         "matched_code": "1580",
         "matched_code_percent": 100.0,
+        "total_data": "112",
+        "matched_data": "112",
         "matched_data_percent": 100.0,
         "total_functions": 25,
         "matched_functions": 25,
         "matched_functions_percent": 100.0,
-        "complete_data_percent": 100.0,
         "total_units": 2
       }
     },
@@ -362,10 +375,11 @@
       "measures": {
         "fuzzy_match_percent": 100.0,
         "matched_code_percent": 100.0,
+        "total_data": "10644",
+        "matched_data": "10644",
         "matched_data_percent": 100.0,
         "matched_functions_percent": 100.0,
         "complete_code_percent": 100.0,
-        "complete_data_percent": 100.0,
         "total_units": 2
       }
     }

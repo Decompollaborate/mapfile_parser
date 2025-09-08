@@ -1,0 +1,8 @@
+VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
+00000000,build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o,.text,547,3852,135680,248.04
+00021200,build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o,.data,1,7728,7728,7728.00
+00023030,build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o,.rodata,1,784,784,784.00
+00000000,build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o,.reginfo,1,24,24,24.00
+00000020,build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o,.bss,1,208,208,208.00
+00000000,build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o,.options,1,64,64,64.00
+00000000,build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o,.mdebug,1,158768,158768,158768.00

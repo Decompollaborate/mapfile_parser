@@ -4,11 +4,12 @@
     "total_code": "548",
     "matched_code": "548",
     "matched_code_percent": 100.0,
+    "total_data": "80",
+    "matched_data": "80",
     "matched_data_percent": 100.0,
     "total_functions": 10,
     "matched_functions": 10,
     "matched_functions_percent": 100.0,
-    "complete_data_percent": 100.0,
     "total_units": 3
   },
   "units": [
@@ -76,6 +77,8 @@
         "total_code": "428",
         "matched_code": "428",
         "matched_code_percent": 100.0,
+        "total_data": "80",
+        "matched_data": "80",
         "matched_data_percent": 100.0,
         "total_functions": 7,
         "matched_functions": 7,
@@ -94,6 +97,7 @@
         {
           "name": ".data",
           "size": "80",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -239,11 +243,12 @@
         "total_code": "428",
         "matched_code": "428",
         "matched_code_percent": 100.0,
+        "total_data": "80",
+        "matched_data": "80",
         "matched_data_percent": 100.0,
         "total_functions": 7,
         "matched_functions": 7,
         "matched_functions_percent": 100.0,
-        "complete_data_percent": 100.0,
         "total_units": 1
       }
     },

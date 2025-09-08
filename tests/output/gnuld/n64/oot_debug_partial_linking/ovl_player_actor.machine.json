@@ -1,0 +1,3441 @@
+{
+    "segments": [
+        {
+            "name": ".text",
+            "vram": 0,
+            "size": 135680,
+            "vrom": 0,
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o",
+                    "sectionType": ".text",
+                    "vram": 0,
+                    "size": 135680,
+                    "vrom": 0,
+                    "symbols": [
+                        {
+                            "name": "Player_ZeroSpeedXZ",
+                            "vram": 0,
+                            "size": 20,
+                            "vrom": 0
+                        },
+                        {
+                            "name": "func_80832224",
+                            "vram": 20,
+                            "size": 40,
+                            "vrom": 20
+                        },
+                        {
+                            "name": "Player_IsTalking",
+                            "vram": 60,
+                            "size": 24,
+                            "vrom": 60
+                        },
+                        {
+                            "name": "Player_AnimPlayOnce",
+                            "vram": 84,
+                            "size": 32,
+                            "vrom": 84
+                        },
+                        {
+                            "name": "Player_AnimPlayLoop",
+                            "vram": 116,
+                            "size": 32,
+                            "vrom": 116
+                        },
+                        {
+                            "name": "Player_AnimPlayLoopAdjusted",
+                            "vram": 148,
+                            "size": 44,
+                            "vrom": 148
+                        },
+                        {
+                            "name": "Player_AnimPlayOnceAdjusted",
+                            "vram": 192,
+                            "size": 44,
+                            "vrom": 192
+                        },
+                        {
+                            "name": "Player_ApplyYawFromAnim",
+                            "vram": 236,
+                            "size": 28,
+                            "vrom": 236
+                        },
+                        {
+                            "name": "func_80832318",
+                            "vram": 264,
+                            "size": 40,
+                            "vrom": 264
+                        },
+                        {
+                            "name": "func_80832340",
+                            "vram": 304,
+                            "size": 116,
+                            "vrom": 304
+                        },
+                        {
+                            "name": "Player_DetachHeldActor",
+                            "vram": 420,
+                            "size": 140,
+                            "vrom": 420
+                        },
+                        {
+                            "name": "func_80832440",
+                            "vram": 560,
+                            "size": 232,
+                            "vrom": 560
+                        },
+                        {
+                            "name": "Player_PutAwayHeldItem",
+                            "vram": 792,
+                            "size": 60,
+                            "vrom": 792
+                        },
+                        {
+                            "name": "func_80832564",
+                            "vram": 852,
+                            "size": 48,
+                            "vrom": 852
+                        },
+                        {
+                            "name": "func_80832594",
+                            "vram": 900,
+                            "size": 156,
+                            "vrom": 900
+                        },
+                        {
+                            "name": "func_80832630",
+                            "vram": 1056,
+                            "size": 28,
+                            "vrom": 1056
+                        },
+                        {
+                            "name": "Player_RequestRumble",
+                            "vram": 1084,
+                            "size": 76,
+                            "vrom": 1084
+                        },
+                        {
+                            "name": "Player_PlayVoiceSfx",
+                            "vram": 1160,
+                            "size": 88,
+                            "vrom": 1160
+                        },
+                        {
+                            "name": "func_808326F0",
+                            "vram": 1248,
+                            "size": 108,
+                            "vrom": 1248
+                        },
+                        {
+                            "name": "Player_ApplyFloorSfxOffset",
+                            "vram": 1356,
+                            "size": 20,
+                            "vrom": 1356
+                        },
+                        {
+                            "name": "Player_PlayFloorSfx",
+                            "vram": 1376,
+                            "size": 52,
+                            "vrom": 1376
+                        },
+                        {
+                            "name": "Player_ApplyFloorAndAgeSfxOffsets",
+                            "vram": 1428,
+                            "size": 32,
+                            "vrom": 1428
+                        },
+                        {
+                            "name": "Player_PlayFloorSfxByAge",
+                            "vram": 1460,
+                            "size": 52,
+                            "vrom": 1460
+                        },
+                        {
+                            "name": "Player_PlaySteppingSfx",
+                            "vram": 1512,
+                            "size": 92,
+                            "vrom": 1512
+                        },
+                        {
+                            "name": "Player_PlayJumpingSfx",
+                            "vram": 1604,
+                            "size": 76,
+                            "vrom": 1604
+                        },
+                        {
+                            "name": "Player_PlayLandingSfx",
+                            "vram": 1680,
+                            "size": 76,
+                            "vrom": 1680
+                        },
+                        {
+                            "name": "func_808328EC",
+                            "vram": 1756,
+                            "size": 56,
+                            "vrom": 1756
+                        },
+                        {
+                            "name": "Player_ProcessAnimSfxList",
+                            "vram": 1812,
+                            "size": 488,
+                            "vrom": 1812
+                        },
+                        {
+                            "name": "Player_AnimChangeOnceMorph",
+                            "vram": 2300,
+                            "size": 108,
+                            "vrom": 2300
+                        },
+                        {
+                            "name": "Player_AnimChangeOnceMorphAdjusted",
+                            "vram": 2408,
+                            "size": 112,
+                            "vrom": 2408
+                        },
+                        {
+                            "name": "Player_AnimChangeLoopMorph",
+                            "vram": 2520,
+                            "size": 68,
+                            "vrom": 2520
+                        },
+                        {
+                            "name": "Player_AnimChangeFreeze",
+                            "vram": 2588,
+                            "size": 64,
+                            "vrom": 2588
+                        },
+                        {
+                            "name": "Player_AnimChangeLoopSlowMorph",
+                            "vram": 2652,
+                            "size": 68,
+                            "vrom": 2652
+                        },
+                        {
+                            "name": "func_80832CB0",
+                            "vram": 2720,
+                            "size": 76,
+                            "vrom": 2720
+                        },
+                        {
+                            "name": "Player_ResetAnimMovement",
+                            "vram": 2796,
+                            "size": 36,
+                            "vrom": 2796
+                        },
+                        {
+                            "name": "Player_ResetAnimMovementScaledByAge",
+                            "vram": 2832,
+                            "size": 144,
+                            "vrom": 2832
+                        },
+                        {
+                            "name": "Player_ZeroRootLimbYaw",
+                            "vram": 2976,
+                            "size": 12,
+                            "vrom": 2976
+                        },
+                        {
+                            "name": "Player_FinishAnimMovement",
+                            "vram": 2988,
+                            "size": 140,
+                            "vrom": 2988
+                        },
+                        {
+                            "name": "Player_ApplyAnimMovementScaledByAge",
+                            "vram": 3128,
+                            "size": 268,
+                            "vrom": 3128
+                        },
+                        {
+                            "name": "Player_StartAnimMovement",
+                            "vram": 3396,
+                            "size": 168,
+                            "vrom": 3396
+                        },
+                        {
+                            "name": "Player_AnimReplacePlayOnceSetSpeed",
+                            "vram": 3564,
+                            "size": 64,
+                            "vrom": 3564
+                        },
+                        {
+                            "name": "Player_AnimReplacePlayOnce",
+                            "vram": 3628,
+                            "size": 40,
+                            "vrom": 3628
+                        },
+                        {
+                            "name": "Player_AnimReplacePlayOnceAdjusted",
+                            "vram": 3668,
+                            "size": 40,
+                            "vrom": 3668
+                        },
+                        {
+                            "name": "Player_AnimReplaceNormalPlayOnceAdjusted",
+                            "vram": 3708,
+                            "size": 32,
+                            "vrom": 3708
+                        },
+                        {
+                            "name": "Player_AnimReplacePlayLoopSetSpeed",
+                            "vram": 3740,
+                            "size": 64,
+                            "vrom": 3740
+                        },
+                        {
+                            "name": "Player_AnimReplacePlayLoop",
+                            "vram": 3804,
+                            "size": 40,
+                            "vrom": 3804
+                        },
+                        {
+                            "name": "Player_AnimReplacePlayLoopAdjusted",
+                            "vram": 3844,
+                            "size": 40,
+                            "vrom": 3844
+                        },
+                        {
+                            "name": "Player_AnimReplaceNormalPlayLoopAdjusted",
+                            "vram": 3884,
+                            "size": 32,
+                            "vrom": 3884
+                        },
+                        {
+                            "name": "Player_ProcessControlStick",
+                            "vram": 3916,
+                            "size": 304,
+                            "vrom": 3916
+                        },
+                        {
+                            "name": "func_8083328C",
+                            "vram": 4220,
+                            "size": 44,
+                            "vrom": 4220
+                        },
+                        {
+                            "name": "func_808332B8",
+                            "vram": 4264,
+                            "size": 44,
+                            "vrom": 4264
+                        },
+                        {
+                            "name": "func_808332E4",
+                            "vram": 4308,
+                            "size": 16,
+                            "vrom": 4308
+                        },
+                        {
+                            "name": "func_808332F4",
+                            "vram": 4324,
+                            "size": 68,
+                            "vrom": 4324
+                        },
+                        {
+                            "name": "Player_GetIdleAnim",
+                            "vram": 4392,
+                            "size": 24,
+                            "vrom": 4392
+                        },
+                        {
+                            "name": "Player_CheckForIdleAnim",
+                            "vram": 4416,
+                            "size": 172,
+                            "vrom": 4416
+                        },
+                        {
+                            "name": "Player_ProcessFidgetAnimSfxList",
+                            "vram": 4588,
+                            "size": 60,
+                            "vrom": 4588
+                        },
+                        {
+                            "name": "func_80833438",
+                            "vram": 4648,
+                            "size": 124,
+                            "vrom": 4648
+                        },
+                        {
+                            "name": "func_808334B4",
+                            "vram": 4772,
+                            "size": 48,
+                            "vrom": 4772
+                        },
+                        {
+                            "name": "func_808334E4",
+                            "vram": 4820,
+                            "size": 68,
+                            "vrom": 4820
+                        },
+                        {
+                            "name": "func_80833528",
+                            "vram": 4888,
+                            "size": 68,
+                            "vrom": 4888
+                        },
+                        {
+                            "name": "func_8083356C",
+                            "vram": 4956,
+                            "size": 68,
+                            "vrom": 4956
+                        },
+                        {
+                            "name": "func_808335B0",
+                            "vram": 5024,
+                            "size": 68,
+                            "vrom": 5024
+                        },
+                        {
+                            "name": "func_808335F4",
+                            "vram": 5092,
+                            "size": 68,
+                            "vrom": 5092
+                        },
+                        {
+                            "name": "Player_SetUpperActionFunc",
+                            "vram": 5160,
+                            "size": 44,
+                            "vrom": 5160
+                        },
+                        {
+                            "name": "Player_InitItemActionWithAnim",
+                            "vram": 5204,
+                            "size": 192,
+                            "vrom": 5204
+                        },
+                        {
+                            "name": "Player_ItemToItemAction",
+                            "vram": 5396,
+                            "size": 76,
+                            "vrom": 5396
+                        },
+                        {
+                            "name": "Player_InitDefaultIA",
+                            "vram": 5472,
+                            "size": 12,
+                            "vrom": 5472
+                        },
+                        {
+                            "name": "Player_InitDekuStickIA",
+                            "vram": 5484,
+                            "size": 20,
+                            "vrom": 5484
+                        },
+                        {
+                            "name": "Player_InitHammerIA",
+                            "vram": 5504,
+                            "size": 12,
+                            "vrom": 5504
+                        },
+                        {
+                            "name": "Player_InitBowOrSlingshotIA",
+                            "vram": 5516,
+                            "size": 56,
+                            "vrom": 5516
+                        },
+                        {
+                            "name": "Player_InitExplosiveIA",
+                            "vram": 5572,
+                            "size": 316,
+                            "vrom": 5572
+                        },
+                        {
+                            "name": "Player_InitHookshotIA",
+                            "vram": 5888,
+                            "size": 116,
+                            "vrom": 5888
+                        },
+                        {
+                            "name": "Player_InitBoomerangIA",
+                            "vram": 6004,
+                            "size": 24,
+                            "vrom": 6004
+                        },
+                        {
+                            "name": "Player_InitItemAction",
+                            "vram": 6028,
+                            "size": 132,
+                            "vrom": 6028
+                        },
+                        {
+                            "name": "func_80833A20",
+                            "vram": 6160,
+                            "size": 268,
+                            "vrom": 6160
+                        },
+                        {
+                            "name": "Player_FriendlyLockOnOrParallel",
+                            "vram": 6428,
+                            "size": 40,
+                            "vrom": 6428
+                        },
+                        {
+                            "name": "Player_UpdateHostileLockOn",
+                            "vram": 6468,
+                            "size": 120,
+                            "vrom": 6468
+                        },
+                        {
+                            "name": "Player_IsZTargeting",
+                            "vram": 6588,
+                            "size": 56,
+                            "vrom": 6588
+                        },
+                        {
+                            "name": "Player_IsZTargetingWithHostileUpdate",
+                            "vram": 6644,
+                            "size": 56,
+                            "vrom": 6644
+                        },
+                        {
+                            "name": "func_80833C3C",
+                            "vram": 6700,
+                            "size": 20,
+                            "vrom": 6700
+                        },
+                        {
+                            "name": "Player_ItemIsInUse",
+                            "vram": 6720,
+                            "size": 72,
+                            "vrom": 6720
+                        },
+                        {
+                            "name": "Player_ItemIsItemAction",
+                            "vram": 6792,
+                            "size": 68,
+                            "vrom": 6792
+                        },
+                        {
+                            "name": "Player_GetItemOnButton",
+                            "vram": 6860,
+                            "size": 284,
+                            "vrom": 6860
+                        },
+                        {
+                            "name": "Player_ProcessItemButtons",
+                            "vram": 7144,
+                            "size": 740,
+                            "vrom": 7144
+                        },
+                        {
+                            "name": "Player_StartChangingHeldItem",
+                            "vram": 7884,
+                            "size": 444,
+                            "vrom": 7884
+                        },
+                        {
+                            "name": "Player_UpdateItems",
+                            "vram": 8328,
+                            "size": 232,
+                            "vrom": 8328
+                        },
+                        {
+                            "name": "func_80834380",
+                            "vram": 8560,
+                            "size": 172,
+                            "vrom": 8560
+                        },
+                        {
+                            "name": "func_8083442C",
+                            "vram": 8732,
+                            "size": 360,
+                            "vrom": 8732
+                        },
+                        {
+                            "name": "Player_FinishItemChange",
+                            "vram": 9092,
+                            "size": 176,
+                            "vrom": 9092
+                        },
+                        {
+                            "name": "func_80834644",
+                            "vram": 9268,
+                            "size": 128,
+                            "vrom": 9268
+                        },
+                        {
+                            "name": "func_808346C4",
+                            "vram": 9396,
+                            "size": 148,
+                            "vrom": 9396
+                        },
+                        {
+                            "name": "func_80834758",
+                            "vram": 9544,
+                            "size": 260,
+                            "vrom": 9544
+                        },
+                        {
+                            "name": "func_8083485C",
+                            "vram": 9804,
+                            "size": 56,
+                            "vrom": 9804
+                        },
+                        {
+                            "name": "func_80834894",
+                            "vram": 9860,
+                            "size": 88,
+                            "vrom": 9860
+                        },
+                        {
+                            "name": "Player_WaitToFinishItemChange",
+                            "vram": 9948,
+                            "size": 176,
+                            "vrom": 9948
+                        },
+                        {
+                            "name": "func_8083499C",
+                            "vram": 10124,
+                            "size": 64,
+                            "vrom": 10124
+                        },
+                        {
+                            "name": "Player_UpperAction_Sword",
+                            "vram": 10188,
+                            "size": 80,
+                            "vrom": 10188
+                        },
+                        {
+                            "name": "Player_UpperAction_ChangeHeldItem",
+                            "vram": 10268,
+                            "size": 304,
+                            "vrom": 10268
+                        },
+                        {
+                            "name": "func_80834B5C",
+                            "vram": 10572,
+                            "size": 120,
+                            "vrom": 10572
+                        },
+                        {
+                            "name": "func_80834BD4",
+                            "vram": 10692,
+                            "size": 160,
+                            "vrom": 10692
+                        },
+                        {
+                            "name": "func_80834C74",
+                            "vram": 10852,
+                            "size": 184,
+                            "vrom": 10852
+                        },
+                        {
+                            "name": "func_80834D2C",
+                            "vram": 11036,
+                            "size": 280,
+                            "vrom": 11036
+                        },
+                        {
+                            "name": "func_80834E44",
+                            "vram": 11316,
+                            "size": 56,
+                            "vrom": 11316
+                        },
+                        {
+                            "name": "func_80834E7C",
+                            "vram": 11372,
+                            "size": 60,
+                            "vrom": 11372
+                        },
+                        {
+                            "name": "func_80834EB8",
+                            "vram": 11432,
+                            "size": 116,
+                            "vrom": 11432
+                        },
+                        {
+                            "name": "func_80834F2C",
+                            "vram": 11548,
+                            "size": 144,
+                            "vrom": 11548
+                        },
+                        {
+                            "name": "func_80834FBC",
+                            "vram": 11692,
+                            "size": 96,
+                            "vrom": 11692
+                        },
+                        {
+                            "name": "func_8083501C",
+                            "vram": 11788,
+                            "size": 136,
+                            "vrom": 11788
+                        },
+                        {
+                            "name": "func_808350A4",
+                            "vram": 11924,
+                            "size": 304,
+                            "vrom": 11924
+                        },
+                        {
+                            "name": "func_808351D4",
+                            "vram": 12228,
+                            "size": 516,
+                            "vrom": 12228
+                        },
+                        {
+                            "name": "func_808353D8",
+                            "vram": 12744,
+                            "size": 432,
+                            "vrom": 12744
+                        },
+                        {
+                            "name": "func_80835588",
+                            "vram": 13176,
+                            "size": 84,
+                            "vrom": 13176
+                        },
+                        {
+                            "name": "Player_SetParallel",
+                            "vram": 13260,
+                            "size": 104,
+                            "vrom": 13260
+                        },
+                        {
+                            "name": "func_80835644",
+                            "vram": 13364,
+                            "size": 68,
+                            "vrom": 13364
+                        },
+                        {
+                            "name": "func_80835688",
+                            "vram": 13432,
+                            "size": 96,
+                            "vrom": 13432
+                        },
+                        {
+                            "name": "Player_UpperAction_CarryActor",
+                            "vram": 13528,
+                            "size": 256,
+                            "vrom": 13528
+                        },
+                        {
+                            "name": "func_808357E8",
+                            "vram": 13784,
+                            "size": 24,
+                            "vrom": 13784
+                        },
+                        {
+                            "name": "func_80835800",
+                            "vram": 13808,
+                            "size": 132,
+                            "vrom": 13808
+                        },
+                        {
+                            "name": "func_80835884",
+                            "vram": 13940,
+                            "size": 108,
+                            "vrom": 13940
+                        },
+                        {
+                            "name": "func_808358F0",
+                            "vram": 14048,
+                            "size": 268,
+                            "vrom": 14048
+                        },
+                        {
+                            "name": "func_808359FC",
+                            "vram": 14316,
+                            "size": 356,
+                            "vrom": 14316
+                        },
+                        {
+                            "name": "func_80835B60",
+                            "vram": 14672,
+                            "size": 168,
+                            "vrom": 14672
+                        },
+                        {
+                            "name": "func_80835C08",
+                            "vram": 14840,
+                            "size": 80,
+                            "vrom": 14840
+                        },
+                        {
+                            "name": "Player_SetupAction",
+                            "vram": 14920,
+                            "size": 340,
+                            "vrom": 14920
+                        },
+                        {
+                            "name": "Player_SetupActionPreserveAnimMovement",
+                            "vram": 15260,
+                            "size": 56,
+                            "vrom": 15260
+                        },
+                        {
+                            "name": "Player_SetupActionPreserveItemAction",
+                            "vram": 15316,
+                            "size": 96,
+                            "vrom": 15316
+                        },
+                        {
+                            "name": "Player_RequestCameraSetting",
+                            "vram": 15412,
+                            "size": 96,
+                            "vrom": 15412
+                        },
+                        {
+                            "name": "Player_SetTurnAroundCamera",
+                            "vram": 15508,
+                            "size": 88,
+                            "vrom": 15508
+                        },
+                        {
+                            "name": "Player_DestroyHookshot",
+                            "vram": 15596,
+                            "size": 72,
+                            "vrom": 15596
+                        },
+                        {
+                            "name": "Player_UseItem",
+                            "vram": 15668,
+                            "size": 1284,
+                            "vrom": 15668
+                        },
+                        {
+                            "name": "func_80836448",
+                            "vram": 16952,
+                            "size": 384,
+                            "vrom": 16952
+                        },
+                        {
+                            "name": "Player_CanUpdateItems",
+                            "vram": 17336,
+                            "size": 168,
+                            "vrom": 17336
+                        },
+                        {
+                            "name": "Player_UpdateUpperBody",
+                            "vram": 17504,
+                            "size": 552,
+                            "vrom": 17504
+                        },
+                        {
+                            "name": "Player_SetupWaitForPutAway",
+                            "vram": 18056,
+                            "size": 84,
+                            "vrom": 18056
+                        },
+                        {
+                            "name": "Player_UpdateShapeYaw",
+                            "vram": 18140,
+                            "size": 220,
+                            "vrom": 18140
+                        },
+                        {
+                            "name": "Player_ScaledStepBinangClamped",
+                            "vram": 18360,
+                            "size": 240,
+                            "vrom": 18360
+                        },
+                        {
+                            "name": "func_80836AB8",
+                            "vram": 18600,
+                            "size": 308,
+                            "vrom": 18600
+                        },
+                        {
+                            "name": "Player_UpdateZTargeting",
+                            "vram": 18908,
+                            "size": 960,
+                            "vrom": 18908
+                        },
+                        {
+                            "name": "Player_CalcSpeedAndYawFromControlStick",
+                            "vram": 19868,
+                            "size": 624,
+                            "vrom": 19868
+                        },
+                        {
+                            "name": "Player_DecelerateToZero",
+                            "vram": 20492,
+                            "size": 76,
+                            "vrom": 20492
+                        },
+                        {
+                            "name": "Player_GetMovementSpeedAndYaw",
+                            "vram": 20568,
+                            "size": 224,
+                            "vrom": 20568
+                        },
+                        {
+                            "name": "Player_TryActionHandlerList",
+                            "vram": 20792,
+                            "size": 344,
+                            "vrom": 20792
+                        },
+                        {
+                            "name": "Player_TryActionInterrupt",
+                            "vram": 21136,
+                            "size": 144,
+                            "vrom": 21136
+                        },
+                        {
+                            "name": "func_80837530",
+                            "vram": 21280,
+                            "size": 168,
+                            "vrom": 21280
+                        },
+                        {
+                            "name": "Player_CanSpinAttack",
+                            "vram": 21448,
+                            "size": 300,
+                            "vrom": 21448
+                        },
+                        {
+                            "name": "func_80837704",
+                            "vram": 21748,
+                            "size": 216,
+                            "vrom": 21748
+                        },
+                        {
+                            "name": "func_808377DC",
+                            "vram": 21964,
+                            "size": 60,
+                            "vrom": 21964
+                        },
+                        {
+                            "name": "func_80837818",
+                            "vram": 22024,
+                            "size": 256,
+                            "vrom": 22024
+                        },
+                        {
+                            "name": "func_80837918",
+                            "vram": 22280,
+                            "size": 48,
+                            "vrom": 22280
+                        },
+                        {
+                            "name": "func_80837948",
+                            "vram": 22328,
+                            "size": 408,
+                            "vrom": 22328
+                        },
+                        {
+                            "name": "Player_SetIntangibility",
+                            "vram": 22736,
+                            "size": 28,
+                            "vrom": 22736
+                        },
+                        {
+                            "name": "Player_SetInvulnerability",
+                            "vram": 22764,
+                            "size": 28,
+                            "vrom": 22764
+                        },
+                        {
+                            "name": "func_80837B18",
+                            "vram": 22792,
+                            "size": 72,
+                            "vrom": 22792
+                        },
+                        {
+                            "name": "func_80837B60",
+                            "vram": 22864,
+                            "size": 60,
+                            "vrom": 22864
+                        },
+                        {
+                            "name": "func_80837B9C",
+                            "vram": 22924,
+                            "size": 112,
+                            "vrom": 22924
+                        },
+                        {
+                            "name": "func_80837C0C",
+                            "vram": 23036,
+                            "size": 1336,
+                            "vrom": 23036
+                        },
+                        {
+                            "name": "func_80838144",
+                            "vram": 24372,
+                            "size": 40,
+                            "vrom": 24372
+                        },
+                        {
+                            "name": "func_8083816C",
+                            "vram": 24412,
+                            "size": 48,
+                            "vrom": 24412
+                        },
+                        {
+                            "name": "func_8083819C",
+                            "vram": 24460,
+                            "size": 128,
+                            "vrom": 24460
+                        },
+                        {
+                            "name": "func_8083821C",
+                            "vram": 24588,
+                            "size": 100,
+                            "vrom": 24588
+                        },
+                        {
+                            "name": "func_80838280",
+                            "vram": 24688,
+                            "size": 60,
+                            "vrom": 24688
+                        },
+                        {
+                            "name": "func_808382BC",
+                            "vram": 24748,
+                            "size": 32,
+                            "vrom": 24748
+                        },
+                        {
+                            "name": "func_808382DC",
+                            "vram": 24780,
+                            "size": 1636,
+                            "vrom": 24780
+                        },
+                        {
+                            "name": "func_80838940",
+                            "vram": 26416,
+                            "size": 168,
+                            "vrom": 26416
+                        },
+                        {
+                            "name": "func_808389E8",
+                            "vram": 26584,
+                            "size": 44,
+                            "vrom": 26584
+                        },
+                        {
+                            "name": "Player_ActionHandler_12",
+                            "vram": 26628,
+                            "size": 1116,
+                            "vrom": 26628
+                        },
+                        {
+                            "name": "func_80838E70",
+                            "vram": 27744,
+                            "size": 168,
+                            "vrom": 27744
+                        },
+                        {
+                            "name": "func_80838F18",
+                            "vram": 27912,
+                            "size": 68,
+                            "vrom": 27912
+                        },
+                        {
+                            "name": "func_80838F5C",
+                            "vram": 27980,
+                            "size": 92,
+                            "vrom": 27980
+                        },
+                        {
+                            "name": "func_80838FB8",
+                            "vram": 28072,
+                            "size": 124,
+                            "vrom": 28072
+                        },
+                        {
+                            "name": "Player_HandleExitsAndVoids",
+                            "vram": 28196,
+                            "size": 1448,
+                            "vrom": 28196
+                        },
+                        {
+                            "name": "Player_GetRelativePosition",
+                            "vram": 29644,
+                            "size": 164,
+                            "vrom": 29644
+                        },
+                        {
+                            "name": "Player_SpawnFairy",
+                            "vram": 29808,
+                            "size": 116,
+                            "vrom": 29808
+                        },
+                        {
+                            "name": "func_808396F4",
+                            "vram": 29924,
+                            "size": 72,
+                            "vrom": 29924
+                        },
+                        {
+                            "name": "func_8083973C",
+                            "vram": 29996,
+                            "size": 44,
+                            "vrom": 29996
+                        },
+                        {
+                            "name": "Player_PosVsWallLineTest",
+                            "vram": 30040,
+                            "size": 152,
+                            "vrom": 30040
+                        },
+                        {
+                            "name": "Player_ActionHandler_1",
+                            "vram": 30192,
+                            "size": 1672,
+                            "vrom": 30192
+                        },
+                        {
+                            "name": "func_80839E88",
+                            "vram": 31864,
+                            "size": 168,
+                            "vrom": 31864
+                        },
+                        {
+                            "name": "func_80839F30",
+                            "vram": 32032,
+                            "size": 96,
+                            "vrom": 32032
+                        },
+                        {
+                            "name": "func_80839F90",
+                            "vram": 32128,
+                            "size": 108,
+                            "vrom": 32128
+                        },
+                        {
+                            "name": "func_80839FFC",
+                            "vram": 32236,
+                            "size": 100,
+                            "vrom": 32236
+                        },
+                        {
+                            "name": "func_8083A060",
+                            "vram": 32336,
+                            "size": 56,
+                            "vrom": 32336
+                        },
+                        {
+                            "name": "func_8083A098",
+                            "vram": 32392,
+                            "size": 60,
+                            "vrom": 32392
+                        },
+                        {
+                            "name": "func_8083A0D4",
+                            "vram": 32452,
+                            "size": 32,
+                            "vrom": 32452
+                        },
+                        {
+                            "name": "func_8083A0F4",
+                            "vram": 32484,
+                            "size": 516,
+                            "vrom": 32484
+                        },
+                        {
+                            "name": "Player_SetupTalk",
+                            "vram": 33000,
+                            "size": 104,
+                            "vrom": 33000
+                        },
+                        {
+                            "name": "func_8083A360",
+                            "vram": 33104,
+                            "size": 40,
+                            "vrom": 33104
+                        },
+                        {
+                            "name": "func_8083A388",
+                            "vram": 33144,
+                            "size": 40,
+                            "vrom": 33144
+                        },
+                        {
+                            "name": "func_8083A3B0",
+                            "vram": 33184,
+                            "size": 92,
+                            "vrom": 33184
+                        },
+                        {
+                            "name": "func_8083A40C",
+                            "vram": 33276,
+                            "size": 40,
+                            "vrom": 33276
+                        },
+                        {
+                            "name": "func_8083A434",
+                            "vram": 33316,
+                            "size": 116,
+                            "vrom": 33316
+                        },
+                        {
+                            "name": "func_8083A4A8",
+                            "vram": 33432,
+                            "size": 284,
+                            "vrom": 33432
+                        },
+                        {
+                            "name": "func_8083A5C4",
+                            "vram": 33716,
+                            "size": 232,
+                            "vrom": 33716
+                        },
+                        {
+                            "name": "func_8083A6AC",
+                            "vram": 33948,
+                            "size": 780,
+                            "vrom": 33948
+                        },
+                        {
+                            "name": "func_8083A9B8",
+                            "vram": 34728,
+                            "size": 88,
+                            "vrom": 34728
+                        },
+                        {
+                            "name": "func_8083AA10",
+                            "vram": 34816,
+                            "size": 828,
+                            "vrom": 34816
+                        },
+                        {
+                            "name": "func_8083AD4C",
+                            "vram": 35644,
+                            "size": 136,
+                            "vrom": 35644
+                        },
+                        {
+                            "name": "Player_StartCsAction",
+                            "vram": 35780,
+                            "size": 108,
+                            "vrom": 35780
+                        },
+                        {
+                            "name": "func_8083AE40",
+                            "vram": 35888,
+                            "size": 260,
+                            "vrom": 35888
+                        },
+                        {
+                            "name": "func_8083AF44",
+                            "vram": 36148,
+                            "size": 204,
+                            "vrom": 36148
+                        },
+                        {
+                            "name": "func_8083B010",
+                            "vram": 36352,
+                            "size": 48,
+                            "vrom": 36352
+                        },
+                        {
+                            "name": "Player_ActionHandler_13",
+                            "vram": 36400,
+                            "size": 1540,
+                            "vrom": 36400
+                        },
+                        {
+                            "name": "Player_ActionHandler_Talk",
+                            "vram": 37940,
+                            "size": 688,
+                            "vrom": 37940
+                        },
+                        {
+                            "name": "func_8083B8F4",
+                            "vram": 38628,
+                            "size": 164,
+                            "vrom": 38628
+                        },
+                        {
+                            "name": "Player_ActionHandler_0",
+                            "vram": 38792,
+                            "size": 248,
+                            "vrom": 38792
+                        },
+                        {
+                            "name": "func_8083BA90",
+                            "vram": 39040,
+                            "size": 144,
+                            "vrom": 39040
+                        },
+                        {
+                            "name": "func_8083BB20",
+                            "vram": 39184,
+                            "size": 128,
+                            "vrom": 39184
+                        },
+                        {
+                            "name": "func_8083BBA0",
+                            "vram": 39312,
+                            "size": 100,
+                            "vrom": 39312
+                        },
+                        {
+                            "name": "Player_SetupRoll",
+                            "vram": 39412,
+                            "size": 120,
+                            "vrom": 39412
+                        },
+                        {
+                            "name": "Player_TryRoll",
+                            "vram": 39532,
+                            "size": 84,
+                            "vrom": 39532
+                        },
+                        {
+                            "name": "func_8083BCD0",
+                            "vram": 39616,
+                            "size": 236,
+                            "vrom": 39616
+                        },
+                        {
+                            "name": "Player_ActionHandler_10",
+                            "vram": 39852,
+                            "size": 404,
+                            "vrom": 39852
+                        },
+                        {
+                            "name": "func_8083BF50",
+                            "vram": 40256,
+                            "size": 360,
+                            "vrom": 40256
+                        },
+                        {
+                            "name": "func_8083C0B8",
+                            "vram": 40616,
+                            "size": 48,
+                            "vrom": 40616
+                        },
+                        {
+                            "name": "func_8083C0E8",
+                            "vram": 40664,
+                            "size": 96,
+                            "vrom": 40664
+                        },
+                        {
+                            "name": "func_8083C148",
+                            "vram": 40760,
+                            "size": 148,
+                            "vrom": 40760
+                        },
+                        {
+                            "name": "Player_ActionHandler_Roll",
+                            "vram": 40908,
+                            "size": 212,
+                            "vrom": 40908
+                        },
+                        {
+                            "name": "Player_ActionHandler_11",
+                            "vram": 41120,
+                            "size": 468,
+                            "vrom": 41120
+                        },
+                        {
+                            "name": "func_8083C484",
+                            "vram": 41588,
+                            "size": 136,
+                            "vrom": 41588
+                        },
+                        {
+                            "name": "func_8083C50C",
+                            "vram": 41724,
+                            "size": 56,
+                            "vrom": 41724
+                        },
+                        {
+                            "name": "Player_ActionHandler_8",
+                            "vram": 41780,
+                            "size": 216,
+                            "vrom": 41780
+                        },
+                        {
+                            "name": "func_8083C61C",
+                            "vram": 41996,
+                            "size": 156,
+                            "vrom": 41996
+                        },
+                        {
+                            "name": "func_8083C6B8",
+                            "vram": 42152,
+                            "size": 416,
+                            "vrom": 42152
+                        },
+                        {
+                            "name": "func_8083C858",
+                            "vram": 42568,
+                            "size": 132,
+                            "vrom": 42568
+                        },
+                        {
+                            "name": "func_8083C8DC",
+                            "vram": 42700,
+                            "size": 52,
+                            "vrom": 42700
+                        },
+                        {
+                            "name": "Player_SetStartingMovement",
+                            "vram": 42752,
+                            "size": 272,
+                            "vrom": 42752
+                        },
+                        {
+                            "name": "Player_StartMode_Idle",
+                            "vram": 43024,
+                            "size": 52,
+                            "vrom": 43024
+                        },
+                        {
+                            "name": "Player_StartMode_MoveForwardSlow",
+                            "vram": 43076,
+                            "size": 72,
+                            "vrom": 43076
+                        },
+                        {
+                            "name": "Player_StartMode_MoveForward",
+                            "vram": 43148,
+                            "size": 144,
+                            "vrom": 43148
+                        },
+                        {
+                            "name": "func_8083CB2C",
+                            "vram": 43292,
+                            "size": 104,
+                            "vrom": 43292
+                        },
+                        {
+                            "name": "func_8083CB94",
+                            "vram": 43396,
+                            "size": 92,
+                            "vrom": 43396
+                        },
+                        {
+                            "name": "func_8083CBF0",
+                            "vram": 43488,
+                            "size": 172,
+                            "vrom": 43488
+                        },
+                        {
+                            "name": "func_8083CC9C",
+                            "vram": 43660,
+                            "size": 100,
+                            "vrom": 43660
+                        },
+                        {
+                            "name": "func_8083CD00",
+                            "vram": 43760,
+                            "size": 84,
+                            "vrom": 43760
+                        },
+                        {
+                            "name": "Player_SetupTurnInPlace",
+                            "vram": 43844,
+                            "size": 184,
+                            "vrom": 43844
+                        },
+                        {
+                            "name": "func_8083CE0C",
+                            "vram": 44028,
+                            "size": 160,
+                            "vrom": 44028
+                        },
+                        {
+                            "name": "func_8083CEAC",
+                            "vram": 44188,
+                            "size": 100,
+                            "vrom": 44188
+                        },
+                        {
+                            "name": "func_8083CF10",
+                            "vram": 44288,
+                            "size": 76,
+                            "vrom": 44288
+                        },
+                        {
+                            "name": "func_8083CF5C",
+                            "vram": 44364,
+                            "size": 76,
+                            "vrom": 44364
+                        },
+                        {
+                            "name": "func_8083CFA8",
+                            "vram": 44440,
+                            "size": 256,
+                            "vrom": 44440
+                        },
+                        {
+                            "name": "func_8083D0A8",
+                            "vram": 44696,
+                            "size": 132,
+                            "vrom": 44696
+                        },
+                        {
+                            "name": "func_8083D12C",
+                            "vram": 44828,
+                            "size": 516,
+                            "vrom": 44828
+                        },
+                        {
+                            "name": "func_8083D330",
+                            "vram": 45344,
+                            "size": 60,
+                            "vrom": 45344
+                        },
+                        {
+                            "name": "func_8083D36C",
+                            "vram": 45404,
+                            "size": 464,
+                            "vrom": 45404
+                        },
+                        {
+                            "name": "func_8083D53C",
+                            "vram": 45868,
+                            "size": 432,
+                            "vrom": 45868
+                        },
+                        {
+                            "name": "func_8083D6EC",
+                            "vram": 46300,
+                            "size": 1196,
+                            "vrom": 46300
+                        },
+                        {
+                            "name": "func_8083DB98",
+                            "vram": 47496,
+                            "size": 188,
+                            "vrom": 47496
+                        },
+                        {
+                            "name": "func_8083DC54",
+                            "vram": 47684,
+                            "size": 372,
+                            "vrom": 47684
+                        },
+                        {
+                            "name": "func_8083DDC8",
+                            "vram": 48056,
+                            "size": 416,
+                            "vrom": 48056
+                        },
+                        {
+                            "name": "func_8083DF68",
+                            "vram": 48472,
+                            "size": 120,
+                            "vrom": 48472
+                        },
+                        {
+                            "name": "func_8083DFE0",
+                            "vram": 48592,
+                            "size": 284,
+                            "vrom": 48592
+                        },
+                        {
+                            "name": "Player_ActionHandler_3",
+                            "vram": 48876,
+                            "size": 412,
+                            "vrom": 48876
+                        },
+                        {
+                            "name": "Player_GetSlopeDirection",
+                            "vram": 49288,
+                            "size": 128,
+                            "vrom": 49288
+                        },
+                        {
+                            "name": "Player_HandleSlopes",
+                            "vram": 49416,
+                            "size": 428,
+                            "vrom": 49416
+                        },
+                        {
+                            "name": "func_8083E4C4",
+                            "vram": 49844,
+                            "size": 228,
+                            "vrom": 49844
+                        },
+                        {
+                            "name": "Player_ActionHandler_2",
+                            "vram": 50072,
+                            "size": 1260,
+                            "vrom": 50072
+                        },
+                        {
+                            "name": "func_8083EA94",
+                            "vram": 51332,
+                            "size": 92,
+                            "vrom": 51332
+                        },
+                        {
+                            "name": "Player_CanThrowCarriedActor",
+                            "vram": 51424,
+                            "size": 84,
+                            "vrom": 51424
+                        },
+                        {
+                            "name": "Player_ActionHandler_9",
+                            "vram": 51508,
+                            "size": 212,
+                            "vrom": 51508
+                        },
+                        {
+                            "name": "func_8083EC18",
+                            "vram": 51720,
+                            "size": 1112,
+                            "vrom": 51720
+                        },
+                        {
+                            "name": "func_8083F070",
+                            "vram": 52832,
+                            "size": 88,
+                            "vrom": 52832
+                        },
+                        {
+                            "name": "Player_TryEnteringCrawlspace",
+                            "vram": 52920,
+                            "size": 664,
+                            "vrom": 52920
+                        },
+                        {
+                            "name": "func_8083F360",
+                            "vram": 53584,
+                            "size": 452,
+                            "vrom": 53584
+                        },
+                        {
+                            "name": "func_8083F524",
+                            "vram": 54036,
+                            "size": 76,
+                            "vrom": 54036
+                        },
+                        {
+                            "name": "Player_TryLeavingCrawlspace",
+                            "vram": 54112,
+                            "size": 444,
+                            "vrom": 54112
+                        },
+                        {
+                            "name": "func_8083F72C",
+                            "vram": 54556,
+                            "size": 144,
+                            "vrom": 54556
+                        },
+                        {
+                            "name": "Player_ActionHandler_5",
+                            "vram": 54700,
+                            "size": 532,
+                            "vrom": 54700
+                        },
+                        {
+                            "name": "func_8083F9D0",
+                            "vram": 55232,
+                            "size": 232,
+                            "vrom": 55232
+                        },
+                        {
+                            "name": "func_8083FAB8",
+                            "vram": 55464,
+                            "size": 92,
+                            "vrom": 55464
+                        },
+                        {
+                            "name": "func_8083FB14",
+                            "vram": 55556,
+                            "size": 104,
+                            "vrom": 55556
+                        },
+                        {
+                            "name": "func_8083FB7C",
+                            "vram": 55660,
+                            "size": 68,
+                            "vrom": 55660
+                        },
+                        {
+                            "name": "func_8083FBC0",
+                            "vram": 55728,
+                            "size": 168,
+                            "vrom": 55728
+                        },
+                        {
+                            "name": "func_8083FC68",
+                            "vram": 55896,
+                            "size": 272,
+                            "vrom": 55896
+                        },
+                        {
+                            "name": "func_8083FD78",
+                            "vram": 56168,
+                            "size": 576,
+                            "vrom": 56168
+                        },
+                        {
+                            "name": "func_8083FFB8",
+                            "vram": 56744,
+                            "size": 160,
+                            "vrom": 56744
+                        },
+                        {
+                            "name": "func_80840058",
+                            "vram": 56904,
+                            "size": 224,
+                            "vrom": 56904
+                        },
+                        {
+                            "name": "func_80840138",
+                            "vram": 57128,
+                            "size": 120,
+                            "vrom": 57128
+                        },
+                        {
+                            "name": "func_808401B0",
+                            "vram": 57248,
+                            "size": 108,
+                            "vrom": 57248
+                        },
+                        {
+                            "name": "func_8084021C",
+                            "vram": 57356,
+                            "size": 128,
+                            "vrom": 57356
+                        },
+                        {
+                            "name": "func_8084029C",
+                            "vram": 57484,
+                            "size": 436,
+                            "vrom": 57484
+                        },
+                        {
+                            "name": "Player_Action_80840450",
+                            "vram": 57920,
+                            "size": 892,
+                            "vrom": 57920
+                        },
+                        {
+                            "name": "Player_Action_808407CC",
+                            "vram": 58812,
+                            "size": 512,
+                            "vrom": 58812
+                        },
+                        {
+                            "name": "Player_ChooseNextIdleAnim",
+                            "vram": 59324,
+                            "size": 508,
+                            "vrom": 59324
+                        },
+                        {
+                            "name": "Player_Action_Idle",
+                            "vram": 59832,
+                            "size": 540,
+                            "vrom": 59832
+                        },
+                        {
+                            "name": "Player_Action_80840DE4",
+                            "vram": 60372,
+                            "size": 852,
+                            "vrom": 60372
+                        },
+                        {
+                            "name": "func_80841138",
+                            "vram": 61224,
+                            "size": 724,
+                            "vrom": 61224
+                        },
+                        {
+                            "name": "func_8084140C",
+                            "vram": 61948,
+                            "size": 76,
+                            "vrom": 61948
+                        },
+                        {
+                            "name": "func_80841458",
+                            "vram": 62024,
+                            "size": 160,
+                            "vrom": 62024
+                        },
+                        {
+                            "name": "Player_Action_808414F8",
+                            "vram": 62184,
+                            "size": 456,
+                            "vrom": 62184
+                        },
+                        {
+                            "name": "func_808416C0",
+                            "vram": 62640,
+                            "size": 76,
+                            "vrom": 62640
+                        },
+                        {
+                            "name": "Player_Action_8084170C",
+                            "vram": 62716,
+                            "size": 240,
+                            "vrom": 62716
+                        },
+                        {
+                            "name": "Player_Action_808417FC",
+                            "vram": 62956,
+                            "size": 100,
+                            "vrom": 62956
+                        },
+                        {
+                            "name": "func_80841860",
+                            "vram": 63056,
+                            "size": 220,
+                            "vrom": 63056
+                        },
+                        {
+                            "name": "Player_Action_8084193C",
+                            "vram": 63276,
+                            "size": 620,
+                            "vrom": 63276
+                        },
+                        {
+                            "name": "Player_Action_TurnInPlace",
+                            "vram": 63896,
+                            "size": 284,
+                            "vrom": 63896
+                        },
+                        {
+                            "name": "func_80841CC4",
+                            "vram": 64180,
+                            "size": 544,
+                            "vrom": 64180
+                        },
+                        {
+                            "name": "func_80841EE4",
+                            "vram": 64724,
+                            "size": 668,
+                            "vrom": 64724
+                        },
+                        {
+                            "name": "Player_Action_80842180",
+                            "vram": 65392,
+                            "size": 252,
+                            "vrom": 65392
+                        },
+                        {
+                            "name": "Player_Action_8084227C",
+                            "vram": 65644,
+                            "size": 368,
+                            "vrom": 65644
+                        },
+                        {
+                            "name": "Player_Action_808423EC",
+                            "vram": 66012,
+                            "size": 304,
+                            "vrom": 66012
+                        },
+                        {
+                            "name": "Player_Action_8084251C",
+                            "vram": 66316,
+                            "size": 240,
+                            "vrom": 66316
+                        },
+                        {
+                            "name": "func_8084260C",
+                            "vram": 66556,
+                            "size": 144,
+                            "vrom": 66556
+                        },
+                        {
+                            "name": "func_8084269C",
+                            "vram": 66700,
+                            "size": 256,
+                            "vrom": 66700
+                        },
+                        {
+                            "name": "Player_Action_8084279C",
+                            "vram": 66956,
+                            "size": 192,
+                            "vrom": 66956
+                        },
+                        {
+                            "name": "func_8084285C",
+                            "vram": 67148,
+                            "size": 124,
+                            "vrom": 67148
+                        },
+                        {
+                            "name": "func_808428D8",
+                            "vram": 67272,
+                            "size": 140,
+                            "vrom": 67272
+                        },
+                        {
+                            "name": "func_80842964",
+                            "vram": 67412,
+                            "size": 80,
+                            "vrom": 67412
+                        },
+                        {
+                            "name": "Player_RequestQuake",
+                            "vram": 67492,
+                            "size": 116,
+                            "vrom": 67492
+                        },
+                        {
+                            "name": "func_80842A28",
+                            "vram": 67608,
+                            "size": 96,
+                            "vrom": 67608
+                        },
+                        {
+                            "name": "func_80842A88",
+                            "vram": 67704,
+                            "size": 60,
+                            "vrom": 67704
+                        },
+                        {
+                            "name": "func_80842AC4",
+                            "vram": 67764,
+                            "size": 184,
+                            "vrom": 67764
+                        },
+                        {
+                            "name": "func_80842B7C",
+                            "vram": 67948,
+                            "size": 372,
+                            "vrom": 67948
+                        },
+                        {
+                            "name": "func_80842CF0",
+                            "vram": 68320,
+                            "size": 48,
+                            "vrom": 68320
+                        },
+                        {
+                            "name": "func_80842D20",
+                            "vram": 68368,
+                            "size": 212,
+                            "vrom": 68368
+                        },
+                        {
+                            "name": "func_80842DF4",
+                            "vram": 68580,
+                            "size": 916,
+                            "vrom": 68580
+                        },
+                        {
+                            "name": "Player_Action_80843188",
+                            "vram": 69496,
+                            "size": 1084,
+                            "vrom": 69496
+                        },
+                        {
+                            "name": "Player_Action_808435C4",
+                            "vram": 70580,
+                            "size": 328,
+                            "vrom": 70580
+                        },
+                        {
+                            "name": "Player_Action_8084370C",
+                            "vram": 70908,
+                            "size": 112,
+                            "vrom": 70908
+                        },
+                        {
+                            "name": "Player_Action_8084377C",
+                            "vram": 71020,
+                            "size": 472,
+                            "vrom": 71020
+                        },
+                        {
+                            "name": "Player_Action_80843954",
+                            "vram": 71492,
+                            "size": 228,
+                            "vrom": 71492
+                        },
+                        {
+                            "name": "Player_Action_80843A38",
+                            "vram": 71720,
+                            "size": 176,
+                            "vrom": 71720
+                        },
+                        {
+                            "name": "func_80843AE8",
+                            "vram": 71896,
+                            "size": 516,
+                            "vrom": 71896
+                        },
+                        {
+                            "name": "Player_Action_80843CEC",
+                            "vram": 72412,
+                            "size": 296,
+                            "vrom": 72412
+                        },
+                        {
+                            "name": "func_80843E14",
+                            "vram": 72708,
+                            "size": 80,
+                            "vrom": 72708
+                        },
+                        {
+                            "name": "func_80843E64",
+                            "vram": 72788,
+                            "size": 568,
+                            "vrom": 72788
+                        },
+                        {
+                            "name": "func_8084409C",
+                            "vram": 73356,
+                            "size": 128,
+                            "vrom": 73356
+                        },
+                        {
+                            "name": "Player_Action_8084411C",
+                            "vram": 73484,
+                            "size": 1516,
+                            "vrom": 73484
+                        },
+                        {
+                            "name": "Player_Action_Roll",
+                            "vram": 75000,
+                            "size": 828,
+                            "vrom": 75000
+                        },
+                        {
+                            "name": "Player_Action_80844A44",
+                            "vram": 75828,
+                            "size": 176,
+                            "vrom": 75828
+                        },
+                        {
+                            "name": "Player_Action_80844AF4",
+                            "vram": 76004,
+                            "size": 240,
+                            "vrom": 76004
+                        },
+                        {
+                            "name": "func_80844BE4",
+                            "vram": 76244,
+                            "size": 276,
+                            "vrom": 76244
+                        },
+                        {
+                            "name": "func_80844CF8",
+                            "vram": 76520,
+                            "size": 56,
+                            "vrom": 76520
+                        },
+                        {
+                            "name": "func_80844D30",
+                            "vram": 76576,
+                            "size": 56,
+                            "vrom": 76576
+                        },
+                        {
+                            "name": "func_80844D68",
+                            "vram": 76632,
+                            "size": 96,
+                            "vrom": 76632
+                        },
+                        {
+                            "name": "func_80844DC8",
+                            "vram": 76728,
+                            "size": 116,
+                            "vrom": 76728
+                        },
+                        {
+                            "name": "func_80844E3C",
+                            "vram": 76844,
+                            "size": 44,
+                            "vrom": 76844
+                        },
+                        {
+                            "name": "Player_Action_80844E68",
+                            "vram": 76888,
+                            "size": 408,
+                            "vrom": 76888
+                        },
+                        {
+                            "name": "Player_Action_80845000",
+                            "vram": 77296,
+                            "size": 776,
+                            "vrom": 77296
+                        },
+                        {
+                            "name": "Player_Action_80845308",
+                            "vram": 78072,
+                            "size": 864,
+                            "vrom": 78072
+                        },
+                        {
+                            "name": "Player_Action_80845668",
+                            "vram": 78936,
+                            "size": 616,
+                            "vrom": 78936
+                        },
+                        {
+                            "name": "Player_Action_WaitForPutAway",
+                            "vram": 79552,
+                            "size": 148,
+                            "vrom": 79552
+                        },
+                        {
+                            "name": "func_80845964",
+                            "vram": 79700,
+                            "size": 572,
+                            "vrom": 79700
+                        },
+                        {
+                            "name": "func_80845BA0",
+                            "vram": 80272,
+                            "size": 200,
+                            "vrom": 80272
+                        },
+                        {
+                            "name": "func_80845C68",
+                            "vram": 80472,
+                            "size": 60,
+                            "vrom": 80472
+                        },
+                        {
+                            "name": "Player_Action_80845CA4",
+                            "vram": 80532,
+                            "size": 596,
+                            "vrom": 80532
+                        },
+                        {
+                            "name": "Player_Action_80845EF8",
+                            "vram": 81128,
+                            "size": 344,
+                            "vrom": 81128
+                        },
+                        {
+                            "name": "Player_Action_80846050",
+                            "vram": 81472,
+                            "size": 208,
+                            "vrom": 81472
+                        },
+                        {
+                            "name": "Player_Action_80846120",
+                            "vram": 81680,
+                            "size": 320,
+                            "vrom": 81680
+                        },
+                        {
+                            "name": "Player_Action_80846260",
+                            "vram": 82000,
+                            "size": 248,
+                            "vrom": 82000
+                        },
+                        {
+                            "name": "Player_Action_80846358",
+                            "vram": 82248,
+                            "size": 176,
+                            "vrom": 82248
+                        },
+                        {
+                            "name": "Player_Action_80846408",
+                            "vram": 82424,
+                            "size": 168,
+                            "vrom": 82424
+                        },
+                        {
+                            "name": "Player_Action_808464B0",
+                            "vram": 82592,
+                            "size": 200,
+                            "vrom": 82592
+                        },
+                        {
+                            "name": "Player_Action_80846578",
+                            "vram": 82792,
+                            "size": 196,
+                            "vrom": 82792
+                        },
+                        {
+                            "name": "Player_DoNothing",
+                            "vram": 82988,
+                            "size": 12,
+                            "vrom": 82988
+                        },
+                        {
+                            "name": "Player_StartMode_Nothing",
+                            "vram": 83000,
+                            "size": 24,
+                            "vrom": 83000
+                        },
+                        {
+                            "name": "Player_StartMode_BlueWarp",
+                            "vram": 83024,
+                            "size": 192,
+                            "vrom": 83024
+                        },
+                        {
+                            "name": "Player_PutSwordInHand",
+                            "vram": 83216,
+                            "size": 180,
+                            "vrom": 83216
+                        },
+                        {
+                            "name": "Player_StartMode_TimeTravel",
+                            "vram": 83396,
+                            "size": 212,
+                            "vrom": 83396
+                        },
+                        {
+                            "name": "Player_StartMode_Door",
+                            "vram": 83608,
+                            "size": 64,
+                            "vrom": 83608
+                        },
+                        {
+                            "name": "Player_StartMode_Grotto",
+                            "vram": 83672,
+                            "size": 144,
+                            "vrom": 83672
+                        },
+                        {
+                            "name": "Player_StartMode_KnockedOver",
+                            "vram": 83816,
+                            "size": 68,
+                            "vrom": 83816
+                        },
+                        {
+                            "name": "Player_StartMode_WarpSong",
+                            "vram": 83884,
+                            "size": 68,
+                            "vrom": 83884
+                        },
+                        {
+                            "name": "Player_SpawnMagicSpell",
+                            "vram": 83952,
+                            "size": 104,
+                            "vrom": 83952
+                        },
+                        {
+                            "name": "Player_StartMode_FaroresWind",
+                            "vram": 84056,
+                            "size": 68,
+                            "vrom": 84056
+                        },
+                        {
+                            "name": "Player_InitCommon",
+                            "vram": 84124,
+                            "size": 556,
+                            "vrom": 84124
+                        },
+                        {
+                            "name": "Player_Init",
+                            "vram": 84680,
+                            "size": 1308,
+                            "vrom": 84680
+                        },
+                        {
+                            "name": "Player_ApproachZeroBinang",
+                            "vram": 85988,
+                            "size": 164,
+                            "vrom": 85988
+                        },
+                        {
+                            "name": "func_80847298",
+                            "vram": 86152,
+                            "size": 316,
+                            "vrom": 86152
+                        },
+                        {
+                            "name": "Player_UpdateInterface",
+                            "vram": 86468,
+                            "size": 1700,
+                            "vrom": 86468
+                        },
+                        {
+                            "name": "Player_UpdateHoverBoots",
+                            "vram": 88168,
+                            "size": 296,
+                            "vrom": 88168
+                        },
+                        {
+                            "name": "Player_ProcessSceneCollision",
+                            "vram": 88464,
+                            "size": 2824,
+                            "vrom": 88464
+                        },
+                        {
+                            "name": "Player_UpdateCamAndSeqModes",
+                            "vram": 91288,
+                            "size": 860,
+                            "vrom": 91288
+                        },
+                        {
+                            "name": "Player_UpdateBurningDekuStick",
+                            "vram": 92148,
+                            "size": 320,
+                            "vrom": 92148
+                        },
+                        {
+                            "name": "Player_UpdateBodyShock",
+                            "vram": 92468,
+                            "size": 304,
+                            "vrom": 92468
+                        },
+                        {
+                            "name": "Player_UpdateBodyBurn",
+                            "vram": 92772,
+                            "size": 644,
+                            "vrom": 92772
+                        },
+                        {
+                            "name": "Player_DetectRumbleSecrets",
+                            "vram": 93416,
+                            "size": 164,
+                            "vrom": 93416
+                        },
+                        {
+                            "name": "Player_UpdateCommon",
+                            "vram": 93580,
+                            "size": 3852,
+                            "vrom": 93580
+                        },
+                        {
+                            "name": "Player_Update",
+                            "vram": 97432,
+                            "size": 576,
+                            "vrom": 97432
+                        },
+                        {
+                            "name": "Player_DrawGameplay",
+                            "vram": 98008,
+                            "size": 1244,
+                            "vrom": 98008
+                        },
+                        {
+                            "name": "Player_Draw",
+                            "vram": 99252,
+                            "size": 1424,
+                            "vrom": 99252
+                        },
+                        {
+                            "name": "Player_Destroy",
+                            "vram": 100676,
+                            "size": 132,
+                            "vrom": 100676
+                        },
+                        {
+                            "name": "func_8084ABD8",
+                            "vram": 100808,
+                            "size": 788,
+                            "vrom": 100808
+                        },
+                        {
+                            "name": "func_8084AEEC",
+                            "vram": 101596,
+                            "size": 276,
+                            "vrom": 101596
+                        },
+                        {
+                            "name": "func_8084B000",
+                            "vram": 101872,
+                            "size": 344,
+                            "vrom": 101872
+                        },
+                        {
+                            "name": "func_8084B158",
+                            "vram": 102216,
+                            "size": 128,
+                            "vrom": 102216
+                        },
+                        {
+                            "name": "Player_Action_8084B1D8",
+                            "vram": 102344,
+                            "size": 500,
+                            "vrom": 102344
+                        },
+                        {
+                            "name": "func_8084B3CC",
+                            "vram": 102844,
+                            "size": 204,
+                            "vrom": 102844
+                        },
+                        {
+                            "name": "func_8084B498",
+                            "vram": 103048,
+                            "size": 60,
+                            "vrom": 103048
+                        },
+                        {
+                            "name": "func_8084B4D4",
+                            "vram": 103108,
+                            "size": 92,
+                            "vrom": 103108
+                        },
+                        {
+                            "name": "Player_Action_Talk",
+                            "vram": 103200,
+                            "size": 604,
+                            "vrom": 103200
+                        },
+                        {
+                            "name": "Player_Action_8084B78C",
+                            "vram": 103804,
+                            "size": 180,
+                            "vrom": 103804
+                        },
+                        {
+                            "name": "func_8084B840",
+                            "vram": 103984,
+                            "size": 88,
+                            "vrom": 103984
+                        },
+                        {
+                            "name": "Player_Action_8084B898",
+                            "vram": 104072,
+                            "size": 332,
+                            "vrom": 104072
+                        },
+                        {
+                            "name": "Player_Action_8084B9E4",
+                            "vram": 104404,
+                            "size": 512,
+                            "vrom": 104404
+                        },
+                        {
+                            "name": "Player_Action_8084BBE4",
+                            "vram": 104916,
+                            "size": 536,
+                            "vrom": 104916
+                        },
+                        {
+                            "name": "Player_Action_8084BDFC",
+                            "vram": 105452,
+                            "size": 232,
+                            "vrom": 105452
+                        },
+                        {
+                            "name": "func_8084BEE4",
+                            "vram": 105684,
+                            "size": 56,
+                            "vrom": 105684
+                        },
+                        {
+                            "name": "Player_Action_8084BF1C",
+                            "vram": 105740,
+                            "size": 1756,
+                            "vrom": 105740
+                        },
+                        {
+                            "name": "Player_Action_8084C5F8",
+                            "vram": 107496,
+                            "size": 360,
+                            "vrom": 107496
+                        },
+                        {
+                            "name": "Player_Action_8084C760",
+                            "vram": 107856,
+                            "size": 188,
+                            "vrom": 107856
+                        },
+                        {
+                            "name": "Player_Action_8084C81C",
+                            "vram": 108044,
+                            "size": 128,
+                            "vrom": 108044
+                        },
+                        {
+                            "name": "func_8084C89C",
+                            "vram": 108172,
+                            "size": 288,
+                            "vrom": 108172
+                        },
+                        {
+                            "name": "func_8084C9BC",
+                            "vram": 108460,
+                            "size": 568,
+                            "vrom": 108460
+                        },
+                        {
+                            "name": "func_8084CBF4",
+                            "vram": 109028,
+                            "size": 164,
+                            "vrom": 109028
+                        },
+                        {
+                            "name": "Player_Action_8084CC98",
+                            "vram": 109192,
+                            "size": 1868,
+                            "vrom": 109192
+                        },
+                        {
+                            "name": "Player_Action_8084D3E4",
+                            "vram": 111060,
+                            "size": 332,
+                            "vrom": 111060
+                        },
+                        {
+                            "name": "func_8084D530",
+                            "vram": 111392,
+                            "size": 68,
+                            "vrom": 111392
+                        },
+                        {
+                            "name": "func_8084D574",
+                            "vram": 111460,
+                            "size": 88,
+                            "vrom": 111460
+                        },
+                        {
+                            "name": "func_8084D5CC",
+                            "vram": 111548,
+                            "size": 68,
+                            "vrom": 111548
+                        },
+                        {
+                            "name": "Player_Action_8084D610",
+                            "vram": 111616,
+                            "size": 436,
+                            "vrom": 111616
+                        },
+                        {
+                            "name": "Player_Action_8084D7C4",
+                            "vram": 112052,
+                            "size": 136,
+                            "vrom": 112052
+                        },
+                        {
+                            "name": "Player_Action_8084D84C",
+                            "vram": 112188,
+                            "size": 308,
+                            "vrom": 112188
+                        },
+                        {
+                            "name": "func_8084D980",
+                            "vram": 112496,
+                            "size": 308,
+                            "vrom": 112496
+                        },
+                        {
+                            "name": "Player_Action_8084DAB4",
+                            "vram": 112804,
+                            "size": 272,
+                            "vrom": 112804
+                        },
+                        {
+                            "name": "func_8084DBC4",
+                            "vram": 113076,
+                            "size": 132,
+                            "vrom": 113076
+                        },
+                        {
+                            "name": "Player_Action_8084DC48",
+                            "vram": 113208,
+                            "size": 804,
+                            "vrom": 113208
+                        },
+                        {
+                            "name": "func_8084DF6C",
+                            "vram": 114012,
+                            "size": 64,
+                            "vrom": 114012
+                        },
+                        {
+                            "name": "func_8084DFAC",
+                            "vram": 114076,
+                            "size": 72,
+                            "vrom": 114076
+                        },
+                        {
+                            "name": "func_8084DFF4",
+                            "vram": 114148,
+                            "size": 504,
+                            "vrom": 114148
+                        },
+                        {
+                            "name": "Player_Action_8084E1EC",
+                            "vram": 114652,
+                            "size": 288,
+                            "vrom": 114652
+                        },
+                        {
+                            "name": "Player_Action_8084E30C",
+                            "vram": 114940,
+                            "size": 92,
+                            "vrom": 114940
+                        },
+                        {
+                            "name": "Player_Action_8084E368",
+                            "vram": 115032,
+                            "size": 92,
+                            "vrom": 115032
+                        },
+                        {
+                            "name": "Player_Action_8084E3C4",
+                            "vram": 115124,
+                            "size": 576,
+                            "vrom": 115124
+                        },
+                        {
+                            "name": "Player_Action_8084E604",
+                            "vram": 115700,
+                            "size": 208,
+                            "vrom": 115700
+                        },
+                        {
+                            "name": "Player_Action_8084E6D4",
+                            "vram": 115908,
+                            "size": 692,
+                            "vrom": 115908
+                        },
+                        {
+                            "name": "func_8084E988",
+                            "vram": 116600,
+                            "size": 36,
+                            "vrom": 116600
+                        },
+                        {
+                            "name": "Player_Action_TimeTravelEnd",
+                            "vram": 116636,
+                            "size": 276,
+                            "vrom": 116636
+                        },
+                        {
+                            "name": "Player_Action_8084EAC0",
+                            "vram": 116912,
+                            "size": 484,
+                            "vrom": 116912
+                        },
+                        {
+                            "name": "Player_Action_SwingBottle",
+                            "vram": 117396,
+                            "size": 564,
+                            "vrom": 117396
+                        },
+                        {
+                            "name": "Player_Action_8084EED8",
+                            "vram": 117960,
+                            "size": 232,
+                            "vrom": 117960
+                        },
+                        {
+                            "name": "Player_Action_8084EFC0",
+                            "vram": 118192,
+                            "size": 324,
+                            "vrom": 118192
+                        },
+                        {
+                            "name": "Player_Action_ExchangeItem",
+                            "vram": 118516,
+                            "size": 516,
+                            "vrom": 118516
+                        },
+                        {
+                            "name": "Player_Action_8084F308",
+                            "vram": 119032,
+                            "size": 136,
+                            "vrom": 119032
+                        },
+                        {
+                            "name": "Player_Action_SlideOnSlope",
+                            "vram": 119168,
+                            "size": 632,
+                            "vrom": 119168
+                        },
+                        {
+                            "name": "Player_Action_WaitForCutscene",
+                            "vram": 119800,
+                            "size": 144,
+                            "vrom": 119800
+                        },
+                        {
+                            "name": "Player_Action_StartWarpSongArrive",
+                            "vram": 119944,
+                            "size": 120,
+                            "vrom": 119944
+                        },
+                        {
+                            "name": "Player_Action_BlueWarpArrive",
+                            "vram": 120064,
+                            "size": 380,
+                            "vrom": 120064
+                        },
+                        {
+                            "name": "Player_Action_8084F88C",
+                            "vram": 120444,
+                            "size": 276,
+                            "vrom": 120444
+                        },
+                        {
+                            "name": "Player_Action_TryOpeningDoor",
+                            "vram": 120720,
+                            "size": 32,
+                            "vrom": 120720
+                        },
+                        {
+                            "name": "Player_Action_ExitGrotto",
+                            "vram": 120752,
+                            "size": 148,
+                            "vrom": 120752
+                        },
+                        {
+                            "name": "Player_Action_8084FA54",
+                            "vram": 120900,
+                            "size": 188,
+                            "vrom": 120900
+                        },
+                        {
+                            "name": "Player_Action_8084FB10",
+                            "vram": 121088,
+                            "size": 228,
+                            "vrom": 121088
+                        },
+                        {
+                            "name": "Player_Action_8084FBF4",
+                            "vram": 121316,
+                            "size": 184,
+                            "vrom": 121316
+                        },
+                        {
+                            "name": "Player_UpdateNoclip",
+                            "vram": 121500,
+                            "size": 720,
+                            "vrom": 121500
+                        },
+                        {
+                            "name": "func_8084FF7C",
+                            "vram": 122220,
+                            "size": 176,
+                            "vrom": 122220
+                        },
+                        {
+                            "name": "Player_UpdateBunnyEars",
+                            "vram": 122396,
+                            "size": 504,
+                            "vrom": 122396
+                        },
+                        {
+                            "name": "Player_ActionHandler_7",
+                            "vram": 122900,
+                            "size": 172,
+                            "vrom": 122900
+                        },
+                        {
+                            "name": "Player_Action_808502D0",
+                            "vram": 123072,
+                            "size": 780,
+                            "vrom": 123072
+                        },
+                        {
+                            "name": "Player_Action_808505DC",
+                            "vram": 123852,
+                            "size": 96,
+                            "vrom": 123852
+                        },
+                        {
+                            "name": "Player_Action_8085063C",
+                            "vram": 123948,
+                            "size": 304,
+                            "vrom": 123948
+                        },
+                        {
+                            "name": "Player_Action_FaroresWindArrive",
+                            "vram": 124252,
+                            "size": 136,
+                            "vrom": 124252
+                        },
+                        {
+                            "name": "Player_Action_808507F4",
+                            "vram": 124388,
+                            "size": 760,
+                            "vrom": 124388
+                        },
+                        {
+                            "name": "Player_Action_HookshotFly",
+                            "vram": 125148,
+                            "size": 380,
+                            "vrom": 125148
+                        },
+                        {
+                            "name": "Player_Action_80850C68",
+                            "vram": 125528,
+                            "size": 540,
+                            "vrom": 125528
+                        },
+                        {
+                            "name": "Player_Action_80850E84",
+                            "vram": 126068,
+                            "size": 84,
+                            "vrom": 126068
+                        },
+                        {
+                            "name": "Player_AnimChangeOnceMorphZeroRootYawSpeed",
+                            "vram": 126152,
+                            "size": 68,
+                            "vrom": 126152
+                        },
+                        {
+                            "name": "Player_AnimChangeOnceMorphAdjustedZeroRootYawSpeed",
+                            "vram": 126220,
+                            "size": 128,
+                            "vrom": 126220
+                        },
+                        {
+                            "name": "Player_AnimChangeLoopMorphAdjustedZeroRootYawSpeed",
+                            "vram": 126348,
+                            "size": 108,
+                            "vrom": 126348
+                        },
+                        {
+                            "name": "func_80851008",
+                            "vram": 126456,
+                            "size": 40,
+                            "vrom": 126456
+                        },
+                        {
+                            "name": "func_80851030",
+                            "vram": 126496,
+                            "size": 32,
+                            "vrom": 126496
+                        },
+                        {
+                            "name": "func_80851050",
+                            "vram": 126528,
+                            "size": 68,
+                            "vrom": 126528
+                        },
+                        {
+                            "name": "func_80851094",
+                            "vram": 126596,
+                            "size": 32,
+                            "vrom": 126596
+                        },
+                        {
+                            "name": "func_808510B4",
+                            "vram": 126628,
+                            "size": 32,
+                            "vrom": 126628
+                        },
+                        {
+                            "name": "func_808510D4",
+                            "vram": 126660,
+                            "size": 32,
+                            "vrom": 126660
+                        },
+                        {
+                            "name": "func_808510F4",
+                            "vram": 126692,
+                            "size": 32,
+                            "vrom": 126692
+                        },
+                        {
+                            "name": "func_80851114",
+                            "vram": 126724,
+                            "size": 32,
+                            "vrom": 126724
+                        },
+                        {
+                            "name": "func_80851134",
+                            "vram": 126756,
+                            "size": 32,
+                            "vrom": 126756
+                        },
+                        {
+                            "name": "func_80851154",
+                            "vram": 126788,
+                            "size": 32,
+                            "vrom": 126788
+                        },
+                        {
+                            "name": "func_80851174",
+                            "vram": 126820,
+                            "size": 32,
+                            "vrom": 126820
+                        },
+                        {
+                            "name": "func_80851194",
+                            "vram": 126852,
+                            "size": 32,
+                            "vrom": 126852
+                        },
+                        {
+                            "name": "func_808511B4",
+                            "vram": 126884,
+                            "size": 32,
+                            "vrom": 126884
+                        },
+                        {
+                            "name": "func_808511D4",
+                            "vram": 126916,
+                            "size": 40,
+                            "vrom": 126916
+                        },
+                        {
+                            "name": "func_808511FC",
+                            "vram": 126956,
+                            "size": 76,
+                            "vrom": 126956
+                        },
+                        {
+                            "name": "func_80851248",
+                            "vram": 127032,
+                            "size": 76,
+                            "vrom": 127032
+                        },
+                        {
+                            "name": "func_80851294",
+                            "vram": 127108,
+                            "size": 76,
+                            "vrom": 127108
+                        },
+                        {
+                            "name": "func_808512E0",
+                            "vram": 127184,
+                            "size": 52,
+                            "vrom": 127184
+                        },
+                        {
+                            "name": "func_80851314",
+                            "vram": 127236,
+                            "size": 84,
+                            "vrom": 127236
+                        },
+                        {
+                            "name": "func_80851368",
+                            "vram": 127320,
+                            "size": 84,
+                            "vrom": 127320
+                        },
+                        {
+                            "name": "func_808513BC",
+                            "vram": 127404,
+                            "size": 260,
+                            "vrom": 127404
+                        },
+                        {
+                            "name": "func_808514C0",
+                            "vram": 127664,
+                            "size": 188,
+                            "vrom": 127664
+                        },
+                        {
+                            "name": "func_8085157C",
+                            "vram": 127852,
+                            "size": 40,
+                            "vrom": 127852
+                        },
+                        {
+                            "name": "func_808515A4",
+                            "vram": 127892,
+                            "size": 228,
+                            "vrom": 127892
+                        },
+                        {
+                            "name": "func_80851688",
+                            "vram": 128120,
+                            "size": 200,
+                            "vrom": 128120
+                        },
+                        {
+                            "name": "func_80851750",
+                            "vram": 128320,
+                            "size": 56,
+                            "vrom": 128320
+                        },
+                        {
+                            "name": "func_80851788",
+                            "vram": 128376,
+                            "size": 160,
+                            "vrom": 128376
+                        },
+                        {
+                            "name": "func_80851828",
+                            "vram": 128536,
+                            "size": 180,
+                            "vrom": 128536
+                        },
+                        {
+                            "name": "func_808518DC",
+                            "vram": 128716,
+                            "size": 48,
+                            "vrom": 128716
+                        },
+                        {
+                            "name": "func_8085190C",
+                            "vram": 128764,
+                            "size": 140,
+                            "vrom": 128764
+                        },
+                        {
+                            "name": "func_80851998",
+                            "vram": 128904,
+                            "size": 40,
+                            "vrom": 128904
+                        },
+                        {
+                            "name": "func_808519C0",
+                            "vram": 128944,
+                            "size": 44,
+                            "vrom": 128944
+                        },
+                        {
+                            "name": "func_808519EC",
+                            "vram": 128988,
+                            "size": 100,
+                            "vrom": 128988
+                        },
+                        {
+                            "name": "func_80851A50",
+                            "vram": 129088,
+                            "size": 320,
+                            "vrom": 129088
+                        },
+                        {
+                            "name": "func_80851B90",
+                            "vram": 129408,
+                            "size": 88,
+                            "vrom": 129408
+                        },
+                        {
+                            "name": "func_80851BE8",
+                            "vram": 129496,
+                            "size": 188,
+                            "vrom": 129496
+                        },
+                        {
+                            "name": "func_80851CA4",
+                            "vram": 129684,
+                            "size": 136,
+                            "vrom": 129684
+                        },
+                        {
+                            "name": "func_80851D2C",
+                            "vram": 129820,
+                            "size": 84,
+                            "vrom": 129820
+                        },
+                        {
+                            "name": "func_80851D80",
+                            "vram": 129904,
+                            "size": 108,
+                            "vrom": 129904
+                        },
+                        {
+                            "name": "func_80851DEC",
+                            "vram": 130012,
+                            "size": 60,
+                            "vrom": 130012
+                        },
+                        {
+                            "name": "func_80851E28",
+                            "vram": 130072,
+                            "size": 60,
+                            "vrom": 130072
+                        },
+                        {
+                            "name": "func_80851E64",
+                            "vram": 130132,
+                            "size": 44,
+                            "vrom": 130132
+                        },
+                        {
+                            "name": "func_80851E90",
+                            "vram": 130176,
+                            "size": 60,
+                            "vrom": 130176
+                        },
+                        {
+                            "name": "func_80851ECC",
+                            "vram": 130236,
+                            "size": 72,
+                            "vrom": 130236
+                        },
+                        {
+                            "name": "func_80851F14",
+                            "vram": 130308,
+                            "size": 112,
+                            "vrom": 130308
+                        },
+                        {
+                            "name": "func_80851F84",
+                            "vram": 130420,
+                            "size": 44,
+                            "vrom": 130420
+                        },
+                        {
+                            "name": "func_80851FB0",
+                            "vram": 130464,
+                            "size": 152,
+                            "vrom": 130464
+                        },
+                        {
+                            "name": "func_80852048",
+                            "vram": 130616,
+                            "size": 56,
+                            "vrom": 130616
+                        },
+                        {
+                            "name": "func_80852080",
+                            "vram": 130672,
+                            "size": 60,
+                            "vrom": 130672
+                        },
+                        {
+                            "name": "func_808520BC",
+                            "vram": 130732,
+                            "size": 184,
+                            "vrom": 130732
+                        },
+                        {
+                            "name": "func_80852174",
+                            "vram": 130916,
+                            "size": 68,
+                            "vrom": 130916
+                        },
+                        {
+                            "name": "func_808521B8",
+                            "vram": 130984,
+                            "size": 60,
+                            "vrom": 130984
+                        },
+                        {
+                            "name": "func_808521F4",
+                            "vram": 131044,
+                            "size": 64,
+                            "vrom": 131044
+                        },
+                        {
+                            "name": "func_80852234",
+                            "vram": 131108,
+                            "size": 40,
+                            "vrom": 131108
+                        },
+                        {
+                            "name": "func_8085225C",
+                            "vram": 131148,
+                            "size": 36,
+                            "vrom": 131148
+                        },
+                        {
+                            "name": "func_80852280",
+                            "vram": 131184,
+                            "size": 24,
+                            "vrom": 131184
+                        },
+                        {
+                            "name": "func_80852298",
+                            "vram": 131208,
+                            "size": 144,
+                            "vrom": 131208
+                        },
+                        {
+                            "name": "func_80852328",
+                            "vram": 131352,
+                            "size": 48,
+                            "vrom": 131352
+                        },
+                        {
+                            "name": "func_80852358",
+                            "vram": 131400,
+                            "size": 48,
+                            "vrom": 131400
+                        },
+                        {
+                            "name": "func_80852388",
+                            "vram": 131448,
+                            "size": 140,
+                            "vrom": 131448
+                        },
+                        {
+                            "name": "func_80852414",
+                            "vram": 131588,
+                            "size": 60,
+                            "vrom": 131588
+                        },
+                        {
+                            "name": "func_80852450",
+                            "vram": 131648,
+                            "size": 48,
+                            "vrom": 131648
+                        },
+                        {
+                            "name": "func_80852480",
+                            "vram": 131696,
+                            "size": 48,
+                            "vrom": 131696
+                        },
+                        {
+                            "name": "func_808524B0",
+                            "vram": 131744,
+                            "size": 32,
+                            "vrom": 131744
+                        },
+                        {
+                            "name": "func_808524D0",
+                            "vram": 131776,
+                            "size": 68,
+                            "vrom": 131776
+                        },
+                        {
+                            "name": "func_80852514",
+                            "vram": 131844,
+                            "size": 48,
+                            "vrom": 131844
+                        },
+                        {
+                            "name": "func_80852544",
+                            "vram": 131892,
+                            "size": 16,
+                            "vrom": 131892
+                        },
+                        {
+                            "name": "func_80852554",
+                            "vram": 131908,
+                            "size": 16,
+                            "vrom": 131908
+                        },
+                        {
+                            "name": "func_80852564",
+                            "vram": 131924,
+                            "size": 92,
+                            "vrom": 131924
+                        },
+                        {
+                            "name": "func_808525C0",
+                            "vram": 132016,
+                            "size": 72,
+                            "vrom": 132016
+                        },
+                        {
+                            "name": "func_80852608",
+                            "vram": 132088,
+                            "size": 64,
+                            "vrom": 132088
+                        },
+                        {
+                            "name": "func_80852648",
+                            "vram": 132152,
+                            "size": 164,
+                            "vrom": 132152
+                        },
+                        {
+                            "name": "func_808526EC",
+                            "vram": 132316,
+                            "size": 336,
+                            "vrom": 132316
+                        },
+                        {
+                            "name": "func_8085283C",
+                            "vram": 132652,
+                            "size": 140,
+                            "vrom": 132652
+                        },
+                        {
+                            "name": "func_808528C8",
+                            "vram": 132792,
+                            "size": 124,
+                            "vrom": 132792
+                        },
+                        {
+                            "name": "func_80852944",
+                            "vram": 132916,
+                            "size": 140,
+                            "vrom": 132916
+                        },
+                        {
+                            "name": "func_808529D0",
+                            "vram": 133056,
+                            "size": 132,
+                            "vrom": 133056
+                        },
+                        {
+                            "name": "func_80852A54",
+                            "vram": 133188,
+                            "size": 248,
+                            "vrom": 133188
+                        },
+                        {
+                            "name": "func_80852B4C",
+                            "vram": 133436,
+                            "size": 192,
+                            "vrom": 133436
+                        },
+                        {
+                            "name": "func_80852C0C",
+                            "vram": 133628,
+                            "size": 68,
+                            "vrom": 133628
+                        },
+                        {
+                            "name": "func_80852C50",
+                            "vram": 133696,
+                            "size": 452,
+                            "vrom": 133696
+                        },
+                        {
+                            "name": "Player_Action_CsAction",
+                            "vram": 134148,
+                            "size": 180,
+                            "vrom": 134148
+                        },
+                        {
+                            "name": "Player_IsDroppingFish",
+                            "vram": 134328,
+                            "size": 52,
+                            "vrom": 134328
+                        },
+                        {
+                            "name": "Player_StartFishing",
+                            "vram": 134380,
+                            "size": 60,
+                            "vrom": 134380
+                        },
+                        {
+                            "name": "func_80852F38",
+                            "vram": 134440,
+                            "size": 196,
+                            "vrom": 134440
+                        },
+                        {
+                            "name": "Player_TryCsAction",
+                            "vram": 134636,
+                            "size": 132,
+                            "vrom": 134636
+                        },
+                        {
+                            "name": "func_80853080",
+                            "vram": 134768,
+                            "size": 96,
+                            "vrom": 134768
+                        },
+                        {
+                            "name": "Player_InflictDamage",
+                            "vram": 134864,
+                            "size": 104,
+                            "vrom": 134864
+                        },
+                        {
+                            "name": "Player_StartTalking",
+                            "vram": 134968,
+                            "size": 712,
+                            "vrom": 134968
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".data",
+            "vram": 135680,
+            "size": 7728,
+            "vrom": 135680,
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o",
+                    "sectionType": ".data",
+                    "vram": 135680,
+                    "size": 7728,
+                    "vrom": 135680,
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00021200_build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o_.data",
+                            "vram": 135680,
+                            "size": 7728,
+                            "vrom": 135680
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".rodata",
+            "vram": 143408,
+            "size": 784,
+            "vrom": 143408,
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o",
+                    "sectionType": ".rodata",
+                    "vram": 143408,
+                    "size": 784,
+                    "vrom": 143408,
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00023030_build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o_.rodata",
+                            "vram": 143408,
+                            "size": 784,
+                            "vrom": 143408
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".reginfo",
+            "vram": 0,
+            "size": 24,
+            "vrom": 144192,
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o",
+                    "sectionType": ".reginfo",
+                    "vram": 0,
+                    "size": 24,
+                    "vrom": 144192,
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o_.reginfo",
+                            "vram": 0,
+                            "size": 24,
+                            "vrom": 144192
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".bss",
+            "vram": 32,
+            "size": 208,
+            "vrom": 144216,
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o",
+                    "sectionType": ".bss",
+                    "vram": 32,
+                    "size": 208,
+                    "vrom": null,
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000020_build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o_.bss",
+                            "vram": 32,
+                            "size": 208,
+                            "vrom": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".options",
+            "vram": 0,
+            "size": 64,
+            "vrom": 144216,
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o",
+                    "sectionType": ".options",
+                    "vram": 0,
+                    "size": 64,
+                    "vrom": 144216,
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o_.options",
+                            "vram": 0,
+                            "size": 64,
+                            "vrom": 144216
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".mdebug",
+            "vram": 0,
+            "size": 140700,
+            "vrom": 144280,
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o",
+                    "sectionType": ".mdebug",
+                    "vram": 0,
+                    "size": 158768,
+                    "vrom": 144280,
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player.o_.mdebug",
+                            "vram": 0,
+                            "size": 158768,
+                            "vrom": 144280
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

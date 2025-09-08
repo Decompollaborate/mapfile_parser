@@ -1,0 +1,193 @@
+
+Discarded input sections
+
+ .gptab.data    0x0000000000000000       0x68 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o
+ .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o
+ .gptab.data    0x0000000000000000       0x40 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o
+ .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o
+ .gptab.data    0x0000000000000000       0x28 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o
+ .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o
+ .gptab.data    0x0000000000000000       0x30 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o
+ .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o
+ .gptab.data    0x0000000000000000       0x60 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o
+ .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o
+ .gptab.data    0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o
+ .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o
+ .gptab.data    0x0000000000000000       0xc0 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o
+ .gptab.bss     0x0000000000000000       0x30 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o
+ .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o
+ .gptab.data    0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o
+ .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o
+ .gptab.data    0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+LOAD build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o
+LOAD build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o
+LOAD build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o
+LOAD build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o
+LOAD build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o
+LOAD build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o
+LOAD build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o
+LOAD build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o
+LOAD build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o
+
+.text           0x0000000000000000    0x16850
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o(.text*)
+ .text          0x0000000000000000     0x24c0 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o
+                0x0000000000000000                KaleidoScope_DrawQuestStatus
+                0x00000000000024a8                KaleidoScope_UpdateQuestStatusPoint
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o(.text*)
+ .text          0x00000000000024c0     0x2070 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o
+                0x00000000000024c0                KaleidoScope_DrawInventoryEditorText
+                0x00000000000027b4                KaleidoScope_DrawDigit
+                0x000000000000298c                KaleidoScope_DrawInventoryEditor
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o(.text*)
+ .text          0x0000000000004530     0x1b50 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o
+                0x0000000000004530                KaleidoScope_DrawEquipmentImage
+                0x000000000000497c                KaleidoScope_DrawPlayerWork
+                0x0000000000004b20                KaleidoScope_DrawEquipment
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o(.text*)
+ .text          0x0000000000006080     0x2270 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o
+                0x0000000000006080                KaleidoScope_DrawAmmoCount
+                0x00000000000065f4                KaleidoScope_SetCursorPos
+                0x0000000000006620                KaleidoScope_SetItemCursorPos
+                0x000000000000664c                KaleidoScope_DrawItemSelect
+                0x0000000000007524                KaleidoScope_UpdateItemEquip
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o(.text*)
+ .text          0x00000000000082f0     0x34e0 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o
+                0x00000000000082f0                KaleidoScope_DrawDungeonMap
+                0x0000000000009b78                KaleidoScope_DrawWorldMap
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o(.text*)
+ .text          0x000000000000b7d0      0x200 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o
+                0x000000000000b7d0                KaleidoScope_UpdatePrompt
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o(.text*)
+ .text          0x000000000000b9d0     0xa770 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o
+                0x000000000000b9d0                KaleidoScope_SetupPlayerPreRender
+                0x000000000000badc                KaleidoScope_ProcessPlayerPreRender
+                0x000000000000bb14                KaleidoScope_QuadTextureIA4
+                0x000000000000bcec                KaleidoScope_QuadTextureIA8
+                0x000000000000bec4                KaleidoScope_OverridePalIndexCI4
+                0x000000000000bffc                KaleidoScope_MoveCursorToSpecialPos
+                0x000000000000c05c                KaleidoScope_DrawQuadTextureRGBA32
+                0x000000000000c29c                KaleidoScope_SetDefaultCursor
+                0x000000000000c35c                KaleidoScope_SetupPageSwitch
+                0x000000000000c4d4                KaleidoScope_HandlePageToggles
+                0x000000000000c610                KaleidoScope_DrawCursor
+                0x000000000000c96c                KaleidoScope_DrawPageSections
+                0x000000000000cc14                KaleidoScope_DrawPages
+                0x000000000000e3f0                KaleidoScope_DrawUIOverlay
+                0x000000000000fd28                KaleidoScope_UpdateNamePanel
+                0x000000000000ff94                KaleidoScope_UpdatePageSwitch
+                0x0000000000010174                KaleidoScope_SetView
+                0x00000000000101ec                KaleidoScope_SetPageVertices
+                0x000000000001087c                KaleidoScope_SetVertices
+                0x00000000000123f4                KaleidoScope_DrawGameOver
+                0x0000000000012a98                KaleidoScope_Draw
+                0x0000000000012cec                KaleidoScope_GrayOutTextureRGBA32
+                0x0000000000012d9c                KaleidoScope_UpdateOpening
+                0x0000000000012f8c                KaleidoScope_UpdateCursorVtx
+                0x00000000000132cc                KaleidoScope_LoadDungeonMap
+                0x0000000000013388                KaleidoScope_UpdateDungeonMap
+                0x0000000000013494                KaleidoScope_Update
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o(.text*)
+ .text          0x0000000000016140      0x710 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o
+                0x0000000000016140                PauseMapMark_Init
+                0x0000000000016170                PauseMapMark_Clear
+                0x0000000000016180                PauseMapMark_DrawForDungeon
+                0x00000000000167ec                PauseMapMark_Draw
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o(.text*)
+
+.data           0x0000000000016850     0x53b0
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o(.data*)
+ .data          0x0000000000016850      0x1b0 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o(.data*)
+ .data          0x0000000000016a00      0x1d0 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o(.data*)
+ .data          0x0000000000016bd0       0x30 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o(.data*)
+ .data          0x0000000000016c00       0x70 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o
+                0x0000000000016c00                gAmmoItems
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o(.data*)
+ .data          0x0000000000016c70      0x250 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o(.data*)
+ .data          0x0000000000016ec0       0x10 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o(.data*)
+ .data          0x0000000000016ed0      0xb80 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o
+                0x00000000000172cc                gVtxPageMapWorldQuadsWidth
+                0x000000000001730c                gVtxPageMapWorldQuadsHeight
+                0x00000000000173dc                gSlotAgeReqs
+                0x00000000000173f4                gEquipAgeReqs
+                0x0000000000017404                gItemAgeReqs
+                0x000000000001745c                gAreaGsFlags
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o(.data*)
+ .data          0x0000000000017a50       0x50 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o(.data*)
+ .data          0x0000000000017aa0     0x4160 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o
+                0x0000000000017aa0                gPauseMapMarkDataTable
+
+.rodata         0x000000000001bc00     0x1270
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o(.rodata*)
+ .rodata        0x000000000001bc00       0xa0 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o(.rodata*)
+ .rodata        0x000000000001bca0      0x140 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o(.rodata*)
+ .rodata        0x000000000001bde0      0x110 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o(.rodata*)
+ .rodata        0x000000000001bef0      0x2b0 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o(.rodata*)
+ .rodata        0x000000000001c1a0       0xa0 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o(.rodata*)
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o(.rodata*)
+ .rodata        0x000000000001c240      0xac0 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o(.rodata*)
+ .rodata        0x000000000001cd00       0xf0 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o(.rodata*)
+ .rodata        0x000000000001cdf0       0x80 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o
+
+.reginfo        0x0000000000000000       0x18
+ .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o
+
+.bss            0x0000000000000020       0x70
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o(.bss*)
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o(.bss*)
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o(.bss*)
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o(.bss*)
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o(.bss*)
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o(.bss*)
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o(.bss*)
+ .bss           0x0000000000000020       0x70 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o
+                0x0000000000000080                sPreRenderCvg
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o(.bss*)
+ build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o(.bss*)
+
+/DISCARD/
+ *(.gptab.*)
+OUTPUT(build/gc-eu-mq-dbg/segments/ovl_kaleido_scope.plf elf32-tradbigmips)
+
+.options        0x0000000000000000      0x240
+ .options       0x0000000000000000       0x40 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o
+ .options       0x0000000000000040       0x40 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o
+ .options       0x0000000000000080       0x40 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o
+ .options       0x00000000000000c0       0x40 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o
+ .options       0x0000000000000100       0x40 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o
+ .options       0x0000000000000140       0x40 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o
+ .options       0x0000000000000180       0x40 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o
+ .options       0x00000000000001c0       0x40 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o
+ .options       0x0000000000000200       0x40 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o
+
+.mdebug         0x0000000000000000     0xba44
+ .mdebug        0x0000000000000000     0x1850 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o
+ .mdebug        0x0000000000001850     0x1504 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o
+ .mdebug        0x0000000000002d54     0x165c build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o
+ .mdebug        0x00000000000043b0     0x1664 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o
+ .mdebug        0x0000000000005a14     0x2a64 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o
+ .mdebug        0x0000000000008478      0x554 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o
+ .mdebug        0x00000000000089cc     0x7d08 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o
+ .mdebug        0x00000000000106d4      0xf08 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o
+ .mdebug        0x00000000000115dc      0x294 build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o

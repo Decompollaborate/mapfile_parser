@@ -266,6 +266,12 @@
                     "vrom": 856,
                     "symbols": [
                         {
+                            "name": "$_static_symbol_00000000_simple_ppc.o_@17",
+                            "vram": 0,
+                            "size": 12,
+                            "vrom": 868
+                        },
+                        {
                             "name": "@33",
                             "vram": 12,
                             "size": 12,

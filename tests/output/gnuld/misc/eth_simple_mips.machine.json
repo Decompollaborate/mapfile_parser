@@ -59,7 +59,14 @@
                     "vram": 560,
                     "size": 48,
                     "vrom": 560,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000230_simple_mips.o_.rodata",
+                            "vram": 560,
+                            "size": 48,
+                            "vrom": 560
+                        }
+                    ]
                 }
             ]
         },
@@ -75,7 +82,14 @@
                     "vram": 608,
                     "size": 24,
                     "vrom": 608,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000260_simple_mips.o_.reginfo",
+                            "vram": 608,
+                            "size": 24,
+                            "vrom": 608
+                        }
+                    ]
                 }
             ]
         },
@@ -120,7 +134,14 @@
                     "vram": 0,
                     "size": 64,
                     "vrom": 648,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_simple_mips.o_.options",
+                            "vram": 0,
+                            "size": 64,
+                            "vrom": 648
+                        }
+                    ]
                 }
             ]
         },
@@ -136,7 +157,14 @@
                     "vram": 0,
                     "size": 24,
                     "vrom": 712,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_simple_mips.o_.gptab.data",
+                            "vram": 0,
+                            "size": 24,
+                            "vrom": 712
+                        }
+                    ]
                 }
             ]
         },
@@ -152,7 +180,14 @@
                     "vram": 0,
                     "size": 1104,
                     "vrom": 736,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_simple_mips.o_.mdebug",
+                            "vram": 0,
+                            "size": 1104,
+                            "vrom": 736
+                        }
+                    ]
                 }
             ]
         }

@@ -17763,7 +17763,14 @@
                     "vram": "0x800C3AC0",
                     "size": "0x30",
                     "vrom": "0x0AB7F0",
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_800C3AC0_build/src/main_segment/main.o_.rodata",
+                            "vram": "0x800C3AC0",
+                            "size": "0x30",
+                            "vrom": "0x0AB7F0"
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/src/main_segment/sound.o",
@@ -17798,7 +17805,14 @@
                     "vram": "0x800C3DD0",
                     "size": "0x20",
                     "vrom": "0x0ABB00",
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_800C3DD0_build/src/main_segment/graphic.o_.rodata",
+                            "vram": "0x800C3DD0",
+                            "size": "0x20",
+                            "vrom": "0x0ABB00"
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/src/main_segment/main1x.o",
@@ -18019,7 +18033,14 @@
                     "vram": "0x800C4200",
                     "size": "0x860",
                     "vrom": "0x0ABF30",
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_800C4200_build/src/main_segment/debug_menu.o_.rodata",
+                            "vram": "0x800C4200",
+                            "size": "0x860",
+                            "vrom": "0x0ABF30"
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/src/main_segment/tex_func.o",
@@ -19673,6 +19694,12 @@
                     "vrom": "0x0AFF90",
                     "symbols": [
                         {
+                            "name": "$_static_symbol_800C8260_build/src/main_segment/dm_game_main.o_.rodata",
+                            "vram": "0x800C8260",
+                            "size": "0x1C",
+                            "vrom": "0x0AFF90"
+                        },
+                        {
                             "name": "rotate_table_399",
                             "vram": "0x800C827C",
                             "size": "0x10",
@@ -20641,6 +20668,12 @@
                     "size": "0x80",
                     "vrom": "0x0B12B0",
                     "symbols": [
+                        {
+                            "name": "$_static_symbol_800C9580_build/src/main_segment/main_story.o_.rodata",
+                            "vram": "0x800C9580",
+                            "size": "0x8",
+                            "vrom": "0x0B12B0"
+                        },
                         {
                             "name": "jtbl_800C9588",
                             "vram": "0x800C9588",

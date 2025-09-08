@@ -10,6 +10,7 @@
 00000000,data,cat
 00000004,data,dog
 00000000,data,@13
+00000000,data,$_static_symbol_00000000_simple_ppc.o_@17
 0000000C,data,@33
 00000018,data,@43
 00000024,data,@57

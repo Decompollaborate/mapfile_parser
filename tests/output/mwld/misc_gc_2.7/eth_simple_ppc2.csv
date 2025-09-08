@@ -3,4 +3,4 @@ VRAM,Section,Section type,Num symbols,Max size,Total size,Average size
 00000000,simple_ppc.o,extab,5,8,40,8.00
 00000000,simple_ppc.o,.sdata,2,4,8,4.00
 00000000,simple_ppc.o,.sdata2,1,8,8,8.00
-00000000,simple_ppc.o,@17,4,12,12,3.00
+00000000,simple_ppc.o,@17,5,12,12,2.40

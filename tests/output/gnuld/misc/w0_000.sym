@@ -1,3 +1,5 @@
+00000000,data,$_static_symbol_00000000_build/us/src/weapon/header.c.o_.reginfo
+00000018,data,$_static_symbol_00000018_build/us/src/weapon/header.c.o_.MIPS.abiflags
 8017A000,data,g_Weapon
 8017A040,data,D_4000_8017A040
 8017A184,data,D_4000_8017A184
@@ -129,3 +131,13 @@
 8017B6F0,code,WeaponUnused38
 8017B6F8,code,WeaponUnused3C
 8017B700,data,D_4000_8017B700
+00000000,data,$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.pdr
+00000000,data,$_static_symbol_00000000_build/us/src/weapon/header.c.o_.gnu.attributes
+00000010,data,$_static_symbol_00000010_build/us/src/weapon/w_000.c.o_.gnu.attributes
+00000020,data,$_static_symbol_00000020_build/us/asm/us/weapon/data/w_000.data.s.o_.gnu.attributes
+00000030,data,$_static_symbol_00000030_build/us/asm/us/weapon/data/w_000.sbss.s.o_.gnu.attributes
+00000000,data,$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_line
+00000000,data,$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_info
+00000000,data,$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_abbrev
+00000000,data,$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_aranges
+00000000,data,$_static_symbol_00000000_build/us/src/weapon/w_000.c.o_.debug_str

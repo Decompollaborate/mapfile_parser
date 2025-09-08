@@ -459,6 +459,12 @@
                             "vrom": 22944
                         },
                         {
+                            "name": "$_static_symbol_0000000C_d_a_agbsw0.o_.rodata",
+                            "vram": 12,
+                            "size": 4,
+                            "vrom": 22940
+                        },
+                        {
                             "name": "@2280",
                             "vram": 16,
                             "size": 8,
@@ -487,6 +493,12 @@
                             "vram": 40,
                             "size": 4,
                             "vrom": 22976
+                        },
+                        {
+                            "name": "$_static_symbol_0000002C_d_a_agbsw0.o_.rodata",
+                            "vram": 44,
+                            "size": 4,
+                            "vrom": 22940
                         },
                         {
                             "name": "@2370",
@@ -641,6 +653,12 @@
                             "vram": 24,
                             "size": 4,
                             "vrom": 23120
+                        },
+                        {
+                            "name": "$_static_symbol_0000001C_d_a_agbsw0.o_.data",
+                            "vram": 28,
+                            "size": 4,
+                            "vrom": 23100
                         },
                         {
                             "name": "_three$localstatic3$fake_sqrtf__Ff",

@@ -17763,7 +17763,14 @@
                     "vram": 2148285120,
                     "size": 48,
                     "vrom": 702448,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_800C3AC0_build/src/main_segment/main.o_.rodata",
+                            "vram": 2148285120,
+                            "size": 48,
+                            "vrom": 702448
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/src/main_segment/sound.o",
@@ -17798,7 +17805,14 @@
                     "vram": 2148285904,
                     "size": 32,
                     "vrom": 703232,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_800C3DD0_build/src/main_segment/graphic.o_.rodata",
+                            "vram": 2148285904,
+                            "size": 32,
+                            "vrom": 703232
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/src/main_segment/main1x.o",
@@ -18019,7 +18033,14 @@
                     "vram": 2148286976,
                     "size": 2144,
                     "vrom": 704304,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_800C4200_build/src/main_segment/debug_menu.o_.rodata",
+                            "vram": 2148286976,
+                            "size": 2144,
+                            "vrom": 704304
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/src/main_segment/tex_func.o",
@@ -19673,6 +19694,12 @@
                     "vrom": 720784,
                     "symbols": [
                         {
+                            "name": "$_static_symbol_800C8260_build/src/main_segment/dm_game_main.o_.rodata",
+                            "vram": 2148303456,
+                            "size": 28,
+                            "vrom": 720784
+                        },
+                        {
                             "name": "rotate_table_399",
                             "vram": 2148303484,
                             "size": 16,
@@ -20641,6 +20668,12 @@
                     "size": 128,
                     "vrom": 725680,
                     "symbols": [
+                        {
+                            "name": "$_static_symbol_800C9580_build/src/main_segment/main_story.o_.rodata",
+                            "vram": 2148308352,
+                            "size": 8,
+                            "vrom": 725680
+                        },
                         {
                             "name": "jtbl_800C9588",
                             "vram": 2148308360,

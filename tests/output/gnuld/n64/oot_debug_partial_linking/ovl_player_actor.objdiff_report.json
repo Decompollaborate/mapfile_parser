@@ -1,0 +1,4488 @@
+{
+  "measures": {
+    "fuzzy_match_percent": 100.0,
+    "total_code": "135680",
+    "matched_code": "135680",
+    "matched_code_percent": 100.0,
+    "total_data": "8808",
+    "matched_data": "8808",
+    "matched_data_percent": 100.0,
+    "total_functions": 547,
+    "matched_functions": 547,
+    "matched_functions_percent": 100.0,
+    "total_units": 1
+  },
+  "units": [
+    {
+      "name": "gc-eu-mq-dbg/src/overlays/actors/ovl_player_actor/z_player",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "135680",
+        "matched_code": "135680",
+        "matched_code_percent": 100.0,
+        "total_data": "8808",
+        "matched_data": "8808",
+        "matched_data_percent": 100.0,
+        "total_functions": 547,
+        "matched_functions": 547,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      },
+      "sections": [
+        {
+          "name": ".text",
+          "size": "135680",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": ".data",
+          "size": "7728",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "135680"
+          }
+        },
+        {
+          "name": ".rodata",
+          "size": "784",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "143408"
+          }
+        },
+        {
+          "name": ".reginfo",
+          "size": "24",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": ".bss",
+          "size": "208",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "32"
+          }
+        },
+        {
+          "name": ".options",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        }
+      ],
+      "functions": [
+        {
+          "name": "Player_ZeroSpeedXZ",
+          "size": "20",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "0"
+          }
+        },
+        {
+          "name": "func_80832224",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "20"
+          }
+        },
+        {
+          "name": "Player_IsTalking",
+          "size": "24",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "60"
+          }
+        },
+        {
+          "name": "Player_AnimPlayOnce",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "84"
+          }
+        },
+        {
+          "name": "Player_AnimPlayLoop",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "116"
+          }
+        },
+        {
+          "name": "Player_AnimPlayLoopAdjusted",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "148"
+          }
+        },
+        {
+          "name": "Player_AnimPlayOnceAdjusted",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "192"
+          }
+        },
+        {
+          "name": "Player_ApplyYawFromAnim",
+          "size": "28",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "236"
+          }
+        },
+        {
+          "name": "func_80832318",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "264"
+          }
+        },
+        {
+          "name": "func_80832340",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "304"
+          }
+        },
+        {
+          "name": "Player_DetachHeldActor",
+          "size": "140",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "420"
+          }
+        },
+        {
+          "name": "func_80832440",
+          "size": "232",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "560"
+          }
+        },
+        {
+          "name": "Player_PutAwayHeldItem",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "792"
+          }
+        },
+        {
+          "name": "func_80832564",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "852"
+          }
+        },
+        {
+          "name": "func_80832594",
+          "size": "156",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "900"
+          }
+        },
+        {
+          "name": "func_80832630",
+          "size": "28",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1056"
+          }
+        },
+        {
+          "name": "Player_RequestRumble",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1084"
+          }
+        },
+        {
+          "name": "Player_PlayVoiceSfx",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1160"
+          }
+        },
+        {
+          "name": "func_808326F0",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1248"
+          }
+        },
+        {
+          "name": "Player_ApplyFloorSfxOffset",
+          "size": "20",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1356"
+          }
+        },
+        {
+          "name": "Player_PlayFloorSfx",
+          "size": "52",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1376"
+          }
+        },
+        {
+          "name": "Player_ApplyFloorAndAgeSfxOffsets",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1428"
+          }
+        },
+        {
+          "name": "Player_PlayFloorSfxByAge",
+          "size": "52",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1460"
+          }
+        },
+        {
+          "name": "Player_PlaySteppingSfx",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1512"
+          }
+        },
+        {
+          "name": "Player_PlayJumpingSfx",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1604"
+          }
+        },
+        {
+          "name": "Player_PlayLandingSfx",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1680"
+          }
+        },
+        {
+          "name": "func_808328EC",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1756"
+          }
+        },
+        {
+          "name": "Player_ProcessAnimSfxList",
+          "size": "488",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "1812"
+          }
+        },
+        {
+          "name": "Player_AnimChangeOnceMorph",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2300"
+          }
+        },
+        {
+          "name": "Player_AnimChangeOnceMorphAdjusted",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2408"
+          }
+        },
+        {
+          "name": "Player_AnimChangeLoopMorph",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2520"
+          }
+        },
+        {
+          "name": "Player_AnimChangeFreeze",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2588"
+          }
+        },
+        {
+          "name": "Player_AnimChangeLoopSlowMorph",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2652"
+          }
+        },
+        {
+          "name": "func_80832CB0",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2720"
+          }
+        },
+        {
+          "name": "Player_ResetAnimMovement",
+          "size": "36",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2796"
+          }
+        },
+        {
+          "name": "Player_ResetAnimMovementScaledByAge",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2832"
+          }
+        },
+        {
+          "name": "Player_ZeroRootLimbYaw",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2976"
+          }
+        },
+        {
+          "name": "Player_FinishAnimMovement",
+          "size": "140",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "2988"
+          }
+        },
+        {
+          "name": "Player_ApplyAnimMovementScaledByAge",
+          "size": "268",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3128"
+          }
+        },
+        {
+          "name": "Player_StartAnimMovement",
+          "size": "168",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3396"
+          }
+        },
+        {
+          "name": "Player_AnimReplacePlayOnceSetSpeed",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3564"
+          }
+        },
+        {
+          "name": "Player_AnimReplacePlayOnce",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3628"
+          }
+        },
+        {
+          "name": "Player_AnimReplacePlayOnceAdjusted",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3668"
+          }
+        },
+        {
+          "name": "Player_AnimReplaceNormalPlayOnceAdjusted",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3708"
+          }
+        },
+        {
+          "name": "Player_AnimReplacePlayLoopSetSpeed",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3740"
+          }
+        },
+        {
+          "name": "Player_AnimReplacePlayLoop",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3804"
+          }
+        },
+        {
+          "name": "Player_AnimReplacePlayLoopAdjusted",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3844"
+          }
+        },
+        {
+          "name": "Player_AnimReplaceNormalPlayLoopAdjusted",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3884"
+          }
+        },
+        {
+          "name": "Player_ProcessControlStick",
+          "size": "304",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "3916"
+          }
+        },
+        {
+          "name": "func_8083328C",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4220"
+          }
+        },
+        {
+          "name": "func_808332B8",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4264"
+          }
+        },
+        {
+          "name": "func_808332E4",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4308"
+          }
+        },
+        {
+          "name": "func_808332F4",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4324"
+          }
+        },
+        {
+          "name": "Player_GetIdleAnim",
+          "size": "24",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4392"
+          }
+        },
+        {
+          "name": "Player_CheckForIdleAnim",
+          "size": "172",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4416"
+          }
+        },
+        {
+          "name": "Player_ProcessFidgetAnimSfxList",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4588"
+          }
+        },
+        {
+          "name": "func_80833438",
+          "size": "124",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4648"
+          }
+        },
+        {
+          "name": "func_808334B4",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4772"
+          }
+        },
+        {
+          "name": "func_808334E4",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4820"
+          }
+        },
+        {
+          "name": "func_80833528",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4888"
+          }
+        },
+        {
+          "name": "func_8083356C",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "4956"
+          }
+        },
+        {
+          "name": "func_808335B0",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5024"
+          }
+        },
+        {
+          "name": "func_808335F4",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5092"
+          }
+        },
+        {
+          "name": "Player_SetUpperActionFunc",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5160"
+          }
+        },
+        {
+          "name": "Player_InitItemActionWithAnim",
+          "size": "192",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5204"
+          }
+        },
+        {
+          "name": "Player_ItemToItemAction",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5396"
+          }
+        },
+        {
+          "name": "Player_InitDefaultIA",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5472"
+          }
+        },
+        {
+          "name": "Player_InitDekuStickIA",
+          "size": "20",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5484"
+          }
+        },
+        {
+          "name": "Player_InitHammerIA",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5504"
+          }
+        },
+        {
+          "name": "Player_InitBowOrSlingshotIA",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5516"
+          }
+        },
+        {
+          "name": "Player_InitExplosiveIA",
+          "size": "316",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5572"
+          }
+        },
+        {
+          "name": "Player_InitHookshotIA",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "5888"
+          }
+        },
+        {
+          "name": "Player_InitBoomerangIA",
+          "size": "24",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6004"
+          }
+        },
+        {
+          "name": "Player_InitItemAction",
+          "size": "132",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6028"
+          }
+        },
+        {
+          "name": "func_80833A20",
+          "size": "268",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6160"
+          }
+        },
+        {
+          "name": "Player_FriendlyLockOnOrParallel",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6428"
+          }
+        },
+        {
+          "name": "Player_UpdateHostileLockOn",
+          "size": "120",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6468"
+          }
+        },
+        {
+          "name": "Player_IsZTargeting",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6588"
+          }
+        },
+        {
+          "name": "Player_IsZTargetingWithHostileUpdate",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6644"
+          }
+        },
+        {
+          "name": "func_80833C3C",
+          "size": "20",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6700"
+          }
+        },
+        {
+          "name": "Player_ItemIsInUse",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6720"
+          }
+        },
+        {
+          "name": "Player_ItemIsItemAction",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6792"
+          }
+        },
+        {
+          "name": "Player_GetItemOnButton",
+          "size": "284",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "6860"
+          }
+        },
+        {
+          "name": "Player_ProcessItemButtons",
+          "size": "740",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "7144"
+          }
+        },
+        {
+          "name": "Player_StartChangingHeldItem",
+          "size": "444",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "7884"
+          }
+        },
+        {
+          "name": "Player_UpdateItems",
+          "size": "232",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "8328"
+          }
+        },
+        {
+          "name": "func_80834380",
+          "size": "172",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "8560"
+          }
+        },
+        {
+          "name": "func_8083442C",
+          "size": "360",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "8732"
+          }
+        },
+        {
+          "name": "Player_FinishItemChange",
+          "size": "176",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9092"
+          }
+        },
+        {
+          "name": "func_80834644",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9268"
+          }
+        },
+        {
+          "name": "func_808346C4",
+          "size": "148",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9396"
+          }
+        },
+        {
+          "name": "func_80834758",
+          "size": "260",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9544"
+          }
+        },
+        {
+          "name": "func_8083485C",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9804"
+          }
+        },
+        {
+          "name": "func_80834894",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9860"
+          }
+        },
+        {
+          "name": "Player_WaitToFinishItemChange",
+          "size": "176",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "9948"
+          }
+        },
+        {
+          "name": "func_8083499C",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10124"
+          }
+        },
+        {
+          "name": "Player_UpperAction_Sword",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10188"
+          }
+        },
+        {
+          "name": "Player_UpperAction_ChangeHeldItem",
+          "size": "304",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10268"
+          }
+        },
+        {
+          "name": "func_80834B5C",
+          "size": "120",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10572"
+          }
+        },
+        {
+          "name": "func_80834BD4",
+          "size": "160",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10692"
+          }
+        },
+        {
+          "name": "func_80834C74",
+          "size": "184",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "10852"
+          }
+        },
+        {
+          "name": "func_80834D2C",
+          "size": "280",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11036"
+          }
+        },
+        {
+          "name": "func_80834E44",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11316"
+          }
+        },
+        {
+          "name": "func_80834E7C",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11372"
+          }
+        },
+        {
+          "name": "func_80834EB8",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11432"
+          }
+        },
+        {
+          "name": "func_80834F2C",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11548"
+          }
+        },
+        {
+          "name": "func_80834FBC",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11692"
+          }
+        },
+        {
+          "name": "func_8083501C",
+          "size": "136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11788"
+          }
+        },
+        {
+          "name": "func_808350A4",
+          "size": "304",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "11924"
+          }
+        },
+        {
+          "name": "func_808351D4",
+          "size": "516",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "12228"
+          }
+        },
+        {
+          "name": "func_808353D8",
+          "size": "432",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "12744"
+          }
+        },
+        {
+          "name": "func_80835588",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13176"
+          }
+        },
+        {
+          "name": "Player_SetParallel",
+          "size": "104",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13260"
+          }
+        },
+        {
+          "name": "func_80835644",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13364"
+          }
+        },
+        {
+          "name": "func_80835688",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13432"
+          }
+        },
+        {
+          "name": "Player_UpperAction_CarryActor",
+          "size": "256",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13528"
+          }
+        },
+        {
+          "name": "func_808357E8",
+          "size": "24",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13784"
+          }
+        },
+        {
+          "name": "func_80835800",
+          "size": "132",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13808"
+          }
+        },
+        {
+          "name": "func_80835884",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "13940"
+          }
+        },
+        {
+          "name": "func_808358F0",
+          "size": "268",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "14048"
+          }
+        },
+        {
+          "name": "func_808359FC",
+          "size": "356",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "14316"
+          }
+        },
+        {
+          "name": "func_80835B60",
+          "size": "168",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "14672"
+          }
+        },
+        {
+          "name": "func_80835C08",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "14840"
+          }
+        },
+        {
+          "name": "Player_SetupAction",
+          "size": "340",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "14920"
+          }
+        },
+        {
+          "name": "Player_SetupActionPreserveAnimMovement",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "15260"
+          }
+        },
+        {
+          "name": "Player_SetupActionPreserveItemAction",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "15316"
+          }
+        },
+        {
+          "name": "Player_RequestCameraSetting",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "15412"
+          }
+        },
+        {
+          "name": "Player_SetTurnAroundCamera",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "15508"
+          }
+        },
+        {
+          "name": "Player_DestroyHookshot",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "15596"
+          }
+        },
+        {
+          "name": "Player_UseItem",
+          "size": "1284",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "15668"
+          }
+        },
+        {
+          "name": "func_80836448",
+          "size": "384",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "16952"
+          }
+        },
+        {
+          "name": "Player_CanUpdateItems",
+          "size": "168",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "17336"
+          }
+        },
+        {
+          "name": "Player_UpdateUpperBody",
+          "size": "552",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "17504"
+          }
+        },
+        {
+          "name": "Player_SetupWaitForPutAway",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "18056"
+          }
+        },
+        {
+          "name": "Player_UpdateShapeYaw",
+          "size": "220",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "18140"
+          }
+        },
+        {
+          "name": "Player_ScaledStepBinangClamped",
+          "size": "240",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "18360"
+          }
+        },
+        {
+          "name": "func_80836AB8",
+          "size": "308",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "18600"
+          }
+        },
+        {
+          "name": "Player_UpdateZTargeting",
+          "size": "960",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "18908"
+          }
+        },
+        {
+          "name": "Player_CalcSpeedAndYawFromControlStick",
+          "size": "624",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "19868"
+          }
+        },
+        {
+          "name": "Player_DecelerateToZero",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "20492"
+          }
+        },
+        {
+          "name": "Player_GetMovementSpeedAndYaw",
+          "size": "224",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "20568"
+          }
+        },
+        {
+          "name": "Player_TryActionHandlerList",
+          "size": "344",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "20792"
+          }
+        },
+        {
+          "name": "Player_TryActionInterrupt",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "21136"
+          }
+        },
+        {
+          "name": "func_80837530",
+          "size": "168",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "21280"
+          }
+        },
+        {
+          "name": "Player_CanSpinAttack",
+          "size": "300",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "21448"
+          }
+        },
+        {
+          "name": "func_80837704",
+          "size": "216",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "21748"
+          }
+        },
+        {
+          "name": "func_808377DC",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "21964"
+          }
+        },
+        {
+          "name": "func_80837818",
+          "size": "256",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "22024"
+          }
+        },
+        {
+          "name": "func_80837918",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "22280"
+          }
+        },
+        {
+          "name": "func_80837948",
+          "size": "408",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "22328"
+          }
+        },
+        {
+          "name": "Player_SetIntangibility",
+          "size": "28",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "22736"
+          }
+        },
+        {
+          "name": "Player_SetInvulnerability",
+          "size": "28",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "22764"
+          }
+        },
+        {
+          "name": "func_80837B18",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "22792"
+          }
+        },
+        {
+          "name": "func_80837B60",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "22864"
+          }
+        },
+        {
+          "name": "func_80837B9C",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "22924"
+          }
+        },
+        {
+          "name": "func_80837C0C",
+          "size": "1336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "23036"
+          }
+        },
+        {
+          "name": "func_80838144",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24372"
+          }
+        },
+        {
+          "name": "func_8083816C",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24412"
+          }
+        },
+        {
+          "name": "func_8083819C",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24460"
+          }
+        },
+        {
+          "name": "func_8083821C",
+          "size": "100",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24588"
+          }
+        },
+        {
+          "name": "func_80838280",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24688"
+          }
+        },
+        {
+          "name": "func_808382BC",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24748"
+          }
+        },
+        {
+          "name": "func_808382DC",
+          "size": "1636",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "24780"
+          }
+        },
+        {
+          "name": "func_80838940",
+          "size": "168",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "26416"
+          }
+        },
+        {
+          "name": "func_808389E8",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "26584"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_12",
+          "size": "1116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "26628"
+          }
+        },
+        {
+          "name": "func_80838E70",
+          "size": "168",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "27744"
+          }
+        },
+        {
+          "name": "func_80838F18",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "27912"
+          }
+        },
+        {
+          "name": "func_80838F5C",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "27980"
+          }
+        },
+        {
+          "name": "func_80838FB8",
+          "size": "124",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "28072"
+          }
+        },
+        {
+          "name": "Player_HandleExitsAndVoids",
+          "size": "1448",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "28196"
+          }
+        },
+        {
+          "name": "Player_GetRelativePosition",
+          "size": "164",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29644"
+          }
+        },
+        {
+          "name": "Player_SpawnFairy",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29808"
+          }
+        },
+        {
+          "name": "func_808396F4",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29924"
+          }
+        },
+        {
+          "name": "func_8083973C",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "29996"
+          }
+        },
+        {
+          "name": "Player_PosVsWallLineTest",
+          "size": "152",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30040"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_1",
+          "size": "1672",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "30192"
+          }
+        },
+        {
+          "name": "func_80839E88",
+          "size": "168",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "31864"
+          }
+        },
+        {
+          "name": "func_80839F30",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "32032"
+          }
+        },
+        {
+          "name": "func_80839F90",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "32128"
+          }
+        },
+        {
+          "name": "func_80839FFC",
+          "size": "100",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "32236"
+          }
+        },
+        {
+          "name": "func_8083A060",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "32336"
+          }
+        },
+        {
+          "name": "func_8083A098",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "32392"
+          }
+        },
+        {
+          "name": "func_8083A0D4",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "32452"
+          }
+        },
+        {
+          "name": "func_8083A0F4",
+          "size": "516",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "32484"
+          }
+        },
+        {
+          "name": "Player_SetupTalk",
+          "size": "104",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "33000"
+          }
+        },
+        {
+          "name": "func_8083A360",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "33104"
+          }
+        },
+        {
+          "name": "func_8083A388",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "33144"
+          }
+        },
+        {
+          "name": "func_8083A3B0",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "33184"
+          }
+        },
+        {
+          "name": "func_8083A40C",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "33276"
+          }
+        },
+        {
+          "name": "func_8083A434",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "33316"
+          }
+        },
+        {
+          "name": "func_8083A4A8",
+          "size": "284",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "33432"
+          }
+        },
+        {
+          "name": "func_8083A5C4",
+          "size": "232",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "33716"
+          }
+        },
+        {
+          "name": "func_8083A6AC",
+          "size": "780",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "33948"
+          }
+        },
+        {
+          "name": "func_8083A9B8",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "34728"
+          }
+        },
+        {
+          "name": "func_8083AA10",
+          "size": "828",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "34816"
+          }
+        },
+        {
+          "name": "func_8083AD4C",
+          "size": "136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "35644"
+          }
+        },
+        {
+          "name": "Player_StartCsAction",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "35780"
+          }
+        },
+        {
+          "name": "func_8083AE40",
+          "size": "260",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "35888"
+          }
+        },
+        {
+          "name": "func_8083AF44",
+          "size": "204",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36148"
+          }
+        },
+        {
+          "name": "func_8083B010",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36352"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_13",
+          "size": "1540",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "36400"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_Talk",
+          "size": "688",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "37940"
+          }
+        },
+        {
+          "name": "func_8083B8F4",
+          "size": "164",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "38628"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_0",
+          "size": "248",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "38792"
+          }
+        },
+        {
+          "name": "func_8083BA90",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "39040"
+          }
+        },
+        {
+          "name": "func_8083BB20",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "39184"
+          }
+        },
+        {
+          "name": "func_8083BBA0",
+          "size": "100",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "39312"
+          }
+        },
+        {
+          "name": "Player_SetupRoll",
+          "size": "120",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "39412"
+          }
+        },
+        {
+          "name": "Player_TryRoll",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "39532"
+          }
+        },
+        {
+          "name": "func_8083BCD0",
+          "size": "236",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "39616"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_10",
+          "size": "404",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "39852"
+          }
+        },
+        {
+          "name": "func_8083BF50",
+          "size": "360",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "40256"
+          }
+        },
+        {
+          "name": "func_8083C0B8",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "40616"
+          }
+        },
+        {
+          "name": "func_8083C0E8",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "40664"
+          }
+        },
+        {
+          "name": "func_8083C148",
+          "size": "148",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "40760"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_Roll",
+          "size": "212",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "40908"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_11",
+          "size": "468",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "41120"
+          }
+        },
+        {
+          "name": "func_8083C484",
+          "size": "136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "41588"
+          }
+        },
+        {
+          "name": "func_8083C50C",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "41724"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_8",
+          "size": "216",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "41780"
+          }
+        },
+        {
+          "name": "func_8083C61C",
+          "size": "156",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "41996"
+          }
+        },
+        {
+          "name": "func_8083C6B8",
+          "size": "416",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "42152"
+          }
+        },
+        {
+          "name": "func_8083C858",
+          "size": "132",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "42568"
+          }
+        },
+        {
+          "name": "func_8083C8DC",
+          "size": "52",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "42700"
+          }
+        },
+        {
+          "name": "Player_SetStartingMovement",
+          "size": "272",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "42752"
+          }
+        },
+        {
+          "name": "Player_StartMode_Idle",
+          "size": "52",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "43024"
+          }
+        },
+        {
+          "name": "Player_StartMode_MoveForwardSlow",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "43076"
+          }
+        },
+        {
+          "name": "Player_StartMode_MoveForward",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "43148"
+          }
+        },
+        {
+          "name": "func_8083CB2C",
+          "size": "104",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "43292"
+          }
+        },
+        {
+          "name": "func_8083CB94",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "43396"
+          }
+        },
+        {
+          "name": "func_8083CBF0",
+          "size": "172",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "43488"
+          }
+        },
+        {
+          "name": "func_8083CC9C",
+          "size": "100",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "43660"
+          }
+        },
+        {
+          "name": "func_8083CD00",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "43760"
+          }
+        },
+        {
+          "name": "Player_SetupTurnInPlace",
+          "size": "184",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "43844"
+          }
+        },
+        {
+          "name": "func_8083CE0C",
+          "size": "160",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "44028"
+          }
+        },
+        {
+          "name": "func_8083CEAC",
+          "size": "100",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "44188"
+          }
+        },
+        {
+          "name": "func_8083CF10",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "44288"
+          }
+        },
+        {
+          "name": "func_8083CF5C",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "44364"
+          }
+        },
+        {
+          "name": "func_8083CFA8",
+          "size": "256",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "44440"
+          }
+        },
+        {
+          "name": "func_8083D0A8",
+          "size": "132",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "44696"
+          }
+        },
+        {
+          "name": "func_8083D12C",
+          "size": "516",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "44828"
+          }
+        },
+        {
+          "name": "func_8083D330",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "45344"
+          }
+        },
+        {
+          "name": "func_8083D36C",
+          "size": "464",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "45404"
+          }
+        },
+        {
+          "name": "func_8083D53C",
+          "size": "432",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "45868"
+          }
+        },
+        {
+          "name": "func_8083D6EC",
+          "size": "1196",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "46300"
+          }
+        },
+        {
+          "name": "func_8083DB98",
+          "size": "188",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "47496"
+          }
+        },
+        {
+          "name": "func_8083DC54",
+          "size": "372",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "47684"
+          }
+        },
+        {
+          "name": "func_8083DDC8",
+          "size": "416",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "48056"
+          }
+        },
+        {
+          "name": "func_8083DF68",
+          "size": "120",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "48472"
+          }
+        },
+        {
+          "name": "func_8083DFE0",
+          "size": "284",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "48592"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_3",
+          "size": "412",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "48876"
+          }
+        },
+        {
+          "name": "Player_GetSlopeDirection",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "49288"
+          }
+        },
+        {
+          "name": "Player_HandleSlopes",
+          "size": "428",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "49416"
+          }
+        },
+        {
+          "name": "func_8083E4C4",
+          "size": "228",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "49844"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_2",
+          "size": "1260",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "50072"
+          }
+        },
+        {
+          "name": "func_8083EA94",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "51332"
+          }
+        },
+        {
+          "name": "Player_CanThrowCarriedActor",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "51424"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_9",
+          "size": "212",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "51508"
+          }
+        },
+        {
+          "name": "func_8083EC18",
+          "size": "1112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "51720"
+          }
+        },
+        {
+          "name": "func_8083F070",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "52832"
+          }
+        },
+        {
+          "name": "Player_TryEnteringCrawlspace",
+          "size": "664",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "52920"
+          }
+        },
+        {
+          "name": "func_8083F360",
+          "size": "452",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "53584"
+          }
+        },
+        {
+          "name": "func_8083F524",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "54036"
+          }
+        },
+        {
+          "name": "Player_TryLeavingCrawlspace",
+          "size": "444",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "54112"
+          }
+        },
+        {
+          "name": "func_8083F72C",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "54556"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_5",
+          "size": "532",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "54700"
+          }
+        },
+        {
+          "name": "func_8083F9D0",
+          "size": "232",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "55232"
+          }
+        },
+        {
+          "name": "func_8083FAB8",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "55464"
+          }
+        },
+        {
+          "name": "func_8083FB14",
+          "size": "104",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "55556"
+          }
+        },
+        {
+          "name": "func_8083FB7C",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "55660"
+          }
+        },
+        {
+          "name": "func_8083FBC0",
+          "size": "168",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "55728"
+          }
+        },
+        {
+          "name": "func_8083FC68",
+          "size": "272",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "55896"
+          }
+        },
+        {
+          "name": "func_8083FD78",
+          "size": "576",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "56168"
+          }
+        },
+        {
+          "name": "func_8083FFB8",
+          "size": "160",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "56744"
+          }
+        },
+        {
+          "name": "func_80840058",
+          "size": "224",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "56904"
+          }
+        },
+        {
+          "name": "func_80840138",
+          "size": "120",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "57128"
+          }
+        },
+        {
+          "name": "func_808401B0",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "57248"
+          }
+        },
+        {
+          "name": "func_8084021C",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "57356"
+          }
+        },
+        {
+          "name": "func_8084029C",
+          "size": "436",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "57484"
+          }
+        },
+        {
+          "name": "Player_Action_80840450",
+          "size": "892",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "57920"
+          }
+        },
+        {
+          "name": "Player_Action_808407CC",
+          "size": "512",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "58812"
+          }
+        },
+        {
+          "name": "Player_ChooseNextIdleAnim",
+          "size": "508",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "59324"
+          }
+        },
+        {
+          "name": "Player_Action_Idle",
+          "size": "540",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "59832"
+          }
+        },
+        {
+          "name": "Player_Action_80840DE4",
+          "size": "852",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "60372"
+          }
+        },
+        {
+          "name": "func_80841138",
+          "size": "724",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "61224"
+          }
+        },
+        {
+          "name": "func_8084140C",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "61948"
+          }
+        },
+        {
+          "name": "func_80841458",
+          "size": "160",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "62024"
+          }
+        },
+        {
+          "name": "Player_Action_808414F8",
+          "size": "456",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "62184"
+          }
+        },
+        {
+          "name": "func_808416C0",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "62640"
+          }
+        },
+        {
+          "name": "Player_Action_8084170C",
+          "size": "240",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "62716"
+          }
+        },
+        {
+          "name": "Player_Action_808417FC",
+          "size": "100",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "62956"
+          }
+        },
+        {
+          "name": "func_80841860",
+          "size": "220",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "63056"
+          }
+        },
+        {
+          "name": "Player_Action_8084193C",
+          "size": "620",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "63276"
+          }
+        },
+        {
+          "name": "Player_Action_TurnInPlace",
+          "size": "284",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "63896"
+          }
+        },
+        {
+          "name": "func_80841CC4",
+          "size": "544",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "64180"
+          }
+        },
+        {
+          "name": "func_80841EE4",
+          "size": "668",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "64724"
+          }
+        },
+        {
+          "name": "Player_Action_80842180",
+          "size": "252",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "65392"
+          }
+        },
+        {
+          "name": "Player_Action_8084227C",
+          "size": "368",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "65644"
+          }
+        },
+        {
+          "name": "Player_Action_808423EC",
+          "size": "304",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "66012"
+          }
+        },
+        {
+          "name": "Player_Action_8084251C",
+          "size": "240",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "66316"
+          }
+        },
+        {
+          "name": "func_8084260C",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "66556"
+          }
+        },
+        {
+          "name": "func_8084269C",
+          "size": "256",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "66700"
+          }
+        },
+        {
+          "name": "Player_Action_8084279C",
+          "size": "192",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "66956"
+          }
+        },
+        {
+          "name": "func_8084285C",
+          "size": "124",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "67148"
+          }
+        },
+        {
+          "name": "func_808428D8",
+          "size": "140",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "67272"
+          }
+        },
+        {
+          "name": "func_80842964",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "67412"
+          }
+        },
+        {
+          "name": "Player_RequestQuake",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "67492"
+          }
+        },
+        {
+          "name": "func_80842A28",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "67608"
+          }
+        },
+        {
+          "name": "func_80842A88",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "67704"
+          }
+        },
+        {
+          "name": "func_80842AC4",
+          "size": "184",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "67764"
+          }
+        },
+        {
+          "name": "func_80842B7C",
+          "size": "372",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "67948"
+          }
+        },
+        {
+          "name": "func_80842CF0",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "68320"
+          }
+        },
+        {
+          "name": "func_80842D20",
+          "size": "212",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "68368"
+          }
+        },
+        {
+          "name": "func_80842DF4",
+          "size": "916",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "68580"
+          }
+        },
+        {
+          "name": "Player_Action_80843188",
+          "size": "1084",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "69496"
+          }
+        },
+        {
+          "name": "Player_Action_808435C4",
+          "size": "328",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "70580"
+          }
+        },
+        {
+          "name": "Player_Action_8084370C",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "70908"
+          }
+        },
+        {
+          "name": "Player_Action_8084377C",
+          "size": "472",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "71020"
+          }
+        },
+        {
+          "name": "Player_Action_80843954",
+          "size": "228",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "71492"
+          }
+        },
+        {
+          "name": "Player_Action_80843A38",
+          "size": "176",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "71720"
+          }
+        },
+        {
+          "name": "func_80843AE8",
+          "size": "516",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "71896"
+          }
+        },
+        {
+          "name": "Player_Action_80843CEC",
+          "size": "296",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "72412"
+          }
+        },
+        {
+          "name": "func_80843E14",
+          "size": "80",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "72708"
+          }
+        },
+        {
+          "name": "func_80843E64",
+          "size": "568",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "72788"
+          }
+        },
+        {
+          "name": "func_8084409C",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "73356"
+          }
+        },
+        {
+          "name": "Player_Action_8084411C",
+          "size": "1516",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "73484"
+          }
+        },
+        {
+          "name": "Player_Action_Roll",
+          "size": "828",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "75000"
+          }
+        },
+        {
+          "name": "Player_Action_80844A44",
+          "size": "176",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "75828"
+          }
+        },
+        {
+          "name": "Player_Action_80844AF4",
+          "size": "240",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "76004"
+          }
+        },
+        {
+          "name": "func_80844BE4",
+          "size": "276",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "76244"
+          }
+        },
+        {
+          "name": "func_80844CF8",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "76520"
+          }
+        },
+        {
+          "name": "func_80844D30",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "76576"
+          }
+        },
+        {
+          "name": "func_80844D68",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "76632"
+          }
+        },
+        {
+          "name": "func_80844DC8",
+          "size": "116",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "76728"
+          }
+        },
+        {
+          "name": "func_80844E3C",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "76844"
+          }
+        },
+        {
+          "name": "Player_Action_80844E68",
+          "size": "408",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "76888"
+          }
+        },
+        {
+          "name": "Player_Action_80845000",
+          "size": "776",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "77296"
+          }
+        },
+        {
+          "name": "Player_Action_80845308",
+          "size": "864",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "78072"
+          }
+        },
+        {
+          "name": "Player_Action_80845668",
+          "size": "616",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "78936"
+          }
+        },
+        {
+          "name": "Player_Action_WaitForPutAway",
+          "size": "148",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "79552"
+          }
+        },
+        {
+          "name": "func_80845964",
+          "size": "572",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "79700"
+          }
+        },
+        {
+          "name": "func_80845BA0",
+          "size": "200",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "80272"
+          }
+        },
+        {
+          "name": "func_80845C68",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "80472"
+          }
+        },
+        {
+          "name": "Player_Action_80845CA4",
+          "size": "596",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "80532"
+          }
+        },
+        {
+          "name": "Player_Action_80845EF8",
+          "size": "344",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "81128"
+          }
+        },
+        {
+          "name": "Player_Action_80846050",
+          "size": "208",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "81472"
+          }
+        },
+        {
+          "name": "Player_Action_80846120",
+          "size": "320",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "81680"
+          }
+        },
+        {
+          "name": "Player_Action_80846260",
+          "size": "248",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "82000"
+          }
+        },
+        {
+          "name": "Player_Action_80846358",
+          "size": "176",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "82248"
+          }
+        },
+        {
+          "name": "Player_Action_80846408",
+          "size": "168",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "82424"
+          }
+        },
+        {
+          "name": "Player_Action_808464B0",
+          "size": "200",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "82592"
+          }
+        },
+        {
+          "name": "Player_Action_80846578",
+          "size": "196",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "82792"
+          }
+        },
+        {
+          "name": "Player_DoNothing",
+          "size": "12",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "82988"
+          }
+        },
+        {
+          "name": "Player_StartMode_Nothing",
+          "size": "24",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "83000"
+          }
+        },
+        {
+          "name": "Player_StartMode_BlueWarp",
+          "size": "192",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "83024"
+          }
+        },
+        {
+          "name": "Player_PutSwordInHand",
+          "size": "180",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "83216"
+          }
+        },
+        {
+          "name": "Player_StartMode_TimeTravel",
+          "size": "212",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "83396"
+          }
+        },
+        {
+          "name": "Player_StartMode_Door",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "83608"
+          }
+        },
+        {
+          "name": "Player_StartMode_Grotto",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "83672"
+          }
+        },
+        {
+          "name": "Player_StartMode_KnockedOver",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "83816"
+          }
+        },
+        {
+          "name": "Player_StartMode_WarpSong",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "83884"
+          }
+        },
+        {
+          "name": "Player_SpawnMagicSpell",
+          "size": "104",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "83952"
+          }
+        },
+        {
+          "name": "Player_StartMode_FaroresWind",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "84056"
+          }
+        },
+        {
+          "name": "Player_InitCommon",
+          "size": "556",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "84124"
+          }
+        },
+        {
+          "name": "Player_Init",
+          "size": "1308",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "84680"
+          }
+        },
+        {
+          "name": "Player_ApproachZeroBinang",
+          "size": "164",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "85988"
+          }
+        },
+        {
+          "name": "func_80847298",
+          "size": "316",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "86152"
+          }
+        },
+        {
+          "name": "Player_UpdateInterface",
+          "size": "1700",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "86468"
+          }
+        },
+        {
+          "name": "Player_UpdateHoverBoots",
+          "size": "296",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "88168"
+          }
+        },
+        {
+          "name": "Player_ProcessSceneCollision",
+          "size": "2824",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "88464"
+          }
+        },
+        {
+          "name": "Player_UpdateCamAndSeqModes",
+          "size": "860",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "91288"
+          }
+        },
+        {
+          "name": "Player_UpdateBurningDekuStick",
+          "size": "320",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "92148"
+          }
+        },
+        {
+          "name": "Player_UpdateBodyShock",
+          "size": "304",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "92468"
+          }
+        },
+        {
+          "name": "Player_UpdateBodyBurn",
+          "size": "644",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "92772"
+          }
+        },
+        {
+          "name": "Player_DetectRumbleSecrets",
+          "size": "164",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "93416"
+          }
+        },
+        {
+          "name": "Player_UpdateCommon",
+          "size": "3852",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "93580"
+          }
+        },
+        {
+          "name": "Player_Update",
+          "size": "576",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "97432"
+          }
+        },
+        {
+          "name": "Player_DrawGameplay",
+          "size": "1244",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "98008"
+          }
+        },
+        {
+          "name": "Player_Draw",
+          "size": "1424",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "99252"
+          }
+        },
+        {
+          "name": "Player_Destroy",
+          "size": "132",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "100676"
+          }
+        },
+        {
+          "name": "func_8084ABD8",
+          "size": "788",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "100808"
+          }
+        },
+        {
+          "name": "func_8084AEEC",
+          "size": "276",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "101596"
+          }
+        },
+        {
+          "name": "func_8084B000",
+          "size": "344",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "101872"
+          }
+        },
+        {
+          "name": "func_8084B158",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "102216"
+          }
+        },
+        {
+          "name": "Player_Action_8084B1D8",
+          "size": "500",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "102344"
+          }
+        },
+        {
+          "name": "func_8084B3CC",
+          "size": "204",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "102844"
+          }
+        },
+        {
+          "name": "func_8084B498",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "103048"
+          }
+        },
+        {
+          "name": "func_8084B4D4",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "103108"
+          }
+        },
+        {
+          "name": "Player_Action_Talk",
+          "size": "604",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "103200"
+          }
+        },
+        {
+          "name": "Player_Action_8084B78C",
+          "size": "180",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "103804"
+          }
+        },
+        {
+          "name": "func_8084B840",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "103984"
+          }
+        },
+        {
+          "name": "Player_Action_8084B898",
+          "size": "332",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "104072"
+          }
+        },
+        {
+          "name": "Player_Action_8084B9E4",
+          "size": "512",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "104404"
+          }
+        },
+        {
+          "name": "Player_Action_8084BBE4",
+          "size": "536",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "104916"
+          }
+        },
+        {
+          "name": "Player_Action_8084BDFC",
+          "size": "232",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "105452"
+          }
+        },
+        {
+          "name": "func_8084BEE4",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "105684"
+          }
+        },
+        {
+          "name": "Player_Action_8084BF1C",
+          "size": "1756",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "105740"
+          }
+        },
+        {
+          "name": "Player_Action_8084C5F8",
+          "size": "360",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "107496"
+          }
+        },
+        {
+          "name": "Player_Action_8084C760",
+          "size": "188",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "107856"
+          }
+        },
+        {
+          "name": "Player_Action_8084C81C",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "108044"
+          }
+        },
+        {
+          "name": "func_8084C89C",
+          "size": "288",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "108172"
+          }
+        },
+        {
+          "name": "func_8084C9BC",
+          "size": "568",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "108460"
+          }
+        },
+        {
+          "name": "func_8084CBF4",
+          "size": "164",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "109028"
+          }
+        },
+        {
+          "name": "Player_Action_8084CC98",
+          "size": "1868",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "109192"
+          }
+        },
+        {
+          "name": "Player_Action_8084D3E4",
+          "size": "332",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "111060"
+          }
+        },
+        {
+          "name": "func_8084D530",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "111392"
+          }
+        },
+        {
+          "name": "func_8084D574",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "111460"
+          }
+        },
+        {
+          "name": "func_8084D5CC",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "111548"
+          }
+        },
+        {
+          "name": "Player_Action_8084D610",
+          "size": "436",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "111616"
+          }
+        },
+        {
+          "name": "Player_Action_8084D7C4",
+          "size": "136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "112052"
+          }
+        },
+        {
+          "name": "Player_Action_8084D84C",
+          "size": "308",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "112188"
+          }
+        },
+        {
+          "name": "func_8084D980",
+          "size": "308",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "112496"
+          }
+        },
+        {
+          "name": "Player_Action_8084DAB4",
+          "size": "272",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "112804"
+          }
+        },
+        {
+          "name": "func_8084DBC4",
+          "size": "132",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "113076"
+          }
+        },
+        {
+          "name": "Player_Action_8084DC48",
+          "size": "804",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "113208"
+          }
+        },
+        {
+          "name": "func_8084DF6C",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "114012"
+          }
+        },
+        {
+          "name": "func_8084DFAC",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "114076"
+          }
+        },
+        {
+          "name": "func_8084DFF4",
+          "size": "504",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "114148"
+          }
+        },
+        {
+          "name": "Player_Action_8084E1EC",
+          "size": "288",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "114652"
+          }
+        },
+        {
+          "name": "Player_Action_8084E30C",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "114940"
+          }
+        },
+        {
+          "name": "Player_Action_8084E368",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "115032"
+          }
+        },
+        {
+          "name": "Player_Action_8084E3C4",
+          "size": "576",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "115124"
+          }
+        },
+        {
+          "name": "Player_Action_8084E604",
+          "size": "208",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "115700"
+          }
+        },
+        {
+          "name": "Player_Action_8084E6D4",
+          "size": "692",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "115908"
+          }
+        },
+        {
+          "name": "func_8084E988",
+          "size": "36",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "116600"
+          }
+        },
+        {
+          "name": "Player_Action_TimeTravelEnd",
+          "size": "276",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "116636"
+          }
+        },
+        {
+          "name": "Player_Action_8084EAC0",
+          "size": "484",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "116912"
+          }
+        },
+        {
+          "name": "Player_Action_SwingBottle",
+          "size": "564",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "117396"
+          }
+        },
+        {
+          "name": "Player_Action_8084EED8",
+          "size": "232",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "117960"
+          }
+        },
+        {
+          "name": "Player_Action_8084EFC0",
+          "size": "324",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "118192"
+          }
+        },
+        {
+          "name": "Player_Action_ExchangeItem",
+          "size": "516",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "118516"
+          }
+        },
+        {
+          "name": "Player_Action_8084F308",
+          "size": "136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "119032"
+          }
+        },
+        {
+          "name": "Player_Action_SlideOnSlope",
+          "size": "632",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "119168"
+          }
+        },
+        {
+          "name": "Player_Action_WaitForCutscene",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "119800"
+          }
+        },
+        {
+          "name": "Player_Action_StartWarpSongArrive",
+          "size": "120",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "119944"
+          }
+        },
+        {
+          "name": "Player_Action_BlueWarpArrive",
+          "size": "380",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "120064"
+          }
+        },
+        {
+          "name": "Player_Action_8084F88C",
+          "size": "276",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "120444"
+          }
+        },
+        {
+          "name": "Player_Action_TryOpeningDoor",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "120720"
+          }
+        },
+        {
+          "name": "Player_Action_ExitGrotto",
+          "size": "148",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "120752"
+          }
+        },
+        {
+          "name": "Player_Action_8084FA54",
+          "size": "188",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "120900"
+          }
+        },
+        {
+          "name": "Player_Action_8084FB10",
+          "size": "228",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "121088"
+          }
+        },
+        {
+          "name": "Player_Action_8084FBF4",
+          "size": "184",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "121316"
+          }
+        },
+        {
+          "name": "Player_UpdateNoclip",
+          "size": "720",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "121500"
+          }
+        },
+        {
+          "name": "func_8084FF7C",
+          "size": "176",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "122220"
+          }
+        },
+        {
+          "name": "Player_UpdateBunnyEars",
+          "size": "504",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "122396"
+          }
+        },
+        {
+          "name": "Player_ActionHandler_7",
+          "size": "172",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "122900"
+          }
+        },
+        {
+          "name": "Player_Action_808502D0",
+          "size": "780",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "123072"
+          }
+        },
+        {
+          "name": "Player_Action_808505DC",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "123852"
+          }
+        },
+        {
+          "name": "Player_Action_8085063C",
+          "size": "304",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "123948"
+          }
+        },
+        {
+          "name": "Player_Action_FaroresWindArrive",
+          "size": "136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "124252"
+          }
+        },
+        {
+          "name": "Player_Action_808507F4",
+          "size": "760",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "124388"
+          }
+        },
+        {
+          "name": "Player_Action_HookshotFly",
+          "size": "380",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "125148"
+          }
+        },
+        {
+          "name": "Player_Action_80850C68",
+          "size": "540",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "125528"
+          }
+        },
+        {
+          "name": "Player_Action_80850E84",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126068"
+          }
+        },
+        {
+          "name": "Player_AnimChangeOnceMorphZeroRootYawSpeed",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126152"
+          }
+        },
+        {
+          "name": "Player_AnimChangeOnceMorphAdjustedZeroRootYawSpeed",
+          "size": "128",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126220"
+          }
+        },
+        {
+          "name": "Player_AnimChangeLoopMorphAdjustedZeroRootYawSpeed",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126348"
+          }
+        },
+        {
+          "name": "func_80851008",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126456"
+          }
+        },
+        {
+          "name": "func_80851030",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126496"
+          }
+        },
+        {
+          "name": "func_80851050",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126528"
+          }
+        },
+        {
+          "name": "func_80851094",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126596"
+          }
+        },
+        {
+          "name": "func_808510B4",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126628"
+          }
+        },
+        {
+          "name": "func_808510D4",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126660"
+          }
+        },
+        {
+          "name": "func_808510F4",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126692"
+          }
+        },
+        {
+          "name": "func_80851114",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126724"
+          }
+        },
+        {
+          "name": "func_80851134",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126756"
+          }
+        },
+        {
+          "name": "func_80851154",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126788"
+          }
+        },
+        {
+          "name": "func_80851174",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126820"
+          }
+        },
+        {
+          "name": "func_80851194",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126852"
+          }
+        },
+        {
+          "name": "func_808511B4",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126884"
+          }
+        },
+        {
+          "name": "func_808511D4",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126916"
+          }
+        },
+        {
+          "name": "func_808511FC",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "126956"
+          }
+        },
+        {
+          "name": "func_80851248",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "127032"
+          }
+        },
+        {
+          "name": "func_80851294",
+          "size": "76",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "127108"
+          }
+        },
+        {
+          "name": "func_808512E0",
+          "size": "52",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "127184"
+          }
+        },
+        {
+          "name": "func_80851314",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "127236"
+          }
+        },
+        {
+          "name": "func_80851368",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "127320"
+          }
+        },
+        {
+          "name": "func_808513BC",
+          "size": "260",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "127404"
+          }
+        },
+        {
+          "name": "func_808514C0",
+          "size": "188",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "127664"
+          }
+        },
+        {
+          "name": "func_8085157C",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "127852"
+          }
+        },
+        {
+          "name": "func_808515A4",
+          "size": "228",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "127892"
+          }
+        },
+        {
+          "name": "func_80851688",
+          "size": "200",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "128120"
+          }
+        },
+        {
+          "name": "func_80851750",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "128320"
+          }
+        },
+        {
+          "name": "func_80851788",
+          "size": "160",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "128376"
+          }
+        },
+        {
+          "name": "func_80851828",
+          "size": "180",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "128536"
+          }
+        },
+        {
+          "name": "func_808518DC",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "128716"
+          }
+        },
+        {
+          "name": "func_8085190C",
+          "size": "140",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "128764"
+          }
+        },
+        {
+          "name": "func_80851998",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "128904"
+          }
+        },
+        {
+          "name": "func_808519C0",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "128944"
+          }
+        },
+        {
+          "name": "func_808519EC",
+          "size": "100",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "128988"
+          }
+        },
+        {
+          "name": "func_80851A50",
+          "size": "320",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "129088"
+          }
+        },
+        {
+          "name": "func_80851B90",
+          "size": "88",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "129408"
+          }
+        },
+        {
+          "name": "func_80851BE8",
+          "size": "188",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "129496"
+          }
+        },
+        {
+          "name": "func_80851CA4",
+          "size": "136",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "129684"
+          }
+        },
+        {
+          "name": "func_80851D2C",
+          "size": "84",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "129820"
+          }
+        },
+        {
+          "name": "func_80851D80",
+          "size": "108",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "129904"
+          }
+        },
+        {
+          "name": "func_80851DEC",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130012"
+          }
+        },
+        {
+          "name": "func_80851E28",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130072"
+          }
+        },
+        {
+          "name": "func_80851E64",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130132"
+          }
+        },
+        {
+          "name": "func_80851E90",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130176"
+          }
+        },
+        {
+          "name": "func_80851ECC",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130236"
+          }
+        },
+        {
+          "name": "func_80851F14",
+          "size": "112",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130308"
+          }
+        },
+        {
+          "name": "func_80851F84",
+          "size": "44",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130420"
+          }
+        },
+        {
+          "name": "func_80851FB0",
+          "size": "152",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130464"
+          }
+        },
+        {
+          "name": "func_80852048",
+          "size": "56",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130616"
+          }
+        },
+        {
+          "name": "func_80852080",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130672"
+          }
+        },
+        {
+          "name": "func_808520BC",
+          "size": "184",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130732"
+          }
+        },
+        {
+          "name": "func_80852174",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130916"
+          }
+        },
+        {
+          "name": "func_808521B8",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "130984"
+          }
+        },
+        {
+          "name": "func_808521F4",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131044"
+          }
+        },
+        {
+          "name": "func_80852234",
+          "size": "40",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131108"
+          }
+        },
+        {
+          "name": "func_8085225C",
+          "size": "36",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131148"
+          }
+        },
+        {
+          "name": "func_80852280",
+          "size": "24",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131184"
+          }
+        },
+        {
+          "name": "func_80852298",
+          "size": "144",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131208"
+          }
+        },
+        {
+          "name": "func_80852328",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131352"
+          }
+        },
+        {
+          "name": "func_80852358",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131400"
+          }
+        },
+        {
+          "name": "func_80852388",
+          "size": "140",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131448"
+          }
+        },
+        {
+          "name": "func_80852414",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131588"
+          }
+        },
+        {
+          "name": "func_80852450",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131648"
+          }
+        },
+        {
+          "name": "func_80852480",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131696"
+          }
+        },
+        {
+          "name": "func_808524B0",
+          "size": "32",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131744"
+          }
+        },
+        {
+          "name": "func_808524D0",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131776"
+          }
+        },
+        {
+          "name": "func_80852514",
+          "size": "48",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131844"
+          }
+        },
+        {
+          "name": "func_80852544",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131892"
+          }
+        },
+        {
+          "name": "func_80852554",
+          "size": "16",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131908"
+          }
+        },
+        {
+          "name": "func_80852564",
+          "size": "92",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "131924"
+          }
+        },
+        {
+          "name": "func_808525C0",
+          "size": "72",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "132016"
+          }
+        },
+        {
+          "name": "func_80852608",
+          "size": "64",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "132088"
+          }
+        },
+        {
+          "name": "func_80852648",
+          "size": "164",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "132152"
+          }
+        },
+        {
+          "name": "func_808526EC",
+          "size": "336",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "132316"
+          }
+        },
+        {
+          "name": "func_8085283C",
+          "size": "140",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "132652"
+          }
+        },
+        {
+          "name": "func_808528C8",
+          "size": "124",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "132792"
+          }
+        },
+        {
+          "name": "func_80852944",
+          "size": "140",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "132916"
+          }
+        },
+        {
+          "name": "func_808529D0",
+          "size": "132",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "133056"
+          }
+        },
+        {
+          "name": "func_80852A54",
+          "size": "248",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "133188"
+          }
+        },
+        {
+          "name": "func_80852B4C",
+          "size": "192",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "133436"
+          }
+        },
+        {
+          "name": "func_80852C0C",
+          "size": "68",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "133628"
+          }
+        },
+        {
+          "name": "func_80852C50",
+          "size": "452",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "133696"
+          }
+        },
+        {
+          "name": "Player_Action_CsAction",
+          "size": "180",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "134148"
+          }
+        },
+        {
+          "name": "Player_IsDroppingFish",
+          "size": "52",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "134328"
+          }
+        },
+        {
+          "name": "Player_StartFishing",
+          "size": "60",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "134380"
+          }
+        },
+        {
+          "name": "func_80852F38",
+          "size": "196",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "134440"
+          }
+        },
+        {
+          "name": "Player_TryCsAction",
+          "size": "132",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "134636"
+          }
+        },
+        {
+          "name": "func_80853080",
+          "size": "96",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "134768"
+          }
+        },
+        {
+          "name": "Player_InflictDamage",
+          "size": "104",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "134864"
+          }
+        },
+        {
+          "name": "Player_StartTalking",
+          "size": "712",
+          "fuzzy_match_percent": 100.0,
+          "metadata": {
+            "virtual_address": "134968"
+          }
+        }
+      ],
+      "metadata": {
+        "module_name": ".text",
+        "module_id": 0,
+        "progress_categories": [
+          "gc-eu-mq-dbg"
+        ]
+      }
+    }
+  ],
+  "version": 2,
+  "categories": [
+    {
+      "id": "gc-eu-mq-dbg",
+      "name": "gc-eu-mq-dbg",
+      "measures": {
+        "fuzzy_match_percent": 100.0,
+        "total_code": "135680",
+        "matched_code": "135680",
+        "matched_code_percent": 100.0,
+        "total_data": "8808",
+        "matched_data": "8808",
+        "matched_data_percent": 100.0,
+        "total_functions": 547,
+        "matched_functions": 547,
+        "matched_functions_percent": 100.0,
+        "total_units": 1
+      }
+    }
+  ]
+}

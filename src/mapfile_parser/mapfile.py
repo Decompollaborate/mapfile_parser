@@ -100,6 +100,7 @@ class Symbol:
     Note the symbol with the actual `.NON_MATCHING` will have this member
     set to `false`.
     """
+    inferredStatic: bool = False
 
     def getVramStr(self) -> str:
         return f"0x{self.vram:08X}"
@@ -160,7 +161,7 @@ class Symbol:
 
 
     def clone(self) -> Symbol:
-        return Symbol(self.name, self.vram, self.size, self.vrom, self.align, self.nonmatchingSymExists)
+        return Symbol(self.name, self.vram, self.size, self.vrom, self.align, self.nonmatchingSymExists, self.inferredStatic)
 
 
     def __eq__(self, other: object) -> bool:
@@ -687,7 +688,7 @@ class MapFile:
             for section in segment:
                 newSection = Section(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align, section.isFill)
                 for symbol in section:
-                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align, symbol.nonmatchingSymExists)
+                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align, symbol.nonmatchingSymExists, symbol.inferredStatic)
 
                     newSection._symbols.append(newSymbol)
                 newSegment._sectionsList.append(newSection)
@@ -702,7 +703,7 @@ class MapFile:
                 newSection = SectionRs(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align, section.isFill)
                 for symbol in section._symbols:
                     size = symbol.size if symbol.size is not None else 0
-                    newSymbol = SymbolRs(symbol.name, symbol.vram, size, symbol.vrom, symbol.align, symbol.nonmatchingSymExists)
+                    newSymbol = SymbolRs(symbol.name, symbol.vram, size, symbol.vrom, symbol.align, symbol.nonmatchingSymExists, symbol.inferredStatic)
 
                     newSection.appendSymbol(newSymbol)
                 newSegment.appendFile(newSection)
@@ -1072,13 +1073,13 @@ class MapFile:
 
                             # Adjust the vram and vrom addresses of the section
                             # because they are relative to zero.
-                            sectTemp.vram += sect.vram
+                            sectTemp.vram += sect.vram - partialSegment.vram
                             if sectTemp.vrom is not None and sect.vrom is not None and partialSegment.vrom is not None:
                                 sectTemp.vrom = sectTemp.vrom + sect.vrom - partialSegment.vrom
 
                             # Adjust vram and vrom of symbols too.
                             for partialSym in sectTemp._symbols:
-                                partialSym.vram += sect.vram
+                                partialSym.vram += sect.vram - partialSegment.vram
                                 if partialSym.vrom is not None and sect.vrom is not None and partialSegment.vrom is not None:
                                     partialSym.vrom = partialSym.vrom + sect.vrom - partialSegment.vrom
 

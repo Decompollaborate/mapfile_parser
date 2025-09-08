@@ -357,6 +357,12 @@
                             "vram": "0x000057A8",
                             "size": "0x8",
                             "vrom": "0x0057E8"
+                        },
+                        {
+                            "name": "$_static_symbol_000057B0_d_a_agbsw0.o_.text",
+                            "vram": "0x000057B0",
+                            "size": "0xAC",
+                            "vrom": "0x000164"
                         }
                     ]
                 }
@@ -408,6 +414,12 @@
                             "vrom": "0x005800"
                         },
                         {
+                            "name": "$_static_symbol_0000000C_d_a_agbsw0.o_.rodata",
+                            "vram": "0x0000000C",
+                            "size": "0x4",
+                            "vrom": "0x0057FC"
+                        },
+                        {
                             "name": "@2280",
                             "vram": "0x00000010",
                             "size": "0x8",
@@ -436,6 +448,12 @@
                             "vram": "0x00000028",
                             "size": "0x4",
                             "vrom": "0x005820"
+                        },
+                        {
+                            "name": "$_static_symbol_0000002C_d_a_agbsw0.o_.rodata",
+                            "vram": "0x0000002C",
+                            "size": "0x4",
+                            "vrom": "0x0057FC"
                         },
                         {
                             "name": "@2370",
@@ -555,6 +573,12 @@
                             "vram": "0x00000018",
                             "size": "0x4",
                             "vrom": "0x0058B0"
+                        },
+                        {
+                            "name": "$_static_symbol_0000001C_d_a_agbsw0.o_.data",
+                            "vram": "0x0000001C",
+                            "size": "0x4",
+                            "vrom": "0x00589C"
                         },
                         {
                             "name": "_three$localstatic3$fake_sqrtf__Ff",

@@ -1,0 +1,1011 @@
+{
+    "segments": [
+        {
+            "name": ".text",
+            "vram": "0x00000000",
+            "size": "0x16850",
+            "vrom": "0x000000",
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o",
+                    "sectionType": ".text",
+                    "vram": "0x00000000",
+                    "size": "0x24C0",
+                    "vrom": "0x000000",
+                    "symbols": [
+                        {
+                            "name": "KaleidoScope_DrawQuestStatus",
+                            "vram": "0x00000000",
+                            "size": "0x24A8",
+                            "vrom": "0x000000"
+                        },
+                        {
+                            "name": "KaleidoScope_UpdateQuestStatusPoint",
+                            "vram": "0x000024A8",
+                            "size": "0x18",
+                            "vrom": "0x0024A8"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o",
+                    "sectionType": ".text",
+                    "vram": "0x000024C0",
+                    "size": "0x2070",
+                    "vrom": "0x0024C0",
+                    "symbols": [
+                        {
+                            "name": "KaleidoScope_DrawInventoryEditorText",
+                            "vram": "0x000024C0",
+                            "size": "0x2F4",
+                            "vrom": "0x0024C0"
+                        },
+                        {
+                            "name": "KaleidoScope_DrawDigit",
+                            "vram": "0x000027B4",
+                            "size": "0x1D8",
+                            "vrom": "0x0027B4"
+                        },
+                        {
+                            "name": "KaleidoScope_DrawInventoryEditor",
+                            "vram": "0x0000298C",
+                            "size": "0x1BA4",
+                            "vrom": "0x00298C"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o",
+                    "sectionType": ".text",
+                    "vram": "0x00004530",
+                    "size": "0x1B50",
+                    "vrom": "0x004530",
+                    "symbols": [
+                        {
+                            "name": "KaleidoScope_DrawEquipmentImage",
+                            "vram": "0x00004530",
+                            "size": "0x44C",
+                            "vrom": "0x004530"
+                        },
+                        {
+                            "name": "KaleidoScope_DrawPlayerWork",
+                            "vram": "0x0000497C",
+                            "size": "0x1A4",
+                            "vrom": "0x00497C"
+                        },
+                        {
+                            "name": "KaleidoScope_DrawEquipment",
+                            "vram": "0x00004B20",
+                            "size": "0x1560",
+                            "vrom": "0x004B20"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o",
+                    "sectionType": ".text",
+                    "vram": "0x00006080",
+                    "size": "0x2270",
+                    "vrom": "0x006080",
+                    "symbols": [
+                        {
+                            "name": "KaleidoScope_DrawAmmoCount",
+                            "vram": "0x00006080",
+                            "size": "0x574",
+                            "vrom": "0x006080"
+                        },
+                        {
+                            "name": "KaleidoScope_SetCursorPos",
+                            "vram": "0x000065F4",
+                            "size": "0x2C",
+                            "vrom": "0x0065F4"
+                        },
+                        {
+                            "name": "KaleidoScope_SetItemCursorPos",
+                            "vram": "0x00006620",
+                            "size": "0x2C",
+                            "vrom": "0x006620"
+                        },
+                        {
+                            "name": "KaleidoScope_DrawItemSelect",
+                            "vram": "0x0000664C",
+                            "size": "0xED8",
+                            "vrom": "0x00664C"
+                        },
+                        {
+                            "name": "KaleidoScope_UpdateItemEquip",
+                            "vram": "0x00007524",
+                            "size": "0xDCC",
+                            "vrom": "0x007524"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o",
+                    "sectionType": ".text",
+                    "vram": "0x000082F0",
+                    "size": "0x34E0",
+                    "vrom": "0x0082F0",
+                    "symbols": [
+                        {
+                            "name": "KaleidoScope_DrawDungeonMap",
+                            "vram": "0x000082F0",
+                            "size": "0x1888",
+                            "vrom": "0x0082F0"
+                        },
+                        {
+                            "name": "KaleidoScope_DrawWorldMap",
+                            "vram": "0x00009B78",
+                            "size": "0x1C58",
+                            "vrom": "0x009B78"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o",
+                    "sectionType": ".text",
+                    "vram": "0x0000B7D0",
+                    "size": "0x200",
+                    "vrom": "0x00B7D0",
+                    "symbols": [
+                        {
+                            "name": "KaleidoScope_UpdatePrompt",
+                            "vram": "0x0000B7D0",
+                            "size": "0x200",
+                            "vrom": "0x00B7D0"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o",
+                    "sectionType": ".text",
+                    "vram": "0x0000B9D0",
+                    "size": "0xA770",
+                    "vrom": "0x00B9D0",
+                    "symbols": [
+                        {
+                            "name": "KaleidoScope_SetupPlayerPreRender",
+                            "vram": "0x0000B9D0",
+                            "size": "0x10C",
+                            "vrom": "0x00B9D0"
+                        },
+                        {
+                            "name": "KaleidoScope_ProcessPlayerPreRender",
+                            "vram": "0x0000BADC",
+                            "size": "0x38",
+                            "vrom": "0x00BADC"
+                        },
+                        {
+                            "name": "KaleidoScope_QuadTextureIA4",
+                            "vram": "0x0000BB14",
+                            "size": "0x1D8",
+                            "vrom": "0x00BB14"
+                        },
+                        {
+                            "name": "KaleidoScope_QuadTextureIA8",
+                            "vram": "0x0000BCEC",
+                            "size": "0x1D8",
+                            "vrom": "0x00BCEC"
+                        },
+                        {
+                            "name": "KaleidoScope_OverridePalIndexCI4",
+                            "vram": "0x0000BEC4",
+                            "size": "0x138",
+                            "vrom": "0x00BEC4"
+                        },
+                        {
+                            "name": "KaleidoScope_MoveCursorToSpecialPos",
+                            "vram": "0x0000BFFC",
+                            "size": "0x60",
+                            "vrom": "0x00BFFC"
+                        },
+                        {
+                            "name": "KaleidoScope_DrawQuadTextureRGBA32",
+                            "vram": "0x0000C05C",
+                            "size": "0x240",
+                            "vrom": "0x00C05C"
+                        },
+                        {
+                            "name": "KaleidoScope_SetDefaultCursor",
+                            "vram": "0x0000C29C",
+                            "size": "0xC0",
+                            "vrom": "0x00C29C"
+                        },
+                        {
+                            "name": "KaleidoScope_SetupPageSwitch",
+                            "vram": "0x0000C35C",
+                            "size": "0x178",
+                            "vrom": "0x00C35C"
+                        },
+                        {
+                            "name": "KaleidoScope_HandlePageToggles",
+                            "vram": "0x0000C4D4",
+                            "size": "0x13C",
+                            "vrom": "0x00C4D4"
+                        },
+                        {
+                            "name": "KaleidoScope_DrawCursor",
+                            "vram": "0x0000C610",
+                            "size": "0x35C",
+                            "vrom": "0x00C610"
+                        },
+                        {
+                            "name": "KaleidoScope_DrawPageSections",
+                            "vram": "0x0000C96C",
+                            "size": "0x2A8",
+                            "vrom": "0x00C96C"
+                        },
+                        {
+                            "name": "KaleidoScope_DrawPages",
+                            "vram": "0x0000CC14",
+                            "size": "0x17DC",
+                            "vrom": "0x00CC14"
+                        },
+                        {
+                            "name": "KaleidoScope_DrawUIOverlay",
+                            "vram": "0x0000E3F0",
+                            "size": "0x1938",
+                            "vrom": "0x00E3F0"
+                        },
+                        {
+                            "name": "KaleidoScope_UpdateNamePanel",
+                            "vram": "0x0000FD28",
+                            "size": "0x26C",
+                            "vrom": "0x00FD28"
+                        },
+                        {
+                            "name": "KaleidoScope_UpdatePageSwitch",
+                            "vram": "0x0000FF94",
+                            "size": "0x1E0",
+                            "vrom": "0x00FF94"
+                        },
+                        {
+                            "name": "KaleidoScope_SetView",
+                            "vram": "0x00010174",
+                            "size": "0x78",
+                            "vrom": "0x010174"
+                        },
+                        {
+                            "name": "KaleidoScope_SetPageVertices",
+                            "vram": "0x000101EC",
+                            "size": "0x690",
+                            "vrom": "0x0101EC"
+                        },
+                        {
+                            "name": "KaleidoScope_SetVertices",
+                            "vram": "0x0001087C",
+                            "size": "0x1B78",
+                            "vrom": "0x01087C"
+                        },
+                        {
+                            "name": "KaleidoScope_DrawGameOver",
+                            "vram": "0x000123F4",
+                            "size": "0x6A4",
+                            "vrom": "0x0123F4"
+                        },
+                        {
+                            "name": "KaleidoScope_Draw",
+                            "vram": "0x00012A98",
+                            "size": "0x254",
+                            "vrom": "0x012A98"
+                        },
+                        {
+                            "name": "KaleidoScope_GrayOutTextureRGBA32",
+                            "vram": "0x00012CEC",
+                            "size": "0xB0",
+                            "vrom": "0x012CEC"
+                        },
+                        {
+                            "name": "KaleidoScope_UpdateOpening",
+                            "vram": "0x00012D9C",
+                            "size": "0x1F0",
+                            "vrom": "0x012D9C"
+                        },
+                        {
+                            "name": "KaleidoScope_UpdateCursorVtx",
+                            "vram": "0x00012F8C",
+                            "size": "0x340",
+                            "vrom": "0x012F8C"
+                        },
+                        {
+                            "name": "KaleidoScope_LoadDungeonMap",
+                            "vram": "0x000132CC",
+                            "size": "0xBC",
+                            "vrom": "0x0132CC"
+                        },
+                        {
+                            "name": "KaleidoScope_UpdateDungeonMap",
+                            "vram": "0x00013388",
+                            "size": "0x10C",
+                            "vrom": "0x013388"
+                        },
+                        {
+                            "name": "KaleidoScope_Update",
+                            "vram": "0x00013494",
+                            "size": "0x2CAC",
+                            "vrom": "0x013494"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o",
+                    "sectionType": ".text",
+                    "vram": "0x00016140",
+                    "size": "0x710",
+                    "vrom": "0x016140",
+                    "symbols": [
+                        {
+                            "name": "PauseMapMark_Init",
+                            "vram": "0x00016140",
+                            "size": "0x30",
+                            "vrom": "0x016140"
+                        },
+                        {
+                            "name": "PauseMapMark_Clear",
+                            "vram": "0x00016170",
+                            "size": "0x10",
+                            "vrom": "0x016170"
+                        },
+                        {
+                            "name": "PauseMapMark_DrawForDungeon",
+                            "vram": "0x00016180",
+                            "size": "0x66C",
+                            "vrom": "0x016180"
+                        },
+                        {
+                            "name": "PauseMapMark_Draw",
+                            "vram": "0x000167EC",
+                            "size": "0x64",
+                            "vrom": "0x0167EC"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".data",
+            "vram": "0x00016850",
+            "size": "0x53B0",
+            "vrom": "0x016850",
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o",
+                    "sectionType": ".data",
+                    "vram": "0x00016850",
+                    "size": "0x1B0",
+                    "vrom": "0x016850",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00016850_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o_.data",
+                            "vram": "0x00016850",
+                            "size": "0x1B0",
+                            "vrom": "0x016850"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o",
+                    "sectionType": ".data",
+                    "vram": "0x00016A00",
+                    "size": "0x1D0",
+                    "vrom": "0x016A00",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00016A00_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o_.data",
+                            "vram": "0x00016A00",
+                            "size": "0x1D0",
+                            "vrom": "0x016A00"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o",
+                    "sectionType": ".data",
+                    "vram": "0x00016BD0",
+                    "size": "0x30",
+                    "vrom": "0x016BD0",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00016BD0_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o_.data",
+                            "vram": "0x00016BD0",
+                            "size": "0x30",
+                            "vrom": "0x016BD0"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o",
+                    "sectionType": ".data",
+                    "vram": "0x00016C00",
+                    "size": "0x70",
+                    "vrom": "0x016C00",
+                    "symbols": [
+                        {
+                            "name": "gAmmoItems",
+                            "vram": "0x00016C00",
+                            "size": "0x70",
+                            "vrom": "0x016C00"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o",
+                    "sectionType": ".data",
+                    "vram": "0x00016C70",
+                    "size": "0x250",
+                    "vrom": "0x016C70",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00016C70_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o_.data",
+                            "vram": "0x00016C70",
+                            "size": "0x250",
+                            "vrom": "0x016C70"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o",
+                    "sectionType": ".data",
+                    "vram": "0x00016EC0",
+                    "size": "0x10",
+                    "vrom": "0x016EC0",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00016EC0_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o_.data",
+                            "vram": "0x00016EC0",
+                            "size": "0x10",
+                            "vrom": "0x016EC0"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o",
+                    "sectionType": ".data",
+                    "vram": "0x00016ED0",
+                    "size": "0xB80",
+                    "vrom": "0x016ED0",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00016ED0_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o_.data",
+                            "vram": "0x00016ED0",
+                            "size": "0x3FC",
+                            "vrom": "0x016ED0"
+                        },
+                        {
+                            "name": "gVtxPageMapWorldQuadsWidth",
+                            "vram": "0x000172CC",
+                            "size": "0x40",
+                            "vrom": "0x0172CC"
+                        },
+                        {
+                            "name": "gVtxPageMapWorldQuadsHeight",
+                            "vram": "0x0001730C",
+                            "size": "0xD0",
+                            "vrom": "0x01730C"
+                        },
+                        {
+                            "name": "gSlotAgeReqs",
+                            "vram": "0x000173DC",
+                            "size": "0x18",
+                            "vrom": "0x0173DC"
+                        },
+                        {
+                            "name": "gEquipAgeReqs",
+                            "vram": "0x000173F4",
+                            "size": "0x10",
+                            "vrom": "0x0173F4"
+                        },
+                        {
+                            "name": "gItemAgeReqs",
+                            "vram": "0x00017404",
+                            "size": "0x58",
+                            "vrom": "0x017404"
+                        },
+                        {
+                            "name": "gAreaGsFlags",
+                            "vram": "0x0001745C",
+                            "size": "0x5F4",
+                            "vrom": "0x01745C"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o",
+                    "sectionType": ".data",
+                    "vram": "0x00017A50",
+                    "size": "0x50",
+                    "vrom": "0x017A50",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00017A50_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o_.data",
+                            "vram": "0x00017A50",
+                            "size": "0x50",
+                            "vrom": "0x017A50"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o",
+                    "sectionType": ".data",
+                    "vram": "0x00017AA0",
+                    "size": "0x4160",
+                    "vrom": "0x017AA0",
+                    "symbols": [
+                        {
+                            "name": "gPauseMapMarkDataTable",
+                            "vram": "0x00017AA0",
+                            "size": "0x4160",
+                            "vrom": "0x017AA0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".rodata",
+            "vram": "0x0001BC00",
+            "size": "0x1270",
+            "vrom": "0x01BC00",
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o",
+                    "sectionType": ".rodata",
+                    "vram": "0x0001BC00",
+                    "size": "0xA0",
+                    "vrom": "0x01BC00",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0001BC00_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o_.rodata",
+                            "vram": "0x0001BC00",
+                            "size": "0xA0",
+                            "vrom": "0x01BC00"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o",
+                    "sectionType": ".rodata",
+                    "vram": "0x0001BCA0",
+                    "size": "0x140",
+                    "vrom": "0x01BCA0",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0001BCA0_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o_.rodata",
+                            "vram": "0x0001BCA0",
+                            "size": "0x140",
+                            "vrom": "0x01BCA0"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o",
+                    "sectionType": ".rodata",
+                    "vram": "0x0001BDE0",
+                    "size": "0x110",
+                    "vrom": "0x01BDE0",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0001BDE0_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o_.rodata",
+                            "vram": "0x0001BDE0",
+                            "size": "0x110",
+                            "vrom": "0x01BDE0"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o",
+                    "sectionType": ".rodata",
+                    "vram": "0x0001BEF0",
+                    "size": "0x2B0",
+                    "vrom": "0x01BEF0",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0001BEF0_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o_.rodata",
+                            "vram": "0x0001BEF0",
+                            "size": "0x2B0",
+                            "vrom": "0x01BEF0"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o",
+                    "sectionType": ".rodata",
+                    "vram": "0x0001C1A0",
+                    "size": "0xA0",
+                    "vrom": "0x01C1A0",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0001C1A0_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o_.rodata",
+                            "vram": "0x0001C1A0",
+                            "size": "0xA0",
+                            "vrom": "0x01C1A0"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o",
+                    "sectionType": ".rodata",
+                    "vram": "0x0001C240",
+                    "size": "0xAC0",
+                    "vrom": "0x01C240",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0001C240_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o_.rodata",
+                            "vram": "0x0001C240",
+                            "size": "0xAC0",
+                            "vrom": "0x01C240"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o",
+                    "sectionType": ".rodata",
+                    "vram": "0x0001CD00",
+                    "size": "0xF0",
+                    "vrom": "0x01CD00",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0001CD00_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o_.rodata",
+                            "vram": "0x0001CD00",
+                            "size": "0xF0",
+                            "vrom": "0x01CD00"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o",
+                    "sectionType": ".rodata",
+                    "vram": "0x0001CDF0",
+                    "size": "0x80",
+                    "vrom": "0x01CDF0",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_0001CDF0_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o_.rodata",
+                            "vram": "0x0001CDF0",
+                            "size": "0x80",
+                            "vrom": "0x01CDF0"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".reginfo",
+            "vram": "0x00000000",
+            "size": "0x18",
+            "vrom": "0x01CE70",
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o",
+                    "sectionType": ".reginfo",
+                    "vram": "0x00000000",
+                    "size": "0x18",
+                    "vrom": "0x01CE70",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o_.reginfo",
+                            "vram": "0x00000000",
+                            "size": "0x18",
+                            "vrom": "0x01CE70"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".bss",
+            "vram": "0x00000020",
+            "size": "0x70",
+            "vrom": "0x01CE88",
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o",
+                    "sectionType": ".bss",
+                    "vram": "0x00000020",
+                    "size": "0x70",
+                    "vrom": null,
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000020_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o_.bss",
+                            "vram": "0x00000020",
+                            "size": "0x60",
+                            "vrom": null
+                        },
+                        {
+                            "name": "sPreRenderCvg",
+                            "vram": "0x00000080",
+                            "size": "0x10",
+                            "vrom": null
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".options",
+            "vram": "0x00000000",
+            "size": "0x240",
+            "vrom": "0x01CE88",
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o",
+                    "sectionType": ".options",
+                    "vram": "0x00000000",
+                    "size": "0x40",
+                    "vrom": "0x01CE88",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o_.options",
+                            "vram": "0x00000000",
+                            "size": "0x40",
+                            "vrom": "0x01CE88"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o",
+                    "sectionType": ".options",
+                    "vram": "0x00000040",
+                    "size": "0x40",
+                    "vrom": "0x01CEC8",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000040_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o_.options",
+                            "vram": "0x00000040",
+                            "size": "0x40",
+                            "vrom": "0x01CEC8"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o",
+                    "sectionType": ".options",
+                    "vram": "0x00000080",
+                    "size": "0x40",
+                    "vrom": "0x01CF08",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000080_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o_.options",
+                            "vram": "0x00000080",
+                            "size": "0x40",
+                            "vrom": "0x01CF08"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o",
+                    "sectionType": ".options",
+                    "vram": "0x000000C0",
+                    "size": "0x40",
+                    "vrom": "0x01CF48",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000000C0_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o_.options",
+                            "vram": "0x000000C0",
+                            "size": "0x40",
+                            "vrom": "0x01CF48"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o",
+                    "sectionType": ".options",
+                    "vram": "0x00000100",
+                    "size": "0x40",
+                    "vrom": "0x01CF88",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000100_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o_.options",
+                            "vram": "0x00000100",
+                            "size": "0x40",
+                            "vrom": "0x01CF88"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o",
+                    "sectionType": ".options",
+                    "vram": "0x00000140",
+                    "size": "0x40",
+                    "vrom": "0x01CFC8",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000140_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o_.options",
+                            "vram": "0x00000140",
+                            "size": "0x40",
+                            "vrom": "0x01CFC8"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o",
+                    "sectionType": ".options",
+                    "vram": "0x00000180",
+                    "size": "0x40",
+                    "vrom": "0x01D008",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000180_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o_.options",
+                            "vram": "0x00000180",
+                            "size": "0x40",
+                            "vrom": "0x01D008"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o",
+                    "sectionType": ".options",
+                    "vram": "0x000001C0",
+                    "size": "0x40",
+                    "vrom": "0x01D048",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000001C0_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o_.options",
+                            "vram": "0x000001C0",
+                            "size": "0x40",
+                            "vrom": "0x01D048"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o",
+                    "sectionType": ".options",
+                    "vram": "0x00000200",
+                    "size": "0x40",
+                    "vrom": "0x01D088",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000200_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o_.options",
+                            "vram": "0x00000200",
+                            "size": "0x40",
+                            "vrom": "0x01D088"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "name": ".mdebug",
+            "vram": "0x00000000",
+            "size": "0xBA44",
+            "vrom": "0x01D0C8",
+            "files": [
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o",
+                    "sectionType": ".mdebug",
+                    "vram": "0x00000000",
+                    "size": "0x1850",
+                    "vrom": "0x01D0C8",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00000000_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_collect.o_.mdebug",
+                            "vram": "0x00000000",
+                            "size": "0x1850",
+                            "vrom": "0x01D0C8"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o",
+                    "sectionType": ".mdebug",
+                    "vram": "0x00001850",
+                    "size": "0x1504",
+                    "vrom": "0x01E918",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00001850_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_debug.o_.mdebug",
+                            "vram": "0x00001850",
+                            "size": "0x1504",
+                            "vrom": "0x01E918"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o",
+                    "sectionType": ".mdebug",
+                    "vram": "0x00002D54",
+                    "size": "0x165C",
+                    "vrom": "0x01FE1C",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00002D54_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_equipment.o_.mdebug",
+                            "vram": "0x00002D54",
+                            "size": "0x165C",
+                            "vrom": "0x01FE1C"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o",
+                    "sectionType": ".mdebug",
+                    "vram": "0x000043B0",
+                    "size": "0x1664",
+                    "vrom": "0x021478",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000043B0_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_item.o_.mdebug",
+                            "vram": "0x000043B0",
+                            "size": "0x1664",
+                            "vrom": "0x021478"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o",
+                    "sectionType": ".mdebug",
+                    "vram": "0x00005A14",
+                    "size": "0x2A64",
+                    "vrom": "0x022ADC",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00005A14_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_map.o_.mdebug",
+                            "vram": "0x00005A14",
+                            "size": "0x2A64",
+                            "vrom": "0x022ADC"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o",
+                    "sectionType": ".mdebug",
+                    "vram": "0x00008478",
+                    "size": "0x554",
+                    "vrom": "0x025540",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_00008478_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_prompt.o_.mdebug",
+                            "vram": "0x00008478",
+                            "size": "0x554",
+                            "vrom": "0x025540"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o",
+                    "sectionType": ".mdebug",
+                    "vram": "0x000089CC",
+                    "size": "0x7D08",
+                    "vrom": "0x025A94",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000089CC_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_kaleido_scope.o_.mdebug",
+                            "vram": "0x000089CC",
+                            "size": "0x7D08",
+                            "vrom": "0x025A94"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o",
+                    "sectionType": ".mdebug",
+                    "vram": "0x000106D4",
+                    "size": "0xF08",
+                    "vrom": "0x02D79C",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000106D4_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark.o_.mdebug",
+                            "vram": "0x000106D4",
+                            "size": "0xF08",
+                            "vrom": "0x02D79C"
+                        }
+                    ]
+                },
+                {
+                    "filepath": "build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o",
+                    "sectionType": ".mdebug",
+                    "vram": "0x000115DC",
+                    "size": "0x294",
+                    "vrom": "0x02E6A4",
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_000115DC_build/gc-eu-mq-dbg/src/overlays/misc/ovl_kaleido_scope/z_lmap_mark_data_mq.o_.mdebug",
+                            "vram": "0x000115DC",
+                            "size": "0x294",
+                            "vrom": "0x02E6A4"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

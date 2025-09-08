@@ -4,11 +4,12 @@
     "total_code": "1404",
     "matched_code": "1404",
     "matched_code_percent": 100.0,
+    "total_data": "80",
+    "matched_data": "80",
     "matched_data_percent": 100.0,
     "total_functions": 17,
     "matched_functions": 17,
     "matched_functions_percent": 100.0,
-    "complete_data_percent": 100.0,
     "total_units": 3
   },
   "units": [
@@ -76,6 +77,8 @@
         "total_code": "1284",
         "matched_code": "1284",
         "matched_code_percent": 100.0,
+        "total_data": "80",
+        "matched_data": "80",
         "matched_data_percent": 100.0,
         "total_functions": 14,
         "matched_functions": 14,
@@ -94,6 +97,7 @@
         {
           "name": ".data",
           "size": "80",
+          "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
           }
@@ -295,11 +299,12 @@
         "total_code": "1284",
         "matched_code": "1284",
         "matched_code_percent": 100.0,
+        "total_data": "80",
+        "matched_data": "80",
         "matched_data_percent": 100.0,
         "total_functions": 14,
         "matched_functions": 14,
         "matched_functions_percent": 100.0,
-        "complete_data_percent": 100.0,
         "total_units": 1
       }
     },

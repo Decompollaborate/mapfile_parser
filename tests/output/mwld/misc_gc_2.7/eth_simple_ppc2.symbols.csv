@@ -13,6 +13,7 @@ simple_ppc.o,@72,00000020,8
 simple_ppc.o,cat,00000000,4
 simple_ppc.o,dog,00000004,4
 simple_ppc.o,@13,00000000,8
+simple_ppc.o,$_static_symbol_00000000_simple_ppc.o_@17,00000000,12
 simple_ppc.o,@33,0000000C,12
 simple_ppc.o,@49,00000018,12
 simple_ppc.o,@59,00000024,12

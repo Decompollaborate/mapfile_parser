@@ -53,6 +53,7 @@ d_a_acorn_leaf.o,@4045,0000000C,4
 d_a_acorn_leaf.o,@4046,00000010,4
 d_a_acorn_leaf.o,@4047,00000014,4
 d_a_acorn_leaf.o,@4048,00000018,4
+d_a_acorn_leaf.o,$_static_symbol_0000001C_d_a_acorn_leaf.o_.rodata,0000001C,4
 d_a_acorn_leaf.o,@4331,00000020,8
 d_a_acorn_leaf.o,@4332,00000028,8
 d_a_acorn_leaf.o,@4333,00000030,4

@@ -426,7 +426,7 @@ impl MapFile {
 
                             // Adjust the vram and vrom addresses of the section
                             // because they are relative to zero.
-                            sect_temp.vram += sect.vram;
+                            sect_temp.vram += sect.vram - partial_segment.vram;
                             if let (Some(a), Some(b), Some(c)) =
                                 (sect_temp.vrom, sect.vrom, partial_segment.vrom)
                             {
@@ -435,7 +435,7 @@ impl MapFile {
 
                             // Adjust vram and vrom of symbols too.
                             for partial_sym in &mut sect_temp.symbols {
-                                partial_sym.vram += sect.vram;
+                                partial_sym.vram += sect.vram - partial_segment.vram;
                                 if let (Some(a), Some(b), Some(c)) =
                                     (partial_sym.vrom, sect.vrom, partial_segment.vrom)
                                 {

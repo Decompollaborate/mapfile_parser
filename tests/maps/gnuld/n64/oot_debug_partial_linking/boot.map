@@ -42,31 +42,22 @@ Discarded input sections
  .gptab.bss     0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/initialize.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/libc/ll.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
+ .gptab.data    0x0000000000000000       0x20 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/thread.o
  .gptab.data    0x0000000000000000       0x20 build/gc-eu-mq-dbg/src/libultra/os/thread.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/destroythread.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/libc/bzero.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/libc/bzero.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/parameters.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/parameters.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/createthread.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/setsr.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/setsr.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/getsr.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/getsr.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
  .gptab.data    0x0000000000000000       0x28 build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
  .gptab.bss     0x0000000000000000       0x38 build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
+ .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/kdebugserver.o
+ .gptab.bss     0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/kdebugserver.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/devmgr.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o
@@ -74,12 +65,8 @@ Discarded input sections
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/sirawread.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/setintmask.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/setintmask.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/visetmode.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/probetlb.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/probetlb.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o
  .gptab.data    0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o
@@ -87,17 +74,11 @@ Discarded input sections
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o
  .gptab.data    0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/epidma.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/libc/string.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/invalicache.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/invalicache.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/si.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/jammesg.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o
@@ -106,26 +87,16 @@ Discarded input sections
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/gettime.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
  .gptab.data    0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
  .gptab.bss     0x0000000000000000       0x28 build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/getcount.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/getcount.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/setcompare.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/setcompare.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/interrupt.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/interrupt.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o
  .gptab.data    0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o
@@ -142,19 +113,11 @@ Discarded input sections
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o
  .gptab.data    0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/getcause.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/getcause.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o
  .gptab.data    0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o
@@ -171,12 +134,8 @@ Discarded input sections
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/boot/build.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/data/rsp_boot.text.o
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/data/rsp_boot.text.o
  .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/data/cic6105.text.o
  .MIPS.abiflags
                 0x0000000000000000       0x18 build/gc-eu-mq-dbg/data/cic6105.text.o
@@ -188,499 +147,6 @@ Name             Origin             Length             Attributes
 
 Linker script and memory map
 
-
-.text           0x0000000000000000     0x8fb0
- .text          0x0000000000000000      0x140 build/gc-eu-mq-dbg/src/boot/boot_main.o
-                0x0000000000000000                bootclear
-                0x0000000000000038                bootproc
- .text          0x0000000000000140      0x470 build/gc-eu-mq-dbg/src/boot/idle.o
-                0x0000000000000140                Main_ThreadEntry
-                0x0000000000000234                Idle_ThreadEntry
- .text          0x00000000000005b0      0x180 build/gc-eu-mq-dbg/src/boot/viconfig.o
-                0x00000000000005b0                ViConfig_UpdateVi
-                0x00000000000006e8                ViConfig_UpdateBlack
- .text          0x0000000000000730      0xfa0 build/gc-eu-mq-dbg/src/boot/z_std_dma.o
-                0x0000000000000730                DmaMgr_StrCmp
-                0x000000000000079c                DmaMgr_DmaRomToRam
-                0x0000000000000b08                DmaMgr_AudioDmaHandler
-                0x0000000000000c40                DmaMgr_DmaFromDriveRom
-                0x0000000000000ce0                DmaMgr_Error
-                0x0000000000000ed0                DmaMgr_FindFileName
-                0x0000000000000f30                DmaMgr_GetFileName
-                0x0000000000000f9c                DmaMgr_ProcessRequest
-                0x000000000000116c                DmaMgr_ThreadEntry
-                0x0000000000001204                DmaMgr_RequestAsync
-                0x0000000000001360                DmaMgr_RequestSync
-                0x00000000000013dc                DmaMgr_Init
-                0x00000000000015fc                DmaMgr_RequestAsyncDebug
-                0x0000000000001640                DmaMgr_RequestSyncDebug
- .text          0x00000000000016d0      0x330 build/gc-eu-mq-dbg/src/boot/yaz0.o
-                0x00000000000016d0                Yaz0_FirstDMA
-                0x0000000000001768                Yaz0_NextDMA
-                0x0000000000001850                Yaz0_DecompressImpl
-                0x00000000000019b4                Yaz0_Decompress
- .text          0x0000000000001a00      0x190 build/gc-eu-mq-dbg/src/boot/z_locale.o
-                0x0000000000001a00                Locale_Init
-                0x0000000000001adc                Locale_ResetRegion
-                0x0000000000001ae8                func_80001F48
-                0x0000000000001b2c                func_80001F8C
-                0x0000000000001b70                Locale_IsRegionNative
- .text          0x0000000000001b90       0x80 build/gc-eu-mq-dbg/src/boot/assert.o
-                0x0000000000001b90                __assert
- *fill*         0x0000000000001c10       0x10 
- .text          0x0000000000001c20      0x350 build/gc-eu-mq-dbg/src/boot/is_debug.o
-                0x0000000000001c20                isPrintfInit
-                0x0000000000001c90                osSyncPrintfUnused
-                0x0000000000001cd0                osSyncPrintf
-                0x0000000000001d10                rmonPrintf
-                0x0000000000001d50                is_proutSyncPrintf
-                0x0000000000001f24                func_80002384
- .text          0x0000000000001f70      0x1e0 build/gc-eu-mq-dbg/src/boot/driverominit.o
-                0x0000000000001f70                osDriveRomInit
- .text          0x0000000000002150       0xac build/gc-eu-mq-dbg/src/boot/mio0.o
-                0x0000000000002150                Mio0_Decompress
- *fill*         0x00000000000021fc        0x4 
- .text          0x0000000000002200      0x390 build/gc-eu-mq-dbg/src/libu64/stackcheck.o
-                0x0000000000002200                StackCheck_Init
-                0x000000000000230c                StackCheck_Cleanup
-                0x00000000000023a8                StackCheck_GetState
-                0x00000000000024fc                StackCheck_CheckAll
-                0x0000000000002554                StackCheck_Check
- .text          0x0000000000002590      0x4e0 build/gc-eu-mq-dbg/src/libu64/debug.o
-                0x0000000000002590                LogUtils_CheckFloatRange
-                0x0000000000002628                LogUtils_CheckIntRange
-                0x00000000000026b0                LogUtils_LogHexDump
-                0x0000000000002854                LogUtils_LogPointer
-                0x00000000000028a4                LogUtils_CheckBoundary
-                0x0000000000002900                LogUtils_CheckNullPointer
-                0x0000000000002940                LogUtils_CheckValidPointer
-                0x00000000000029b0                LogUtils_LogThreadId
-                0x00000000000029f0                LogUtils_HungupThread
-                0x0000000000002a3c                LogUtils_ResetHungup
- .text          0x0000000000002a70       0xd0 build/gc-eu-mq-dbg/src/libc64/sprintf.o
-                0x0000000000002a70                proutSprintf
-                0x0000000000002a94                vsprintf
-                0x0000000000002ae4                sprintf
- .text          0x0000000000002b40       0xc0 build/gc-eu-mq-dbg/src/libultra/io/piacs.o
-                0x0000000000002b40                __osPiCreateAccessQueue
-                0x0000000000002b90                __osPiGetAccess
-                0x0000000000002bd4                __osPiRelAccess
- .text          0x0000000000002c00      0x150 build/gc-eu-mq-dbg/src/libultra/os/sendmesg.o
-                0x0000000000002c00                osSendMesg
- .text          0x0000000000002d50       0xc0 build/gc-eu-mq-dbg/src/libultra/os/stopthread.o
-                0x0000000000002d50                osStopThread
- .text          0x0000000000002e10       0x10 build/gc-eu-mq-dbg/src/libultra/io/viextendvstart.o
-                0x0000000000002e10                osViExtendVStart
- .text          0x0000000000002e20      0x140 build/gc-eu-mq-dbg/src/libultra/os/recvmesg.o
-                0x0000000000002e20                osRecvMesg
- .text          0x0000000000002f60      0x350 build/gc-eu-mq-dbg/src/libultra/os/initialize.o
-                0x0000000000002f60                __createSpeedParam
-                0x0000000000002ffc                __osInitialize_common
-                0x00000000000032a8                __osInitialize_autodetect
- .text          0x00000000000032b0      0x2c0 build/gc-eu-mq-dbg/src/libultra/libc/ll.o
-                0x00000000000032b0                __ull_rshift
-                0x00000000000032dc                __ull_rem
-                0x0000000000003318                __ull_div
-                0x0000000000003354                __ll_lshift
-                0x0000000000003380                __ll_rem
-                0x00000000000033bc                __ll_div
-                0x0000000000003418                __ll_mul
-                0x0000000000003448                __ull_divremi
-                0x00000000000034a8                __ll_mod
-                0x0000000000003544                __ll_rshift
- .text          0x0000000000003570      0x928 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
-                0x0000000000003570                __osExceptionPreamble
-                0x0000000000003580                __osException
-                0x0000000000003bb4                __osEnqueueAndYield
-                0x0000000000003cb4                __osEnqueueThread
-                0x0000000000003cfc                __osPopThread
-                0x0000000000003d0c                __osNop
-                0x0000000000003d14                __osDispatchThread
-                0x0000000000003e90                __osCleanupThread
- *fill*         0x0000000000003e98        0x8 
- .text          0x0000000000003ea0       0x40 build/gc-eu-mq-dbg/src/libultra/os/thread.o
-                0x0000000000003ea0                __osDequeueThread
- .text          0x0000000000003ee0      0x110 build/gc-eu-mq-dbg/src/libultra/os/destroythread.o
-                0x0000000000003ee0                osDestroyThread
- .text          0x0000000000003ff0       0x9c build/gc-eu-mq-dbg/src/libultra/libc/bzero.o
-                0x0000000000003ff0                bzero
- *fill*         0x000000000000408c        0x4 
- .text          0x0000000000004090       0x60 build/gc-eu-mq-dbg/src/libultra/os/parameters.o
- .text          0x00000000000040f0      0x150 build/gc-eu-mq-dbg/src/libultra/os/createthread.o
-                0x00000000000040f0                osCreateThread
- .text          0x0000000000004240       0x10 build/gc-eu-mq-dbg/src/libultra/os/setsr.o
-                0x0000000000004240                __osSetSR
- .text          0x0000000000004250        0xc build/gc-eu-mq-dbg/src/libultra/os/getsr.o
-                0x0000000000004250                __osGetSR
- *fill*         0x000000000000425c        0x4 
- .text          0x0000000000004260       0x74 build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o
-                0x0000000000004260                osWritebackDCache
- *fill*         0x00000000000042d4        0xc 
- .text          0x00000000000042e0       0x40 build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o
-                0x00000000000042e0                osViGetNextFramebuffer
- .text          0x0000000000004320      0x170 build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
-                0x0000000000004320                osCreatePiManager
- *fill*         0x0000000000004490       0x10 
- .text          0x00000000000044a0      0x410 build/gc-eu-mq-dbg/src/libultra/io/devmgr.o
-                0x00000000000044a0                __osDevMgrMain
- .text          0x00000000000048b0       0xd0 build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o
-                0x00000000000048b0                __osPiRawStartDma
- .text          0x0000000000004980       0x80 build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o
-                0x0000000000004980                osVirtualToPhysical
- .text          0x0000000000004a00       0x70 build/gc-eu-mq-dbg/src/libultra/io/viblack.o
-                0x0000000000004a00                osViBlack
- .text          0x0000000000004a70       0x50 build/gc-eu-mq-dbg/src/libultra/io/sirawread.o
-                0x0000000000004a70                __osSiRawReadIo
- .text          0x0000000000004ac0       0x20 build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o
-                0x0000000000004ac0                osGetThreadId
- .text          0x0000000000004ae0       0xa0 build/gc-eu-mq-dbg/src/libultra/os/setintmask.o
-                0x0000000000004ae0                osSetIntMask
- .text          0x0000000000004b80       0x60 build/gc-eu-mq-dbg/src/libultra/io/visetmode.o
-                0x0000000000004b80                osViSetMode
- .text          0x0000000000004be0       0xb8 build/gc-eu-mq-dbg/src/libultra/os/probetlb.o
-                0x0000000000004be0                __osProbeTLB
- *fill*         0x0000000000004c98        0x8 
- .text          0x0000000000004ca0      0x120 build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o
-                0x0000000000004ca0                osGetMemSize
- .text          0x0000000000004dc0       0xc0 build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o
-                0x0000000000004dc0                osSetEventMesg
- .text          0x0000000000004e80      0xce0 build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o
-                0x0000000000004e80                _Printf
- .text          0x0000000000005b60       0x44 build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o
-                0x0000000000005b60                osUnmapTLBAll
- *fill*         0x0000000000005ba4        0xc 
- .text          0x0000000000005bb0       0xa0 build/gc-eu-mq-dbg/src/libultra/io/epidma.o
-                0x0000000000005bb0                osEPiStartDma
- .text          0x0000000000005c50       0xa0 build/gc-eu-mq-dbg/src/libultra/libc/string.o
-                0x0000000000005c50                strchr
-                0x0000000000005c90                strlen
-                0x0000000000005cb8                memcpy
- .text          0x0000000000005cf0       0x74 build/gc-eu-mq-dbg/src/libultra/os/invalicache.o
-                0x0000000000005cf0                osInvalICache
- *fill*         0x0000000000005d64        0xc 
- .text          0x0000000000005d70       0x30 build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o
-                0x0000000000005d70                osCreateMesgQueue
- .text          0x0000000000005da0       0xac build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o
-                0x0000000000005da0                osInvalDCache
- *fill*         0x0000000000005e4c        0x4 
- .text          0x0000000000005e50       0x30 build/gc-eu-mq-dbg/src/libultra/io/si.o
-                0x0000000000005e50                __osSiDeviceBusy
- .text          0x0000000000005e80      0x150 build/gc-eu-mq-dbg/src/libultra/os/jammesg.o
-                0x0000000000005e80                osJamMesg
- .text          0x0000000000005fd0       0xe0 build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o
-                0x0000000000005fd0                osSetThreadPri
- .text          0x00000000000060b0       0x20 build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o
-                0x00000000000060b0                osGetThreadPri
- .text          0x00000000000060d0      0x160 build/gc-eu-mq-dbg/src/libultra/io/epirawread.o
-                0x00000000000060d0                __osEPiRawReadIo
- .text          0x0000000000006230       0x50 build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o
-                0x0000000000006230                osViSwapBuffer
- .text          0x0000000000006280      0x1e0 build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o
-                0x0000000000006280                __osEPiRawStartDma
- .text          0x0000000000006460      0x11c build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o
-                0x0000000000006460                bcmp
- *fill*         0x000000000000657c        0x4 
- .text          0x0000000000006580       0x90 build/gc-eu-mq-dbg/src/libultra/os/gettime.o
-                0x0000000000006580                osGetTime
- .text          0x0000000000006610      0x430 build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
-                0x0000000000006610                __osTimerServicesInit
-                0x000000000000669c                __osTimerInterrupt
-                0x0000000000006814                __osSetTimerIntr
-                0x00000000000068b4                __osInsertTimer
- .text          0x0000000000006a40        0xc build/gc-eu-mq-dbg/src/libultra/os/getcount.o
-                0x0000000000006a40                osGetCount
- *fill*         0x0000000000006a4c        0x4 
- .text          0x0000000000006a50       0x50 build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o
-                0x0000000000006a50                __osSetGlobalIntMask
- .text          0x0000000000006aa0        0xc build/gc-eu-mq-dbg/src/libultra/os/setcompare.o
-                0x0000000000006aa0                __osSetCompare
- *fill*         0x0000000000006aac        0x4 
- .text          0x0000000000006ab0      0x304 build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o
-                0x0000000000006ab0                bcopy
- *fill*         0x0000000000006db4        0xc 
- .text          0x0000000000006dc0       0x60 build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o
-                0x0000000000006dc0                __osResetGlobalIntMask
- .text          0x0000000000006e20       0x8c build/gc-eu-mq-dbg/src/libultra/os/interrupt.o
-                0x0000000000006e20                __osDisableInt
-                0x0000000000006e90                __osRestoreInt
- *fill*         0x0000000000006eac        0x4 
- .text          0x0000000000006eb0      0x120 build/gc-eu-mq-dbg/src/libultra/io/vi.o
-                0x0000000000006eb0                __osViInit
- .text          0x0000000000006fd0      0x300 build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o
-                0x0000000000006fd0                __osViSwapContext
- .text          0x00000000000072d0       0x30 build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o
-                0x00000000000072d0                osPiGetCmdQueue
- .text          0x0000000000007300       0x50 build/gc-eu-mq-dbg/src/libultra/io/epiread.o
-                0x0000000000007300                osEPiReadIo
- .text          0x0000000000007350      0x160 build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o
-                0x0000000000007350                osViSetSpecialFeatures
- .text          0x00000000000074b0      0x160 build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o
-                0x00000000000074b0                osCartRomInit
- .text          0x0000000000007610       0x10 build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o
-                0x0000000000007610                __osSetFpcCsr
- .text          0x0000000000007620        0xc build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o
-                0x0000000000007620                __osGetFpcCsr
- *fill*         0x000000000000762c        0x4 
- .text          0x0000000000007630       0x50 build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o
-                0x0000000000007630                osEPiWriteIo
- .text          0x0000000000007680       0x58 build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o
-                0x0000000000007680                osMapTLBRdb
- *fill*         0x00000000000076d8        0x8 
- .text          0x00000000000076e0       0x50 build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o
-                0x00000000000076e0                osYieldThread
- .text          0x0000000000007730        0xc build/gc-eu-mq-dbg/src/libultra/os/getcause.o
-                0x0000000000007730                __osGetCause
- *fill*         0x000000000000773c        0x4 
- .text          0x0000000000007740      0x160 build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o
-                0x0000000000007740                __osEPiRawWriteIo
- .text          0x00000000000078a0      0x2a0 build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o
-                0x00000000000078a0                _Litob
- .text          0x0000000000007b40      0x190 build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o
-                0x0000000000007b40                ldiv
-                0x0000000000007bc4                lldiv
- .text          0x0000000000007cd0      0xb10 build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o
-                0x0000000000007cd0                _Ldtob
- .text          0x00000000000087e0       0x50 build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o
-                0x00000000000087e0                __osSiRawWriteIo
- *fill*         0x0000000000008830       0x10 
- .text          0x0000000000008840      0x310 build/gc-eu-mq-dbg/src/libultra/io/vimgr.o
-                0x0000000000008840                osCreateViManager
-                0x00000000000089c0                viMgrMain
- .text          0x0000000000008b50       0x10 build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o
-                0x0000000000008b50                __osViGetCurrentContext
- .text          0x0000000000008b60      0x150 build/gc-eu-mq-dbg/src/libultra/os/startthread.o
-                0x0000000000008b60                osStartThread
- .text          0x0000000000008cb0       0x50 build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o
-                0x0000000000008cb0                osViSetYScale
- .text          0x0000000000008d00      0x110 build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o
-                0x0000000000008d00                osViSetXScale
- .text          0x0000000000008e10       0x70 build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o
-                0x0000000000008e10                __osSetHWIntrRoutine
- .text          0x0000000000008e80       0x30 build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o
-                0x0000000000008e80                __osGetHWIntrRoutine
- .text          0x0000000000008eb0       0x10 build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o
-                0x0000000000008eb0                __osSetWatchLo
- .text          0x0000000000008ec0       0xd0 build/gc-eu-mq-dbg/data/rsp_boot.text.o
-                0x0000000000008ec0                rspbootTextStart
-                0x0000000000008f90                rspbootTextEnd
- .text          0x0000000000008f90       0x20 build/gc-eu-mq-dbg/data/cic6105.text.o
-                0x0000000000008f90                cic6105TextStart
-                0x0000000000008fb0                cic6105TextEnd
-
-.rodata         0x0000000000008fb0     0x73b0
- *(*.rodata.cst4)
- *(*.rodata.cst8)
- *(*.rodata.*)
- .rodata        0x0000000000008fb0       0x10 build/gc-eu-mq-dbg/src/boot/boot_main.o
- .rodata        0x0000000000008fc0      0x270 build/gc-eu-mq-dbg/src/boot/idle.o
- .rodata        0x0000000000009230       0x40 build/gc-eu-mq-dbg/src/boot/viconfig.o
- .rodata        0x0000000000009270     0x6aa0 build/gc-eu-mq-dbg/src/boot/z_std_dma.o
- .rodata        0x000000000000fd10       0x90 build/gc-eu-mq-dbg/src/boot/z_locale.o
- .rodata        0x000000000000fda0       0x50 build/gc-eu-mq-dbg/src/boot/assert.o
- .rodata        0x000000000000fdf0       0x20 build/gc-eu-mq-dbg/src/boot/is_debug.o
- .rodata        0x000000000000fe10       0xd0 build/gc-eu-mq-dbg/src/libu64/stackcheck.o
- .rodata        0x000000000000fee0      0x200 build/gc-eu-mq-dbg/src/libu64/debug.o
- .rodata        0x00000000000100e0       0x44 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
- *fill*         0x0000000000010124        0xc 
- .rodata        0x0000000000010130       0x20 build/gc-eu-mq-dbg/src/libultra/io/devmgr.o
- .rodata        0x0000000000010150       0x80 build/gc-eu-mq-dbg/src/libultra/os/setintmask.o
-                0x0000000000010150                __osRcpImTable
- .rodata        0x00000000000101d0      0x100 build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o
- .rodata        0x00000000000102d0       0x60 build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o
- .rodata        0x0000000000010330       0x30 build/gc-eu-mq-dbg/src/boot/build.o
-                0x0000000000010330                gBuildCreator
-                0x0000000000010340                gBuildDate
-                0x0000000000010354                gBuildMakeOption
-
-.data           0x0000000000000000     0x1bb0
- .data          0x0000000000000000       0x20 build/gc-eu-mq-dbg/src/boot/idle.o
-                0x0000000000000000                D_80009410
- .data          0x0000000000000020       0x20 build/gc-eu-mq-dbg/src/boot/viconfig.o
-                0x0000000000000020                D_80009430
-                0x0000000000000024                gViConfigBlack
-                0x0000000000000028                gViConfigAdditionalScanLines
-                0x000000000000002c                gViConfigFeatures
-                0x0000000000000030                gViConfigXScale
-                0x0000000000000034                gViConfigYScale
- .data          0x0000000000000040       0x10 build/gc-eu-mq-dbg/src/boot/carthandle.o
-                0x0000000000000040                gCartHandle
- .data          0x0000000000000050     0x1800 build/gc-eu-mq-dbg/src/boot/z_std_dma.o
-                0x0000000000000050                gDmaMgrVerbose
-                0x0000000000000054                gDmaMgrDmaBuffSize
-                0x0000000000000058                sDmaMgrIsRomCompressed
-                0x000000000000005c                sDmaMgrFileNames
- .data          0x0000000000001850       0x10 build/gc-eu-mq-dbg/src/boot/z_locale.o
-                0x0000000000001850                gCurrentRegion
- .data          0x0000000000001860       0x10 build/gc-eu-mq-dbg/src/boot/driverominit.o
- .data          0x0000000000001870        0x0 build/gc-eu-mq-dbg/src/boot/mio0.o
- .data          0x0000000000001870       0x10 build/gc-eu-mq-dbg/src/libu64/stackcheck.o
-                0x0000000000001870                sStackInfoListStart
-                0x0000000000001874                sStackInfoListEnd
- .data          0x0000000000001880       0x10 build/gc-eu-mq-dbg/src/libultra/io/piacs.o
-                0x0000000000001880                __osPiAccessQueueEnabled
- .data          0x0000000000001890       0x50 build/gc-eu-mq-dbg/src/libultra/io/vimodepallan1.o
-                0x0000000000001890                osViModePalLan1
- .data          0x00000000000018e0       0x20 build/gc-eu-mq-dbg/src/libultra/os/initialize.o
-                0x00000000000018e0                osClockRate
-                0x00000000000018e8                osViClock
-                0x00000000000018ec                __osShutdown
-                0x00000000000018f0                __OSGlobalIntMask
- .data          0x0000000000001900       0x30 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
-                0x0000000000001900                __osHwIntTable
-                0x0000000000001928                __osPiIntTable
- .data          0x0000000000001930       0x20 build/gc-eu-mq-dbg/src/libultra/os/thread.o
-                0x0000000000001930                __osThreadTail
-                0x0000000000001938                __osRunQueue
-                0x000000000000193c                __osActiveQueue
-                0x0000000000001940                __osRunningThread
-                0x0000000000001944                __osFaultedThread
- .data          0x0000000000001950        0x0 build/gc-eu-mq-dbg/src/libultra/libc/bzero.o
- .data          0x0000000000001950        0x0 build/gc-eu-mq-dbg/src/libultra/os/parameters.o
- .data          0x0000000000001950        0x0 build/gc-eu-mq-dbg/src/libultra/os/setsr.o
- .data          0x0000000000001950        0x0 build/gc-eu-mq-dbg/src/libultra/os/getsr.o
- .data          0x0000000000001950        0x0 build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o
- .data          0x0000000000001950       0x30 build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
-                0x0000000000001950                __osPiDevMgr
-                0x000000000000196c                __osPiTable
-                0x0000000000001970                __osCurrentHandle
- .data          0x0000000000001980        0x0 build/gc-eu-mq-dbg/src/libultra/os/setintmask.o
- .data          0x0000000000001980        0x0 build/gc-eu-mq-dbg/src/libultra/os/probetlb.o
- .data          0x0000000000001980       0x10 build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o
-                0x0000000000001980                __osPreNMI
- .data          0x0000000000001990       0x50 build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o
-                0x0000000000001990                spaces
-                0x00000000000019b4                zeroes
- .data          0x00000000000019e0        0x0 build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o
- .data          0x00000000000019e0        0x0 build/gc-eu-mq-dbg/src/libultra/os/invalicache.o
- .data          0x00000000000019e0        0x0 build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o
- .data          0x00000000000019e0        0x0 build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o
- .data          0x00000000000019e0       0x10 build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
-                0x00000000000019e0                __osTimerList
- .data          0x00000000000019f0        0x0 build/gc-eu-mq-dbg/src/libultra/os/getcount.o
- .data          0x00000000000019f0        0x0 build/gc-eu-mq-dbg/src/libultra/os/setcompare.o
- .data          0x00000000000019f0        0x0 build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o
- .data          0x00000000000019f0        0x0 build/gc-eu-mq-dbg/src/libultra/os/interrupt.o
- .data          0x00000000000019f0       0x50 build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o
-                0x00000000000019f0                osViModeNtscLan1
- .data          0x0000000000001a40       0x50 build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o
-                0x0000000000001a40                osViModeMpalLan1
- .data          0x0000000000001a90       0x70 build/gc-eu-mq-dbg/src/libultra/io/vi.o
-                0x0000000000001a90                vi
-                0x0000000000001af0                __osViCurr
-                0x0000000000001af4                __osViNext
- .data          0x0000000000001b00       0x10 build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o
- .data          0x0000000000001b10       0x50 build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o
-                0x0000000000001b10                osViModeFpalLan1
- .data          0x0000000000001b60        0x0 build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o
- .data          0x0000000000001b60        0x0 build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o
- .data          0x0000000000001b60        0x0 build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o
- .data          0x0000000000001b60        0x0 build/gc-eu-mq-dbg/src/libultra/os/getcause.o
- .data          0x0000000000001b60       0x30 build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o
- .data          0x0000000000001b90       0x20 build/gc-eu-mq-dbg/src/libultra/io/vimgr.o
-                0x0000000000001b90                __osViDevMgr
-                0x0000000000001bac                __additional_scanline
- .data          0x0000000000001bb0        0x0 build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o
- .data          0x0000000000001bb0        0x0 build/gc-eu-mq-dbg/data/rsp_boot.text.o
- .data          0x0000000000001bb0        0x0 build/gc-eu-mq-dbg/data/cic6105.text.o
-
-.reginfo        0x0000000000000000       0x18
- .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/boot/boot_main.o
-
-.MIPS.abiflags  0x0000000000000000       0x18
- .MIPS.abiflags
-                0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/boot/mio0.o
-
-.bss            0x0000000000000000     0x4a30
- .bss           0x0000000000000000      0x9f0 build/gc-eu-mq-dbg/src/boot/boot_main.o
-                0x0000000000000000                sBootThreadInfo
-                0x0000000000000020                sIdleThread
-                0x00000000000001d0                sIdleThreadStack
-                0x00000000000005d0                sIdleThreadInfo
-                0x00000000000005f0                sBootThreadStack
- .bss           0x00000000000009f0      0xc10 build/gc-eu-mq-dbg/src/boot/idle.o
-                0x00000000000009f0                sMainThread
-                0x0000000000000ba0                sMainStack
-                0x00000000000014a0                sMainStackInfo
-                0x00000000000014c0                sPiMgrCmdBuff
-                0x0000000000001588                gPiMgrCmdQueue
-                0x00000000000015a0                gViConfigMode
-                0x00000000000015f0                gViConfigModeType
- .bss           0x0000000000001600      0x770 build/gc-eu-mq-dbg/src/boot/z_std_dma.o
-                0x0000000000001600                sDmaMgrStackInfo
-                0x0000000000001620                sDmaMgrMsgQueue
-                0x0000000000001638                sDmaMgrMsgBuf
-                0x00000000000016b8                sDmaMgrThread
-                0x0000000000001868                sDmaMgrStack
-                0x0000000000001d68                sDmaMgrCurFileName
-                0x0000000000001d6c                sDmaMgrCurFileLine
- .bss           0x0000000000001d70      0x410 build/gc-eu-mq-dbg/src/boot/yaz0.o
-                0x0000000000001d70                sYaz0DataBuffer
-                0x0000000000002170                sYaz0DataBufferEnd
-                0x0000000000002174                sYaz0CurRomStart
-                0x0000000000002178                sYaz0CurSize
-                0x000000000000217c                sYaz0MaxPtr
- .bss           0x0000000000002180       0x20 build/gc-eu-mq-dbg/src/boot/z_locale.o
- .bss           0x00000000000021a0       0x10 build/gc-eu-mq-dbg/src/boot/is_debug.o
-                0x00000000000021a0                sISVHandle
- .bss           0x00000000000021b0       0x80 build/gc-eu-mq-dbg/src/boot/driverominit.o
-                0x00000000000021b0                __DriveRomHandle
- .bss           0x0000000000002230        0x0 build/gc-eu-mq-dbg/src/boot/mio0.o
- .bss           0x0000000000002230       0x20 build/gc-eu-mq-dbg/src/libultra/io/piacs.o
-                0x0000000000002230                piAccessBuf
-                0x0000000000002238                __osPiAccessQueue
- .bss           0x0000000000002250       0x10 build/gc-eu-mq-dbg/src/libultra/os/initialize.o
-                0x0000000000002250                __osFinalrom
- .bss           0x0000000000002260        0x0 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
- .bss           0x0000000000002260        0x0 build/gc-eu-mq-dbg/src/libultra/libc/bzero.o
- .bss           0x0000000000002260        0x0 build/gc-eu-mq-dbg/src/libultra/os/parameters.o
- .bss           0x0000000000002260        0x0 build/gc-eu-mq-dbg/src/libultra/os/setsr.o
- .bss           0x0000000000002260        0x0 build/gc-eu-mq-dbg/src/libultra/os/getsr.o
- .bss           0x0000000000002260        0x0 build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o
- .bss           0x0000000000002260     0x1470 build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
-                0x0000000000002260                __Dom1SpeedParam
-                0x00000000000022d8                __Dom2SpeedParam
-                0x0000000000002350                piThread
-                0x0000000000002500                piStackThread
-                0x0000000000003500                piEventQueue
-                0x0000000000003518                piEventBuf
-                0x0000000000003520                __osThreadSave
- .bss           0x00000000000036d0        0x0 build/gc-eu-mq-dbg/src/libultra/os/setintmask.o
- .bss           0x00000000000036d0        0x0 build/gc-eu-mq-dbg/src/libultra/os/probetlb.o
- .bss           0x00000000000036d0       0x80 build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o
-                0x00000000000036d0                __osEventStateTab
- .bss           0x0000000000003750        0x0 build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o
- .bss           0x0000000000003750        0x0 build/gc-eu-mq-dbg/src/libultra/os/invalicache.o
- .bss           0x0000000000003750        0x0 build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o
- .bss           0x0000000000003750        0x0 build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o
- .bss           0x0000000000003750       0x40 build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
-                0x0000000000003750                __osBaseTimer
-                0x0000000000003770                __osCurrentTime
-                0x0000000000003778                __osBaseCounter
-                0x000000000000377c                __osViIntrCount
-                0x0000000000003780                __osTimerCounter
- .bss           0x0000000000003790        0x0 build/gc-eu-mq-dbg/src/libultra/os/getcount.o
- .bss           0x0000000000003790        0x0 build/gc-eu-mq-dbg/src/libultra/os/setcompare.o
- .bss           0x0000000000003790        0x0 build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o
- .bss           0x0000000000003790        0x0 build/gc-eu-mq-dbg/src/libultra/os/interrupt.o
- .bss           0x0000000000003790       0x80 build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o
-                0x0000000000003790                __CartRomHandle
- .bss           0x0000000000003810        0x0 build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o
- .bss           0x0000000000003810        0x0 build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o
- .bss           0x0000000000003810        0x0 build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o
- .bss           0x0000000000003810        0x0 build/gc-eu-mq-dbg/src/libultra/os/getcause.o
- .bss           0x0000000000003810     0x1220 build/gc-eu-mq-dbg/src/libultra/io/vimgr.o
-                0x0000000000003810                viThread
-                0x00000000000039c0                viThreadStack
-                0x00000000000049c0                viEventQueue
-                0x00000000000049d8                viEventBuf
-                0x00000000000049f0                viRetraceMsg
-                0x0000000000004a08                viCounterMsg
- .bss           0x0000000000004a30        0x0 build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o
- .bss           0x0000000000004a30        0x0 build/gc-eu-mq-dbg/data/rsp_boot.text.o
- .bss           0x0000000000004a30        0x0 build/gc-eu-mq-dbg/data/cic6105.text.o
-
-/DISCARD/
- *(.gptab.*)
 LOAD build/gc-eu-mq-dbg/src/boot/boot_main.o
 LOAD build/gc-eu-mq-dbg/src/boot/idle.o
 LOAD build/gc-eu-mq-dbg/src/boot/viconfig.o
@@ -714,6 +180,7 @@ LOAD build/gc-eu-mq-dbg/src/libultra/os/getsr.o
 LOAD build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o
 LOAD build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o
 LOAD build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
+LOAD build/gc-eu-mq-dbg/src/libultra/os/kdebugserver.o
 LOAD build/gc-eu-mq-dbg/src/libultra/io/devmgr.o
 LOAD build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o
 LOAD build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o
@@ -779,9 +246,856 @@ LOAD build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o
 LOAD build/gc-eu-mq-dbg/src/boot/build.o
 LOAD build/gc-eu-mq-dbg/data/rsp_boot.text.o
 LOAD build/gc-eu-mq-dbg/data/cic6105.text.o
+
+.text           0x0000000000000000     0x8fb0
+ build/gc-eu-mq-dbg/src/boot/boot_main.o(.text*)
+ .text          0x0000000000000000      0x140 build/gc-eu-mq-dbg/src/boot/boot_main.o
+                0x0000000000000000                bootclear
+                0x0000000000000038                bootproc
+ build/gc-eu-mq-dbg/src/boot/idle.o(.text*)
+ .text          0x0000000000000140      0x470 build/gc-eu-mq-dbg/src/boot/idle.o
+                0x0000000000000140                Main_ThreadEntry
+                0x0000000000000234                Idle_ThreadEntry
+ build/gc-eu-mq-dbg/src/boot/viconfig.o(.text*)
+ .text          0x00000000000005b0      0x180 build/gc-eu-mq-dbg/src/boot/viconfig.o
+                0x00000000000005b0                ViConfig_UpdateVi
+                0x00000000000006e8                ViConfig_UpdateBlack
+ build/gc-eu-mq-dbg/src/boot/carthandle.o(.text*)
+ build/gc-eu-mq-dbg/src/boot/z_std_dma.o(.text*)
+ .text          0x0000000000000730      0xfa0 build/gc-eu-mq-dbg/src/boot/z_std_dma.o
+                0x0000000000000730                DmaMgr_StrCmp
+                0x000000000000079c                DmaMgr_DmaRomToRam
+                0x0000000000000b08                DmaMgr_AudioDmaHandler
+                0x0000000000000c40                DmaMgr_DmaFromDriveRom
+                0x0000000000000ce0                DmaMgr_Error
+                0x0000000000000ed0                DmaMgr_FindFileName
+                0x0000000000000f30                DmaMgr_GetFileName
+                0x0000000000000f9c                DmaMgr_ProcessRequest
+                0x000000000000116c                DmaMgr_ThreadEntry
+                0x0000000000001204                DmaMgr_RequestAsync
+                0x0000000000001360                DmaMgr_RequestSync
+                0x00000000000013dc                DmaMgr_Init
+                0x00000000000015fc                DmaMgr_RequestAsyncDebug
+                0x0000000000001640                DmaMgr_RequestSyncDebug
+ build/gc-eu-mq-dbg/src/boot/yaz0.o(.text*)
+ .text          0x00000000000016d0      0x330 build/gc-eu-mq-dbg/src/boot/yaz0.o
+                0x00000000000016d0                Yaz0_FirstDMA
+                0x0000000000001768                Yaz0_NextDMA
+                0x0000000000001850                Yaz0_DecompressImpl
+                0x00000000000019b4                Yaz0_Decompress
+ build/gc-eu-mq-dbg/src/boot/z_locale.o(.text*)
+ .text          0x0000000000001a00      0x190 build/gc-eu-mq-dbg/src/boot/z_locale.o
+                0x0000000000001a00                Locale_Init
+                0x0000000000001adc                Locale_ResetRegion
+                0x0000000000001ae8                func_80001F48
+                0x0000000000001b2c                func_80001F8C
+                0x0000000000001b70                Locale_IsRegionNative
+ build/gc-eu-mq-dbg/src/boot/assert.o(.text*)
+ .text          0x0000000000001b90       0x80 build/gc-eu-mq-dbg/src/boot/assert.o
+                0x0000000000001b90                __assert
+ build/gc-eu-mq-dbg/src/boot/is_debug.o(.text*)
+ *fill*         0x0000000000001c10       0x10 
+ .text          0x0000000000001c20      0x350 build/gc-eu-mq-dbg/src/boot/is_debug.o
+                0x0000000000001c20                isPrintfInit
+                0x0000000000001c90                osSyncPrintfUnused
+                0x0000000000001cd0                osSyncPrintf
+                0x0000000000001d10                rmonPrintf
+                0x0000000000001d50                is_proutSyncPrintf
+                0x0000000000001f24                func_80002384
+ build/gc-eu-mq-dbg/src/boot/driverominit.o(.text*)
+ .text          0x0000000000001f70      0x1e0 build/gc-eu-mq-dbg/src/boot/driverominit.o
+                0x0000000000001f70                osDriveRomInit
+ build/gc-eu-mq-dbg/src/boot/mio0.o(.text*)
+ .text          0x0000000000002150       0xb0 build/gc-eu-mq-dbg/src/boot/mio0.o
+                0x0000000000002150                Mio0_Decompress
+ build/gc-eu-mq-dbg/src/libu64/stackcheck.o(.text*)
+ .text          0x0000000000002200      0x390 build/gc-eu-mq-dbg/src/libu64/stackcheck.o
+                0x0000000000002200                StackCheck_Init
+                0x000000000000230c                StackCheck_Cleanup
+                0x00000000000023a8                StackCheck_GetState
+                0x00000000000024fc                StackCheck_CheckAll
+                0x0000000000002554                StackCheck_Check
+ build/gc-eu-mq-dbg/src/libu64/debug.o(.text*)
+ .text          0x0000000000002590      0x4e0 build/gc-eu-mq-dbg/src/libu64/debug.o
+                0x0000000000002590                LogUtils_CheckFloatRange
+                0x0000000000002628                LogUtils_CheckIntRange
+                0x00000000000026b0                LogUtils_LogHexDump
+                0x0000000000002854                LogUtils_LogPointer
+                0x00000000000028a4                LogUtils_CheckBoundary
+                0x0000000000002900                LogUtils_CheckNullPointer
+                0x0000000000002940                LogUtils_CheckValidPointer
+                0x00000000000029b0                LogUtils_LogThreadId
+                0x00000000000029f0                LogUtils_HungupThread
+                0x0000000000002a3c                LogUtils_ResetHungup
+ build/gc-eu-mq-dbg/src/libc64/sprintf.o(.text*)
+ .text          0x0000000000002a70       0xd0 build/gc-eu-mq-dbg/src/libc64/sprintf.o
+                0x0000000000002a70                proutSprintf
+                0x0000000000002a94                vsprintf
+                0x0000000000002ae4                sprintf
+ build/gc-eu-mq-dbg/src/libultra/io/piacs.o(.text*)
+ .text          0x0000000000002b40       0xc0 build/gc-eu-mq-dbg/src/libultra/io/piacs.o
+                0x0000000000002b40                __osPiCreateAccessQueue
+                0x0000000000002b90                __osPiGetAccess
+                0x0000000000002bd4                __osPiRelAccess
+ build/gc-eu-mq-dbg/src/libultra/os/sendmesg.o(.text*)
+ .text          0x0000000000002c00      0x150 build/gc-eu-mq-dbg/src/libultra/os/sendmesg.o
+                0x0000000000002c00                osSendMesg
+ build/gc-eu-mq-dbg/src/libultra/os/stopthread.o(.text*)
+ .text          0x0000000000002d50       0xc0 build/gc-eu-mq-dbg/src/libultra/os/stopthread.o
+                0x0000000000002d50                osStopThread
+ build/gc-eu-mq-dbg/src/libultra/io/viextendvstart.o(.text*)
+ .text          0x0000000000002e10       0x10 build/gc-eu-mq-dbg/src/libultra/io/viextendvstart.o
+                0x0000000000002e10                osViExtendVStart
+ build/gc-eu-mq-dbg/src/libultra/io/vimodepallan1.o(.text*)
+ build/gc-eu-mq-dbg/src/libultra/os/recvmesg.o(.text*)
+ .text          0x0000000000002e20      0x140 build/gc-eu-mq-dbg/src/libultra/os/recvmesg.o
+                0x0000000000002e20                osRecvMesg
+ build/gc-eu-mq-dbg/src/libultra/os/initialize.o(.text*)
+ .text          0x0000000000002f60      0x350 build/gc-eu-mq-dbg/src/libultra/os/initialize.o
+                0x0000000000002f60                __createSpeedParam
+                0x0000000000002ffc                __osInitialize_common
+                0x00000000000032a8                __osInitialize_autodetect
+ build/gc-eu-mq-dbg/src/libultra/libc/ll.o(.text*)
+ .text          0x00000000000032b0      0x2c0 build/gc-eu-mq-dbg/src/libultra/libc/ll.o
+                0x00000000000032b0                __ull_rshift
+                0x00000000000032dc                __ull_rem
+                0x0000000000003318                __ull_div
+                0x0000000000003354                __ll_lshift
+                0x0000000000003380                __ll_rem
+                0x00000000000033bc                __ll_div
+                0x0000000000003418                __ll_mul
+                0x0000000000003448                __ull_divremi
+                0x00000000000034a8                __ll_mod
+                0x0000000000003544                __ll_rshift
+ build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o(.text*)
+ .text          0x0000000000003570      0x930 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
+                0x0000000000003570                __osExceptionPreamble
+                0x0000000000003580                __osException
+                0x0000000000003bb4                __osEnqueueAndYield
+                0x0000000000003cb4                __osEnqueueThread
+                0x0000000000003cfc                __osPopThread
+                0x0000000000003d0c                __osNop
+                0x0000000000003d14                __osDispatchThread
+                0x0000000000003e90                __osCleanupThread
+ build/gc-eu-mq-dbg/src/libultra/os/thread.o(.text*)
+ .text          0x0000000000003ea0       0x40 build/gc-eu-mq-dbg/src/libultra/os/thread.o
+                0x0000000000003ea0                __osDequeueThread
+ build/gc-eu-mq-dbg/src/libultra/os/destroythread.o(.text*)
+ .text          0x0000000000003ee0      0x110 build/gc-eu-mq-dbg/src/libultra/os/destroythread.o
+                0x0000000000003ee0                osDestroyThread
+ build/gc-eu-mq-dbg/src/libultra/libc/bzero.o(.text*)
+ .text          0x0000000000003ff0       0xa0 build/gc-eu-mq-dbg/src/libultra/libc/bzero.o
+                0x0000000000003ff0                bzero
+ build/gc-eu-mq-dbg/src/libultra/os/parameters.o(.text*)
+ .text          0x0000000000004090       0x60 build/gc-eu-mq-dbg/src/libultra/os/parameters.o
+ build/gc-eu-mq-dbg/src/libultra/os/createthread.o(.text*)
+ .text          0x00000000000040f0      0x150 build/gc-eu-mq-dbg/src/libultra/os/createthread.o
+                0x00000000000040f0                osCreateThread
+ build/gc-eu-mq-dbg/src/libultra/os/setsr.o(.text*)
+ .text          0x0000000000004240       0x10 build/gc-eu-mq-dbg/src/libultra/os/setsr.o
+                0x0000000000004240                __osSetSR
+ build/gc-eu-mq-dbg/src/libultra/os/getsr.o(.text*)
+ .text          0x0000000000004250       0x10 build/gc-eu-mq-dbg/src/libultra/os/getsr.o
+                0x0000000000004250                __osGetSR
+ build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o(.text*)
+ .text          0x0000000000004260       0x80 build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o
+                0x0000000000004260                osWritebackDCache
+ build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o(.text*)
+ .text          0x00000000000042e0       0x40 build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o
+                0x00000000000042e0                osViGetNextFramebuffer
+ build/gc-eu-mq-dbg/src/libultra/io/pimgr.o(.text*)
+ .text          0x0000000000004320      0x170 build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
+                0x0000000000004320                osCreatePiManager
+ build/gc-eu-mq-dbg/src/libultra/os/kdebugserver.o(.text*)
+ build/gc-eu-mq-dbg/src/libultra/io/devmgr.o(.text*)
+ *fill*         0x0000000000004490       0x10 
+ .text          0x00000000000044a0      0x410 build/gc-eu-mq-dbg/src/libultra/io/devmgr.o
+                0x00000000000044a0                __osDevMgrMain
+ build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o(.text*)
+ .text          0x00000000000048b0       0xd0 build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o
+                0x00000000000048b0                __osPiRawStartDma
+ build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o(.text*)
+ .text          0x0000000000004980       0x80 build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o
+                0x0000000000004980                osVirtualToPhysical
+ build/gc-eu-mq-dbg/src/libultra/io/viblack.o(.text*)
+ .text          0x0000000000004a00       0x70 build/gc-eu-mq-dbg/src/libultra/io/viblack.o
+                0x0000000000004a00                osViBlack
+ build/gc-eu-mq-dbg/src/libultra/io/sirawread.o(.text*)
+ .text          0x0000000000004a70       0x50 build/gc-eu-mq-dbg/src/libultra/io/sirawread.o
+                0x0000000000004a70                __osSiRawReadIo
+ build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o(.text*)
+ .text          0x0000000000004ac0       0x20 build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o
+                0x0000000000004ac0                osGetThreadId
+ build/gc-eu-mq-dbg/src/libultra/os/setintmask.o(.text*)
+ .text          0x0000000000004ae0       0xa0 build/gc-eu-mq-dbg/src/libultra/os/setintmask.o
+                0x0000000000004ae0                osSetIntMask
+ build/gc-eu-mq-dbg/src/libultra/io/visetmode.o(.text*)
+ .text          0x0000000000004b80       0x60 build/gc-eu-mq-dbg/src/libultra/io/visetmode.o
+                0x0000000000004b80                osViSetMode
+ build/gc-eu-mq-dbg/src/libultra/os/probetlb.o(.text*)
+ .text          0x0000000000004be0       0xc0 build/gc-eu-mq-dbg/src/libultra/os/probetlb.o
+                0x0000000000004be0                __osProbeTLB
+ build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o(.text*)
+ .text          0x0000000000004ca0      0x120 build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o
+                0x0000000000004ca0                osGetMemSize
+ build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o(.text*)
+ .text          0x0000000000004dc0       0xc0 build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o
+                0x0000000000004dc0                osSetEventMesg
+ build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o(.text*)
+ .text          0x0000000000004e80      0xce0 build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o
+                0x0000000000004e80                _Printf
+ build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o(.text*)
+ .text          0x0000000000005b60       0x50 build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o
+                0x0000000000005b60                osUnmapTLBAll
+ build/gc-eu-mq-dbg/src/libultra/io/epidma.o(.text*)
+ .text          0x0000000000005bb0       0xa0 build/gc-eu-mq-dbg/src/libultra/io/epidma.o
+                0x0000000000005bb0                osEPiStartDma
+ build/gc-eu-mq-dbg/src/libultra/libc/string.o(.text*)
+ .text          0x0000000000005c50       0xa0 build/gc-eu-mq-dbg/src/libultra/libc/string.o
+                0x0000000000005c50                strchr
+                0x0000000000005c90                strlen
+                0x0000000000005cb8                memcpy
+ build/gc-eu-mq-dbg/src/libultra/os/invalicache.o(.text*)
+ .text          0x0000000000005cf0       0x80 build/gc-eu-mq-dbg/src/libultra/os/invalicache.o
+                0x0000000000005cf0                osInvalICache
+ build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o(.text*)
+ .text          0x0000000000005d70       0x30 build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o
+                0x0000000000005d70                osCreateMesgQueue
+ build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o(.text*)
+ .text          0x0000000000005da0       0xb0 build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o
+                0x0000000000005da0                osInvalDCache
+ build/gc-eu-mq-dbg/src/libultra/io/si.o(.text*)
+ .text          0x0000000000005e50       0x30 build/gc-eu-mq-dbg/src/libultra/io/si.o
+                0x0000000000005e50                __osSiDeviceBusy
+ build/gc-eu-mq-dbg/src/libultra/os/jammesg.o(.text*)
+ .text          0x0000000000005e80      0x150 build/gc-eu-mq-dbg/src/libultra/os/jammesg.o
+                0x0000000000005e80                osJamMesg
+ build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o(.text*)
+ .text          0x0000000000005fd0       0xe0 build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o
+                0x0000000000005fd0                osSetThreadPri
+ build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o(.text*)
+ .text          0x00000000000060b0       0x20 build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o
+                0x00000000000060b0                osGetThreadPri
+ build/gc-eu-mq-dbg/src/libultra/io/epirawread.o(.text*)
+ .text          0x00000000000060d0      0x160 build/gc-eu-mq-dbg/src/libultra/io/epirawread.o
+                0x00000000000060d0                __osEPiRawReadIo
+ build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o(.text*)
+ .text          0x0000000000006230       0x50 build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o
+                0x0000000000006230                osViSwapBuffer
+ build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o(.text*)
+ .text          0x0000000000006280      0x1e0 build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o
+                0x0000000000006280                __osEPiRawStartDma
+ build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o(.text*)
+ .text          0x0000000000006460      0x120 build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o
+                0x0000000000006460                bcmp
+ build/gc-eu-mq-dbg/src/libultra/os/gettime.o(.text*)
+ .text          0x0000000000006580       0x90 build/gc-eu-mq-dbg/src/libultra/os/gettime.o
+                0x0000000000006580                osGetTime
+ build/gc-eu-mq-dbg/src/libultra/os/timerintr.o(.text*)
+ .text          0x0000000000006610      0x430 build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
+                0x0000000000006610                __osTimerServicesInit
+                0x000000000000669c                __osTimerInterrupt
+                0x0000000000006814                __osSetTimerIntr
+                0x00000000000068b4                __osInsertTimer
+ build/gc-eu-mq-dbg/src/libultra/os/getcount.o(.text*)
+ .text          0x0000000000006a40       0x10 build/gc-eu-mq-dbg/src/libultra/os/getcount.o
+                0x0000000000006a40                osGetCount
+ build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o(.text*)
+ .text          0x0000000000006a50       0x50 build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o
+                0x0000000000006a50                __osSetGlobalIntMask
+ build/gc-eu-mq-dbg/src/libultra/os/setcompare.o(.text*)
+ .text          0x0000000000006aa0       0x10 build/gc-eu-mq-dbg/src/libultra/os/setcompare.o
+                0x0000000000006aa0                __osSetCompare
+ build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o(.text*)
+ .text          0x0000000000006ab0      0x310 build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o
+                0x0000000000006ab0                bcopy
+ build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o(.text*)
+ .text          0x0000000000006dc0       0x60 build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o
+                0x0000000000006dc0                __osResetGlobalIntMask
+ build/gc-eu-mq-dbg/src/libultra/os/interrupt.o(.text*)
+ .text          0x0000000000006e20       0x90 build/gc-eu-mq-dbg/src/libultra/os/interrupt.o
+                0x0000000000006e20                __osDisableInt
+                0x0000000000006e90                __osRestoreInt
+ build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o(.text*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o(.text*)
+ build/gc-eu-mq-dbg/src/libultra/io/vi.o(.text*)
+ .text          0x0000000000006eb0      0x120 build/gc-eu-mq-dbg/src/libultra/io/vi.o
+                0x0000000000006eb0                __osViInit
+ build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o(.text*)
+ .text          0x0000000000006fd0      0x300 build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o
+                0x0000000000006fd0                __osViSwapContext
+ build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o(.text*)
+ .text          0x00000000000072d0       0x30 build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o
+                0x00000000000072d0                osPiGetCmdQueue
+ build/gc-eu-mq-dbg/src/libultra/io/epiread.o(.text*)
+ .text          0x0000000000007300       0x50 build/gc-eu-mq-dbg/src/libultra/io/epiread.o
+                0x0000000000007300                osEPiReadIo
+ build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o(.text*)
+ .text          0x0000000000007350      0x160 build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o
+                0x0000000000007350                osViSetSpecialFeatures
+ build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o(.text*)
+ .text          0x00000000000074b0      0x160 build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o
+                0x00000000000074b0                osCartRomInit
+ build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o(.text*)
+ build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o(.text*)
+ .text          0x0000000000007610       0x10 build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o
+                0x0000000000007610                __osSetFpcCsr
+ build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o(.text*)
+ .text          0x0000000000007620       0x10 build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o
+                0x0000000000007620                __osGetFpcCsr
+ build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o(.text*)
+ .text          0x0000000000007630       0x50 build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o
+                0x0000000000007630                osEPiWriteIo
+ build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o(.text*)
+ .text          0x0000000000007680       0x60 build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o
+                0x0000000000007680                osMapTLBRdb
+ build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o(.text*)
+ .text          0x00000000000076e0       0x50 build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o
+                0x00000000000076e0                osYieldThread
+ build/gc-eu-mq-dbg/src/libultra/os/getcause.o(.text*)
+ .text          0x0000000000007730       0x10 build/gc-eu-mq-dbg/src/libultra/os/getcause.o
+                0x0000000000007730                __osGetCause
+ build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o(.text*)
+ .text          0x0000000000007740      0x160 build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o
+                0x0000000000007740                __osEPiRawWriteIo
+ build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o(.text*)
+ .text          0x00000000000078a0      0x2a0 build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o
+                0x00000000000078a0                _Litob
+ build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o(.text*)
+ .text          0x0000000000007b40      0x190 build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o
+                0x0000000000007b40                ldiv
+                0x0000000000007bc4                lldiv
+ build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o(.text*)
+ .text          0x0000000000007cd0      0xb10 build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o
+                0x0000000000007cd0                _Ldtob
+ build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o(.text*)
+ .text          0x00000000000087e0       0x50 build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o
+                0x00000000000087e0                __osSiRawWriteIo
+ build/gc-eu-mq-dbg/src/libultra/io/vimgr.o(.text*)
+ *fill*         0x0000000000008830       0x10 
+ .text          0x0000000000008840      0x310 build/gc-eu-mq-dbg/src/libultra/io/vimgr.o
+                0x0000000000008840                osCreateViManager
+                0x00000000000089c0                viMgrMain
+ build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o(.text*)
+ .text          0x0000000000008b50       0x10 build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o
+                0x0000000000008b50                __osViGetCurrentContext
+ build/gc-eu-mq-dbg/src/libultra/os/startthread.o(.text*)
+ .text          0x0000000000008b60      0x150 build/gc-eu-mq-dbg/src/libultra/os/startthread.o
+                0x0000000000008b60                osStartThread
+ build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o(.text*)
+ .text          0x0000000000008cb0       0x50 build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o
+                0x0000000000008cb0                osViSetYScale
+ build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o(.text*)
+ .text          0x0000000000008d00      0x110 build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o
+                0x0000000000008d00                osViSetXScale
+ build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o(.text*)
+ .text          0x0000000000008e10       0x70 build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o
+                0x0000000000008e10                __osSetHWIntrRoutine
+ build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o(.text*)
+ .text          0x0000000000008e80       0x30 build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o
+                0x0000000000008e80                __osGetHWIntrRoutine
+ build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o(.text*)
+ .text          0x0000000000008eb0       0x10 build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o
+                0x0000000000008eb0                __osSetWatchLo
+ build/gc-eu-mq-dbg/src/boot/build.o(.text*)
+ build/gc-eu-mq-dbg/data/rsp_boot.text.o(.text*)
+ .text          0x0000000000008ec0       0xd0 build/gc-eu-mq-dbg/data/rsp_boot.text.o
+                0x0000000000008ec0                rspbootTextStart
+                0x0000000000008f90                rspbootTextEnd
+ build/gc-eu-mq-dbg/data/cic6105.text.o(.text*)
+ .text          0x0000000000008f90       0x20 build/gc-eu-mq-dbg/data/cic6105.text.o
+                0x0000000000008f90                cic6105TextStart
+                0x0000000000008fb0                cic6105TextEnd
+ build/gc-eu-mq-dbg/src/libu64/debug.o(.text*)
+ build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o(.text*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o(.text*)
+ build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o(.text*)
+ build/gc-eu-mq-dbg/src/libultra/libc/string.o(.text*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o(.text*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o(.text*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o(.text*)
+
+.data           0x0000000000008fb0     0x1bb0
+ build/gc-eu-mq-dbg/src/boot/boot_main.o(.data*)
+ build/gc-eu-mq-dbg/src/boot/idle.o(.data*)
+ .data          0x0000000000008fb0       0x20 build/gc-eu-mq-dbg/src/boot/idle.o
+                0x0000000000008fb0                D_80009410
+ build/gc-eu-mq-dbg/src/boot/viconfig.o(.data*)
+ .data          0x0000000000008fd0       0x20 build/gc-eu-mq-dbg/src/boot/viconfig.o
+                0x0000000000008fd0                D_80009430
+                0x0000000000008fd4                gViConfigBlack
+                0x0000000000008fd8                gViConfigAdditionalScanLines
+                0x0000000000008fdc                gViConfigFeatures
+                0x0000000000008fe0                gViConfigXScale
+                0x0000000000008fe4                gViConfigYScale
+ build/gc-eu-mq-dbg/src/boot/carthandle.o(.data*)
+ .data          0x0000000000008ff0       0x10 build/gc-eu-mq-dbg/src/boot/carthandle.o
+                0x0000000000008ff0                gCartHandle
+ build/gc-eu-mq-dbg/src/boot/z_std_dma.o(.data*)
+ .data          0x0000000000009000     0x1800 build/gc-eu-mq-dbg/src/boot/z_std_dma.o
+                0x0000000000009000                gDmaMgrVerbose
+                0x0000000000009004                gDmaMgrDmaBuffSize
+                0x0000000000009008                sDmaMgrIsRomCompressed
+                0x000000000000900c                sDmaMgrFileNames
+ build/gc-eu-mq-dbg/src/boot/yaz0.o(.data*)
+ build/gc-eu-mq-dbg/src/boot/z_locale.o(.data*)
+ .data          0x000000000000a800       0x10 build/gc-eu-mq-dbg/src/boot/z_locale.o
+                0x000000000000a800                gCurrentRegion
+ build/gc-eu-mq-dbg/src/boot/assert.o(.data*)
+ build/gc-eu-mq-dbg/src/boot/is_debug.o(.data*)
+ build/gc-eu-mq-dbg/src/boot/driverominit.o(.data*)
+ .data          0x000000000000a810       0x10 build/gc-eu-mq-dbg/src/boot/driverominit.o
+ build/gc-eu-mq-dbg/src/boot/mio0.o(.data*)
+ build/gc-eu-mq-dbg/src/libu64/stackcheck.o(.data*)
+ .data          0x000000000000a820       0x10 build/gc-eu-mq-dbg/src/libu64/stackcheck.o
+                0x000000000000a820                sStackInfoListStart
+                0x000000000000a824                sStackInfoListEnd
+ build/gc-eu-mq-dbg/src/libu64/debug.o(.data*)
+ build/gc-eu-mq-dbg/src/libc64/sprintf.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/piacs.o(.data*)
+ .data          0x000000000000a830       0x10 build/gc-eu-mq-dbg/src/libultra/io/piacs.o
+                0x000000000000a830                __osPiAccessQueueEnabled
+ build/gc-eu-mq-dbg/src/libultra/os/sendmesg.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/stopthread.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/viextendvstart.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodepallan1.o(.data*)
+ .data          0x000000000000a840       0x50 build/gc-eu-mq-dbg/src/libultra/io/vimodepallan1.o
+                0x000000000000a840                osViModePalLan1
+ build/gc-eu-mq-dbg/src/libultra/os/recvmesg.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/initialize.o(.data*)
+ .data          0x000000000000a890       0x20 build/gc-eu-mq-dbg/src/libultra/os/initialize.o
+                0x000000000000a890                osClockRate
+                0x000000000000a898                osViClock
+                0x000000000000a89c                __osShutdown
+                0x000000000000a8a0                __OSGlobalIntMask
+ build/gc-eu-mq-dbg/src/libultra/libc/ll.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o(.data*)
+ .data          0x000000000000a8b0       0x30 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
+                0x000000000000a8b0                __osHwIntTable
+                0x000000000000a8d8                __osPiIntTable
+ build/gc-eu-mq-dbg/src/libultra/os/thread.o(.data*)
+ .data          0x000000000000a8e0       0x20 build/gc-eu-mq-dbg/src/libultra/os/thread.o
+                0x000000000000a8e0                __osThreadTail
+                0x000000000000a8e8                __osRunQueue
+                0x000000000000a8ec                __osActiveQueue
+                0x000000000000a8f0                __osRunningThread
+                0x000000000000a8f4                __osFaultedThread
+ build/gc-eu-mq-dbg/src/libultra/os/destroythread.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/libc/bzero.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/parameters.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/createthread.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/setsr.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/getsr.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/pimgr.o(.data*)
+ .data          0x000000000000a900       0x30 build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
+                0x000000000000a900                __osPiDevMgr
+                0x000000000000a91c                __osPiTable
+                0x000000000000a920                __osCurrentHandle
+ build/gc-eu-mq-dbg/src/libultra/os/kdebugserver.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/devmgr.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/viblack.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/sirawread.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/setintmask.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/visetmode.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/probetlb.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o(.data*)
+ .data          0x000000000000a930       0x10 build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o
+                0x000000000000a930                __osPreNMI
+ build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o(.data*)
+ .data          0x000000000000a940       0x50 build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o
+                0x000000000000a940                spaces
+                0x000000000000a964                zeroes
+ build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/epidma.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/libc/string.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/invalicache.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/si.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/jammesg.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/epirawread.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/gettime.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/timerintr.o(.data*)
+ .data          0x000000000000a990       0x10 build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
+                0x000000000000a990                __osTimerList
+ build/gc-eu-mq-dbg/src/libultra/os/getcount.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/setcompare.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/interrupt.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o(.data*)
+ .data          0x000000000000a9a0       0x50 build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o
+                0x000000000000a9a0                osViModeNtscLan1
+ build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o(.data*)
+ .data          0x000000000000a9f0       0x50 build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o
+                0x000000000000a9f0                osViModeMpalLan1
+ build/gc-eu-mq-dbg/src/libultra/io/vi.o(.data*)
+ .data          0x000000000000aa40       0x70 build/gc-eu-mq-dbg/src/libultra/io/vi.o
+                0x000000000000aa40                vi
+                0x000000000000aaa0                __osViCurr
+                0x000000000000aaa4                __osViNext
+ build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/epiread.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o(.data*)
+ .data          0x000000000000aab0       0x10 build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o
+ build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o(.data*)
+ .data          0x000000000000aac0       0x50 build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o
+                0x000000000000aac0                osViModeFpalLan1
+ build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/getcause.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o(.data*)
+ .data          0x000000000000ab10       0x30 build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o
+ build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimgr.o(.data*)
+ .data          0x000000000000ab40       0x20 build/gc-eu-mq-dbg/src/libultra/io/vimgr.o
+                0x000000000000ab40                __osViDevMgr
+                0x000000000000ab5c                __additional_scanline
+ build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/startthread.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o(.data*)
+ build/gc-eu-mq-dbg/src/boot/build.o(.data*)
+ build/gc-eu-mq-dbg/data/rsp_boot.text.o(.data*)
+ .data          0x000000000000ab60        0x0 build/gc-eu-mq-dbg/data/rsp_boot.text.o
+ build/gc-eu-mq-dbg/data/cic6105.text.o(.data*)
+ .data          0x000000000000ab60        0x0 build/gc-eu-mq-dbg/data/cic6105.text.o
+ build/gc-eu-mq-dbg/src/libu64/debug.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/libc/string.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o(.data*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o(.data*)
+
+.rodata         0x000000000000ab60     0x73b0
+ build/gc-eu-mq-dbg/src/boot/boot_main.o(.rodata*)
+ .rodata        0x000000000000ab60       0x10 build/gc-eu-mq-dbg/src/boot/boot_main.o
+ build/gc-eu-mq-dbg/src/boot/idle.o(.rodata*)
+ .rodata        0x000000000000ab70      0x270 build/gc-eu-mq-dbg/src/boot/idle.o
+ build/gc-eu-mq-dbg/src/boot/viconfig.o(.rodata*)
+ .rodata        0x000000000000ade0       0x40 build/gc-eu-mq-dbg/src/boot/viconfig.o
+ build/gc-eu-mq-dbg/src/boot/carthandle.o(.rodata*)
+ build/gc-eu-mq-dbg/src/boot/z_std_dma.o(.rodata*)
+ .rodata        0x000000000000ae20     0x6aa0 build/gc-eu-mq-dbg/src/boot/z_std_dma.o
+ build/gc-eu-mq-dbg/src/boot/yaz0.o(.rodata*)
+ build/gc-eu-mq-dbg/src/boot/z_locale.o(.rodata*)
+ .rodata        0x00000000000118c0       0x90 build/gc-eu-mq-dbg/src/boot/z_locale.o
+ build/gc-eu-mq-dbg/src/boot/assert.o(.rodata*)
+ .rodata        0x0000000000011950       0x50 build/gc-eu-mq-dbg/src/boot/assert.o
+ build/gc-eu-mq-dbg/src/boot/is_debug.o(.rodata*)
+ .rodata        0x00000000000119a0       0x20 build/gc-eu-mq-dbg/src/boot/is_debug.o
+ build/gc-eu-mq-dbg/src/boot/driverominit.o(.rodata*)
+ build/gc-eu-mq-dbg/src/boot/mio0.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libu64/stackcheck.o(.rodata*)
+ .rodata        0x00000000000119c0       0xd0 build/gc-eu-mq-dbg/src/libu64/stackcheck.o
+ build/gc-eu-mq-dbg/src/libu64/debug.o(.rodata*)
+ .rodata        0x0000000000011a90      0x200 build/gc-eu-mq-dbg/src/libu64/debug.o
+ build/gc-eu-mq-dbg/src/libc64/sprintf.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/piacs.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/sendmesg.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/stopthread.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/viextendvstart.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodepallan1.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/recvmesg.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/initialize.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/ll.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o(.rodata*)
+ .rodata        0x0000000000011c90       0x50 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
+ build/gc-eu-mq-dbg/src/libultra/os/thread.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/destroythread.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/bzero.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/parameters.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/createthread.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/setsr.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/getsr.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/pimgr.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/kdebugserver.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/devmgr.o(.rodata*)
+ .rodata        0x0000000000011ce0       0x20 build/gc-eu-mq-dbg/src/libultra/io/devmgr.o
+ build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/viblack.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/sirawread.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/setintmask.o(.rodata*)
+ .rodata        0x0000000000011d00       0x80 build/gc-eu-mq-dbg/src/libultra/os/setintmask.o
+                0x0000000000011d00                __osRcpImTable
+ build/gc-eu-mq-dbg/src/libultra/io/visetmode.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/probetlb.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o(.rodata*)
+ .rodata        0x0000000000011d80      0x100 build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o
+ build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/epidma.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/string.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/invalicache.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/si.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/jammesg.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/epirawread.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/gettime.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/timerintr.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/getcount.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/setcompare.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/interrupt.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/vi.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/epiread.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/getcause.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o(.rodata*)
+ .rodata        0x0000000000011e80       0x60 build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o
+ build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimgr.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/startthread.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o(.rodata*)
+ build/gc-eu-mq-dbg/src/boot/build.o(.rodata*)
+ .rodata        0x0000000000011ee0       0x30 build/gc-eu-mq-dbg/src/boot/build.o
+                0x0000000000011ee0                gBuildCreator
+                0x0000000000011ef0                gBuildDate
+                0x0000000000011f04                gBuildMakeOption
+ build/gc-eu-mq-dbg/data/rsp_boot.text.o(.rodata*)
+ build/gc-eu-mq-dbg/data/cic6105.text.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libu64/debug.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/string.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o(.rodata*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o(.rodata*)
+
+.reginfo        0x0000000000000000       0x18
+ .reginfo       0x0000000000000000       0x18 build/gc-eu-mq-dbg/src/boot/boot_main.o
+
+.MIPS.abiflags  0x0000000000000000       0x18
+ .MIPS.abiflags
+                0x0000000000000000       0x18 build/gc-eu-mq-dbg/data/rsp_boot.text.o
+
+.bss            0x0000000000000020     0x4a30
+ build/gc-eu-mq-dbg/src/boot/boot_main.o(.bss*)
+ .bss           0x0000000000000020      0x9f0 build/gc-eu-mq-dbg/src/boot/boot_main.o
+                0x0000000000000020                sBootThreadInfo
+                0x0000000000000040                sIdleThread
+                0x00000000000001f0                sIdleThreadStack
+                0x00000000000005f0                sIdleThreadInfo
+                0x0000000000000610                sBootThreadStack
+ build/gc-eu-mq-dbg/src/boot/idle.o(.bss*)
+ .bss           0x0000000000000a10      0xc10 build/gc-eu-mq-dbg/src/boot/idle.o
+                0x0000000000000a10                sMainThread
+                0x0000000000000bc0                sMainStack
+                0x00000000000014c0                sMainStackInfo
+                0x00000000000014e0                sPiMgrCmdBuff
+                0x00000000000015a8                gPiMgrCmdQueue
+                0x00000000000015c0                gViConfigMode
+                0x0000000000001610                gViConfigModeType
+ build/gc-eu-mq-dbg/src/boot/viconfig.o(.bss*)
+ build/gc-eu-mq-dbg/src/boot/carthandle.o(.bss*)
+ build/gc-eu-mq-dbg/src/boot/z_std_dma.o(.bss*)
+ .bss           0x0000000000001620      0x770 build/gc-eu-mq-dbg/src/boot/z_std_dma.o
+                0x0000000000001620                sDmaMgrStackInfo
+                0x0000000000001640                sDmaMgrMsgQueue
+                0x0000000000001658                sDmaMgrMsgBuf
+                0x00000000000016d8                sDmaMgrThread
+                0x0000000000001888                sDmaMgrStack
+                0x0000000000001d88                sDmaMgrCurFileName
+                0x0000000000001d8c                sDmaMgrCurFileLine
+ build/gc-eu-mq-dbg/src/boot/yaz0.o(.bss*)
+ .bss           0x0000000000001d90      0x410 build/gc-eu-mq-dbg/src/boot/yaz0.o
+                0x0000000000001d90                sYaz0DataBuffer
+                0x0000000000002190                sYaz0DataBufferEnd
+                0x0000000000002194                sYaz0CurRomStart
+                0x0000000000002198                sYaz0CurSize
+                0x000000000000219c                sYaz0MaxPtr
+ build/gc-eu-mq-dbg/src/boot/z_locale.o(.bss*)
+ .bss           0x00000000000021a0       0x20 build/gc-eu-mq-dbg/src/boot/z_locale.o
+ build/gc-eu-mq-dbg/src/boot/assert.o(.bss*)
+ build/gc-eu-mq-dbg/src/boot/is_debug.o(.bss*)
+ .bss           0x00000000000021c0       0x10 build/gc-eu-mq-dbg/src/boot/is_debug.o
+                0x00000000000021c0                sISVHandle
+ build/gc-eu-mq-dbg/src/boot/driverominit.o(.bss*)
+ .bss           0x00000000000021d0       0x80 build/gc-eu-mq-dbg/src/boot/driverominit.o
+                0x00000000000021d0                __DriveRomHandle
+ build/gc-eu-mq-dbg/src/boot/mio0.o(.bss*)
+ build/gc-eu-mq-dbg/src/libu64/stackcheck.o(.bss*)
+ build/gc-eu-mq-dbg/src/libu64/debug.o(.bss*)
+ build/gc-eu-mq-dbg/src/libc64/sprintf.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/piacs.o(.bss*)
+ .bss           0x0000000000002250       0x20 build/gc-eu-mq-dbg/src/libultra/io/piacs.o
+                0x0000000000002258                __osPiAccessQueue
+ build/gc-eu-mq-dbg/src/libultra/os/sendmesg.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/stopthread.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/viextendvstart.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodepallan1.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/recvmesg.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/initialize.o(.bss*)
+ .bss           0x0000000000002270       0x10 build/gc-eu-mq-dbg/src/libultra/os/initialize.o
+                0x0000000000002270                __osFinalrom
+ build/gc-eu-mq-dbg/src/libultra/libc/ll.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/thread.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/destroythread.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/libc/bzero.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/parameters.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/createthread.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/setsr.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/getsr.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/pimgr.o(.bss*)
+ .bss           0x0000000000002280     0x12c0 build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
+                0x0000000000002280                __Dom1SpeedParam
+                0x00000000000022f8                __Dom2SpeedParam
+ build/gc-eu-mq-dbg/src/libultra/os/kdebugserver.o(.bss*)
+ .bss           0x0000000000003540      0x1b0 build/gc-eu-mq-dbg/src/libultra/os/kdebugserver.o
+                0x0000000000003540                __osThreadSave
+ build/gc-eu-mq-dbg/src/libultra/io/devmgr.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/viblack.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/sirawread.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/setintmask.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/visetmode.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/probetlb.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o(.bss*)
+ .bss           0x00000000000036f0       0x80 build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o
+                0x00000000000036f0                __osEventStateTab
+ build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/epidma.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/libc/string.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/invalicache.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/si.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/jammesg.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/epirawread.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/gettime.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/timerintr.o(.bss*)
+ .bss           0x0000000000003770       0x40 build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
+                0x0000000000003770                __osBaseTimer
+                0x0000000000003790                __osCurrentTime
+                0x0000000000003798                __osBaseCounter
+                0x000000000000379c                __osViIntrCount
+                0x00000000000037a0                __osTimerCounter
+ build/gc-eu-mq-dbg/src/libultra/os/getcount.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/setcompare.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/interrupt.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/vi.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/epiread.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o(.bss*)
+ .bss           0x00000000000037b0       0x80 build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o
+                0x00000000000037b0                __CartRomHandle
+ build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/getcause.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimgr.o(.bss*)
+ .bss           0x0000000000003830     0x1220 build/gc-eu-mq-dbg/src/libultra/io/vimgr.o
+ build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/startthread.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o(.bss*)
+ build/gc-eu-mq-dbg/src/boot/build.o(.bss*)
+ build/gc-eu-mq-dbg/data/rsp_boot.text.o(.bss*)
+ .bss           0x0000000000004a50        0x0 build/gc-eu-mq-dbg/data/rsp_boot.text.o
+ build/gc-eu-mq-dbg/data/cic6105.text.o(.bss*)
+ .bss           0x0000000000004a50        0x0 build/gc-eu-mq-dbg/data/cic6105.text.o
+ build/gc-eu-mq-dbg/src/libu64/debug.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/libc/string.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o(.bss*)
+ build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o(.bss*)
+
+/DISCARD/
+ *(.gptab.*)
 OUTPUT(build/gc-eu-mq-dbg/segments/boot.plf elf32-tradbigmips)
 
-.options        0x0000000000000000      0xb00
+.options        0x0000000000000000      0xb20
  .options       0x0000000000000000       0x40 build/gc-eu-mq-dbg/src/boot/boot_main.o
  .options       0x0000000000000040       0x40 build/gc-eu-mq-dbg/src/boot/idle.o
  .options       0x0000000000000080       0x40 build/gc-eu-mq-dbg/src/boot/viconfig.o
@@ -808,204 +1122,164 @@ OUTPUT(build/gc-eu-mq-dbg/segments/boot.plf elf32-tradbigmips)
  .options       0x0000000000000480       0x20 build/gc-eu-mq-dbg/src/libultra/os/createthread.o
  .options       0x00000000000004a0       0x20 build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o
  .options       0x00000000000004c0       0x20 build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
- .options       0x00000000000004e0       0x20 build/gc-eu-mq-dbg/src/libultra/io/devmgr.o
- .options       0x0000000000000500       0x20 build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o
- .options       0x0000000000000520       0x20 build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o
- .options       0x0000000000000540       0x20 build/gc-eu-mq-dbg/src/libultra/io/viblack.o
- .options       0x0000000000000560       0x20 build/gc-eu-mq-dbg/src/libultra/io/sirawread.o
- .options       0x0000000000000580       0x20 build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o
- .options       0x00000000000005a0       0x20 build/gc-eu-mq-dbg/src/libultra/io/visetmode.o
- .options       0x00000000000005c0       0x20 build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o
- .options       0x00000000000005e0       0x20 build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o
- .options       0x0000000000000600       0x20 build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o
- .options       0x0000000000000620       0x20 build/gc-eu-mq-dbg/src/libultra/io/epidma.o
- .options       0x0000000000000640       0x20 build/gc-eu-mq-dbg/src/libultra/libc/string.o
- .options       0x0000000000000660       0x20 build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o
- .options       0x0000000000000680       0x20 build/gc-eu-mq-dbg/src/libultra/io/si.o
- .options       0x00000000000006a0       0x20 build/gc-eu-mq-dbg/src/libultra/os/jammesg.o
- .options       0x00000000000006c0       0x20 build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o
- .options       0x00000000000006e0       0x20 build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o
- .options       0x0000000000000700       0x20 build/gc-eu-mq-dbg/src/libultra/io/epirawread.o
- .options       0x0000000000000720       0x20 build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o
- .options       0x0000000000000740       0x20 build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o
- .options       0x0000000000000760       0x20 build/gc-eu-mq-dbg/src/libultra/os/gettime.o
- .options       0x0000000000000780       0x20 build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
- .options       0x00000000000007a0       0x20 build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o
- .options       0x00000000000007c0       0x20 build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o
- .options       0x00000000000007e0       0x20 build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o
- .options       0x0000000000000800       0x20 build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o
- .options       0x0000000000000820       0x20 build/gc-eu-mq-dbg/src/libultra/io/vi.o
- .options       0x0000000000000840       0x20 build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o
- .options       0x0000000000000860       0x20 build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o
- .options       0x0000000000000880       0x20 build/gc-eu-mq-dbg/src/libultra/io/epiread.o
- .options       0x00000000000008a0       0x20 build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o
- .options       0x00000000000008c0       0x20 build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o
- .options       0x00000000000008e0       0x20 build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o
- .options       0x0000000000000900       0x20 build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o
- .options       0x0000000000000920       0x20 build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o
- .options       0x0000000000000940       0x20 build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o
- .options       0x0000000000000960       0x20 build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o
- .options       0x0000000000000980       0x20 build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o
- .options       0x00000000000009a0       0x20 build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o
- .options       0x00000000000009c0       0x20 build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o
- .options       0x00000000000009e0       0x20 build/gc-eu-mq-dbg/src/libultra/io/vimgr.o
- .options       0x0000000000000a00       0x20 build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o
- .options       0x0000000000000a20       0x20 build/gc-eu-mq-dbg/src/libultra/os/startthread.o
- .options       0x0000000000000a40       0x20 build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o
- .options       0x0000000000000a60       0x20 build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o
- .options       0x0000000000000a80       0x20 build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o
- .options       0x0000000000000aa0       0x20 build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o
- .options       0x0000000000000ac0       0x40 build/gc-eu-mq-dbg/src/boot/build.o
+ .options       0x00000000000004e0       0x20 build/gc-eu-mq-dbg/src/libultra/os/kdebugserver.o
+ .options       0x0000000000000500       0x20 build/gc-eu-mq-dbg/src/libultra/io/devmgr.o
+ .options       0x0000000000000520       0x20 build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o
+ .options       0x0000000000000540       0x20 build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o
+ .options       0x0000000000000560       0x20 build/gc-eu-mq-dbg/src/libultra/io/viblack.o
+ .options       0x0000000000000580       0x20 build/gc-eu-mq-dbg/src/libultra/io/sirawread.o
+ .options       0x00000000000005a0       0x20 build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o
+ .options       0x00000000000005c0       0x20 build/gc-eu-mq-dbg/src/libultra/io/visetmode.o
+ .options       0x00000000000005e0       0x20 build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o
+ .options       0x0000000000000600       0x20 build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o
+ .options       0x0000000000000620       0x20 build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o
+ .options       0x0000000000000640       0x20 build/gc-eu-mq-dbg/src/libultra/io/epidma.o
+ .options       0x0000000000000660       0x20 build/gc-eu-mq-dbg/src/libultra/libc/string.o
+ .options       0x0000000000000680       0x20 build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o
+ .options       0x00000000000006a0       0x20 build/gc-eu-mq-dbg/src/libultra/io/si.o
+ .options       0x00000000000006c0       0x20 build/gc-eu-mq-dbg/src/libultra/os/jammesg.o
+ .options       0x00000000000006e0       0x20 build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o
+ .options       0x0000000000000700       0x20 build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o
+ .options       0x0000000000000720       0x20 build/gc-eu-mq-dbg/src/libultra/io/epirawread.o
+ .options       0x0000000000000740       0x20 build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o
+ .options       0x0000000000000760       0x20 build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o
+ .options       0x0000000000000780       0x20 build/gc-eu-mq-dbg/src/libultra/os/gettime.o
+ .options       0x00000000000007a0       0x20 build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
+ .options       0x00000000000007c0       0x20 build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o
+ .options       0x00000000000007e0       0x20 build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o
+ .options       0x0000000000000800       0x20 build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o
+ .options       0x0000000000000820       0x20 build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o
+ .options       0x0000000000000840       0x20 build/gc-eu-mq-dbg/src/libultra/io/vi.o
+ .options       0x0000000000000860       0x20 build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o
+ .options       0x0000000000000880       0x20 build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o
+ .options       0x00000000000008a0       0x20 build/gc-eu-mq-dbg/src/libultra/io/epiread.o
+ .options       0x00000000000008c0       0x20 build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o
+ .options       0x00000000000008e0       0x20 build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o
+ .options       0x0000000000000900       0x20 build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o
+ .options       0x0000000000000920       0x20 build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o
+ .options       0x0000000000000940       0x20 build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o
+ .options       0x0000000000000960       0x20 build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o
+ .options       0x0000000000000980       0x20 build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o
+ .options       0x00000000000009a0       0x20 build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o
+ .options       0x00000000000009c0       0x20 build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o
+ .options       0x00000000000009e0       0x20 build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o
+ .options       0x0000000000000a00       0x20 build/gc-eu-mq-dbg/src/libultra/io/vimgr.o
+ .options       0x0000000000000a20       0x20 build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o
+ .options       0x0000000000000a40       0x20 build/gc-eu-mq-dbg/src/libultra/os/startthread.o
+ .options       0x0000000000000a60       0x20 build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o
+ .options       0x0000000000000a80       0x20 build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o
+ .options       0x0000000000000aa0       0x20 build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o
+ .options       0x0000000000000ac0       0x20 build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o
+ .options       0x0000000000000ae0       0x40 build/gc-eu-mq-dbg/src/boot/build.o
 
-.pdr            0x0000000000000000      0x3a0
- .pdr           0x0000000000000000       0x20 build/gc-eu-mq-dbg/src/boot/mio0.o
- .pdr           0x0000000000000020      0x100 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
- .pdr           0x0000000000000120       0x20 build/gc-eu-mq-dbg/src/libultra/libc/bzero.o
- .pdr           0x0000000000000140        0x0 build/gc-eu-mq-dbg/src/libultra/os/parameters.o
- .pdr           0x0000000000000140       0x20 build/gc-eu-mq-dbg/src/libultra/os/setsr.o
- .pdr           0x0000000000000160       0x20 build/gc-eu-mq-dbg/src/libultra/os/getsr.o
- .pdr           0x0000000000000180       0x20 build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o
- .pdr           0x00000000000001a0       0x20 build/gc-eu-mq-dbg/src/libultra/os/setintmask.o
- .pdr           0x00000000000001c0       0x20 build/gc-eu-mq-dbg/src/libultra/os/probetlb.o
- .pdr           0x00000000000001e0       0x20 build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o
- .pdr           0x0000000000000200       0x20 build/gc-eu-mq-dbg/src/libultra/os/invalicache.o
- .pdr           0x0000000000000220       0x20 build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o
- .pdr           0x0000000000000240       0x20 build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o
- .pdr           0x0000000000000260       0x20 build/gc-eu-mq-dbg/src/libultra/os/getcount.o
- .pdr           0x0000000000000280       0x20 build/gc-eu-mq-dbg/src/libultra/os/setcompare.o
- .pdr           0x00000000000002a0       0x20 build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o
- .pdr           0x00000000000002c0       0x40 build/gc-eu-mq-dbg/src/libultra/os/interrupt.o
- .pdr           0x0000000000000300       0x20 build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o
- .pdr           0x0000000000000320       0x20 build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o
- .pdr           0x0000000000000340       0x20 build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o
- .pdr           0x0000000000000360       0x20 build/gc-eu-mq-dbg/src/libultra/os/getcause.o
- .pdr           0x0000000000000380       0x20 build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o
- .pdr           0x00000000000003a0        0x0 build/gc-eu-mq-dbg/data/rsp_boot.text.o
- .pdr           0x00000000000003a0        0x0 build/gc-eu-mq-dbg/data/cic6105.text.o
+.options        0x0000000000000000      0x2c0
+ .options       0x0000000000000000       0x20 build/gc-eu-mq-dbg/src/boot/mio0.o
+ .options       0x0000000000000020       0x20 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
+ .options       0x0000000000000040       0x20 build/gc-eu-mq-dbg/src/libultra/libc/bzero.o
+ .options       0x0000000000000060       0x20 build/gc-eu-mq-dbg/src/libultra/os/parameters.o
+ .options       0x0000000000000080       0x20 build/gc-eu-mq-dbg/src/libultra/os/setsr.o
+ .options       0x00000000000000a0       0x20 build/gc-eu-mq-dbg/src/libultra/os/getsr.o
+ .options       0x00000000000000c0       0x20 build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o
+ .options       0x00000000000000e0       0x20 build/gc-eu-mq-dbg/src/libultra/os/setintmask.o
+ .options       0x0000000000000100       0x20 build/gc-eu-mq-dbg/src/libultra/os/probetlb.o
+ .options       0x0000000000000120       0x20 build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o
+ .options       0x0000000000000140       0x20 build/gc-eu-mq-dbg/src/libultra/os/invalicache.o
+ .options       0x0000000000000160       0x20 build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o
+ .options       0x0000000000000180       0x20 build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o
+ .options       0x00000000000001a0       0x20 build/gc-eu-mq-dbg/src/libultra/os/getcount.o
+ .options       0x00000000000001c0       0x20 build/gc-eu-mq-dbg/src/libultra/os/setcompare.o
+ .options       0x00000000000001e0       0x20 build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o
+ .options       0x0000000000000200       0x20 build/gc-eu-mq-dbg/src/libultra/os/interrupt.o
+ .options       0x0000000000000220       0x20 build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o
+ .options       0x0000000000000240       0x20 build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o
+ .options       0x0000000000000260       0x20 build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o
+ .options       0x0000000000000280       0x20 build/gc-eu-mq-dbg/src/libultra/os/getcause.o
+ .options       0x00000000000002a0       0x20 build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o
+
+.pdr            0x0000000000000000        0x0
+ .pdr           0x0000000000000000        0x0 build/gc-eu-mq-dbg/data/rsp_boot.text.o
+ .pdr           0x0000000000000000        0x0 build/gc-eu-mq-dbg/data/cic6105.text.o
 
 .gnu.attributes
                 0x0000000000000000       0x10
  .gnu.attributes
-                0x0000000000000000       0x10 build/gc-eu-mq-dbg/src/boot/mio0.o
+                0x0000000000000000       0x10 build/gc-eu-mq-dbg/data/rsp_boot.text.o
  .gnu.attributes
-                0x0000000000000010       0x10 build/gc-eu-mq-dbg/src/libultra/os/exceptasm.o
- .gnu.attributes
-                0x0000000000000020       0x10 build/gc-eu-mq-dbg/src/libultra/libc/bzero.o
- .gnu.attributes
-                0x0000000000000030       0x10 build/gc-eu-mq-dbg/src/libultra/os/parameters.o
- .gnu.attributes
-                0x0000000000000040       0x10 build/gc-eu-mq-dbg/src/libultra/os/setsr.o
- .gnu.attributes
-                0x0000000000000050       0x10 build/gc-eu-mq-dbg/src/libultra/os/getsr.o
- .gnu.attributes
-                0x0000000000000060       0x10 build/gc-eu-mq-dbg/src/libultra/os/writebackdcache.o
- .gnu.attributes
-                0x0000000000000070       0x10 build/gc-eu-mq-dbg/src/libultra/os/setintmask.o
- .gnu.attributes
-                0x0000000000000080       0x10 build/gc-eu-mq-dbg/src/libultra/os/probetlb.o
- .gnu.attributes
-                0x0000000000000090       0x10 build/gc-eu-mq-dbg/src/libultra/os/unmaptlball.o
- .gnu.attributes
-                0x00000000000000a0       0x10 build/gc-eu-mq-dbg/src/libultra/os/invalicache.o
- .gnu.attributes
-                0x00000000000000b0       0x10 build/gc-eu-mq-dbg/src/libultra/os/invaldcache.o
- .gnu.attributes
-                0x00000000000000c0       0x10 build/gc-eu-mq-dbg/src/libultra/libc/bcmp.o
- .gnu.attributes
-                0x00000000000000d0       0x10 build/gc-eu-mq-dbg/src/libultra/os/getcount.o
- .gnu.attributes
-                0x00000000000000e0       0x10 build/gc-eu-mq-dbg/src/libultra/os/setcompare.o
- .gnu.attributes
-                0x00000000000000f0       0x10 build/gc-eu-mq-dbg/src/libultra/libc/bcopy.o
- .gnu.attributes
-                0x0000000000000100       0x10 build/gc-eu-mq-dbg/src/libultra/os/interrupt.o
- .gnu.attributes
-                0x0000000000000110       0x10 build/gc-eu-mq-dbg/src/libultra/os/setfpccsr.o
- .gnu.attributes
-                0x0000000000000120       0x10 build/gc-eu-mq-dbg/src/libultra/os/getfpccsr.o
- .gnu.attributes
-                0x0000000000000130       0x10 build/gc-eu-mq-dbg/src/libultra/os/maptlbrdb.o
- .gnu.attributes
-                0x0000000000000140       0x10 build/gc-eu-mq-dbg/src/libultra/os/getcause.o
- .gnu.attributes
-                0x0000000000000150       0x10 build/gc-eu-mq-dbg/src/libultra/os/setwatchlo.o
- .gnu.attributes
-                0x0000000000000160       0x10 build/gc-eu-mq-dbg/data/rsp_boot.text.o
- .gnu.attributes
-                0x0000000000000170       0x10 build/gc-eu-mq-dbg/data/cic6105.text.o
+                0x0000000000000010       0x10 build/gc-eu-mq-dbg/data/cic6105.text.o
 
-.mdebug         0x0000000000000000     0xb4c4
- .mdebug        0x0000000000000000      0xaa4 build/gc-eu-mq-dbg/src/boot/boot_main.o
- .mdebug        0x0000000000000aa4     0x124c build/gc-eu-mq-dbg/src/boot/idle.o
- .mdebug        0x0000000000001cf0      0x7fc build/gc-eu-mq-dbg/src/boot/viconfig.o
- .mdebug        0x00000000000024ec      0x218 build/gc-eu-mq-dbg/src/boot/carthandle.o
- .mdebug        0x0000000000002704     0x4b8c build/gc-eu-mq-dbg/src/boot/z_std_dma.o
- .mdebug        0x0000000000007290      0x738 build/gc-eu-mq-dbg/src/boot/yaz0.o
- .mdebug        0x00000000000079c8      0xa00 build/gc-eu-mq-dbg/src/boot/z_locale.o
- .mdebug        0x00000000000083c8      0x60c build/gc-eu-mq-dbg/src/boot/assert.o
- .mdebug        0x00000000000089d4      0x888 build/gc-eu-mq-dbg/src/boot/is_debug.o
- .mdebug        0x000000000000925c      0x654 build/gc-eu-mq-dbg/src/boot/driverominit.o
- .mdebug        0x00000000000098b0      0x7c8 build/gc-eu-mq-dbg/src/libu64/stackcheck.o
- .mdebug        0x000000000000a078      0xcc0 build/gc-eu-mq-dbg/src/libu64/debug.o
- .mdebug        0x000000000000ad38      0x550 build/gc-eu-mq-dbg/src/libc64/sprintf.o
- .mdebug        0x000000000000b288      0x584 build/gc-eu-mq-dbg/src/libultra/io/piacs.o
- .mdebug        0x000000000000b80c      0x434 build/gc-eu-mq-dbg/src/libultra/os/sendmesg.o
- .mdebug        0x000000000000bc40      0x414 build/gc-eu-mq-dbg/src/libultra/os/stopthread.o
- .mdebug        0x000000000000c054      0x2b8 build/gc-eu-mq-dbg/src/libultra/io/viextendvstart.o
- .mdebug        0x000000000000c30c      0x218 build/gc-eu-mq-dbg/src/libultra/io/vimodepallan1.o
- .mdebug        0x000000000000c524      0x434 build/gc-eu-mq-dbg/src/libultra/os/recvmesg.o
- .mdebug        0x000000000000c958      0x95c build/gc-eu-mq-dbg/src/libultra/os/initialize.o
- .mdebug        0x000000000000d2b4      0x6b0 build/gc-eu-mq-dbg/src/libultra/libc/ll.o
- .mdebug        0x000000000000d964      0x358 build/gc-eu-mq-dbg/src/libultra/os/thread.o
- .mdebug        0x000000000000dcbc      0x44c build/gc-eu-mq-dbg/src/libultra/os/destroythread.o
- .mdebug        0x000000000000e108      0x3fc build/gc-eu-mq-dbg/src/libultra/os/createthread.o
- .mdebug        0x000000000000e504      0x3cc build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o
- .mdebug        0x000000000000e8d0      0x7ec build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
- .mdebug        0x000000000000f0bc      0x4e0 build/gc-eu-mq-dbg/src/libultra/io/devmgr.o
- .mdebug        0x000000000000f59c      0x39c build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o
- .mdebug        0x000000000000f938      0x2bc build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o
- .mdebug        0x000000000000fbf4      0x3a8 build/gc-eu-mq-dbg/src/libultra/io/viblack.o
- .mdebug        0x000000000000ff9c      0x2b4 build/gc-eu-mq-dbg/src/libultra/io/sirawread.o
- .mdebug        0x0000000000010250      0x2ac build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o
- .mdebug        0x00000000000104fc      0x3b4 build/gc-eu-mq-dbg/src/libultra/io/visetmode.o
- .mdebug        0x00000000000108b0      0x1e4 build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o
- .mdebug        0x0000000000010a94      0x4f0 build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o
- .mdebug        0x0000000000010f84      0x590 build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o
- .mdebug        0x0000000000011514      0x3d4 build/gc-eu-mq-dbg/src/libultra/io/epidma.o
- .mdebug        0x00000000000118e8      0x2d4 build/gc-eu-mq-dbg/src/libultra/libc/string.o
- .mdebug        0x0000000000011bbc      0x2c0 build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o
- .mdebug        0x0000000000011e7c      0x1d4 build/gc-eu-mq-dbg/src/libultra/io/si.o
- .mdebug        0x0000000000012050      0x430 build/gc-eu-mq-dbg/src/libultra/os/jammesg.o
- .mdebug        0x0000000000012480      0x468 build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o
- .mdebug        0x00000000000128e8      0x2b0 build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o
- .mdebug        0x0000000000012b98      0x2ec build/gc-eu-mq-dbg/src/libultra/io/epirawread.o
- .mdebug        0x0000000000012e84      0x3b0 build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o
- .mdebug        0x0000000000013234      0x3dc build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o
- .mdebug        0x0000000000013610      0x404 build/gc-eu-mq-dbg/src/libultra/os/gettime.o
- .mdebug        0x0000000000013a14      0x71c build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
- .mdebug        0x0000000000014130      0x3cc build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o
- .mdebug        0x00000000000144fc      0x3d0 build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o
- .mdebug        0x00000000000148cc      0x21c build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o
- .mdebug        0x0000000000014ae8      0x21c build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o
- .mdebug        0x0000000000014d04      0x55c build/gc-eu-mq-dbg/src/libultra/io/vi.o
- .mdebug        0x0000000000015260      0x44c build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o
- .mdebug        0x00000000000156ac      0x2bc build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o
- .mdebug        0x0000000000015968      0x2f8 build/gc-eu-mq-dbg/src/libultra/io/epiread.o
- .mdebug        0x0000000000015c60      0x3dc build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o
- .mdebug        0x000000000001603c      0x55c build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o
- .mdebug        0x0000000000016598      0x21c build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o
- .mdebug        0x00000000000167b4      0x2f8 build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o
- .mdebug        0x0000000000016aac      0x414 build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o
- .mdebug        0x0000000000016ec0      0x2f0 build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o
- .mdebug        0x00000000000171b0      0x410 build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o
- .mdebug        0x00000000000175c0      0x290 build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o
- .mdebug        0x0000000000017850      0x5dc build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o
- .mdebug        0x0000000000017e2c      0x2b8 build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o
- .mdebug        0x00000000000180e4      0x874 build/gc-eu-mq-dbg/src/libultra/io/vimgr.o
- .mdebug        0x0000000000018958      0x2c8 build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o
- .mdebug        0x0000000000018c20      0x498 build/gc-eu-mq-dbg/src/libultra/os/startthread.o
- .mdebug        0x00000000000190b8      0x3b4 build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o
- .mdebug        0x000000000001946c      0x3bc build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o
- .mdebug        0x0000000000019828      0x3d4 build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o
- .mdebug        0x0000000000019bfc      0x2c8 build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o
- .mdebug        0x0000000000019ec4      0x25c build/gc-eu-mq-dbg/src/boot/build.o
+.mdebug         0x0000000000000000     0xf154
+ .mdebug        0x0000000000000000      0xcd4 build/gc-eu-mq-dbg/src/boot/boot_main.o
+ .mdebug        0x0000000000000cd4     0x152c build/gc-eu-mq-dbg/src/boot/idle.o
+ .mdebug        0x0000000000002200      0x978 build/gc-eu-mq-dbg/src/boot/viconfig.o
+ .mdebug        0x0000000000002b78      0x214 build/gc-eu-mq-dbg/src/boot/carthandle.o
+ .mdebug        0x0000000000002d8c     0x4db0 build/gc-eu-mq-dbg/src/boot/z_std_dma.o
+ .mdebug        0x0000000000007b3c      0x734 build/gc-eu-mq-dbg/src/boot/yaz0.o
+ .mdebug        0x0000000000008270      0xab8 build/gc-eu-mq-dbg/src/boot/z_locale.o
+ .mdebug        0x0000000000008d28      0x60c build/gc-eu-mq-dbg/src/boot/assert.o
+ .mdebug        0x0000000000009334      0x888 build/gc-eu-mq-dbg/src/boot/is_debug.o
+ .mdebug        0x0000000000009bbc      0x718 build/gc-eu-mq-dbg/src/boot/driverominit.o
+ .mdebug        0x000000000000a2d4      0x7cc build/gc-eu-mq-dbg/src/libu64/stackcheck.o
+ .mdebug        0x000000000000aaa0      0xcc8 build/gc-eu-mq-dbg/src/libu64/debug.o
+ .mdebug        0x000000000000b768      0x550 build/gc-eu-mq-dbg/src/libc64/sprintf.o
+ .mdebug        0x000000000000bcb8      0x644 build/gc-eu-mq-dbg/src/libultra/io/piacs.o
+ .mdebug        0x000000000000c2fc      0x4fc build/gc-eu-mq-dbg/src/libultra/os/sendmesg.o
+ .mdebug        0x000000000000c7f8      0x4dc build/gc-eu-mq-dbg/src/libultra/os/stopthread.o
+ .mdebug        0x000000000000ccd4      0x388 build/gc-eu-mq-dbg/src/libultra/io/viextendvstart.o
+ .mdebug        0x000000000000d05c      0x220 build/gc-eu-mq-dbg/src/libultra/io/vimodepallan1.o
+ .mdebug        0x000000000000d27c      0x4fc build/gc-eu-mq-dbg/src/libultra/os/recvmesg.o
+ .mdebug        0x000000000000d778      0xae8 build/gc-eu-mq-dbg/src/libultra/os/initialize.o
+ .mdebug        0x000000000000e260      0x770 build/gc-eu-mq-dbg/src/libultra/libc/ll.o
+ .mdebug        0x000000000000e9d0      0x41c build/gc-eu-mq-dbg/src/libultra/os/thread.o
+ .mdebug        0x000000000000edec      0x518 build/gc-eu-mq-dbg/src/libultra/os/destroythread.o
+ .mdebug        0x000000000000f304      0x4c8 build/gc-eu-mq-dbg/src/libultra/os/createthread.o
+ .mdebug        0x000000000000f7cc      0x4a0 build/gc-eu-mq-dbg/src/libultra/io/vigetnextframebuf.o
+ .mdebug        0x000000000000fc6c      0x934 build/gc-eu-mq-dbg/src/libultra/io/pimgr.o
+ .mdebug        0x00000000000105a0      0x224 build/gc-eu-mq-dbg/src/libultra/os/kdebugserver.o
+ .mdebug        0x00000000000107c4      0x5a4 build/gc-eu-mq-dbg/src/libultra/io/devmgr.o
+ .mdebug        0x0000000000010d68      0x470 build/gc-eu-mq-dbg/src/libultra/io/pirawdma.o
+ .mdebug        0x00000000000111d8      0x38c build/gc-eu-mq-dbg/src/libultra/os/virtualtophysical.o
+ .mdebug        0x0000000000011564      0x46c build/gc-eu-mq-dbg/src/libultra/io/viblack.o
+ .mdebug        0x00000000000119d0      0x37c build/gc-eu-mq-dbg/src/libultra/io/sirawread.o
+ .mdebug        0x0000000000011d4c      0x378 build/gc-eu-mq-dbg/src/libultra/os/getthreadid.o
+ .mdebug        0x00000000000120c4      0x47c build/gc-eu-mq-dbg/src/libultra/io/visetmode.o
+ .mdebug        0x0000000000012540      0x2ac build/gc-eu-mq-dbg/src/libultra/os/getmemsize.o
+ .mdebug        0x00000000000127ec      0x5bc build/gc-eu-mq-dbg/src/libultra/os/seteventmesg.o
+ .mdebug        0x0000000000012da8      0x64c build/gc-eu-mq-dbg/src/libultra/libc/xprintf.o
+ .mdebug        0x00000000000133f4      0x498 build/gc-eu-mq-dbg/src/libultra/io/epidma.o
+ .mdebug        0x000000000001388c      0x394 build/gc-eu-mq-dbg/src/libultra/libc/string.o
+ .mdebug        0x0000000000013c20      0x390 build/gc-eu-mq-dbg/src/libultra/os/createmesgqueue.o
+ .mdebug        0x0000000000013fb0      0x294 build/gc-eu-mq-dbg/src/libultra/io/si.o
+ .mdebug        0x0000000000014244      0x4f4 build/gc-eu-mq-dbg/src/libultra/os/jammesg.o
+ .mdebug        0x0000000000014738      0x534 build/gc-eu-mq-dbg/src/libultra/os/setthreadpri.o
+ .mdebug        0x0000000000014c6c      0x37c build/gc-eu-mq-dbg/src/libultra/os/getthreadpri.o
+ .mdebug        0x0000000000014fe8      0x3b8 build/gc-eu-mq-dbg/src/libultra/io/epirawread.o
+ .mdebug        0x00000000000153a0      0x47c build/gc-eu-mq-dbg/src/libultra/io/viswapbuf.o
+ .mdebug        0x000000000001581c      0x4c0 build/gc-eu-mq-dbg/src/libultra/io/epirawdma.o
+ .mdebug        0x0000000000015cdc      0x4c8 build/gc-eu-mq-dbg/src/libultra/os/gettime.o
+ .mdebug        0x00000000000161a4      0x7e4 build/gc-eu-mq-dbg/src/libultra/os/timerintr.o
+ .mdebug        0x0000000000016988      0x4a0 build/gc-eu-mq-dbg/src/libultra/os/setglobalintmask.o
+ .mdebug        0x0000000000016e28      0x4a4 build/gc-eu-mq-dbg/src/libultra/os/resetglobalintmask.o
+ .mdebug        0x00000000000172cc      0x224 build/gc-eu-mq-dbg/src/libultra/io/vimodentsclan1.o
+ .mdebug        0x00000000000174f0      0x224 build/gc-eu-mq-dbg/src/libultra/io/vimodempallan1.o
+ .mdebug        0x0000000000017714      0x79c build/gc-eu-mq-dbg/src/libultra/io/vi.o
+ .mdebug        0x0000000000017eb0      0x520 build/gc-eu-mq-dbg/src/libultra/io/viswapcontext.o
+ .mdebug        0x00000000000183d0      0x380 build/gc-eu-mq-dbg/src/libultra/io/pigetcmdq.o
+ .mdebug        0x0000000000018750      0x3bc build/gc-eu-mq-dbg/src/libultra/io/epiread.o
+ .mdebug        0x0000000000018b0c      0x4a8 build/gc-eu-mq-dbg/src/libultra/io/visetspecial.o
+ .mdebug        0x0000000000018fb4      0x628 build/gc-eu-mq-dbg/src/libultra/io/cartrominit.o
+ .mdebug        0x00000000000195dc      0x224 build/gc-eu-mq-dbg/src/libultra/io/vimodefpallan1.o
+ .mdebug        0x0000000000019800      0x3bc build/gc-eu-mq-dbg/src/libultra/io/epiwrite.o
+ .mdebug        0x0000000000019bbc      0x4dc build/gc-eu-mq-dbg/src/libultra/os/yieldthread.o
+ .mdebug        0x000000000001a098      0x3bc build/gc-eu-mq-dbg/src/libultra/io/epirawwrite.o
+ .mdebug        0x000000000001a454      0x4d0 build/gc-eu-mq-dbg/src/libultra/libc/xlitob.o
+ .mdebug        0x000000000001a924      0x350 build/gc-eu-mq-dbg/src/libultra/libc/ldiv.o
+ .mdebug        0x000000000001ac74      0x6a0 build/gc-eu-mq-dbg/src/libultra/libc/xldtob.o
+ .mdebug        0x000000000001b314      0x37c build/gc-eu-mq-dbg/src/libultra/io/sirawwrite.o
+ .mdebug        0x000000000001b690      0x9d8 build/gc-eu-mq-dbg/src/libultra/io/vimgr.o
+ .mdebug        0x000000000001c068      0x398 build/gc-eu-mq-dbg/src/libultra/io/vigetcurrcontext.o
+ .mdebug        0x000000000001c400      0x560 build/gc-eu-mq-dbg/src/libultra/os/startthread.o
+ .mdebug        0x000000000001c960      0x47c build/gc-eu-mq-dbg/src/libultra/io/visetyscale.o
+ .mdebug        0x000000000001cddc      0x484 build/gc-eu-mq-dbg/src/libultra/io/visetxscale.o
+ .mdebug        0x000000000001d260      0x4a0 build/gc-eu-mq-dbg/src/libultra/os/sethwintrroutine.o
+ .mdebug        0x000000000001d700      0x394 build/gc-eu-mq-dbg/src/libultra/os/gethwintrroutine.o
+ .mdebug        0x000000000001da94      0x25c build/gc-eu-mq-dbg/src/boot/build.o

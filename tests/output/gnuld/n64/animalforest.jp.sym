@@ -1,3 +1,4 @@
+80024C00,data,$_static_symbol_80024C00_build/asm/jp/makerom/header.o_.data
 80024C40,data,_binary_bin_jp_makerom_ipl3_bin_start
 80025C00,data,_binary_bin_jp_makerom_ipl3_bin_end
 80025C00,code,entrypoint
@@ -243,6 +244,7 @@
 8002E290,code,__sinf
 8002E290,code,sinf
 8002E450,code,sins
+8002E4C0,code,$_static_symbol_8002E4C0_build/lib/ultralib/src/io/sptask.o_.text
 8002E5CC,code,osSpTaskLoad
 8002E734,code,osSpTaskStartGo
 8002E780,code,osDestroyThread
@@ -286,6 +288,7 @@
 8002FE80,code,__createSpeedParam
 8002FF1C,code,__osInitialize_common
 800301C8,code,__osInitialize_autodetect
+800301D0,code,$_static_symbol_800301D0_build/lib/ultralib/src/os/parameters.o_.text
 80030230,code,__osSetSR
 80030240,code,__osGetSR
 80030250,code,osViGetNextFramebuffer
@@ -298,6 +301,7 @@
 80030720,code,__osSiRawReadIo
 80030770,code,osGetThreadId
 80030790,code,osSpTaskYield
+800307B0,code,$_static_symbol_800307B0_build/lib/ultralib/src/io/pfsreadwritefile.o_.text
 80030884,code,osPfsReadWriteFile
 80030C00,code,__osPfsGetStatus
 80030CD0,code,__osPfsRequestOneChannel
@@ -496,6 +500,7 @@
 8003C58C,data,D_8003C58C
 8003C590,data,__qrand_idum
 8003C5A0,data,osViModePalLan1
+8003C5F0,data,$_static_symbol_8003C5F0_build/lib/ultralib/src/gu/sins.o_.data
 8003CDF0,data,__osHwIntTable
 8003CE18,data,__osPiIntTable
 8003CE20,data,__osThreadTail
@@ -517,15 +522,25 @@
 8003CF10,data,__osPfsInodeCacheChannel
 8003CF14,data,__osPfsInodeCacheBank
 8003CF20,data,__osPreNMI
+8003CF30,data,$_static_symbol_8003CF30_build/lib/ultralib/src/libc/xprintf.o_.data
 8003CF80,data,__osTimerList
+8003CF90,data,$_static_symbol_8003CF90_build/lib/ultralib/src/gu/position.o_.data
+8003CFA0,data,$_static_symbol_8003CFA0_build/lib/ultralib/src/mgu/rotate.o_.data
 8003CFB0,data,osViModeNtscLan1
 8003D000,data,osViModeMpalLan1
+8003D050,data,$_static_symbol_8003D050_build/lib/ultralib/src/io/vi.o_.data
 8003D0B0,data,__osViCurr
 8003D0B4,data,__osViNext
+8003D0C0,data,$_static_symbol_8003D0C0_build/lib/ultralib/src/io/cartrominit.o_.data
 8003D0D0,data,osViModeFpalLan1
 8003D120,data,__osPfsLastChannel
+8003D130,data,$_static_symbol_8003D130_build/lib/ultralib/src/libc/xlitob.o_.data
 8003D160,data,__osViDevMgr
 8003D17C,data,__additional_scanline
+8003D180,data,$_static_symbol_8003D180_build/src/boot/boot_main.o_.rodata
+8003D190,data,$_static_symbol_8003D190_build/src/boot/idle.o_.rodata
+8003D1B0,data,$_static_symbol_8003D1B0_build/src/boot/ovlmgr.o_.rodata
+8003D1D0,data,$_static_symbol_8003D1D0_build/src/boot/z_std_dma.o_.rodata
 8003D3F0,data,RO_STR_8003D3F0_jp
 8003D400,data,RO_STR_8003D400_jp
 8003D41C,data,RO_STR_8003D41C_jp
@@ -658,8 +673,19 @@
 8003E27C,data,RO_STR_8003E27C_jp
 8003E290,data,jtbl_8003E290_jp
 8003E2B0,data,RO_STR_8003E2B0_jp
+8003E2C0,data,$_static_symbol_8003E2C0_build/src/boot/libc64/math64.o_.rodata
+8003E310,data,$_static_symbol_8003E310_build/src/boot/libc64/__osMalloc.o_.rodata
 8003E5D0,data,__osRcpImTable
+8003E650,data,$_static_symbol_8003E650_build/lib/ultralib/src/gu/sinf.o_.rodata
+8003E6A0,data,$_static_symbol_8003E6A0_build/lib/ultralib/src/os/exceptasm.o_.rodata
+8003E6F0,data,$_static_symbol_8003E6F0_build/lib/ultralib/src/gu/perspective.o_.rodata
+8003E700,data,$_static_symbol_8003E700_build/lib/ultralib/src/io/devmgr.o_.rodata
+8003E720,data,$_static_symbol_8003E720_build/lib/ultralib/src/gu/lookathil.o_.rodata
+8003E730,data,$_static_symbol_8003E730_build/lib/ultralib/src/libc/xprintf.o_.rodata
+8003E830,data,$_static_symbol_8003E830_build/lib/ultralib/src/gu/cosf.o_.rodata
 8003E880,data,__libm_qnan_f
+8003E890,data,$_static_symbol_8003E890_build/lib/ultralib/src/libc/xldtob.o_.rodata
+8003E8F0,data,$_static_symbol_8003E8F0_build/lib/ultralib/src/libc/llcvt.o_.rodata
 8003E900,data,__Creator__
 8003E924,data,__DateTime__
 8003E938,data,__MakeOption__
@@ -712,12 +738,14 @@
 800419C0,data,malloc_arena
 800419F0,data,__qrand_itemp
 80041A00,data,sArenaLockMsg
+80041A10,data,$_static_symbol_80041A10_build/lib/ultralib/src/io/sptask.o_.bss
 80041A50,data,__osContPifRam
 80041A90,data,__osContLastCmd
 80041A91,data,__osMaxControllers
 80041A98,data,__osEepromTimer
 80041AB8,data,__osEepromTimerQ
 80041AD0,data,__osEepromTimerMsg
+80041AE0,data,$_static_symbol_80041AE0_build/lib/ultralib/src/io/siacs.o_.bss
 80041AE8,data,__osSiAccessQueue
 80041B00,data,__osFinalrom
 80041B10,data,__osThreadSave
@@ -727,8 +755,10 @@
 80041D00,data,__osFlashHandler
 80041D74,data,__osFlashMsgBuf
 80041D78,data,__osFlashVersion
+80041D80,data,$_static_symbol_80041D80_build/lib/ultralib/src/io/motor.o_.bss
 80041E80,data,__Dom1SpeedParam
 80041EF8,data,__Dom2SpeedParam
+80043140,data,$_static_symbol_80043140_build/lib/ultralib/src/io/piacs.o_.bss
 80043148,data,__osPiAccessQueue
 80043160,data,__osPfsInodeCache
 80043260,data,__osEventStateTab
@@ -742,6 +772,7 @@
 80043358,data,__osGbpakTimerMsg
 80043360,data,__osPfsPifRam
 800433A0,data,__CartRomHandle
+80043420,data,$_static_symbol_80043420_build/lib/ultralib/src/io/vimgr.o_.bss
 80044640,data,__osEepPifRam
 80044680,data,__osEepromRead16K
 80044690,data,dma_rom_ad
@@ -5421,6 +5452,7 @@
 80107AE8,data,D_FLT_80107AE8_jp
 80107AF0,data,D_80107AF0_jp
 80107B00,data,D_80107B00_jp
+80107B30,data,$_static_symbol_80107B30_build/src/code/m_lights.o_.data
 80107B50,data,D_80107B50_jp
 80107B60,data,D_80107B60_jp
 80107B70,data,D_80107B70_jp
@@ -5670,6 +5702,7 @@
 8010DC88,data,D_8010DC88_jp
 8010DC8C,data,D_8010DC8C_jp
 8010DC90,data,D_8010DC90_jp
+8010DCA0,data,$_static_symbol_8010DCA0_build/src/code/m_start_data_init.o_.data
 8010DCE0,data,D_8010DCE0_jp
 8010DCE4,data,D_8010DCE4_jp
 8010DCE8,data,D_8010DCE8_jp
@@ -5892,9 +5925,12 @@
 80115090,data,D_80115090_jp
 80115D80,data,D_80115D80_jp
 801160C0,data,D_801160C0_jp
+80116110,data,$_static_symbol_80116110_build/src/code/c_keyframe.o_.rodata
 80116160,data,RO_STR_80116160_jp
 80116184,data,RO_STR_80116184_jp
+801161B0,data,$_static_symbol_801161B0_build/src/code/m_actor.o_.rodata
 801161E8,data,RO_801161E8_jp
+80116200,data,$_static_symbol_80116200_build/src/code/m_actor_dlftbls.o_.rodata
 80116250,data,RO_FLT_80116250_jp
 80116254,data,RO_FLT_80116254_jp
 80116258,data,RO_FLT_80116258_jp
@@ -6032,6 +6068,8 @@
 801167B0,data,jtbl_801167B0_jp
 801167D4,data,RO_FLT_801167D4_jp
 801167D8,data,RO_FLT_801167D8_jp
+801167E0,data,$_static_symbol_801167E0_build/src/code/m_collision_obj.o_.rodata
+801167F0,data,$_static_symbol_801167F0_build/src/code/m_controller.o_.rodata
 80116800,data,RO_80116800_jp
 80116804,data,RO_STR_80116804_jp
 80116808,data,RO_80116808_jp
@@ -6203,6 +6241,7 @@
 8011722C,data,RO_FLT_8011722C_jp
 80117230,data,RO_FLT_80117230_jp
 80117234,data,RO_FLT_80117234_jp
+80117240,data,$_static_symbol_80117240_build/src/code/m_lights.o_.rodata
 80117250,data,RO_STR_80117250_jp
 80117260,data,RO_STR_80117260_jp
 80117270,data,RO_STR_80117270_jp
@@ -6374,6 +6413,7 @@
 80117D6C,data,RO_STR_80117D6C_jp
 80117D78,data,RO_STR_80117D78_jp
 80117D90,data,RO_STR_80117D90_jp
+80117DB0,data,$_static_symbol_80117DB0_build/src/code/irqmgr.o_.rodata
 80117DD0,data,RO_80117DD0_jp
 80117DEC,data,RO_80117DEC_jp
 80117E54,data,RO_80117E54_jp
@@ -6433,6 +6473,8 @@
 80118154,data,RO_FLT_80118154_jp
 80118158,data,RO_FLT_80118158_jp
 80118160,data,RO_FLT_80118160_jp
+80118170,data,$_static_symbol_80118170_build/src/code/sys_matrix.o_.rodata
+801181A0,data,$_static_symbol_801181A0_build/src/code/zurumode.o_.rodata
 801181D0,data,jtbl_801181D0_jp
 801181F0,data,RO_FLT_801181F0_jp
 80118200,data,RO_FLT_80118200_jp
@@ -7363,6 +7405,8 @@
 80804368,data,D_80804368_jp
 8080438C,data,D_8080438C_jp
 808043A8,data,D_808043A8_jp
+808043C0,data,$_static_symbol_808043C0_build/src/overlays/gamestates/ovl_play/m_play.o_.rodata
+80804480,data,$_static_symbol_80804480_build/src/overlays/gamestates/ovl_play/m_play.o_.bss
 80804570,data,D_80804570
 80804790,code,func_80804790_jp
 80804860,code,second_game_cleanup
@@ -25825,6 +25869,7 @@
 80AB5360,data,B_80AB5360_jp
 80AB5380,data,B_80AB5380_jp
 80AB53A0,data,B_80AB53A0_jp
+80AB5760,data,$_static_symbol_80AB5760_build/asm/jp/data/overlays/other_ovl/ovl__00970920/ovl__00970920_reloc.data.o_.data
 80AB5AA0,data,_binary_bin_jp_segment_009757E0_bin_start
 80B136A0,data,_binary_bin_jp_segment_009757E0_bin_end
 80B136A0,data,_binary_bin_jp_segment_009D4000_bin_start

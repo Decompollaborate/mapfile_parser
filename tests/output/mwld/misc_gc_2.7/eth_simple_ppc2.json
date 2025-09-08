@@ -278,6 +278,12 @@
                     "vrom": "0x000434",
                     "symbols": [
                         {
+                            "name": "$_static_symbol_00000000_simple_ppc.o_@17",
+                            "vram": "0x00000000",
+                            "size": "0xC",
+                            "vrom": "0x000440"
+                        },
+                        {
                             "name": "@33",
                             "vram": "0x0000000C",
                             "size": "0xC",

@@ -12,7 +12,14 @@
                     "vram": 2147634176,
                     "size": 64,
                     "vrom": 0,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_80024C00_build/asm/jp/makerom/header.o_.data",
+                            "vram": 2147634176,
+                            "size": 64,
+                            "vrom": 0
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/bin/jp/makerom/ipl3.o",
@@ -1842,6 +1849,12 @@
                     "vrom": 39104,
                     "symbols": [
                         {
+                            "name": "$_static_symbol_8002E4C0_build/lib/ultralib/src/io/sptask.o_.text",
+                            "vram": 2147673280,
+                            "size": 268,
+                            "vrom": 39104
+                        },
+                        {
                             "name": "osSpTaskLoad",
                             "vram": 2147673548,
                             "size": 360,
@@ -2224,7 +2237,14 @@
                     "vram": 2147680720,
                     "size": 96,
                     "vrom": 46544,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_800301D0_build/lib/ultralib/src/os/parameters.o_.text",
+                            "vram": 2147680720,
+                            "size": 96,
+                            "vrom": 46544
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/os/setsr.o",
@@ -2404,6 +2424,12 @@
                     "size": 1104,
                     "vrom": 48048,
                     "symbols": [
+                        {
+                            "name": "$_static_symbol_800307B0_build/lib/ultralib/src/io/pfsreadwritefile.o_.text",
+                            "vram": 2147682224,
+                            "size": 212,
+                            "vrom": 48048
+                        },
                         {
                             "name": "osPfsReadWriteFile",
                             "vram": 2147682436,
@@ -4842,7 +4868,14 @@
                     "vram": 2147730928,
                     "size": 2048,
                     "vrom": 96752,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003C5F0_build/lib/ultralib/src/gu/sins.o_.data",
+                            "vram": 2147730928,
+                            "size": 2048,
+                            "vrom": 96752
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/os/exceptasm.o",
@@ -5066,7 +5099,14 @@
                     "vram": 2147733296,
                     "size": 80,
                     "vrom": 99120,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003CF30_build/lib/ultralib/src/libc/xprintf.o_.data",
+                            "vram": 2147733296,
+                            "size": 80,
+                            "vrom": 99120
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/os/timerintr.o",
@@ -5089,7 +5129,14 @@
                     "vram": 2147733392,
                     "size": 16,
                     "vrom": 99216,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003CF90_build/lib/ultralib/src/gu/position.o_.data",
+                            "vram": 2147733392,
+                            "size": 16,
+                            "vrom": 99216
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/mgu/rotate.o",
@@ -5097,7 +5144,14 @@
                     "vram": 2147733408,
                     "size": 16,
                     "vrom": 99232,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003CFA0_build/lib/ultralib/src/mgu/rotate.o_.data",
+                            "vram": 2147733408,
+                            "size": 16,
+                            "vrom": 99232
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/vimodes/vimodentsclan1.o",
@@ -5137,6 +5191,12 @@
                     "vrom": 99408,
                     "symbols": [
                         {
+                            "name": "$_static_symbol_8003D050_build/lib/ultralib/src/io/vi.o_.data",
+                            "vram": 2147733584,
+                            "size": 96,
+                            "vrom": 99408
+                        },
+                        {
                             "name": "__osViCurr",
                             "vram": 2147733680,
                             "size": 4,
@@ -5156,7 +5216,14 @@
                     "vram": 2147733696,
                     "size": 16,
                     "vrom": 99520,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003D0C0_build/lib/ultralib/src/io/cartrominit.o_.data",
+                            "vram": 2147733696,
+                            "size": 16,
+                            "vrom": 99520
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/vimodes/vimodefpallan1.o",
@@ -5194,7 +5261,14 @@
                     "vram": 2147733808,
                     "size": 48,
                     "vrom": 99632,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003D130_build/lib/ultralib/src/libc/xlitob.o_.data",
+                            "vram": 2147733808,
+                            "size": 48,
+                            "vrom": 99632
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/io/vimgr.o",
@@ -5223,7 +5297,14 @@
                     "vram": 2147733888,
                     "size": 16,
                     "vrom": 99712,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003D180_build/src/boot/boot_main.o_.rodata",
+                            "vram": 2147733888,
+                            "size": 16,
+                            "vrom": 99712
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/src/boot/idle.o",
@@ -5231,7 +5312,14 @@
                     "vram": 2147733904,
                     "size": 32,
                     "vrom": 99728,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003D190_build/src/boot/idle.o_.rodata",
+                            "vram": 2147733904,
+                            "size": 32,
+                            "vrom": 99728
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/src/boot/ovlmgr.o",
@@ -5239,7 +5327,14 @@
                     "vram": 2147733936,
                     "size": 32,
                     "vrom": 99760,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003D1B0_build/src/boot/ovlmgr.o_.rodata",
+                            "vram": 2147733936,
+                            "size": 32,
+                            "vrom": 99760
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/src/boot/z_std_dma.o",
@@ -5247,7 +5342,14 @@
                     "vram": 2147733968,
                     "size": 544,
                     "vrom": 99792,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003D1D0_build/src/boot/z_std_dma.o_.rodata",
+                            "vram": 2147733968,
+                            "size": 544,
+                            "vrom": 99792
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/asm/jp/data/boot/0187F0.rodata.o",
@@ -6092,7 +6194,14 @@
                     "vram": 2147738304,
                     "size": 80,
                     "vrom": 104128,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003E2C0_build/src/boot/libc64/math64.o_.rodata",
+                            "vram": 2147738304,
+                            "size": 80,
+                            "vrom": 104128
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/src/boot/libc64/__osMalloc.o",
@@ -6100,7 +6209,14 @@
                     "vram": 2147738384,
                     "size": 704,
                     "vrom": 104208,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003E310_build/src/boot/libc64/__osMalloc.o_.rodata",
+                            "vram": 2147738384,
+                            "size": 704,
+                            "vrom": 104208
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/os/setintmask.o",
@@ -6123,7 +6239,14 @@
                     "vram": 2147739216,
                     "size": 80,
                     "vrom": 105040,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003E650_build/lib/ultralib/src/gu/sinf.o_.rodata",
+                            "vram": 2147739216,
+                            "size": 80,
+                            "vrom": 105040
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/os/exceptasm.o",
@@ -6131,7 +6254,14 @@
                     "vram": 2147739296,
                     "size": 80,
                     "vrom": 105120,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003E6A0_build/lib/ultralib/src/os/exceptasm.o_.rodata",
+                            "vram": 2147739296,
+                            "size": 80,
+                            "vrom": 105120
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/gu/perspective.o",
@@ -6139,7 +6269,14 @@
                     "vram": 2147739376,
                     "size": 16,
                     "vrom": 105200,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003E6F0_build/lib/ultralib/src/gu/perspective.o_.rodata",
+                            "vram": 2147739376,
+                            "size": 16,
+                            "vrom": 105200
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/io/devmgr.o",
@@ -6147,7 +6284,14 @@
                     "vram": 2147739392,
                     "size": 32,
                     "vrom": 105216,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003E700_build/lib/ultralib/src/io/devmgr.o_.rodata",
+                            "vram": 2147739392,
+                            "size": 32,
+                            "vrom": 105216
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/gu/lookathil.o",
@@ -6155,7 +6299,14 @@
                     "vram": 2147739424,
                     "size": 16,
                     "vrom": 105248,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003E720_build/lib/ultralib/src/gu/lookathil.o_.rodata",
+                            "vram": 2147739424,
+                            "size": 16,
+                            "vrom": 105248
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/libc/xprintf.o",
@@ -6163,7 +6314,14 @@
                     "vram": 2147739440,
                     "size": 256,
                     "vrom": 105264,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003E730_build/lib/ultralib/src/libc/xprintf.o_.rodata",
+                            "vram": 2147739440,
+                            "size": 256,
+                            "vrom": 105264
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/gu/cosf.o",
@@ -6171,7 +6329,14 @@
                     "vram": 2147739696,
                     "size": 80,
                     "vrom": 105520,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003E830_build/lib/ultralib/src/gu/cosf.o_.rodata",
+                            "vram": 2147739696,
+                            "size": 80,
+                            "vrom": 105520
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/gu/libm_vals.o",
@@ -6194,7 +6359,14 @@
                     "vram": 2147739792,
                     "size": 96,
                     "vrom": 105616,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003E890_build/lib/ultralib/src/libc/xldtob.o_.rodata",
+                            "vram": 2147739792,
+                            "size": 96,
+                            "vrom": 105616
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/libc/llcvt.o",
@@ -6202,7 +6374,14 @@
                     "vram": 2147739888,
                     "size": 16,
                     "vrom": 105712,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8003E8F0_build/lib/ultralib/src/libc/llcvt.o_.rodata",
+                            "vram": 2147739888,
+                            "size": 16,
+                            "vrom": 105712
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/asm/jp/data/boot/version.rodata.o",
@@ -6629,7 +6808,14 @@
                     "vram": 2147752464,
                     "size": 64,
                     "vrom": null,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_80041A10_build/lib/ultralib/src/io/sptask.o_.bss",
+                            "vram": 2147752464,
+                            "size": 64,
+                            "vrom": null
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/io/controller.o",
@@ -6683,6 +6869,12 @@
                     "size": 32,
                     "vrom": null,
                     "symbols": [
+                        {
+                            "name": "$_static_symbol_80041AE0_build/lib/ultralib/src/io/siacs.o_.bss",
+                            "vram": 2147752672,
+                            "size": 8,
+                            "vrom": null
+                        },
                         {
                             "name": "__osSiAccessQueue",
                             "vram": 2147752680,
@@ -6772,7 +6964,14 @@
                     "vram": 2147753344,
                     "size": 256,
                     "vrom": null,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_80041D80_build/lib/ultralib/src/io/motor.o_.bss",
+                            "vram": 2147753344,
+                            "size": 256,
+                            "vrom": null
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/io/pimgr.o",
@@ -6802,6 +7001,12 @@
                     "size": 32,
                     "vrom": null,
                     "symbols": [
+                        {
+                            "name": "$_static_symbol_80043140_build/lib/ultralib/src/io/piacs.o_.bss",
+                            "vram": 2147758400,
+                            "size": 8,
+                            "vrom": null
+                        },
                         {
                             "name": "__osPiAccessQueue",
                             "vram": 2147758408,
@@ -6942,7 +7147,14 @@
                     "vram": 2147759136,
                     "size": 4640,
                     "vrom": null,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_80043420_build/lib/ultralib/src/io/vimgr.o_.bss",
+                            "vram": 2147759136,
+                            "size": 4640,
+                            "vrom": null
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/lib/ultralib/src/io/conteepread.o",
@@ -36324,7 +36536,14 @@
                     "vram": 2148563760,
                     "size": 32,
                     "vrom": 7518160,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_80107B30_build/src/code/m_lights.o_.data",
+                            "vram": 2148563760,
+                            "size": 32,
+                            "vrom": 7518160
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/asm/jp/data/code/72B7F0.data.o",
@@ -37853,7 +38072,14 @@
                     "vram": 2148588704,
                     "size": 64,
                     "vrom": 7543104,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_8010DCA0_build/src/code/m_start_data_init.o_.data",
+                            "vram": 2148588704,
+                            "size": 64,
+                            "vrom": 7543104
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/asm/jp/data/code/731980.data.o",
@@ -39310,7 +39536,14 @@
                     "vram": 2148622608,
                     "size": 80,
                     "vrom": 7577008,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_80116110_build/src/code/c_keyframe.o_.rodata",
+                            "vram": 2148622608,
+                            "size": 80,
+                            "vrom": 7577008
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/asm/jp/data/code/739E00.rodata.o",
@@ -39341,6 +39574,12 @@
                     "vrom": 7577168,
                     "symbols": [
                         {
+                            "name": "$_static_symbol_801161B0_build/src/code/m_actor.o_.rodata",
+                            "vram": 2148622768,
+                            "size": 56,
+                            "vrom": 7577168
+                        },
+                        {
                             "name": "RO_801161E8_jp",
                             "vram": 2148622824,
                             "size": 24,
@@ -39354,7 +39593,14 @@
                     "vram": 2148622848,
                     "size": 80,
                     "vrom": 7577248,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_80116200_build/src/code/m_actor_dlftbls.o_.rodata",
+                            "vram": 2148622848,
+                            "size": 80,
+                            "vrom": 7577248
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/asm/jp/data/code/739EF0.rodata.o",
@@ -40238,7 +40484,14 @@
                     "vram": 2148624352,
                     "size": 16,
                     "vrom": 7578752,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_801167E0_build/src/code/m_collision_obj.o_.rodata",
+                            "vram": 2148624352,
+                            "size": 16,
+                            "vrom": 7578752
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/src/code/m_controller.o",
@@ -40246,7 +40499,14 @@
                     "vram": 2148624368,
                     "size": 16,
                     "vrom": 7578768,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_801167F0_build/src/code/m_controller.o_.rodata",
+                            "vram": 2148624368,
+                            "size": 16,
+                            "vrom": 7578768
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/asm/jp/data/code/73A4A0.rodata.o",
@@ -41451,7 +41711,14 @@
                     "vram": 2148627008,
                     "size": 16,
                     "vrom": 7581408,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_80117240_build/src/code/m_lights.o_.rodata",
+                            "vram": 2148627008,
+                            "size": 16,
+                            "vrom": 7581408
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/asm/jp/data/code/m_msg_main.rodata.o",
@@ -42746,7 +43013,14 @@
                     "vram": 2148629936,
                     "size": 32,
                     "vrom": 7584336,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_80117DB0_build/src/code/irqmgr.o_.rodata",
+                            "vram": 2148629936,
+                            "size": 32,
+                            "vrom": 7584336
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/asm/jp/data/code/73BA70.rodata.o",
@@ -43180,7 +43454,14 @@
                     "vram": 2148630896,
                     "size": 48,
                     "vrom": 7585296,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_80118170_build/src/code/sys_matrix.o_.rodata",
+                            "vram": 2148630896,
+                            "size": 48,
+                            "vrom": 7585296
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/src/code/zurumode.o",
@@ -43188,7 +43469,14 @@
                     "vram": 2148630944,
                     "size": 48,
                     "vrom": 7585344,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_801181A0_build/src/code/zurumode.o_.rodata",
+                            "vram": 2148630944,
+                            "size": 48,
+                            "vrom": 7585344
+                        }
+                    ]
                 },
                 {
                     "filepath": "build/asm/jp/data/code/audio_synthesis.rodata.o",
@@ -49175,7 +49463,14 @@
                     "vram": 2155889600,
                     "size": 192,
                     "vrom": 7616656,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_808043C0_build/src/overlays/gamestates/ovl_play/m_play.o_.rodata",
+                            "vram": 2155889600,
+                            "size": 192,
+                            "vrom": 7616656
+                        }
+                    ]
                 }
             ]
         },
@@ -49191,7 +49486,14 @@
                     "vram": 2155889792,
                     "size": 240,
                     "vrom": null,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_80804480_build/src/overlays/gamestates/ovl_play/m_play.o_.bss",
+                            "vram": 2155889792,
+                            "size": 240,
+                            "vrom": null
+                        }
+                    ]
                 }
             ]
         },
@@ -199088,7 +199390,14 @@
                     "vram": 2158712672,
                     "size": 832,
                     "vrom": 9917600,
-                    "symbols": []
+                    "symbols": [
+                        {
+                            "name": "$_static_symbol_80AB5760_build/asm/jp/data/overlays/other_ovl/ovl__00970920/ovl__00970920_reloc.data.o_.data",
+                            "vram": 2158712672,
+                            "size": 832,
+                            "vrom": 9917600
+                        }
+                    ]
                 }
             ]
         },

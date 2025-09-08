@@ -7,6 +7,34 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.11.0] - 2025-09-08
+
+### Added
+
+- Progress reports using the objdiff's report format can now emit progress for
+  data symbols!
+  - Data progress reporting requires `.NON_MATCHING` markers for every data
+    symbol that is not considered matched yet (i.e. from an automatic disassembly).
+  - It is turned off by default in `objdiff_report`. To turn it on set
+    `report_data: True` on your `decomp.yaml` file.
+
+### Changed
+
+- Mapfile parsing will now try to infer static symbols by analyzing mismatches
+  on section address and size vs the addresses and sizes of symbols within that
+  section.
+  - For every inferred static sym a corresponding symbol will be inserted into
+    the section. Its name will be prefixed with `$_static_symbol_`.
+  - It is possible to check if a symbol is an inferred static in the API by
+    checking `Symbol::inferred_static`.
+- The `--emit-categories` flag of `objdiff_report` not sets
+  `check_asm_paths: False` and `report_data: True` by default.
+
+### Fixed
+
+- Fix the vram address plf-resolved mapfiles when the sections of those plfs
+  were not relative to zero.
+
 ## [2.10.0] - 2025-09-01
 
 ### Added
@@ -636,6 +664,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 - Initial release
 
 [unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[2.11.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.10.0...2.11.0
 [2.10.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.4...2.10.0
 [2.9.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.3...2.9.4
 [2.9.3]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.2...2.9.3
