@@ -95,10 +95,12 @@ Various cli examples are provided in the [frontends folder](src/mapfile_parser/f
 Most of them are re-implementations of already existing tools using this
 library to show how to use this library and inspire new ideas.
 
-The list can be checked in runtime with `python3 -m mapfile_parser --help`.
+The list can be checked in runtime with `python3 -m mapfile_parser --help` or
+`mapfile_parser --help`.
 
-Each one of them can be executed with `python3 -m mapfile_parser utilityname`,
-for example `python3 -m mapfile_parser pj64_syms`.
+Each one of them can be executed with `python3 -m mapfile_parser utilityname` or
+`mapfile_parser utilityname`, for example `python3 -m mapfile_parser pj64_syms`
+or `mapfile_parser objdiff_report`.
 
 - `bss_check`: Check that globally visible bss has not been reordered.
 - `first_diff`: Find the first difference(s) between the built ROM and the base

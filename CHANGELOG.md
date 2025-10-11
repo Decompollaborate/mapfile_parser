@@ -7,6 +7,14 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- Install a `mapfile_parser` program script when installing the library through
+  `pip`.
+  - This provides the same functionality as running the library module with
+    `python3 -m mapfile_parser`.
+  - This should allow better integration with tools like `uvx` or `pipx`.
+
 ## [2.11.0] - 2025-09-08
 
 ### Added

@@ -3,7 +3,7 @@
 
 [project]
 name = "mapfile_parser"
-version = "2.11.0"
+version = "2.12.0-dev0"
 description = "Map file parser library focusing decompilation projects"
 readme = "README.md"
 requires-python = ">=3.9"
@@ -24,6 +24,9 @@ classifiers = [
 [build-system]
 requires = ["maturin>=1.2,<2.0"]
 build-backend = "maturin"
+
+[project.scripts]
+mapfile_parser = "mapfile_parser.__main__:mapfileParserMain"
 
 [tool.cibuildwheel]
 skip = ["cp36-*"]
