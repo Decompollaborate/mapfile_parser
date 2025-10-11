@@ -7,6 +7,8 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.12.0] - 2025-10-11
+
 ### Added
 
 - Install a `mapfile_parser` program script when installing the library through
@@ -14,6 +16,7 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
   - This provides the same functionality as running the library module with
     `python3 -m mapfile_parser`.
   - This should allow better integration with tools like `uvx` or `pipx`.
+- Prebuilt binaries for Python 3.14.
 
 ### Changed
 
@@ -675,7 +678,8 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 
 - Initial release
 
-[unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/2.11.0...HEAD
+[unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/2.12.0...HEAD
+[2.12.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.11.0...2.12.0
 [2.11.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.10.0...2.11.0
 [2.10.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.4...2.10.0
 [2.9.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.3...2.9.4

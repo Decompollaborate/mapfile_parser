@@ -3,7 +3,7 @@
 
 [package]
 name = "mapfile_parser"
-version = "2.12.0-dev0"
+version = "2.12.0"
 edition = "2021"
 rust-version = "1.74.0"
 authors = ["Anghelo Carvajal <angheloalf95@gmail.com>"]
@@ -47,4 +47,4 @@ serde = { version = "1", features = ["derive"], optional = true }
 objdiff-core = { version = "2.3.3", default-features = false, features = ["bindings"], optional = true }
 # objdiff-core = { git = "https://github.com/encounter/objdiff.git", rev="a367af612b8b30b5bdf40e5c1d0e45df46a5e3e9", default-features = false, features = ["bindings", "std"], optional = true }
 serde_json = { version = "1", optional = true }
-pyo3 = { version = "0.26.0", optional = true, features = ["extension-module"]}
+pyo3 = { version = "0.26", optional = true, features = ["extension-module"]}
