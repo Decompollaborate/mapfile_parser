@@ -36,26 +36,34 @@ class ProgressStats:
         return categories
 
     @staticmethod
-    def getHeaderAsStr(categoryColumnSize: int=28) -> str:
-        categoryStr = "{0:<{1}}".format('Category', categoryColumnSize)
+    def getHeaderAsStr(categoryColumnSize: int = 28) -> str:
+        categoryStr = "{0:<{1}}".format("Category", categoryColumnSize)
         return f"{categoryStr}: {'DecompedSize':>12} / {'Total':>8} {'OfFolder':>10}%  ({'OfTotal':>20}%)"
 
     @staticmethod
-    def printHeader(categoryColumnSize: int=28):
+    def printHeader(categoryColumnSize: int = 28):
         print(ProgressStats.getHeaderAsStr(categoryColumnSize=categoryColumnSize))
 
-    def getEntryAsStr(self, category: str, totalStats: ProgressStats, categoryColumnSize: int=28) -> str:
+    def getEntryAsStr(
+        self, category: str, totalStats: ProgressStats, categoryColumnSize: int = 28
+    ) -> str:
         categoryStr = "{0:<{1}}".format(category, categoryColumnSize)
         return f"{categoryStr}: {self.decompedSize:>12} / {self.total:>8} {self.decompedPercentage():>10.4f}%  ({self.decompedPercentageTotal(totalStats):>8.4f}% / {self.total / totalStats.total * 100:>8.4f}%)"
 
-    def print(self, category: str, totalStats: ProgressStats, categoryColumnSize: int=28):
-        print(self.getEntryAsStr(category, totalStats, categoryColumnSize=categoryColumnSize))
+    def print(
+        self, category: str, totalStats: ProgressStats, categoryColumnSize: int = 28
+    ):
+        print(
+            self.getEntryAsStr(
+                category, totalStats, categoryColumnSize=categoryColumnSize
+            )
+        )
 
-    def asJsonEntry(self) -> dict[str, int|float]:
+    def asJsonEntry(self) -> dict[str, int | float]:
         return {
             "decomped": self.decompedSize,
             "total": self.total,
-            "percentage": round(self.decompedPercentage(), 4)
+            "percentage": round(self.decompedPercentage(), 4),
         }
 
 
@@ -66,4 +74,3 @@ def printStats(totalStats: ProgressStats, progressPerFolder: dict[str, ProgressS
 
     for folder, statsEntry in progressPerFolder.items():
         statsEntry.print(folder, totalStats)
-

@@ -9,6 +9,7 @@ import dataclasses
 from pathlib import Path
 import json
 
+
 @dataclasses.dataclass
 class Report:
     measures: ReportMeasures
@@ -18,9 +19,9 @@ class Report:
     def asTableStr(
         self,
         *,
-        do_units: bool=False,
-        sort: bool=False,
-        remaining: bool=False,
+        do_units: bool = False,
+        sort: bool = False,
+        remaining: bool = False,
     ) -> str:
         out = ""
 
@@ -40,12 +41,12 @@ class Report:
 
         # Calculate the size for the first column
         columnSize = 8
-        for (name, _) in new_cats:
+        for name, _ in new_cats:
             if len(name) > columnSize:
                 columnSize = len(name)
         columnSize += 1
 
-        categoryStr = "{0:<{1}}".format('Category', columnSize)
+        categoryStr = "{0:<{1}}".format("Category", columnSize)
         out += f"{categoryStr}: {'DecompedSize':>12} / {'Total':>8} {'OfCategory':>12}%  ({'OfTotal':>20}%)\n"
 
         entry_str = self.measures.as_entry_str("all", self.measures, columnSize)
@@ -54,9 +55,16 @@ class Report:
         out += "\n"
 
         if sort:
-            new_cats.sort(key=lambda cat: (cat[1].matched_code_percent, cat[1].total_code, cat[0]), reverse=True)
+            new_cats.sort(
+                key=lambda cat: (
+                    cat[1].matched_code_percent,
+                    cat[1].total_code,
+                    cat[0],
+                ),
+                reverse=True,
+            )
 
-        for (name, measures) in new_cats:
+        for name, measures in new_cats:
             entry_str = measures.as_entry_str(name, self.measures, columnSize)
             if entry_str is None:
                 continue
@@ -66,13 +74,17 @@ class Report:
                 assert matched_code is not None
                 assert self.measures.total_code is not None
                 assert measures.total_code is not None
-                decomped_percentage_total = matched_code / self.measures.total_code * 100
-                remainingPercentage = measures.total_code / self.measures.total_code * 100 - decomped_percentage_total
+                decomped_percentage_total = (
+                    matched_code / self.measures.total_code * 100
+                )
+                remainingPercentage = (
+                    measures.total_code / self.measures.total_code * 100
+                    - decomped_percentage_total
+                )
                 out += f" {remainingPercentage:>8.4f}%"
             out += "\n"
 
         return out
-
 
     @staticmethod
     def fromDict(info: dict) -> Report | None:
@@ -96,9 +108,9 @@ class Report:
                 units.append(unit)
 
         return Report(
-            measures = measures,
-            categories = categories,
-            units = units,
+            measures=measures,
+            categories=categories,
+            units=units,
         )
 
     @staticmethod
@@ -108,6 +120,7 @@ class Report:
         with path.open() as f:
             report = json.load(f, parse_float=float, parse_int=int)
         return Report.fromDict(report)
+
 
 @dataclasses.dataclass
 class ReportCategory:
@@ -121,17 +134,18 @@ class ReportCategory:
         if measures is None:
             return None
         return ReportCategory(
-            id = info.get("id", ""),
-            name = info.get("name", ""),
-            measures = measures,
+            id=info.get("id", ""),
+            name=info.get("name", ""),
+            measures=measures,
         )
+
 
 @dataclasses.dataclass
 class ReportUnit:
     name: str
     measures: ReportMeasures
-    # sections: 
-    # metadata: 
+    # sections:
+    # metadata:
 
     @staticmethod
     def fromDict(info: dict) -> ReportUnit | None:
@@ -139,9 +153,10 @@ class ReportUnit:
         if measures is None:
             return None
         return ReportUnit(
-            name = info["name"],
-            measures = measures,
+            name=info["name"],
+            measures=measures,
         )
+
 
 @dataclasses.dataclass
 class ReportMeasures:
@@ -156,23 +171,25 @@ class ReportMeasures:
     total_units: int
 
     @staticmethod
-    def fromDict(info: dict) -> ReportMeasures|None:
+    def fromDict(info: dict) -> ReportMeasures | None:
         total_units = info.get("total_units")
         if total_units is None:
             return None
         return ReportMeasures(
-            fuzzy_match_percent = info.get("fuzzy_match_percent", 0.0),
-            total_code = int(info.get("total_code", 0)),
-            matched_code = int(info.get("matched_code", 0)),
-            matched_code_percent = info.get("matched_code_percent", 0.0),
-            matched_data_percent = info.get("matched_data_percent", 0.0),
-            matched_functions_percent = info.get("matched_functions_percent", 0.0),
-            complete_code_percent = info.get("complete_code_percent", 0.0),
-            complete_data_percent = info.get("complete_data_percent", 0.0),
-            total_units = total_units,
+            fuzzy_match_percent=info.get("fuzzy_match_percent", 0.0),
+            total_code=int(info.get("total_code", 0)),
+            matched_code=int(info.get("matched_code", 0)),
+            matched_code_percent=info.get("matched_code_percent", 0.0),
+            matched_data_percent=info.get("matched_data_percent", 0.0),
+            matched_functions_percent=info.get("matched_functions_percent", 0.0),
+            complete_code_percent=info.get("complete_code_percent", 0.0),
+            complete_data_percent=info.get("complete_data_percent", 0.0),
+            total_units=total_units,
         )
 
-    def as_entry_str(self, name: str, total_measures: ReportMeasures, column_size: int) -> str|None:
+    def as_entry_str(
+        self, name: str, total_measures: ReportMeasures, column_size: int
+    ) -> str | None:
         categoryStr = "{0:<{1}}".format(name, column_size)
         matched_code = self.matched_code
         total_code = self.total_code

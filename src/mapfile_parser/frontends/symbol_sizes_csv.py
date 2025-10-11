@@ -14,14 +14,14 @@ from .. import mapfile
 
 
 def doSymbolSizesCsv(
-        mapPath: Path,
-        outputPath: Path|None,
-        filterSection: str|None=None,
-        sameFolder: bool=False,
-        symbolsSummary: bool=False,
-        allFiles: bool=False,
-        plfResolver: Callable[[Path], Path|None]|None=None,
-    ) -> int:
+    mapPath: Path,
+    outputPath: Path | None,
+    filterSection: str | None = None,
+    sameFolder: bool = False,
+    symbolsSummary: bool = False,
+    allFiles: bool = False,
+    plfResolver: Callable[[Path], Path | None] | None = None,
+) -> int:
     if not mapPath.exists():
         print(f"Could not find mapfile at '{mapPath}'")
         return 1
@@ -39,7 +39,9 @@ def doSymbolSizesCsv(
     if symbolsSummary:
         output = mapFile.toCsvSymbols()
     else:
-        output = mapFile.toCsv(printVram=not sameFolder, skipWithoutSymbols=not allFiles)
+        output = mapFile.toCsv(
+            printVram=not sameFolder, skipWithoutSymbols=not allFiles
+        )
 
     if outputPath is None:
         print(output)
@@ -49,7 +51,10 @@ def doSymbolSizesCsv(
 
     return 0
 
-def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
+
+def processArguments(
+    args: argparse.Namespace, decompConfig: decomp_settings.Config | None = None
+):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
         assert version is not None, f"Invalid version '{args.version}' selected"
@@ -58,16 +63,17 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
     else:
         mapPath = args.mapfile
 
-    outputPath: Path|None = Path(args.output) if args.output is not None else None
-    filterSection: str|None = args.filter_section
+    outputPath: Path | None = Path(args.output) if args.output is not None else None
+    filterSection: str | None = args.filter_section
     sameFolder: bool = args.same_folder
     symbolsSummary: bool = args.symbols
     allFiles: bool = args.all
-    plfExt: list[str]|None = args.plf_ext
+    plfExt: list[str] | None = args.plf_ext
 
     plfResolver = None
     if plfExt is not None:
-        def resolver(x: Path) -> Path|None:
+
+        def resolver(x: Path) -> Path | None:
             if x.suffix in plfExt:
                 newPath = x.with_suffix(".map")
                 if newPath.exists():
@@ -76,10 +82,27 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
 
         plfResolver = resolver
 
-    exit(doSymbolSizesCsv(mapPath, outputPath, filterSection, sameFolder, symbolsSummary, allFiles, plfResolver=plfResolver))
+    exit(
+        doSymbolSizesCsv(
+            mapPath,
+            outputPath,
+            filterSection,
+            sameFolder,
+            symbolsSummary,
+            allFiles,
+            plfResolver=plfResolver,
+        )
+    )
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
-    parser = subparser.add_parser("symbol_sizes_csv", help="Produces a csv summarizing the files sizes by parsing a map file.")
+
+def addSubparser(
+    subparser: argparse._SubParsersAction[argparse.ArgumentParser],
+    decompConfig: decomp_settings.Config | None = None,
+):
+    parser = subparser.add_parser(
+        "symbol_sizes_csv",
+        help="Produces a csv summarizing the files sizes by parsing a map file.",
+    )
 
     emitMapfile = True
     if decompConfig is not None:
@@ -88,18 +111,46 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
             versions.append(version.name)
 
         if len(versions) > 0:
-            parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
+            parser.add_argument(
+                "-v",
+                "--version",
+                help="Version to process from the decomp.yaml file",
+                type=str,
+                choices=versions,
+                default=versions[0],
+            )
             emitMapfile = False
 
     if emitMapfile:
         parser.add_argument("mapfile", help="Path to a map file.", type=Path)
 
-    parser.add_argument("-o", "--output", help="Output path of for the generated csv. If omitted then stdout is used instead.")
-    parser.add_argument("--same-folder", help="Mix files in the same folder.", action="store_true")
-    parser.add_argument("--symbols", help="Prints the size of every symbol instead of a summary.", action="store_true")
-    parser.add_argument("-a", "--all", help="Don't skip files without symbols.", action="store_true")
-    parser.add_argument("-f", "--filter-section", help="Only print the symbols of the passed section. For example: .text")
+    parser.add_argument(
+        "-o",
+        "--output",
+        help="Output path of for the generated csv. If omitted then stdout is used instead.",
+    )
+    parser.add_argument(
+        "--same-folder", help="Mix files in the same folder.", action="store_true"
+    )
+    parser.add_argument(
+        "--symbols",
+        help="Prints the size of every symbol instead of a summary.",
+        action="store_true",
+    )
+    parser.add_argument(
+        "-a", "--all", help="Don't skip files without symbols.", action="store_true"
+    )
+    parser.add_argument(
+        "-f",
+        "--filter-section",
+        help="Only print the symbols of the passed section. For example: .text",
+    )
 
-    parser.add_argument("-x", "--plf-ext", help="File extension for partially linked files (plf). Will be used to transform the `plf`s path into a mapfile path by replacing the extension. The extension must contain the leading period. This argument can be passed multiple times.", action="append")
+    parser.add_argument(
+        "-x",
+        "--plf-ext",
+        help="File extension for partially linked files (plf). Will be used to transform the `plf`s path into a mapfile path by replacing the extension. The extension must contain the leading period. This argument can be passed multiple times.",
+        action="append",
+    )
 
     parser.set_defaults(func=processArguments)

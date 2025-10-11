@@ -16,18 +16,19 @@ from .. import utils
 
 
 def doFirstDiff(
-        mapPath: Path,
-        expectedMapPath: Path,
-        romPath: Path,
-        expectedRomPath: Path,
-        diffCount: int=5,
-        mismatchSize: bool=False,
-        addColons: bool=True,
-        bytesConverterCallback: Callable[[bytes, mapfile.MapFile],str|None]|None=None,
-        endian: Literal["big", "little"] ="big",
-        plfResolver: Callable[[Path], Path|None]|None=None,
-        plfResolverExpected: Callable[[Path], Path|None]|None=None,
-    ) -> int:
+    mapPath: Path,
+    expectedMapPath: Path,
+    romPath: Path,
+    expectedRomPath: Path,
+    diffCount: int = 5,
+    mismatchSize: bool = False,
+    addColons: bool = True,
+    bytesConverterCallback: Callable[[bytes, mapfile.MapFile], str | None]
+    | None = None,
+    endian: Literal["big", "little"] = "big",
+    plfResolver: Callable[[Path], Path | None] | None = None,
+    plfResolverExpected: Callable[[Path], Path | None] | None = None,
+) -> int:
     if not mapPath.exists():
         print(f"{mapPath} must exist")
         return 1
@@ -60,7 +61,9 @@ def doFirstDiff(
 
     expectedMapFile = mapfile.MapFile.newFromMapFile(expectedMapPath)
     if plfResolverExpected is not None:
-        expectedMapFile = expectedMapFile.resolvePartiallyLinkedFiles(plfResolverExpected)
+        expectedMapFile = expectedMapFile.resolvePartiallyLinkedFiles(
+            plfResolverExpected
+        )
 
     endian_diff = 0
     if endian == "little":
@@ -87,17 +90,21 @@ def doFirstDiff(
                 print(f"First difference at ROM addr 0x{i:X}{extraMessage}")
                 builtBytes = builtRom[i : i + 4]
                 expectedBytes = expectedRom[i : i + 4]
-                print(f"Bytes: {utils.hexbytes(builtBytes, addColons=addColons)} vs {utils.hexbytes(expectedBytes, addColons=addColons)}")
+                print(
+                    f"Bytes: {utils.hexbytes(builtBytes, addColons=addColons)} vs {utils.hexbytes(expectedBytes, addColons=addColons)}"
+                )
                 if bytesConverterCallback is not None:
                     builtConverted = bytesConverterCallback(builtBytes, builtMapFile)
-                    expectedConverted = bytesConverterCallback(expectedBytes, expectedMapFile)
+                    expectedConverted = bytesConverterCallback(
+                        expectedBytes, expectedMapFile
+                    )
                     if builtConverted is not None and expectedConverted is not None:
                         print(f"{builtConverted} vs {expectedConverted}")
             diffs += 1
 
         if (
             len(map_search_diff) < diffCount
-            and builtRom[i+endian_diff] >> 2 != expectedRom[i+endian_diff] >> 2
+            and builtRom[i + endian_diff] >> 2 != expectedRom[i + endian_diff] >> 2
         ):
             vromInfo, possibleFiles = builtMapFile.findSymbolByVrom(i)
             if vromInfo is not None:
@@ -109,10 +116,16 @@ def doFirstDiff(
                     print(f"Instruction difference at ROM addr 0x{i:X}{extraMessage}")
                     builtBytes = builtRom[i : i + 4]
                     expectedBytes = expectedRom[i : i + 4]
-                    print(f"Bytes: {utils.hexbytes(builtBytes, addColons=addColons)} vs {utils.hexbytes(expectedBytes, addColons=addColons)}")
+                    print(
+                        f"Bytes: {utils.hexbytes(builtBytes, addColons=addColons)} vs {utils.hexbytes(expectedBytes, addColons=addColons)}"
+                    )
                     if bytesConverterCallback is not None:
-                        builtConverted = bytesConverterCallback(builtBytes, builtMapFile)
-                        expectedConverted = bytesConverterCallback(expectedBytes, expectedMapFile)
+                        builtConverted = bytesConverterCallback(
+                            builtBytes, builtMapFile
+                        )
+                        expectedConverted = bytesConverterCallback(
+                            expectedBytes, expectedMapFile
+                        )
                         if builtConverted is not None and expectedConverted is not None:
                             print(f"{builtConverted} vs {expectedConverted}")
             elif len(possibleFiles) > 0:
@@ -120,10 +133,14 @@ def doFirstDiff(
                 print(f"Instruction difference at ROM addr 0x{i:X}{extraMessage}")
                 builtBytes = builtRom[i : i + 4]
                 expectedBytes = expectedRom[i : i + 4]
-                print(f"Bytes: {utils.hexbytes(builtBytes, addColons=addColons)} vs {utils.hexbytes(expectedBytes, addColons=addColons)}")
+                print(
+                    f"Bytes: {utils.hexbytes(builtBytes, addColons=addColons)} vs {utils.hexbytes(expectedBytes, addColons=addColons)}"
+                )
                 if bytesConverterCallback is not None:
                     builtConverted = bytesConverterCallback(builtBytes, builtMapFile)
-                    expectedConverted = bytesConverterCallback(expectedBytes, expectedMapFile)
+                    expectedConverted = bytesConverterCallback(
+                        expectedBytes, expectedMapFile
+                    )
                     if builtConverted is not None and expectedConverted is not None:
                         print(f"{builtConverted} vs {expectedConverted}")
 
@@ -150,13 +167,17 @@ def doFirstDiff(
             extraMessage = ""
             if prevSym is not None:
                 extraMessage = f" -- in {prevSym.name}?"
-            print(f"Map appears to have shifted just before {sym.name} ({file.filepath}){extraMessage}")
+            print(
+                f"Map appears to have shifted just before {sym.name} ({file.filepath}){extraMessage}"
+            )
             return 1
 
     return 0
 
 
-def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Config|None=None):
+def processArguments(
+    args: argparse.Namespace, decompConfig: decomp_settings.Config | None = None
+):
     if decompConfig is not None:
         version = decompConfig.get_version_by_name(args.version)
         assert version is not None, f"Invalid version '{args.version}' selected"
@@ -182,11 +203,12 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
 
     endian = args.endian
 
-    plfExt: list[str]|None = args.plf_ext
+    plfExt: list[str] | None = args.plf_ext
 
     plfResolver = None
     if plfExt is not None:
-        def resolver(x: Path) -> Path|None:
+
+        def resolver(x: Path) -> Path | None:
             if x.suffix in plfExt:
                 newPath = x.with_suffix(".map")
                 if newPath.exists():
@@ -195,11 +217,28 @@ def processArguments(args: argparse.Namespace, decompConfig: decomp_settings.Con
 
         plfResolver = resolver
 
-    exit(doFirstDiff(mapPath, expectedMapPath, romPath, expectedRomPath, diffCount, mismatchSize, endian=endian, plfResolver=plfResolver))
+    exit(
+        doFirstDiff(
+            mapPath,
+            expectedMapPath,
+            romPath,
+            expectedRomPath,
+            diffCount,
+            mismatchSize,
+            endian=endian,
+            plfResolver=plfResolver,
+        )
+    )
 
 
-def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser], decompConfig: decomp_settings.Config|None=None):
-    parser = subparser.add_parser("first_diff", help="Find the first difference(s) between the built ROM and the base ROM.")
+def addSubparser(
+    subparser: argparse._SubParsersAction[argparse.ArgumentParser],
+    decompConfig: decomp_settings.Config | None = None,
+):
+    parser = subparser.add_parser(
+        "first_diff",
+        help="Find the first difference(s) between the built ROM and the base ROM.",
+    )
 
     emitMapfile = True
     emitExpected = True
@@ -210,7 +249,14 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
             versions.append(version.name)
 
         if len(versions) > 0:
-            parser.add_argument("-v", "--version", help="Version to process from the decomp.yaml file", type=str, choices=versions, default=versions[0])
+            parser.add_argument(
+                "-v",
+                "--version",
+                help="Version to process from the decomp.yaml file",
+                type=str,
+                choices=versions,
+                default=versions[0],
+            )
             emitMapfile = False
             emitRompath = False
             if decompConfig.versions[0].paths.expected_dir is not None:
@@ -219,16 +265,40 @@ def addSubparser(subparser: argparse._SubParsersAction[argparse.ArgumentParser],
     if emitMapfile:
         parser.add_argument("mapfile", help="Path to a map file.", type=Path)
     if emitExpected:
-        parser.add_argument("expectedmap", help="Path to the map file in the expected dir.", type=Path)
+        parser.add_argument(
+            "expectedmap", help="Path to the map file in the expected dir.", type=Path
+        )
     if emitRompath:
         parser.add_argument("rompath", help="Path to built ROM.", type=Path)
     if emitExpected:
         parser.add_argument("expectedrom", help="Path to the expected ROM.", type=Path)
 
-    parser.add_argument("-c", "--count", type=int, default=5, help="find up to this many instruction difference(s)")
-    parser.add_argument("-m", "--mismatch-size", help="Do not exit early if the ROM sizes does not match", action="store_true")
-    parser.add_argument("-e", "--endian", help="Specify endianness of the binary", choices=["big", "little"], default="big")
+    parser.add_argument(
+        "-c",
+        "--count",
+        type=int,
+        default=5,
+        help="find up to this many instruction difference(s)",
+    )
+    parser.add_argument(
+        "-m",
+        "--mismatch-size",
+        help="Do not exit early if the ROM sizes does not match",
+        action="store_true",
+    )
+    parser.add_argument(
+        "-e",
+        "--endian",
+        help="Specify endianness of the binary",
+        choices=["big", "little"],
+        default="big",
+    )
 
-    parser.add_argument("-x", "--plf-ext", help="File extension for partially linked files (plf). Will be used to transform the `plf`s path into a mapfile path by replacing the extension. The extension must contain the leading period. This argument can be passed multiple times.", action="append")
+    parser.add_argument(
+        "-x",
+        "--plf-ext",
+        help="File extension for partially linked files (plf). Will be used to transform the `plf`s path into a mapfile path by replacing the extension. The extension must contain the leading period. This argument can be passed multiple times.",
+        action="append",
+    )
 
     parser.set_defaults(func=processArguments)

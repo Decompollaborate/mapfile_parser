@@ -20,12 +20,18 @@ from .mapfile_rs import Section as SectionRs
 from .mapfile_rs import Symbol as SymbolRs
 from .mapfile_rs import ReportCategories as ReportCategories
 
-regex_fileDataEntry = re.compile(r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$")
+regex_fileDataEntry = re.compile(
+    r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$"
+)
 regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)$")
 # regex_functionEntry = re.compile(r"^\s+(?P<vram>0x[^\s]+)\s+(?P<name>[^\s]+)((\s*=\s*(?P<expression>.+))?)$")
 regex_label = re.compile(r"^(?P<name>\.?L[0-9A-F]{8})$")
-regex_fill = re.compile(r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$")
-regex_segmentEntry = re.compile(r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$")
+regex_fill = re.compile(
+    r"^\s+(?P<fill>\*[^\s\*]+\*)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s*$"
+)
+regex_segmentEntry = re.compile(
+    r"(?P<name>([^\s]+)?)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<loadaddress>(load address)?)\s+(?P<vrom>0x[^\s]+)$"
+)
 
 
 @dataclasses.dataclass
@@ -37,7 +43,7 @@ class FoundSymbolInfo:
     def getAsStr(self) -> str:
         return f"'{self.symbol.name}' (VRAM: {self.symbol.getVramStr()}, VROM: {self.symbol.getVromStr()}, SIZE: {self.symbol.getSizeStr()}, {self.section.filepath})"
 
-    def getAsStrPlusOffset(self, symName: str|None=None) -> str:
+    def getAsStrPlusOffset(self, symName: str | None = None) -> str:
         if self.offset != 0:
             if symName is not None:
                 message = symName
@@ -48,16 +54,17 @@ class FoundSymbolInfo:
             message = "Symbol"
         return f"{message} {self.getAsStr()}"
 
+
 @dataclasses.dataclass
 class SymbolComparisonInfo:
     symbol: Symbol
     buildAddress: int
-    buildFile: Section|None
+    buildFile: Section | None
     expectedAddress: int
-    expectedFile: Section|None
+    expectedFile: Section | None
 
     @property
-    def diff(self) -> int|None:
+    def diff(self) -> int | None:
         if self.buildAddress < 0:
             return None
         if self.expectedAddress < 0:
@@ -89,9 +96,9 @@ class MapsComparisonInfo:
 class Symbol:
     name: str
     vram: int
-    size: int = 0 # in bytes
-    vrom: int|None = None
-    align: int|None = None
+    size: int = 0  # in bytes
+    vrom: int | None = None
+    align: int | None = None
     nonmatchingSymExists: bool = False
     """
     `true` if a symbol with the same name, but with a `.NON_MATCHING`
@@ -115,19 +122,19 @@ class Symbol:
             return "None"
         return f"0x{self.vrom:06X}"
 
-    def serializeVram(self, humanReadable: bool=True) -> str|int|None:
+    def serializeVram(self, humanReadable: bool = True) -> str | int | None:
         if humanReadable:
             return f"0x{self.vram:08X}"
         return self.vram
 
-    def serializeSize(self, humanReadable: bool=True) -> str|int|None:
+    def serializeSize(self, humanReadable: bool = True) -> str | int | None:
         if self.size is None:
             return None
         if humanReadable:
             return f"0x{self.size:X}"
         return self.size
 
-    def serializeVrom(self, humanReadable: bool=True) -> str|int|None:
+    def serializeVrom(self, humanReadable: bool = True) -> str | int | None:
         if self.vrom is None:
             return None
         if humanReadable:
@@ -141,7 +148,6 @@ class Symbol:
     def printAsCsv(self):
         print(self.toCsv())
 
-
     @staticmethod
     def toCsvHeader() -> str:
         return "Symbol name,VRAM,Size in bytes"
@@ -149,7 +155,7 @@ class Symbol:
     def toCsv(self) -> str:
         return f"{self.name},{self.vram:08X},{self.size}"
 
-    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
+    def toJson(self, humanReadable: bool = True) -> dict[str, Any]:
         result: dict[str, Any] = {
             "name": self.name,
             "vram": self.serializeVram(humanReadable=humanReadable),
@@ -159,10 +165,16 @@ class Symbol:
 
         return result
 
-
     def clone(self) -> Symbol:
-        return Symbol(self.name, self.vram, self.size, self.vrom, self.align, self.nonmatchingSymExists, self.inferredStatic)
-
+        return Symbol(
+            self.name,
+            self.vram,
+            self.size,
+            self.vrom,
+            self.align,
+            self.nonmatchingSymExists,
+            self.inferredStatic,
+        )
 
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Symbol):
@@ -178,10 +190,10 @@ class Symbol:
 class Section:
     filepath: Path
     vram: int
-    size: int # in bytes
+    size: int  # in bytes
     sectionType: str
-    vrom: int|None = None
-    align: int|None = None
+    vrom: int | None = None
+    align: int | None = None
     isFill: bool = False
     _symbols: list[Symbol] = dataclasses.field(default_factory=list)
 
@@ -189,40 +201,38 @@ class Section:
     def isNoloadSection(self) -> bool:
         return self.sectionType in {".bss", ".sbss", "COMMON", ".scommon"}
 
-
-    def serializeVram(self, humanReadable: bool=True) -> str|int|None:
+    def serializeVram(self, humanReadable: bool = True) -> str | int | None:
         if humanReadable:
             return f"0x{self.vram:08X}"
         return self.vram
 
-    def serializeSize(self, humanReadable: bool=True) -> str|int|None:
+    def serializeSize(self, humanReadable: bool = True) -> str | int | None:
         if humanReadable:
             return f"0x{self.size:X}"
         return self.size
 
-    def serializeVrom(self, humanReadable: bool=True) -> str|int|None:
+    def serializeVrom(self, humanReadable: bool = True) -> str | int | None:
         if self.vrom is None:
             return None
         if humanReadable:
             return f"0x{self.vrom:06X}"
         return self.vrom
 
-
     #! @deprecated
     def getName(self) -> Path:
         return Path(*self.filepath.with_suffix("").parts[2:])
 
-    def findSymbolByName(self, symName: str) -> Symbol|None:
+    def findSymbolByName(self, symName: str) -> Symbol | None:
         for sym in self._symbols:
             if sym.name == symName:
                 return sym
         return None
 
     #! @deprecated: Use either `findSymbolByVram` or `findSymbolByVrom` instead.
-    def findSymbolByVramOrVrom(self, address: int) -> tuple[Symbol, int]|None:
+    def findSymbolByVramOrVrom(self, address: int) -> tuple[Symbol, int] | None:
         prevVram = self.vram
         prevVrom = self.vrom
-        prevSym: Symbol|None = None
+        prevSym: Symbol | None = None
 
         isVram = address >= 0x1000000
 
@@ -233,7 +243,9 @@ class Section:
                 return sym, 0
 
             if prevSym is not None:
-                if (sym.vrom is not None and sym.vrom > address) or (isVram and sym.vram > address):
+                if (sym.vrom is not None and sym.vrom > address) or (
+                    isVram and sym.vram > address
+                ):
                     if isVram:
                         offset = address - prevVram
                     else:
@@ -248,7 +260,15 @@ class Section:
             prevSym = sym
 
         if prevSym is not None:
-            if (prevSym.vrom is not None and prevSym.size is not None and prevSym.vrom + prevSym.size > address) or (isVram and prevSym.size is not None and prevSym.vram + prevSym.size > address):
+            if (
+                prevSym.vrom is not None
+                and prevSym.size is not None
+                and prevSym.vrom + prevSym.size > address
+            ) or (
+                isVram
+                and prevSym.size is not None
+                and prevSym.vram + prevSym.size > address
+            ):
                 if isVram:
                     offset = address - prevVram
                 else:
@@ -260,8 +280,8 @@ class Section:
 
         return None
 
-    def findSymbolByVram(self, address: int) -> tuple[Symbol, int]|None:
-        prevSym: Symbol|None = None
+    def findSymbolByVram(self, address: int) -> tuple[Symbol, int] | None:
+        prevSym: Symbol | None = None
 
         for sym in self._symbols:
             if sym.vram == address:
@@ -285,9 +305,9 @@ class Section:
 
         return None
 
-    def findSymbolByVrom(self, address: int) -> tuple[Symbol, int]|None:
+    def findSymbolByVrom(self, address: int) -> tuple[Symbol, int] | None:
         prevVrom = self.vrom if self.vrom is not None else 0
-        prevSym: Symbol|None = None
+        prevSym: Symbol | None = None
 
         for sym in self._symbols:
             if sym.vrom == address:
@@ -305,7 +325,11 @@ class Section:
             prevSym = sym
 
         if prevSym is not None:
-            if prevSym.vrom is not None and prevSym.size is not None and prevSym.vrom + prevSym.size > address:
+            if (
+                prevSym.vrom is not None
+                and prevSym.size is not None
+                and prevSym.vrom + prevSym.size > address
+            ):
                 offset = address - prevVrom
                 if offset < 0:
                     return None
@@ -313,24 +337,22 @@ class Section:
 
         return None
 
-
     @staticmethod
-    def printCsvHeader(printVram: bool=True):
+    def printCsvHeader(printVram: bool = True):
         print(Section.toCsvHeader(printVram=printVram))
 
-    def printAsCsv(self, printVram: bool=True):
+    def printAsCsv(self, printVram: bool = True):
         print(self.toCsv(printVram=printVram))
 
-
     @staticmethod
-    def toCsvHeader(printVram: bool=True) -> str:
+    def toCsvHeader(printVram: bool = True) -> str:
         ret = ""
         if printVram:
             ret += "VRAM,"
         ret += "Section,Section type,Num symbols,Max size,Total size,Average size"
         return ret
 
-    def toCsv(self, printVram: bool=True) -> str:
+    def toCsv(self, printVram: bool = True) -> str:
         # Calculate stats
         symCount = len(self._symbols)
         maxSize = 0
@@ -345,7 +367,7 @@ class Section:
         ret += f"{self.filepath},{self.sectionType},{symCount},{maxSize},{self.size},{averageSize:0.2f}"
         return ret
 
-    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
+    def toJson(self, humanReadable: bool = True) -> dict[str, Any]:
         fileDict: dict[str, Any] = {
             "filepath": str(self.filepath),
             "sectionType": self.sectionType,
@@ -364,7 +386,6 @@ class Section:
     def asStr(self) -> str:
         return f"{self.filepath}({self.sectionType}) (VRAM: {self.serializeVram(True)}, VROM: {self.serializeVrom(True)}, SIZE: {self.serializeSize(humanReadable=True)})"
 
-
     def copySymbolList(self) -> list[Symbol]:
         """Returns a copy (not a reference) of the internal symbol list"""
         return list(self._symbols)
@@ -377,13 +398,19 @@ class Section:
         """Appends a copy of `sym` into the internal symbol list"""
         self._symbols.append(sym)
 
-
     def clone(self) -> Section:
-        f = Section(self.filepath, self.vram, self.size, self.sectionType, self.vrom, self.align, self.isFill)
+        f = Section(
+            self.filepath,
+            self.vram,
+            self.size,
+            self.sectionType,
+            self.vrom,
+            self.align,
+            self.isFill,
+        )
         for sym in self._symbols:
             f._symbols.append(sym.clone())
         return f
-
 
     def __iter__(self) -> Generator[Symbol, None, None]:
         for sym in self._symbols:
@@ -413,27 +440,26 @@ class Segment:
     name: str
     vram: int
     size: int
-    vrom: int|None
-    align: int|None = None
+    vrom: int | None
+    align: int | None = None
     _sectionsList: list[Section] = dataclasses.field(default_factory=list)
 
-    def serializeVram(self, humanReadable: bool=True) -> str|int|None:
+    def serializeVram(self, humanReadable: bool = True) -> str | int | None:
         if humanReadable:
             return f"0x{self.vram:08X}"
         return self.vram
 
-    def serializeSize(self, humanReadable: bool=True) -> str|int|None:
+    def serializeSize(self, humanReadable: bool = True) -> str | int | None:
         if humanReadable:
             return f"0x{self.size:X}"
         return self.size
 
-    def serializeVrom(self, humanReadable: bool=True) -> str|int|None:
+    def serializeVrom(self, humanReadable: bool = True) -> str | int | None:
         if self.vrom is None:
             return None
         if humanReadable:
             return f"0x{self.vrom:06X}"
         return self.vrom
-
 
     def filterBySectionType(self, sectionType: str) -> Segment:
         newSegment = Segment(self.name, self.vram, self.size, self.vrom)
@@ -455,8 +481,7 @@ class Segment:
     def getEveryFileExceptSectionType(self, sectionType: str) -> Segment:
         return self.getEverySectionExceptSectionType(sectionType)
 
-
-    def findSymbolByName(self, symName: str) -> FoundSymbolInfo|None:
+    def findSymbolByName(self, symName: str) -> FoundSymbolInfo | None:
         for section in self._sectionsList:
             sym = section.findSymbolByName(symName)
             if sym is not None:
@@ -464,7 +489,7 @@ class Segment:
         return None
 
     #! @deprecated: Use either `findSymbolByVram` or `findSymbolByVrom` instead.
-    def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo|None:
+    def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo | None:
         for section in self._sectionsList:
             pair = section.findSymbolByVramOrVrom(address)
             if pair is not None:
@@ -472,7 +497,9 @@ class Segment:
                 return FoundSymbolInfo(section, sym, offset)
         return None
 
-    def findSymbolByVram(self, address: int) -> tuple[FoundSymbolInfo|None, list[Section]]:
+    def findSymbolByVram(
+        self, address: int
+    ) -> tuple[FoundSymbolInfo | None, list[Section]]:
         possibleFiles: list[Section] = []
         for section in self._sectionsList:
             pair = section.findSymbolByVram(address)
@@ -483,7 +510,9 @@ class Segment:
                 possibleFiles.append(section)
         return None, possibleFiles
 
-    def findSymbolByVrom(self, address: int) -> tuple[FoundSymbolInfo|None, list[Section]]:
+    def findSymbolByVrom(
+        self, address: int
+    ) -> tuple[FoundSymbolInfo | None, list[Section]]:
         possibleFiles: list[Section] = []
         for section in self._sectionsList:
             if section.vrom is None:
@@ -495,7 +524,6 @@ class Segment:
             if address >= section.vrom and address < section.vrom + section.size:
                 possibleFiles.append(section)
         return None, possibleFiles
-
 
     def mixFolders(self) -> Segment:
         newSegment = Segment(self.name, self.vram, self.size, self.vrom)
@@ -530,15 +558,16 @@ class Segment:
 
         return newSegment
 
-
-    def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
-        print(self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols), end="")
+    def printAsCsv(self, printVram: bool = True, skipWithoutSymbols: bool = True):
+        print(
+            self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols),
+            end="",
+        )
 
     def printSymbolsCsv(self):
         print(self.toCsvSymbols(), end="")
 
-
-    def toCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True) -> str:
+    def toCsv(self, printVram: bool = True, skipWithoutSymbols: bool = True) -> str:
         ret = ""
         for section in self._sectionsList:
             if skipWithoutSymbols and len(section) == 0:
@@ -560,7 +589,7 @@ class Segment:
                 ret += "\n"
         return ret
 
-    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
+    def toJson(self, humanReadable: bool = True) -> dict[str, Any]:
         segmentDict: dict[str, Any] = {
             "name": self.name,
             "vram": self.serializeVram(humanReadable=humanReadable),
@@ -576,7 +605,6 @@ class Segment:
 
         return segmentDict
 
-
     def copySectionList(self) -> list[Section]:
         """Returns a copy (not a reference) of the internal section list"""
         return list(self._sectionsList)
@@ -588,7 +616,6 @@ class Segment:
     def appendSection(self, section: Section) -> None:
         """Appends a copy of `section` into the internal section list"""
         self._sectionsList.append(section)
-
 
     #! @deprecated: Use `copySectionList` instead.
     def copyFileList(self) -> list[Section]:
@@ -605,7 +632,6 @@ class Segment:
         """Appends a copy of `section` into the internal section list"""
         return self.appendSection(section)
 
-
     def clone(self) -> Segment:
         s = self.cloneNoSectionlist()
         for f in self._sectionsList:
@@ -614,7 +640,6 @@ class Segment:
 
     def cloneNoSectionlist(self) -> Segment:
         return Segment(self.name, self.vram, self.size, self.vrom, self.align)
-
 
     def __iter__(self) -> Generator[Section, None, None]:
         for section in self._sectionsList:
@@ -629,7 +654,12 @@ class Segment:
     def __eq__(self, other: object) -> bool:
         if not isinstance(other, Segment):
             return False
-        return self.name == other.name and self.vram == other.vram and self.size == other.size and self.vrom == other.vrom
+        return (
+            self.name == other.name
+            and self.vram == other.vram
+            and self.size == other.size
+            and self.vrom == other.vrom
+        )
 
     # https://stackoverflow.com/a/56915493/6292472
     def __hash__(self):
@@ -684,11 +714,29 @@ class MapFile:
 
     def _transferContentsFromNativeMapFile(self, nativeMapFile: MapFileRs):
         for segment in nativeMapFile:
-            newSegment = Segment(segment.name, segment.vram, segment.size, segment.vrom, segment.align)
+            newSegment = Segment(
+                segment.name, segment.vram, segment.size, segment.vrom, segment.align
+            )
             for section in segment:
-                newSection = Section(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align, section.isFill)
+                newSection = Section(
+                    section.filepath,
+                    section.vram,
+                    section.size,
+                    section.sectionType,
+                    section.vrom,
+                    section.align,
+                    section.isFill,
+                )
                 for symbol in section:
-                    newSymbol = Symbol(symbol.name, symbol.vram, symbol.size, symbol.vrom, symbol.align, symbol.nonmatchingSymExists, symbol.inferredStatic)
+                    newSymbol = Symbol(
+                        symbol.name,
+                        symbol.vram,
+                        symbol.size,
+                        symbol.vrom,
+                        symbol.align,
+                        symbol.nonmatchingSymExists,
+                        symbol.inferredStatic,
+                    )
 
                     newSection._symbols.append(newSymbol)
                 newSegment._sectionsList.append(newSection)
@@ -698,12 +746,30 @@ class MapFile:
         nativeMapFile = MapFileRs()
 
         for segment in self._segmentsList:
-            newSegment = SegmentRs(segment.name, segment.vram, segment.size, segment.vrom, segment.align)
+            newSegment = SegmentRs(
+                segment.name, segment.vram, segment.size, segment.vrom, segment.align
+            )
             for section in segment._sectionsList:
-                newSection = SectionRs(section.filepath, section.vram, section.size, section.sectionType, section.vrom, section.align, section.isFill)
+                newSection = SectionRs(
+                    section.filepath,
+                    section.vram,
+                    section.size,
+                    section.sectionType,
+                    section.vrom,
+                    section.align,
+                    section.isFill,
+                )
                 for symbol in section._symbols:
                     size = symbol.size if symbol.size is not None else 0
-                    newSymbol = SymbolRs(symbol.name, symbol.vram, size, symbol.vrom, symbol.align, symbol.nonmatchingSymExists, symbol.inferredStatic)
+                    newSymbol = SymbolRs(
+                        symbol.name,
+                        symbol.vram,
+                        size,
+                        symbol.vrom,
+                        symbol.align,
+                        symbol.nonmatchingSymExists,
+                        symbol.inferredStatic,
+                    )
 
                     newSection.appendSymbol(newSymbol)
                 newSegment.appendFile(newSection)
@@ -771,7 +837,6 @@ class MapFile:
 
         self._transferContentsFromNativeMapFile(nativeMapFile)
 
-
     def filterBySectionType(self, sectionType: str) -> MapFile:
         newMapFile = MapFile()
 
@@ -794,8 +859,7 @@ class MapFile:
                 newMapFile._segmentsList.append(newSegment)
         return newMapFile
 
-
-    def findSymbolByName(self, symName: str) -> FoundSymbolInfo|None:
+    def findSymbolByName(self, symName: str) -> FoundSymbolInfo | None:
         for segment in self._segmentsList:
             info = segment.findSymbolByName(symName)
             if info is not None:
@@ -803,14 +867,16 @@ class MapFile:
         return None
 
     #! @deprecated: Use either `findSymbolByVram` or `findSymbolByVrom` instead.
-    def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo|None:
+    def findSymbolByVramOrVrom(self, address: int) -> FoundSymbolInfo | None:
         for segment in self._segmentsList:
             info = segment.findSymbolByVramOrVrom(address)
             if info is not None:
                 return info
         return None
 
-    def findSymbolByVram(self, address: int) -> tuple[FoundSymbolInfo|None, list[Section]]:
+    def findSymbolByVram(
+        self, address: int
+    ) -> tuple[FoundSymbolInfo | None, list[Section]]:
         """
         Returns a symbol with the specified VRAM address (or with an addend) if
         it exists on the mapfile.
@@ -828,7 +894,9 @@ class MapFile:
             possibleFiles.extend(possibleFilesAux)
         return None, possibleFiles
 
-    def findSymbolByVrom(self, address: int) -> tuple[FoundSymbolInfo|None, list[Section]]:
+    def findSymbolByVrom(
+        self, address: int
+    ) -> tuple[FoundSymbolInfo | None, list[Section]]:
         """
         Returns a symbol with the specified VRAM address (or with an addend) if
         it exists on the mapfile.
@@ -846,7 +914,9 @@ class MapFile:
             possibleFiles.extend(possibleFilesAux)
         return None, possibleFiles
 
-    def findLowestDifferingSymbol(self, otherMapFile: MapFile) -> tuple[Symbol, Section, Symbol|None]|None:
+    def findLowestDifferingSymbol(
+        self, otherMapFile: MapFile
+    ) -> tuple[Symbol, Section, Symbol | None] | None:
         minVram = None
         found = None
         foundIndices = (0, 0)
@@ -863,7 +933,7 @@ class MapFile:
                             minVram = builtSym.vram
                             prevSym = None
                             if k > 0:
-                                prevSym = builtFile[k-1]
+                                prevSym = builtFile[k - 1]
                             found = (builtSym, builtFile, prevSym)
                             foundIndices = (i, j)
 
@@ -896,7 +966,6 @@ class MapFile:
 
         return found
 
-
     def mixFolders(self) -> MapFile:
         newMapFile = MapFile()
 
@@ -911,7 +980,14 @@ class MapFile:
     def fixupNonMatchingSymbols(self) -> MapFile:
         return self.clone()
 
-    def getProgress(self, asmPath: Path, nonmatchings: Path, aliases: dict[str, str]=dict(), pathIndex: int=2, checkFunctionFiles: bool=True) -> tuple[ProgressStats, dict[str, ProgressStats]]:
+    def getProgress(
+        self,
+        asmPath: Path,
+        nonmatchings: Path,
+        aliases: dict[str, str] = dict(),
+        pathIndex: int = 2,
+        checkFunctionFiles: bool = True,
+    ) -> tuple[ProgressStats, dict[str, ProgressStats]]:
         totalStats = ProgressStats()
         progressPerFolder: dict[str, ProgressStats] = dict()
 
@@ -944,52 +1020,87 @@ class MapFile:
 
                 if self.debugging:
                     utils.eprint(f"  original section path: {originalFilePath}")
-                    utils.eprint(f"  extensionless section path: {extensionlessFilePath}")
+                    utils.eprint(
+                        f"  extensionless section path: {extensionlessFilePath}"
+                    )
                     utils.eprint(f"  full asm section: {fullAsmFile}")
-                    utils.eprint(f"  whole section is undecomped: {wholeFileIsUndecomped}")
+                    utils.eprint(
+                        f"  whole section is undecomped: {wholeFileIsUndecomped}"
+                    )
 
                 for func in section:
                     if func.name.endswith(".NON_MATCHING"):
                         continue
 
-                    funcAsmPath = nonmatchings / extensionlessFilePath / f"{func.name}.s"
+                    funcAsmPath = (
+                        nonmatchings / extensionlessFilePath / f"{func.name}.s"
+                    )
 
                     symSize = 0
                     if func.size is not None:
                         symSize = func.size
 
                     if self.debugging:
-                        utils.eprint(f"    Checking function '{funcAsmPath}' (size 0x{symSize:X}) ... ", end="")
+                        utils.eprint(
+                            f"    Checking function '{funcAsmPath}' (size 0x{symSize:X}) ... ",
+                            end="",
+                        )
 
                     if wholeFileIsUndecomped:
                         totalStats.undecompedSize += symSize
                         progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
-                            utils.eprint(" the whole section is undecomped (no individual function files exist yet)")
+                            utils.eprint(
+                                " the whole section is undecomped (no individual function files exist yet)"
+                            )
                     elif self.findSymbolByName(f"{func.name}.NON_MATCHING") is not None:
                         totalStats.undecompedSize += symSize
                         progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
-                            utils.eprint(" the function hasn't been matched yet (there's a `.NON_MATCHING` symbol with the same name)")
+                            utils.eprint(
+                                " the function hasn't been matched yet (there's a `.NON_MATCHING` symbol with the same name)"
+                            )
                     elif checkFunctionFiles and funcAsmPath.exists():
                         totalStats.undecompedSize += symSize
                         progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
-                            utils.eprint(" the function hasn't been matched yet (the function section still exists)")
+                            utils.eprint(
+                                " the function hasn't been matched yet (the function section still exists)"
+                            )
                     else:
                         totalStats.decompedSize += symSize
                         progressPerFolder[folder].decompedSize += symSize
                         if self.debugging:
-                            utils.eprint(" the function is matched! (the function section was not found)")
+                            utils.eprint(
+                                " the function is matched! (the function section was not found)"
+                            )
 
         return totalStats, progressPerFolder
 
-    def writeObjdiffReportToFile(self, outpath: Path, prefixesToTrim: list[str], reportCategories: ReportCategories, *, pathIndex: int=2, asmPath: Path|None=None, nonmatchingsPath: Path|None=None):
+    def writeObjdiffReportToFile(
+        self,
+        outpath: Path,
+        prefixesToTrim: list[str],
+        reportCategories: ReportCategories,
+        *,
+        pathIndex: int = 2,
+        asmPath: Path | None = None,
+        nonmatchingsPath: Path | None = None,
+    ):
         nativeMapFile = self._transferContentsToNativeMapFile()
-        nativeMapFile.writeObjdiffReportToFile(outpath, prefixesToTrim, reportCategories, pathIndex=pathIndex, asmPath=asmPath, nonmatchingsPath=nonmatchingsPath)
+        nativeMapFile.writeObjdiffReportToFile(
+            outpath,
+            prefixesToTrim,
+            reportCategories,
+            pathIndex=pathIndex,
+            asmPath=asmPath,
+            nonmatchingsPath=nonmatchingsPath,
+        )
 
     # Useful for finding bss reorders
-    def compareFilesAndSymbols(self, otherMapFile: MapFile, *, checkOtherOnSelf: bool=True) -> MapsComparisonInfo:
+    def compareFilesAndSymbols(
+        self, otherMapFile: MapFile, *, checkOtherOnSelf: bool = True
+    ) -> MapsComparisonInfo:
         compInfo = MapsComparisonInfo()
 
         for segment in self:
@@ -997,13 +1108,21 @@ class MapFile:
                 for symbol in section:
                     foundSymInfo = otherMapFile.findSymbolByName(symbol.name)
                     if foundSymInfo is not None:
-                        comp = SymbolComparisonInfo(symbol, symbol.vram, section, foundSymInfo.symbol.vram, foundSymInfo.section)
+                        comp = SymbolComparisonInfo(
+                            symbol,
+                            symbol.vram,
+                            section,
+                            foundSymInfo.symbol.vram,
+                            foundSymInfo.section,
+                        )
                         compInfo.comparedList.append(comp)
                         if comp.diff != 0:
                             compInfo.badFiles.add(section)
                     else:
                         compInfo.missingFiles.add(section)
-                        compInfo.comparedList.append(SymbolComparisonInfo(symbol, symbol.vram, section, -1, None))
+                        compInfo.comparedList.append(
+                            SymbolComparisonInfo(symbol, symbol.vram, section, -1, None)
+                        )
 
         if checkOtherOnSelf:
             for segment in otherMapFile:
@@ -1012,11 +1131,17 @@ class MapFile:
                         foundSymInfo = self.findSymbolByName(symbol.name)
                         if foundSymInfo is None:
                             compInfo.missingFiles.add(section)
-                            compInfo.comparedList.append(SymbolComparisonInfo(symbol, -1, None, symbol.vram, section))
+                            compInfo.comparedList.append(
+                                SymbolComparisonInfo(
+                                    symbol, -1, None, symbol.vram, section
+                                )
+                            )
 
         return compInfo
 
-    def resolvePartiallyLinkedFiles(self, resolver: Callable[[Path], Path|None]) -> MapFile:
+    def resolvePartiallyLinkedFiles(
+        self, resolver: Callable[[Path], Path | None]
+    ) -> MapFile:
         """
         Resolve sections and paths of a mapfile built from partially linked objects.
 
@@ -1074,14 +1199,28 @@ class MapFile:
                             # Adjust the vram and vrom addresses of the section
                             # because they are relative to zero.
                             sectTemp.vram += sect.vram - partialSegment.vram
-                            if sectTemp.vrom is not None and sect.vrom is not None and partialSegment.vrom is not None:
-                                sectTemp.vrom = sectTemp.vrom + sect.vrom - partialSegment.vrom
+                            if (
+                                sectTemp.vrom is not None
+                                and sect.vrom is not None
+                                and partialSegment.vrom is not None
+                            ):
+                                sectTemp.vrom = (
+                                    sectTemp.vrom + sect.vrom - partialSegment.vrom
+                                )
 
                             # Adjust vram and vrom of symbols too.
                             for partialSym in sectTemp._symbols:
                                 partialSym.vram += sect.vram - partialSegment.vram
-                                if partialSym.vrom is not None and sect.vrom is not None and partialSegment.vrom is not None:
-                                    partialSym.vrom = partialSym.vrom + sect.vrom - partialSegment.vrom
+                                if (
+                                    partialSym.vrom is not None
+                                    and sect.vrom is not None
+                                    and partialSegment.vrom is not None
+                                ):
+                                    partialSym.vrom = (
+                                        partialSym.vrom
+                                        + sect.vrom
+                                        - partialSegment.vrom
+                                    )
 
                             newSeg._sectionsList.append(sectTemp)
                     else:
@@ -1096,18 +1235,21 @@ class MapFile:
             resolvedMap._segmentsList.append(newSeg)
         return resolvedMap
 
-
-    def printAsCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True):
-        print(self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols), end="")
+    def printAsCsv(self, printVram: bool = True, skipWithoutSymbols: bool = True):
+        print(
+            self.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols),
+            end="",
+        )
 
     def printSymbolsCsv(self):
         print(self.toCsvSymbols(), end="")
 
-
-    def toCsv(self, printVram: bool=True, skipWithoutSymbols: bool=True) -> str:
+    def toCsv(self, printVram: bool = True, skipWithoutSymbols: bool = True) -> str:
         ret = Section.toCsvHeader(printVram=printVram) + "\n"
         for segment in self._segmentsList:
-            ret += segment.toCsv(printVram=printVram, skipWithoutSymbols=skipWithoutSymbols)
+            ret += segment.toCsv(
+                printVram=printVram, skipWithoutSymbols=skipWithoutSymbols
+            )
         return ret
 
     def toCsvSymbols(self) -> str:
@@ -1117,16 +1259,13 @@ class MapFile:
             ret += segment.toCsvSymbols()
         return ret
 
-    def toJson(self, humanReadable: bool=True) -> dict[str, Any]:
+    def toJson(self, humanReadable: bool = True) -> dict[str, Any]:
         segmentsList = []
         for segment in self._segmentsList:
             segmentsList.append(segment.toJson(humanReadable=humanReadable))
 
-        result: dict[str, Any] = {
-            "segments": segmentsList
-        }
+        result: dict[str, Any] = {"segments": segmentsList}
         return result
-
 
     def copySegmentList(self) -> list[Segment]:
         """Returns a copy (not a reference) of the internal segment list"""
@@ -1140,14 +1279,12 @@ class MapFile:
         """Appends a copy of `segment` into the internal segment list"""
         self._segmentsList.append(segment)
 
-
     def clone(self) -> MapFile:
         m = MapFile()
         m.debugging = self.debugging
         for s in self._segmentsList:
             m._segmentsList.append(s.clone())
         return m
-
 
     def __iter__(self) -> Generator[Segment, None, None]:
         for section in self._segmentsList:

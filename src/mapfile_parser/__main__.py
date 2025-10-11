@@ -12,13 +12,13 @@ import mapfile_parser
 
 
 def mapfileParserMain():
-    decompConfig: decomp_settings.Config|None
+    decompConfig: decomp_settings.Config | None
     try:
         decompConfig = decomp_settings.scan_for_config()
     except Exception:
         decompConfig = None
 
-    description = description="""\
+    description = description = """\
 Interface to call any of the mapfile_parser's CLI utilities.
 
 All the CLI utilities support the `decomp.yaml` specification from the
@@ -37,9 +37,16 @@ first listed version.
         formatter_class=argparse.RawDescriptionHelpFormatter,
     )
 
-    parser.add_argument("-V", "--version", action="version", version=f"%(prog)s {mapfile_parser.__version__}")
+    parser.add_argument(
+        "-V",
+        "--version",
+        action="version",
+        version=f"%(prog)s {mapfile_parser.__version__}",
+    )
 
-    subparsers = parser.add_subparsers(description="action", help="the action to perform", required=True)
+    subparsers = parser.add_subparsers(
+        description="action", help="the action to perform", required=True
+    )
 
     mapfile_parser.frontends.bss_check.addSubparser(subparsers, decompConfig)
     mapfile_parser.frontends.first_diff.addSubparser(subparsers, decompConfig)
