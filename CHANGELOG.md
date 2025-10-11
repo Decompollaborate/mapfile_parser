@@ -663,7 +663,7 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 
 - Initial release
 
-[unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/master...develop
+[unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/2.11.0...HEAD
 [2.11.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.10.0...2.11.0
 [2.10.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.4...2.10.0
 [2.9.4]: https://github.com/Decompollaborate/mapfile_parser/compare/2.9.3...2.9.4

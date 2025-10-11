@@ -41,8 +41,8 @@ mapfile_parser>=2.11.0,<3.0.0
 
 #### Development version
 
-The unstable development version is located at the [develop](https://github.com/Decompollaborate/mapfile_parser/tree/develop)
-branch. PRs should be made into that branch instead of the main one.
+The unstable development version is located at the
+[2.x](https://github.com/Decompollaborate/mapfile_parser/tree/2.x) branch.
 
 The recommended way to install a locally cloned repo is by passing the `-e`
 (editable) flag to `pip`.
@@ -52,11 +52,11 @@ python3 -m pip install -e .
 ```
 
 In case you want to mess with the latest development version without wanting to
-clone the repository, then you could use the following command:
+clone the repository, you could use the following command:
 
 ```bash
 python3 -m pip uninstall mapfile_parser
-python3 -m pip install git+https://github.com/Decompollaborate/mapfile_parser.git@develop
+python3 -m pip install git+https://github.com/Decompollaborate/mapfile_parser.git@2.x
 ```
 
 NOTE: Installing the development version is not recommended unless you know what
