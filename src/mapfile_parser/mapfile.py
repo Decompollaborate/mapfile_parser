@@ -877,7 +877,7 @@ class MapFile:
             # We want to check the previous section, not the current one,
             # since we already know the current one doesn't have a symbol
             # preceding the one we found.
-            j -= 1;
+            j -= 1
 
             while i >= 0:
                 builtSegment = self[i]
@@ -916,7 +916,7 @@ class MapFile:
         progressPerFolder: dict[str, ProgressStats] = dict()
 
         if self.debugging:
-            utils.eprint(f"getProgress():")
+            utils.eprint("getProgress():")
 
         for segment in self._segmentsList:
             for section in segment:
@@ -965,22 +965,22 @@ class MapFile:
                         totalStats.undecompedSize += symSize
                         progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
-                            utils.eprint(f" the whole section is undecomped (no individual function files exist yet)")
+                            utils.eprint(" the whole section is undecomped (no individual function files exist yet)")
                     elif self.findSymbolByName(f"{func.name}.NON_MATCHING") is not None:
                         totalStats.undecompedSize += symSize
                         progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
-                            utils.eprint(f" the function hasn't been matched yet (there's a `.NON_MATCHING` symbol with the same name)")
+                            utils.eprint(" the function hasn't been matched yet (there's a `.NON_MATCHING` symbol with the same name)")
                     elif checkFunctionFiles and funcAsmPath.exists():
                         totalStats.undecompedSize += symSize
                         progressPerFolder[folder].undecompedSize += symSize
                         if self.debugging:
-                            utils.eprint(f" the function hasn't been matched yet (the function section still exists)")
+                            utils.eprint(" the function hasn't been matched yet (the function section still exists)")
                     else:
                         totalStats.decompedSize += symSize
                         progressPerFolder[folder].decompedSize += symSize
                         if self.debugging:
-                            utils.eprint(f" the function is matched! (the function section was not found)")
+                            utils.eprint(" the function is matched! (the function section was not found)")
 
         return totalStats, progressPerFolder
 
@@ -1111,7 +1111,7 @@ class MapFile:
         return ret
 
     def toCsvSymbols(self) -> str:
-        ret = f"Section," + Symbol.toCsvHeader() + "\n"
+        ret = "Section," + Symbol.toCsvHeader() + "\n"
 
         for segment in self._segmentsList:
             ret += segment.toCsvSymbols()

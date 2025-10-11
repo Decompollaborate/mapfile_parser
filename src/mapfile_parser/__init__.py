@@ -24,5 +24,6 @@ from .progress_stats import ProgressStats as ProgressStats
 
 from . import frontends as frontends
 
-# Renamed types
-from .mapfile import Section as File
+# Renamed types.
+# TODO: remove on version 3.0
+File = Section

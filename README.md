@@ -15,9 +15,9 @@ This library is available for Python3 and Rust
 
 - Fast parsing written in Rust.
 - Support map formats:
-  - GNU ld
-  - clang lld
-  - Metrowerks ld
+  - `GNU ld`.
+  - `clang lld`.
+  - `Metrowerks ld`.
 - Built-in cli utilities to process the parsed map file (see [Examples](#examples)).
 
 ## Installing

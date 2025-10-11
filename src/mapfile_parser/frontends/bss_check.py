@@ -53,8 +53,8 @@ def printSymbolComparisonAsCsv(comparisonInfo: mapfile.MapsComparisonInfo, print
         symbolState = "BAD"
         if symbolInfo.diff == 0:
             symbolState = "GOOD"
-            if not buildFile in comparisonInfo.badFiles and not expectedFile in comparisonInfo.badFiles:
-                if not buildFile in comparisonInfo.badFiles and not expectedFile in comparisonInfo.badFiles:
+            if buildFile not in comparisonInfo.badFiles and expectedFile not in comparisonInfo.badFiles:
+                if buildFile not in comparisonInfo.badFiles and expectedFile not in comparisonInfo.badFiles:
                     if not printAll:
                         continue
 
@@ -88,8 +88,8 @@ def printSymbolComparisonAsListing(comparisonInfo: mapfile.MapsComparisonInfo, p
         symbolState = "BAD"
         if symbolInfo.diff == 0:
             symbolState = "GOOD"
-            if not buildFile in comparisonInfo.badFiles and not expectedFile in comparisonInfo.badFiles:
-                if not buildFile in comparisonInfo.badFiles and not expectedFile in comparisonInfo.badFiles:
+            if buildFile not in comparisonInfo.badFiles and expectedFile not in comparisonInfo.badFiles:
+                if buildFile not in comparisonInfo.badFiles and expectedFile not in comparisonInfo.badFiles:
                     if not printAll:
                         continue
 

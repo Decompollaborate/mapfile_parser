@@ -170,3 +170,5 @@ cython_debug/
 # Added by cargo
 
 /target
+
+.ruff_cache/

@@ -15,7 +15,7 @@ def mapfileParserMain():
     decompConfig: decomp_settings.Config|None
     try:
         decompConfig = decomp_settings.scan_for_config()
-    except:
+    except Exception:
         decompConfig = None
 
     description = description="""\
