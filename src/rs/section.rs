@@ -417,14 +417,12 @@ pub(crate) mod python_bindings {
 
         // Manually convert PathBuf into a pathlib.Path object since pyo3 refuses to do so
         #[getter]
-        fn get_filepath(&self) -> PyResult<PyObject> {
-            Python::with_gil(|py| {
-                let pathlib = py.import("pathlib")?;
-                let pathlib_path = pathlib.getattr(intern!(py, "Path"))?;
-                let args = (self.filepath.clone(),);
+        fn get_filepath(&self, py: Python<'_>) -> PyResult<Py<PyAny>> {
+            let pathlib = py.import("pathlib")?;
+            let pathlib_path = pathlib.getattr(intern!(py, "Path"))?;
+            let args = (self.filepath.clone(),);
 
-                pathlib_path.call1(args)?.into_py_any(py)
-            })
+            pathlib_path.call1(args)?.into_py_any(py)
         }
 
         #[setter]

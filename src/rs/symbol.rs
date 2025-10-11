@@ -243,56 +243,52 @@ pub(crate) mod python_bindings {
         /* Serializers */
 
         #[pyo3(signature=(_humanReadable=true))]
-        fn serializeName(&self, _humanReadable: bool) -> PyResult<PyObject> {
-            Python::with_gil(|py| self.name.clone().into_py_any(py))
+        fn serializeName(&self, py: Python<'_>, _humanReadable: bool) -> PyResult<Py<PyAny>> {
+            self.name.clone().into_py_any(py)
         }
 
         #[pyo3(signature=(humanReadable=true))]
-        fn serializeVram(&self, humanReadable: bool) -> PyResult<PyObject> {
-            Python::with_gil(|py| {
-                if humanReadable {
-                    return format!("0x{:08X}", self.vram).into_py_any(py);
-                }
-
+        fn serializeVram(&self, py: Python<'_>, humanReadable: bool) -> PyResult<Py<PyAny>> {
+            if humanReadable {
+                format!("0x{:08X}", self.vram).into_py_any(py)
+            } else {
                 self.vram.into_py_any(py)
-            })
+            }
         }
 
         #[pyo3(signature=(humanReadable=true))]
-        fn serializeSize(&self, humanReadable: bool) -> PyResult<PyObject> {
-            Python::with_gil(|py| {
-                if humanReadable {
-                    return format!("0x{:X}", self.size).into_py_any(py);
-                }
+        fn serializeSize(&self, py: Python<'_>, humanReadable: bool) -> PyResult<Py<PyAny>> {
+            if humanReadable {
+                format!("0x{:X}", self.size).into_py_any(py)
+            } else {
                 self.size.into_py_any(py)
-            })
+            }
         }
 
         #[pyo3(signature=(humanReadable=true))]
-        fn serializeVrom(&self, humanReadable: bool) -> PyResult<PyObject> {
-            Python::with_gil(|py| match self.vrom {
+        fn serializeVrom(&self, py: Python<'_>, humanReadable: bool) -> PyResult<Py<PyAny>> {
+            match self.vrom {
                 None => Ok(Python::None(py)),
                 Some(vrom) => {
                     if humanReadable {
-                        return format!("0x{:06X}", vrom).into_py_any(py);
+                        format!("0x{:06X}", vrom).into_py_any(py)
+                    } else {
+                        vrom.into_py_any(py)
                     }
-                    vrom.into_py_any(py)
                 }
-            })
+            }
         }
 
         #[pyo3(signature=(humanReadable=true))]
-        fn toJson(&self, humanReadable: bool) -> PyResult<PyObject> {
-            Python::with_gil(|py| {
-                [
-                    ("name", self.serializeName(humanReadable)?),
-                    ("vram", self.serializeVram(humanReadable)?),
-                    ("size", self.serializeSize(humanReadable)?),
-                    ("vrom", self.serializeVrom(humanReadable)?),
-                ]
-                .into_py_dict(py)?
-                .into_py_any(py)
-            })
+        fn toJson(&self, py: Python<'_>, humanReadable: bool) -> PyResult<Py<PyAny>> {
+            [
+                ("name", self.serializeName(py, humanReadable)?),
+                ("vram", self.serializeVram(py, humanReadable)?),
+                ("size", self.serializeSize(py, humanReadable)?),
+                ("vrom", self.serializeVrom(py, humanReadable)?),
+            ]
+            .into_py_dict(py)?
+            .into_py_any(py)
         }
 
         /* Methods */

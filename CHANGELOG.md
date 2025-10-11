@@ -15,6 +15,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
     `python3 -m mapfile_parser`.
   - This should allow better integration with tools like `uvx` or `pipx`.
 
+### Changed
+
+- Update the `pyo3` dependency version.
+
 ## [2.11.0] - 2025-09-08
 
 ### Added
