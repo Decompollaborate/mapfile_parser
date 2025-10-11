@@ -100,6 +100,7 @@ impl MapFile {
         since = "2.8.0",
         note = "Use either `new_from_map_file` or `new_from_map_str` instead."
     )]
+    #[allow(clippy::new_without_default)]
     pub fn new() -> Self {
         Self::new_impl()
     }
