@@ -13,9 +13,6 @@ on:
 permissions:
   contents: read
 
-# At the time of writing, PyO3 has a hard minimal Python version of 3.7, so
-# there's no use trying to go any lower than that.
-
 jobs:
   linux:
     runs-on: ${{ matrix.platform.runner }}
@@ -25,27 +22,27 @@ jobs:
         platform:
           - runner: ubuntu-22.04
             target: x86_64
-            python_version_min: '3.7'
+            python_version_min: '3.8'
             python_version_max: '3.14'
           - runner: ubuntu-22.04
             target: x86
-            python_version_min: '3.7'
+            python_version_min: '3.8'
             python_version_max: '3.14'
           - runner: ubuntu-22.04
             target: aarch64
-            python_version_min: '3.7'
+            python_version_min: '3.8'
             python_version_max: '3.14'
           - runner: ubuntu-22.04
             target: armv7
-            python_version_min: '3.7'
+            python_version_min: '3.8'
             python_version_max: '3.14'
           - runner: ubuntu-22.04
             target: s390x
-            python_version_min: '3.7'
+            python_version_min: '3.8'
             python_version_max: '3.14'
           - runner: ubuntu-22.04
             target: ppc64le
-            python_version_min: '3.7'
+            python_version_min: '3.8'
             python_version_max: '3.14'
     steps:
       - uses: actions/checkout@main
@@ -112,16 +109,16 @@ jobs:
         platform:
           - runner: ubuntu-22.04
             target: x86_64
-            python_version_min: '3.7'
+            python_version_min: '3.8'
           - runner: ubuntu-22.04
             target: x86
-            python_version_min: '3.7'
+            python_version_min: '3.8'
           - runner: ubuntu-22.04
             target: aarch64
-            python_version_min: '3.7'
+            python_version_min: '3.8'
           - runner: ubuntu-22.04
             target: armv7
-            python_version_min: '3.7'
+            python_version_min: '3.8'
     steps:
       - uses: actions/checkout@main
       - uses: actions/setup-python@v6
@@ -157,12 +154,12 @@ jobs:
           - runner: windows-latest
             target: x64
             python_arch: x64
-            python_version_min: '3.7'
+            python_version_min: '3.8'
             python_version_max: '3.14'
           - runner: windows-latest
             target: x86
             python_arch: x86
-            python_version_min: '3.7'
+            python_version_min: '3.8'
             python_version_max: '3.14'
     steps:
       - uses: actions/checkout@main
@@ -254,7 +251,7 @@ jobs:
         platform:
           - runner: macos-15-intel
             target: x86_64
-            python_version_min: '3.7'
+            python_version_min: '3.8'
             python_version_max: '3.14'
           - runner: macos-latest
             target: aarch64

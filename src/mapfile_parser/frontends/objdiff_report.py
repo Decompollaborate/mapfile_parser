@@ -106,7 +106,7 @@ def printDefaultCategories(
         for x in prefixesToTrim:
             if current.startswith(x):
                 # remove prefix
-                current = current[len(x):]
+                current = current[len(x) :]
                 break
         # current.removeprefix("/")
         current = current[1:] if current[0] == "/" else current
