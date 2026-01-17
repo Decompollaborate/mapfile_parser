@@ -39,7 +39,7 @@ extern crate lazy_static;
 use pyo3::prelude::*;
 
 #[cfg(feature = "python_bindings")]
-#[pymodule]
+#[pymodule(gil_used = false)]
 fn mapfile_parser(m: &Bound<'_, PyModule>) -> PyResult<()> {
     m.add_class::<mapfile::MapFile>()?;
     m.add_class::<segment::Segment>()?;
