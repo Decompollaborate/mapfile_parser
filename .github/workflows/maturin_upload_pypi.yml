@@ -359,4 +359,4 @@ jobs:
       - name: Publish to PyPI
         run: uv publish 'wheels-*/*'
         env:
-          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_API_TOKEN }}
+          UV_PUBLISH_TOKEN: ${{ secrets.PYPI_PASSWORD }}
