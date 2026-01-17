@@ -105,9 +105,11 @@ def printDefaultCategories(
         # Trim the first prefix found in the list
         for x in prefixesToTrim:
             if current.startswith(x):
-                current = current.removeprefix(x)
+                # remove prefix
+                current = current[len(x):]
                 break
-        current = current.removeprefix("/")
+        # current.removeprefix("/")
+        current = current[1:] if current[0] == "/" else current
         return Path(current)
 
     categoriesByPath: list[Category] = []

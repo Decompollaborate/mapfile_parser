@@ -1,0 +1,101 @@
+name: Python linting
+
+# Build on every branch push, tag push, and pull request change:
+on: [push, pull_request]
+
+jobs:
+  mypy:
+    name: mypy
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        py_version:
+          - '3.8'
+
+    steps:
+      - name: Checkout reposistory
+        uses: actions/checkout@main
+
+      - name: Set up Python ${{ matrix.py_version }}
+        uses: actions/setup-python@main
+        with:
+          python-version: ${{ matrix.py_version }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      # Setup venv and install dependencies without building the project from source.
+      - name: Install Dependencies
+        run: |
+          uv venv --no-project --python ${{ matrix.py_version }}
+          uv sync --no-install-project
+          uv pip install -U mypy
+
+      - name: mypy
+        run: |
+          uv run --no-sync mypy --show-column-numbers --hide-error-context .
+
+  ruff:
+    name: ruff
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        py_version:
+          - '3.8'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@main
+
+      - name: Set up Python ${{ matrix.py_version }}
+        uses: actions/setup-python@main
+        with:
+          python-version: ${{ matrix.py_version }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      # Setup venv and install dependencies without building the project from source.
+      - name: Install Dependencies
+        run: |
+          uv venv --no-project --python ${{ matrix.py_version }}
+          uv sync --no-install-project
+          uv pip install -U ruff
+
+      - name: ruff
+        run: |
+          ruff check src/
+
+  ruff_format:
+    name: ruff format
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        py_version:
+          - '3.8'
+
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@main
+
+      - name: Set up Python ${{ matrix.py_version }}
+        uses: actions/setup-python@main
+        with:
+          python-version: ${{ matrix.py_version }}
+
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      # Setup venv and install dependencies without building the project from source.
+      - name: Install Dependencies
+        run: |
+          uv venv --no-project --python ${{ matrix.py_version }}
+          uv sync --no-install-project
+          uv pip install -U ruff
+
+      - name: ruff
+        run: |
+          ruff format src/ --check

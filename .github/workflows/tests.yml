@@ -5,8 +5,22 @@ on: [push, pull_request]
 
 jobs:
   check_if_output_files_changed:
-    name: Check if output files changed
-    runs-on: ubuntu-latest
+    name: Check if output files changed (Python ${{ matrix.py_version }})
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        py_version:
+          - '3.7'
+          - '3.8'
+          - '3.9'
+          - '3.10'
+          - '3.11'
+          - '3.12'
+          - '3.13'
+          - '3.14'
+          - '3.14t'
+          - '3.x' # Explicit latest
 
     steps:
       - name: Checkout reposistory
@@ -15,16 +29,31 @@ jobs:
       - name: Setup Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Setup requirements
-        run: |
-          python3 -m pip install -U -r requirements.txt
-          python3 -m pip install -U maturin
+      - name: Set up Python ${{ matrix.py_version }}
+        uses: actions/setup-python@main
+        with:
+          python-version: ${{ matrix.py_version }}
 
-      - name: Install local mapfile_parser
-        run: python3 -m pip install .
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Setup venv ${{ matrix.py_version }}
+        if: ${{ matrix.py_version != '3.x' }}
+        run: |
+          uv venv --python ${{ matrix.py_version }}
+      # `--python 3 --managed-python` makes uv to install the latest python version available
+      - name: Setup venv 3.x
+        if: ${{ matrix.py_version == '3.x' }}
+        run: |
+          uv venv --python 3 --managed-python
+
+      - name: Sync venv
+        run: |
+          uv sync
 
       - name: Update tests outputs
-        run: python3 tests/update_outputs.py
+        run: |
+          uv run tests/update_outputs.py
 
       - name: Check if there are any changes in the test cases
         id: tests_changes
@@ -38,8 +67,22 @@ jobs:
           exit 1
 
   check_progress_nonmatchings:
-    name: Check progress by NON_MATCHING symbols
-    runs-on: ubuntu-latest
+    name: Check progress by NON_MATCHING symbols (Python ${{ matrix.py_version }})
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        py_version:
+          - '3.7'
+          - '3.8'
+          - '3.9'
+          - '3.10'
+          - '3.11'
+          - '3.12'
+          - '3.13'
+          - '3.14'
+          - '3.14t'
+          - '3.x' # Explicit latest
 
     steps:
       - name: Checkout reposistory
@@ -48,20 +91,40 @@ jobs:
       - name: Setup Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Setup requirements
-        run: |
-          python3 -m pip install -U -r requirements.txt
-          python3 -m pip install -U maturin
+      - name: Set up Python ${{ matrix.py_version }}
+        uses: actions/setup-python@main
+        with:
+          python-version: ${{ matrix.py_version }}
 
-      - name: Install local mapfile_parser
-        run: python3 -m pip install .
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Setup project
+        run: |
+          uv venv --python ${{ matrix.py_version }}
+          uv sync
 
       - name: Update tests outputs
-        run: python3 tests/check_progress_nonmatchings.py
+        run: |
+          uv run tests/check_progress_nonmatchings.py
 
   check_frontends:
-    name: Check frontends aren't broken
-    runs-on: ubuntu-latest
+    name: Check frontends aren't broken (Python ${{ matrix.py_version }})
+    runs-on: ubuntu-22.04
+    strategy:
+      fail-fast: false
+      matrix:
+        py_version:
+          - '3.7'
+          - '3.8'
+          - '3.9'
+          - '3.10'
+          - '3.11'
+          - '3.12'
+          - '3.13'
+          - '3.14'
+          - '3.14t'
+          - '3.x' # Explicit latest
 
     steps:
       - name: Checkout reposistory
@@ -70,37 +133,42 @@ jobs:
       - name: Setup Rust toolchain
         uses: dtolnay/rust-toolchain@stable
 
-      - name: Setup requirements
-        run: |
-          python3 -m pip install -U -r requirements.txt
-          python3 -m pip install -U maturin
+      - name: Set up Python ${{ matrix.py_version }}
+        uses: actions/setup-python@main
+        with:
+          python-version: ${{ matrix.py_version }}
 
-      - name: Install local mapfile_parser
-        run: python3 -m pip install .
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+      - name: Setup project
+        run: |
+          uv venv --python ${{ matrix.py_version }}
+          uv sync
 
       - name: bss_check
-        run: python3 -m mapfile_parser bss_check tests/maps/gnuld/n64/drmario64.us.map tests/maps/gnuld/n64/drmario64.us.map
+        run: uv run mapfile_parser bss_check tests/maps/gnuld/n64/drmario64.us.map tests/maps/gnuld/n64/drmario64.us.map
 
       - name: first_diff
-        run: python3 -m mapfile_parser first_diff tests/maps/gnuld/n64/drmario64.us.map tests/maps/gnuld/n64/drmario64.us.map tests/maps/gnuld/n64/drmario64.us.map tests/maps/gnuld/n64/drmario64.us.map
+        run: uv run mapfile_parser first_diff tests/maps/gnuld/n64/drmario64.us.map tests/maps/gnuld/n64/drmario64.us.map tests/maps/gnuld/n64/drmario64.us.map tests/maps/gnuld/n64/drmario64.us.map
 
       - name: jsonify
-        run: python3 -m mapfile_parser jsonify tests/maps/gnuld/n64/drmario64.us.map
+        run: uv run mapfile_parser jsonify tests/maps/gnuld/n64/drmario64.us.map
 
       - name: objdiff_report
-        run: python3 -m mapfile_parser objdiff_report tests/maps/gnuld/n64/drmario64.us.map objdiff_report.json
+        run: uv run mapfile_parser objdiff_report tests/maps/gnuld/n64/drmario64.us.map objdiff_report.json
 
       - name: pj64_syms
-        run: python3 -m mapfile_parser pj64_syms tests/maps/gnuld/n64/drmario64.us.map
+        run: uv run mapfile_parser pj64_syms tests/maps/gnuld/n64/drmario64.us.map
 
       - name: progress
-        run: python3 -m mapfile_parser progress tests/maps/gnuld/n64/drmario64.us.map asm asm/nonmatchings
+        run: uv run mapfile_parser progress tests/maps/gnuld/n64/drmario64.us.map asm asm/nonmatchings
 
       - name: sym_info
-        run: python3 -m mapfile_parser sym_info tests/maps/gnuld/n64/drmario64.us.map entrypoint
+        run: uv run mapfile_parser sym_info tests/maps/gnuld/n64/drmario64.us.map entrypoint
 
       - name: symbol_sizes_csv
-        run: python3 -m mapfile_parser symbol_sizes_csv tests/maps/gnuld/n64/drmario64.us.map
+        run: uv run mapfile_parser symbol_sizes_csv tests/maps/gnuld/n64/drmario64.us.map
 
       - name: upload_frogress
-        run: python3 -m mapfile_parser upload_frogress tests/maps/gnuld/n64/drmario64.us.map asm asm/nonmatchings drmario64 us code --verbose --dry-run
+        run: uv run mapfile_parser upload_frogress tests/maps/gnuld/n64/drmario64.us.map asm asm/nonmatchings drmario64 us code --verbose --dry-run

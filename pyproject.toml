@@ -28,8 +28,6 @@ build-backend = "maturin"
 [project.scripts]
 mapfile_parser = "mapfile_parser.__main__:mapfileParserMain"
 
-[tool.cibuildwheel]
-skip = ["cp36-*"]
 
 [tool.maturin]
 features = ["pyo3/extension-module", "python_bindings"]

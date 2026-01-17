@@ -1168,7 +1168,8 @@ class MapFile:
                 # Only read the map if this is a new plf.
                 if sect.filepath in knownMaps:
                     continue
-                if (other_map_path := resolver(sect.filepath)) is not None:
+                other_map_path = resolver(sect.filepath)
+                if other_map_path is not None:
                     knownMaps[sect.filepath] = MapFile.newFromMapFile(other_map_path)
         return self._resolve_plf_impl(knownMaps)
 
@@ -1181,7 +1182,8 @@ class MapFile:
             newSeg = seg.cloneNoSectionlist()
 
             for sect in seg._sectionsList:
-                if (otherMap := knownMaps.get(sect.filepath)) is not None:
+                otherMap = knownMaps.get(sect.filepath)
+                if otherMap is not None:
                     # Each segment of a plf is just a normal elf section
                     partialSegment = None
                     for x in otherMap._segmentsList:
