@@ -37,4 +37,4 @@ if ([string]::IsNullOrEmpty($WHEEL)) {
 }
 uv pip install --no-cache --no-config $WHEEL
 
-uv run --no-sync python -c "import mapfile_parser; print(help(mapfile_parser.scan_for_config))"
+uv run --no-sync python -c "import mapfile_parser; print(mapfile_parser.__version__)"

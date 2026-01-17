@@ -97,9 +97,18 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
 
-      - name: Setup project
+      - name: Setup venv ${{ matrix.py_version }}
+        if: ${{ matrix.py_version != '3.x' }}
         run: |
           uv venv --python ${{ matrix.py_version }}
+      # `--python 3 --managed-python` makes uv to install the latest python version available
+      - name: Setup venv 3.x
+        if: ${{ matrix.py_version == '3.x' }}
+        run: |
+          uv venv --python 3 --managed-python
+
+      - name: Sync venv
+        run: |
           uv sync
 
       - name: Update tests outputs
@@ -138,9 +147,18 @@ jobs:
       - name: Install uv
         uses: astral-sh/setup-uv@v7
 
-      - name: Setup project
+      - name: Setup venv ${{ matrix.py_version }}
+        if: ${{ matrix.py_version != '3.x' }}
         run: |
           uv venv --python ${{ matrix.py_version }}
+      # `--python 3 --managed-python` makes uv to install the latest python version available
+      - name: Setup venv 3.x
+        if: ${{ matrix.py_version == '3.x' }}
+        run: |
+          uv venv --python 3 --managed-python
+
+      - name: Sync venv
+        run: |
           uv sync
 
       - name: bss_check

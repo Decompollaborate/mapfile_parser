@@ -35,4 +35,4 @@ if [ -z "$WHEEL" ]; then
 fi
 uv pip install --no-cache --no-config "$WHEEL"
 # Check something basic to make sure it was installed correctly.
-uv run --no-sync python -c "import mapfile_parser; print(help(mapfile_parser.scan_for_config))"
+uv run --no-sync python -c "import mapfile_parser; print(mapfile_parser.__version__)"
