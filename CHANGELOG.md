@@ -7,6 +7,15 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.12.2] - 2026-05-30
+
+### Fixed
+
+- Fix sometimes not properly filtering jumptable labels.
+  - They were being filtered only if they matched the pattern `.LXXXXXXXX`,
+    meaning mapfile_parser was failing to filter labels like `.LXXXXXXXX_YYYYYY`
+    used in many games with overlapping addresses.
+
 ## [2.12.1] - 2026-01-17
 
 ### Added
@@ -699,7 +708,9 @@ Full changes: <https://github.com/Decompollaborate/mapfile_parser/compare/702a73
 
 - Initial release
 
-[unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/2.12.1...HEAD
+[unreleased]: https://github.com/Decompollaborate/mapfile_parser/compare/2.12.2...HEAD
+
+[2.12.2]: https://github.com/Decompollaborate/mapfile_parser/compare/2.21.1...2.12.2
 [2.12.1]: https://github.com/Decompollaborate/mapfile_parser/compare/2.21.0...2.12.1
 [2.12.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.11.0...2.12.0
 [2.11.0]: https://github.com/Decompollaborate/mapfile_parser/compare/2.10.0...2.11.0
