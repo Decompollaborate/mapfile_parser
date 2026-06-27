@@ -9,6 +9,7 @@ import argparse
 from collections.abc import Callable
 import decomp_settings
 from pathlib import Path
+from typing import Generator
 
 from .. import mapfile
 from .. import utils
@@ -31,36 +32,52 @@ def doSymInfo(
     if plfResolver is not None:
         mapFile = mapFile.resolvePartiallyLinkedFiles(plfResolver)
 
-    possibleFiles: list[mapfile.Section] = []
+    count = 0
+    for info in iterateSymbols(
+        mapFile,
+        symName,
+        as_vram,
+        as_vrom,
+        as_name,
+    ):
+        print(info.getAsStrPlusOffset(symName))
+        count += 1
 
+    if count == 0:
+        print(f"'{symName}' not found in map file '{mapPath}'")
+        return 1
+    return 0
+
+
+def iterateSymbols(
+    mapFile: mapfile.MapFile,
+    symName: str,
+    as_vram: bool,
+    as_vrom: bool,
+    as_name: bool,
+) -> Generator[mapfile.MaybeFoundSymbolInfo]:
     if as_vram:
         address = int(symName, 0)
-        info, possibleFiles = mapFile.findSymbolByVram(address)
+        for info in mapFile.findPossibleSymbolsByVram(address):
+            yield info
     elif as_vrom:
         address = int(symName, 0)
-        info, possibleFiles = mapFile.findSymbolByVrom(address)
+        for info in mapFile.findPossibleSymbolsByVrom(address):
+            yield info
     elif as_name:
-        info = mapFile.findSymbolByName(symName)
+        for info in mapFile.findPossibleSymbolsByNmae(symName):
+            yield info
 
     # Start the guessing game
     elif utils.convertibleToInt(symName, 0):
         address = int(symName, 0)
-        info, possibleFiles = mapFile.findSymbolByVram(address)
-        if info is None:
-            info, possibleFiles2 = mapFile.findSymbolByVrom(address)
-            possibleFiles.extend(possibleFiles2)
+        for info in mapFile.findPossibleSymbolsByVram(address):
+            yield info
+        for info in mapFile.findPossibleSymbolsByVrom(address):
+            yield info
     else:
-        info = mapFile.findSymbolByName(symName)
-
-    if info is not None:
-        print(info.getAsStrPlusOffset(symName))
-        return 0
-    print(f"'{symName}' not found in map file '{mapPath}'")
-    if len(possibleFiles) > 0:
-        print("But it may be a local symbol of either of the following files:")
-        for f in possibleFiles:
-            print(f"    {f.asStr()})")
-    return 1
+        for info in mapFile.findPossibleSymbolsByNmae(symName):
+            yield info
 
 
 def processArguments(

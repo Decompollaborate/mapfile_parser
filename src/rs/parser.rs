@@ -939,7 +939,7 @@ impl MapFile {
         let mut nonmatchings_syms_original = Vec::new();
         let mut nonmatchings_syms_suffix = Vec::new();
         for (index, sym) in section.symbols.iter().enumerate() {
-            if sym.name.ends_with(".NON_MATCHING") {
+            if sym.is_nonmatching {
                 let real_name = sym.name.replace(".NON_MATCHING", "");
 
                 if let Some((real_sym, real_index)) =

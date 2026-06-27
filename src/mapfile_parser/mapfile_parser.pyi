@@ -71,6 +71,7 @@ class Symbol:
     vrom: int | None
     align: int | None
     nonmatchingSymExists: bool
+    isNonmatching: bool
     inferredStatic: bool
 
     def __init__(
@@ -81,6 +82,7 @@ class Symbol:
         vrom: int | None = None,
         align: int | None = None,
         nonmatchingSymExists: bool = False,
+        isNonmatching: bool = False,
         inferredStatic: bool = False,
     ): ...
     def getVramStr(self) -> str: ...

@@ -11,7 +11,12 @@ from __future__ import annotations
 import mapfile_parser
 from pathlib import Path
 
-def getProgressFromMapFile(mapFile: mapfile_parser.MapFile, aliases: dict[str, str]=dict(), pathIndex: int=2) -> tuple[mapfile_parser.ProgressStats, dict[str, mapfile_parser.ProgressStats]]:
+
+def getProgressFromMapFile(
+    mapFile: mapfile_parser.MapFile,
+    aliases: dict[str, str] = dict(),
+    pathIndex: int = 2,
+) -> tuple[mapfile_parser.ProgressStats, dict[str, mapfile_parser.ProgressStats]]:
     totalStats = mapfile_parser.ProgressStats()
     progressPerFolder: dict[str, mapfile_parser.ProgressStats] = dict()
 
@@ -45,7 +50,12 @@ def getProgressFromMapFile(mapFile: mapfile_parser.MapFile, aliases: dict[str, s
 
     return totalStats, progressPerFolder
 
-def getProgress(mapPath: Path, version: str, pathIndex: int=2) -> tuple[mapfile_parser.ProgressStats, dict[str, mapfile_parser.ProgressStats]]:
+
+def getProgress(
+    mapPath: Path,
+    version: str,
+    pathIndex: int = 2,
+) -> tuple[mapfile_parser.ProgressStats, dict[str, mapfile_parser.ProgressStats]]:
     mapFile = mapfile_parser.MapFile.newFromMapFile(mapPath)
 
     for segment in mapFile:
@@ -61,24 +71,46 @@ def getProgress(mapPath: Path, version: str, pathIndex: int=2) -> tuple[mapfile_
             # Fix symbol size calculation because of NON_MATCHING symbols
             for sym in file:
                 if sym.name.endswith(".NON_MATCHING") and sym.size != 0:
-                    realSym = file.findSymbolByName(sym.name.replace(".NON_MATCHING", ""))
+                    realSym = file.findSymbolByName(
+                        sym.name.replace(".NON_MATCHING", "")
+                    )
                     if realSym is not None and realSym.size == 0:
                         realSym.size = sym.size
                         sym.size = 0
 
-    return getProgressFromMapFile(mapFile.filterBySectionType(".text"), aliases={"ultralib": "libultra"}, pathIndex=pathIndex)
+    return getProgressFromMapFile(
+        mapFile.filterBySectionType(".text"),
+        aliases={"ultralib": "libultra"},
+        pathIndex=pathIndex,
+    )
 
 
 cases: list[tuple[Path, str, mapfile_parser.ProgressStats]] = [
-    (Path("tests/maps/gnuld/n64/drmario64.cn.map"),       "cn",  mapfile_parser.ProgressStats(undecompedSize=273028, decompedSize=199196)),
-    (Path("tests/maps/ld.lld/n64/drmario64.us.lld.map"),  "us",  mapfile_parser.ProgressStats(undecompedSize=170720, decompedSize=272860)),
-    (Path("tests/maps/gnuld/n64/drmario64.us.map"),       "us",  mapfile_parser.ProgressStats(undecompedSize=170720, decompedSize=272224)),
-    (Path("tests/maps/gnuld/n64/puzzleleague64.usa.map"), "usa", mapfile_parser.ProgressStats(undecompedSize=263668, decompedSize=454604)),
+    (
+        Path("tests/maps/gnuld/n64/drmario64.cn.map"),
+        "cn",
+        mapfile_parser.ProgressStats(undecompedSize=273028, decompedSize=199196),
+    ),
+    (
+        Path("tests/maps/ld.lld/n64/drmario64.us.lld.map"),
+        "us",
+        mapfile_parser.ProgressStats(undecompedSize=170720, decompedSize=272860),
+    ),
+    (
+        Path("tests/maps/gnuld/n64/drmario64.us.map"),
+        "us",
+        mapfile_parser.ProgressStats(undecompedSize=170720, decompedSize=272224),
+    ),
+    (
+        Path("tests/maps/gnuld/n64/puzzleleague64.usa.map"),
+        "usa",
+        mapfile_parser.ProgressStats(undecompedSize=263668, decompedSize=454604),
+    ),
 ]
 
 
 errors = 0
-for (mapPath, version, expected) in cases:
+for mapPath, version, expected in cases:
     print(mapPath)
 
     totalStats, progressPerFolder = getProgress(mapPath, version)

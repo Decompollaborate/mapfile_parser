@@ -45,7 +45,7 @@ impl<'sect> Iterator for SymbolDecompStateIter<'sect> {
         // Skip over `.NON_MATCHING` symbols
         while self.index < self.section.symbols.len() {
             let sym = &self.section.symbols[self.index];
-            if !sym.name.ends_with(".NON_MATCHING") {
+            if !sym.is_nonmatching {
                 break;
             }
             self.index += 1;

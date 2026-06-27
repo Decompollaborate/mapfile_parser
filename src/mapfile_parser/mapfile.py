@@ -56,6 +56,26 @@ class FoundSymbolInfo:
 
 
 @dataclasses.dataclass
+class MaybeFoundSymbolInfo:
+    section: Section
+    symbol: Symbol | None = None
+    offset: int = 0
+
+    def getAsStrPlusOffset(self, symName: str) -> str:
+        if self.symbol is not None:
+            return FoundSymbolInfo(
+                self.section,
+                self.symbol,
+                self.offset,
+            ).getAsStrPlusOffset(symName)
+
+        extra = ""
+        if self.offset != 0:
+            extra = f" at offset 0x{self.offset:X}"
+        return f"{symName} may be part of section {self.section.filepath}{extra}, but it isn't globally visible."
+
+
+@dataclasses.dataclass
 class SymbolComparisonInfo:
     symbol: Symbol
     buildAddress: int
@@ -107,6 +127,7 @@ class Symbol:
     Note the symbol with the actual `.NON_MATCHING` will have this member
     set to `false`.
     """
+    isNonmatching: bool = False
     inferredStatic: bool = False
 
     def getVramStr(self) -> str:
@@ -173,6 +194,7 @@ class Symbol:
             self.vrom,
             self.align,
             self.nonmatchingSymExists,
+            self.isNonmatching,
             self.inferredStatic,
         )
 
@@ -196,6 +218,14 @@ class Section:
     align: int | None = None
     isFill: bool = False
     _symbols: list[Symbol] = dataclasses.field(default_factory=list)
+
+    def containsVram(self, address: int) -> bool:
+        return address >= self.vram and address < self.vram + self.size
+
+    def containsVrom(self, address: int) -> bool | None:
+        if self.vrom is None:
+            return None
+        return address >= self.vrom and address < self.vrom + self.size
 
     @property
     def isNoloadSection(self) -> bool:
@@ -281,60 +311,76 @@ class Section:
         return None
 
     def findSymbolByVram(self, address: int) -> tuple[Symbol, int] | None:
-        prevSym: Symbol | None = None
+        nonMatchingSym: Symbol | None = None
 
         for sym in self._symbols:
             if sym.vram == address:
+                # Matching address
+                if sym.isNonmatching:
+                    # Try to avoid non matching marker symbols
+                    nonMatchingSym = sym
+                    continue
                 return sym, 0
 
-            if prevSym is not None:
-                if sym.vram > address:
-                    offset = address - prevSym.vram
-                    if offset < 0:
-                        return None
-                    return prevSym, offset
+            if sym.vram > address:
+                # We somehow go through the symbol without seeing it?
+                break
 
-            prevSym = sym
+            if sym.size == 0:
+                # The only way for a symbol to have size zero is to be a
+                # nonmatching marker, usually at least.
+                if sym.isNonmatching:
+                    # Try to avoid non matching marker symbols
+                    nonMatchingSym = sym
+                continue
 
-        if prevSym is not None:
-            if prevSym.size is not None and prevSym.vram + prevSym.size > address:
-                offset = address - prevSym.vram
-                if offset < 0:
-                    return None
-                return prevSym, offset
+            if sym.vram < address and address < sym.vram + sym.size:
+                if sym.isNonmatching:
+                    # Try to avoid non matching marker symbols
+                    nonMatchingSym = sym
+                    continue
+                return sym, address - sym.vram
 
+        if nonMatchingSym is not None:
+            return nonMatchingSym, address - nonMatchingSym.vram
         return None
 
     def findSymbolByVrom(self, address: int) -> tuple[Symbol, int] | None:
-        prevVrom = self.vrom if self.vrom is not None else 0
-        prevSym: Symbol | None = None
+        nonMatchingSym: Symbol | None = None
 
         for sym in self._symbols:
+            if sym.vrom is None:
+                continue
+
             if sym.vrom == address:
+                # Matching address
+                if sym.isNonmatching:
+                    # Try to avoid non matching marker symbols
+                    nonMatchingSym = sym
+                    continue
                 return sym, 0
 
-            if prevSym is not None:
-                if sym.vrom is not None and sym.vrom > address:
-                    offset = address - prevVrom
-                    if offset < 0:
-                        return None
-                    return prevSym, offset
+            if sym.vrom > address:
+                # We somehow go through the symbol without seeing it?
+                break
 
-            if sym.vrom is not None:
-                prevVrom = sym.vrom
-            prevSym = sym
+            if sym.size == 0:
+                # The only way for a symbol to have size zero is to be a
+                # nonmatching marker, usually at least.
+                if sym.isNonmatching:
+                    # Try to avoid non matching marker symbols
+                    nonMatchingSym = sym
+                continue
 
-        if prevSym is not None:
-            if (
-                prevSym.vrom is not None
-                and prevSym.size is not None
-                and prevSym.vrom + prevSym.size > address
-            ):
-                offset = address - prevVrom
-                if offset < 0:
-                    return None
-                return prevSym, offset
+            if sym.vrom < address and address < sym.vrom + sym.size:
+                if sym.isNonmatching:
+                    # Try to avoid non matching marker symbols
+                    nonMatchingSym = sym
+                    continue
+                return sym, address - sym.vrom
 
+        if nonMatchingSym is not None and nonMatchingSym.vrom is not None:
+            return nonMatchingSym, address - nonMatchingSym.vrom
         return None
 
     @staticmethod
@@ -506,7 +552,7 @@ class Segment:
             if pair is not None:
                 sym, offset = pair
                 return FoundSymbolInfo(section, sym, offset), []
-            if address >= section.vram and address < section.vram + section.size:
+            if section.containsVram(address):
                 possibleFiles.append(section)
         return None, possibleFiles
 
@@ -521,9 +567,49 @@ class Segment:
             if pair is not None:
                 sym, offset = pair
                 return FoundSymbolInfo(section, sym, offset), []
-            if address >= section.vrom and address < section.vrom + section.size:
+            if section.containsVrom(address):
                 possibleFiles.append(section)
         return None, possibleFiles
+
+    def findPossibleSymbolsByVram(
+        self,
+        address: int,
+    ) -> Generator[MaybeFoundSymbolInfo]:
+        for section in self._sectionsList:
+            if not section.containsVram(address):
+                continue
+
+            pair = section.findSymbolByVram(address)
+            if pair is not None:
+                sym, offset = pair
+            else:
+                sym = None
+                offset = address - section.vram
+            yield MaybeFoundSymbolInfo(section, sym, offset)
+
+    def findPossibleSymbolsByVrom(
+        self,
+        address: int,
+    ) -> Generator[MaybeFoundSymbolInfo]:
+        for section in self._sectionsList:
+            if section.vrom is None or not section.containsVrom(address):
+                continue
+            pair = section.findSymbolByVrom(address)
+            if pair is not None:
+                sym, offset = pair
+            else:
+                sym = None
+                offset = address - section.vram
+            yield MaybeFoundSymbolInfo(section, sym, offset)
+
+    def findPossibleSymbolsByNmae(
+        self,
+        symName: str,
+    ) -> Generator[MaybeFoundSymbolInfo]:
+        for section in self._sectionsList:
+            sym = section.findSymbolByName(symName)
+            if sym is not None:
+                yield MaybeFoundSymbolInfo(section, sym)
 
     def mixFolders(self) -> Segment:
         newSegment = Segment(self.name, self.vram, self.size, self.vrom)
@@ -735,6 +821,7 @@ class MapFile:
                         symbol.vrom,
                         symbol.align,
                         symbol.nonmatchingSymExists,
+                        symbol.isNonmatching,
                         symbol.inferredStatic,
                     )
 
@@ -768,6 +855,7 @@ class MapFile:
                         symbol.vrom,
                         symbol.align,
                         symbol.nonmatchingSymExists,
+                        symbol.isNonmatching,
                         symbol.inferredStatic,
                     )
 
@@ -913,6 +1001,30 @@ class MapFile:
                 return info, []
             possibleFiles.extend(possibleFilesAux)
         return None, possibleFiles
+
+    def findPossibleSymbolsByVram(
+        self,
+        address: int,
+    ) -> Generator[MaybeFoundSymbolInfo]:
+        for segment in self._segmentsList:
+            for sym in segment.findPossibleSymbolsByVram(address):
+                yield sym
+
+    def findPossibleSymbolsByVrom(
+        self,
+        address: int,
+    ) -> Generator[MaybeFoundSymbolInfo]:
+        for segment in self._segmentsList:
+            for sym in segment.findPossibleSymbolsByVrom(address):
+                yield sym
+
+    def findPossibleSymbolsByNmae(
+        self,
+        symName: str,
+    ) -> Generator[MaybeFoundSymbolInfo]:
+        for segment in self._segmentsList:
+            for sym in segment.findPossibleSymbolsByNmae(symName):
+                yield sym
 
     def findLowestDifferingSymbol(
         self, otherMapFile: MapFile

@@ -7,6 +7,11 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Changed
+
+- `sym_info` now iterates over every possible vram/vrom address for every
+  segment instead of only printing the first found one.
+
 ## [2.12.2] - 2026-05-30
 
 ### Fixed
