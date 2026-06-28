@@ -45,7 +45,7 @@ pub struct Symbol {
 }
 
 impl Symbol {
-    #[expect(clippy::too_many_arguments)]
+    #[allow(clippy::too_many_arguments)]
     fn new_impl(
         name: String,
         vram: u64,
@@ -151,7 +151,7 @@ pub(crate) mod python_bindings {
     impl super::Symbol {
         #[new]
         #[pyo3(signature=(name,vram,size=0,vrom=None,align=None, nonmatchingSymExists=false, isNonmatching=false, inferredStatic=false))]
-        #[expect(clippy::too_many_arguments)]
+        #[allow(clippy::too_many_arguments)]
         fn py_new(
             name: String,
             vram: u64,
