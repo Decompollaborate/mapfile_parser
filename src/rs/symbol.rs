@@ -33,6 +33,8 @@ pub struct Symbol {
     pub nonmatching_sym_exists: bool,
 
     /// `true` if this symbol has a `.NON_MATCHING` suffix.
+    ///
+    /// Note `.NON_MATCHING` marker symbols have size 0.
     pub is_nonmatching: bool,
 
     /// This symbol was not originally present on the mapfile, but instead it
@@ -43,6 +45,7 @@ pub struct Symbol {
 }
 
 impl Symbol {
+    #[expect(clippy::too_many_arguments)]
     fn new_impl(
         name: String,
         vram: u64,
@@ -148,6 +151,7 @@ pub(crate) mod python_bindings {
     impl super::Symbol {
         #[new]
         #[pyo3(signature=(name,vram,size=0,vrom=None,align=None, nonmatchingSymExists=false, isNonmatching=false, inferredStatic=false))]
+        #[expect(clippy::too_many_arguments)]
         fn py_new(
             name: String,
             vram: u64,

@@ -40,10 +40,10 @@ class FoundSymbolInfo:
     symbol: Symbol
     offset: int = 0
 
-    def getAsStr(self) -> str:
-        return f"'{self.symbol.name}' (VRAM: {self.symbol.getVramStr()}, VROM: {self.symbol.getVromStr()}, SIZE: {self.symbol.getSizeStr()}, {self.section.filepath})"
+    def getAsStr(self, *, extra: str = "") -> str:
+        return f"'{self.symbol.name}' (VRAM: {self.symbol.getVramStr()}, VROM: {self.symbol.getVromStr()}, SIZE: {self.symbol.getSizeStr()}, {self.section.filepath}{extra})"
 
-    def getAsStrPlusOffset(self, symName: str | None = None) -> str:
+    def getAsStrPlusOffset(self, symName: str | None = None, *, extra: str = "") -> str:
         if self.offset != 0:
             if symName is not None:
                 message = symName
@@ -52,27 +52,29 @@ class FoundSymbolInfo:
             message += f" is at 0x{self.offset:X} bytes inside"
         else:
             message = "Symbol"
-        return f"{message} {self.getAsStr()}"
+        return f"{message} {self.getAsStr(extra=extra)}"
 
 
 @dataclasses.dataclass
 class MaybeFoundSymbolInfo:
+    segment: Segment
     section: Section
-    symbol: Symbol | None = None
-    offset: int = 0
+    symbol: Symbol | None
+    offset: int
 
     def getAsStrPlusOffset(self, symName: str) -> str:
         if self.symbol is not None:
-            return FoundSymbolInfo(
+            info = FoundSymbolInfo(
                 self.section,
                 self.symbol,
                 self.offset,
-            ).getAsStrPlusOffset(symName)
+            )
+            return info.getAsStrPlusOffset(symName, extra=f", SEG: {self.segment.name}")
 
         extra = ""
         if self.offset != 0:
             extra = f" at offset 0x{self.offset:X}"
-        return f"{symName} may be part of section {self.section.filepath}{extra}, but it isn't globally visible."
+        return f"{symName} may be part of section {self.section.filepath} (segment {self.segment.name}){extra}, but it isn't globally visible."
 
 
 @dataclasses.dataclass
@@ -128,6 +130,11 @@ class Symbol:
     set to `false`.
     """
     isNonmatching: bool = False
+    """
+    `true` if this symbol has a `.NON_MATCHING` suffix.
+
+    Note `.NON_MATCHING` marker symbols have size 0.
+    """
     inferredStatic: bool = False
 
     def getVramStr(self) -> str:
@@ -219,6 +226,10 @@ class Section:
     isFill: bool = False
     _symbols: list[Symbol] = dataclasses.field(default_factory=list)
 
+    @property
+    def isNoloadSection(self) -> bool:
+        return self.sectionType in {".bss", ".sbss", "COMMON", ".scommon"}
+
     def containsVram(self, address: int) -> bool:
         return address >= self.vram and address < self.vram + self.size
 
@@ -226,10 +237,6 @@ class Section:
         if self.vrom is None:
             return None
         return address >= self.vrom and address < self.vrom + self.size
-
-    @property
-    def isNoloadSection(self) -> bool:
-        return self.sectionType in {".bss", ".sbss", "COMMON", ".scommon"}
 
     def serializeVram(self, humanReadable: bool = True) -> str | int | None:
         if humanReadable:
@@ -490,6 +497,14 @@ class Segment:
     align: int | None = None
     _sectionsList: list[Section] = dataclasses.field(default_factory=list)
 
+    def containsVram(self, address: int) -> bool:
+        return address >= self.vram and address < self.vram + self.size
+
+    def containsVrom(self, address: int) -> bool | None:
+        if self.vrom is None:
+            return None
+        return address >= self.vrom and address < self.vrom + self.size
+
     def serializeVram(self, humanReadable: bool = True) -> str | int | None:
         if humanReadable:
             return f"0x{self.vram:08X}"
@@ -544,7 +559,8 @@ class Segment:
         return None
 
     def findSymbolByVram(
-        self, address: int
+        self,
+        address: int,
     ) -> tuple[FoundSymbolInfo | None, list[Section]]:
         possibleFiles: list[Section] = []
         for section in self._sectionsList:
@@ -557,7 +573,8 @@ class Segment:
         return None, possibleFiles
 
     def findSymbolByVrom(
-        self, address: int
+        self,
+        address: int,
     ) -> tuple[FoundSymbolInfo | None, list[Section]]:
         possibleFiles: list[Section] = []
         for section in self._sectionsList:
@@ -571,45 +588,46 @@ class Segment:
                 possibleFiles.append(section)
         return None, possibleFiles
 
-    def findPossibleSymbolsByVram(
+    def findPossibleSymbolByVram(
         self,
         address: int,
-    ) -> Generator[MaybeFoundSymbolInfo]:
+    ) -> MaybeFoundSymbolInfo | None:
         for section in self._sectionsList:
-            if not section.containsVram(address):
-                continue
+            if section.containsVram(address):
+                pair = section.findSymbolByVram(address)
+                if pair is not None:
+                    sym, offset = pair
+                else:
+                    sym = None
+                    offset = address - section.vram
+                return MaybeFoundSymbolInfo(self, section, sym, offset)
+        return None
 
-            pair = section.findSymbolByVram(address)
-            if pair is not None:
-                sym, offset = pair
-            else:
-                sym = None
-                offset = address - section.vram
-            yield MaybeFoundSymbolInfo(section, sym, offset)
-
-    def findPossibleSymbolsByVrom(
+    def findPossibleSymbolByVrom(
         self,
         address: int,
-    ) -> Generator[MaybeFoundSymbolInfo]:
+    ) -> MaybeFoundSymbolInfo | None:
         for section in self._sectionsList:
-            if section.vrom is None or not section.containsVrom(address):
-                continue
-            pair = section.findSymbolByVrom(address)
-            if pair is not None:
-                sym, offset = pair
-            else:
-                sym = None
-                offset = address - section.vram
-            yield MaybeFoundSymbolInfo(section, sym, offset)
+            if section.vrom is not None and section.containsVrom(address):
+                pair = section.findSymbolByVrom(address)
+                if pair is not None:
+                    sym, offset = pair
+                else:
+                    sym = None
+                    offset = address - section.vram
+                return MaybeFoundSymbolInfo(self, section, sym, offset)
+        return None
 
-    def findPossibleSymbolsByNmae(
+    def findPossibleSymbolsByName(
         self,
         symName: str,
     ) -> Generator[MaybeFoundSymbolInfo]:
+        # There may be multiple symbols with the same name in the same segment,
+        # so this function iterate over them and yields them all.
         for section in self._sectionsList:
             sym = section.findSymbolByName(symName)
             if sym is not None:
-                yield MaybeFoundSymbolInfo(section, sym)
+                yield MaybeFoundSymbolInfo(self, section, sym, 0)
 
     def mixFolders(self) -> Segment:
         newSegment = Segment(self.name, self.vram, self.size, self.vrom)
@@ -1007,24 +1025,26 @@ class MapFile:
         address: int,
     ) -> Generator[MaybeFoundSymbolInfo]:
         for segment in self._segmentsList:
-            for sym in segment.findPossibleSymbolsByVram(address):
-                yield sym
+            info = segment.findPossibleSymbolByVram(address)
+            if info is not None:
+                yield info
 
     def findPossibleSymbolsByVrom(
         self,
         address: int,
     ) -> Generator[MaybeFoundSymbolInfo]:
         for segment in self._segmentsList:
-            for sym in segment.findPossibleSymbolsByVrom(address):
-                yield sym
+            info = segment.findPossibleSymbolByVrom(address)
+            if info is not None:
+                yield info
 
-    def findPossibleSymbolsByNmae(
+    def findPossibleSymbolsByName(
         self,
         symName: str,
     ) -> Generator[MaybeFoundSymbolInfo]:
         for segment in self._segmentsList:
-            for sym in segment.findPossibleSymbolsByNmae(symName):
-                yield sym
+            for info in segment.findPossibleSymbolsByName(symName):
+                yield info
 
     def findLowestDifferingSymbol(
         self, otherMapFile: MapFile

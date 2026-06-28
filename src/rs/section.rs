@@ -74,6 +74,15 @@ impl Section {
         utils::is_noload_section(&self.section_type)
     }
 
+    pub fn contains_vram(&self, address: u64) -> bool {
+        address >= self.vram && address < self.vram + self.size
+    }
+
+    pub fn contains_vrom(&self, address: u64) -> Option<bool> {
+        self.vrom
+            .map(|vrom| address >= vrom && address < vrom + self.size)
+    }
+
     pub fn find_symbol_by_name(&self, sym_name: &str) -> Option<&symbol::Symbol> {
         self.symbols.iter().find(|&sym| sym.name == sym_name)
     }
@@ -161,79 +170,92 @@ impl Section {
     }
 
     pub fn find_symbol_by_vram(&self, address: u64) -> Option<(&symbol::Symbol, i64)> {
-        let mut prev_sym: Option<&symbol::Symbol> = None;
+        let mut non_matching_sym = None;
 
         for sym in &self.symbols {
             if sym.vram == address {
+                // Matching address
+                if sym.is_nonmatching {
+                    // Try to avoid non matching marker symbols
+                    non_matching_sym = Some(sym);
+                    continue;
+                }
                 return Some((sym, 0));
             }
 
-            if let Some(prev_sym_temp) = prev_sym {
-                if sym.vram > address {
-                    let offset = address as i64 - prev_sym_temp.vram as i64;
-                    if offset < 0 {
-                        return None;
-                    }
-                    return Some((prev_sym_temp, offset));
-                }
+            if sym.vram > address {
+                // We somehow go through the symbol without seeing it?
+                break;
             }
 
-            prev_sym = Some(sym);
-        }
-
-        if let Some(prev_sym_temp) = prev_sym {
-            if prev_sym_temp.vram + prev_sym_temp.size > address {
-                let offset = address as i64 - prev_sym_temp.vram as i64;
-                if offset < 0 {
-                    return None;
+            if sym.size == 0 {
+                // The only way for a symbol to have size zero is to be a
+                // nonmatching marker, usually at least.
+                if sym.is_nonmatching {
+                    // Try to avoid non matching marker symbols
+                    non_matching_sym = Some(sym);
                 }
-                return Some((prev_sym_temp, offset));
+                continue;
+            }
+
+            if sym.vram < address && address < sym.vram + sym.size {
+                if sym.is_nonmatching {
+                    // Try to avoid non matching marker symbols
+                    non_matching_sym = Some(sym);
+                    continue;
+                }
+                return Some((sym, address.wrapping_sub(sym.vram) as i64));
             }
         }
 
-        None
+        // fallback
+        non_matching_sym.map(|sym| (sym, address.wrapping_sub(sym.vram) as i64))
     }
 
     pub fn find_symbol_by_vrom(&self, address: u64) -> Option<(&symbol::Symbol, i64)> {
-        let mut prev_sym: Option<&symbol::Symbol> = None;
+        let mut non_matching_sym = None;
 
         for sym in &self.symbols {
-            if let Some(sym_vrom_temp) = sym.vrom {
-                if sym_vrom_temp == address {
-                    return Some((sym, 0));
+            let Some(vrom) = sym.vrom else {
+                continue;
+            };
+
+            if vrom == address {
+                // Matching address
+                if sym.is_nonmatching {
+                    // Try to avoid non matching marker symbols
+                    non_matching_sym = Some((sym, vrom));
+                    continue;
                 }
+                return Some((sym, 0));
             }
 
-            if let Some(prev_sym_temp) = prev_sym {
-                if let Some(sym_vrom) = sym.vrom {
-                    if sym_vrom > address {
-                        if let Some(prev_vrom_temp) = prev_sym_temp.vrom {
-                            let offset = address as i64 - prev_vrom_temp as i64;
-                            if offset < 0 {
-                                return None;
-                            }
-                            return Some((prev_sym_temp, offset));
-                        }
-                    }
-                }
+            if vrom > address {
+                // We somehow go through the symbol without seeing it?
+                break;
             }
 
-            prev_sym = Some(sym);
+            if sym.size == 0 {
+                // The only way for a symbol to have size zero is to be a
+                // nonmatching marker, usually at least.
+                if sym.is_nonmatching {
+                    // Try to avoid non matching marker symbols
+                    non_matching_sym = Some((sym, vrom));
+                }
+                continue;
+            }
+
+            if vrom < address && address < vrom + sym.size {
+                if sym.is_nonmatching {
+                    // Try to avoid non matching marker symbols
+                    non_matching_sym = Some((sym, vrom));
+                    continue;
+                }
+                return Some((sym, address.wrapping_sub(vrom) as i64));
+            }
         }
 
-        if let Some(prev_sym_temp) = prev_sym {
-            if let Some(prev_sym_temp_vrom) = prev_sym_temp.vrom {
-                if prev_sym_temp_vrom + prev_sym_temp.size > address {
-                    let offset = address as i64 - prev_sym_temp_vrom as i64;
-                    if offset < 0 {
-                        return None;
-                    }
-                    return Some((prev_sym_temp, offset));
-                }
-            }
-        }
-
-        None
+        non_matching_sym.map(|(sym, vrom)| (sym, address.wrapping_sub(vrom) as i64))
     }
 
     #[deprecated(
@@ -516,6 +538,13 @@ pub(crate) mod python_bindings {
         }
 
         /* Methods */
+
+        fn containsVram(&self, address: u64) -> bool {
+            self.contains_vram(address)
+        }
+        fn containsVrom(&self, address: u64) -> Option<bool> {
+            self.contains_vrom(address)
+        }
 
         // ! @deprecated
         fn getName(&self) -> PathBuf {

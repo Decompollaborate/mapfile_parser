@@ -14,8 +14,10 @@ use pyo3::prelude::*;
 use serde::{Deserialize, Serialize};
 
 use crate::{
-    found_symbol_info, maps_comparison_info, progress_stats, section, segment, symbol,
-    symbol_comparison_info, symbol_decomp_state,
+    found_symbol_info,
+    iterators::{IterMapFileSymsByName, IterMapFileSymsByVram, IterMapFileSymsByVrom},
+    maps_comparison_info, progress_stats, section, segment, symbol, symbol_comparison_info,
+    symbol_decomp_state,
 };
 
 #[derive(Debug, Clone)]
@@ -137,6 +139,21 @@ impl MapFile {
         }
 
         (None, possible_sections)
+    }
+
+    pub fn find_possible_symbols_by_vram(&self, address: u64) -> IterMapFileSymsByVram<'_> {
+        IterMapFileSymsByVram::new(self, address)
+    }
+
+    pub fn find_possible_symbols_by_vrom(&self, address: u64) -> IterMapFileSymsByVrom<'_> {
+        IterMapFileSymsByVrom::new(self, address)
+    }
+
+    pub fn find_possible_symbols_by_name<'map, 'name>(
+        &'map self,
+        sym_name: &'name str,
+    ) -> IterMapFileSymsByName<'map, 'name> {
+        IterMapFileSymsByName::new(self, sym_name)
     }
 
     pub fn find_lowest_differing_symbol(

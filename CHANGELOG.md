@@ -7,6 +7,19 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+### Added
+
+- `findPossibleSymbolsByVram`, `findPossibleSymbolsByVrom`, and
+  `findPossibleSymbolsByName` for `MapFile` and `findPossibleSymbolByVram`,
+  `findPossibleSymbolByVrom`, and `findPossibleSymbolsByName` for `Segment`.
+  - Allow iterating over the mapfile looking for multiple symbols that could
+    match either the vram, vrom or name given instead of stopping at the first
+    one that matches the criteria.
+- `Symbol::isNonmatching`: If true, the current symbol is a `.NON_MATCHING`
+  marker symbol.
+- `Section::containsVram`, `Section::containsVrom`, `Segment::containsVram`,
+  `Segment::containsVrom`.
+
 ### Changed
 
 - `sym_info` now iterates over every possible vram/vrom address for every

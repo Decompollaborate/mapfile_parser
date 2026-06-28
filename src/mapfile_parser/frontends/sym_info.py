@@ -65,7 +65,7 @@ def iterateSymbols(
         for info in mapFile.findPossibleSymbolsByVrom(address):
             yield info
     elif as_name:
-        for info in mapFile.findPossibleSymbolsByNmae(symName):
+        for info in mapFile.findPossibleSymbolsByName(symName):
             yield info
 
     # Start the guessing game
@@ -76,7 +76,7 @@ def iterateSymbols(
         for info in mapFile.findPossibleSymbolsByVrom(address):
             yield info
     else:
-        for info in mapFile.findPossibleSymbolsByNmae(symName):
+        for info in mapFile.findPossibleSymbolsByName(symName):
             yield info
 
 

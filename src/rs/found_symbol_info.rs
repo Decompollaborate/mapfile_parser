@@ -1,7 +1,7 @@
 /* SPDX-FileCopyrightText: © 2023-2025 Decompollaborate */
 /* SPDX-License-Identifier: MIT */
 
-use std::fmt::Write;
+use std::borrow::Cow;
 
 use crate::{section, symbol};
 
@@ -32,31 +32,43 @@ impl<'a> FoundSymbolInfo<'a> {
     }
 
     pub fn get_as_str(&self) -> String {
-        format!(
-            "'{0}' (VRAM: {1}, VROM: {2}, SIZE: {3}, {4})",
-            self.symbol.name,
-            self.symbol.get_vram_str(),
-            self.symbol.get_vrom_str(),
-            self.symbol.get_size_str(),
-            self.section.filepath.to_string_lossy()
-        )
+        self.get_as_str_impl(Cow::from(""))
+    }
+
+    pub(crate) fn get_as_str_impl(&self, extra: Cow<'_, str>) -> String {
+        let name = &self.symbol.name;
+        let vram = self.symbol.get_vram_str();
+        let vrom = self.symbol.get_vrom_str();
+        let size = self.symbol.get_size_str();
+        let section_path = self.section.filepath.to_string_lossy();
+
+        format!("'{name}' (VRAM: {vram}, VROM: {vrom}, SIZE: {size}, {section_path}{extra})")
     }
 
     pub fn get_as_str_plus_offset(&self, sym_name: Option<String>) -> String {
-        let mut message;
+        self.get_as_str_plus_offset_impl(sym_name.map(Cow::from), Cow::from(""))
+    }
 
-        if self.offset != 0 {
-            if let Some(name) = sym_name {
-                message = name;
-            } else {
-                message = format!("0x{0:X}", self.symbol.vram as i64 + self.offset);
-            }
-            write!(message, " is at 0x{0:X} bytes inside", self.offset).unwrap();
+    pub(crate) fn get_as_str_plus_offset_impl(
+        &self,
+        sym_name: Option<Cow<'_, str>>,
+        extra: Cow<'_, str>,
+    ) -> String {
+        let message = if self.offset == 0 {
+            Cow::from("Symbol")
         } else {
-            message = "Symbol".to_string();
-        }
+            let mes = if let Some(name) = sym_name {
+                name
+            } else {
+                Cow::from(format!(
+                    "0x{0:X}",
+                    self.symbol.vram.wrapping_add_signed(self.offset)
+                ))
+            };
+            Cow::from(format!("{} is at 0x{:X} bytes inside", mes, self.offset))
+        };
 
-        format!("{0} {1}", message, self.get_as_str())
+        format!("{0} {1}", message, self.get_as_str_impl(extra))
     }
 }
 

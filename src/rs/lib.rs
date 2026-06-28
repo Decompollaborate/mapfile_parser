@@ -4,8 +4,10 @@
 #![warn(clippy::manual_let_else)]
 
 mod found_symbol_info;
+pub mod iterators;
 mod mapfile;
 mod maps_comparison_info;
+mod maybe_found_symbol_info;
 mod parser;
 mod progress_stats;
 mod section;
@@ -21,6 +23,7 @@ pub mod report;
 pub use found_symbol_info::FoundSymbolInfo;
 pub use mapfile::MapFile;
 pub use maps_comparison_info::MapsComparisonInfo;
+pub use maybe_found_symbol_info::MaybeFoundSymbolInfo;
 pub use progress_stats::ProgressStats;
 pub use section::{PathDecompSettings, Section};
 pub use segment::Segment;

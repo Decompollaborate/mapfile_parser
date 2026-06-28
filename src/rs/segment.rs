@@ -14,7 +14,7 @@ use pyo3::prelude::*;
 #[cfg(feature = "serde")]
 use serde::{Deserialize, Serialize};
 
-use crate::{found_symbol_info, section};
+use crate::{found_symbol_info, iterators::IterSegmentSymsByName, section, MaybeFoundSymbolInfo};
 
 #[derive(Debug, Clone)]
 #[non_exhaustive]
@@ -44,6 +44,15 @@ impl Segment {
             align,
             sections_list: Vec::new(),
         }
+    }
+
+    pub fn contains_vram(&self, address: u64) -> bool {
+        address >= self.vram && address < self.vram + self.size
+    }
+
+    pub fn contains_vrom(&self, address: u64) -> Option<bool> {
+        self.vrom
+            .map(|vrom| address >= vrom && address < vrom + self.size)
     }
 
     pub fn filter_by_section_type(&self, section_type: &str) -> Self {
@@ -128,7 +137,7 @@ impl Segment {
                     Vec::new(),
                 );
             }
-            if address >= section.vram && address < section.vram + section.size {
+            if section.contains_vram(address) {
                 possible_sections.push(section);
             }
         }
@@ -157,6 +166,43 @@ impl Segment {
             }
         }
         (None, possible_sections)
+    }
+
+    pub fn find_possible_symbol_by_vram(&self, address: u64) -> Option<MaybeFoundSymbolInfo<'_>> {
+        for section in &self.sections_list {
+            if section.contains_vram(address) {
+                let (sym, offset) =
+                    if let Some((sym, offset)) = section.find_symbol_by_vram(address) {
+                        (Some(sym), offset)
+                    } else {
+                        (None, address.wrapping_sub(section.vram) as i64)
+                    };
+                return Some(MaybeFoundSymbolInfo::new(self, section, sym, offset));
+            }
+        }
+        None
+    }
+
+    pub fn find_possible_symbol_by_vrom(&self, address: u64) -> Option<MaybeFoundSymbolInfo<'_>> {
+        for section in &self.sections_list {
+            if section.contains_vram(address) {
+                let (sym, offset) =
+                    if let Some((sym, offset)) = section.find_symbol_by_vrom(address) {
+                        (Some(sym), offset)
+                    } else {
+                        (None, address.wrapping_sub(section.vram) as i64)
+                    };
+                return Some(MaybeFoundSymbolInfo::new(self, section, sym, offset));
+            }
+        }
+        None
+    }
+
+    pub fn find_possible_symbols_by_name<'seg, 'name>(
+        &'seg self,
+        sym_name: &'name str,
+    ) -> IterSegmentSymsByName<'seg, 'name> {
+        IterSegmentSymsByName::new(self, sym_name)
     }
 
     pub fn mix_folders(&self) -> Self {
@@ -422,6 +468,13 @@ pub(crate) mod python_bindings {
         }
 
         /* Methods */
+
+        fn containsVram(&self, address: u64) -> bool {
+            self.contains_vram(address)
+        }
+        fn containsVrom(&self, address: u64) -> Option<bool> {
+            self.contains_vrom(address)
+        }
 
         fn filterBySectionType(&self, section_type: &str) -> Self {
             self.filter_by_section_type(section_type)
