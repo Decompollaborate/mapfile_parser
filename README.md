@@ -75,7 +75,7 @@ cargo add mapfile_parser
 Or add the following line manually to your `Cargo.toml` file:
 
 ```toml
-mapfile_parser = "2.12"
+mapfile_parser = "2.13"
 ```
 
 ## Versioning and changelog
