@@ -318,6 +318,9 @@ class Section:
         return None
 
     def findSymbolByVram(self, address: int) -> tuple[Symbol, int] | None:
+        if not self.containsVram(address):
+            return None
+
         nonMatchingSym: Symbol | None = None
 
         for sym in self._symbols:
@@ -353,6 +356,9 @@ class Section:
         return None
 
     def findSymbolByVrom(self, address: int) -> tuple[Symbol, int] | None:
+        if not self.containsVrom(address):
+            return None
+
         nonMatchingSym: Symbol | None = None
 
         for sym in self._symbols:
@@ -564,12 +570,13 @@ class Segment:
     ) -> tuple[FoundSymbolInfo | None, list[Section]]:
         possibleFiles: list[Section] = []
         for section in self._sectionsList:
+            if not section.containsVram(address):
+                continue
             pair = section.findSymbolByVram(address)
             if pair is not None:
                 sym, offset = pair
                 return FoundSymbolInfo(section, sym, offset), []
-            if section.containsVram(address):
-                possibleFiles.append(section)
+            possibleFiles.append(section)
         return None, possibleFiles
 
     def findSymbolByVrom(
@@ -580,12 +587,13 @@ class Segment:
         for section in self._sectionsList:
             if section.vrom is None:
                 continue
+            if not section.containsVrom(address):
+                continue
             pair = section.findSymbolByVrom(address)
             if pair is not None:
                 sym, offset = pair
                 return FoundSymbolInfo(section, sym, offset), []
-            if section.containsVrom(address):
-                possibleFiles.append(section)
+            possibleFiles.append(section)
         return None, possibleFiles
 
     def findPossibleSymbolByVram(
@@ -981,7 +989,8 @@ class MapFile:
         return None
 
     def findSymbolByVram(
-        self, address: int
+        self,
+        address: int,
     ) -> tuple[FoundSymbolInfo | None, list[Section]]:
         """
         Returns a symbol with the specified VRAM address (or with an addend) if
@@ -994,6 +1003,8 @@ class MapFile:
 
         possibleFiles: list[Section] = []
         for segment in self._segmentsList:
+            if not segment.containsVram(address):
+                continue
             info, possibleFilesAux = segment.findSymbolByVram(address)
             if info is not None:
                 return info, []
@@ -1001,10 +1012,11 @@ class MapFile:
         return None, possibleFiles
 
     def findSymbolByVrom(
-        self, address: int
+        self,
+        address: int,
     ) -> tuple[FoundSymbolInfo | None, list[Section]]:
         """
-        Returns a symbol with the specified VRAM address (or with an addend) if
+        Returns a symbol with the specified VROM address (or with an addend) if
         it exists on the mapfile.
 
         If no symbol if found, then a list of possible files where this symbol
@@ -1014,6 +1026,8 @@ class MapFile:
 
         possibleFiles: list[Section] = []
         for segment in self._segmentsList:
+            if not segment.containsVrom(address):
+                continue
             info, possibleFilesAux = segment.findSymbolByVrom(address)
             if info is not None:
                 return info, []
