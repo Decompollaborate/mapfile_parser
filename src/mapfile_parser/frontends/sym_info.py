@@ -7,12 +7,12 @@ from __future__ import annotations
 
 import argparse
 from collections.abc import Callable
-import decomp_settings
 from pathlib import Path
 from typing import Generator
 
-from .. import mapfile
-from .. import utils
+import decomp_settings
+
+from .. import mapfile, utils
 
 
 def doSymInfo(

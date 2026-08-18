@@ -6,8 +6,8 @@
 from __future__ import annotations
 
 import dataclasses
-from pathlib import Path
 import json
+from pathlib import Path
 
 
 @dataclasses.dataclass
@@ -42,8 +42,7 @@ class Report:
         # Calculate the size for the first column
         columnSize = 8
         for name, _ in new_cats:
-            if len(name) > columnSize:
-                columnSize = len(name)
+            columnSize = max(columnSize, len(name))
         columnSize += 1
 
         categoryStr = "{0:<{1}}".format("Category", columnSize)

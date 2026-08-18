@@ -6,14 +6,14 @@
 from __future__ import annotations
 
 import argparse
-from collections.abc import Callable
 import dataclasses
-import decomp_settings
-from pathlib import Path
 import os
+from collections.abc import Callable
+from pathlib import Path
 
-from .. import mapfile
-from .. import utils
+import decomp_settings
+
+from .. import mapfile, utils
 from ..internals import objdiff_report as report_internal
 
 

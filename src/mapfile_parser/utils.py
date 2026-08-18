@@ -5,9 +5,9 @@
 
 from __future__ import annotations
 
-from pathlib import Path
 import subprocess
 import sys
+from pathlib import Path
 
 
 def eprint(*args, **kwargs):
@@ -33,7 +33,7 @@ def hexbytes(bs: bytes, addColons: bool = True) -> str:
     glue = ""
     if addColons:
         glue = ":"
-    return glue.join("{:02X}".format(c) for c in bs)
+    return glue.join(f"{c:02X}" for c in bs)
 
 
 def getGitCommitTimestamp() -> int:

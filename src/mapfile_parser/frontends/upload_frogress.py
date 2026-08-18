@@ -7,12 +7,12 @@ from __future__ import annotations
 
 import argparse
 from collections.abc import Callable
-import decomp_settings
 from pathlib import Path
+
+import decomp_settings
 import requests  # type: ignore
 
-from .. import utils
-from .. import progress_stats
+from .. import progress_stats, utils
 from . import progress
 
 

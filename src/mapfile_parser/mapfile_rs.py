@@ -7,18 +7,17 @@ from __future__ import annotations
 
 from typing import Any
 
-
 from .mapfile_parser import FoundSymbolInfo as FoundSymbolInfo
-from .mapfile_parser import SymbolComparisonInfo as SymbolComparisonInfo
-from .mapfile_parser import MapsComparisonInfo as MapsComparisonInfo
-from .mapfile_parser import Symbol as Symbol
-from .mapfile_parser import Section as Section
-from .mapfile_parser import Segment as Segment
 from .mapfile_parser import MapFile as MapFile
+from .mapfile_parser import MapsComparisonInfo as MapsComparisonInfo
 from .mapfile_parser import ReportCategories as ReportCategories
 
 # Renamed types
 from .mapfile_parser import Section as File
+from .mapfile_parser import Section as Section
+from .mapfile_parser import Segment as Segment
+from .mapfile_parser import Symbol as Symbol
+from .mapfile_parser import SymbolComparisonInfo as SymbolComparisonInfo
 
 
 def __filers_serializeVram(self: File, humanReadable: bool = True) -> str | int | None:

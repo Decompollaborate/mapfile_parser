@@ -5,7 +5,6 @@
 
 from __future__ import annotations
 
-
 from . import bss_check as bss_check
 from . import first_diff as first_diff
 from . import jsonify as jsonify

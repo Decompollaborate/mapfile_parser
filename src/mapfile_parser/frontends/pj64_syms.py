@@ -6,11 +6,12 @@
 from __future__ import annotations
 
 import argparse
+import sys
 from collections.abc import Callable
-import decomp_settings
 from pathlib import Path
 from typing import TextIO
-import sys
+
+import decomp_settings
 
 from .. import mapfile
 

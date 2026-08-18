@@ -6,13 +6,13 @@
 from __future__ import annotations
 
 import argparse
-from collections.abc import Callable
-import decomp_settings
 import json
+from collections.abc import Callable
 from pathlib import Path
 
-from .. import mapfile
-from .. import progress_stats
+import decomp_settings
+
+from .. import mapfile, progress_stats
 
 
 def getProgress(

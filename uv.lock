@@ -219,7 +219,7 @@ wheels = [
 
 [[package]]
 name = "mapfile-parser"
-version = "2.13.0"
+version = "2.13.1"
 source = { editable = "." }
 dependencies = [
     { name = "decomp-settings" },

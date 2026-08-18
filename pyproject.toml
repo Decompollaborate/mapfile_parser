@@ -33,3 +33,25 @@ mapfile_parser = "mapfile_parser.__main__:mapfileParserMain"
 features = ["pyo3/extension-module", "python_bindings"]
 # https://github.com/PyO3/maturin/blob/0dee40510083c03607834c821eea76964140a126/Readme.md#mixed-rustpython-projects
 python-source = "src"
+
+[tool.ruff.lint]
+# Keep alphabetically sorted
+# TODO: fix
+ignore = [
+    "B006",
+    "B008",
+    "BLE001",
+    "C408",
+    "EXE001",
+    "EXE005",
+    "FLY002",
+    "PERF402",
+    "PLC0414",
+    "PLR1722",
+    "PLW0127",
+    "PLW0128",
+    "PYI015",
+    "RUF012",
+    "SIM102",
+    "UP028",
+]

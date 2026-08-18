@@ -5,9 +5,10 @@
 
 from __future__ import annotations
 
-import mapfile_parser
-from pathlib import Path
 import shutil
+from pathlib import Path
+
+import mapfile_parser
 
 print(f"Running mapfile_parser version {mapfile_parser.__version__}")
 

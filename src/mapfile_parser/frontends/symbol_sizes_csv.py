@@ -7,8 +7,9 @@ from __future__ import annotations
 
 import argparse
 from collections.abc import Callable
-import decomp_settings
 from pathlib import Path
+
+import decomp_settings
 
 from .. import mapfile
 

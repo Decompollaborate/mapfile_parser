@@ -5,20 +5,19 @@
 
 from __future__ import annotations
 
-from collections.abc import Callable
 import dataclasses
 import re
-from typing import Any, Generator
+from collections.abc import Callable
 from pathlib import Path
+from typing import Any, Generator
 
-from .progress_stats import ProgressStats
 from . import utils
-
 from .mapfile_rs import MapFile as MapFileRs
-from .mapfile_rs import Segment as SegmentRs
-from .mapfile_rs import Section as SectionRs
-from .mapfile_rs import Symbol as SymbolRs
 from .mapfile_rs import ReportCategories as ReportCategories
+from .mapfile_rs import Section as SectionRs
+from .mapfile_rs import Segment as SegmentRs
+from .mapfile_rs import Symbol as SymbolRs
+from .progress_stats import ProgressStats
 
 regex_fileDataEntry = re.compile(
     r"^\s+(?P<section>\.[^\s]+)\s+(?P<vram>0x[^\s]+)\s+(?P<size>0x[^\s]+)\s+(?P<name>[^\s]+)$"
@@ -344,7 +343,7 @@ class Section:
                     nonMatchingSym = sym
                 continue
 
-            if sym.vram < address and address < sym.vram + sym.size:
+            if sym.vram < address < sym.vram + sym.size:
                 if sym.isNonmatching:
                     # Try to avoid non matching marker symbols
                     nonMatchingSym = sym
@@ -385,7 +384,7 @@ class Section:
                     nonMatchingSym = sym
                 continue
 
-            if sym.vrom < address and address < sym.vrom + sym.size:
+            if sym.vrom < address < sym.vrom + sym.size:
                 if sym.isNonmatching:
                     # Try to avoid non matching marker symbols
                     nonMatchingSym = sym
@@ -1376,7 +1375,6 @@ class MapFile:
                 else:
                     # Keep the original section if there are no maps for this path
                     newSeg._sectionsList.append(sect.clone())
-                pass
 
             resolvedMap._segmentsList.append(newSeg)
         return resolvedMap

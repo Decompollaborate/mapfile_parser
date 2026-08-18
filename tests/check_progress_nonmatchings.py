@@ -5,11 +5,11 @@
 
 from __future__ import annotations
 
+from pathlib import Path
+
 ## This test checks if it is possible to modify a class's member
 ## (important because of Rust/Python interoperability)
-
 import mapfile_parser
-from pathlib import Path
 
 
 def getProgressFromMapFile(
