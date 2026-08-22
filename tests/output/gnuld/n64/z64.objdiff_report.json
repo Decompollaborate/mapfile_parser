@@ -7,8 +7,8 @@
     "total_data": "51289740",
     "matched_data": "51289740",
     "matched_data_percent": 100.0,
-    "total_functions": 13381,
-    "matched_functions": 13381,
+    "total_functions": 13377,
+    "matched_functions": 13377,
     "matched_functions_percent": 100.0,
     "total_units": 2358
   },
@@ -4846,8 +4846,8 @@
         "matched_code": "208",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 2,
-        "matched_functions": 2,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -4868,13 +4868,6 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2147521312"
-          }
-        },
-        {
-          "name": "rspbootTextEnd",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2147521520"
           }
         }
       ],
@@ -40607,8 +40600,8 @@
         "matched_code": "13152",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 6,
-        "matched_functions": 6,
+        "total_functions": 3,
+        "matched_functions": 3,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -40632,13 +40625,6 @@
           }
         },
         {
-          "name": "aspMainTextEnd",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2148610160"
-          }
-        },
-        {
           "name": "gspS2DEX2d_fifoTextStart",
           "size": "6336",
           "fuzzy_match_percent": 100.0,
@@ -40647,25 +40633,11 @@
           }
         },
         {
-          "name": "njpgdspMainTextStart",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2148616496"
-          }
-        },
-        {
           "name": "gspS2DEX2d_fifoTextEnd",
           "size": "2800",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2148616496"
-          }
-        },
-        {
-          "name": "njpgdspMainTextEnd",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2148619296"
           }
         }
       ],
@@ -190176,8 +190148,8 @@
         "total_data": "16520",
         "matched_data": "16520",
         "matched_data_percent": 100.0,
-        "total_functions": 8,
-        "matched_functions": 8,
+        "total_functions": 4,
+        "matched_functions": 4,
         "matched_functions_percent": 100.0,
         "total_units": 10
       }

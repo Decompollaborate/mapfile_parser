@@ -7,8 +7,8 @@
     "total_data": "563",
     "matched_data": "563",
     "matched_data_percent": 100.0,
-    "total_functions": 48,
-    "matched_functions": 48,
+    "total_functions": 47,
+    "matched_functions": 47,
     "matched_functions_percent": 100.0,
     "total_units": 3
   },
@@ -147,8 +147,8 @@
         "total_data": "555",
         "matched_data": "555",
         "matched_data_percent": 100.0,
-        "total_functions": 43,
-        "matched_functions": 43,
+        "total_functions": 42,
+        "matched_functions": 42,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -492,13 +492,6 @@
         },
         {
           "name": ".text",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "3680"
-          }
-        },
-        {
-          "name": ".text",
           "size": "124",
           "fuzzy_match_percent": 100.0,
           "metadata": {
@@ -593,8 +586,8 @@
         "total_data": "555",
         "matched_data": "555",
         "matched_data_percent": 100.0,
-        "total_functions": 43,
-        "matched_functions": 43,
+        "total_functions": 42,
+        "matched_functions": 42,
         "matched_functions_percent": 100.0,
         "total_units": 1
       }

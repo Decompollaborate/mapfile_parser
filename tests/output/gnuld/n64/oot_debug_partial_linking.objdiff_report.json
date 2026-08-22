@@ -7,8 +7,8 @@
     "total_data": "51289728",
     "matched_data": "51289728",
     "matched_data_percent": 100.0,
-    "total_functions": 13383,
-    "matched_functions": 13383,
+    "total_functions": 13377,
+    "matched_functions": 13377,
     "matched_functions_percent": 100.0,
     "total_units": 2344
   },
@@ -62,8 +62,8 @@
         "matched_code": "4032",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 2,
-        "matched_functions": 2,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -84,13 +84,6 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "0"
-          }
-        },
-        {
-          "name": "_binary_extracted_gc_eu_mq_dbg_incbin_ipl3_end",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "4032"
           }
         }
       ],
@@ -4829,8 +4822,8 @@
         "matched_code": "208",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 2,
-        "matched_functions": 2,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -4852,13 +4845,6 @@
           "metadata": {
             "virtual_address": "2147521312"
           }
-        },
-        {
-          "name": "rspbootTextEnd",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2147521520"
-          }
         }
       ],
       "metadata": {
@@ -4877,8 +4863,8 @@
         "matched_code": "32",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 2,
-        "matched_functions": 2,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -4899,13 +4885,6 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2147521520"
-          }
-        },
-        {
-          "name": "cic6105TextEnd",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2147521552"
           }
         }
       ],
@@ -40710,8 +40689,8 @@
         "matched_code": "13152",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 6,
-        "matched_functions": 6,
+        "total_functions": 3,
+        "matched_functions": 3,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -40735,13 +40714,6 @@
           }
         },
         {
-          "name": "gspS2DEX2d_fifoTextStart",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2148610160"
-          }
-        },
-        {
           "name": "aspMainTextEnd",
           "size": "6336",
           "fuzzy_match_percent": 100.0,
@@ -40750,25 +40722,11 @@
           }
         },
         {
-          "name": "njpgdspMainTextStart",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2148616496"
-          }
-        },
-        {
           "name": "gspS2DEX2d_fifoTextEnd",
           "size": "2800",
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "2148616496"
-          }
-        },
-        {
-          "name": "njpgdspMainTextEnd",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2148619296"
           }
         }
       ],
@@ -189725,8 +189683,8 @@
         "total_data": "51289728",
         "matched_data": "51289728",
         "matched_data_percent": 100.0,
-        "total_functions": 13383,
-        "matched_functions": 13383,
+        "total_functions": 13377,
+        "matched_functions": 13377,
         "matched_functions_percent": 100.0,
         "total_units": 2344
       }

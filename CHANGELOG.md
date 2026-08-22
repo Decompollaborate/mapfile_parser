@@ -7,6 +7,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 ## [Unreleased]
 
+## [2.13.2] - 2026-08-21
+
+### Fixed
+
+- Avoid emitting zero-sized symbols in objdiff reports.
+
 ## [2.13.1] - 2026-08-18
 
 ### Fixed

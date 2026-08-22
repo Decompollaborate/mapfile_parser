@@ -220,6 +220,13 @@ fn report_from_section(
         | section.section_type.starts_with(".init");
 
     for sym_state in section.symbol_match_state_iter(path_decomp_settings) {
+        if sym_state.size() == 0 {
+            // Avoid zero sized symbols.
+            // These are usually `weak` symbols that only bloat the report and
+            // can produce misreportings and noise
+            continue;
+        }
+
         let mut fuzzy_match_percent = 0.0;
 
         let sym = match sym_state {

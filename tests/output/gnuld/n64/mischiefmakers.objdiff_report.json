@@ -7,9 +7,9 @@
     "total_data": "7018593",
     "matched_data": "6112584",
     "matched_data_percent": 87.0913,
-    "total_functions": 4702,
-    "matched_functions": 1241,
-    "matched_functions_percent": 26.393023,
+    "total_functions": 4699,
+    "matched_functions": 1238,
+    "matched_functions_percent": 26.346031,
     "total_units": 416
   },
   "units": [
@@ -23881,9 +23881,7 @@
       "measures": {
         "total_code": "208",
         "matched_data_percent": 100.0,
-        "total_functions": 2,
-        "matched_functions": 1,
-        "matched_functions_percent": 50.0,
+        "total_functions": 1,
         "total_units": 1
       },
       "sections": [
@@ -23902,13 +23900,6 @@
           "metadata": {
             "virtual_address": "2148248032"
           }
-        },
-        {
-          "name": "rspbootTextEnd",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2148248240"
-          }
         }
       ],
       "metadata": {
@@ -23924,9 +23915,7 @@
       "measures": {
         "total_code": "5120",
         "matched_data_percent": 100.0,
-        "total_functions": 2,
-        "matched_functions": 1,
-        "matched_functions_percent": 50.0,
+        "total_functions": 1,
         "total_units": 1
       },
       "sections": [
@@ -23945,13 +23934,6 @@
           "metadata": {
             "virtual_address": "2148248240"
           }
-        },
-        {
-          "name": "gspFast3DTextEnd",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2148253360"
-          }
         }
       ],
       "metadata": {
@@ -23967,9 +23949,7 @@
       "measures": {
         "total_code": "3616",
         "matched_data_percent": 100.0,
-        "total_functions": 2,
-        "matched_functions": 1,
-        "matched_functions_percent": 50.0,
+        "total_functions": 1,
         "total_units": 1
       },
       "sections": [
@@ -23987,13 +23967,6 @@
           "size": "3616",
           "metadata": {
             "virtual_address": "2148253360"
-          }
-        },
-        {
-          "name": "aspMainTextEnd",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "2148256976"
           }
         }
       ],
@@ -48389,9 +48362,7 @@
         "total_data": "903089",
         "matched_data": "64",
         "matched_data_percent": 0.007086788,
-        "total_functions": 2177,
-        "matched_functions": 3,
-        "matched_functions_percent": 0.13780431,
+        "total_functions": 2174,
         "total_units": 129
       }
     },

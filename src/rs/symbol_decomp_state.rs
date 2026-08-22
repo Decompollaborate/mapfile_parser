@@ -5,6 +5,7 @@ use std::path::PathBuf;
 
 use crate::{section, symbol};
 
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
 pub enum SymbolDecompState<'sect> {
     /// The symbol has been decompiled.
     /// In other words it is being handled by a compiler instead of assembled from automatic disassemblies.
@@ -12,6 +13,21 @@ pub enum SymbolDecompState<'sect> {
     /// The symbol haven't been decompiled yet.
     /// This was built from an automatic disassembly.
     Undecomped(&'sect symbol::Symbol),
+}
+
+impl<'sect> SymbolDecompState<'sect> {
+    const fn inner(&self) -> &'sect symbol::Symbol {
+        match self {
+            Self::Decomped(sym) => sym,
+            Self::Undecomped(sym) => sym,
+        }
+    }
+    pub const fn vram(&self) -> u64 {
+        self.inner().vram
+    }
+    pub const fn size(&self) -> u64 {
+        self.inner().size
+    }
 }
 
 pub struct SymbolDecompStateIter<'sect> {

@@ -7,8 +7,8 @@
     "total_data": "59296",
     "matched_data": "59296",
     "matched_data_percent": 100.0,
-    "total_functions": 165,
-    "matched_functions": 165,
+    "total_functions": 163,
+    "matched_functions": 163,
     "matched_functions_percent": 100.0,
     "total_units": 99
   },
@@ -5557,8 +5557,8 @@
         "total_data": "24",
         "matched_data": "24",
         "matched_data_percent": 100.0,
-        "total_functions": 2,
-        "matched_functions": 2,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -5588,13 +5588,6 @@
           "metadata": {
             "virtual_address": "36544"
           }
-        },
-        {
-          "name": "rspbootTextEnd",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "36752"
-          }
         }
       ],
       "metadata": {
@@ -5613,8 +5606,8 @@
         "matched_code": "32",
         "matched_code_percent": 100.0,
         "matched_data_percent": 100.0,
-        "total_functions": 2,
-        "matched_functions": 2,
+        "total_functions": 1,
+        "matched_functions": 1,
         "matched_functions_percent": 100.0,
         "total_units": 1
       },
@@ -5635,13 +5628,6 @@
           "fuzzy_match_percent": 100.0,
           "metadata": {
             "virtual_address": "36752"
-          }
-        },
-        {
-          "name": "cic6105TextEnd",
-          "fuzzy_match_percent": 100.0,
-          "metadata": {
-            "virtual_address": "36784"
           }
         }
       ],
@@ -5926,8 +5912,8 @@
         "total_data": "59296",
         "matched_data": "59296",
         "matched_data_percent": 100.0,
-        "total_functions": 165,
-        "matched_functions": 165,
+        "total_functions": 163,
+        "matched_functions": 163,
         "matched_functions_percent": 100.0,
         "total_units": 99
       }
