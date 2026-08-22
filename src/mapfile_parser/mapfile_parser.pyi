@@ -3,7 +3,6 @@
 # SPDX-FileCopyrightText: © 2023-2025 Decompollaborate
 # SPDX-License-Identifier: MIT
 
-
 from pathlib import Path
 from typing import Any, Iterator
 
