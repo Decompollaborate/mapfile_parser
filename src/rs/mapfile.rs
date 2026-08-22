@@ -513,8 +513,6 @@ impl MapFile {
 #[cfg(feature = "python_bindings")]
 #[allow(non_snake_case)]
 pub(crate) mod python_bindings {
-    use pyo3::prelude::*;
-
     use std::{
         collections::HashMap,
         fs,

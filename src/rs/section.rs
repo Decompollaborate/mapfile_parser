@@ -408,7 +408,7 @@ impl Hash for Section {
 #[cfg(feature = "python_bindings")]
 #[allow(non_snake_case)]
 pub(crate) mod python_bindings {
-    use pyo3::{intern, prelude::*, IntoPyObjectExt};
+    use pyo3::{intern, IntoPyObjectExt};
 
     // Required to call the `.hash` and `.finish` methods, which are defined on traits.
     use std::hash::{Hash, Hasher};
